@@ -41,22 +41,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://unovie.ai/capability/appmodern/</loc>
-         <lastmod>2024-07-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://unovie.ai/capability/brochure/</loc>
          <lastmod>2024-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://unovie.ai/capability/datamesh/</loc>
+         <loc>https://unovie.ai/capability/dc300/</loc>
          <lastmod>2024-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://unovie.ai/capability/security/</loc>
+         <loc>https://unovie.ai/capability/fe100/</loc>
+         <lastmod>2024-07-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://unovie.ai/capability/gw200/</loc>
          <lastmod>2024-07-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
