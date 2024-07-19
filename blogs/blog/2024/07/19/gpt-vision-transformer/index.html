@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://unovie.ai/blog/2024/07/19/vision-transformer/">
+        <link rel="canonical" href="https://unovie.ai/blog/2024/07/19/gpt-vision-transformer/">
       
       
         <link rel="prev" href="../../06/forrester-research-top-10-trends-2024/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Vision Transformer - UnoVie.AI Engineering Blogs</title>
+        <title>GPT Vision Transformer - UnoVie.AI Engineering Blogs</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vision Transformer
+              GPT Vision Transformer
             
           </span>
         </div>
@@ -895,9 +895,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#naptime-architecture" class="md-nav__link">
+  <a href="#healthcare-usecases" class="md-nav__link">
     <span class="md-ellipsis">
-      Naptime architecture.
+      HealthCare UseCases.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Case
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vision-gpt-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vision GPT Solution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-helps-healthcare-payers-and-approvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it helps healthcare payers and approvers
     </span>
   </a>
   
@@ -920,7 +956,7 @@
         
 
 
-  <h1>Vision Transformer</h1>
+  <h1>GPT Vision Transformer</h1>
 
 <div><h2 id="vision-ai-and-impacts-in-healthcare">Vision AI and Impacts in HealthCare</h2>
 <p>One of innovation with GPT is not only it's Natural Language Processing (NLP) capabilities which we are familar with CHATGPT, but it's vision inferencing capabilities of understanding the context of what's happening within picture frame of video or reading a PDF record of Bill and create a enriched context for a data pipeline. </p>
@@ -931,6 +967,8 @@
 <p><strong>Contextual Reasoning:</strong> Vilt can reason about the context in which an object is present within a scene, understanding nuances that are often lost by purely computer vision models.</p>
 <p><a class="glightbox" href="/blogs/assets/video-gpt.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Vision Transformer" src="/blogs/assets/video-gpt.png"></a>
 </p><center>Vision Transformer Capabilities </center>
+<!-- more -->
+
 <h3 id="heres-the-simple-version">Here's the simple version:</h3>
 <ul>
 <li>It looks at pictures: Like a normal computer vision system, it can recognize objects in images (like a car, or a tumor or doctor notes).</li>
@@ -938,28 +976,40 @@
 <li>It connects the two: The magic happens when it combines these two abilities. It can figure out what's happening in a picture based on what you describe, or it can describe what's in a picture using words.</li>
 </ul>
 <p>This capability has tremendous benefits in healthcare and medtech companies to optimize the data ingestions flows</p>
-<!-- more -->
-
-<p>Since mid 2023 Google Researcher has been working on a framework for LLM assisted vulnerability research embodying these principles, with a particular focus on automating variant analysis. This project has been called "Naptime" because of the potential for allowing us to take regular naps while it helps us out with our jobs. Please don't tell our manager.</p>
-<p>Naptime uses a specialised architecture to enhance an LLM's ability to perform vulnerability research. A key element of this architecture is grounding through tool use, equipping the LLM with task-specific tools to improve its capabilities and ensure verifiable results. This approach allows for automatic verification of the agent's output, a critical feature considering the autonomous nature of the system.</p>
-<h3 id="naptime-architecture">Naptime architecture.</h3>
-<p>The Naptime architecture is centred around the interaction between an AI agent and a target codebase. The agent is provided with a set of specialised tools designed to mimic the workflow of a human security researcher.</p>
+<h3 id="healthcare-usecases">HealthCare UseCases.</h3>
+<p>In HealthCare Payer and Provider Space, lot of pre-authorization and post-authorization or Billing disputs exchanged as PDF files </p>
+<p>Here is the example.</p>
+<p>Customer uploads a bunch of disputed bills to the EDS ingestion pipeline or SFTP server and as expected not all bills are OCR ready as you would expect, as they contain lot of hand written notes with dates and times written all of over.</p>
+<p><a class="glightbox" href="/blogs/assets/video-bill.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example Bill" src="/blogs/assets/video-bill.png"></a>
+</p><center>Doctor Notes Hand scribd </center>
+<p>What if the Vision transformer can read this bill and can answer the following questions.</p>
 <ul>
-<li>
-<p><strong>Code Browser tool</strong> enables the agent to navigate through the target codebase, much like how engineers use Chromium Code Search. It provides functions to view the source code of a specific entity (function, variable, etc.) and to identify locations where a function or entity is referenced. While this capability is excessive for simple benchmark tasks, it is designed to handle large, real-world codebases, facilitating exploration of semantically significant code segments in a manner that mirrors human processes.</p>
-</li>
-<li>
-<p><strong>Python tool</strong> enables the agent to run Python scripts in a sandboxed environment for intermediate calculations and to generate precise and complex inputs to the target program.</p>
-</li>
-<li>
-<p><strong>Debugger tool</strong> grants the agent the ability to interact with the program and observe its behaviour under different inputs. It supports setting breakpoints and evaluating expressions at those breakpoints, enabling dynamic analysis. This interaction helps refine the AI's understanding of the program based on runtime observations. To ensure consistent reproduction and easier detection of memory corruption issues, the program is compiled with AddressSanitizer, and the debugger captures various signals indicating security-related crashes.</p>
-</li>
-<li>
-<p><strong>Reporter tool</strong> provides a structured mechanism for the agent to communicate its progress. The agent can signal a successful completion of the task, triggering a request to the Controller to verify if the success condition (typically a program crash) is met. It also allows the agent to abort the task when unable to make further progress, preventing stagnation.</p>
-</li>
+<li>What was the dispute about based on the written text</li>
+<li>Who was the provider and the specific dates of service.</li>
+<li>Are there any intresting asks and requests within the bills which needs to verified, like circles or highlighted amount </li>
+<li>What cross checks needs to be done against the OCR data provided and last known system data by making Agentic API calls. </li>
 </ul>
-<p>The system is <strong>model-agnostic and backend-agnostic</strong>, providing a self-contained vulnerability research environment. This environment is not limited to use by AI agents; human researchers can also leverage it, for example, to generate successful trajectories for model fine-tuning.</p>
-<p>Google's Naptime enables an LLM to perform <strong>vulnerability research that closely mimics the iterative, hypothesis-driven approach of human security experts</strong>. This architecture not only enhances the agent's ability to identify and analyse vulnerabilities but also ensures that the results are accurate and reproducible.</p></div>
+<p>Assuming GPT can do all this properly can it create a FYRE Compatible JSON Record with enriched context and hand-it over for further processing </p>
+<h3 id="risks">Risks</h3>
+<p>Not all vision models are mature yet, unless they are specifically pre-trained on the domain specific datasets. </p>
+<p><a class="glightbox" href="/blogs/assets/vision-maturity.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example Bill" src="/blogs/assets/vision-maturity.png"></a>
+</p><center>Trust Issues </center>
+<p>Enterprises needs to be very carefull of not using Public OpenAI Models which have generic knowledge and perform extremely bad.</p>
+<p>Don't tie your systems to SaaS API providers Models who promise everything and says it's secret sauce (in reality they might be using Generic Models in backend). Ensure these models are deployed locally and you have complete control over version deployed and expected behavior.</p>
+<h3 id="use-case">Use Case</h3>
+<p><strong>Scenario:</strong> A patient undergoes a complex surgery and receives a detailed medical bill from the hospital. This bill includes numerous line items for procedures, medications, and supplies, often accompanied by complex medical codes.</p>
+<p><strong>The Challenge:</strong> Insurance payers typically have a team of specialists who manually review these bills, which can be a time-consuming and error-prone process.</p>
+<h3 id="vision-gpt-solution">Vision GPT Solution</h3>
+<p><strong>Image Capture &amp; Preprocessing:</strong> The hospital submits the medical bill as a scanned image or PDF. Vision GPT automatically extracts the relevant text from the bill, converting it into a structured format that's easily understandable by the system.</p>
+<p><strong>Code &amp; Description Matching:</strong> Vision GPT leverages its knowledge base of medical codes and procedures to match the line items on the bill with corresponding descriptions and standard billing practices.</p>
+<p><strong>Policy &amp; Coverage Analysis:</strong> Vision GPT accesses the patient's insurance policy information and compares it to the billed procedures. It identifies covered services, deductibles, co-pays, and any potential discrepancies.</p>
+<p><strong>Automated Payment Recommendation:</strong> Based on its analysis, Vision GPT generates a recommendation for payment approval, outlining the amount to be paid and any necessary adjustments. This recommendation includes a detailed explanation of the reasoning behind the decision.</p>
+<p><strong>Human Oversight &amp; Review:</strong> While Vision GPT automates most of the process, human reviewers still have the option to review the system's recommendations and make final decisions. This ensures accuracy and allows for handling of complex or unusual cases.</p>
+<h3 id="how-it-helps-healthcare-payers-and-approvers">How it helps healthcare payers and approvers</h3>
+<p><strong>Faster Payment Processing:</strong> Automating the bill review process significantly reduces processing time, leading to quicker payments for healthcare providers.</p>
+<p><strong>Reduced Errors:</strong> Vision GPT's accuracy in code matching and policy analysis minimizes human error, leading to more accurate payments and fewer disputes.</p>
+<p><strong>Cost Savings:</strong> Automation reduces the need for manual labor, leading to significant cost savings for insurance payers.</p>
+<p><strong>Improved Transparency:</strong> The detailed explanations generated by Vision GPT provide greater transparency to both healthcare providers and patients.</p></div>
 
 
 

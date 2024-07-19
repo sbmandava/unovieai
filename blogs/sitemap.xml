@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://unovie.ai/blog/2024/07/19/gpt-vision-transformer/</loc>
+         <lastmod>2024-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://unovie.ai/blog/2024/07/06/google-genai-mis-usecases/</loc>
          <lastmod>2024-07-19</lastmod>
          <changefreq>daily</changefreq>
@@ -32,11 +37,6 @@
     </url>
     <url>
          <loc>https://unovie.ai/blog/2024/07/02/microsoft-dapr-zero-trust/</loc>
-         <lastmod>2024-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://unovie.ai/blog/2024/07/19/vision-transformer/</loc>
          <lastmod>2024-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
