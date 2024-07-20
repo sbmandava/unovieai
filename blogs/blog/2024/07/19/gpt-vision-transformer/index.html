@@ -841,7 +841,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -879,6 +879,15 @@
   <a href="#understanding-vision-gpt" class="md-nav__link">
     <span class="md-ellipsis">
       Understanding Vision GPT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vision Models
     </span>
   </a>
   
@@ -940,10 +949,21 @@
 <p>Vision GPT is a powerful pre-trained model that seamlessly integrates computer vision and natural language processing (NLP). It leverages a transformer architecture to analyze both visual and textual data simultaneously, unlocking a deeper understanding of the relationship between them.</p>
 <p><a class="glightbox" href="/blogs/assets/video-gpt.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Vision Transformer" src="/blogs/assets/video-gpt.png"></a>
 </p><center>Vision Transformer Capabilities </center>
+<p>While existing large vision models excel in transfer learning, they often struggle when faced with various tasks and simple instructions. The challenge lies in handling spatial hierarchy and semantic granularity inherent in diverse vision-related tasks.</p>
+<p>Key challenges include the limited availability of comprehensive visual annotations and the absence of a unified pretraining framework with a singular neural network architecture seamlessly integrating spatial hierarchy and semantic granularity. Existing datasets tailored for specialized applications heavily rely on human labeling, which limits, the development of foundational models capable of capturing the intricacies of vision-related tasks.</p>
+<h3 id="vision-models">Vision Models</h3>
+<p>Florence-2 is an advanced vision foundation model that uses a prompt-based approach to handle a wide range of vision and vision-language tasks. Florence-2 can interpret simple text prompts to perform tasks like captioning, object detection, and segmentation. It leverages our FLD-5B dataset, containing 5.4 billion annotations across 126 million images, to master multi-task learning. The model's sequence-to-sequence architecture enables it to excel in both zero-shot and fine-tuned settings, proving to be a competitive vision foundation model.</p>
+<p><a class="glightbox" href="/blogs/assets/florence2-arch.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Florence2 Vision" src="/blogs/assets/florence2-arch.png"></a>
+</p><center>Florence 2 Vision Architecture </center>
+<p>Built by Microsoft, the Florence-2 model adopts a sequence-to-sequence architecture, integrating an image encoder and a multi-modality encoder-decoder. This design accommodates a spectrum of vision tasks without the need for task-specific architectural modifications, aligning with the ethos of the NLP community for versatile model development with a consistent underlying structure.</p>
+<p>Florence-2 stands out through its unprecedented zero-shot and fine-tuning capabilities, achieving new state-of-the-art results in tasks such as captioning, object detection, visual grounding, and referring expression comprehension. Even after fine-tuning with public human-annotated data, Florence-2 competes with larger specialist models, establishing new benchmarks. </p>
 <h3 id="key-capabilities">Key Capabilities:</h3>
 <p><strong>Object Recognition:</strong> Identifies objects within images (e.g., medical equipment, tumors, handwritten notes) using convolutional neural networks (CNNs) and transformer models.</p>
+<p><a class="glightbox" href="/blogs/assets/florence2-inf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Florence2 Vision" src="/blogs/assets/florence2-inf.png"></a></p>
 <p><strong>Semantic Understanding:</strong> Connects visual concepts with corresponding words or phrases, accurately interpreting descriptions of scenes and objects.</p>
+<p><a class="glightbox" href="/blogs/assets/florence2-inf3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Florence2 Vision" src="/blogs/assets/florence2-inf3.png"></a></p>
 <p><strong>Contextual Reasoning:</strong> Analyzes the context surrounding objects in images, discerning nuances often missed by traditional computer vision models.</p>
+<p><a class="glightbox" href="/blogs/assets/florence2-inf4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Florence2 Vision" src="/blogs/assets/florence2-inf4.png"></a></p>
 <h3 id="transforming-healthcare-processes">Transforming Healthcare Processes</h3>
 <p>Vision GPT's unique capabilities offer significant benefits across various healthcare domains:</p>
 <p><strong>Streamlined Data Ingestion:</strong></p>
