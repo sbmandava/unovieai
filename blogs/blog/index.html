@@ -864,7 +864,7 @@ YouTube video at 1h14m43s </p>
           
           <li class="md-meta__item">
             
-              5 min read
+              6 min read
             
           </li>
         
@@ -887,6 +887,11 @@ YouTube video at 1h14m43s </p>
 <h4 id="vision-models"><a class="toclink" href="2024/07/19/gpt-vision-transformer/#vision-models">Vision Models</a></h4>
 <p><strong>Phi-3-Vision-128K-instruct</strong></p>
 <p>Microsoft recently released Phi-3, a powerful language model, with a new Vision-Language variant called Phi-3-vision-128k-instruct. This 4B parameter model achieved impressive results on public benchmarks, even surpassing GPT-4V in some cases and outperforming Gemini 1.0 Pro V in all but MMMU.</p>
+<p><strong>FaceBook-Chmeleon</strong>
+Chameleon 🦎 by Meta is a unique model: it attempts to scale early fusion 🤨 But what is early fusion? Modern vision language models use a vision encoder with a projection layer to project image embeddings so it can be promptable to text decoder (LLM)</p>
+<p>Early fusion on the other hand attempts to fuse all features together (image patches and text) by using an image tokenizer and all tokens are projected into a shared space, which enables seamless generation 😏  Authors have also introduced different architectural improvements (QK norm and revise placement of layer norms) for scalable and stable training and they were able to increase the token count (5x tokens compared to Llama 3 which is a must with early-fusion IMO)</p>
+<p>This model is an any-to-any model thanks to early fusion: it can take image and text input and output image and text, but image generation are disabled to prevent malicious use. </p>
+<p>One can also do text-only prompting, authors noted the model catches up with larger LLMs (like Mixtral 8x7B or larger Llama-2 70B) and also image-pair prompting with larger VLMs like IDEFICS2-80B</p>
 <p><strong>Florence-2</strong></p>
 <p>Florence-2 is an advanced vision foundation model that uses a prompt-based approach to handle a wide range of vision and vision-language tasks. Florence-2 can interpret simple text prompts to perform tasks like captioning, object detection, and segmentation. It leverages our FLD-5B dataset, containing 5.4 billion annotations across 126 million images, to master multi-task learning. The model's sequence-to-sequence architecture enables it to excel in both zero-shot and fine-tuned settings, proving to be a competitive vision foundation model.
 <center>
