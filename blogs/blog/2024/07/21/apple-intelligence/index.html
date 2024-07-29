@@ -841,7 +841,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              5 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -875,15 +875,6 @@
   
     <nav class="md-nav" aria-label="Apple Intelligence : On Device Processing">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trust-user-privacy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trust : User Privacy
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#embracing-edge-ai-on-device-inferencing-a-strategic-imperative-for-enterprises" class="md-nav__link">
@@ -928,9 +919,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-case-for-distributed-npu-mesh-and-joint-inferencing" class="md-nav__link">
+  <a href="#the-case-for-distributed-tensor-mesh-and-joint-inferencing" class="md-nav__link">
     <span class="md-ellipsis">
-      The Case for Distributed NPU Mesh and Joint Inferencing
+      The Case for Distributed Tensor Mesh and Joint Inferencing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trust-user-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trust : User Privacy
     </span>
   </a>
   
@@ -979,22 +979,28 @@ YouTube video at 1h14m43s </p>
 </div>
 <!-- more -->
 
-<h3 id="trust-user-privacy">Trust : User Privacy</h3>
-<p>Trust of User Privacy is extremely important for every enterprise. Where it is HITRUST, FFIEC, FEDRAMP, NIST Standards. These security engineering privacy requirements should be the same every enterprise needs to adopt whether is Medical Device Manufacturer, Automotive EV Initiatives, HealthCare, Financial, Telecom Services, OTT providers
-Apple announcement is not too far from what GEHC has been working in MEDTECH world since last 4 years, Chief AI officer recently posted on Linkedin 
-<a href="https://www.gehealthcare.com/about/newsroom/press-releases/ge-healthcare-tops-list-for-third-year-in-a-row-with-highest-number-of-ai-enabled-medical-device-authorizations">"GEHC Tops list for third year in row in highest number of AI-Enabled Medical Device Authorization"</a></p>
 <h3 id="embracing-edge-ai-on-device-inferencing-a-strategic-imperative-for-enterprises">Embracing Edge AI On-Device Inferencing: A Strategic Imperative for Enterprises</h3>
 <p>In today's rapidly evolving technological landscape, enterprises are increasingly recognizing the significance of Edge AI on-device inferencing as a key strategic initiative. The transition to Edge AI not only promises reduced operational expenses but also propels real-time decision-making capabilities. This shift is particularly pertinent given the limited access to high-end GPUs like the NVIDIA H100, which often ties enterprises into public cloud ecosystems, leading to skyrocketing operational expenditures (OPEX). Recent financial reports from NVIDIA and OpenAI echo this growing concern, underscoring the urgent need for cost-effective, yet powerful AI solutions.</p>
 <h3 id="the-demand-for-ai-embedded-software">The Demand for AI-Embedded Software</h3>
 <p>The burgeoning demand for AI-embedded software, such as Microsoft's Copilot+, has showcased the transformative potential of AI in enhancing user interactions and automating complex tasks. These advanced AI systems leverage Edge NPU (Neural Processing Units), TPU (Tensor Processing Units), and GPU (Graphics Processing Units) to optimize data formatting in near real-time—be it converting healthcare data into the FHIR format or standardizing payment data to ISO20022 benchmarks.</p>
 <h3 id="addressing-edge-npu-constraints">Addressing Edge NPU Constraints</h3>
-<p>A critical challenge lies in the power and device constraints associated with Edge NPUs. Traditional Intel processors fall short, particularly in maintaining battery efficiency. However, recent advancements in computing hardware are closing this gap. Apple’s M2 Pro and M3 chips have set new benchmarks in energy-efficient AI inferencing. Meanwhile, Qualcomm’s Snapdragon X Elite, AMD’s Ryzen AI, and Intel’s Gaudi3, alongside a suite of ARM processors, are pioneering the next generation of powerful and energy-efficient NPU edge computing solutions.</p>
+<p>A critical challenge lies in the power and device constraints associated with Edge NPUs. Traditional Intel processors fall short, particularly in maintaining battery efficiency. However, recent advancements in computing hardware are closing this gap. Apple’s M2 Pro and M3 chips have set new benchmarks in energy-efficient AI inferencing. Meanwhile, NVIDIA JetSon Orin, Qualcomm’s Snapdragon X Elite, AMD’s Ryzen AI, and Intel’s Gaudi3, alongside a suite of ARM processors, are pioneering the next generation of powerful and energy-efficient NPU edge computing solutions.</p>
 <h4 id="real-time-decisions-in-the-physical-world">Real-Time Decisions in the Physical World</h4>
 <p>Edge AI’s potential shines brightest in real-world, real-time decision-making scenarios. Autonomous vehicles, for instance, rely on immediate safety decisions to protect passengers and pedestrians. In healthcare, an MRI scan identifying a brain hemorrhage can trigger an urgent alert to a surgical team, enhancing patient outcomes through timely interventions. Similarly, Apple’s Siri exemplifies how AI can process device-specific information to make optimal decisions on behalf of users. These examples underscore the criticality of GEN-AI models’ capability to operate both online and offline, ensuring seamless functionality in intermittently connected environments.</p>
-<h3 id="the-case-for-distributed-npu-mesh-and-joint-inferencing">The Case for Distributed NPU Mesh and Joint Inferencing</h3>
+<h3 id="the-case-for-distributed-tensor-mesh-and-joint-inferencing">The Case for Distributed Tensor Mesh and Joint Inferencing</h3>
 <p>Standalone models, while beneficial, often fall short in complex, real-world environments. For example, a Tesla vehicle utilizes a collective feed from eight cameras to inform its autonomous driving decisions, ensuring a comprehensive understanding of its surroundings. In the medical sector, an MRI machine's on-edge computing power might only yield a 60% confidence level in detecting a condition. Thus, the DICOM images must be transmitted to a nearby GPU cloud, leveraging extensive computational resources to reach near-100% diagnostic confidenc crucial for obtaining FDA Class III certification.</p>
-<p><a class="glightbox" href="/blogs/assets/dual-inference.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dual Inference" src="/blogs/assets/dual-inference.png"></a></p>
+<p><strong>Technology</strong></p>
+<p>In the competition between open-source Large Language Models (LLMs) and closed models, a key benefit of open models lies in their ability to be run locally on your own hardware. Unlike closed models, which require access to external providers and incur additional costs beyond electricity and infrastructure expenses, open models offer greater flexibility and autonomy. Nevertheless, this advantage diminishes as model sizes grow, making it increasingly difficult to run massive models that demand substantial memory resources. Fortunately, emerging techniques such as tensor parallelism and distributed inference may help alleviate these scalability challenges</p>
+<p>Matrix multiplication is the dominant computation in Large Language Models (LLMs), accounting for approximately 97-98% of all computations. Fortunately, this operation is highly parallelizable across multiple CPU/GPU cores and devices, making it an ideal candidate for distributed computing. By dividing the matrix multiplication among multiple devices, each device can perform a portion of the calculation, resulting in a significant speedup. For example, if a single device can compute the matrix multiplication in n seconds, two devices can complete it in n/2 seconds. This is known as tensor parallelism.</p>
+<p><a class="glightbox" href="/blogs/assets/tensor-scale.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dual Inference" src="/blogs/assets/tensor-scale.png"></a></p>
+<p>While tensor parallelism shows great promise for speeding up LLM inference, there's a catch: synchronization between devices is a major bottleneck. While we can accelerate the matrix multiplication, we must eventually synchronize the neural network state across devices, which takes time. The speed of synchronization depends on the communication links between devices. Professional AI clusters often employ high-speed interconnects like NVLink, We at Unovie are using USB3.1 Gen1 Interconnects achiveing (5 Gbps).</p>
+<p>However, there's a surprising twist: when designed with optimization in mind, the amount of data required to synchronize LLMs can be remarkably low. For instance, a quantized version of the Llama 3 8B model (6.3 GB) requires only 1 MB of data to synchronize per token across two devices. This is an extremely small overhead.</p>
 <p>This leads us to the concept of distributed NPU mesh networks, where multiple models collaboratively enhance decision-making accuracy. This approach parallels human decision-making processes, where collective input often results in more accurate outcomes. Implementing a collective quorum of decision-making models allows for higher reliability and precision, pivotal in mission-critical applications.</p>
+<p><a class="glightbox" href="/blogs/assets/dual-inference.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dual Inference" src="/blogs/assets/dual-inference.png"></a></p>
+<h3 id="trust-user-privacy">Trust : User Privacy</h3>
+<p>Trust of User Privacy is extremely important for every enterprise. Where it is HITRUST, FFIEC, FEDRAMP, NIST Standards. These security engineering privacy requirements should be the same every enterprise needs to adopt whether is Medical Device Manufacturer, Automotive EV Initiatives, HealthCare, Financial, Telecom Services, OTT providers
+Apple announcement is not too far from what GEHC has been working in MEDTECH world since last 4 years, Chief AI officer recently posted on Linkedin 
+<a href="https://www.gehealthcare.com/about/newsroom/press-releases/ge-healthcare-tops-list-for-third-year-in-a-row-with-highest-number-of-ai-enabled-medical-device-authorizations">"GEHC Tops list for third year in row in highest number of AI-Enabled Medical Device Authorization"</a></p>
 <h3 id="conclusion">Conclusion</h3>
 <p>Edge AI on-device inferencing represents a paradigm shift in enterprise strategy, promising enhanced real-time decision-making and cost efficiencies. The journey towards this vision involves embracing advanced NPU technologies, harnessing distributed inferencing models, and overcoming the limitations of traditional processors. With industry leaders like Apple, Qualcomm, AMD, and Intel setting new standards, the path towards a robust and cost-effective Edge AI ecosystem is clearer than ever.</p>
 <p>For enterprises, the strategic imperative is now to integrate these cutting-edge AI technologies into their core operations, driving innovation while safeguarding operational budgets. By doing so, businesses can unlock unprecedented levels of agility, accuracy, and efficiency, cementing their competitive edge in an increasingly AI-driven world.</p>
