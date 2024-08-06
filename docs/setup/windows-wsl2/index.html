@@ -478,10 +478,10 @@ After installing the Ubuntu distribution, you may want to create a new user acco
 </p><div class="highlight"><pre><span></span><code>wsl -d Ubuntu-24.04
 </code></pre></div>
 <p>Once you are logged into the Ubuntu environment, open a terminal window and run these commands to create a new user account:
-</p><div class="highlight"><pre><span></span><code>sudo adduser &lt;username&gt;
+</p><div class="highlight"><pre><span></span><code>sudo adduser unovie
 </code></pre></div>
 <p>Set your default password during the username creation process. After creating the user, log out from your current session (you can do this by typing exit or pressing Ctrl + D), and then run the following command to set it as your default Ubuntu user:
-</p><div class="highlight"><pre><span></span><code>wsl --set-default-user &lt;username&gt; -d Ubuntu-24.04
+</p><div class="highlight"><pre><span></span><code>wsl --set-default-user unovie -d Ubuntu-24.04
 </code></pre></div>
 <p>Now, every time you launch WSL with wsl or from the Windows search bar, you'll be logged in to your new user account by default.</p>
 <p><strong>Step 5: Update and upgrade packages</strong>

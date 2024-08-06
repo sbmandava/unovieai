@@ -72,6 +72,8 @@ wget https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
 chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
 ./Anaconda3-2024.06-1-Linux-x86_64.sh -p /opt/conda -b
 echo "source /opt/conda/etc/profile.d/conda.sh" > /opt/python.env
+echo "docker run -d -p 3000:3000  ghcr.io/eclipse-theia/theia-blueprint/theia-ide:1.52.0" > /opt/web-ide.sh
+chmod +x /opt/web-ide.sh
 su - unovie -c "source /opt/python.env;conda create -y -n unovie310 python=3.10"
 su - unovie -c "echo 'source /opt/python.env' >> ~/.bashrc"
 su - unovie -c "echo 'conda config --set auto_activate_base false' >> ~/.bashrc"
