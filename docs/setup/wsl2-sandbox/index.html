@@ -85,7 +85,16 @@
     __primePlatformTabs();
   </script>
 
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -614,7 +623,7 @@
 
   <h1>Wsl2 sandbox</h1>
 
-<h2 id="developer-sandbox-setup">Developer Sandbox Setup</h2>
+<div><h2 id="developer-sandbox-setup">Developer Sandbox Setup</h2>
 <p>Welcome to Unovie, AI platform for Edge. </p>
 <p>To make it easier for developer's we intend to provide a sandbox environment so it's easier to get consistent learning experiences.</p>
 <p><strong>Please follow these instructions and let us know how we can improve this documentation for future newbie's. Your feedback is very important to us.</strong></p>
@@ -627,9 +636,9 @@
 This step ensures a smoother installation process for WSL2 and is recommended if you are using Windows build 19041 or later, which comes with the May 2020 Update (version 2004). To enable this feature:</p>
 <p>Press Win + X and select "Windows PowerShell (Admin)" from the menu that appears. This will open a new Windows PowerShell window with admin privileges.</p>
 <p>In the PowerShell window, run the following command to enable the Virtual Machine Platform feature:
-<div class="highlight"><pre><span></span><code>Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
+</p><div class="highlight"><pre><span></span><code>Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All
 </code></pre></div>
-Restart your computer after enabling the Virtual Machine Platform feature if prompted.</p>
+Restart your computer after enabling the Virtual Machine Platform feature if prompted.
 <p><strong>Step 3: Install WSL2</strong></p>
 <p>Open a Windows PowerShell with administrative privileges as described in step 2 of Step 2.</p>
 <p>Run the following command to enable the WSL2 Linux kernel feature (this is only required for versions prior to Windows build 19041):</p>
@@ -641,21 +650,21 @@ Restart your computer after enabling the Virtual Machine Platform feature if pro
 <p><strong>Step 4: Set up default user for Ubuntu on WSL2</strong>
 After installing the Ubuntu distribution, you may want to create a new user account within it and set it as your default user. Here's how to do this:</p>
 <p>Launch the Ubuntu distribution by typing wsl in the Windows search bar or running the command 
-<div class="highlight"><pre><span></span><code>wsl -d Ubuntu-24.04
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>wsl -d Ubuntu-24.04
+</code></pre></div>
 <p>Once you are logged into the Ubuntu environment, open a terminal window and run these commands to create a new user account:
-<div class="highlight"><pre><span></span><code>sudo adduser unovie
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>sudo adduser unovie
+</code></pre></div>
 <p>Set your default password during the username creation process. After creating the user, log out from your current session (you can do this by typing exit or pressing Ctrl + D), and then run the following command to set it as your default Ubuntu user:
-<div class="highlight"><pre><span></span><code>wsl --set-default-user unovie -d Ubuntu-24.04
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>wsl --set-default-user unovie -d Ubuntu-24.04
+</code></pre></div>
 <p>Now, every time you launch WSL with wsl or from the Windows search bar, you'll be logged in to your new user account by default.</p>
 <p><strong>Step 5: Update and upgrade packages</strong>
 Once you have set up Ubuntu on WSL2, it is a good idea to update and upgrade all installed packages to ensure that everything is running smoothly:</p>
 <p>Run the following commands in the Ubuntu terminal window to update your package lists and then install any available updates:
-<div class="highlight"><pre><span></span><code>sudo apt-get update
+</p><div class="highlight"><pre><span></span><code>sudo apt-get update
 sudo apt-get upgrade -y
-</code></pre></div></p>
+</code></pre></div>
 <p>Congratulations! You have successfully installed WSL2 with Ubuntu 24.04 LTS on Windows 10, and you can now start using the Linux environment right from your Windows machine.</p>
 <h3 id="windows-terminal">Windows Terminal</h3>
 <p>Install Windows Terminal which allows you to work with WSL2 easily </p>
@@ -666,7 +675,7 @@ https://apps.microsoft.com/detail/9n0dx20hk701?rtc=1&amp;hl=en-us&amp;gl=US</p>
 <div class="highlight"><pre><span></span><code>apt-get -y install curl
 clear
 bash &lt;(curl -s https://unovie.ai/docs/assets/sandbox.sh)
-</code></pre></div>
+</code></pre></div></div>
 
 
 
@@ -751,5 +760,7 @@ bash &lt;(curl -s https://unovie.ai/docs/assets/sandbox.sh)
       <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

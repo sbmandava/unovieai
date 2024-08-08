@@ -83,7 +83,16 @@
     __primePlatformTabs();
   </script>
 
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -514,7 +523,7 @@
 
   <h1>Home</h1>
 
-<h2 id="welcome">Welcome</h2>
+<div><h2 id="welcome">Welcome</h2>
 <p>Welcome to Unovie.AI a AI Edge computing platform.</p>
 <h3 id="ground-principles">Ground Principles</h3>
 <p>Few ground rules you need to aware as your working with the larger team.</p>
@@ -543,7 +552,7 @@
 </ul>
 <p>We need you favor to improve this documentation. Please volunteer yourself if you can help make this better
 or post us some comments on Zulip Channel of what changes you like to see and we will update it for you.</p>
-<p>Cheers.</p>
+<p>Cheers.</p></div>
 
 
 
@@ -606,5 +615,7 @@ or post us some comments on Zulip Channel of what changes you like to see and we
       <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

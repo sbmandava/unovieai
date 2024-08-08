@@ -87,7 +87,16 @@
     __primePlatformTabs();
   </script>
 
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -550,7 +559,7 @@
 
   <h1>Linux sandbox</h1>
 
-<h2 id="developer-sandbox-setup-for-linux">Developer Sandbox Setup for Linux</h2>
+<div><h2 id="developer-sandbox-setup-for-linux">Developer Sandbox Setup for Linux</h2>
 <p>You sir, are already enlightned for using Linux desktop.</p>
 <p>The instructions are very simple. Make sure the following are installed</p>
 <ul>
@@ -560,7 +569,7 @@
 <li>Git</li>
 </ul>
 <p>Do me a favor can you update the sandbox.sh script to and modify it to check if your operating out of WSL2 in native Linux Environment and deploy things as required.</p>
-<p>Send me the updated script in Zulip. - Suresh</p>
+<p>Send me the updated script in Zulip. - Suresh</p></div>
 
 
 
@@ -661,5 +670,7 @@
       <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
