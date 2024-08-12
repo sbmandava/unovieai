@@ -8,24 +8,26 @@
       
       
       
-        <link rel="canonical" href="https://unovie.ai/docs/">
+        <link rel="canonical" href="https://unovie.ai/docs/training/embeddings-transformers/">
+      
+      
+        <link rel="prev" href="../ai-evolution/">
       
       
       
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>docs.unovie.ai</title>
+        <title>Embeddings transformers - docs.unovie.ai</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -83,7 +85,7 @@
     __primePlatformTabs();
   </script>
 
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -92,7 +94,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -111,7 +113,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome" class="md-skip">
+        <a href="#embeddings" class="md-skip">
           Skip to content
         </a>
       
@@ -127,9 +129,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="docs.unovie.ai" class="md-header__button md-logo" aria-label="docs.unovie.ai" data-md-component="logo">
+    <a href="../.." title="docs.unovie.ai" class="md-header__button md-logo" aria-label="docs.unovie.ai" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -146,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Embeddings transformers
             
           </span>
         </div>
@@ -260,9 +262,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="docs.unovie.ai" class="md-nav__button md-logo" aria-label="docs.unovie.ai" data-md-component="logo">
+    <a href="../.." title="docs.unovie.ai" class="md-nav__button md-logo" aria-label="docs.unovie.ai" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     docs.unovie.ai
@@ -332,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="setup/wsl2-sandbox/" class="md-nav__link">
+      <a href="../../setup/wsl2-sandbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -353,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="setup/linux-sandbox/" class="md-nav__link">
+      <a href="../../setup/linux-sandbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -378,17 +380,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -402,7 +406,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             training
@@ -416,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="training/market-analyst/" class="md-nav__link">
+      <a href="../market-analyst/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -437,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="training/about-unovie/" class="md-nav__link">
+      <a href="../about-unovie/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="training/ai-evolution/" class="md-nav__link">
+      <a href="../ai-evolution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -476,10 +480,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="training/embeddings-transformers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Embeddings transformers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -488,6 +510,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embeddings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformers-gpt-generative-pre-processing-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformers : GPT : Generative Pre-Processing Transformer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -525,26 +583,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#welcome" class="md-nav__link">
+  <a href="#embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      Welcome
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Welcome">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ground-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ground Principles
+      Embeddings
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#transformers-gpt-generative-pre-processing-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformers : GPT : Generative Pre-Processing Transformer
+    </span>
+  </a>
   
 </li>
       
@@ -563,38 +615,45 @@
                   
 
 
-  <h1>Home</h1>
+  <h1>Embeddings transformers</h1>
 
-<div><h2 id="welcome">Welcome</h2>
-<p>Welcome to Unovie.AI a AI Edge computing platform.</p>
-<h3 id="ground-principles">Ground Principles</h3>
-<p>Few ground rules you need to aware as your working with the larger team.</p>
+<div><h2 id="embeddings">Embeddings</h2>
+<p>Embeddings are a fundamental concept in natural language processing (NLP). </p>
+<p>In essence, embeddings are numerical representations of words, phrases, or even entire documents.</p>
+<p>Think of them as a way to translate human language into a format that computers can understand and process. </p>
+<p>Here's a breakdown:
+    Each word or concept is assigned a unique vector (a list of numbers).
+    Words with similar meanings or contexts will have vectors that are closer together in this "embedding space."</p>
+<p><strong>Why are embeddings so powerful?</strong></p>
+<p>Capturing semantic relationships: Embeddings allow us to see the relationships between words beyond just their literal definitions. For example, "king" and "queen" would be closer together than "king" and "banana."</p>
+<p>Improved performance in NLP tasks: Embeddings are used in a wide range of NLP applications, such as:</p>
 <ul>
-<li>Git is the source of truth, we all will be having local sandbox environments but in the end we converge in github<ul>
-<li>everything and anything you do have to be committed onto git and that's how you collabrate. No code update on git means no work done.</li>
+<li>Text classification: Categorizing documents into predefined categories.</li>
+<li>Sentiment analysis: Determining the emotional tone of a piece of text.</li>
+<li>Machine translation: Automatically translating text from one language to another.</li>
+<li>Text generation: Creating new text that is coherent and grammatically correct.</li>
 </ul>
+<p><strong>Types of Embeddings:</strong></p>
+<p>There are various types of embeddings, each with its own strengths and weaknesses. Some popular ones include:</p>
+<ul>
+<li>
+<p>Word2Vec: A widely used technique that learns embeddings from large text corpora.</p>
 </li>
-<li>Linux is your local working environment.<ul>
-<li>everybody can install there local sandbox by following these instructions.</li>
-<li>your local sandbox is personal to you, and it allows you to try all your changes locally before you commit them into git.</li>
-<li>everything we do will be packaged as docker container, so it can be deployed on target exactly the same way it was tested in sandbox.</li>
-<li>AI and Cloud has no windows experience, so as programmer you are expected to master linux, so get comfortable with it sooner.</li>
-</ul>
+<li>
+<p>GloVe (Global Vectors for Word Representation): Another popular method that leverages global word co-occurrence statistics.</p>
 </li>
-<li>API is how we talk <ul>
-<li>Learn REST and OPENAPI standards.</li>
-<li>Anything data you need to share with another system or container has to be REST API</li>
-</ul>
-</li>
-<li>SQL is DataScience.<ul>
-<li>Expecting you master your SQL skills, we will be using postgres database </li>
-<li>Jupyter Notebook to run python programs </li>
-</ul>
+<li>
+<p>BERT (Bidirectional Encoder Representations from Transformers): A more advanced technique that considers the context of words in both directions.</p>
 </li>
 </ul>
-<p>We need you favor to improve this documentation. Please volunteer yourself if you can help make this better
-or post us some comments on Zulip Channel of what changes you like to see and we will update it for you.</p>
-<p>Cheers.</p></div>
+<p><a href="https://cohere.com/llmu/text-embeddings">Text Embeddings</a></p>
+<p><a href="https://simonwillison.net/2023/Oct/23/embeddings/">Embeddings What are they and why they matter</a></p>
+<h2 id="transformers-gpt-generative-pre-processing-transformer">Transformers : GPT : Generative Pre-Processing Transformer</h2>
+<p>Generative:  This means it's designed to create new text, not just analyze existing text. You can think of it as a very advanced chatbot that can write stories, poems, articles, and more.</p>
+<p>Pre-trained: GPT models are trained on massive amounts of text data before they are released. This pre-training allows them to learn the patterns and rules of language, giving them a broad understanding of how words work together.</p>
+<p>Transformer: This refers to the specific type of neural network architecture used in GPT. Transformers are particularly good at handling sequential data like text because they can consider the context of words in a sentence.</p>
+<p>Transformer Explainer. This is a very neat interactive visualization (with accompanying essay and video - scroll down for those) that explains the Transformer architecture for LLMs, using a GPT-2 model running directly in the browser using the ONNX runtime and Andrej Karpathy's nanoGPT project.</p>
+<p><a href="https://poloclub.github.io/transformer-explainer/">Transfomer Explainer</a></p></div>
 
 
 
@@ -628,6 +687,28 @@ or post us some comments on Zulip Channel of what changes you like to see and we
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ai-evolution/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ai evolution">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Ai evolution
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -651,10 +732,10 @@ or post us some comments on Zulip Channel of what changes you like to see and we
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "toc.follow", "navigation.path", "navigation.top", "navigation.footer"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "toc.follow", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
