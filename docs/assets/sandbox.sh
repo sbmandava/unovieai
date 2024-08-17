@@ -93,8 +93,10 @@ add_ollama_dify()
 cd /opt;git clone https://github.com/langgenius/dify.git;
 cd /opt/dify/docker;mv .env.example .env
 cd /tmp;wget https://unovie.ai/docs/assets/docker-compose.yaml;mv /tmp/docker-compose.yaml /opt/dify/docker/
-docker-compose up -d
-# docker exec ollama ollama 
+cd /opt/dify/docker;docker-compose up -d
+docker exec ollama ollama pull all-minilm:l6-v2
+docker exec ollama ollama pull gemma2:2b-instruct-q2_K
+docker exec ollama ollama cp gemma2:2b-instruct-q2_K uv-gemma2
 }
 
 fix_perms ()
@@ -123,4 +125,4 @@ echo "-----------------"
 echo "login id: $USERNAME password: $PASSWORD"
 echo "once logged in follow /opt/readme.txt for further instructions"
 echo "Please refer to documentation on https://unovie.ai/docs"
-echo "DIFY instance can be accessed on https://<WSL2-ip>
+echo "DIFY instance can be accessed on https://<WSL2-ip>"
