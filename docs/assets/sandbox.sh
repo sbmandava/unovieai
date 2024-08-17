@@ -95,7 +95,8 @@ cd /opt/dify/docker;mv .env.example .env
 cd /tmp;wget -q https://unovie.ai/docs/assets/docker-compose.yaml;mv /tmp/docker-compose.yaml /opt/dify/docker/
 echo ".....bringing docker-compose up from /opt/dify/docker"
 cd /opt/dify/docker;docker-compose up -d
-sleep 5
+echo "...waiting for database initalization"
+sleep 10
 echo ".....downloading ai-models for ollama"
 docker exec ollama ollama pull all-minilm:l6-v2
 docker exec ollama ollama pull gemma2:2b-instruct-q2_K
@@ -121,12 +122,18 @@ echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
 fix_perms
 echo "...installing ollama and dify"
-add_ollama_dify 2>&1 >>$LOG_FILE
+add_ollama_dify 
 fix_perms
-echo "-----------------"
+echo "------------------------------------------------------------------"
 echo "Installation done"
-echo "-----------------"
+echo "------------------------------------------------------------------"
 echo "login id: $USERNAME password: $PASSWORD"
 echo "once logged in follow /opt/readme.txt for further instructions"
 echo "Please refer to documentation on https://unovie.ai/docs"
 echo "DIFY instance can be accessed on https://<WSL2-ip>"
+echo " "
+echo "Configure DIFY for these Models"
+echo " .... text-embedding : all-minilm:l6-v2"
+echo " .... chat : uv-gemma2"
+echo " .... server : http://ollama:11434"
+echo "------------------------------------------------------------------"
