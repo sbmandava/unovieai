@@ -66,7 +66,7 @@ apt-get remove -y podman-docker podman-compose
 apt-get install -y docker.io  
 apt-get install -y python3-distutils-extra
 cd /tmp
-wget https://github.com/docker/compose/releases/download/v2.29.2/docker-compose-linux-x86_64
+wget -q https://github.com/docker/compose/releases/download/v2.29.2/docker-compose-linux-x86_64
 mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 }
@@ -75,7 +75,7 @@ add_anaconda()
 {
 ## Install Anaconda 
 cd $mytmp
-wget https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+wget -q https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
 chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
 ./Anaconda3-2024.06-1-Linux-x86_64.sh -p /opt/conda -b
 echo "source /opt/conda/etc/profile.d/conda.sh" > /opt/python.env
@@ -124,4 +124,4 @@ echo "-----------------"
 echo "login id: $USERNAME password: $PASSWORD"
 echo "once logged in follow /opt/readme.txt for further instructions"
 echo "Please refer to documentation on https://unovie.ai/docs"
-
+echo "DIFY instance can be accessed on https://<WSL2-ip>
