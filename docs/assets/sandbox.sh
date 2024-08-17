@@ -23,9 +23,9 @@ else
   exit 1
 fi
 
-# Check if the system has at least 4GB of memory
-if [ $(free -b | awk '/Mem:/ {print $2}') -lt 4024967296 ]; then
-  echo "Error: This script requires a system with at least 4GB of memory."
+# Check if the system has at least 8GB of memory
+if [ $(free -b | awk '/Mem:/ {print $2}') -lt 8024967296 ]; then
+  echo "Error: This script requires a system with at least 8GB of memory."
   exit 1
 fi
 
@@ -62,10 +62,17 @@ add_packages ()
 {
 apt-get -y update;apt-get -y upgrade
 apt-get install -y openssh-server wget curl git 
-apt-get install -y podman-docker podman-compose  
+apt-get remove -y podman-docker podman-compose  
+apt-get install -y docker.io  
 apt-get install -y python3-distutils-extra
+cd /tmp
+wget https://github.com/docker/compose/releases/download/v2.29.2/docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+}
 
-
+add_anaconda()
+{
 ## Install Anaconda 
 cd $mytmp
 wget https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
@@ -80,6 +87,15 @@ su - unovie -c "echo 'conda config --set auto_activate_base false' >> ~/.bashrc"
 su - unovie -c "echo 'conda activate unovie310' >> ~/.bashrc"
 }
 
+
+add_ollama_dify()
+{
+curl -fsSL https://ollama.com/install.sh | sh
+ollama run phi3:3.8b
+su - unovie -c "cd /opt;git clone https://github.com/langgenius/dify.git;"
+su - unovie -c "cd /opt/dify/docker;mv .env.example .env;docker-compose up -d"
+}
+
 fix_perms ()
 {
 cd /opt
@@ -92,7 +108,12 @@ chown -R unovie:unovie /opt/*
 echo "please..wait takes some time writing to logfile $LOG_FILE"
 check_capacity
 setup_user
+echo "...adding deb packages"
 add_packages 2>&1 >$LOG_FILE
+echo "...installing anaconda"
+add_anaconda 2>&1 >>$LOG_FILE
+echo "...installing ollama and dify"
+add_ollama_dify 2>&1 >>$LOG_FILE
 fix_perms
 echo "Installation done"
 echo "-----------------"
