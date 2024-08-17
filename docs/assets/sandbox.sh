@@ -91,14 +91,17 @@ su - unovie -c "echo 'conda activate unovie310' >> ~/.bashrc"
 add_ollama_dify()
 {
 curl -fsSL https://ollama.com/install.sh | sh
-ollama run phi3:3.8b
-su - unovie -c "cd /opt;git clone https://github.com/langgenius/dify.git;"
-su - unovie -c "cd /opt/dify/docker;mv .env.example .env;docker-compose up -d"
+sleep 5
+ollama pull phi3:3.8b
+cd /opt;git clone https://github.com/langgenius/dify.git;
+cd /opt/dify/docker;mv .env.example .env
+docker-compose up -d
 }
 
 fix_perms ()
 {
 cd /opt
+chown unovie:unovie /opt
 chown -R unovie:unovie /opt/*
 }
 
@@ -112,6 +115,7 @@ echo "...adding deb packages"
 add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
+fix_perms
 echo "...installing ollama and dify"
 add_ollama_dify 2>&1 >>$LOG_FILE
 fix_perms
