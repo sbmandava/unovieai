@@ -92,8 +92,11 @@ add_ollama_dify()
 {
 cd /opt;git clone https://github.com/langgenius/dify.git;
 cd /opt/dify/docker;mv .env.example .env
-cd /tmp;wget https://unovie.ai/docs/assets/docker-compose.yaml;mv /tmp/docker-compose.yaml /opt/dify/docker/
+cd /tmp;wget -q https://unovie.ai/docs/assets/docker-compose.yaml;mv /tmp/docker-compose.yaml /opt/dify/docker/
+echo ".....bringing docker-compose up from /opt/dify/docker"
 cd /opt/dify/docker;docker-compose up -d
+sleep 5
+echo ".....downloading ai-models for ollama"
 docker exec ollama ollama pull all-minilm:l6-v2
 docker exec ollama ollama pull gemma2:2b-instruct-q2_K
 docker exec ollama ollama cp gemma2:2b-instruct-q2_K uv-gemma2
@@ -120,6 +123,7 @@ fix_perms
 echo "...installing ollama and dify"
 add_ollama_dify 2>&1 >>$LOG_FILE
 fix_perms
+echo "-----------------"
 echo "Installation done"
 echo "-----------------"
 echo "login id: $USERNAME password: $PASSWORD"
