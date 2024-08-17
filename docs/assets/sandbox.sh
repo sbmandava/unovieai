@@ -108,6 +108,7 @@ fix_perms ()
 cd /opt
 chown unovie:unovie /opt
 chown -R unovie:unovie /opt/*
+chown -R root:root /opt/dify/docker/volumes/*
 }
 
 

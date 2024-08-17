@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://unovie.ai/docs/setup/dify/</loc>
+         <lastmod>2024-08-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://unovie.ai/docs/setup/linux-sandbox/</loc>
          <lastmod>2024-08-17</lastmod>
          <changefreq>daily</changefreq>
