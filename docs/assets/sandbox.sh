@@ -121,7 +121,7 @@ echo "...adding deb packages"
 add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
-fix_perms
+# fix_perms  ## need to check it later..
 echo "...installing ollama and dify"
 add_ollama_dify 
 fix_perms
