@@ -94,6 +94,7 @@ cd /opt;git clone https://github.com/langgenius/dify.git;
 cd /opt/dify/docker;mv .env.example .env
 cd /tmp;wget -q https://unovie.ai/docs/assets/docker-compose.yaml;mv /tmp/docker-compose.yaml /opt/dify/docker/
 echo ".....bringing docker-compose up from /opt/dify/docker"
+chown -R root:root /opt/dify/docker/volumes/*
 cd /opt/dify/docker;docker-compose up -d
 echo "...waiting for database initalization"
 sleep 10
@@ -101,6 +102,8 @@ echo ".....downloading ai-models for ollama"
 docker exec ollama ollama pull all-minilm:l6-v2
 docker exec ollama ollama pull gemma2:2b-instruct-q2_K
 docker exec ollama ollama cp gemma2:2b-instruct-q2_K uv-gemma2
+docker exec ollama ollama pull phi3.5:3.8b-mini-instruct-q2_K
+docker exec ollama ollama cp phi3.5:3.8b-mini-instruct-q2_K uv-phi35
 }
 
 fix_perms ()
@@ -108,7 +111,6 @@ fix_perms ()
 cd /opt
 chown unovie:unovie /opt
 chown -R unovie:unovie /opt/*
-chown -R root:root /opt/dify/docker/volumes/*
 }
 
 
@@ -121,10 +123,9 @@ echo "...adding deb packages"
 add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
-# fix_perms  ## need to check it later..
+fix_perms  ## need to check it later..
 echo "...installing ollama and dify"
 add_ollama_dify 
-fix_perms
 echo "------------------------------------------------------------------"
 echo "Installation done"
 echo "------------------------------------------------------------------"
