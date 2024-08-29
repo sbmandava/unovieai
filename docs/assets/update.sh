@@ -42,8 +42,10 @@ echo "System meets all requirements. Proceeding..."
 add_postgresml()
 {
 mkdir /tmp/update.v1
+cd /tmp/update.v1
 wget https://unovie.ai/docs/assets/updates.v1.tgz
 tar -xvzf updates.v1.tgz
+cd updates
 mv tools /opt
 mv postgresml /opt
 cd /tmp
