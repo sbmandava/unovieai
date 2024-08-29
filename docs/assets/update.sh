@@ -60,7 +60,7 @@ echo "------------------------------------------------------------------"
 echo "postgresml installed in /opt/postgresml"
 echo "tools installed in /opt/tools"
 echo " "
-echo "Going forward use start stop scripts in /opt/tools/
+echo "Going forward use start stop scripts in /opt/tools/"
 echo " "
 echo "Note : You may want to shutdown DIFY when running PGML"
 echo "and likewise the otherway around for better optimal performance"
