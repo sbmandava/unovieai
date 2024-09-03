@@ -488,6 +488,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#key-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Guidelines.
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -852,6 +861,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#key-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Guidelines.
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -893,20 +911,26 @@ clear
 bash &lt;(curl -s https://unovie.ai/docs/assets/stage-pgml.sh)
 </code></pre></div>
 <h3 id="accessing-pgml">Accessing PGML</h3>
-<p><em>PGML Web Interface</em> to manage project and experiments.</p>
+<p><strong>PGML Web Interface</strong> to manage project and experiments.</p>
 <ul>
-<li>"PGML GUI at http://<ip_vm>&gt;:9000"</ip_vm></li>
+<li>PGML GUI at http://<ip_vm>&gt;:9000</ip_vm></li>
 </ul>
-<p><em>PGAdmin4</em> : Allows you manage the database server like allowing you to create your own database.</p>
+<p><strong>PGAdmin4</strong> : Allows you manage the database server like allowing you to create your own database.</p>
 <ul>
-<li>"PGAdmin GUI at http://<ip_vm>&gt;:9080"</ip_vm></li>
-<li>"id : admin<a class="gh-link gh-mention" href="https://github.com/unovie" title="GitHub User: @unovie">@unovie</a>.com password:unovie2024"</li>
+<li>PGAdmin GUI at http://<ip_vm>&gt;:9080</ip_vm></li>
+<li>id:admin<a class="gh-link gh-mention" href="https://github.com/unovie" title="GitHub User: @unovie">@unovie</a>.com password:unovie2024</li>
 </ul>
-<p>To connect to PostGresML server from PGAdmin4  </p>
+<p><strong>Connect to PostGresML</strong> server from PGAdmin4  </p>
 <ul>
-<li>host:postgres_ml port:5432 db:postgresml user:postgresml"</li>
+<li>host:postgres_ml port:5432 db:postgresml user:postgresml</li>
 </ul>
-<p>Note : This will not install any DIFY tools, as it is only meant to run real AI/ML workloads.</p></div>
+<h3 id="key-guidelines">Key Guidelines.</h3>
+<ul>
+<li>Given that postgresML already installs Postgres database, create other databases as needed to support the manufacturing business usecases. </li>
+<li>The id and passwords shared here are only in sandboxes and staging. Real production environments are completely locked down for security.</li>
+<li>Make sure you follow strict ACL policies when accessing databases with permissions.  </li>
+<li>This will not install any DIFY tools, as server is only meant to run real AI/ML workloads. </li>
+</ul></div>
 
 
 
