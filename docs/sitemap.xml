@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://unovie.ai/docs/setup/stage-pgml/</loc>
+         <lastmod>2024-09-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://unovie.ai/docs/setup/wsl2-sandbox/</loc>
          <lastmod>2024-09-03</lastmod>
          <changefreq>daily</changefreq>
