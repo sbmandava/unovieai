@@ -94,6 +94,8 @@ cd /tmp/update.v1
 wget https://unovie.ai/docs/assets/updates.v1.tgz
 tar -xvzf updates.v1.tgz
 cd updates
+mkdir /opt/tools
+mkdir /opt/postgresml
 cp tools/* /opt/tools/
 cp postgresml/* /opt/postgresml
 cd /tmp
