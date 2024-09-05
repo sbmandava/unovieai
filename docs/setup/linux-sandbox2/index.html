@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://unovie.ai/docs/setup/stage-pgml/">
+        <link rel="canonical" href="https://unovie.ai/docs/setup/linux-sandbox2/">
       
       
-        <link rel="prev" href="../dify/">
-      
-      
-        <link rel="next" href="../../training/market-analyst/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Stage pgml - unovie.ai/docs</title>
+        <title>Linux sandbox2 - unovie.ai/docs</title>
       
     
     
@@ -150,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stage pgml
+              Linux sandbox2
             
           </span>
         </div>
@@ -298,19 +294,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -324,7 +318,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             sdk-setup
@@ -398,114 +392,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Stage pgml
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../stage-pgml.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stage pgml
+    None
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stage-pgml-sandbox-setup-for-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stage PGML Sandbox Setup for Linux
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stage PGML Sandbox Setup for Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hardware-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hardware Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operating-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      Operating System
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Script
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accessing-pgml" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accessing PGML
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-guidelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Guidelines.
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -862,6 +760,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#korvus-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Korvus Install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#key-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
       Key Guidelines.
@@ -890,7 +797,7 @@
                   
 
 
-  <h1>Stage pgml</h1>
+  <h1>Linux sandbox2</h1>
 
 <div><h2 id="stage-pgml-sandbox-setup-for-linux">Stage PGML Sandbox Setup for Linux</h2>
 <p>The instructions are very simple. </p>
@@ -908,7 +815,7 @@
 <h3 id="installation-script">Installation Script</h3>
 <div class="highlight"><pre><span></span><code>apt-get -y -qq install curl
 clear
-bash &lt;(curl -s https://unovie.ai/docs/assets/stage-pgml.sh)
+bash &lt;(curl -s https://unovie.ai/docs/assets/sandbox2.sh)
 </code></pre></div>
 <h3 id="accessing-pgml">Accessing PGML</h3>
 <p><strong>PGML Web Interface</strong> to manage project and experiments.</p>
@@ -921,8 +828,34 @@ bash &lt;(curl -s https://unovie.ai/docs/assets/stage-pgml.sh)
 <li>id:admin<a class="gh-link gh-mention" href="https://github.com/unovie" title="GitHub User: @unovie">@unovie</a>.com password:unovie2024</li>
 </ul>
 <p><strong>Connect to PostGresML</strong> server from PGAdmin4  </p>
+<p>Add new Server &gt;
+    General &gt; name : postgresml_server
+    connection &gt; Hostname : postgres_ml
+    connection &gt; username : postgresml
+    connection &gt; password : postgresml
+    Save</p>
+<h3 id="korvus-install">Korvus Install</h3>
+<p><strong>Step 1)</strong> Setup a project and initialize it conda</p>
+<div class="highlight"><pre><span></span><code>source /opt/conda/etc/profile.d/conda.sh
+conda create -n project1 python=3.10 -y
+conda activate project1
+pip install korvus
+mkdir /opt/project1
+mkdir /opt/project1/src
+mkdir /opt/project1/docker
+cd /opt/project1/
+git init .   # let's try setting up a central git repo branch you can sync
+python -v  # prints Python 3.10.14
+</code></pre></div>
+<p><strong>Step 2)</strong> Going forward follow Korus Documentation Examples</p>
 <ul>
-<li>host:postgres_ml port:5432 db:postgresml user:postgresml</li>
+<li>Write all your python programs in /opt/project1/src</li>
+<li>Eventually we will build Dockerfile to create container with your python program</li>
+<li>If you wish to connect to <ul>
+<li>postgresml database IP: 127.0.0.1 port:9432 id:postgresml password:postgresml</li>
+<li>or create any new database and use the same port with it's own id and passwords </li>
+</ul>
+</li>
 </ul>
 <h3 id="key-guidelines">Key Guidelines.</h3>
 <ul>
@@ -963,44 +896,6 @@ bash &lt;(curl -s https://unovie.ai/docs/assets/stage-pgml.sh)
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../dify/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GEN-AI DIFY Dev platform with Ollama">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                GEN-AI DIFY Dev platform with Ollama
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../training/market-analyst/" class="md-footer__link md-footer__link--next" aria-label="Next: Market analyst">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Market analyst
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
