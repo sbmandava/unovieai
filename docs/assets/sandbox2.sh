@@ -79,29 +79,26 @@ wget -q https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
 chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
 ./Anaconda3-2024.06-1-Linux-x86_64.sh -p /opt/conda -b
 echo "source /opt/conda/etc/profile.d/conda.sh" > /opt/python.env
-echo "docker run -d -p 3000:3000  ghcr.io/eclipse-theia/theia-blueprint/theia-ide:1.52.0" > /opt/web-ide.sh
 chmod +x /opt/web-ide.sh
-su - unovie -c "source /opt/python.env;conda create -y -n unovie310 python=3.10"
-su - unovie -c "echo 'source /opt/python.env' >> ~/.bashrc"
-su - unovie -c "echo 'conda config --set auto_activate_base false' >> ~/.bashrc"
-su - unovie -c "echo 'conda activate unovie310' >> ~/.bashrc"
 }
 
-add_postgresml()
+add_sandbox2()
 {
-mkdir /tmp/update.v1
-cd /tmp/update.v1
-wget https://unovie.ai/docs/assets/updates.v1.tgz
-tar -xvzf updates.v1.tgz
+mkdir /tmp/update.v2
+cd /tmp/update.v2
+wget https://unovie.ai/docs/assets/updates.v2.tgz
+tar -xvzf updates.v2.tgz
 cd updates
 mkdir /opt/tools
-mkdir /opt/postgresml
+mkdir /opt/sandbox2
+mkdir /opt/project
+chmod 777 /opt/project
 cp tools/* /opt/tools/
-cp postgresml/* /opt/postgresml
-cd /opt/postgresml
+cp sandbox2/* /opt/sandbox2
+cd /opt/sandbox2
 docker-compose pull
 cd /tmp
-rm -rf /tmp/update.v1
+rm -rf /tmp/update.v2
 }
 
 
@@ -116,16 +113,17 @@ add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
 echo "...installing pgml"
-add_postgresml
+add_sandbox2
+ipa=`hostname -I`
 
 echo "------------------------------------------------------------------"
-echo "Installation done"
+echo "Installation done for sandbox2"
 echo "------------------------------------------------------------------"
-echo "login id: $USERNAME password: $PASSWORD"
-echo "once logged in follow /opt/readme.txt for further instructions"
-echo "Please refer to documentation on https://unovie.ai/docs"
+echo " Softare Installed : postgres, postgresml, pgadmin4, web-ide
+echo "------------------------------------------------------------------"
+echo "Open Browser and access VM http://ip_address"
+echo "Known IP address for this VM is : $ipa"
 echo " "
-echo "------------------------------------------------------------------"
-echo "postgresml installed in /opt/postgresml"
-echo "start-stop tools installed in /opt/tools"
+echo "Please refer to documentation for any specific details like account id"
+echo "       https://unovie.ai/docs/setup/linux-sandbox2/"
 echo "------------------------------------------------------------------"
