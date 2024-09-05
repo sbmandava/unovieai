@@ -98,6 +98,8 @@ mkdir /opt/tools
 mkdir /opt/postgresml
 cp tools/* /opt/tools/
 cp postgresml/* /opt/postgresml
+cd /opt/postgresml
+docker-compose pull
 cd /tmp
 rm -rf /tmp/update.v1
 }
