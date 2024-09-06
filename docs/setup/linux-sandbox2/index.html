@@ -508,6 +508,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#git-setup-via-terminal-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      GIT Setup via Terminal Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pgadmin4" class="md-nav__link">
     <span class="md-ellipsis">
       PGAdmin4
@@ -941,6 +950,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#git-setup-via-terminal-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      GIT Setup via Terminal Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pgadmin4" class="md-nav__link">
     <span class="md-ellipsis">
       PGAdmin4
@@ -1053,6 +1071,13 @@ WebIDE container comes with all the required python versions required.</p>
 <p>To connect it to it using terminal access</p>
 <div class="highlight"><pre><span></span><code>docker exec -it webide /bin/bash
 cd /home/project/pallete-tracking
+</code></pre></div>
+<h4 id="git-setup-via-terminal-access">GIT Setup via Terminal Access</h4>
+<p>Following are Instructions to setup git for pallete tracking </p>
+<div class="highlight"><pre><span></span><code>docker exec -it webide /bin/bash
+cd /home/project
+gh auth login
+gh repo clone unovie-ai/pallete-tracking
 </code></pre></div>
 <h4 id="pgadmin4">PGAdmin4</h4>
 <p>PG Admin4 is a the web interface for Postgres database.</p>
