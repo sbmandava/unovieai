@@ -119,7 +119,7 @@ ipa=`hostname -I`
 echo "------------------------------------------------------------------"
 echo "Installation done for sandbox2"
 echo "------------------------------------------------------------------"
-echo " Softare Installed : postgres, postgresml, pgadmin4, web-ide
+echo " Softare Installed : postgres, postgresml, pgadmin4, web-ide"
 echo "------------------------------------------------------------------"
 echo "Open Browser and access VM http://ip_address"
 echo "Known IP address for this VM is : $ipa"

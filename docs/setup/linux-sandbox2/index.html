@@ -489,27 +489,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#accessing-pgml" class="md-nav__link">
+  <a href="#web-accessing" class="md-nav__link">
     <span class="md-ellipsis">
-      Accessing PGML
+      Web Accessing
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#korvus-install" class="md-nav__link">
+  <a href="#general-guidance" class="md-nav__link">
     <span class="md-ellipsis">
-      Korvus Install
+      General Guidance
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-database-guidelines" class="md-nav__link">
+  <a href="#reinstall-on-existing-vm" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Database Guidelines.
+      Reinstall on existing VM
     </span>
   </a>
   
@@ -880,27 +880,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#accessing-pgml" class="md-nav__link">
+  <a href="#web-accessing" class="md-nav__link">
     <span class="md-ellipsis">
-      Accessing PGML
+      Web Accessing
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#korvus-install" class="md-nav__link">
+  <a href="#general-guidance" class="md-nav__link">
     <span class="md-ellipsis">
-      Korvus Install
+      General Guidance
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-database-guidelines" class="md-nav__link">
+  <a href="#reinstall-on-existing-vm" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Database Guidelines.
+      Reinstall on existing VM
     </span>
   </a>
   
@@ -932,87 +932,100 @@
 <p>The instructions are very simple. 
 Incase your setting up a dedicated server VM instance to run PGML.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<ul>
-<li>Memory 16GB</li>
-<li>CPU : 4 cores.</li>
-<li>Storage 100GB (Make sure the Storage is using SSD drive, else PostgresML has performance issues.</li>
-</ul>
+<div class="highlight"><pre><span></span><code>Memory 16GB
+CPU : 4 cores.
+Storage 100GB 
+  (Make sure the Storage is using SSD drive, else PostgresML has performance issues.
+</code></pre></div>
 <h3 id="operating-system">Operating System</h3>
-<ul>
-<li>Install Ubuntu Server 24.04 LTS</li>
-</ul>
+<p>Install Ubuntu Server 24.04 LTS</p>
 <h3 id="installation-script">Installation Script</h3>
 <div class="highlight"><pre><span></span><code>apt-get -y -qq install curl
 clear
 bash &lt;(curl -s https://unovie.ai/docs/assets/sandbox2.sh)
 </code></pre></div>
 <h3 id="starting-server">starting server</h3>
-<div class="highlight"><pre><span></span><code>cd /opt/postgresml
+<div class="highlight"><pre><span></span><code>cd /opt/sandbox2
 docker-compose up -d
 docker-compose ps  # to see the docker containers
 docker-compose logs # to see the logs, use -f to follow logs.
 </code></pre></div>
 <p>First time will take time for postgresml to initialize. Wait for few minutes for Tables and Plugins to be loaded, check docker logs.</p>
-<h3 id="accessing-pgml">Accessing PGML</h3>
-<p><strong>PGML Web Interface</strong> to manage project and experiments.</p>
+<h3 id="web-accessing">Web Accessing</h3>
+<p><strong>Web-IDE</strong></p>
+<p>http://vm_ip_address  (port 80)</p>
+<p>It's a vscode editor built with theia.</p>
+<p>Features :</p>
 <ul>
-<li>PGML GUI at http://ip_vm:9000</li>
+<li>Code Editor </li>
+<li>Access to Terminal </li>
+<li>Python 3.11 built in.</li>
+<li>Korvus Python Library</li>
+<li>GIT Commands</li>
 </ul>
-<p><strong>PGAdmin4</strong> : Allows you manage the database server like allowing you to create your own database.</p>
-<ul>
-<li>PGAdmin GUI at http://ip_vm:9080</li>
-<li>id:admin<a class="gh-link gh-mention" href="https://github.com/unovie" title="GitHub User: @unovie">@unovie</a>.com password:unovie2024</li>
-</ul>
-<p><strong>Connect to PostGresML</strong> server from PGAdmin4  </p>
-<p>Add new Server &gt;</p>
-<pre><code>General &gt; name : postgresml_server
-connection &gt; Hostname : postgres_ml
-connection &gt; username : postgresml
-connection &gt; password : postgresml
-Save
-</code></pre>
-<p><a class="glightbox" href="../../assets/pgml_connection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PGML_Connection" src="../../assets/pgml_connection.png"></a></p>
-<p>Once Connected you should see you databases via GUI</p>
-<p><a class="glightbox" href="../../assets/pgadmin4_connect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PGML_Connected" src="../../assets/pgadmin4_connect.png"></a></p>
-<h3 id="korvus-install">Korvus Install</h3>
-<p><strong>Step 1)</strong> Setup a project and initialize it conda</p>
-<div class="highlight"><pre><span></span><code>source /opt/conda/etc/profile.d/conda.sh
-conda create -n project1 python=3.10 -y
-conda activate project1
-pip install korvus
-mkdir /opt/project1
-mkdir /opt/project1/src
-mkdir /opt/project1/docker
-cd /opt/project1/
-git init .   # let's try setting up a central git repo branch you can sync
-python -v  # prints Python 3.10.14
+<p><strong>Developer Terminal Access</strong></p>
+<p>Sometimes you wanted to use ssh into terminal and code or run long running programs.
+WebIDE container comes with all the required python versions required.</p>
+<p>To connect it to it using terminal access</p>
+<div class="highlight"><pre><span></span><code>docker exec -it webide /bin/bash
+cd /home/project/pallete-tracking
 </code></pre></div>
-<p><strong>Step 2)</strong> Going forward follow Korus Documentation Examples</p>
+<p><strong>PGAdmin4</strong> </p>
+<p>PG Admin4 is a the web interface for Postgres database.</p>
+<p>http://vm_ip_address:88  (port 88)</p>
+<p>Features :</p>
 <ul>
-<li>Write all your python programs in /opt/project1/src</li>
-<li>
-<p>Ensure you activate your conda environment
-</p><div class="highlight"><pre><span></span><code>source /opt/conda/etc/profile.d/conda.sh
-conda activate project1
-python -v  # prints Python 3.10.14
+<li>Connect to any database server</li>
+<li>Access Databases, Tables.</li>
+<li>Write SQL Queries and Execute them</li>
+<li>Create new databases.</li>
+<li>Access PostgresML database and see inner workings</li>
+</ul>
+<p>Authentication : 
+   - id:admin<a class="gh-link gh-mention" href="https://github.com/unovie" title="GitHub User: @unovie">@unovie</a>.com password:unovie2024</p>
+<p>Add new Server &gt;
+</p><div class="highlight"><pre><span></span><code>    General &gt; name : postgresml_server
+    connection &gt; Hostname : postgres_ml
+    connection &gt; username : postgresml
+    connection &gt; password : postgresml
+    Save
 </code></pre></div>
-</li>
-<li>
-<p>Eventually we will build Dockerfile to create container with your python program</p>
-</li>
-<li>If you wish to connect to postgresml database using connection string.<ul>
-<li>IP: 127.0.0.1 port:9432 id:postgresml password:postgresml</li>
-<li>or create any new database and use the same port with it's own id and passwords </li>
-</ul>
-</li>
-</ul>
-<h3 id="key-database-guidelines">Key Database Guidelines.</h3>
+<a class="glightbox" href="../../assets/pgml_connection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PGML_Connection" src="../../assets/pgml_connection.png"></a>
+<a class="glightbox" href="../../assets/pgadmin4_connect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PGML_Connected" src="../../assets/pgadmin4_connect.png"></a>
+<p><strong>PGML Notebook Web Interface</strong> </p>
+<p>PostgresML Web Interface.</p>
+<p>http://vm_ip_address:8000  (port 8000)</p>
+<p>Features :</p>
 <ul>
+<li>Add or Execute Jupyter Notebooks</li>
+<li>Run Analytical Results and see the responses.</li>
+</ul>
+<p><strong>PSQL</strong> </p>
+<p>Postgres SQL Command line interface </p>
+<p>vm_ip_address port: 5432 </p>
+<div class="highlight"><pre><span></span><code>apt-get install postgresql-client
+psql -h 127.0.0.1 -p 5432 -U postgresml -w postgresml
+</code></pre></div>
+<h3 id="general-guidance">General Guidance</h3>
+<ul>
+<li>Write all your python programs using web-ide in /home/project/</li>
+<li>Eventually we will build Dockerfile to create container with your python program</li>
 <li>Given that postgresML already installs Postgres database, create other databases as needed to support the manufacturing business usecases. </li>
 <li>The id and passwords shared here are only in sandboxes and staging. Real production environments are completely locked down for security.</li>
 <li>Make sure you follow strict ACL policies when accessing databases with permissions.  </li>
 <li>This will not install any DIFY tools, as server is only meant to run real AI/ML workloads. </li>
-</ul></div>
+</ul>
+<h3 id="reinstall-on-existing-vm">Reinstall on existing VM</h3>
+<p>If you happen to already have prior version running follow this cleanup </p>
+<div class="highlight"><pre><span></span><code>cd /opt/postgresml
+docker-compose stop
+cd /opt
+rm -rf postgresml
+rm -rf tools
+docker system prune        
+docker system prune --volumes
+bash &lt;(curl -s https://unovie.ai/docs/assets/sandbox2.sh)
+</code></pre></div></div>
 
 
 
