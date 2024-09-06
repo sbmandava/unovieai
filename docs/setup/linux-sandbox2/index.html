@@ -1074,11 +1074,19 @@ cd /home/project/pallete-tracking
 </code></pre></div>
 <h4 id="git-setup-via-terminal-access">GIT Setup via Terminal Access</h4>
 <p>Following are Instructions to setup git for pallete tracking </p>
-<div class="highlight"><pre><span></span><code>docker exec -it webide /bin/bash
+<p>requires you get github token for authentication at
+https://github.com/settings/tokens</p>
+<div class="highlight"><pre><span></span><code>Generate new token (classic)
+Give requried permissions to read/write to repos
+Copy the generated token into local file.
+</code></pre></div>
+<p>At Terminal</p>
+<p></p><div class="highlight"><pre><span></span><code>docker exec -it webide /bin/bash
 cd /home/project
 gh auth login
 gh repo clone unovie-ai/pallete-tracking
 </code></pre></div>
+<a class="glightbox" href="../../assets/gh_auth.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gh-auth" src="../../assets/gh_auth.png"></a>
 <h4 id="pgadmin4">PGAdmin4</h4>
 <p>PG Admin4 is a the web interface for Postgres database.</p>
 <p>http://vm_ip_address:88  (port 88)</p>
