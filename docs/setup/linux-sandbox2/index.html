@@ -486,14 +486,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="starting server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web-IDE
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#web-accessing" class="md-nav__link">
+  <a href="#developer-terminal-access" class="md-nav__link">
     <span class="md-ellipsis">
-      Web Accessing
+      Developer Terminal Access
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgadmin4" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGAdmin4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgml-notebook-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGML Notebook Web Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psql" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -877,14 +919,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="starting server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web-IDE
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#web-accessing" class="md-nav__link">
+  <a href="#developer-terminal-access" class="md-nav__link">
     <span class="md-ellipsis">
-      Web Accessing
+      Developer Terminal Access
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgadmin4" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGAdmin4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgml-notebook-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGML Notebook Web Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psql" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -951,8 +1035,7 @@ docker-compose ps  # to see the docker containers
 docker-compose logs # to see the logs, use -f to follow logs.
 </code></pre></div>
 <p>First time will take time for postgresml to initialize. Wait for few minutes for Tables and Plugins to be loaded, check docker logs.</p>
-<h3 id="web-accessing">Web Accessing</h3>
-<p><strong>Web-IDE</strong></p>
+<h4 id="web-ide">Web-IDE</h4>
 <p>http://vm_ip_address  (port 80)</p>
 <p>It's a vscode editor built with theia.</p>
 <p>Features :</p>
@@ -963,14 +1046,14 @@ docker-compose logs # to see the logs, use -f to follow logs.
 <li>Korvus Python Library</li>
 <li>GIT Commands</li>
 </ul>
-<p><strong>Developer Terminal Access</strong></p>
+<h4 id="developer-terminal-access">Developer Terminal Access</h4>
 <p>Sometimes you wanted to use ssh into terminal and code or run long running programs.
 WebIDE container comes with all the required python versions required.</p>
 <p>To connect it to it using terminal access</p>
 <div class="highlight"><pre><span></span><code>docker exec -it webide /bin/bash
 cd /home/project/pallete-tracking
 </code></pre></div>
-<p><strong>PGAdmin4</strong> </p>
+<h4 id="pgadmin4">PGAdmin4</h4>
 <p>PG Admin4 is a the web interface for Postgres database.</p>
 <p>http://vm_ip_address:88  (port 88)</p>
 <p>Features :</p>
@@ -992,7 +1075,7 @@ cd /home/project/pallete-tracking
 </code></pre></div>
 <a class="glightbox" href="../../assets/pgml_connection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PGML_Connection" src="../../assets/pgml_connection.png"></a>
 <a class="glightbox" href="../../assets/pgadmin4_connect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PGML_Connected" src="../../assets/pgadmin4_connect.png"></a>
-<p><strong>PGML Notebook Web Interface</strong> </p>
+<h4 id="pgml-notebook-web-interface">PGML Notebook Web Interface</h4>
 <p>PostgresML Web Interface.</p>
 <p>http://vm_ip_address:8000  (port 8000)</p>
 <p>Features :</p>
@@ -1000,7 +1083,7 @@ cd /home/project/pallete-tracking
 <li>Add or Execute Jupyter Notebooks</li>
 <li>Run Analytical Results and see the responses.</li>
 </ul>
-<p><strong>PSQL</strong> </p>
+<h4 id="psql">PSQL</h4>
 <p>Postgres SQL Command line interface </p>
 <p>vm_ip_address port: 5432 </p>
 <div class="highlight"><pre><span></span><code>apt-get install postgresql-client
