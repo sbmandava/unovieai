@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://unovie.ai/docs/setup/dify/">
+        <link rel="canonical" href="https://unovie.ai/docs/training/streaming/">
       
       
-        <link rel="prev" href="../linux-sandbox/">
+        <link rel="prev" href="../postgresML/">
       
       
-        <link rel="next" href="../linux-sandbox2/">
+        <link rel="next" href="../../domains/manufacturing/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>GEN-AI DIFY Dev platform with Ollama - unovie.ai/docs</title>
+        <title>Streaming - unovie.ai/docs</title>
       
     
     
@@ -114,11 +114,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#gen-ai-dify-dev-platform-with-ollama" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -150,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GEN-AI DIFY Dev platform with Ollama
+              Streaming
             
           </span>
         </div>
@@ -298,19 +293,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -324,7 +317,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             sdk-setup
@@ -338,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl2-sandbox/" class="md-nav__link">
+      <a href="../../setup/wsl2-sandbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -359,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux-sandbox/" class="md-nav__link">
+      <a href="../../setup/linux-sandbox/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -377,30 +370,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    GEN-AI DIFY Dev platform with Ollama
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../setup/dify/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -409,53 +382,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dify-gen-ai-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      DIFY GEN-AI Framework
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ollama-llm-api-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ollama LLM API Server
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-dify-to-use-ollama-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring DIFY to use OLLAMA models
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -468,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux-sandbox2/" class="md-nav__link">
+      <a href="../../setup/linux-sandbox2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -493,17 +419,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -517,7 +445,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             training
@@ -531,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/market-analyst/" class="md-nav__link">
+      <a href="../market-analyst/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -552,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/about-unovie/" class="md-nav__link">
+      <a href="../about-unovie/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -573,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/ai-evolution/" class="md-nav__link">
+      <a href="../ai-evolution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/embeddings-transformers/" class="md-nav__link">
+      <a href="../embeddings-transformers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -615,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/dify-sandbox-project/" class="md-nav__link">
+      <a href="../dify-sandbox-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -636,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../training/postgresML/" class="md-nav__link">
+      <a href="../postgresML/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,10 +582,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../training/streaming/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -666,6 +601,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -800,43 +736,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dify-gen-ai-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      DIFY GEN-AI Framework
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ollama-llm-api-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ollama LLM API Server
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-dify-to-use-ollama-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring DIFY to use OLLAMA models
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -851,72 +750,55 @@
                   
 
 
-<div><h1 id="gen-ai-dify-dev-platform-with-ollama">GEN-AI DIFY Dev platform with Ollama</h1>
-<h2 id="dify-gen-ai-framework">DIFY GEN-AI Framework</h2>
-<p>Dify is an open-source LLM app development platform. Orchestrate LLM apps from agents to complex AI workflows, with an RAG engine.</p>
-<p>More production-ready than LangChain.</p>
-<p>You can find more information about </p>
-<p><a href="https://docs.dify.ai/">DIFY at there website</a></p>
-<p><a href="https://dify.ai/blog">DIFY Blogs</a></p>
-<h2 id="ollama-llm-api-server">Ollama LLM API Server</h2>
-<p>Ollama is API Server compatible with OPENAI clients and allows you to run local LLM models   </p>
-<p>Run Llama 3.1, Phi 3, Mistral, Gemma 2, and other models. Customize and create your own</p>
-<p>Read more about it at </p>
-<p><a href="https://ollama.com/blog">Ollama Blog</a></p>
-<p><a href="https://ollama.com/library">Ollama Models</a></p>
-<p>For the sandbox we already downloaded and installed ollama in docker container and it's part of DIFY docker-compose.</p>
-<p>Also we downloaded 2 models in it.</p>
+  <h1>Streaming</h1>
+
+<div><p><strong>System Overview</strong></p>
+<ol>
+<li><strong>Data Source:</strong> Your PLC/SCADA system acts as the data source, providing real-time and historical process data.</li>
+<li><strong>OPC-UA Server:</strong> An OPC-UA server acts as an intermediary, exposing your PLC/SCADA data through a standardized protocol.</li>
+<li><strong>Kafka (Red Panda):</strong> A high-throughput messaging system like Red Panda ingests data from the OPC-UA server.</li>
+<li><strong>RisingWave (Real-Time Feature Engineering):</strong> RisingWave processes the data stream in real-time, performing feature engineering operations to create relevant features for training.</li>
+<li><strong>TinyML (On-Device Training):</strong>  TinyML tools are used to train the Small Language Model (PHI-3) on the engineered features. This training could occur on edge devices (e.g., industrial gateways) for localized model updates.</li>
+</ol>
+<p><strong>Python Code Snippets (Illustrative)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example 1: Data Ingestion from OPC-UA Server (Conceptual)</span>
+<span class="kn">import</span> <span class="nn">opcua</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">opcua</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s2">"opc.tcp://&lt;PLC_IP_ADDRESS&gt;"</span><span class="p">)</span>
+<span class="c1"># ... Connect to server, browse data nodes, read values</span>
+
+<span class="c1"># Example 2: Feature Engineering in RisingWave (Conceptual)</span>
+<span class="kn">from</span> <span class="nn">risingwave</span> <span class="kn">import</span> <span class="n">RWQuery</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">RWQuery</span><span class="p">(</span><span class="s2">"SELECT temperature, pressure, time_stamp FROM sensor_data"</span><span class="p">)</span> 
+<span class="c1"># ... Define feature calculations (e.g., rolling averages, ratios)</span>
+
+<span class="c1"># Example 3: TinyML Training (Conceptual)</span>
+<span class="kn">from</span> <span class="nn">tinyml</span> <span class="kn">import</span> <span class="n">Trainer</span>
+<span class="c1"># ... Load pre-trained PHI-3 model</span>
+<span class="c1"># ... Feed engineered features into the trainer for fine-tuning</span>
+</code></pre></div>
+<p><strong>Working Inputs and Outputs</strong></p>
 <ul>
-<li>text-embedding : all-minilm:l6-v2</li>
-<li>chat : gemma2:2b-instruct-q2_K (alias uv-gemma2)</li>
+<li>
+<p><strong>Input (PLC/SCADA):</strong> Sensor readings (temperature, pressure, flow rate, motor speed, etc.), timestamps, event logs.</p>
+</li>
+<li>
+<p><strong>Output (Fine-Tuned Model):</strong></p>
+<ul>
+<li>A custom PHI-3 model that understands the specific context of your manufacturing environment.</li>
+<li>The model can generate predictions (e.g., equipment failure risk, optimal process settings) or answer natural language questions about the manufacturing process.</li>
 </ul>
-<p>As the name says text-embedding models support creating of embeddings from provided text, and chat or completion models is gemma2, 2 Billion parameter model with instruct trained dataset and quantized for low memory requirements.</p>
-<p>Given the virtual machine memory limitations in the sandbox we will not load a larger memory.</p>
-<h2 id="configuring-dify-to-use-ollama-models">Configuring DIFY to use OLLAMA models</h2>
-<p>Following are instructions to configure DIFY to use the local LLM models, typically the DIFY examples are configured to OpenAI which requires special API-Token and Cost is involved.</p>
-<p>Open your browser and access the website on the VM IP address http://<wsl2-ip></wsl2-ip></p>
-<p>It should redirect you to create a admin userid and password for the first time. Once you finish that login into the Server using the id and password.</p>
-<p>On Login. Select the UserID Settings</p>
-<ul>
-<li>
-<p>User &gt; Settings<br>
-<a class="glightbox" href="../../assets/dify-user-settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/dify-user-settings.png"></a></p>
-</li>
-<li>
-<p>Settings &gt; Model Provider
-    <a class="glightbox" href="../../assets/dify-model-provider.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/dify-model-provider.png"></a></p>
-</li>
-<li>
-<p>From Models select &gt; Ollama Provider</p>
-<p>Select LLM
-  Model Name : uv-gemma2
-  Base URL : http://ollama:11434</p>
-<p><a class="glightbox" href="../../assets/ollama-dify.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/ollama-dify.png"></a></p>
-</li>
-<li>
-<p>Models &gt; Model Provider
-     Now you should see the model is available on the main settings menu.</p>
-<p><a class="glightbox" href="../../assets/dify-localmodel.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/dify-localmodel.png"></a></p>
-</li>
-<li>
-<p>Let's add one more embedding model using ollama itself.</p>
-<p>Click on Add model</p>
-<p>Select : Text Embeddings 
-Model Name : all-minilm:l6-v2
-Base URL : http://ollama:11434</p>
-<p><a class="glightbox" href="../../assets/ollama-text.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/ollama-text.png"></a></p>
-</li>
-<li>
-<p>If all goes well you should see 2 models under ollama</p>
-<p><a class="glightbox" href="../../assets/ollama-provider.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/ollama-provider.png"></a></p>
-</li>
-<li>
-<p>Now make these as default one for System Model Settings </p>
-<p><a class="glightbox" href="../../assets/ollama-systemmode.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../../assets/ollama-systemmode.png"></a></p>
 </li>
 </ul>
-<p>This should conclude setting up the models and your ready for workshop lab project.
-If you come across any issues report issue on Zulip support channel and we can figure out what went wrong.</p></div>
+<p><strong>Important Considerations</strong></p>
+<ul>
+<li><strong>Data Security and Privacy:</strong> Implement robust security measures to protect sensitive process data.</li>
+<li><strong>Data Quality:</strong> Ensure your data is accurate, consistent, and complete. Implement data validation and cleaning processes.</li>
+<li><strong>Feature Selection:</strong> Carefully select features that are relevant and informative for your specific use case.</li>
+<li><strong>Model Interpretability:</strong> Strive for models that are interpretable and explainable to operations teams.</li>
+<li><strong>Deployment and Monitoring:</strong> Deploy your models to edge devices or on-premises servers. Continuously monitor performance and retrain models as needed.</li>
+</ul></div>
 
 
 
@@ -954,7 +836,7 @@ If you come across any issues report issue on Zulip support channel and we can f
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../linux-sandbox/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux sandbox">
+          <a href="../postgresML/" class="md-footer__link md-footer__link--prev" aria-label="Previous: postgresML">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -964,20 +846,20 @@ If you come across any issues report issue on Zulip support channel and we can f
                 Previous
               </span>
               <div class="md-ellipsis">
-                Linux sandbox
+                postgresML
               </div>
             </div>
           </a>
         
         
           
-          <a href="../linux-sandbox2/" class="md-footer__link md-footer__link--next" aria-label="Next: Linux sandbox2">
+          <a href="../../domains/manufacturing/" class="md-footer__link md-footer__link--next" aria-label="Next: Manufacturing Domain">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Linux sandbox2
+                Manufacturing Domain
               </div>
             </div>
             <div class="md-footer__button md-icon">
