@@ -93,8 +93,8 @@ mkdir /opt/tools
 mkdir /opt/sandbox3
 mkdir /opt/project
 chmod 777 /opt/project
-cp tools/* /opt/tools/
-cp sandbox3/* /opt/sandbox3
+cp -r tools/* /opt/tools/
+cp -r sandbox3/* /opt/sandbox3
 cd /opt/sandbox3
 docker-compose pull
 cd /tmp
