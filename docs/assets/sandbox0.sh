@@ -97,5 +97,5 @@ ipa=`hostname -I`
 
 echo "------------------------------------------------------------------"
 echo "Installation done for sandbox0"
-echo "Software installed : conda, docker, docker-compose
+echo "Software installed : conda, docker, docker-compose"
 echo "------------------------------------------------------------------"
