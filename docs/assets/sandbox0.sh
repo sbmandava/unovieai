@@ -61,7 +61,7 @@ echo "User added and granted sudo privileges successfully!"
 add_packages ()
 {
 apt-get -y update;apt-get -y upgrade
-apt-get install -y openssh-server wget curl git 
+apt-get install -y openssh-server wget curl git sudo build-essential
 apt-get remove -y podman-docker podman-compose  
 apt-get install -y docker.io  docker-compose-v2
 apt-get install -y python3-distutils-extra
