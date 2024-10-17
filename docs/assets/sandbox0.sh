@@ -96,14 +96,6 @@ echo "...installing pgml"
 ipa=`hostname -I`
 
 echo "------------------------------------------------------------------"
-echo "Installation done for sandbox3"
-echo "------------------------------------------------------------------"
-echo " Softare Installed : redpanda, mail4dev, ollama, WireGuard  "
-echo "------------------------------------------------------------------"
-echo "Open Browser and access VM http://ip_address"
-echo "Known IP address for this VM is : $ipa"
-echo " "
-echo "Please refer to documentation for any specific details like account id"
-echo "       https://unovie.ai/docs/setup/linux-sandbox3/"
-echo "       /opt/sandbox3/Readme.md"
+echo "Installation done for sandbox0"
+echo "Software installed : conda, docker, docker-compose
 echo "------------------------------------------------------------------"
