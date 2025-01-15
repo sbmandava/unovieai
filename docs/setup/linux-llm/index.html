@@ -424,6 +424,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#always-set-you-python-environment-for-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always set you python environment for working
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#verify-llm-install" class="md-nav__link">
     <span class="md-ellipsis">
       verify llm install
@@ -432,29 +441,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-aider-install" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#aider" class="md-nav__link">
     <span class="md-ellipsis">
-      verify aider install
+      Aider
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#will-update-it-shortly" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#txtai" class="md-nav__link">
     <span class="md-ellipsis">
-      will update it shortly.
+      TXTAI
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="will update it shortly.">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
@@ -956,6 +959,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#always-set-you-python-environment-for-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always set you python environment for working
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#verify-llm-install" class="md-nav__link">
     <span class="md-ellipsis">
       verify llm install
@@ -964,29 +976,23 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-aider-install" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#aider" class="md-nav__link">
     <span class="md-ellipsis">
-      verify aider install
+      Aider
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#will-update-it-shortly" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#txtai" class="md-nav__link">
     <span class="md-ellipsis">
-      will update it shortly.
+      TXTAI
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="will update it shortly.">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
@@ -1030,31 +1036,38 @@ Storage 100GB
 <h3 id="operating-system">Operating System</h3>
 <p>Install Ubuntu Server 24.04 LTS</p>
 <h3 id="installation-script">Installation Script</h3>
-<div class="highlight"><pre><span></span><code>apt-get -y -qq install curl
+<div class="highlight"><pre><span></span><code>sudo sh
+apt-get -y -qq install curl
 clear
 bash &lt;(curl -s https://unovie.ai/repo/sandbox-llm.sh)
 </code></pre></div>
 <h3 id="register-google-gemini-flash-20-key">Register Google Gemini Flash 2.0 key</h3>
-<ul>
-<li>Register for FREE google gemini API key using your personal gmail address</li>
-<li>"https://ai.google.dev/gemini-api/docs/api-key"</li>
-<li>"Store the copy of the API key in Notebook for futher llm usage</li>
-</ul>
-<h3 id="verify-llm-install">verify llm install</h3>
+<p>Register for FREE google gemini API key using your personal gmail address
+  "https://ai.google.dev/gemini-api/docs/api-key"
+Store the copy of the API key in Notebook for futher llm usage</p>
+<h3 id="always-set-you-python-environment-for-working">Always set you python environment for working</h3>
 <div class="highlight"><pre><span></span><code>cd /opt
 source /opt/conda/etc/profile.d/conda.sh    # make sure you activate conda
 conda activate llm                          # conda llm profile
-llm keys set gemini                         # use google_gemini_api_key
+</code></pre></div>
+<h3 id="verify-llm-install">verify llm install</h3>
+<div class="highlight"><pre><span></span><code>llm keys set gemini                         # use google_gemini_api_key
 llm models list                             # should show you all gemini models
 llm models default gemini-2.0-flash-exp     # set default model
 llm "why is sky blue"                       # you should see llm response
 </code></pre></div>
-<h2 id="verify-aider-install">verify aider install</h2>
-<p>```</p>
-<h2 id="will-update-it-shortly">will update it shortly.</h2>
-<p>``</p>
-<h3 id="next-steps">Next Steps.</h3>
-<p>I guess somethings are yet to be configured..watch this page for updates.</p></div>
+<h3 id="aider">Aider</h3>
+<p>verify if aider is already installed
+</p><div class="highlight"><pre><span></span><code>aider --version
+</code></pre></div>
+Create a .env file in your project directory
+<div class="highlight"><pre><span></span><code>GEMINI_API_KEY=your_api_key_here
+</code></pre></div>
+aider --model gemini/gemini-2.0-flash-exp
+<h3 id="txtai">TXTAI</h3>
+<p>TxtAI is advanced platform with very advanced embeddings and agents capabilities.
+https://neuml.github.io/txtai/</p>
+<h3 id="next-steps">Next Steps.</h3></div>
 
 
 

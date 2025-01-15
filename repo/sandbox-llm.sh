@@ -79,6 +79,8 @@ wget -q https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
 chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
 ./Anaconda3-2024.06-1-Linux-x86_64.sh -p /opt/conda -b
 echo "source /opt/conda/etc/profile.d/conda.sh" > /opt/python.env
+echo 'source /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc
+echo 'conda activate llm' >> ~/.bashrc
 }
 
 install_llm ()
@@ -90,12 +92,12 @@ pip install llm
 llm install llm-ollama
 llm install llm-gemini
 llm install llm-sentence-transformers
-llm embed -m mini-l6 -c 'hello world'
+llm embed -m sentence-transformers/all-MiniLM-L6-v2 -c 'hello world'
 llm install llm-embed-jina
-llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
+# llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
 apt-get install -y libcurl4-openssl-dev libgomp1
 # pip install txtai torch==2.5+cpu -f https://download.pytorch.org/whl/torch 
-CMAKE_ARGS='-D CMAKE_C_FLAGS="-fopenmp" -D CMAKE_CXX_FLAGS="-fopenmp"' pip install llama-cpp-python --no-cache-dir --force-reinstall
+# CMAKE_ARGS='-D CMAKE_C_FLAGS="-fopenmp" -D CMAKE_CXX_FLAGS="-fopenmp"' pip install llama-cpp-python --no-cache-dir --force-reinstall
 CMAKE_ARGS='-D CMAKE_C_FLAGS="-fopenmp" -D CMAKE_CXX_FLAGS="-fopenmp"' pip install txtai[all]
 pip install aider-install
 aider-install
@@ -113,10 +115,8 @@ add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
 install_llm 2>&1 >>$LOG_FILE
-echo "...installing pgml"
-ipa=`hostname -I`
 
 echo "------------------------------------------------------------------"
 echo "Installation done for sandbox llm"
-echo "Software installed : conda, docker, docker-compose llm aider"
+echo "Software installed : conda, docker, docker-compose,txtai,llm , aider"
 echo "------------------------------------------------------------------"
