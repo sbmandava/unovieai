@@ -1,0 +1,1348 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://unovie.ai/docs/training/streaming/">
+      
+      
+        <link rel="prev" href="../postgresML/">
+      
+      
+        <link rel="next" href="../../domains/manufacturing/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Streaming - unovie.ai/docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  
+  <script>
+    function __primePlatformTabs() {
+      const browserPlatform = navigator.platform || "";
+      const tabs = __md_get("__tabs") || [];
+      let changed = false;
+
+      function unshiftTab(name) {
+        if (tabs.indexOf(name) < 0) {
+          tabs.unshift(name);
+          changed = true;
+        }
+      }
+
+      if (/(mac|iphone|ipad)/i.test(browserPlatform)) {
+        unshiftTab("Unix");
+        unshiftTab("macOS");
+      } else if (/linux/i.test(browserPlatform)) {
+        unshiftTab("Unix");
+        unshiftTab("Linux");
+      } else if (/win/i.test(browserPlatform)) {
+        unshiftTab("Windows");
+      }
+
+      if (changed) {
+        __md_set("__tabs", tabs);
+      }
+    }
+
+    __primePlatformTabs();
+  </script>
+
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="unovie.ai/docs" class="md-header__button md-logo" aria-label="unovie.ai/docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            unovie.ai/docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Streaming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+<script>
+  (function() {
+    function changeColorScheme(light) {
+      document.body.setAttribute("data-md-color-scheme", light ? "default" : "slate");
+    }
+    const media = matchMedia("(prefers-color-scheme: light)");
+    changeColorScheme(media.matches);
+    media.addEventListener("change", function (e) {
+      changeColorScheme(e.matches);
+    });
+  })();
+</script>
+
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="unovie.ai/docs" class="md-nav__button md-logo" aria-label="unovie.ai/docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    unovie.ai/docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    sdk-setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            sdk-setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/wsl2-sandbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wsl2 sandbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/linux-sandbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux sandbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/dify/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GEN-AI DIFY Dev platform with Ollama
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/linux-sandbox2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux sandbox2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/linux-sandbox3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux sandbox3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    training
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../market-analyst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Market analyst
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-unovie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About unovie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-evolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ai evolution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings-transformers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embeddings transformers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dify-sandbox-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dify sandbox project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgresML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    postgresML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Streaming
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Streaming
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      example 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="example 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-data-collection-from-plcscada-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Data Collection from PLC/SCADA Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-data-transformation-and-feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Data Transformation and Feature Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-federated-feature-engineering-and-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Federated Feature Engineering and Model Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-model-training-and-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Model Training and Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-on-device-ml-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: On-Device ML Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-model-serving-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Model Serving and Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    domains
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            domains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/manufacturing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manufacturing Domain
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/healthcare/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domains/energy/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      example 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="example 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-data-collection-from-plcscada-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Data Collection from PLC/SCADA Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-data-transformation-and-feature-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Data Transformation and Feature Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-federated-feature-engineering-and-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Federated Feature Engineering and Model Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-model-training-and-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Model Training and Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-on-device-ml-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: On-Device ML Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-model-serving-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Model Serving and Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Streaming</h1>
+
+<div><p><strong>System Overview</strong></p>
+<ol>
+<li><strong>Data Source:</strong> Your PLC/SCADA system acts as the data source, providing real-time and historical process data.</li>
+<li><strong>OPC-UA Server:</strong> An OPC-UA server acts as an intermediary, exposing your PLC/SCADA data through a standardized protocol.</li>
+<li><strong>Kafka (Red Panda):</strong> A high-throughput messaging system like Red Panda ingests data from the OPC-UA server.</li>
+<li><strong>RisingWave (Real-Time Feature Engineering):</strong> RisingWave processes the data stream in real-time, performing feature engineering operations to create relevant features for training.</li>
+<li><strong>TinyML (On-Device Training):</strong>  TinyML tools are used to train the Small Language Model (PHI-3) on the engineered features. This training could occur on edge devices (e.g., industrial gateways) for localized model updates.</li>
+</ol>
+<p><strong>Python Code Snippets (Illustrative)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example 1: Data Ingestion from OPC-UA Server (Conceptual)</span>
+<span class="kn">import</span> <span class="nn">opcua</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">opcua</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s2">"opc.tcp://&lt;PLC_IP_ADDRESS&gt;"</span><span class="p">)</span>
+<span class="c1"># ... Connect to server, browse data nodes, read values</span>
+
+<span class="c1"># Example 2: Feature Engineering in RisingWave (Conceptual)</span>
+<span class="kn">from</span> <span class="nn">risingwave</span> <span class="kn">import</span> <span class="n">RWQuery</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="n">RWQuery</span><span class="p">(</span><span class="s2">"SELECT temperature, pressure, time_stamp FROM sensor_data"</span><span class="p">)</span> 
+<span class="c1"># ... Define feature calculations (e.g., rolling averages, ratios)</span>
+
+<span class="c1"># Example 3: TinyML Training (Conceptual)</span>
+<span class="kn">from</span> <span class="nn">tinyml</span> <span class="kn">import</span> <span class="n">Trainer</span>
+<span class="c1"># ... Load pre-trained PHI-3 model</span>
+<span class="c1"># ... Feed engineered features into the trainer for fine-tuning</span>
+</code></pre></div>
+<p><strong>Working Inputs and Outputs</strong></p>
+<ul>
+<li>
+<p><strong>Input (PLC/SCADA):</strong> Sensor readings (temperature, pressure, flow rate, motor speed, etc.), timestamps, event logs.</p>
+</li>
+<li>
+<p><strong>Output (Fine-Tuned Model):</strong></p>
+<ul>
+<li>A custom PHI-3 model that understands the specific context of your manufacturing environment.</li>
+<li>The model can generate predictions (e.g., equipment failure risk, optimal process settings) or answer natural language questions about the manufacturing process.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Important Considerations</strong></p>
+<ul>
+<li><strong>Data Security and Privacy:</strong> Implement robust security measures to protect sensitive process data.</li>
+<li><strong>Data Quality:</strong> Ensure your data is accurate, consistent, and complete. Implement data validation and cleaning processes.</li>
+<li><strong>Feature Selection:</strong> Carefully select features that are relevant and informative for your specific use case.</li>
+<li><strong>Model Interpretability:</strong> Strive for models that are interpretable and explainable to operations teams.</li>
+<li><strong>Deployment and Monitoring:</strong> Deploy your models to edge devices or on-premises servers. Continuously monitor performance and retrain models as needed.</li>
+</ul>
+<p>You're asking for a complete end-to-end Python code example, which is a very ambitious request given the complexity of integrating various systems like OPC-UA, Kafka, RisingWave, and TinyML.  </p>
+<p>Providing fully functional code for such a complex system is beyond the scope of a single response. </p>
+<p><strong>However, I can give you more detailed, structured code snippets with explanations to guide you in the right direction.</strong></p>
+<p><strong>1. OPC-UA Data Access (Conceptual)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">opcua</span>
+
+<span class="c1"># Connect to your OPC-UA server</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">opcua</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s2">"opc.tcp://&lt;PLC_IP_ADDRESS&gt;"</span><span class="p">)</span> 
+
+<span class="c1"># Browse for nodes (data points)</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_root_node</span><span class="p">()</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">get_children</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Node name: </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">get_node_id</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="c1"># ... Read data values from the nodes</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span> 
+</code></pre></div>
+<p><strong>2. Kafka Data Ingestion (Conceptual, Using Red Panda)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">redpanda_client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="c1"># Connect to Red Panda</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">"redpanda://&lt;RED_PANDA_HOST&gt;:&lt;RED_PANDA_PORT&gt;"</span><span class="p">)</span>
+
+<span class="c1"># Subscribe to a topic (replace "manufacturing_data" with your topic)</span>
+<span class="n">topic</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">topic</span><span class="p">(</span><span class="s2">"manufacturing_data"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">consume</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Received data: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>3. RisingWave Feature Engineering (Conceptual)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Connect to RisingWave (using their Python SDK)</span>
+<span class="kn">import</span> <span class="nn">risingwave</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">risingwave</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"localhost:9090"</span><span class="p">)</span>
+
+<span class="c1"># Create a SQL query</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"SELECT temperature, pressure FROM sensor_data WHERE time_stamp &gt; now() - INTERVAL '1 minute'"</span>
+
+<span class="c1"># Execute the query and process the results</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"temperature"</span><span class="p">]</span>
+    <span class="n">pressure</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"pressure"</span><span class="p">]</span>
+    <span class="c1"># ... Perform feature engineering calculations (e.g., calculate average pressure)</span>
+
+<span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>4. TinyML Model Training (Conceptual)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tinyml</span> <span class="kn">import</span> <span class="n">Trainer</span>
+
+<span class="c1"># Load pre-trained PHI-3 model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Trainer</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">"phi-3-model"</span><span class="p">)</span>
+
+<span class="c1"># Prepare your engineered features (from RisingWave)</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="n">temperature</span><span class="p">,</span> <span class="n">pressure</span><span class="p">,</span> <span class="n">average_pressure</span><span class="p">]</span> 
+
+<span class="c1"># Fine-tune the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+
+<span class="c1"># Save the fine-tuned model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"fine_tuned_phi_3_model"</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li>These code snippets are highly simplified and illustrative. You'll need to adapt them to your specific environment and technology stack.</li>
+<li>Refer to the documentation of each tool (OPC-UA, Kafka, RisingWave, TinyML) for detailed instructions and examples.</li>
+</ul>
+<h2 id="example-2">example 2</h2>
+<p>Creating a custom fine-tuned model for manufacturing operations using Federated AI involves several key components, including data collection from PLC/SCADA systems, feature engineering, model training, and deployment. Below is an end-to-end example of how to generate a training dataset from PLC or SCADA systems, using the technology stack you provided (OPC-UA Server, Red Panda for Kafka, RisingWave for Read-time Feature Engineering, TinyML for Model Training, PHI-3 Small Language Model, MicroK8S for platform, Ubuntu MicroCloud).</p>
+<h4 id="step-1-data-collection-from-plcscada-systems">Step 1: Data Collection from PLC/SCADA Systems</h4>
+<p>PLCs and SCADAs generate data that is sent to an OPC-UA Server. The Red Panda Kafka service can be used as a bridge between the SCADA systems and the feature store.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">opcua</span>
+<span class="kn">from</span> <span class="nn">kafka</span> <span class="kn">import</span> <span class="n">KafkaProducer</span>
+
+<span class="k">def</span> <span class="nf">create_opcua_client</span><span class="p">(</span><span class="n">uri</span><span class="p">):</span>
+    <span class="c1"># Connect to OPC UA server</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">opcua</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Could not connect to OPC-UA Server: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Create an OPC-UA client</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="s2">"opc.tcp://your-opcua-server-address:4840"</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">create_opcua_client</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">read_data_from_opcua</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">node_id</span><span class="p">):</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="c1"># Example node ID for reading temperature data</span>
+<span class="n">node_id</span> <span class="o">=</span> <span class="s2">"ns=2;i=3"</span>  <span class="c1"># Adjust based on your OPC-UA server configuration</span>
+<span class="n">temperature_data</span> <span class="o">=</span> <span class="n">read_data_from_opcua</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">node_id</span><span class="p">)</span>
+
+<span class="c1"># Publish the collected data to Kafka topic</span>
+<span class="n">producer</span> <span class="o">=</span> <span class="n">KafkaProducer</span><span class="p">(</span><span class="n">bootstrap_servers</span><span class="o">=</span><span class="s1">'your-kafka-broker:9092'</span><span class="p">)</span>
+<span class="n">topic_name</span> <span class="o">=</span> <span class="s1">'opc-data'</span>
+<span class="n">producer</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">topic_name</span><span class="p">,</span> <span class="n">temperature_data</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="step-2-data-transformation-and-feature-engineering">Step 2: Data Transformation and Feature Engineering</h4>
+<p>Use Red Panda Kafka Consumer to consume OPC-UA data and send it to RisingWave for feature engineering.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Import necessary libraries for Kafka consumption</span>
+<span class="kn">from</span> <span class="nn">kafka</span> <span class="kn">import</span> <span class="n">KafkaConsumer</span>
+
+<span class="c1"># Create a Kafka consumer</span>
+<span class="n">consumer</span> <span class="o">=</span> <span class="n">KafkaConsumer</span><span class="p">(</span>
+    <span class="s1">'opc-data'</span><span class="p">,</span>
+    <span class="n">bootstrap_servers</span><span class="o">=</span><span class="s1">'your-kafka-broker:9092'</span><span class="p">,</span>
+    <span class="n">auto_offset_reset</span><span class="o">=</span><span class="s1">'earliest'</span><span class="p">,</span>
+    <span class="n">enable_auto_commit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">group_id</span><span class="o">=</span><span class="s1">'my-group'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">consumer</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># This will be the OPC-UA data from previous step</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Received Data: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Example transformation to create a feature store entry (e.g., TemperatureReading)</span>
+    <span class="n">feature_store_entry</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'timestamp'</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+        <span class="s1">'temperature_value'</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">,</span>  <span class="c1"># Normalizing value if necessary</span>
+        <span class="c1"># Add more features as needed for your model</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Publish to RisingWave Kafka topic</span>
+    <span class="n">risingwave_topic_name</span> <span class="o">=</span> <span class="s1">'feature-store'</span>
+    <span class="n">producer_risingwave</span> <span class="o">=</span> <span class="n">KafkaProducer</span><span class="p">(</span><span class="n">bootstrap_servers</span><span class="o">=</span><span class="s1">'your-rising-wave-broker:9092'</span><span class="p">)</span>
+    <span class="n">producer_risingwave</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">risingwave_topic_name</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">feature_store_entry</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</code></pre></div>
+<h4 id="step-3-federated-feature-engineering-and-model-training">Step 3: Federated Feature Engineering and Model Training</h4>
+<p>RisingWave can perform read-time feature engineering by ingesting data from multiple sources (including the feature store created in Red Panda).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Import necessary libraries for RisingWave Kafka consumption</span>
+<span class="kn">from</span> <span class="nn">kafka</span> <span class="kn">import</span> <span class="n">KafkaConsumer</span>
+
+<span class="n">risingwave_topic_name</span> <span class="o">=</span> <span class="s1">'feature-store'</span>
+<span class="n">consumer_risingwave</span> <span class="o">=</span> <span class="n">KafkaConsumer</span><span class="p">(</span>
+    <span class="n">risingwave_topic_name</span><span class="p">,</span>
+    <span class="n">bootstrap_servers</span><span class="o">=</span><span class="s1">'your-rising-wave-broker:9092'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Example feature engineering pipeline using Red Panda and RisingWave (pseudo code)</span>
+<span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">consumer_risingwave</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="c1"># Feature Engineering</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'timestamp'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'timestamp'</span><span class="p">],</span>
+        <span class="s1">'temperature_value_normalized'</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">'temperature_value'</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span>  <span class="c1"># Example feature transformation</span>
+        <span class="c1"># Add more features as needed for your model</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Send to TinyML Kafka topic for federated training</span>
+    <span class="n">tinyml_topic_name</span> <span class="o">=</span> <span class="s1">'federated-training-data'</span>
+    <span class="n">producer_tinyml</span> <span class="o">=</span> <span class="n">KafkaProducer</span><span class="p">(</span><span class="n">bootstrap_servers</span><span class="o">=</span><span class="s1">'your-tinyml-broker:9092'</span><span class="p">)</span>
+    <span class="n">producer_tinyml</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">tinyml_topic_name</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">features</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</code></pre></div>
+<h4 id="step-4-model-training-and-deployment">Step 4: Model Training and Deployment</h4>
+<p>TinyML can perform model training in a federated manner across multiple devices.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Import necessary libraries for TinyML Kafka consumption</span>
+<span class="kn">from</span> <span class="nn">kafka</span> <span class="kn">import</span> <span class="n">KafkaConsumer</span>
+
+<span class="n">tinyml_topic_name</span> <span class="o">=</span> <span class="s1">'federated-training-data'</span>
+<span class="n">consumer_tinyml</span> <span class="o">=</span> <span class="n">KafkaConsumer</span><span class="p">(</span>
+    <span class="n">tinyml_topic_name</span><span class="p">,</span>
+    <span class="n">bootstrap_servers</span><span class="o">=</span><span class="s1">'your-tinyml-broker:9092'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Model Training Pipeline (pseudo code)</span>
+<span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">consumer_tinyml</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="c1"># Extract features and labels</span>
+    <span class="n">feature_vector</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'timestamp'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'temperature_value_normalized'</span><span class="p">]]</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'correct_response'</span><span class="p">]</span>  <span class="c1"># Hypothetical labeled data</span>
+
+    <span class="c1"># Train PHI-3 (or any other model) with the federated dataset</span>
+    <span class="n">trained_model</span> <span class="o">=</span> <span class="n">phi_3_model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">feature_vector</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+
+    <span class="c1"># Save trained model and deploy it</span>
+    <span class="n">trained_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'trained_model.pkl'</span><span class="p">)</span>
+    <span class="n">deployed_model_name</span> <span class="o">=</span> <span class="s1">'model_for_deploy'</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Model </span><span class="si">{</span><span class="n">deployed_model_name</span><span class="si">}</span><span class="s2"> is now ready for deployment."</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="step-5-on-device-ml-deployment">Step 5: On-Device ML Deployment</h4>
+<p>Once the model is trained, it can be deployed on device using MicroK8S and Ubuntu MicroCloud.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a Kubernetes deployment YAML file (pseudo code)</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phi-3-deployment</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phi-3</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phi-3</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phi-3-container</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">your-tinyml-image-repo:latest</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+<h4 id="step-6-model-serving-and-monitoring">Step 6: Model Serving and Monitoring</h4>
+<p>Use MicroK8S to manage the Kubernetes deployment of the model.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Apply the YAML file for deployment</span>
+kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>phi-3-deployment.yaml
+
+<span class="c1"># Access the deployed model (example assumes service is exposed)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"http://&lt;your-service-name&gt;"</span>
+
+<span class="c1"># Monitor model performance and traffic using appropriate monitoring tools</span>
+</code></pre></div>
+<h3 id="summary">Summary</h3>
+<p>This example covers data collection, feature engineering, federated training, and deployment. Ensure that all Kafka brokers, RisingWave instances, TinyML servers, and MicroK8S are properly configured to integrate seamlessly.</p>
+<p>Please adjust the code according to your specific environment and requirements.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../postgresML/" class="md-footer__link md-footer__link--prev" aria-label="Previous: postgresML">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                postgresML
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../domains/manufacturing/" class="md-footer__link md-footer__link--next" aria-label="Next: Manufacturing Domain">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Manufacturing Domain
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "toc.follow", "navigation.path", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

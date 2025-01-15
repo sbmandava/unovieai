@@ -79,7 +79,6 @@ wget -q https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
 chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh
 ./Anaconda3-2024.06-1-Linux-x86_64.sh -p /opt/conda -b
 echo "source /opt/conda/etc/profile.d/conda.sh" > /opt/python.env
-chmod +x /opt/web-ide.sh
 }
 
 install_llm ()
