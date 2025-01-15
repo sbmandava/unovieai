@@ -406,6 +406,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#snapshot-base-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      SnapShot Base Image.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#installation-script" class="md-nav__link">
     <span class="md-ellipsis">
       Installation Script
@@ -941,6 +950,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#snapshot-base-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      SnapShot Base Image.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#installation-script" class="md-nav__link">
     <span class="md-ellipsis">
       Installation Script
@@ -1029,16 +1047,26 @@
 <p>The instructions are very simple.
 Incase your setting up a dedicated server VM instance to run LLM and Aider.</p>
 <h3 id="hardware-requirements">Hardware Requirements</h3>
-<p></p><div class="highlight"><pre><span></span><code>Memory 4GB
+<p>Everything we do is Linux 
+- if you windows user, you can install VirtualBox like software to get </p>
+<p><a href="https://www.amazon.com/Dell-Precision-T7810-Workstation-Refurbished/dp/B07G2R442P/ref=sr_1_20?crid=5RMV7QD1BC54&amp;dib=eyJ2IjoiMSJ9.wPtJsMMXJ4NeJej-O_wbNxrTxgJHHS0RuqQlTNWqGpu8-Q6jkqBCfbttpj5GFkfTFmpCoNkeqwHYE-oi098KKxVibx5dKR9k3_BUYVO84tnINu__Q0mZ8NyMMWXmLnc5ToEi5wvx5tvrdLlNM8uNxcdKJKT_zzY2fmCMmYtjvWJ376vC-hs97iZOp_5Gx-XSD69qkwSYDx6wV0mOVtY0roiThPQMZFC-qg4r82fJp5jGVSI7TCHyle36g4KgzK94elZGuVaKuyDsVWClhbCDV7-y67SXcxNt1lvAu_X6h3tI0xAy6V8hT_pAhgGtjlUs43-YplpfujV7XzZp6QV2bGfonk8Ar2CIG6B4prn9FAU.1trsZ4ufZSxsH2NuGsVykmSjAyPudRX32FQLFZRQ2sc&amp;dib_tag=se&amp;keywords=Dell+T7810&amp;qid=1736924098&amp;s=electronics&amp;sprefix=dell+t7810%2Celectronics%2C118&amp;sr=1-20">Highly reecommend getting yourself a used Dell Workstation with 256GB RAM</a></p>
+<p>Virtual Machine Specifications for LLM
+</p><div class="highlight"><pre><span></span><code>Memory 4GB
 CPU : 2 cores.
 Storage 100GB
 </code></pre></div>
-<a href="https://www.amazon.com/Dell-Precision-T7810-Workstation-Refurbished/dp/B07G2R442P/ref=sr_1_20?crid=5RMV7QD1BC54&amp;dib=eyJ2IjoiMSJ9.wPtJsMMXJ4NeJej-O_wbNxrTxgJHHS0RuqQlTNWqGpu8-Q6jkqBCfbttpj5GFkfTFmpCoNkeqwHYE-oi098KKxVibx5dKR9k3_BUYVO84tnINu__Q0mZ8NyMMWXmLnc5ToEi5wvx5tvrdLlNM8uNxcdKJKT_zzY2fmCMmYtjvWJ376vC-hs97iZOp_5Gx-XSD69qkwSYDx6wV0mOVtY0roiThPQMZFC-qg4r82fJp5jGVSI7TCHyle36g4KgzK94elZGuVaKuyDsVWClhbCDV7-y67SXcxNt1lvAu_X6h3tI0xAy6V8hT_pAhgGtjlUs43-YplpfujV7XzZp6QV2bGfonk8Ar2CIG6B4prn9FAU.1trsZ4ufZSxsH2NuGsVykmSjAyPudRX32FQLFZRQ2sc&amp;dib_tag=se&amp;keywords=Dell+T7810&amp;qid=1736924098&amp;s=electronics&amp;sprefix=dell+t7810%2Celectronics%2C118&amp;sr=1-20">Highly reecommend getting yourself a used Dell Workstation with 256GB RAM</a>
 <h3 id="operating-system">Operating System</h3>
-<p>Install Ubuntu Server 24.04 LTS</p>
+<p>Install Ubuntu Server 24.04 LTS
+<a href="https://www.thomas-krenn.com/en/wiki/Install_Ubuntu_24.04_LTS_Server">Follow this instructions</a></p>
+<h3 id="snapshot-base-image">SnapShot Base Image.</h3>
+<p>Once the good install is up and running. Make sure you take SnapShot of good working configuration
+If your using <a href="https://www.zdnet.com/article/what-are-virtualbox-guest-snapshots-and-how-do-you-take-them/">VirtualBox use this instruction</a></p>
+<p>Name the image : 2404-lts-golden0.
+Always do this before you start running the installations script.. </p>
+<p>This saves lot of time, if you have to do a fresh install, which is very common for Security Projects.</p>
 <h3 id="installation-script">Installation Script</h3>
 <div class="highlight"><pre><span></span><code>sudo sh
-apt-get -y -qq install curl
+apt-get -y -qq install curl 
 clear
 bash &lt;(curl -s https://unovie.ai/repo/sandbox-llm.sh)
 </code></pre></div>
