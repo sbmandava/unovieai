@@ -93,8 +93,14 @@ llm install llm-sentence-transformers
 llm embed -m mini-l6 -c 'hello world'
 llm install llm-embed-jina
 llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
+apt-get install -y libcurl4-openssl-dev libgomp1
+# pip install txtai torch==2.5+cpu -f https://download.pytorch.org/whl/torch 
+CMAKE_ARGS='-D CMAKE_C_FLAGS="-fopenmp" -D CMAKE_CXX_FLAGS="-fopenmp"' pip install llama-cpp-python --no-cache-dir --force-reinstall
+CMAKE_ARGS='-D CMAKE_C_FLAGS="-fopenmp" -D CMAKE_CXX_FLAGS="-fopenmp"' pip install txtai[all]
 pip install aider-install
 aider-install
+echo 'export PATH="$PATH:/root/.local/bin"' >> ~/.bashrc
+source ~/.bashrc
 }
 
 ### Main ###
