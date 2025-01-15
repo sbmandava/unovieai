@@ -23,8 +23,8 @@ else
   exit 1
 fi
 
-# Check if the system has at least 8GB of memory
-if [ $(free -b | awk '/Mem:/ {print $2}') -lt 8024967296 ]; then
+# Check if the system has at least 4GB of memory
+if [ $(free -b | awk '/Mem:/ {print $2}') -lt 4024967296 ]; then
   echo "Error: This script requires a system with at least 8GB of memory."
   exit 1
 fi
