@@ -105,7 +105,7 @@ echo 'export PATH="$PATH:/root/.local/bin"' >> ~/.bashrc
 source ~/.bashrc
 }
 
-install_kg
+install_kg ()
 {
 mkdir -p /opt/projects
 cd /tmp
