@@ -111,7 +111,9 @@ mkdir -p /opt/projects
 cd /tmp
 wget --no-check-certificate https://unovie.ai/repo/sales-kg.tgz
 cd /opt/projects
-tar -xvzf /tmp/sales-kg.tgz
+tar -xvzf /tmp/sales-kg.tgz .
+cd /opt/projects/sales-kg/templates
+cp * /root/.config/io.datasette.llm/templates
 }
 
 
