@@ -64,7 +64,7 @@ apt-get -y update;apt-get -y upgrade
 apt-get install -y openssh-server wget curl git sudo build-essential
 apt-get remove -y podman-docker podman-compose  
 apt-get install -y docker.io  docker-compose-v2
-apt-get install -y python3-distutils-extra
+apt-get install -y python3-distutils-extra jq
 cd /tmp
 wget -q https://github.com/docker/compose/releases/download/v2.29.2/docker-compose-linux-x86_64
 mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
@@ -94,7 +94,7 @@ llm install llm-gemini
 llm install llm-sentence-transformers
 llm embed -m sentence-transformers/all-MiniLM-L6-v2 -c 'hello world'
 llm install llm-embed-jina
-# llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
+llm embed -m jina-embeddings-v2-small-en -c 'Hello world'
 apt-get install -y libcurl4-openssl-dev libgomp1
 # pip install txtai torch==2.5+cpu -f https://download.pytorch.org/whl/torch 
 # CMAKE_ARGS='-D CMAKE_C_FLAGS="-fopenmp" -D CMAKE_CXX_FLAGS="-fopenmp"' pip install llama-cpp-python --no-cache-dir --force-reinstall
@@ -105,9 +105,20 @@ echo 'export PATH="$PATH:/root/.local/bin"' >> ~/.bashrc
 source ~/.bashrc
 }
 
+install_kg
+{
+mkdir -p /opt/projects
+cd /tmp
+wget --no-check-certificate https://unovie.ai/repo/sales-kg.tgz
+cd /opt/projects
+tar -xvzf /tmp/sales-kg.tgz
+}
+
+
 ### Main ###
 
-echo "please..wait takes some time writing to logfile $LOG_FILE"
+echo "please..wait takes about 10 minutes to install..get a coffee break"
+echo "All script results are written to logfile $LOG_FILE"
 check_capacity
 setup_user
 echo "...adding deb packages"
@@ -115,8 +126,10 @@ add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
 install_llm 2>&1 >>$LOG_FILE
+install_kg 2>&1 >>$LOG_FILE
 
 echo "------------------------------------------------------------------"
 echo "Installation done for sandbox llm"
 echo "Software installed : conda, docker, docker-compose,txtai,llm , aider"
+echo "You might want to logout and login again or reboot to make sure profile is loaded"
 echo "------------------------------------------------------------------"
