@@ -105,18 +105,6 @@ echo 'export PATH="$PATH:/root/.local/bin"' >> ~/.bashrc
 source ~/.bashrc
 }
 
-install_kg ()
-{
-mkdir -p /opt/projects
-cd /tmp
-wget --no-check-certificate https://unovie.ai/repo/sales-kg.tgz
-cd /opt/projects
-tar -xvzf /tmp/sales-kg.tgz 
-# cd /opt/projects/sales-kg/templates
-# cp * /root/.config/io.datasette.llm/templates
-}
-
-
 ### Main ###
 
 echo "please..wait takes about 10 minutes to install..get a coffee break"
@@ -128,7 +116,6 @@ add_packages 2>&1 >$LOG_FILE
 echo "...installing anaconda"
 add_anaconda 2>&1 >>$LOG_FILE
 install_llm 2>&1 >>$LOG_FILE
-install_kg 2>&1 >>$LOG_FILE
 
 echo "------------------------------------------------------------------"
 echo "Installation done for sandbox llm"
