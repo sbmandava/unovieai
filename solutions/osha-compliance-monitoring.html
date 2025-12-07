@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSHA Compliance Monitoring — Unovie.AI</title>
+    <meta name="description" content="OSHA Compliance Monitoring service uses Vision AI, advanced analytics, and ML to identify workplace hazards and reduce compliance risks with intelligent safety solutions.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://unovie.ai/solutions/osha-compliance-monitoring">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'scale-up': 'scaleUp 0.5s ease-out',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'gradient-y': 'gradient-y 15s ease infinite',
+                        'gradient-xy': 'gradient-xy 15s ease infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-30px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(30px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        'gradient-y': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'center top'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'center bottom'
+                            }
+                        },
+                        'gradient-xy': {
+                            '0%, 100%': {
+                                'background-size': '400% 400%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '400% 400%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(139, 92, 246, 0.8)' },
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                    },
+                    maxWidth: {
+                        '8xl': '88rem',
+                        '9xl': '96rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Professional CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Professional Enterprise Color Scheme */
+        :root {
+            --primary-blue: #1e40af;
+            --primary-dark: #1e3a8a;
+            --accent-blue: #2563eb;
+            --neutral-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-gray: #111827;
+            --success-green: #059669;
+            --warning-amber: #d97706;
+        }
+
+        .professional-card {
+            transition: all 0.2s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .professional-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-blue);
+        }
+
+        .dark .professional-card {
+            border-color: #374151;
+        }
+
+        .dark .professional-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+        }
+
+        .accent-text {
+            color: var(--primary-blue);
+        }
+
+        .dark .accent-text {
+            color: #60a5fa;
+        }
+
+        .hero-background {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .dark .hero-background {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+
+        .section-background {
+            background-color: #ffffff;
+        }
+
+        .dark .section-background {
+            background-color: #1f2937;
+        }
+
+        .alternate-background {
+            background-color: #f9fafb;
+        }
+
+        .dark .alternate-background {
+            background-color: #111827;
+        }
+
+        .professional-button {
+            background: var(--primary-blue);
+            transition: all 0.2s ease;
+        }
+
+        .professional-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .outline-button {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            transition: all 0.2s ease;
+        }
+
+        .outline-button:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.2s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.02em;
+        }
+
+        /* Subtle Professional Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Remove flashy effects */
+        .no-blur {
+            backdrop-filter: none;
+        }
+
+        /* Professional shadows */
+        .soft-shadow {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .medium-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .large-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 no-blur transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="../assets/images/logo.png" alt="Unovie" class="h-10 w-auto">
+                    <div>
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">Unovie</span>
+                        <div class="text-xs text-gray-600 dark:text-gray-400">Edge AI Solutions</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium flex items-center">
+                            Services
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="../index.html#services" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors rounded-t-lg">
+                                AI Innovation Consulting
+                            </a>
+                            <a href="../turnkey-projects.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors rounded-b-lg">
+                                Turnkey Projects
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Solutions Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium flex items-center">
+                            Solutions
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="smart-supply-chain-management.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors rounded-t-lg">
+                                Smart Supply Chain Management
+                            </a>
+                            <a href="real-time-quality-control.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors">
+                                Real-Time Quality Control
+                            </a>
+                            <a href="osha-compliance-monitoring.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors">
+                                OSHA Compliance Monitoring
+                            </a>
+                            <a href="predictive-maintenance-optimization.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors">
+                                Predictive Maintenance Optimization
+                            </a>
+                            <a href="industrial-iot-data-analytics.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors">
+                                Industrial IoT Data Analytics
+                            </a>
+                            <a href="cybersecurity-threat-detection.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors rounded-b-lg">
+                                Cybersecurity Threat Detection
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Platform Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium flex items-center">
+                            Platform
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="../platform/edge-data-fabric.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors rounded-t-lg">
+                                Edge Data Fabric
+                            </a>
+                            <a href="../platform/edge-streaming-analytics.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors">
+                                Edge Streaming Analytics
+                            </a>
+                            <a href="../platform/gpu-microcloud.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors">
+                                GPU MicroCloud
+                            </a>
+                            <a href="../platform/gpu-edgegateway.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary-600 transition-colors rounded-b-lg">
+                                GPU EdgeGateway
+                            </a>
+                        </div>
+                    </div>
+                    <a href="../about.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium">Contact</a>
+                </div>
+
+                <!-- Right side buttons -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Button -->
+                    <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Dark mode toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                        <div class="relative">
+                            <svg class="w-5 h-5 text-gray-600 dark:text-gray-400 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                            <svg class="w-5 h-5 text-gray-600 dark:text-gray-400 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="#contact" class="hidden md:block professional-button text-white px-6 py-2.5 rounded-full font-semibold">
+                        Get Started
+                    </a>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuToggle" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden lg:hidden mt-4 py-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col space-y-3">
+                    <div class="space-y-2">
+                        <div class="text-gray-700 dark:text-gray-300 font-medium px-2">Services</div>
+                        <div class="ml-4 space-y-2">
+                            <a href="../index.html#services" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">AI Innovation Consulting</a>
+                            <a href="../turnkey-projects.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Turnkey Projects</a>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-gray-700 dark:text-gray-300 font-medium px-2">Solutions</div>
+                        <div class="ml-4 space-y-2">
+                            <a href="smart-supply-chain-management.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Smart Supply Chain Management</a>
+                            <a href="real-time-quality-control.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Real-Time Quality Control</a>
+                            <a href="osha-compliance-monitoring.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">OSHA Compliance Monitoring</a>
+                            <a href="predictive-maintenance-optimization.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Predictive Maintenance Optimization</a>
+                            <a href="industrial-iot-data-analytics.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Industrial IoT Data Analytics</a>
+                            <a href="cybersecurity-threat-detection.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Cybersecurity Threat Detection</a>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-gray-700 dark:text-gray-300 font-medium px-2">Platform</div>
+                        <div class="ml-4 space-y-2">
+                            <a href="../platform/edge-data-fabric.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Edge Data Fabric</a>
+                            <a href="../platform/edge-streaming-analytics.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">Edge Streaming Analytics</a>
+                            <a href="../platform/gpu-microcloud.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">GPU MicroCloud</a>
+                            <a href="../platform/gpu-edgegateway.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 py-1">GPU EdgeGateway</a>
+                        </div>
+                    </div>
+                    <a href="../about.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">About</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center hero-background pt-20">
+        <!-- Professional Background Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:32px_32px] opacity-50"></div>
+
+        <div class="relative container mx-auto px-6 pt-20">
+            <div class="text-center max-w-5xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full mb-8 animate-slide-up">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    Digital Twin Solutions
+                </div>
+
+  
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up animation-delay-200 leading-tight">
+                    <span class="accent-text">OSHA Compliance Monitoring</span>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-4xl mx-auto animate-slide-up animation-delay-400 leading-relaxed">
+                    Vision AI, advanced analytics, and machine learning solution to identify workplace hazards and reduce compliance risks.
+                    Intelligent safety monitoring ensures regulatory adherence and protects your workforce.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up animation-delay-600">
+                    <a href="#contact" class="professional-button text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center">
+                        Get Notified
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="#features" class="outline-button px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center">
+                        Download Solution Brief
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2 2v-10a2 2 0 012-2h5.586a1 1 0 011.707.293l5.414 5.414a1 1 0 011.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative max-w-6xl mx-auto animate-fade-in animation-delay-800">
+                    <div class="relative rounded-xl overflow-hidden large-shadow">
+                        <img src="https://unovie.ai/_astro/osha_risk360.ByOZAuFa.jpg"
+                             alt="OSHA Compliance Monitoring"
+                             class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+
+                        <!-- Image Caption Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 p-8 text-white text-center">
+                            <div class="bg-red-900/80 backdrop-blur-sm p-4 rounded-lg inline-block mb-3">
+                                <p class="text-sm font-semibold">WORKPLACE SAFETY</p>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Intelligent Compliance Monitoring</h3>
+                            <p class="text-sm opacity-90 max-w-md mx-auto">
+                                Real-time hazard detection and compliance assurance using advanced AI and computer vision technologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="flex flex-col items-center space-y-2 cursor-pointer group" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+                <span class="text-gray-500 dark:text-gray-400 text-sm font-medium">Scroll to explore</span>
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced AI Architecture Section -->
+    <section class="py-20 section-background">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Advanced AI Architecture for Workplace Safety Intelligence
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Low-latency Edge AI with privacy-first design, leveraging sensor fusion and semantic understanding for real-time OSHA compliance and workplace safety monitoring
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <!-- Edge AI Capabilities -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Edge AI Capabilities</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Sub-500ms safety hazard detection and response</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Real-Time Hazard Detection</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Vision AI processes safety data with < 500ms latency for instant hazard identification</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Environmental Sensor Fusion</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Multi-sensor integration combines video, audio, and environmental data for comprehensive safety monitoring</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Edge Fine-Tuned SLMs</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Specialized language models for OSHA regulations, safety protocols, and compliance reporting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agentic AI Workflows -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Agentic AI Workflows</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Autonomous safety monitoring and incident prevention</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Autonomous Safety Interventions</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">AI agents automatically trigger safety protocols and alerts when hazards are detected</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Predictive Safety Management</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">GENAI anticipates safety risks and implements preventive measures before incidents occur</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Intelligent Compliance Monitoring</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Graph Neural Networks map complex safety regulations and ensure continuous OSHA compliance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center professional-card">
+                    <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">< 500ms</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Response Time</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Real-time safety alerts</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center professional-card">
+                    <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">95%</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Hazard Detection</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Accuracy rate</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center professional-card">
+                    <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">100%</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Privacy Compliance</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Edge-first processing</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center professional-card">
+                    <div class="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-2">80%</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Incident Reduction</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Proactive prevention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-20 section-background">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Advanced Compliance Features
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Cutting-edge AI technology ensures comprehensive workplace safety monitoring and regulatory compliance.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="professional-card bg-white dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Vision AI Hazard Detection</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Advanced computer vision systems identify safety hazards, PPE compliance, and risky behaviors in real-time with high accuracy.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="professional-card bg-white dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Predictive Risk Analytics</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Machine learning algorithms analyze patterns to predict potential safety incidents before they occur, enabling proactive interventions.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="professional-card bg-white dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Automated Compliance Reporting</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Comprehensive audit trails and compliance reports generated automatically for OSHA inspections and regulatory requirements.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="professional-card bg-white dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Real-Time Alert System</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Instant notifications for safety violations and hazards enable immediate corrective action to prevent incidents and injuries.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="professional-card bg-white dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">PPE Compliance Monitoring</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Automated detection ensures proper personal protective equipment usage and identifies missing or incorrect PPE in real-time.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="professional-card bg-white dark:bg-gray-800 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Behavioral Safety Analysis</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        AI-powered analysis of worker behaviors identifies unsafe practices and provides targeted training recommendations for improvement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edge AI & Agentic AI Integration Section -->
+    <section class="py-20 alternate-background">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Edge AI & Agentic AI Integration
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Discover how our advanced AI technologies work together to revolutionize OSHA compliance monitoring
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Edge AI Column -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Edge AI Capabilities</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Real-time processing at the source</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Instant Hazard Detection</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    Processes video feeds locally with <50ms latency for immediate safety alerts
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Offline Operation</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    Continuous monitoring even without internet connectivity ensures uninterrupted safety oversight
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Bandwidth Optimization</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    Only sends relevant safety events and alerts, reducing data transmission costs by 90%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agentic AI Column -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Agentic AI Intelligence</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Autonomous decision-making & learning</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Autonomous Risk Assessment</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    AI agents continuously evaluate safety conditions and make autonomous decisions for hazard mitigation
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Adaptive Learning</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    Continuously learns from new safety scenarios to improve hazard detection accuracy over time
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Proactive Intervention</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                    Anticipates potential safety violations and automatically triggers preventive measures
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration Benefits -->
+            <div class="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-8">
+                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">Synergistic Benefits</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">100ms</div>
+                        <div class="text-gray-600 dark:text-gray-300">Response Time</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">95%</div>
+                        <div class="text-gray-600 dark:text-gray-300">Accuracy Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">80%</div>
+                        <div class="text-gray-600 dark:text-gray-300">Cost Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domain Expertise Section -->
+    <section class="py-20 section-background">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Deep Domain Expertise in Workplace Safety
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+                    Specialized AI knowledge for OSHA compliance and industry-specific safety regulations
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Construction Safety -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Construction Safety</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Building site protection</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Fall Protection Systems</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Heavy Equipment Safety</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Scaffolding Compliance</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Trenching & Excavation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manufacturing Safety -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Manufacturing Safety</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Production facility protection</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Machine Guarding</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Lockout/Tagout Procedures</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Chemical Safety</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Ergonomic Risk Assessment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Safety -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 professional-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Healthcare Safety</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Medical facility protection</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Bloodborne Pathogens</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Patient Handling Safety</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Hazardous Materials</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Workplace Violence Prevention</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 section-background">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Compliance & Safety Benefits
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+                    Transform your workplace safety program with measurable improvements in compliance and incident reduction.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="space-y-8">
+                    <!-- Benefit 1 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">75% Reduction in Safety Incidents</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Proactive hazard detection and prevention significantly reduce workplace accidents and injuries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2 2v-10a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">100% Audit Readiness</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Comprehensive documentation and real-time monitoring ensure complete compliance for OSHA inspections.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">60% Reduction in Compliance Costs</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Automated monitoring and reporting reduce manual inspection costs and eliminate compliance penalties.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">90% Improved Safety Culture</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Continuous monitoring and real-time feedback foster a proactive safety culture among employees.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Visual -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8">
+                        <div class="text-center">
+                            <div class="text-6xl font-bold text-blue-600 dark:text-blue-400 mb-4">Zero</div>
+                            <div class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fatalities Goal</div>
+                            <div class="text-gray-600 dark:text-gray-300">
+                                Our AI-powered system aims for zero workplace fatalities through intelligent prevention
+                            </div>
+                        </div>
+                        <div class="mt-8 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 dark:text-gray-400">Hazard Detection Rate</span>
+                                <span class="text-green-600 font-semibold">98%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 dark:text-gray-400">Training Effectiveness</span>
+                                <span class="text-blue-600 font-semibold">+85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 dark:text-gray-400">Employee Engagement</span>
+                                <span class="text-purple-600 font-semibold">+70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-purple-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-blue-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Revolutionize Your Workplace Safety
+                </h2>
+                <p class="text-xl text-blue-100 mb-8">
+                    Get priority access to our OSHA Compliance Monitoring solution and receive exclusive updates.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Email</h3>
+                        <p class="text-blue-200">contact@unovie.ai</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13 2.257a1 1 0 01.21 1.02l4.493 1.498a1 1 0 001.02-.21l4.493-1.498a1 1 0 001.02-.21l-2.257-1.113A11.042 11.042 0 005.516-5.516l-1.13-2.257a1 1 0 00-1.02-.21l-4.493 1.498"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">Phone</h3>
+                        <p class="text-blue-200">+1 (512) 555-0123</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-semibold mb-2">HQ</h3>
+                        <p class="text-blue-200">Austin, Texas</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:contact@unovie.ai?subject=OSHA Compliance Monitoring - Interest Notification" class="bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Get Notified at Launch
+                    </a>
+                    <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors">
+                        Download Solution Brief
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="../assets/images/logo.png" alt="Unovie.AI" class="h-10 w-auto">
+                        <div>
+                            <h3 class="text-xl font-bold">Unovie.AI</h3>
+                            <p class="text-xs text-gray-400">Edge AI Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Transforming industrial operations with cutting-edge Edge AI and digital twin technologies for the enterprise market.
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="https://linkedin.com/company/unovie" target="_blank" rel="noopener" class="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853-2.136 1.445-2.136 1.445v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.37zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.064.1-2.063-2.063zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774.774 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 1.729V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/unovie" target="_blank" rel="noopener" class="w-8 h-8 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 01-8.384 4.043C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096 4.096 0 0 0.666 2.475 0 0 0 0 1.0 0 .5c.07.34 1.99.34 1.99.34 2.9v0.0c0 1-.1 0 .1.1.1.0H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-100">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="../index.html#services" class="hover:text-white transition-colors">AI Innovation Consulting</a></li>
+                        <li><a href="../turnkey-projects.html" class="hover:text-white transition-colors">Turnkey Projects</a></li>
+                    </ul>
+                </div>
+
+                <!-- Solutions -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-100">Solutions</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="smart-supply-chain-management.html" class="hover:text-white transition-colors">Smart Supply Chain Management</a></li>
+                        <li><a href="real-time-quality-control.html" class="hover:text-white transition-colors">Real-Time Quality Control</a></li>
+                        <li><a href="osha-compliance-monitoring.html" class="hover:text-white transition-colors">OSHA Compliance Monitoring</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-100">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="../about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#careers" class="hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-gray-400 text-sm">
+                        &copy; <span id="footerYear">2024</span> Unovie.AI. All rights reserved.
+                    </div>
+                    <div class="text-gray-400 text-sm">
+                        Enterprise AI Solutions for Industry 4.0 | Austin, Texas & Worldwide
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Professional JavaScript for Enterprise Website
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme Management
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+
+            // Dark mode toggle
+            darkModeToggle?.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            });
+
+            // Mobile menu toggle
+            mobileMenuToggle?.addEventListener('click', () => {
+                mobileMenu?.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#mobileMenuToggle') && !e.target.closest('#mobileMenu')) {
+                    mobileMenu?.classList.add('hidden');
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        mobileMenu?.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Professional scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.professional-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Professional header scroll effect
+            let lastScrollY = window.scrollY;
+            const header = document.querySelector('nav');
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > 100) {
+                    header?.classList.add('shadow-lg');
+                } else {
+                    header?.classList.remove('shadow-lg');
+                }
+
+                lastScrollY = currentScrollY;
+            });
+
+            // Dynamic copyright year
+            const footerYear = document.getElementById('footerYear');
+            if (footerYear) {
+                footerYear.textContent = new Date().getFullYear();
+            }
+
+            // Loading animation
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+
+            // Remove any glassmorphism-related elements if they exist
+            document.querySelectorAll('.glass-effect').forEach(element => {
+                element.classList.remove('glass-effect');
+                element.classList.add('bg-white', 'dark:bg-gray-800');
+            });
+        });
+
+        // Performance optimization: Debounce scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Export for potential external use
+        window.UnovieWebsite = {
+            init: function() {
+                // Initialize professional features
+                console.log('Unovie.AI Enterprise Website initialized');
+            }
+        };
+    </script>
+</body>
+</html>
