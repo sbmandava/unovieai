@@ -300,3 +300,9 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 :root[data-theme="light"] .grain{opacity:.02}
 :root[data-theme="light"] header.nav.stuck{background:rgba(255,255,255,.82);border-bottom-color:var(--line)}
 :root[data-theme="light"] .panel .scope{background:repeating-linear-gradient(90deg,transparent,transparent 31px,rgba(15,22,31,.05) 31px,rgba(15,22,31,.05) 32px),repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(15,22,31,.05) 31px,rgba(15,22,31,.05) 32px)}
+
+/* ---------- mobile menu fix: single-line items, fits all, scrollable ---------- */
+.mobile{padding:80px var(--gutter) 40px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mobile a{display:flex;align-items:center;gap:14px;font-size:clamp(21px,6vw,28px);padding:13px 0}
+.mobile a br{display:none}
+.mobile a .mono{font-size:13px}
