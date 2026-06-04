@@ -50,6 +50,7 @@ open(f"{ROOT}/index.html","w",encoding="utf-8").write(idx)
 def HEAD(base,title,desc):
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="{base}assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="{base}assets/favicon.png"><link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
