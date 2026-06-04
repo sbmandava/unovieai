@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 # Builds shared assets + sub-pages for the Unovie.AI site, reusing the homepage design system.
 import re, os
-ROOT="/opt/nextweb"
+ROOT=os.path.dirname(os.path.abspath(__file__))
 idx=open(f"{ROOT}/index.html",encoding="utf-8").read()
 
 # ---- 1) extract CSS + JS from the homepage into shared assets ----
-css=re.search(r"<style>(.*?)</style>", idx, re.S).group(1)
-js =re.search(r"<script>(.*?)</script>", idx, re.S).group(1)
+# Bare <style>/<script> blocks only exist on the un-slimmed homepage (first run).
+# Once slimmed they become <link>/<script src=...>, so these match None and we
+# leave the existing assets/ as the source of truth.
+_m_css=re.search(r"<style>(.*?)</style>", idx, re.S)
+_m_js =re.search(r"<script>(.*?)</script>", idx, re.S)
 
 SUBCSS = """
 /* ---------- sub-page additions ---------- */
@@ -28,8 +31,11 @@ DATAHREF="""
 document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=el.dataset.href;}));
 """
 os.makedirs(f"{ROOT}/assets",exist_ok=True)
-open(f"{ROOT}/assets/site.css","w",encoding="utf-8").write(css+SUBCSS)
-open(f"{ROOT}/assets/site.js","w",encoding="utf-8").write(js+DATAHREF)
+if _m_css and _m_js:
+    open(f"{ROOT}/assets/site.css","w",encoding="utf-8").write(_m_css.group(1)+SUBCSS)
+    open(f"{ROOT}/assets/site.js","w",encoding="utf-8").write(_m_js.group(1)+DATAHREF)
+else:
+    print("note: index.html already slimmed; reusing existing assets/site.{css,js}")
 
 # ---- 2) slim the homepage: link assets, make cards clickable ----
 idx=re.sub(r"<style>.*?</style>", '<link rel="stylesheet" href="assets/site.css">', idx, flags=re.S, count=1)
@@ -88,8 +94,8 @@ def FOOTER(base):
   <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
     <p>AI engineering as a service. We design, build, and operate custom edge-AI systems — on hardware you own.</p></div>
   <div class="fcol"><h4>Solutions</h4>
-    <a href="{base}solutions/smart-factory-floor.html">Smart Factory Floor</a><a href="{base}solutions/smart-warehouse.html">Smart Warehouse</a>
-    <a href="{base}solutions/osha-compliance.html">OSHA Compliance</a><a href="{base}solutions/batch-optimization.html">Batch Optimization</a></div>
+    <a href="{base}solutions/maritime-digital-twin.html">Maritime Digital Twin</a><a href="{base}solutions/connected-vehicle-twin.html">Connected-Vehicle Twin</a>
+    <a href="{base}solutions/corporate-travel-sales.html">Corporate-Travel Sales</a></div>
   <div class="fcol"><h4>Platform</h4>
     <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Analytics</a>
     <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a></div>
@@ -193,6 +199,30 @@ SOL=[
    ("/capture","Session capture","Turns each session into reusable knowledge.",["capture","reuse"])]),
   ("Connect to capture",[("Connect","Link expert &amp; floor."),("Ground","Pull cited context."),("Guide","Real-time steps."),("Capture","Bank the knowledge.")]),
   "Your best expert, <span class='serif' style='color:var(--accent)'>everywhere.</span>"),
+ ("maritime-digital-twin","Maritime · Oil &amp; Gas","Maritime <span class='serif' style='color:var(--accent)'>Digital Twin</span>",
+  "A living digital twin for large tanker and LNG fleets. Edge-AI on every vessel watches vibration, acoustics, hull strain and the OT network, classifies anomalies before the satellite uplink, and turns condition evidence into deferred-maintenance and compliance decisions on shore.",
+  [("−6<span class='o'> mo</span>","overhauls deferred on evidence"),("100<span class='o'>%</span>","classified on-vessel"),("800","vessels · one twin")],
+  ("Intelligence at the waterline",[("/edge","Edge anomaly detection","Vibration, acoustic and strain models run on the vessel and classify faults before the uplink — so low-bandwidth links carry decisions, not raw signal.",["vibration","acoustic","strain"]),
+   ("/cbm","Condition-based maintenance","Remaining-useful-life on rotating gear becomes defensible deferral evidence for class surveys, and auto-triggers spares procurement.",["RUL","deferral","spares"]),
+   ("/cyber","OT cyber watch","An on-network sensor flags anomalous engine and automation commands, isolates the endpoint, and keeps a full forensic trail.",["OT IDS","isolate","forensics"])]),
+  ("From sensor to shore decision",[("Sense","High-rate sensors on engine, hull and OT bus."),("Classify","Edge models score events on the vessel."),("Sync","Only decisions cross the satellite link."),("Act","Defer, procure, or isolate — with evidence.")]),
+  "Run the fleet on <span class='serif' style='color:var(--accent)'>evidence.</span>"),
+ ("connected-vehicle-twin","Automotive · Connected EV","Connected-Vehicle <span class='serif' style='color:var(--accent)'>Digital Twin</span>",
+  "A VIN-level digital twin for multi-brand connected-EV fleets. As-ordered, as-built, as-operated and as-maintained data unify into one live view, with an in-vehicle AI assistant and battery diagnostics running on automotive-grade edge silicon and delivered over the air.",
+  [("4.2<span class='o'>h</span>","average case resolution"),("98.7<span class='o'>%</span>","notification delivery"),("4","lifecycle states · one VIN")],
+  ("One VIN, every dimension",[("/twin","Lifecycle digital twin","As-ordered, as-built, as-operated and as-maintained unified per VIN — live telemetry beside service, recall and warranty history.",["telemetry","BOM","history"]),
+   ("/assist","In-vehicle AI assistant","A generative assistant and battery state-of-health diagnostics run on automotive edge SoCs, with new models pushed over the air.",["GenAI","battery SoH","OTA"]),
+   ("/care","Context-aware customer care","Inbound contacts pop full vehicle context, next-best-action and consent state; video remote-assist and digital-key control close the loop.",["screen-pop","NBA","digital keys"])]),
+  ("Signal to service",[("Connect","Vehicles stream telemetry and faults."),("Diagnose","Edge models score battery and systems."),("Enrich","Cases pop context and next action."),("Resolve","Remote command, dispatch, or OTA.")]),
+  "Know every vehicle, <span class='serif' style='color:var(--accent)'>by VIN.</span>"),
+ ("corporate-travel-sales","Go-to-market · Airline","Corporate-Travel <span class='serif' style='color:var(--accent)'>Sales Intelligence</span>",
+  "An AI co-pilot for an airline corporate-sales team. It grounds each corporate account in live travel-demand signals, scores fit across seven airline-specific dimensions — network overlap, premium-cabin propensity, loyalty, travel-policy maturity and more — drafts a full opportunity plan with stakeholder map and competitive positioning, and surfaces the next best action across the whole book of business.",
+  [("&lt;5<span class='o'> min</span>","meeting prep, from an hour"),("1<span class='o'>-day</span>","RFP turnaround, from five"),("2,000<span class='o'>+</span>","accounts, one book")],
+  ("From signal to corporate deal",[("/signal","Travel-demand signal grounding","Hiring, expansion, earnings and RFP signals per account distil into issue, impact and opportunity a rep can act on.",["grounded","signals","RAG"]),
+   ("/score","Airline-specific fit scoring","Seven weighted dimensions — network overlap, premium-cabin propensity, loyalty, policy maturity, buying intent and more — render an instant fit and propensity picture.",["7 axes","propensity","explainable"]),
+   ("/leak","Share-of-wallet leakage","Route-level share against contracted commitment flags slipping accounts and the revenue at risk — before renewal.",["share","routes","at-risk"])]),
+  ("Account to next move",[("Ground","Pull live demand signals."),("Score","Rank fit across seven axes."),("Plan","Draft the opportunity and stakeholders."),("Act","Surface the next best action.")]),
+  "Win the <span class='serif' style='color:var(--accent)'>corporate</span> account."),
 ]
 for s in SOL: page(B,"solutions",s[0],s[1],"Solutions",s[2],s[3],s[4],s[5],s[6],s[7])
 
@@ -254,7 +284,7 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
   ("Build &amp; test","Data, models, testing, monitoring."),("Optimize","KPI tracking &amp; feedback loops."),("Train &amp; support","Enablement &amp; adoption.")])}</div></section>
 <section><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Partners</div>
-  <h2 style="margin-top:16px">Trusted with <span class="serif" style="color:var(--accent)">Siemens · GE · NVIDIA · Qualcomm.</span></h2>
+  <h2 style="margin-top:16px">Trusted with <span class="serif" style="color:var(--accent)">NVIDIA · AMD · Qualcomm · Siemens · GE.</span></h2>
   <p class="lead">Manufacturing · Logistics · Oil &amp; Gas · Food Processing. Bring us a problem; we will return a system.</p>
   <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com" data-cursor>Talk to our engineers <span class="ar">→</span></a></div>
 </div></div></section>
