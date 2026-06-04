@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Unovie.AI · Built in Austin, Texas</title><meta name="description" content="An AI-engineering studio that designs, builds, and operates custom edge-AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css"><style>
+.contact-grid{display:grid;gap:22px}@media(min-width:880px){.contact-grid{grid-template-columns:.92fr 1.08fr}}
+.cline{display:flex;gap:16px;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;background:var(--surface);transition:border-color .3s}
+.cline:hover{border-color:var(--accent)}
+.cline .ic{font-family:var(--mono);color:var(--accent);font-size:18px;margin-top:1px;min-width:22px}
+.cline .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+.cline .v{color:var(--fg);font-weight:600;margin-top:4px;display:block;line-height:1.5}
+.cline .v a{color:var(--steel)} .cline .v a:hover{color:var(--accent)}
+.form{border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;background:linear-gradient(180deg,var(--surface),var(--ink-2))}
+.field{margin-bottom:14px}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-dim);display:block;margin-bottom:7px}
+.field input,.field textarea{width:100%;background:var(--ink-2);border:1px solid var(--line-2);border-radius:10px;padding:13px 14px;color:var(--fg);font-family:var(--body);font-size:15px;transition:border-color .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field textarea{min-height:120px;resize:vertical}
+.austin{position:relative;overflow:hidden}
+.austin::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(720px 440px at 82% 8%,rgba(95,208,162,.10),transparent 60%),radial-gradient(620px 420px at 0% 92%,rgba(110,168,255,.09),transparent 60%)}
+.austin .wrap{position:relative;z-index:1}
+.pin{font-family:var(--mono);font-size:12px;color:var(--accent);display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line-2);border-radius:var(--r-pill);padding:7px 14px;margin-bottom:20px}
+.eco{display:flex;flex-wrap:wrap;gap:16px 44px;align-items:center;margin-top:30px}
+.eco .w{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3.6vw,44px);letter-spacing:-.03em;color:var(--fg-mut);transition:color .3s,transform .3s var(--e)}
+.eco .w:hover{color:var(--fg);transform:translateY(-3px)}
+</style></head><body>
+<div class="grain"></div><div class="cur"></div><div class="cur-r"></div><header class="nav"><div class="wrap"><div class="row">
+  <a class="brand" href="index.html"><img class="logo" src="assets/images/logo.png" alt="Unovie.AI"></a>
+  <nav class="navlinks">
+    <a href="index.html#engineering">Engineering</a><a href="index.html#accelerators">Solutions</a>
+    <a href="index.html#platform">Platform</a><a href="index.html#delivery">How we deliver</a>
+    <a href="contact.html">Contact</a>
+    <div class="drop"><button data-cursor>Resources ▾</button><div class="menu">
+      <a href="resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
+      <a href="resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
+    </div></div>
+  </nav>
+  <a class="navcta" href="index.html#contact" data-cursor>Start a project <span class="ar">→</span></a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+</div></div></header>
+<div class="mobile" id="mobile">
+  <a href="index.html#engineering"><span class="mono">01</span><br>Engineering</a>
+  <a href="index.html#accelerators"><span class="mono">02</span><br>Solutions</a>
+  <a href="index.html#platform"><span class="mono">03</span><br>Platform</a>
+  <a href="index.html#delivery"><span class="mono">04</span><br>How we deliver</a>
+  <a href="resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Resources</a>
+  <a href="index.html#contact" style="color:var(--accent)"><span class="mono">06</span><br>Start a project →</a>
+  <a href="contact.html"><span class="mono">07</span><br>Contact</a>
+</div>
+<section class="phero"><div class="wrap">
+  <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Contact</span></div>
+  <div class="tag rv">Contact <span class="o">·</span> Let's build</div>
+  <h1 class="rv" style="margin-top:18px">Bring us a problem.<br>We'll return a <span class="serif" style="color:var(--accent)">system.</span></h1>
+  <p class="lead rv">Tell us the outcome you need. Our engineers will scope the path to production — fixed time, fixed cost, full responsibility.</p>
+  <div class="cta rv"><a class="btn btn-acc" href="#reach" data-cursor>Get in touch <span class="ar">→</span></a><a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read the field guide</a></div>
+</div></section>
+
+
+<section class="austin"><div class="wrap">
+  <div class="shead"><div class="l">
+    <div class="num rv"><span class="ln"></span>Where we build</div>
+    <div class="pin rv">◉ Austin · Central Texas corridor</div>
+    <h2 class="rv">Where <span class="serif" style="color:var(--accent)">chips, software &amp; services</span> converge.</h2>
+  </div>
+  <p class="lead rv">Unovie is built in Austin, Texas — the gravitational center of America's <strong style="color:var(--fg)">physical-AI</strong> revolution. Silicon is designed and fabricated here, autonomy software is written here, foundational ML research happens here, and the AI infrastructure that runs it is converging here. We engineer edge-AI from the same ground.</p></div>
+  <div class="disc" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="dcard rv"><div class="glow"></div><div class="ix">/ chips</div><h3>Chips</h3><p>Silicon and edge accelerators — designed and fabricated across Central Texas.</p><div class="spec"><span class="chip">Samsung fabs</span><span class="chip">NVIDIA</span><span class="chip">AMD</span></div></div>
+    <div class="dcard rv"><div class="glow" style="background:var(--steel)"></div><div class="ix">/ software</div><h3>Software</h3><p>Models, autonomy, and the self-learning loop — the intelligence layer.</p><div class="spec"><span class="chip">models</span><span class="chip">autonomy</span><span class="chip">UT Austin IFML</span></div></div>
+    <div class="dcard rv"><div class="glow"></div><div class="ix">/ services</div><h3>Services</h3><p>Turnkey delivery: architecture → POC → MVP → production.</p><div class="spec"><span class="chip">turnkey</span><span class="chip">Dell × NVIDIA</span><span class="chip">on-prem</span></div></div>
+  </div>
+  <div class="rv" style="margin-top:46px">
+    <div class="tag" style="margin-bottom:4px">In good company — the corridor anchoring Physical AI</div>
+    <div class="eco"><span class="w">SpaceX</span><span class="w">Tesla</span><span class="w">Apple</span><span class="w">Samsung</span><span class="w">Firefly&nbsp;Aerospace</span><span class="w">Dell × NVIDIA</span></div>
+    <div class="eco" style="margin-top:18px;gap:14px 38px"><span class="w" style="font-size:clamp(17px,2.2vw,26px);color:var(--steel)">UT Austin · IFML</span></div>
+    <p style="font-size:12.5px;color:var(--fg-dim);margin-top:20px;max-width:80ch">SpaceX — autonomy &amp; reusable launch · Tesla — robotics &amp; manufacturing AI (HQ in Austin) · Apple — its largest campus outside Cupertino · Samsung — advanced semiconductor fabs (Taylor, TX) · Firefly Aerospace — responsive launch &amp; lunar landers (Cedar Park, TX). <strong style="color:var(--fg-mut)">Research &amp; infrastructure:</strong> UT Austin's <strong style="color:var(--fg-mut)">IFML</strong> — the NSF Institute for Foundations of Machine Learning — and the <strong style="color:var(--fg-mut)">Dell × NVIDIA</strong> AI-factory convergence anchor the corridor. Named to describe the regional innovation ecosystem; not affiliations or endorsements.</p>
+  </div>
+</div></section>
+
+<section id="reach"><div class="wrap">
+  <div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Reach us</div><h2 class="rv">Talk to our engineers.</h2></div></div>
+  <div class="cinfo" style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+    <div class="cline rv"><span class="ic">◍</span><div><span class="k">Headquarters</span><span class="v">651N&nbsp;N.&nbsp;Highway-183, Suite&nbsp;#4120<br>Austin, TX&nbsp;78641 · USA</span></div></div>
+    <div class="cline rv"><span class="ic">☎</span><div><span class="k">Phone</span><span class="v"><a href="tel:+16365799725">+1-636-579-9725</a></span></div></div>
+    <div class="cline rv"><span class="ic">✉</span><div><span class="k">Email</span><span class="v">contact@unovie.ai &nbsp;·&nbsp; sales@unovie.ai</span></div></div>
+    <div class="cline rv"><span class="ic">◇</span><div><span class="k">Engagement</span><span class="v">Turnkey · fixed time &amp; cost · worldwide</span></div></div>
+  </div>
+</div></section>
+<section><div class="wrap"><div class="cta-final rv">
+  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Engineered in Texas</div>
+  <h2 style="margin-top:16px">Let's put physical AI <span class="serif" style="color:var(--accent)">to work.</span></h2>
+  <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
+  <div class="cta"><a class="btn btn-acc" href="#reach" data-cursor>Get in touch <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read the field guide</a></div>
+</div></div></section>
+<footer><div class="wrap"><div class="fgrid">
+  <div class="fcol fbrand"><a class="brand" href="index.html"><img class="logo" src="assets/images/logo.png" alt="Unovie.AI"></a>
+    <p>AI engineering as a service. We design, build, and operate custom edge-AI systems — on hardware you own.</p></div>
+  <div class="fcol"><h4>Solutions</h4>
+    <a href="solutions/smart-factory-floor.html">Smart Factory Floor</a><a href="solutions/smart-warehouse.html">Smart Warehouse</a>
+    <a href="solutions/osha-compliance.html">OSHA Compliance</a><a href="solutions/batch-optimization.html">Batch Optimization</a></div>
+  <div class="fcol"><h4>Platform</h4>
+    <a href="platform/edge-data-fabric.html">Edge Data Fabric</a><a href="platform/edge-streaming-analytics.html">Streaming Analytics</a>
+    <a href="platform/gpu-microcloud.html">GPU MicroCloud</a><a href="platform/gpu-edgegateway.html">GPU EdgeGateway</a></div>
+  <div class="fcol"><h4>Company</h4>
+    <a href="about.html">About</a><a href="resources/edge-ai-models.html" target="_blank">Field Guide</a>
+    <a href="resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="contact.html">Contact</a></div>
+</div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
+<script src="assets/site.js"></script></body></html>
