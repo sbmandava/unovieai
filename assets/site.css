@@ -47,7 +47,7 @@ h1{font-size:clamp(44px,7.4vw,108px);font-weight:800}
 h2{font-size:clamp(30px,4.6vw,58px)}
 h3{font-size:clamp(20px,2vw,25px);letter-spacing:-.02em}
 p{color:var(--fg-mut)}
-.lead{font-size:clamp(17px,1.5vw,21px);color:var(--fg-mut);max-width:60ch}
+.lead{font-size:clamp(17px,1.5vw,21px);color:var(--fg-mut);max-width:72ch}
 
 /* ============================== CURSOR ============================== */
 .cur,.cur-r{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:200;mix-blend-mode:difference}

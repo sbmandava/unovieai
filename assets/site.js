@@ -30,11 +30,10 @@ if(cur && !RM && matchMedia('(hover:hover)').matches){
 // clickable cards
 document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=el.dataset.href;}));
 
-// theme toggle — dark by default, persisted, single button in the nav
+// theme — default is set inline in <head> (light on desktop, dark on mobile/touch); this button toggles & persists the choice
 (function(){
   function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('uvTheme',t);}catch(e){}}
   function toggle(){applyTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}
-  try{var s=localStorage.getItem('uvTheme');applyTheme(s==='light'?'light':'dark');}catch(e){applyTheme('dark');}
   var row=document.querySelector('header.nav .row');
   if(row){
     var navcta=row.querySelector('.navcta'), burger=row.querySelector('.burger');

@@ -591,7 +591,7 @@ need more — abstraction — are the ones to spend capacity on, deliberately, l
 <script>
   function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('wpTheme',t);}catch(e){}}
   function toggleTheme(){var cur=document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light';applyTheme(cur==='dark'?'light':'dark');}
-  (function(){try{var s=localStorage.getItem('wpTheme');if(s)applyTheme(s);else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)applyTheme('dark');}catch(e){}})();
+  (function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();
 </script>
 </body>
 </html>

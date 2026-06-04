@@ -53,6 +53,11 @@ for name,slug in PLAT.items():
 open(f"{ROOT}/index.html","w",encoding="utf-8").write(idx)
 
 # ---- 3) shared chrome (base = "" for root, "../" for subdirs) ----
+# Inline theme bootstrap (runs in <head>, before first paint → no flash).
+# Default: light on desktop, dark on mobile/touch. A saved toggle (uvTheme) always wins.
+# The `data-theme-init` attribute keeps the homepage-slimming regex (bare <script>) from matching it.
+THEMEINIT = "<script data-theme-init>(function(){try{var s=localStorage.getItem('uvTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>"
+
 def HEAD(base,title,desc):
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +65,7 @@ def HEAD(base,title,desc):
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}assets/site.css"></head><body>
+<link rel="stylesheet" href="{base}assets/site.css">{THEMEINIT}</head><body>
 <div class="grain"></div><div class="cur"></div><div class="cur-r"></div>'''
 
 def NAV(base):
