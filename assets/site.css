@@ -67,6 +67,14 @@ header.nav.stuck{background:rgba(11,10,9,.72);backdrop-filter:blur(14px) saturat
 .brand .o{color:var(--accent)}
 .logo{height:24px;width:auto;display:block}
 header.nav .logo{height:40px}
+/* flying paper-plane background — AI Engineering section */
+#engineering{position:relative;overflow:hidden}
+#engineering>.wrap{position:relative;z-index:1}
+.planebg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.planebg svg{width:100%;height:100%;display:block}
+.uplane{fill:var(--steel);opacity:.32}
+.utrail{fill:var(--steel)}
+@media(prefers-reduced-motion:reduce){.planebg{display:none}}
 .navlinks{display:flex;align-items:center;gap:34px}
 .navlinks a{font-size:14.5px;color:var(--fg-mut);font-weight:500;position:relative;padding:6px 0;transition:color .2s}
 .navlinks a:hover{color:var(--fg)}
