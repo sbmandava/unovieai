@@ -73,8 +73,8 @@ def NAV(base):
     return f'''<header class="nav"><div class="wrap"><div class="row">
   <a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
-    <a href="{h}#engineering">Engineering</a><a href="{h}#accelerators">Solutions</a>
-    <a href="{h}#platform">Platform</a><a href="{h}#delivery">How we deliver</a><a href="{base}contact.html">Contact</a>
+    <a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
+    <a href="{h}#platform">Platform</a>
     <div class="drop"><button data-cursor>Research ▾</button><div class="menu">
       <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
       <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
@@ -84,13 +84,11 @@ def NAV(base):
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 </div></div></header>
 <div class="mobile" id="mobile">
-  <a href="{h}#engineering"><span class="mono">01</span><br>Engineering</a>
+  <a href="{h}#engineering"><span class="mono">01</span><br>AI Engineering</a>
   <a href="{h}#accelerators"><span class="mono">02</span><br>Solutions</a>
   <a href="{h}#platform"><span class="mono">03</span><br>Platform</a>
-  <a href="{h}#delivery"><span class="mono">04</span><br>How we deliver</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Research</a>
-  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">06</span><br>Start a project →</a>
-  <a href="{base}contact.html"><span class="mono">07</span><br>Contact</a>
+  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">04</span><br>Research</a>
+  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">05</span><br>Start a project →</a>
 </div>'''
 
 def FOOTER(base):
@@ -98,15 +96,14 @@ def FOOTER(base):
     return f'''<footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
     <p>AI engineering as a service. We design, build, and operate custom edge-AI systems — on hardware you own.</p></div>
-  <div class="fcol"><h4>Solutions</h4>
-    <a href="{base}solutions/maritime-digital-twin.html">Maritime Digital Twin</a><a href="{base}solutions/connected-vehicle-twin.html">Connected-Vehicle Twin</a>
-    <a href="{base}solutions/corporate-travel-sales.html">Corporate-Travel Sales</a></div>
+  <div class="fcol"><h4>Company</h4>
+    <a href="{h}#engineering">AI Engineering</a><a href="{h}#delivery">How we deliver</a>
+    <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a></div>
   <div class="fcol"><h4>Platform</h4>
     <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Analytics</a>
     <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a></div>
-  <div class="fcol"><h4>Company</h4>
-    <a href="{base}about.html">About</a><a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide</a>
-    <a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}contact.html">Contact</a></div>
+  <div class="fcol"><h4>Research</h4>
+    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 
