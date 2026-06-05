@@ -75,7 +75,7 @@ def NAV(base):
   <nav class="navlinks">
     <a href="{h}#engineering">Engineering</a><a href="{h}#accelerators">Solutions</a>
     <a href="{h}#platform">Platform</a><a href="{h}#delivery">How we deliver</a><a href="{base}contact.html">Contact</a>
-    <div class="drop"><button data-cursor>Resources ▾</button><div class="menu">
+    <div class="drop"><button data-cursor>Research ▾</button><div class="menu">
       <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
       <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
     </div></div>
@@ -88,7 +88,7 @@ def NAV(base):
   <a href="{h}#accelerators"><span class="mono">02</span><br>Solutions</a>
   <a href="{h}#platform"><span class="mono">03</span><br>Platform</a>
   <a href="{h}#delivery"><span class="mono">04</span><br>How we deliver</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Resources</a>
+  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Research</a>
   <a href="{h}#contact" style="color:var(--accent)"><span class="mono">06</span><br>Start a project →</a>
   <a href="{base}contact.html"><span class="mono">07</span><br>Contact</a>
 </div>'''
