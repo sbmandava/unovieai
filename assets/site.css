@@ -72,7 +72,10 @@ header.nav .logo{height:40px}
 #engineering>.wrap{position:relative;z-index:1}
 .planebg{position:absolute;inset:0;z-index:0;pointer-events:none}
 .planebg svg{width:100%;height:100%;display:block}
-.uplane{fill:#6468ac;opacity:.42}
+.uplane{opacity:.6}
+.uplane .up-body{fill:#6468ac}
+.uplane .up-keel{fill:#d6a93f}
+.uplane .up-spine{fill:none;stroke:#fff;stroke-width:1.1;opacity:.7}
 .utrail{fill:#6468ac}
 @media(prefers-reduced-motion:reduce){.planebg{display:none}}
 .navlinks{display:flex;align-items:center;gap:34px}
