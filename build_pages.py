@@ -41,11 +41,11 @@ else:
 idx=re.sub(r"<style>.*?</style>", '<link rel="stylesheet" href="assets/site.css">', idx, flags=re.S, count=1)
 idx=re.sub(r"<script>.*?</script>", '<script src="assets/site.js"></script>', idx, flags=re.S, count=1)
 ACC={"--w:78%":"smart-factory-floor","--w:62%":"smart-warehouse","--w:72%":"osha-compliance",
-     "--w:74%":"food-safety","--w:70%":"batch-optimization","--w:66%":"remote-expertise"}
+     "--w:74%":"vision-intelligence","--w:70%":"batch-optimization","--w:66%":"remote-expertise"}
 for w,slug in ACC.items():
     idx=idx.replace(f'<div class="acard rv" style="{w}">',
                     f'<div class="acard rv" data-href="solutions/{slug}.html" data-cursor style="{w}">',1)
-PLAT={"Edge Data Fabric":"edge-data-fabric","Edge Streaming Analytics":"edge-streaming-analytics",
+PLAT={"Edge Data Fabric":"edge-data-fabric","Edge Streaming Intelligence":"edge-streaming-analytics",
       "GPU MicroCloud":"gpu-microcloud","GPU EdgeGateway":"gpu-edgegateway"}
 for name,slug in PLAT.items():
     idx=idx.replace(f'href="#contact" data-cursor><div><div class="t">{name}</div>',
@@ -100,7 +100,7 @@ def FOOTER(base):
     <a href="{h}#engineering">AI Engineering</a><a href="{h}#delivery">How we deliver</a>
     <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a></div>
   <div class="fcol"><h4>Platform</h4>
-    <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Analytics</a>
+    <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Intelligence</a>
     <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a></div>
   <div class="fcol"><h4>Research</h4>
     <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a></div>
@@ -124,7 +124,7 @@ def shead(num,label,title,lead=""):
     L=f'<p class="lead rv">{lead}</p>' if lead else ""
     return f'<div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>{num} — {label}</div><h2 class="rv">{title}</h2></div>{L}</div>'
 
-def page(base, folder, slug, cat, crumb_cat, title_html, lead, kpis, feats, hows, cta_lead):
+def page(base, folder, slug, cat, crumb_cat, title_html, lead, kpis, feats, hows, cta_lead, extra=""):
     full = f"{ROOT}/{folder}" if folder else ROOT
     os.makedirs(full, exist_ok=True)
     head=HEAD(base, f"{re.sub('<[^>]+>','',title_html)} — Unovie.AI", lead[:150])
@@ -140,6 +140,7 @@ def page(base, folder, slug, cat, crumb_cat, title_html, lead, kpis, feats, hows
 </div></section>
 <section><div class="wrap">{shead("01","What it does", feats[0])}{disc(feats[1])}</div></section>
 <section><div class="wrap">{shead("02","How it works", hows[0])}{steps(hows[1])}</div></section>
+{extra}
 <section id="contact"><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
   <h2 style="margin-top:16px">{cta_lead}</h2>
@@ -177,14 +178,14 @@ SOL=[
    ("/evidence","Alerting &amp; evidence","Real-time alerts plus a defensible audit log.",["alerting","audit"])]),
   ("Monitor to audit",[("Monitor","Watch zones &amp; PPE."),("Detect","Flag risk events."),("Alert","Notify supervisors."),("Record","Immutable evidence log.")]),
   "Protect people. <span class='serif' style='color:var(--accent)'>Prove it.</span>"),
- ("food-safety","Food processing","Food Safety <span class='serif' style='color:var(--accent)'>Monitoring</span>",
-  "Monitor food-safety parameters in real time at the edge — temperature, contamination signals, process drift — and act before incidents happen.",
-  [("−30<span class='o'>%</span>","contamination"),("+20<span class='o'>%</span>","customer CSAT"),("continuous","monitoring")],
-  ("Catch it before it ships",[("/sense","Parameter monitoring","Real-time temperature, humidity, and process signals.",["temp","process"]),
-   ("/anomaly","Anomaly detection","Spots contamination signatures early.",["anomaly","early"]),
-   ("/log","Compliance logging","Continuous, audit-ready records.",["HACCP","audit"])]),
-  ("Sense to record",[("Sense","Capture line parameters."),("Detect","Flag anomalies."),("Alert","Stop &amp; notify."),("Record","Compliance trail.")]),
-  "Ship safe. <span class='serif' style='color:var(--accent)'>Every batch.</span>"),
+ ("vision-intelligence","OTT · Content Provider","Vision <span class='serif' style='color:var(--accent)'>Intelligence</span>",
+  "Real-time computer vision for an OTT and pay-TV operator. Edge-AI watches every channel feed, identifies what is actually on screen frame by frame, and turns thousands of live streams into a continuously verified, audit-ready signal — on GPUs at the edge, in under a second.",
+  [("96","channels per node, live"),("&lt;1<span class='o'>s</span>","feed to verified"),("−90<span class='o'>%</span>","manual QA effort")],
+  ("See every stream, automatically",[("/detect","Live channel detection","GPU vision identifies the channel on every tile of every composite feed, with confidence and bounding box per frame.",["per-frame","confidence","bbox"]),
+   ("/verify","Continuous QA &amp; compliance","Confirms each stream carries the right content and flags drift or outage in sub-second time, with annotated evidence for audit.",["MTTD↓","evidence","audit"]),
+   ("/scale","Many feeds, one node","A zero-copy GPU pipeline decodes and scores dozens of 4K feeds per edge node — no raw video leaves the rack.",["zero-copy","4K","on-prem"])]),
+  ("Stream to verified signal",[("Decode","RTSP feeds decode into GPU memory."),("Locate","Per-tile regions mapped once."),("Detect","GPU scores each region every frame."),("Publish","Detections stream to analytics &amp; alerts.")]),
+  "Verify every channel, <span class='serif' style='color:var(--accent)'>in real time.</span>"),
  ("batch-optimization","Process · chem &amp; pharma","Batch Process <span class='serif' style='color:var(--accent)'>Optimization</span>",
   "Automate the optimization of batch processes in chemical and pharmaceutical manufacturing — higher quality, less waste, per batch.",
   [("+25<span class='o'>%</span>","product quality"),("−15<span class='o'>%</span>","waste"),("per-batch","tuning")],
@@ -231,39 +232,80 @@ for s in SOL: page(B,"solutions",s[0],s[1],"Solutions",s[2],s[3],s[4],s[5],s[6],
 # ----- PLATFORM -----
 PLATP=[
  ("edge-data-fabric","Platform · Nexus","Edge Data <span class='serif' style='color:var(--steel)'>Fabric</span>",
-  "A typed knowledge graph + vector memory of your domain that grows with every document and grounds every answer in source records — on-prem.",
-  [("graph<span class='s'>+vector</span>","unified memory"),("on-prem","data never leaves"),("real-time","ingest")],
-  ("Context that compounds",[("/ingest","Continuous ingest","Documents and streams become typed, queryable structure.",["typed","incremental"]),
-   ("/search","Hybrid search","BM25 + dense vectors for grounded retrieval.",["BM25","vector"]),
-   ("/isolation","Tier isolation","Per-collection, per-tier boundaries kept end to end.",["multi-tenant","governed"])]),
-  ("Ingest to serve",[("Ingest","Walk &amp; dedupe sources."),("Structure","Extract typed entities."),("Index","Graph + vector."),("Serve","Grounded answers.")]),
+  "A typed knowledge graph fused with vector memory — a living model of your domain that grows with every document, record and decision. It extracts entities and relationships, embeds them beside the source text, and serves grounded, cited answers from hardware you own. Nothing leaves the building.",
+  [("graph<span class='s'>+vector</span>","one memory"),("0<span class='o'>B</span>","egress · on-prem"),("hybrid","BM25 + dense recall")],
+  ("Context that compounds",[("/ingest","Continuous, incremental ingest","Documents, databases and streams are walked, de-duplicated and turned into typed, queryable structure — incrementally, as they change.",["typed","incremental","dedupe"]),
+   ("/search","Hybrid grounded retrieval","Sparse BM25 and dense-vector recall are fused and re-ranked, so every answer is grounded in — and cited to — source records.",["BM25","dense","re-rank"]),
+   ("/isolation","Governed multi-tenancy","Per-collection, per-tier boundaries are enforced end to end, with lineage on every fact for audit and rollback.",["multi-tenant","lineage","governed"])]),
+  ("Ingest to serve",[("Ingest","Walk &amp; dedupe sources."),("Structure","Extract typed entities &amp; relations."),("Index","Graph + vector, side by side."),("Serve","Grounded, cited answers.")]),
   "Know what you know — and <span class='serif' style='color:var(--steel)'>why.</span>"),
- ("edge-streaming-analytics","Platform","Edge Streaming <span class='serif' style='color:var(--steel)'>Analytics</span>",
-  "Run inference on live streams at the edge — sensors, cameras, telemetry — with millisecond decisions and zero cloud round-trip.",
-  [("ms","decision latency"),("on-edge","inference"),("24/7","offline-capable")],
-  ("Decisions on the wire",[("/ingest","Stream ingest","High-throughput connectors for live sources.",["kafka","mqtt"]),
-   ("/infer","On-edge inference","NVFP4-accelerated models score events in flight.",["NVFP4","low-latency"]),
-   ("/alert","Real-time alerting","Thresholds, anomalies, and routed actions.",["alerting","actions"])]),
-  ("Stream to action",[("Ingest","Connect live streams."),("Infer","Score in flight."),("Detect","Anomaly &amp; threshold."),("Act","Alert or actuate.")]),
+ ("edge-streaming-analytics","Platform","Edge Streaming <span class='serif' style='color:var(--steel)'>Intelligence</span>",
+  "Real-time vision and audio intelligence over live streams, at fleet scale. A zero-copy GPU pipeline decodes hundreds of feeds straight into device memory, runs a catalog of detectors on every frame, and turns raw video into a verified, queryable signal — with sub-millisecond validation and an agent layer that reasons and acts on top. Proven on broadcast-grade media: 1,000+ concurrent 4K streams across racks of edge GPUs.",
+  [("1,000<span class='s'>+</span>","4K streams, concurrent"),("&lt;1<span class='o'>ms</span>","high-frequency validation"),("128","streams / rack")],
+  ("Vision and audio on every frame",[("/detect","A catalog of live detectors","Logos, freezes, macro-blocking, blank and splash screens, lip-sync and on-screen errors are scored per frame — video and audio anomalies caught the instant they appear.",["video","audio","per-frame"]),
+   ("/read","Reads the screen, not just watches it","OCR and vision-language models extract guide data, clocks, version strings and error dialogs; object detectors track focus, icons and UI state.",["OCR/VLM","object-det","UI state"]),
+   ("/act","Closes the loop","An agent layer plans and acts — driving devices through an IR / Bluetooth control plane and verifying every step against the live stream.",["agentic","device-control","verify"])]),
+  ("Stream to decision",[("Decode","Feeds decode into GPU memory."),("Detect","A model graph scores every frame."),("Decide","Validate sub-ms; reason in minutes."),("Act","Drive devices, publish, alert.")]),
   "Real-time, <span class='serif' style='color:var(--steel)'>actually.</span>"),
  ("gpu-microcloud","Platform","GPU <span class='serif' style='color:var(--steel)'>MicroCloud</span>",
-  "On-prem GPU as a managed, scheduled, metered resource — multi-tenant isolation with chargeback, so your hardware runs like a private cloud.",
-  [("MIG","hard isolation"),("scheduled","fair-share"),("metered","chargeback")],
-  ("Your GPUs, run like cloud",[("/schedule","Workload scheduling","Fair-share scheduling across teams and jobs.",["queue","priority"]),
-   ("/isolate","Multi-tenant isolation","MIG partitioning keeps tenants apart.",["MIG","secure"]),
-   ("/meter","Metering &amp; chargeback","Per-tenant accounting for real cost visibility.",["metering","reports"])]),
+  "Your on-prem GPUs, run like a private cloud. A scheduler places workloads across the pool with fair-share queuing, MIG partitions give each tenant hard isolation, and every minute of compute is metered for real chargeback. Capacity you own, governed like a cloud region.",
+  [("MIG","hard isolation"),("fair-share","scheduling"),("metered","per-tenant chargeback")],
+  ("Your GPUs, run like cloud",[("/schedule","Fair-share scheduling","A priority-and-quota scheduler places jobs across the pool, preempts politely, and keeps expensive silicon busy.",["queue","quota","preempt"]),
+   ("/isolate","Hard multi-tenant isolation","MIG partitioning carves each GPU into isolated slices, so tenants share hardware without sharing blast radius.",["MIG","cgroups","secure"]),
+   ("/meter","Metering &amp; chargeback","Per-tenant, per-job accounting turns shared capacity into auditable cost and showback reports.",["metering","showback","reports"])]),
   ("Pool to bill",[("Pool","Aggregate edge GPUs."),("Schedule","Place workloads."),("Isolate","Partition tenants."),("Meter","Account &amp; bill.")]),
   "Datacenter discipline, <span class='serif' style='color:var(--steel)'>on-prem.</span>"),
  ("gpu-edgegateway","Platform","GPU <span class='serif' style='color:var(--steel)'>EdgeGateway</span>",
-  "Secure, OpenAI-compatible model serving at the perimeter — auth, routing, and token-aware load balancing across your edge backends.",
-  [("OpenAI","compatible API"),("token-aware","routing"),("authd","per-route")],
-  ("One endpoint, many models",[("/api","OpenAI-compatible","Drop-in endpoint for any compatible client.",["/v1","drop-in"]),
-   ("/auth","Auth &amp; routing","OIDC/JWT with per-route role rules.",["OIDC","RBAC"]),
-   ("/lb","Token-aware LB","Routes by load across vLLM / Ollama backends.",["vLLM","balance"])]),
-  ("Request to response",[("Authenticate","Validate identity &amp; role."),("Route","Pick the backend."),("Serve","NVFP4 fast path."),("Observe","Meter &amp; log.")]),
+  "A secure, OpenAI-compatible front door for every model at the perimeter. One endpoint authenticates each caller, applies per-route role rules, and load-balances by live token throughput across vLLM and Ollama backends — with an NVFP4 fast path for low-latency decode. Drop-in for any compatible client; governed like production.",
+  [("OpenAI","compatible /v1"),("token-aware","load balancing"),("OIDC","per-route auth")],
+  ("One endpoint, many models",[("/api","OpenAI-compatible surface","A drop-in /v1 endpoint — chat, completions, embeddings — so existing clients and SDKs work unchanged.",["/v1","streaming","SDK-drop-in"]),
+   ("/auth","Identity &amp; routing","OIDC/JWT identity with per-route RBAC and quotas decides who reaches which model, and how often.",["OIDC","RBAC","quotas"]),
+   ("/lb","Token-aware load balancing","Requests route by live KV-cache and token load across vLLM and Ollama backends, with an NVFP4 fast path.",["vLLM","Ollama","NVFP4"])]),
+  ("Request to response",[("Authenticate","Validate identity &amp; role."),("Route","Pick the fastest healthy backend."),("Serve","NVFP4 fast path."),("Observe","Meter, trace &amp; log.")]),
   "Serve models <span class='serif' style='color:var(--steel)'>safely.</span>"),
 ]
-for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7])
+
+def platx(arch_title, arch_cards, num_title, specs):
+    return (f'<section><div class="wrap">{shead("03","Architecture",arch_title)}{disc(arch_cards)}</div></section>'
+            f'<section><div class="wrap">{shead("04","By the numbers",num_title)}{metrics(specs)}</div></section>')
+
+PLAT_EXTRA={
+ "edge-data-fabric": platx("Inside the fabric",[
+   ("/extract","Entity &amp; relation extraction","Source text is parsed into a typed schema — entities, relations and attributes — with provenance kept on every node and edge.",["schema","NER","provenance"]),
+   ("/embed","Dual-index store","Each chunk is embedded and written beside its graph node, so structure and semantics are queryable in a single hop.",["embeddings","graph store","vector"]),
+   ("/retrieve","Fused retrieval + rerank","Sparse, dense and graph-walk candidates are merged and re-ranked before they reach the model — recall without hallucination.",["fusion","rerank","grounding"])],
+   "Built to ground every answer",[("graph+vector","unified index"),("BM25 + dense","hybrid recall"),("lineage","on every fact")]),
+ "edge-streaming-analytics": (
+   f'<section><div class="wrap">{shead("03","Detection catalog","A model graph, not a single model")}'
+   + disc([
+     ("/anomaly","Video anomaly detection","Freezes (consecutive pixel-difference), macro-blocking and pixelation (block-variance + Sobel edge density), tearing and stutter — flagged inside the stream buffer.",["optical-flow","Sobel","block-variance"]),
+     ("/logo","Logo &amp; UI object detection","An RF-DETR detector with a CLIP refiner confirms logos, app tiles and widgets with bounding-box precision.",["RF-DETR","CLIP","bbox"]),
+     ("/ocr","OCR &amp; VLM reading","GPU OCR (docTR) and vision-language models read guide grids, clocks, version strings and error dialogs — signal-loss, auth and tune failures included.",["docTR","VLM","regex"]),
+     ("/audio","Audio &amp; sync checks","Audio-presence and lip-sync checks run beside the video probe, so silent feeds and A/V drift are caught too.",["audio-probe","lip-sync","ffprobe"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("04","Architecture","Inside the pipeline")}'
+   + disc([
+     ("/pipeline","Zero-copy vision pipeline","GStreamer + DeepStream pull RTSP / H.265 into the GPU via NVDEC; composite grids map to regions once, then a swappable model graph scores each region every frame.",["GStreamer","DeepStream","NVDEC"]),
+     ("/serverless","Serverless model serving","Detectors run as auto-scaling GPU functions (Nuclio) drawn from a continuously trained catalog — new models deploy without touching the pipeline.",["Nuclio","auto-scale","registry"]),
+     ("/backbone","Event &amp; knowledge backbone","Detections stream over NATS JetStream into ClickHouse for sub-second OLAP, with a knowledge graph, vectors and a fine-tuned vision-action model driving next-best-action.",["NATS","ClickHouse","knowledge-graph"]),
+     ("/learn","A closed training loop","Misses become flagged frames become new annotation tasks — captured, versioned in COCO and retrained, then promoted through a registry.",["CVAT","COCO","feedback"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("05","By the numbers","Engineered for density")}'
+   + metrics([("~512","streams · 4 racks in parallel"),("&lt;50<span class='o'>ms</span>","inference / frame"),("30<span class='o'>fps</span>","sustained per stream")])
+   + '</div></section>'
+ ),
+ "gpu-microcloud": platx("Inside the microcloud",[
+   ("/partition","MIG slice fabric","GPUs are partitioned into right-sized MIG instances and exposed as schedulable resources to the cluster.",["MIG","device-plugin","k8s"]),
+   ("/place","Topology-aware placement","Workloads are bin-packed by memory, NVLink topology and priority — fragmentation down, utilization up.",["bin-pack","NVLink","priority"]),
+   ("/account","Usage accounting","Per-slice utilization and runtime stream to a metering store for chargeback, quotas and capacity planning.",["telemetry","quotas","chargeback"])],
+   "Run like a cloud region",[("7<span class='s'>×</span>","MIG slices / GPU"),("k8s","native scheduling"),("per-min","metering")]),
+ "gpu-edgegateway": platx("Inside the gateway",[
+   ("/gate","Auth &amp; policy gate","Every request is authenticated, rate-limited and policy-checked before it ever reaches a backend.",["JWT","rate-limit","policy"]),
+   ("/route","Load-aware router","The router tracks per-backend token throughput and KV-cache pressure, steering traffic to the fastest healthy replica.",["KV-aware","health","failover"]),
+   ("/observe","Full observability","Per-route latency, tokens and cost stream to metrics and traces — every call metered and accountable.",["metrics","tracing","metering"])],
+   "Governed like production",[("&lt;1<span class='o'>ms</span>","auth overhead"),("vLLM<span class='s'>+Ollama</span>","backends"),("per-route","metering")]),
+}
+for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7],PLAT_EXTRA.get(s[0],""))
 
 # ----- ABOUT -----
 about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs, builds, and operates custom edge-AI systems.")}{NAV("")}
