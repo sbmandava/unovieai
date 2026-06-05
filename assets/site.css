@@ -66,6 +66,7 @@ header.nav.stuck{background:rgba(11,10,9,.72);backdrop-filter:blur(14px) saturat
 .brand .mk::after{content:"";position:absolute;inset:6px;border-radius:3px;background:var(--ink)}
 .brand .o{color:var(--accent)}
 .logo{height:24px;width:auto;display:block}
+header.nav .logo{height:40px}
 .navlinks{display:flex;align-items:center;gap:34px}
 .navlinks a{font-size:14.5px;color:var(--fg-mut);font-weight:500;position:relative;padding:6px 0;transition:color .2s}
 .navlinks a:hover{color:var(--fg)}
