@@ -101,8 +101,9 @@ def NAV(base):
   <a href="{h}#accelerators"><span class="mono">02</span><br>Solutions</a>
   <a href="{h}#platform"><span class="mono">03</span><br>Platform</a>
   <a href="{base}device-platform.html"><span class="mono">04</span><br>Device Platform</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Research</a>
-  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">06</span><br>Start a project →</a>
+  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Field Guide (eBook)</a>
+  <a href="{base}resources/edge-ai-whitepaper.html" target="_blank"><span class="mono">06</span><br>Whitepaper</a>
+  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">07</span><br>Start a project →</a>
 </div>'''
 
 def FOOTER(base):
