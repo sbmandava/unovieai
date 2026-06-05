@@ -76,6 +76,9 @@ header.nav .logo{height:40px}
 .uplane .up-body{fill:#6468ac}
 .uplane .up-spine{fill:none;stroke:#fff;stroke-width:1.1;opacity:.7}
 .utrail{fill:#6468ac}
+.ship{fill:none;stroke:#6468ac;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;opacity:.5}
+.ship .wline{stroke-dasharray:8 7}
+.swake{fill:#6468ac}
 @media(prefers-reduced-motion:reduce){.planebg{display:none}}
 .navlinks{display:flex;align-items:center;gap:34px}
 .navlinks a{font-size:14.5px;color:var(--fg-mut);font-weight:500;position:relative;padding:6px 0;transition:color .2s}
