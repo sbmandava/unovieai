@@ -58,9 +58,16 @@ open(f"{ROOT}/index.html","w",encoding="utf-8").write(idx)
 # The `data-theme-init` attribute keeps the homepage-slimming regex (bare <script>) from matching it.
 THEMEINIT = "<script data-theme-init>(function(){try{var s=localStorage.getItem('uvTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>"
 
+# Google Analytics 4 (gtag.js). The config <script> carries a data-ga attribute so the
+# homepage-slimming regex (which matches a bare <script>) never touches it.
+GA = """<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-590ZL8SE2M"></script>
+<script data-ga>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-590ZL8SE2M');</script>"""
+
 def HEAD(base,title,desc):
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{GA}
 <link rel="icon" href="{base}assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="{base}assets/favicon.png"><link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -461,4 +468,28 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
 {FOOTER("")}'''
 open(f"{ROOT}/about.html","w",encoding="utf-8").write(about)
 
-print("built: index (slimmed) + 6 solutions + 4 platform + about + assets")
+# ---- sitemap.xml + robots.txt (Google indexing) ----
+SITE="https://unovie.ai"
+LASTMOD="2026-06-05"   # bump when content materially changes (kept fixed for idempotent builds)
+def _u(path):  # path relative to site root; "" = homepage
+    return SITE + "/" + path
+_pages=["", "about.html", "contact.html",
+        "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html"]
+_pages += [f"solutions/{s[0]}.html" for s in SOL]
+_pages += [f"platform/{s[0]}.html" for s in PLATP]
+def _prio(p):
+    if p=="": return "1.0"
+    if p.startswith(("solutions/","platform/")): return "0.9"
+    if p.startswith("resources/"): return "0.6"
+    return "0.7"
+_rows="\n".join(
+    f'  <url><loc>{_u(p)}</loc><lastmod>{LASTMOD}</lastmod><changefreq>monthly</changefreq><priority>{_prio(p)}</priority></url>'
+    for p in _pages)
+open(f"{ROOT}/sitemap.xml","w",encoding="utf-8").write(
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + _rows + '\n</urlset>\n')
+open(f"{ROOT}/robots.txt","w",encoding="utf-8").write(
+    "User-agent: *\nAllow: /\n\nSitemap: https://unovie.ai/sitemap.xml\n")
+
+print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + about + assets + sitemap({len(_pages)} urls)")
