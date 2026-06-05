@@ -256,12 +256,12 @@ PLATP=[
   ("Pool to bill",[("Pool","Aggregate edge GPUs."),("Schedule","Place workloads."),("Isolate","Partition tenants."),("Meter","Account &amp; bill.")]),
   "Datacenter discipline, <span class='serif' style='color:var(--steel)'>on-prem.</span>"),
  ("gpu-edgegateway","Platform","GPU <span class='serif' style='color:var(--steel)'>EdgeGateway</span>",
-  "A secure, OpenAI-compatible front door for every model at the perimeter. One endpoint authenticates each caller, applies per-route role rules, and load-balances by live token throughput across vLLM and Ollama backends — with an NVFP4 fast path for low-latency decode. Drop-in for any compatible client; governed like production.",
-  [("OpenAI","compatible /v1"),("token-aware","load balancing"),("OIDC","per-route auth")],
-  ("One endpoint, many models",[("/api","OpenAI-compatible surface","A drop-in /v1 endpoint — chat, completions, embeddings — so existing clients and SDKs work unchanged.",["/v1","streaming","SDK-drop-in"]),
-   ("/auth","Identity &amp; routing","OIDC/JWT identity with per-route RBAC and quotas decides who reaches which model, and how often.",["OIDC","RBAC","quotas"]),
-   ("/lb","Token-aware load balancing","Requests route by live KV-cache and token load across vLLM and Ollama backends, with an NVFP4 fast path.",["vLLM","Ollama","NVFP4"])]),
-  ("Request to response",[("Authenticate","Validate identity &amp; role."),("Route","Pick the fastest healthy backend."),("Serve","NVFP4 fast path."),("Observe","Meter, trace &amp; log.")]),
+  "An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best. Drop-in for any client, multimodal, governed like production, on hardware you own.",
+  [("OpenAI","compatible /v1"),("agent-first","intelligent routing"),("policy","sandboxed execution")],
+  ("Route, reason, act",[("/route","Signal-driven model routing","Each request is classified by intent, modality, complexity and risk, then routed across a local-to-frontier model mesh — reasoning only when it pays.",["intent","mixture-of-models","when-to-reason"]),
+   ("/agents","Agent-first execution","Agents plan, spawn parallel subagents and call tools via RPC; skills are learned and reused — multimodal in, action out.",["agents","subagents","skills"]),
+   ("/sandbox","Sandboxed &amp; governed","Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access.",["MicroVM","policy-as-code","no-exfil"])]),
+  ("Request to action",[("Authenticate","Identity, role &amp; policy."),("Classify","Score intent, modality, risk."),("Route","Pick model, agent or tool."),("Serve","Sandboxed, observed, metered.")]),
   "Serve models <span class='serif' style='color:var(--steel)'>safely.</span>"),
 ]
 
@@ -326,11 +326,24 @@ PLAT_EXTRA={
    + metrics([("10<span class='o'>G</span>","overlay SAN + LAN"),("7<span class='s'>×</span>","MIG slices / GPU"),("3","namespaces · dev/test/prod")])
    + '</div></section>'
  ),
- "gpu-edgegateway": platx("Inside the gateway",[
-   ("/gate","Auth &amp; policy gate","Every request is authenticated, rate-limited and policy-checked before it ever reaches a backend.",["JWT","rate-limit","policy"]),
-   ("/route","Load-aware router","The router tracks per-backend token throughput and KV-cache pressure, steering traffic to the fastest healthy replica.",["KV-aware","health","failover"]),
-   ("/observe","Full observability","Per-route latency, tokens and cost stream to metrics and traces — every call metered and accountable.",["metrics","tracing","metering"])],
-   "Governed like production",[("&lt;1<span class='o'>ms</span>","auth overhead"),("vLLM<span class='s'>+Ollama</span>","backends"),("per-route","metering")]),
+ "gpu-edgegateway": (
+   f'<section><div class="wrap">{shead("03","Architecture","Inside the gateway")}'
+   + disc([
+     ("/classify","Signal classification","Lightweight embedding and classifier models (candle / ONNX / OpenVINO) score intent, category, safety and modality in microseconds — the routing brain runs on the edge.",["embeddings","ONNX/OpenVINO","classifiers"]),
+     ("/mesh","Mixture-of-models mesh","Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs across cost, privacy and latency boundaries — with category-aware semantic caching.",["vLLM","semantic cache","multi-provider"]),
+     ("/safe","Safety &amp; policy gate","Jailbreak, prompt-injection and sensitive-data detection guard every call; declarative policy governs what agents and tools may touch.",["jailbreak","PII","policy"]),
+     ("/runtime","Sandboxed agent runtime","Agents and tools execute in isolated MicroVM sandboxes with no data exfiltration — spawned, parallelized and torn down per task.",["MicroVM","sandbox","RPC tools"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("04","Agent-first delivery","Multimodal in, action out")}'
+   + disc([
+     ("/multimodal","Every modality, one path","Text, voice, image and event inputs are normalized, routed to the right modality model, and turned into grounded responses or tool actions.",["text·voice·image","normalize","actions"]),
+     ("/learn","A learning loop","The platform learns skills from experience, recalls past sessions and improves routing over time — every path measured.",["skills","recall","self-improving"]),
+     ("/omni","Omni-channel reach","One gateway serves API clients, chat, voice and apps alike — consistent identity, context and policy across every surface.",["omni-channel","one identity","context"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("05","By the numbers","Governed like production")}'
+   + metrics([("&lt;1<span class='o'>ms</span>","route decision"),("200<span class='s'>+</span>","models reachable"),("MicroVM","per-task isolation")])
+   + '</div></section>'
+ ),
 }
 for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7],PLAT_EXTRA.get(s[0],""))
 
