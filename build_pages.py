@@ -490,7 +490,7 @@ open(f"{ROOT}/sitemap.xml","w",encoding="utf-8").write(
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + _rows + '\n</urlset>\n')
 open(f"{ROOT}/robots.txt","w",encoding="utf-8").write(
-    "User-agent: *\nAllow: /\n\n# Machine-readable indexes for AI agents\n# llms.txt: https://unovie.ai/llms.txt\n# vector index: https://unovie.ai/agents/index.json\n\nSitemap: https://unovie.ai/sitemap.xml\n")
+    "User-agent: *\nAllow: /\n\n# Machine-readable indexes for AI agents\n# llms.txt: https://unovie.ai/llms.txt\n# llms-full.txt: https://unovie.ai/llms-full.txt\n# vector index: https://unovie.ai/agents/index.json\n\nSitemap: https://unovie.ai/sitemap.xml\n")
 
 # ---- vector-ready index for agents (llms.txt discovery + agents/index.json chunks) ----
 import html as _htmlmod, json as _json
@@ -529,6 +529,24 @@ open(f"{ROOT}/agents/index.json","w",encoding="utf-8").write(_json.dumps({
     "schema":{"record":["id","url","type","title","section","text"]},
     "generated_by":"build_pages.py","lastmod":LASTMOD,"count":len(records),"records":records},
     ensure_ascii=False,indent=1))
+# llms-full.txt — the entire site as one markdown document (https://llmstxt.org)
+_byurl={}
+for _r in records: _byurl.setdefault(_r["url"],[]).append(_r)
+_full=["# Unovie.AI — full content for AI agents",
+       "",
+       "> Complete text of unovie.ai, generated from the live site for RAG and agent ingestion. Sections map to page sections; the same content is available as structured JSON chunks at https://unovie.ai/agents/index.json"]
+_seen=set()
+for _p in _pages:
+    _url=_u(_p)
+    if _url in _seen: continue
+    _seen.add(_url)
+    _rs=_byurl.get(_url)
+    if not _rs: continue
+    _full.append(f"\n\n# {_rs[0]['title']}\nURL: {_url}")
+    for _r in _rs:
+        _full.append(f"\n## {_r['section']}\n{_r['text']}" if _r['section'] else f"\n{_r['text']}")
+open(f"{ROOT}/llms-full.txt","w",encoding="utf-8").write("\n".join(_full)+"\n")
+
 # llms.txt — agent discovery index (https://llmstxt.org)
 _sol="\n".join(f"- [{_strip(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL)
 _plat="\n".join(f"- [{_strip(s[2])}]({_u('platform/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in PLATP)
@@ -551,8 +569,9 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [Contact]({_u('contact.html')}): start a project.
 
 ## Machine-readable
+- [Full content (llms-full.txt)]({SITE}/llms-full.txt): the entire site as one markdown document for direct LLM/agent consumption.
 - [Vector index (JSON)]({SITE}/agents/index.json): embeddable, chunked content records for RAG.
 - [Sitemap]({SITE}/sitemap.xml)
 """)
 
-print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt")
+print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt + llms-full.txt")

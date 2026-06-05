@@ -29,5 +29,6 @@
 - [Contact](https://unovie.ai/contact.html): start a project.
 
 ## Machine-readable
+- [Full content (llms-full.txt)](https://unovie.ai/llms-full.txt): the entire site as one markdown document for direct LLM/agent consumption.
 - [Vector index (JSON)](https://unovie.ai/agents/index.json): embeddable, chunked content records for RAG.
 - [Sitemap](https://unovie.ai/sitemap.xml)

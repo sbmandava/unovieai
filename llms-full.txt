@@ -1,0 +1,361 @@
+# Unovie.AI — full content for AI agents
+
+> Complete text of unovie.ai, generated from the live site for RAG and agent ingestion. Sections map to page sections; the same content is available as structured JSON chunks at https://unovie.ai/agents/index.json
+
+
+# Unovie.AI — AI engineering, delivered. Edge-AI systems, end to end.
+URL: https://unovie.ai/
+
+## Edge-AI, engineered end to end.
+AI engineering · as a service · est. on the edge Edge-AI, engineered end to end. Unovie is an AI-engineering studio. We design, build, and operate custom edge-AI systems — fixed scope, fixed cost , on hardware you own. From architecture to production, we accept full responsibility. Start a project → Read the field guide Trusted with NVIDIA AMD Qualcomm Siemens GE Live · Edge node NVFP4 Throughput 0 tok/s Power 0 W Egress 0 bytes
+
+## We own the whole arc, from whiteboard to production.
+00 — The model We own the whole arc, from whiteboard to production. Not advisory decks. Working systems — assessed, designed, built, optimized, and supported within committed timelines. 01 Architecture Reference architecture & solution blueprint, scoped to a fixed outcome. 02 POC A graded proof against your data — value proven before you commit further. 03 MVP Production-shaped build: data, models, testing, monitoring. 04 Production Hardened, observed, and operated — on hardware you own.
+
+## Four things we are genuinely good at.
+01 — Engineering disciplines Four things we are genuinely good at. / model-engineering Model Engineering Self-learning loops, skill optimization, and frozen-base adaptation that compounds accuracy on your tasks — without retraining risk. verifiers skill opt distillation / edge-efficiency Edge Efficiency Small models on Blackwell silicon. PLE-safe NVFP4 quantization, unified-memory budgeting, ~4× decode throughput. NVFP4 128 GB unified Jetson Thor / opex-efficiency Opex Efficiency Capex, not a metered bill. Marginal query cost ≈ electricity; accuracy compounds while cost stays flat. on-prem no egress fixed cost / reliable-hpc Reliable HPC Systems Gated, reversible, regression-safe deployments. Every self-improvement is logged, scored, and revertible. gated reversible auditable
+
+## Pre-engineered outcomes, not blank-slate projects.
+02 — Solution accelerators Pre-engineered outcomes, not blank-slate projects. Agentic edge-AI blueprints with quantified goals — deployed in weeks, not quarters. 01 / Maritime Maritime Digital Twin Edge-AI fleet monitoring & predictive maintenance. −6mo overhauls · 100% on-vessel 02 / Automotive Connected-Vehicle Twin VIN-level twin for connected-EV fleets. 4.2h resolution · 98.7% delivery 03 / Airline Corporate-Travel Sales Account scoring, leakage & auto-drafted travel deals. <5min prep · 1-day RFP 04 / Manufacturing Smart Factory Floor Automated inspection & quality control on the line. −30% errors · +25% speed 05 / Logistics Smart Warehouse Inventory management & real-time tracking. −20% stockouts · +15% fill 06 / Safety OSHA Compliance Risk analytics with real-time alerting. −25% fines · +30% training 07 / OTT Content Provider Vision Intelligence Real-time channel detection & QA across live feeds. 96 channels · <1s verify 08 / Process Batch Optimization Chemical & pharma batch processes. +25% quality · −15% waste 09 / Workforce Remote Expertise Real-time expert guidance to teams. +20% output · −30% visits
+
+## Built on the Nexus Context Platform.
+03 — The platform Built on the Nexus Context Platform. Nexus · Context Platform for Edge-AI A knowledge graph and vector memory that plans, acts and learns — on hardware you own. Nexus fuses a typed knowledge graph with vector memory and an agent orchestrator: it grounds every answer in source records, drives a fine-tuned vision-action model and next-best-action, and improves from a closed training loop. Served on NVIDIA edge GPUs through a Kubernetes micro-cloud — serverless model serving, event streaming and OLAP, all on-prem. knowledge graph + vector agent orchestrator serverless serving NATS + ClickHouse Kubernetes · on-prem NVIDIA edge GPUs Edge Data Fabric Typed knowledge graph + vector memory → Edge Streaming Intelligence Real-time vision over 1,000+ live streams → GPU MicroCloud On-prem GPUs, scheduled & metered like cloud → GPU EdgeGateway Agent-first, signal-driven model routing → IT/OT Edge Security Intelligence GPU-native SIEM — AI detection at ingest →
+
+## A proven, success-based methodology.
+04 — How we deliver A proven, success-based methodology. Full responsibility, committed timelines — every phase with enterprise-grade execution. 01 Assess & plan Workshops, ROI, value outcomes. 02 Solution design Roadmap, reference architecture, blueprints. 03 Build & test Data, models, testing, monitoring. 04 Optimize KPI tracking, feedback loops, reviews. 05 Train & support Enablement & ongoing adoption.
+
+## Read the thinking behind the work.
+05 — Research Read the thinking behind the work. Free eBook · Field Guide Edge AI Models Without the PhD How AI models actually learn — gradient descent, backprop — and why fine-tuning is the wrong reflex on the edge. 25 chapters, diagrams, real results. Read the field guide → Whitepaper Training Without Retraining The frozen-base doctrine: keep the weights fixed, adapt in context, verify against a frozen baseline — and let throughput compound the gains nightly. Read the whitepaper →
+
+## Bring us a problem. We'll return a system .
+Let's build Bring us a problem. We'll return a system . Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Tell us the outcome you need; we'll engineer the path to production. Talk to our engineers → Explore the field guide
+
+
+# About — Unovie.AI
+URL: https://unovie.ai/about.html
+
+## We engineer AI that ships.
+Home / About About · Unovie.AI We engineer AI that ships. Unovie is an AI-engineering studio for Industry 4.0. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you own and can audit. Start a project → Read our field guide 4 engineering disciplines 5 -step methodology fixed time & cost
+
+## Four engineering disciplines.
+01 — What we are good at Four engineering disciplines. /model-engineering Model Engineering Self-learning loops and skill optimization that compound accuracy without retraining risk. verifiers skill opt /edge-efficiency Edge Efficiency Small models on Blackwell silicon — PLE-safe NVFP4, unified-memory budgeting. NVFP4 Jetson Thor /opex-efficiency Opex Efficiency Capex, not a metered bill — marginal cost near electricity. on-prem fixed cost /reliable-hpc Reliable HPC Systems Gated, reversible, regression-safe — every change logged and revertible. gated auditable
+
+## A proven, success-based methodology.
+02 — How we deliver A proven, success-based methodology. 01 Assess & plan Workshops, ROI, value outcomes. 02 Solution design Roadmap & reference architecture. 03 Build & test Data, models, testing, monitoring. 04 Optimize KPI tracking & feedback loops. 05 Train & support Enablement & adoption.
+
+## Trusted with NVIDIA · AMD · Qualcomm · Siemens · GE.
+Partners Trusted with NVIDIA · AMD · Qualcomm · Siemens · GE. Manufacturing · Logistics · Oil & Gas · Food Processing. Bring us a problem; we will return a system. Talk to our engineers →
+
+
+# Contact — Unovie.AI · Built in Austin, Texas
+URL: https://unovie.ai/contact.html
+
+## Bring us a problem. We'll return a system.
+Home / Contact Contact · Let's build Bring us a problem. We'll return a system. Tell us the outcome you need. Our engineers will scope the path to production — fixed time, fixed cost, full responsibility. Get in touch → Read the field guide
+
+## Where chips, software & services converge.
+Where we build ◉ Austin · Central Texas corridor Where chips, software & services converge. Unovie is built in Austin, Texas — the gravitational center of America's physical-AI revolution. Silicon is designed and fabricated here, autonomy software is written here, foundational ML research happens here, and the AI infrastructure that runs it is converging here. We engineer edge-AI from the same ground. / chips Chips Silicon and edge accelerators — designed and fabricated across Central Texas. Samsung fabs NVIDIA AMD / software Software Models, autonomy, and the self-learning loop — the intelligence layer. models autonomy UT Austin IFML / services Services Turnkey delivery: architecture → POC → MVP → production. turnkey Dell × NVIDIA on-prem In good company — the corridor anchoring Physical AI SpaceX Tesla Apple Samsung Firefly Aerospace Dell × NVIDIA UT Austin · IFML SpaceX — autonomy & reusable launch · Tesla — robotics & manufacturing AI (HQ in Austin) · Apple — its largest campus outside Cupertino · Samsung — advanced semiconductor fabs (Taylor, TX) · Firefly Aerospace — responsive launch & lunar landers (Cedar Park, TX). Research & infrastructure: UT Austin's IFML — the NSF Institute for Foundations of Machine Learning — and the Dell × NVIDIA AI-factory convergence anchor the corridor. Named to describe the regional innovation ecosystem; not affiliations or endorsements.
+
+## Talk to our engineers.
+Reach us Talk to our engineers. ◍ Headquarters 651N N. Highway-183, Suite #4120 Austin, TX 78641 · USA ☎ Phone +1-636-579-9725 ✉ Email contact@unovie.ai · sales@unovie.ai ◇ Engagement Turnkey · fixed time & cost · worldwide
+
+## Let's put physical AI to work.
+Engineered in Texas Let's put physical AI to work. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Get in touch → Read the field guide
+
+
+# Edge AI Models Without the PhD — An Architect’s Field Guide
+URL: https://unovie.ai/resources/edge-ai-models.html
+
+## Edge AI Models Without the PhD
+Technical Field Guide · Edge AI Edge AI Models Without the PhD How AI models actually learn, why fine-tuning is the wrong reflex on the edge, and how to build custom, self-improving systems on hardware you own — written for enterprise architecture teams. Suresh Mandava · suresh@unovie.com Unovie.AI · EdgeAI Context Engineering Edition 1.0 · June 2026 Frozen base · in-context adaptation · self-verification · NVIDIA Jetson Thor · DGX Spark · RTX Spark ↓ Start reading
+
+
+# Training Without Retraining — A Frozen-Base Doctrine for Custom Models on the Edge
+URL: https://unovie.ai/resources/edge-ai-whitepaper.html
+
+## Training Without Retraining: A Frozen-Base Doctrine for Custom Models on the Edge
+Training Without Retraining — A Frozen-Base Doctrine for Custom Models on the Edge Technical Whitepaper · Edge AI Training Without Retraining: A Frozen-Base Doctrine for Custom Models on the Edge Best practices for adapting small models on-device through in-context learning, external memory, and self-verification — motivated by what the learning-rules-and-brain-alignment literature tells us about when weight updates actually help. Suresh Mandava · suresh@unovie.com Unovie.AI · EdgeAI Context Engineering Revision 1.0 · June 2026 Hardware target: NVIDIA Jetson Thor · DGX Spark · RTX Spark (Blackwell, 128 GB unified, NVFP4) Abstract The instinct when a foundation model underperforms on a niche task is to fine-tune its weights. On the edge — constrained memory, no cloud, regulated data, a need for reversibility — that instinct is usually wrong. We argue for a frozen-base doctrine : keep the pretrained weights fixed and move all adaptation into external, reversible state — a knowledge graph, an optimized in-context skill, and lightweight runtime controllers — closed by a programmatic verifier that lets a small model teach itself overnight without labels, drift, or data egress. We connect this engineering practice to a recent line of computational-neuroscience work showing that a frozen, untrained network can match or exceed a backpropagation-trained one at the representational level, that local, lightweight learning preserves structure that global gradient descent erodes, and that higher-level abstraction is gated by capacity and data rather than by the update rule. Treated as motivation rather than proof, those results sharpen a practical rule of thumb: adapt in context first; touch the weights last, and only when a frozen-baseline evaluation proves you must. We give the supporting hardware practices (PLE-safe NVFP4 quantization, throughput-as-learning-rate, develop-on-DGX-Spark / deploy-on-Thor) and a best-practices checklist. Contents The edge adaptation problem What the learning-rules literature suggests The frozen-base doctrine In-context learning as the primary lever Closing the loop: the self-learning cycle Evaluation discipline Edge hardware best practices Scaling to many domains When to actually touch the weights Best-practices checklist References 1 The edge adaptation problem A capable open model — say a 4-billion-active-parameter instruction-tuned model — rarely fails on the edge because it is too small. It fails because it is generic : it knows your specialty broadly and shallowly, it has no memory of your corpus between calls, and it cannot be sent the one thing that would fix it — your private data. The reflex is to fine-tune. But on an edge appliance that reflex collides with four hard constraints: Reversibility. A merged weight update is difficult to audit and to undo. Regulated buyers need to prove that a change can be rolled back instantly and that the trusted base is always one step away. Catastrophic forgetting & drift. Gradient updates on a narrow corpus quietly degrade unrelated capabilities. Detecting this requires a regression suite the operator rarely has. Capacity and data. A small on-device model trained on a small in-house corpus is exactly the regime where fine-tuning yields the least and risks the most. Cost and cadence. Retraining is an event; adaptation needs to be a habit . If improving the model is a quarterly project, it will not keep pace with the domain. This whitepaper makes the case that the right primitive on the edge is not the gradient step but in-context adaptation closed by verification : the model's behavior is shaped by what it is given at inference time — retrieved context and an optimized instruction — and that context is itself improved, nightly, against a ground-truth checker. The weights stay frozen. Below we first look at why this is more than an engineering convenience: a strand of recent neuroscience-adjacent ML research suggests the frozen substrate is doing more work than we usually credit. 2 What the learning-rules literature suggests A useful corrective to "more training is always better" comes from work that asks a sharper question: does the learning rule even matter for the representation a network forms? The answer, at least at the lower levels of the hierarchy, is surprisingly often no . Leutenegger [1] [2] systematically compares five conditions — backpropagation (BP), feedback alignment (FA), predictive coding (PC), spike-timing-dependent plasticity (STDP), and an untrained random-weights baseline — on an identical small convolutional architecture, and scores each against human fMRI and macaque electrophysiology using Representational Similarity Analysis (RSA). Four findings are directly relevant to anyone deciding how to adapt a model: 2.1 Architecture can dominate the update rule At early visual cortex (V1), the untrained network exceeds the backpropagation-trained one (ρ = 0.076 vs 0.034; Δρ = +0.044, p < 0.001) [1] . The structural priors of the architecture — local connectivity, pooling, nonlinearity — carry most of the alignment for free; training on a narrow objective actually moved representations away from the target. This echoes older results that random-weight networks already carry non-trivial visual structure [3] [11] and that unsupervised sparse coding alone yields V1-like receptive fields [4] . 2.2 Local, lightweight learning preserves structure that global gradients erode Among trained rules, the local ones — STDP and predictive coding — produced the highest early-cortex alignment, above backpropagation, in both species [1] [2] . By contrast, feedback alignment (random global feedback) was consistently the worst , despite reaching meaningful task accuracy — task performance and representational fidelity were dissociated throughout. The lesson is not that STDP is the answer; it is that local, structure-preserving updates beat global error signals when the goal is to keep the representation faithful rather than merely to fit a label. 2.3 Higher-level abstraction is gated by capacity and data, not the rule At the top of the hierarchy (IT cortex), all rules — including no training — converged; no update rule was reliably more brain-like [1] . A capacity control made the cause explicit: a pretrained ResNet-50 (ImageNet) jumped to ρ ≈ 0.25 at IT versus 0.07–0.14 for every small-CNN condition [2] . Higher-level, abstract structure is bought with model capacity and training-data richness , not with a cleverer update on a small model. 2.4 The discipline of the untrained baseline The papers' explicit methodological moral: always include an untrained, same-architecture baseline. Without it, "architecture effects are confounded with learning effects — our data show this confound can be essentially complete at V1" [1] . Any claim that an adaptation helped is meaningless unless measured against the unadapted model on held-out data. Table 1 — From the learning-rules literature to edge adaptation practice. Reported finding Edge-adaptation principle it motivates Untrained / frozen architecture matches or beats a trained one at low levels [1] Freeze the base. The pretrained substrate already carries most of the signal; default to not retraining it. Local rules (STDP, PC) preserve structure; global BP can move it away [1] [2] Adapt locally & reversibly (in-context, controllers) rather than with global gradient descent that risks drift/forgetting. Higher-area abstraction scales with capacity + data, not the rule [2] Diagnose the bottleneck. If a task genuinely needs more abstraction, it is a capacity problem (distill/upgrade), not an adaptation problem. Task accuracy ≠ representational alignment [1] Optimize the right objective. Grade adaptation on grounded task fidelity, not a convenient proxy. "Always include an untrained baseline" [1] Gate on a frozen baseline. Accept a change only if it beats the unadapted model on data it never saw. An honest caveat. These studies are small-scale convolutional vision models scored against primate visual cortex, with explicitly hedged, sometimes null results (n = 5 rules; n = 3 fMRI subjects; single datasets) [1] [2] . They are not evidence about large language models, and we cite them as motivation and intuition , not as proof. The engineering case below stands on its own measurements; the neuroscience simply rhymes with it. 3 The frozen-base doctrine "Self-learning" on the edge does not have to mean "weight-updating." We define it as swappable external state that measurably improves a held-out domain metric over time — each store operating at a different timescale, none of them touching the base weights. Figure 1 — The frozen-base adaptation stack. External state (L0–L2) conditions a frozen model at inference time; the L3 weight adapter is detachable and parked. Concretely, adaptation lives in four layers, only the last of which involves gradients — and that one is held in reserve: Table 2 — The adaptation stack. Weights stay frozen for layers 0–2. Layer What changes Timescale Weights? L0 · Knowledge A typed knowledge graph + vector index, grown by continuous ingestion of the domain corpus. per-ingest, continuous No L1 · Skill A plain-language skill document (the in-context instruction the model follows), rewritten when a better version is proven. nightly batch No L2 · Behavior Lightweight per-request runtime controllers that steer the frozen model on hard cases. per-request No L3 · Weights (parked) A detachable, never-merged low-rank adapter, used only after the reversible levers plateau. on plateau Yes (revertible) Principle 1 Keep the base model byte-for-byte frozen. Put adaptation in external state that can be inspected, diffed, and reverted in one step. The trusted base is always one detach away. This is the engineering analog of §2.1–2.2: the frozen substrate carries the heavy lifting, and the cheap, local, reversible stores do the domain-specific shaping. Crucially, every change is an artifact — a graph delta, a versioned skill file, a controller blob — not an opaque shift in billions of parameters. Auditability and reversibility are properties of the design, not bolt-ons. 4 In-context learning as the primary lever In-context learning [12] — shaping behavior through what the model is shown at inference time rather than through its weights — is the edge-appropriate adaptation mechanism. Three surfaces carry it. 4.1 The skill document is a learned artifact The system prompt is not boilerplate; it is the procedure the model executes , and it is the thing we optimize. A skill document begins as a short seed and is grown by the loop (§5) into a precise, failure-aware specification of how to perform the domain task. Because it is text, it is human-readable, version-controlled, and graftable: the same skill that scored highest last night is exactly what production loads today. Principle 2 Treat the in-context instruction as the unit of learning. Version it, score it on a frozen holdout, and promote it only when it beats the incumbent. The "trained model" you ship is a frozen base plus a proven skill artifact. 4.2 Retrieval-grounded context (L0) The second surface is what the model retrieves . A continuous knowledge-graph memory turns the private corpus into typed, queryable structure; at request time the relevant subgraph and supporting chunks are composed into the prompt. This grounds answers in source records and — unlike weight memorization — lets the knowledge change without touching the model. The same memory stack also supplies the reward for the loop (schema conformance, entity resolution, retrieval grounding), so improving the knowledge layer and improving the skill are coupled through one metric. 4.3 Runtime behavioral controllers (L2) The third surface is the lightest gradient-free form of "local learning" in the literature's sense (§2.2): tiny per-request controllers (kilobytes, composable, fitted from already-verified examples) that nudge the frozen model's activations on hard or ambiguous cases. They attach and detach like a setting, never alter the base, and are the on-device echo of "local, structure-preserving adaptation beats global retraining." 5 Closing the loop: the self-learning cycle In-context adaptation only compounds if there is a closed loop that improves the context automatically. The engine is a nightly cycle with a programmatic verifier at its center: the model tries, the verifier scores, a larger model reflects on the failures, and a gate commits the change only if it provably helps. Figure 2 — The nightly self-learning loop. A programmatic verifier scores every rollout; verified winners feed the controllers, failures drive reflection, and a frozen-holdout gate commits only proven gains. # one nightly cycle — fully unattended, fully local champion = skill_store.current() tasks = load(train_split) # 1) Rollout: best-of-N samples per task from the frozen executor scored = [verify(t, sample) for t in tasks for sample in rollout(executor, champion, t, n= N )] # 2) Harvest: verified winners become free, self-labeled data (feeds L2) winners = [s for s in scored if s.score >= WIN_THRESHOLD] # top-1/task over the bar failures = [s for s in scored if s.score < WIN_THRESHOLD] # best honest attempt # 3) Baseline: score the CURRENT skill on a frozen, fingerprinted holdout baseline = score_on_holdout(champion, holdout) # 4) Reflect: a larger model reads <=K failures, proposes textual patches (no scoring) patches = reflector.reflect(champion, failures[:K]) # strict JSON, <=3 edits candidate = apply_patches(champion, patches) # 5) Gate: re-score on the SAME holdout; commit iff it clears the noise floor lift = score_on_holdout(candidate, holdout) - baseline if lift >= MIN_LIFT: skill_store.commit(candidate) # new champion vNNNN else : keep(champion) # auto-revert; log the rejection 5.1 The verifier is the reward The make-or-break component is the checker. A graded, deterministic, programmatic verifier — for an extraction task, the fraction of gold fields recovered after normalization, scored in [0,1] — replaces both human labeling and LLM-as-judge. Because the reward is code, the loop runs fully unattended and fully on-box. The larger "reflector" model writes patches but never scores ; scoring stays mechanical. With a deterministic checker you also get a data engine for free: best-of-N rejection sampling harvests verified-correct trajectories that feed the controllers. Principle 3 Make the reward a graded program, not a judgment. No labels, no LLM-as-judge in the gate. Keep generation and evaluation strictly separate so the optimizer cannot grade its own homework. 5.2 Two failure modes a programmatic gate must handle Goodharting. Optimize exactly what you check and the model finds schema-valid garbage. Mitigate with layered checks (conformance and entity-match and grounding) and periodic spot-checks. Sparsity. Binary pass/fail starves the reflector. Make the metric graded (fraction of subgoals), so a near-miss is distinguishable from a disaster and the optimizer has a gradient to climb. 6 Evaluation discipline The single most transferable lesson from §2.4 is operational: a change is only "better" relative to the frozen, unadapted baseline, measured on data the optimizer never saw. The loop above bakes that in. Frozen, fingerprinted holdout. The validation set is content-hashed and verified before every rollout; if a byte drifts, the run aborts. The optimizer can never see or touch it — the on-device equivalent of the literature's untrained-baseline control. One metric, end to end. The same scorer grades rollouts and the gate, so you optimize exactly what you measure. A noise floor. A minimum-lift threshold rejects sub-noise "wins" — the regression suite's job is to say no far more often than yes . Self-limiting behavior. On a domain already near its ceiling, the correct outcome is a long string of rejections holding the line — a feature, not a failure. A system that cannot quietly make itself worse is exactly what a regulated buyer wants. 7 Edge hardware best practices The frozen-base loop is bottlenecked by one thing: how many verified rollouts you can run per night. On a bandwidth-bound edge accelerator, throughput is the learning rate , and the hardware choices that set throughput are the ones that set how fast the model improves. 7.1 Throughput is the learning rate Modern Blackwell-class edge devices share a decisive property: a large pool of unified memory (128 GB, ~273 GB/s) coherently shared by CPU and GPU [13] [14] . That lets the serving model, a larger "teacher" used only during the nightly window, and the memory stack all stay resident at once — no swapping. Native 4-bit (NVFP4) compute lifts decode roughly 4× over bf16 (≈30 → 120 tokens/sec on this class of board), and because decode is bandwidth-bound, that 4× translates directly into 4× more best-of-N experiments per night. 7.2 PLE-safe quantization Aggressive quantization is the lever — but not uniformly. Models that achieve a small "effective" footprint via per-layer embeddings (PLE) keep a large, quantization-fragile block of embedding parameters that must stay in higher precision. The discipline: quantize only the active compute weights (attention, FFN) to NVFP4, and keep the PLE tables in bf16. A build that quantizes PLE tensors will degrade output silently. Bake a PLE-safety preflight into the conversion so the build fails on drift rather than shipping a quietly worse model. Principle 4 Quantize for speed, but precision-protect the fragile parts. NVFP4 the compute path; keep per-layer embeddings in bf16. Validate the conversion automatically, and never serve the model on a runtime that silently drops PLE. 7.3 Develop on the desktop, deploy at the edge The same Blackwell + 128 GB + NVFP4 substrate appears in three form factors, and they are complementary rather than competing: Table 3 — One substrate, three roles. The trained skill artifact is portable across all three. Device Role Strength DGX Spark (GB10, desktop) Develop & fine-tune Highest local LLM throughput; cluster two units (ConnectX-7) for ~405B-class work [13] . Jetson AGX Thor (embedded) Deploy at the edge Real-time multimodal inference at 40–130 W; sensor fusion + robotics stacks [14] . RTX Spark (Windows PC) Personal agents 120B-class local models on laptops/mini-PCs; broad OEM reach [15] . Because the frozen base, the NVFP4 weights, and the skill artifact are identical across them, the natural workflow is develop and fine-tune on DGX Spark → deploy on Thor → reach every desk on RTX Spark , with the learned artifact moving between them unchanged. Figure 3 — One substrate, two phases. Develop and fine-tune on DGX Spark; the frozen base plus the proven skill artifact deploy unchanged to Thor at the edge and RTX Spark on PCs. 8 Scaling to many domains The frozen-base design scales sideways cheaply because almost everything expensive is shared. Share the brain. The larger reflector and the embedding encoder are domain-agnostic and idle most of the day; one instance serializes every domain's nightly reflection. Isolate the expertise. Each domain gets its own executor, its own memory collection (no cross-domain pollution), and its own skill chain and frozen holdout — an independent proof trail. Onboard cheaply. A new domain needs a corpus and a [0,1] scorer, declared in one config. No model retraining; the per-domain marginal cost is a slice of one power-efficient box. Three to four domains fit comfortably on a single 128 GB device (one ~16 GB reflector + several ~18 GB executors), which is the practical sweet spot before time-sharing the executor. 9 When to actually touch the weights The doctrine is "weights last," not "weights never." §2.3 tells us when last arrives: when the limit is genuinely capacity , not adaptation. Operationalize it with an objective trigger. If held-out lift stays under a small threshold (e.g. <0.5%) for several consecutive nights while the runtime layers are still churning , the reversible levers have demonstrably flattened — the task may now be capacity-bound. Only then consider a weight update, under strict conditions: Detachable, never merged. Keep any low-rank adapter [16] [17] as a separate, hot-swappable file so the frozen base is always recoverable. Distill from the verified corpus. The teacher generates and the programmatic gate filters; you are amortizing an already-verified corpus into the base, not inventing capability beyond the student's ceiling. PLE-safe training. Put adapters on attention/FFN projections only; never quantize or train the per-layer embeddings. Forgetting-regression gate. Promote the adapter only if new-domain lift clears a bar and no prior-domain regression exceeds a tight bound, measured against frozen, never-trained holdouts — the same baseline discipline as §6, now guarding against catastrophic forgetting. Principle 5 Ask weights for help only after a frozen-baseline evaluation proves the reversible levers are exhausted — and even then, as a detachable adapter behind a forgetting-regression gate, never a merge. 10 Best-practices checklist Table 4 — A frozen-base edge-adaptation checklist. # Practice Why 1 Freeze the base by default; adapt in external state (knowledge, skill, controllers). Reversibility, auditability, no drift; the substrate already carries most of the signal (§2.1, §3). 2 Make the in-context skill the unit of learning — versioned, scored, promoted. Human-readable, graftable, provable adaptation without weight changes (§4.1). 3 Ground answers via retrieval from a continuous knowledge graph that also supplies the reward. Knowledge changes without touching the model; couples L0 and L1 through one metric (§4.2). 4 Prefer local, reversible adaptation (controllers) over global gradient descent. Local updates preserve structure that global error signals erode (§2.2, §4.3). 5 Close the loop with a graded, programmatic verifier; generation ≠ evaluation. Unattended, label-free, Goodhart-resistant improvement (§5). 6 Gate on a frozen, fingerprinted holdout with a noise-floor minimum lift; auto-revert. The untrained-baseline discipline; a system that can't quietly get worse (§2.4, §6). 7 Make throughput the priority: NVFP4 compute, unified memory, dual-path serving. On a bandwidth-bound edge board, tokens/sec is the experiment budget (§7.1). 8 PLE-safe quantization with an automated preflight; never a PLE-dropping runtime. Protects the quantization-fragile embeddings; avoids silent degradation (§7.2). 9 Develop on DGX Spark, deploy on Thor; keep the artifact portable. Same substrate, different roles; one workflow from prototype to edge (§7.3). 10 Touch weights only on an objective capacity trigger, as a detachable adapter behind a forgetting gate. Abstraction is capacity-bound, not rule-bound; preserve reversibility (§2.3, §9). The through-line is a single inversion of the default. The cloud reflex — "if it underperforms, train the weights" — is the wrong primitive on the edge, where reversibility, drift, capacity, and cadence all argue the other way. Freeze the substrate, adapt in context, verify against a frozen baseline, and let throughput compound the gains nightly. The learning-rules literature gives that engineering bet a satisfying second reading: the frozen architecture was doing more of the work than we assumed, local adaptation keeps the representation honest, and the cases that truly need more — abstraction — are the ones to spend capacity on, deliberately, last. 11 References Leutenegger, N. (2026). Untrained CNNs Match Backpropagation at V1: A Systematic RSA Comparison of Four Learning Rules Against Human fMRI. arXiv:2604.16875v2. Frozen/untrained CNN exceeds BP at V1; PC/STDP > BP; convergence at IT; "always include an untrained baseline." Leutenegger, N. (2026). Cross-Species RSA Reveals Conserved Early Visual Alignment but Divergent Higher-Area Rankings Across Human fMRI and Macaque Electrophysiology. arXiv:2605.22401v1. Replicates early-area pattern in macaque; ResNet-50 capacity control shows IT alignment scales with capacity + data. Saxe, A. M., Koh, P. W., Chen, Z., Bhand, M., Suresh, B., & Ng, A. Y. (2011). On random weights and unsupervised feature learning. ICML. Olshausen, B. A., & Field, D. J. (1996). Emergence of simple-cell receptive-field properties by learning a sparse code for natural images. Nature , 381:607–609. Whittington, J. C. R., & Bogacz, R. (2017). An approximation of the error backpropagation algorithm in a predictive-coding network with local Hebbian plasticity. Neural Computation , 29:1229–1262. Lillicrap, T. P., Cownden, D., Tweed, D. B., & Akerman, C. J. (2016). Random synaptic feedback weights support error backpropagation for deep learning. Nature Communications , 7:13276. Bi, G.-q., & Poo, M.-m. (1998). Synaptic modifications in cultured hippocampal neurons: dependence on spike timing, synaptic strength, and postsynaptic cell type. J. Neurosci. , 18:10464–10472. Schrimpf, M., Kubilius, J., Hong, H., et al. (2020). Brain-Score: Which artificial neural network for object recognition is most brain-like? bioRxiv. Yamins, D. L. K., & DiCarlo, J. J. (2016). Using goal-driven deep learning models to understand sensory cortex. Nature Neuroscience , 19:356–365. Kriegeskorte, N., Mur, M., & Bandettini, P. (2008). Representational similarity analysis — connecting the branches of systems neuroscience. Frontiers in Systems Neuroscience , 2:4. Truzzi, A., & Cusack, R. (2025). Neural responses in early visual cortex are well predicted by random-weight CNNs. bioRxiv. Brown, T. B., Mann, B., Ryder, N., et al. (2020). Language models are few-shot learners. NeurIPS. (In-context learning.) NVIDIA (2026). DGX Spark — Personal AI Supercomputer (GB10 Grace Blackwell). nvidia.com/products/workstations/dgx-spark. 128 GB LPDDR5X unified, ~273 GB/s; ConnectX-7 clustering. NVIDIA (2026). Jetson Thor — Advanced AI for Physical Robotics. nvidia.com/autonomous-machines/embedded-systems/jetson-thor. Blackwell, ~2070 FP4 TFLOPS, 40–130 W, 128 GB unified. NVIDIA (2026). RTX Spark — Slim Laptops & Small Desktops. nvidia.com/products/rtx-spark. Blackwell RTX + Arm; up to 128 GB unified; 120B-class local models. Hu, E. J., Shen, Y., Wallis, P., et al. (2021). LoRA: Low-Rank Adaptation of Large Language Models. arXiv:2106.09685. Dettmers, T., Pagnoni, A., Holtzman, A., & Zettlemoyer, L. (2023). QLoRA: Efficient finetuning of quantized LLMs. arXiv:2305.14314. Unovie.AI · EdgeAI Context Engineering. This whitepaper synthesizes internal edge-deployment practice with the cited literature. The neuroscience results are used as motivation and analogy, not as claims about large language models; engineering recommendations rest on on-device measurement. Hardware figures reflect vendor specifications as of June 2026. Revision 1.0.
+
+
+# Smart Factory Floor — Unovie.AI
+URL: https://unovie.ai/solutions/smart-factory-floor.html
+
+## Smart Factory Floor
+Home / Solutions / Smart Factory Floor Manufacturing Smart Factory Floor Vision-driven inspection and quality control that runs on the line, in real time, on hardware you own — no cloud round-trip, no data egress. Start a project → Read the field guide −30 % inspection errors +25 % line speed 100 % on-prem
+
+## Inspection & quality, automated
+01 — What it does Inspection & quality, automated /vision Real-time defect detection Sub-second vision on the line catches defects humans miss at speed. camera→GPU sub-second /grading Consistent QC grading Eliminates inspector drift with a model that grades every unit identically. repeatable auditable /closed-loop Stop-the-line alerts Closed-loop alerting with full traceability when a defect threshold trips. alerting trace
+
+## From frame to action
+02 — How it works From frame to action 01 Capture Cameras stream to the on-prem GPU. 02 Detect Edge model flags defects per frame. 03 Decide Grade, route, or stop the line. 04 Log Every decision recorded for audit.
+
+## Inspect every unit. Perfectly.
+Let's build Inspect every unit. Perfectly. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Smart Warehouse — Unovie.AI
+URL: https://unovie.ai/solutions/smart-warehouse.html
+
+## Smart Warehouse
+Home / Solutions / Smart Warehouse Logistics Smart Warehouse Edge-AI for inventory and movement: see stock in real time, optimize slotting, and cut stockouts — running where the cameras and sensors already are. Start a project → Read the field guide −20 % stockouts +15 % fill rate real-time tracking
+
+## Inventory you can actually see
+01 — What it does Inventory you can actually see /vision Inventory vision Continuous counts and location from existing cameras. counts location /slotting Slotting optimization Recommends placement to shorten pick paths. pick-path yield /trace Track & trace End-to-end movement with tamper-evident logs. trace audit
+
+## Sense to optimize
+02 — How it works Sense to optimize 01 Ingest Cameras & sensors → edge. 02 Model Count, locate, predict. 03 Optimize Slotting & replenishment. 04 Act Alerts & work orders.
+
+## Never run out. Or over.
+Let's build Never run out. Or over. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# OSHA Compliance Monitoring — Unovie.AI
+URL: https://unovie.ai/solutions/osha-compliance.html
+
+## OSHA Compliance Monitoring
+Home / Solutions / OSHA Compliance Monitoring Safety OSHA Compliance Monitoring AI-powered safety analytics that spot compliance risks — missing PPE, unsafe zones, hazards — and alert in real time, with an evidence trail. Start a project → Read the field guide −25 % OSHA fines +30 % training done real-time alerts
+
+## Safety, watched continuously
+01 — What it does Safety, watched continuously /ppe PPE & hazard detection Detects missing protection and unsafe behaviour on camera. PPE zones /risk Risk analytics Trends incidents and near-misses into actionable risk. trends near-miss /evidence Alerting & evidence Real-time alerts plus a defensible audit log. alerting audit
+
+## Monitor to audit
+02 — How it works Monitor to audit 01 Monitor Watch zones & PPE. 02 Detect Flag risk events. 03 Alert Notify supervisors. 04 Record Immutable evidence log.
+
+## Protect people. Prove it.
+Let's build Protect people. Prove it. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Vision Intelligence — Unovie.AI
+URL: https://unovie.ai/solutions/vision-intelligence.html
+
+## Vision Intelligence
+Home / Solutions / Vision Intelligence OTT · Content Provider Vision Intelligence Real-time computer vision for an OTT and pay-TV operator. Edge-AI watches every channel feed, identifies what is actually on screen frame by frame, and turns thousands of live streams into a continuously verified, audit-ready signal — on GPUs at the edge, in under a second. Start a project → Read the field guide 96 channels per node, live <1 s feed to verified −90 % manual QA effort
+
+## See every stream, automatically
+01 — What it does See every stream, automatically /detect Live channel detection GPU vision identifies the channel on every tile of every composite feed, with confidence and bounding box per frame. per-frame confidence bbox /verify Continuous QA & compliance Confirms each stream carries the right content and flags drift or outage in sub-second time, with annotated evidence for audit. MTTD↓ evidence audit /scale Many feeds, one node A zero-copy GPU pipeline decodes and scores dozens of 4K feeds per edge node — no raw video leaves the rack. zero-copy 4K on-prem
+
+## Stream to verified signal
+02 — How it works Stream to verified signal 01 Decode RTSP feeds decode into GPU memory. 02 Locate Per-tile regions mapped once. 03 Detect GPU scores each region every frame. 04 Publish Detections stream to analytics & alerts.
+
+## Verify every channel, in real time.
+Let's build Verify every channel, in real time. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Batch Process Optimization — Unovie.AI
+URL: https://unovie.ai/solutions/batch-optimization.html
+
+## Batch Process Optimization
+Home / Solutions / Batch Process Optimization Process · chem & pharma Batch Process Optimization Automate the optimization of batch processes in chemical and pharmaceutical manufacturing — higher quality, less waste, per batch. Start a project → Read the field guide +25 % product quality −15 % waste per-batch tuning
+
+## Tune every batch
+01 — What it does Tune every batch /recipe Recipe optimization Recommends set-points from historical & live data. set-points yield /drift Drift detection Catches process drift before it costs a batch. drift SPC /yield Yield analytics Attributes yield to controllable factors. yield RCA
+
+## Model to verify
+02 — How it works Model to verify 01 Model Learn the process envelope. 02 Recommend Optimal set-points. 03 Apply Operator-in-the-loop. 04 Verify Score against held-out.
+
+## More yield. Less waste.
+Let's build More yield. Less waste. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Remote Expertise Platform — Unovie.AI
+URL: https://unovie.ai/solutions/remote-expertise.html
+
+## Remote Expertise Platform
+Home / Solutions / Remote Expertise Platform Workforce Remote Expertise Platform Connect remote experts with on-site teams for real-time, grounded guidance — so knowledge scales without the travel. Start a project → Read the field guide +20 % worker output −30 % on-site visits real-time guidance
+
+## Expertise, on demand
+01 — What it does Expertise, on demand /guide Guided AR / voice Step-by-step guidance overlaid where the work happens. AR voice /ground Grounded retrieval Answers cited to your manuals and records. RAG cited /capture Session capture Turns each session into reusable knowledge. capture reuse
+
+## Connect to capture
+02 — How it works Connect to capture 01 Connect Link expert & floor. 02 Ground Pull cited context. 03 Guide Real-time steps. 04 Capture Bank the knowledge.
+
+## Your best expert, everywhere.
+Let's build Your best expert, everywhere. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Maritime Digital Twin — Unovie.AI
+URL: https://unovie.ai/solutions/maritime-digital-twin.html
+
+## Maritime Digital Twin
+Home / Solutions / Maritime Digital Twin Maritime · Oil & Gas Maritime Digital Twin A living digital twin for large tanker and LNG fleets. Edge-AI on every vessel watches vibration, acoustics, hull strain and the OT network, classifies anomalies before the satellite uplink, and turns condition evidence into deferred-maintenance and compliance decisions on shore. Start a project → Read the field guide −6 mo overhauls deferred on evidence 100 % classified on-vessel 800 vessels · one twin
+
+## Intelligence at the waterline
+01 — What it does Intelligence at the waterline /edge Edge anomaly detection Vibration, acoustic and strain models run on the vessel and classify faults before the uplink — so low-bandwidth links carry decisions, not raw signal. vibration acoustic strain /cbm Condition-based maintenance Remaining-useful-life on rotating gear becomes defensible deferral evidence for class surveys, and auto-triggers spares procurement. RUL deferral spares /cyber OT cyber watch An on-network sensor flags anomalous engine and automation commands, isolates the endpoint, and keeps a full forensic trail. OT IDS isolate forensics
+
+## From sensor to shore decision
+02 — How it works From sensor to shore decision 01 Sense High-rate sensors on engine, hull and OT bus. 02 Classify Edge models score events on the vessel. 03 Sync Only decisions cross the satellite link. 04 Act Defer, procure, or isolate — with evidence.
+
+## Run the fleet on evidence.
+Let's build Run the fleet on evidence. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Connected-Vehicle Digital Twin — Unovie.AI
+URL: https://unovie.ai/solutions/connected-vehicle-twin.html
+
+## Connected-Vehicle Digital Twin
+Home / Solutions / Connected-Vehicle Digital Twin Automotive · Connected EV Connected-Vehicle Digital Twin A VIN-level digital twin for multi-brand connected-EV fleets. As-ordered, as-built, as-operated and as-maintained data unify into one live view, with an in-vehicle AI assistant and battery diagnostics running on automotive-grade edge silicon and delivered over the air. Start a project → Read the field guide 4.2 h average case resolution 98.7 % notification delivery 4 lifecycle states · one VIN
+
+## One VIN, every dimension
+01 — What it does One VIN, every dimension /twin Lifecycle digital twin As-ordered, as-built, as-operated and as-maintained unified per VIN — live telemetry beside service, recall and warranty history. telemetry BOM history /assist In-vehicle AI assistant A generative assistant and battery state-of-health diagnostics run on automotive edge SoCs, with new models pushed over the air. GenAI battery SoH OTA /care Context-aware customer care Inbound contacts pop full vehicle context, next-best-action and consent state; video remote-assist and digital-key control close the loop. screen-pop NBA digital keys
+
+## Signal to service
+02 — How it works Signal to service 01 Connect Vehicles stream telemetry and faults. 02 Diagnose Edge models score battery and systems. 03 Enrich Cases pop context and next action. 04 Resolve Remote command, dispatch, or OTA.
+
+## Know every vehicle, by VIN.
+Let's build Know every vehicle, by VIN. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Corporate-Travel Sales Intelligence — Unovie.AI
+URL: https://unovie.ai/solutions/corporate-travel-sales.html
+
+## Corporate-Travel Sales Intelligence
+Home / Solutions / Corporate-Travel Sales Intelligence Go-to-market · Airline Corporate-Travel Sales Intelligence An AI co-pilot for an airline corporate-sales team. It grounds each corporate account in live travel-demand signals, scores fit across seven airline-specific dimensions — network overlap, premium-cabin propensity, loyalty, travel-policy maturity and more — drafts a full opportunity plan with stakeholder map and competitive positioning, and surfaces the next best action across the whole book of business. Start a project → Read the field guide <5 min meeting prep, from an hour 1 -day RFP turnaround, from five 2,000 + accounts, one book
+
+## From signal to corporate deal
+01 — What it does From signal to corporate deal /signal Travel-demand signal grounding Hiring, expansion, earnings and RFP signals per account distil into issue, impact and opportunity a rep can act on. grounded signals RAG /score Airline-specific fit scoring Seven weighted dimensions — network overlap, premium-cabin propensity, loyalty, policy maturity, buying intent and more — render an instant fit and propensity picture. 7 axes propensity explainable /leak Share-of-wallet leakage Route-level share against contracted commitment flags slipping accounts and the revenue at risk — before renewal. share routes at-risk
+
+## Account to next move
+02 — How it works Account to next move 01 Ground Pull live demand signals. 02 Score Rank fit across seven axes. 03 Plan Draft the opportunity and stakeholders. 04 Act Surface the next best action.
+
+## Win the corporate account.
+Let's build Win the corporate account. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Edge Data Fabric — Unovie.AI
+URL: https://unovie.ai/platform/edge-data-fabric.html
+
+## Edge Data Fabric
+Home / Platform / Edge Data Fabric Platform · Nexus Edge Data Fabric A domain ontology, a knowledge graph and vector memory — one living context layer for everything you know. Custom models read your documents, telemetry and records, construct a typed graph of entities and relationships, and embed it for hybrid retrieval. Domain fine-tuned agents reason over it, and your teams query it in plain language. It grows continuously, versions every fact, and runs entirely on-prem. Start a project → Read the field guide ontology domain-modelled graph +vector hybrid recall 0 B egress · on-prem
+
+## Context that compounds
+01 — What it does Context that compounds /ontology A domain ontology Your world modelled as typed entities and relationships — the who, what, when, where and why — so context is structured, not guessed. typed relationships semantic /graph Knowledge graph + vector A graph store and vector memory side by side: subgraph traversal for structure, dense and sparse embeddings for meaning, fused into one answer. graph vector hybrid /selfserve Self-service by language Teams author and query in natural language; domain fine-tuned agents plan, retrieve and act — no SQL, no data team in the loop. NL query agents no-code
+
+## Documents in, decisions out
+02 — How it works Documents in, decisions out 01 Extract Parse docs, tables and signals. 02 Construct Build the typed graph. 03 Index Embed for graph + vector. 04 Serve Grounded answers & agents.
+
+## Context, connected.
+Knowledge graph Context, connected. Every document, signal and record becomes a typed node; every relationship, an edge — assembled around a living domain ontology.
+
+## How the graph is built
+03 — Architecture How the graph is built /parse Custom extraction models Document- and table-structure models parse PDFs, images and text; an LLM emits structured records that become typed nodes and edges. doc-parse tables LLM /construct Graph construction + embeddings Records are de-duplicated, transformed and persisted to a fast embeddable graph store, with embedding models writing vectors beside every node. KG build embeddings transform /retrieve Hybrid fused retrieval Traditional indices, text and sparse embeddings and subgraph traversal feed a tensor-based fused ranker and query-rewrite models — grounded Top-K, not guesses. fusion rerank query-rewrite /version Temporal & governed Graph OLTP keeps every node and edge temporally versioned with an immutable audit trail; columnar OLAP serves analytics — multi-tenant, OAuth2 / RBAC, zero-trust. temporal audit RBAC
+
+## Models and agents, tuned to your domain
+04 — Custom models Models and agents, tuned to your domain /models A catalog of custom models Document-parsing, embedding, NER and query-rewrite models, plus domain fine-tuned SLMs — trained on your domain, swappable and multi-model routed. fine-tuned SLM NER multi-model /agents Domain agent accelerators Pre-built agents — diagnostics, differential, referral, next-best-action and triage — reason over the graph and call tools to act. agents NBA tools /nlp Natural-language self-service Self-service portals let users ask, author and govern in plain language across chat, voice and app — every answer traceable to source. NL authoring omni-channel traceable
+
+## Built for scale
+05 — By the numbers Built for scale 100 M object nodes 2.5 B relationships 260 + prebuilt connectors
+
+## Know what you know — and why.
+Let's build Know what you know — and why. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# Edge Streaming Intelligence — Unovie.AI
+URL: https://unovie.ai/platform/edge-streaming-analytics.html
+
+## Edge Streaming Intelligence
+Home / Platform / Edge Streaming Intelligence Platform Edge Streaming Intelligence Real-time vision and audio intelligence over live streams, at fleet scale. A zero-copy GPU pipeline decodes hundreds of feeds straight into device memory, runs a catalog of detectors on every frame, and turns raw video into a verified, queryable signal — with sub-millisecond validation and an agent layer that reasons and acts on top. Proven on broadcast-grade media: 1,000+ concurrent 4K streams across racks of edge GPUs. Start a project → Read the field guide 1,000 + 4K streams, concurrent <1 ms high-frequency validation 128 streams / rack
+
+## Vision and audio on every frame
+01 — What it does Vision and audio on every frame /detect A catalog of live detectors Logos, freezes, macro-blocking, blank and splash screens, lip-sync and on-screen errors are scored per frame — video and audio anomalies caught the instant they appear. video audio per-frame /read Reads the screen, not just watches it OCR and vision-language models extract guide data, clocks, version strings and error dialogs; object detectors track focus, icons and UI state. OCR/VLM object-det UI state /act Closes the loop An agent layer plans and acts — driving devices through an IR / Bluetooth control plane and verifying every step against the live stream. agentic device-control verify
+
+## Stream to decision
+02 — How it works Stream to decision 01 Decode Feeds decode into GPU memory. 02 Detect A model graph scores every frame. 03 Decide Validate sub-ms; reason in minutes. 04 Act Drive devices, publish, alert.
+
+## From satellite to every screen.
+Live streams From satellite to every screen. Telecom and satellite feeds land at the edge, get scored frame by frame, and serve verified media — at fleet scale.
+
+## A model graph, not a single model
+03 — Detection catalog A model graph, not a single model /anomaly Video anomaly detection Freezes (consecutive pixel-difference), macro-blocking and pixelation (block-variance + Sobel edge density), tearing and stutter — flagged inside the stream buffer. optical-flow Sobel block-variance /logo Logo & UI object detection An RF-DETR detector with a CLIP refiner confirms logos, app tiles and widgets with bounding-box precision. RF-DETR CLIP bbox /ocr OCR & VLM reading GPU OCR (docTR) and vision-language models read guide grids, clocks, version strings and error dialogs — signal-loss, auth and tune failures included. docTR VLM regex /audio Audio & sync checks Audio-presence and lip-sync checks run beside the video probe, so silent feeds and A/V drift are caught too. audio-probe lip-sync ffprobe
+
+## Inside the pipeline
+04 — Architecture Inside the pipeline /pipeline Zero-copy vision pipeline GStreamer + DeepStream pull RTSP / H.265 into the GPU via NVDEC; composite grids map to regions once, then a swappable model graph scores each region every frame. GStreamer DeepStream NVDEC /serverless Serverless model serving Detectors run as auto-scaling GPU functions (Nuclio) drawn from a continuously trained catalog — new models deploy without touching the pipeline. Nuclio auto-scale registry /backbone Event & knowledge backbone Detections stream over NATS JetStream into ClickHouse for sub-second OLAP, with a knowledge graph, vectors and a fine-tuned vision-action model driving next-best-action. NATS ClickHouse knowledge-graph /learn A closed training loop Misses become flagged frames become new annotation tasks — captured, versioned in COCO and retrained, then promoted through a registry. CVAT COCO feedback
+
+## Engineered for density
+05 — By the numbers Engineered for density ~512 streams · 4 racks in parallel <50 ms inference / frame 30 fps sustained per stream
+
+## Real-time, actually.
+Let's build Real-time, actually. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# GPU MicroCloud — Unovie.AI
+URL: https://unovie.ai/platform/gpu-microcloud.html
+
+## GPU MicroCloud
+Home / Platform / GPU MicroCloud Platform GPU MicroCloud We stand up a full private cloud on your floor: racks of edge GPUs and servers, software-defined storage, a 10G fabric and a Kubernetes control plane — all on-prem. Workloads are scheduled and bin-packed across the pool, MIG carves each GPU into isolated slices, zero-trust policy gates every call, and every minute is metered for chargeback. Datacenter discipline, where your data lives. Start a project → Read the field guide Kubernetes cloud-native, on-prem MIG hard isolation metered per-tenant chargeback
+
+## Your GPUs, run like cloud
+01 — What it does Your GPUs, run like cloud /schedule Fair-share scheduling A priority-and-quota scheduler places jobs across the pool, preempts politely, and keeps expensive silicon busy. queue quota preempt /isolate Hard multi-tenant isolation MIG partitioning carves each GPU into isolated slices, so tenants share hardware without sharing blast radius. MIG cgroups secure /meter Metering & chargeback Per-tenant, per-job accounting turns shared capacity into auditable cost and showback reports. metering showback reports
+
+## Pool to bill
+02 — How it works Pool to bill 01 Pool Aggregate edge GPUs. 02 Schedule Place workloads. 03 Isolate Partition tenants. 04 Meter Account & bill.
+
+## Many nodes, one intelligence.
+Distributed by design Many nodes, one intelligence. GPU nodes pool as one mesh — scheduled, partitioned and sharing state through a control plane. Workloads land anywhere; the cloud behaves as one.
+
+## Inside the micro-cloud
+03 — Architecture Inside the micro-cloud /compute Heterogeneous compute pool Edge GPUs, CPU servers and training boxes are pooled as one schedulable fabric — production racks plus a dedicated test / stage rack. edge GPU servers DGX /orchestrate Kubernetes control plane A cloud-native control plane handles dynamic model deployment, job scheduling, capacity allocation and execution failover across namespaced dev / test / prod. Kubernetes Helm failover /storage Software-defined storage CEPH block / file / object, an S3-compatible object store and NFS / iSCSI SAN give every workload durable, shared state — no external cloud. CEPH S3 NFS/iSCSI /partition MIG slice fabric Each GPU is partitioned into right-sized MIG instances and bin-packed by memory and NVLink topology — tenants share silicon, never blast radius. MIG NVLink bin-pack
+
+## Governed like a cloud region
+04 — Governance Governed like a cloud region /zerotrust Zero-trust by default Policy-as-code and OAuth2 / OpenID gate every call; per-tenant namespaces and RBAC separate workloads and data end to end. OPA OAuth2/OIDC RBAC /observe Deep observability OpenTelemetry and eBPF trace every workload; metrics, logs and dashboards make utilization and cost visible in real time. OpenTelemetry eBPF Grafana /data Stateful data services Cache, queue and database services run inside the cloud beside the compute, with columnar analytics for usage and reporting. Redis PostgreSQL ClickHouse /meter Metering & chargeback Per-tenant, per-job accounting turns shared capacity into auditable showback — quotas, reports and capacity planning. metering quotas showback
+
+## The fabric underneath
+05 — By the numbers The fabric underneath 10 G overlay SAN + LAN 7 × MIG slices / GPU 3 namespaces · dev/test/prod
+
+## Datacenter discipline, on-prem.
+Let's build Datacenter discipline, on-prem. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# GPU EdgeGateway — Unovie.AI
+URL: https://unovie.ai/platform/gpu-edgegateway.html
+
+## GPU EdgeGateway
+Home / Platform / GPU EdgeGateway Platform GPU EdgeGateway An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best. Drop-in for any client, multimodal, governed like production, on hardware you own. Start a project → Read the field guide OpenAI compatible /v1 agent-first intelligent routing policy sandboxed execution
+
+## Route, reason, act
+01 — What it does Route, reason, act /route Signal-driven model routing Each request is classified by intent, modality, complexity and risk, then routed across a local-to-frontier model mesh — reasoning only when it pays. intent mixture-of-models when-to-reason /agents Agent-first execution Agents plan, spawn parallel subagents and call tools via RPC; skills are learned and reused — multimodal in, action out. agents subagents skills /sandbox Sandboxed & governed Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access. MicroVM policy-as-code no-exfil
+
+## Request to action
+02 — How it works Request to action 01 Authenticate Identity, role & policy. 02 Classify Score intent, modality, risk. 03 Route Pick model, agent or tool. 04 Serve Sandboxed, observed, metered.
+
+## Right model, least cost.
+Intelligent routing Right model, least cost. Every request is routed across a mesh of models — loaded and unloaded on demand — to the cheapest path that meets the need.
+
+## Inside the gateway
+03 — Architecture Inside the gateway /classify Signal classification Lightweight embedding and classifier models (candle / ONNX / OpenVINO) score intent, category, safety and modality in microseconds — the routing brain runs on the edge. embeddings ONNX/OpenVINO classifiers /mesh Mixture-of-models mesh Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs across cost, privacy and latency boundaries — with category-aware semantic caching. vLLM semantic cache multi-provider /safe Safety & policy gate Jailbreak, prompt-injection and sensitive-data detection guard every call; declarative policy governs what agents and tools may touch. jailbreak PII policy /runtime Sandboxed agent runtime Agents and tools execute in isolated MicroVM sandboxes with no data exfiltration — spawned, parallelized and torn down per task. MicroVM sandbox RPC tools
+
+## Multimodal in, action out
+04 — Agent-first delivery Multimodal in, action out /multimodal Every modality, one path Text, voice, image and event inputs are normalized, routed to the right modality model, and turned into grounded responses or tool actions. text·voice·image normalize actions /learn A learning loop The platform learns skills from experience, recalls past sessions and improves routing over time — every path measured. skills recall self-improving /omni Omni-channel reach One gateway serves API clients, chat, voice and apps alike — consistent identity, context and policy across every surface. omni-channel one identity context
+
+## Governed like production
+05 — By the numbers Governed like production <1 ms route decision 200 + models reachable MicroVM per-task isolation
+
+## Serve models safely.
+Let's build Serve models safely. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# IT/OT Edge Security Intelligence — Unovie.AI
+URL: https://unovie.ai/platform/edge-security-intelligence.html
+
+## IT/OT Edge Security Intelligence
+Home / Platform / IT/OT Edge Security Intelligence Platform IT/OT Edge Security Intelligence A GPU-native SIEM that detects threats while the data is still moving. Instead of collecting logs and correlating them later, it tokenizes, classifies and enriches every event in flight on the GPU — semantic AI detection, not regex chains — then indexes to a sharded, authenticated store. Tens of thousands of events per second on a single edge node, on-prem. Start a project → Read the field guide 21K + events / sec, peak semantic AI, not regex single-node on-prem
+
+## Detection at ingest
+01 — What it does Detection at ingest /inflight Detection in the data path Events are tokenized, classified and scored on the GPU as they stream in — alerts fire near ingestion, not after a delayed search job. in-flight low-latency streaming /semantic Semantic threat detection A BERT classifier reads intent and meaning in raw log text, catching threats that static rules and regex miss. BERT intent beyond-regex /resilient Hardened & bounded A dead-letter queue protects failed batches, retention keeps storage bounded, and authenticated, sharded indexing keeps search fast. DLQ retention auth
+
+## Log to incident
+02 — How it works Log to incident 01 Ingest Logs land in a Kafka stream. 02 Batch Workers tokenize on the GPU. 03 Classify BERT inference scores intent. 04 Index Enriched incidents to search.
+
+## Threats stop at the edge.
+Edge defense Threats stop at the edge. DDoS floods and intrusion attempts are detected and deflected at a shielded perimeter — before they reach what matters.
+
+## Inside the pipeline
+03 — Architecture Inside the pipeline /ingest Streaming ingest High-throughput Kafka in KRaft mode (no ZooKeeper) feeds parallel consumers — backpressure-safe at tens of thousands of events per second. Kafka KRaft parallel /infer GPU inference server An inference server runs the detection model on the GPU in batches, so classification scales with parallelism instead of CPU cores. Triton Morpheus GPU batch /enrich Enrich & index Scores and metadata are attached, then incidents are written to an authenticated, multi-shard search index for fast investigation. enrichment Elasticsearch 8-shard /harden Operational hardening Dead-letter queue, health checks, retention enforcement and authentication keep the pipeline resilient and storage bounded. DLQ healthchecks retention
+
+## One lens over both estates
+04 — IT + OT coverage One lens over both estates /it IT telemetry Logs, endpoints, identity and network events are classified for intent — credential abuse, lateral movement and exfiltration patterns surfaced in flight. logs identity network /ot OT & edge signals Operational-technology and device telemetry are watched on the same pipeline, so anomalies on the plant floor and at the edge are caught beside IT threats. OT ICS device /correlate Unified incidents IT and OT detections land in one store with shared scoring and timelines — correlation across both estates, not two disconnected tools. correlation timeline single-pane
+
+## Engineered for throughput
+05 — By the numbers Engineered for throughput 21K + EPS peak 13.8K + EPS sustained ~3 s AI inference latency
+
+## Detect threats in the data path.
+Let's build Detect threats in the data path. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
