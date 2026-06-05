@@ -79,7 +79,7 @@ header.nav .logo{height:40px}
 .ship{fill:none;stroke:#6468ac;stroke-width:1.3;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round;opacity:.55}
 .ship .wline{stroke-dasharray:8 7}
 .swake{fill:#6468ac}
-.shipfly{position:absolute;top:60%;left:0;width:210px;z-index:0;pointer-events:none;animation:shipcross 240s linear infinite}
+.shipfly{position:absolute;bottom:120px;left:0;width:210px;z-index:0;pointer-events:none;animation:shipcross 240s linear infinite}
 .shipfly svg{width:100%;height:auto;display:block}
 @keyframes shipcross{from{transform:translateX(0)}to{transform:translateX(100vw)}}
 @media(prefers-reduced-motion:reduce){.planebg,.shipfly{display:none}}
