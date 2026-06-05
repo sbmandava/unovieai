@@ -306,3 +306,70 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 .mobile a{display:flex;align-items:center;gap:14px;font-size:clamp(21px,6vw,28px);padding:13px 0}
 .mobile a br{display:none}
 .mobile a .mono{font-size:13px}
+
+/* ---------- platform graph / stream animations ---------- */
+.kgwrap,.stwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
+.kgviz,.stviz{display:block;width:100%;height:auto}
+.kgviz .edge{stroke:var(--line-2);stroke-width:1.4;fill:none;stroke-dasharray:5 7;opacity:.5;animation:kgflow 2.6s linear infinite}
+.kgviz .edge.lit{stroke:var(--accent);opacity:.7}
+.kgviz .edge.stl{stroke:var(--steel);opacity:.6}
+.kgviz .node{fill:var(--surface);stroke:var(--accent);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.4s ease-in-out infinite}
+.kgviz .node.stl{stroke:var(--steel)}
+.kgviz .hub{fill:var(--surface-2);stroke:var(--steel);stroke-width:2.5}
+.kgviz .sm{fill:var(--accent);opacity:.7;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.8s ease-in-out infinite}
+.kgviz .pkt,.stviz .pkt{fill:var(--accent)}
+.kgviz .lbl,.stviz .lbl{fill:var(--fg-mut);font-family:var(--mono);font-size:12px;text-anchor:middle}
+.kgviz .lbl.hl,.stviz .lbl.hl{fill:var(--fg)}
+.stviz .beam{stroke:var(--accent);stroke-width:1.6;fill:none;stroke-dasharray:5 7;opacity:.7;animation:kgflow 2.2s linear infinite}
+.stviz .wave{fill:none;stroke:var(--steel);stroke-width:1.6;transform-box:fill-box;transform-origin:center;opacity:0;animation:stwave 3s ease-out infinite}
+.stviz .dish{fill:var(--surface);stroke:var(--steel);stroke-width:2}
+.stviz .egpu{fill:var(--surface-2);stroke:var(--accent);stroke-width:2}
+.stviz .tile{fill:var(--surface);stroke:var(--line-2);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.2s ease-in-out infinite}
+.stviz .tile.lit{stroke:var(--accent)}
+.stviz .scan{fill:var(--accent);opacity:.16;animation:stscan 3.4s ease-in-out infinite}
+@keyframes kgflow{to{stroke-dashoffset:-24}}
+@keyframes kgpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes stwave{0%{transform:scale(.35);opacity:.7}80%{opacity:0}100%{transform:scale(1.7);opacity:0}}
+@keyframes stscan{0%,100%{transform:translateX(0)}50%{transform:translateX(264px)}}
+@media(prefers-reduced-motion:reduce){.kgviz *,.stviz *{animation:none!important}.kgviz .pkt,.stviz .pkt,.stviz .wave{display:none}}
+/* ---------- gpu-microcloud: distributed mesh ---------- */
+.mcwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
+.mcviz{display:block;width:100%;height:auto}
+.mcviz .link{stroke:var(--line-2);stroke-width:1.4;fill:none;stroke-dasharray:5 7;opacity:.5;animation:kgflow 2.6s linear infinite}
+.mcviz .link.lit{stroke:var(--accent);opacity:.65}
+.mcviz .gnode{transform-box:fill-box;transform-origin:center;animation:kgpulse 3.6s ease-in-out infinite}
+.mcviz .gbox{fill:var(--surface);stroke:var(--steel);stroke-width:2}
+.mcviz .slice{fill:var(--accent);opacity:.7}
+.mcviz .hub{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
+.mcviz .pkt{fill:var(--accent)}
+.mcviz .lbl{fill:var(--fg-mut);font-family:var(--mono);font-size:12px;text-anchor:middle}
+.mcviz .lbl.hl{fill:var(--fg)}
+@media(prefers-reduced-motion:reduce){.mcviz *{animation:none!important}.mcviz .pkt{display:none}}
+/* ---------- gpu-edgegateway: routing + cost + dynamic models ---------- */
+.gwwrap,.secwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
+.gwviz,.secviz{display:block;width:100%;height:auto}
+.gwviz .route{stroke:var(--line-2);stroke-width:1.4;fill:none;stroke-dasharray:5 7;opacity:.5;animation:kgflow 2.6s linear infinite}
+.gwviz .route.lit{stroke:var(--accent);opacity:.7}
+.gwviz .hub{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
+.gwviz .req{fill:var(--steel);opacity:.75;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.4s ease-in-out infinite}
+.gwviz .model{fill:var(--surface);stroke:var(--line-2);stroke-width:1.5}
+.gwviz .model.loaded{stroke:var(--accent);stroke-width:2}
+.gwviz .model.cold{stroke-dasharray:4 5;opacity:.45}
+.gwviz .model.loading{stroke:var(--accent);stroke-width:2;animation:gwload 3.6s ease-in-out infinite}
+.gwviz .gwbar{fill:var(--steel);opacity:.8;transform-box:fill-box;transform-origin:bottom;animation:gwbar 2.4s ease-in-out infinite}
+.gwviz .pkt{fill:var(--accent)}
+.gwviz .lbl{fill:var(--fg-mut);font-family:var(--mono);font-size:12px;text-anchor:middle}
+.gwviz .lbl.hl{fill:var(--fg)}
+.secviz .shield{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-dasharray:8 8;opacity:.8;animation:kgflow 3s linear infinite}
+.secviz .shield2{fill:none;stroke:var(--steel);stroke-width:1.6;opacity:.5;transform-box:fill-box;transform-origin:center;animation:secpulse 2.6s ease-in-out infinite}
+.secviz .core{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
+.secviz .src{fill:#e5544b;opacity:.85;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.2s ease-in-out infinite}
+.secviz .tpkt{fill:#e5544b}
+.secviz .impact{fill:#e5544b;transform-box:fill-box;transform-origin:center;animation:secimpact 1.8s ease-out infinite}
+.secviz .lbl{fill:var(--fg-mut);font-family:var(--mono);font-size:12px;text-anchor:middle}
+.secviz .lbl.hl{fill:var(--fg)}
+@keyframes gwload{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes gwbar{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+@keyframes secpulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.08);opacity:.85}}
+@keyframes secimpact{0%{opacity:0;transform:scale(.4)}30%{opacity:.7}100%{opacity:0;transform:scale(1.7)}}
+@media(prefers-reduced-motion:reduce){.gwviz *,.secviz *{animation:none!important}.gwviz .pkt,.secviz .tpkt,.secviz .impact{display:none}}

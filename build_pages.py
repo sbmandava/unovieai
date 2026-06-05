@@ -278,9 +278,64 @@ def platx(arch_title, arch_cards, num_title, specs):
     return (f'<section><div class="wrap">{shead("03","Architecture",arch_title)}{disc(arch_cards)}</div></section>'
             f'<section><div class="wrap">{shead("04","By the numbers",num_title)}{metrics(specs)}</div></section>')
 
+KG_SVG = """<svg class="kgviz" viewBox="0 0 1000 460" role="img" aria-label="Animated knowledge graph: documents, telemetry and records become typed nodes and edges around a domain ontology">
+<line class="edge stl" x1="500" y1="230" x2="500" y2="80"/><line class="edge lit" x1="500" y1="230" x2="170" y2="120"/><line class="edge lit" x1="500" y1="230" x2="830" y2="120"/><line class="edge" x1="500" y1="230" x2="140" y2="350"/><line class="edge stl" x1="500" y1="230" x2="860" y2="350"/><line class="edge" x1="500" y1="230" x2="350" y2="410"/><line class="edge lit" x1="500" y1="230" x2="650" y2="410"/><line class="edge" x1="170" y1="120" x2="300" y2="200"/><line class="edge" x1="300" y1="200" x2="500" y2="230"/><line class="edge" x1="830" y1="120" x2="700" y2="200"/><line class="edge" x1="700" y1="200" x2="500" y2="230"/><line class="edge" x1="350" y1="410" x2="420" y2="330"/><line class="edge" x1="650" y1="410" x2="580" y2="330"/><line class="edge" x1="170" y1="120" x2="140" y2="350"/><line class="edge" x1="830" y1="120" x2="860" y2="350"/>
+<circle class="pkt" r="4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M170,120 L500,230"/></circle><circle class="pkt" r="4"><animateMotion dur="2.8s" begin=".6s" repeatCount="indefinite" path="M830,120 L500,230"/></circle><circle class="pkt" r="4"><animateMotion dur="2.6s" begin="1.1s" repeatCount="indefinite" path="M500,80 L500,230"/></circle><circle class="pkt" r="4"><animateMotion dur="3s" begin=".3s" repeatCount="indefinite" path="M650,410 L500,230"/></circle>
+<circle class="sm" cx="300" cy="200" r="6" style="animation-delay:.2s"/><circle class="sm" cx="700" cy="200" r="6" style="animation-delay:.9s"/><circle class="sm" cx="420" cy="330" r="6" style="animation-delay:.5s"/><circle class="sm" cx="580" cy="330" r="6" style="animation-delay:1.3s"/>
+<circle class="node" cx="170" cy="120" r="18" style="animation-delay:0s"/><circle class="node stl" cx="830" cy="120" r="18" style="animation-delay:.7s"/><circle class="node" cx="140" cy="350" r="18" style="animation-delay:1s"/><circle class="node stl" cx="860" cy="350" r="18" style="animation-delay:.4s"/><circle class="node" cx="350" cy="410" r="18" style="animation-delay:1.4s"/><circle class="node" cx="650" cy="410" r="18" style="animation-delay:.2s"/><circle class="node stl" cx="500" cy="80" r="18" style="animation-delay:.9s"/>
+<circle class="hub" cx="500" cy="230" r="34"/>
+<text class="lbl hl" x="500" y="234">Ontology</text><text class="lbl" x="500" y="56">Source</text><text class="lbl" x="170" y="90">Document</text><text class="lbl" x="830" y="90">Telemetry</text><text class="lbl" x="140" y="386">Records</text><text class="lbl" x="860" y="386">Vector</text><text class="lbl" x="350" y="446">Entity</text><text class="lbl" x="650" y="446">Relation</text>
+</svg>"""
+
+ESI_SVG = """<svg class="stviz" viewBox="0 0 1000 380" role="img" aria-label="Animated telecom and satellite media: feeds beamed to an edge GPU and scored across a grid of live streams">
+<circle class="wave" cx="150" cy="120" r="30" style="animation-delay:0s"/><circle class="wave" cx="150" cy="120" r="30" style="animation-delay:1s"/><circle class="wave" cx="150" cy="120" r="30" style="animation-delay:2s"/>
+<circle class="dish" cx="150" cy="120" r="24"/><line x1="150" y1="120" x2="174" y2="96" stroke="var(--steel)" stroke-width="2"/><circle cx="174" cy="96" r="4" fill="var(--steel)"/>
+<line class="beam" x1="172" y1="134" x2="430" y2="200"/><circle class="pkt" r="4"><animateMotion dur="2.2s" repeatCount="indefinite" path="M172,134 L430,200"/></circle>
+<rect class="egpu" x="360" y="166" width="150" height="72" rx="12"/>
+<line class="beam" x1="510" y1="190" x2="630" y2="120"/><line class="beam" x1="510" y1="202" x2="630" y2="196"/><line class="beam" x1="510" y1="214" x2="630" y2="272"/>
+<circle class="pkt" r="4"><animateMotion dur="2s" begin=".4s" repeatCount="indefinite" path="M510,202 L630,196"/></circle><circle class="pkt" r="4"><animateMotion dur="2.4s" begin=".9s" repeatCount="indefinite" path="M510,190 L630,120"/></circle>
+<rect class="tile" x="630" y="96" width="78" height="58" rx="7" style="animation-delay:.1s"/><rect class="tile lit" x="726" y="96" width="78" height="58" rx="7" style="animation-delay:.7s"/><rect class="tile" x="822" y="96" width="78" height="58" rx="7" style="animation-delay:.4s"/><rect class="tile" x="630" y="170" width="78" height="58" rx="7" style="animation-delay:1.1s"/><rect class="tile" x="726" y="170" width="78" height="58" rx="7" style="animation-delay:.3s"/><rect class="tile lit" x="822" y="170" width="78" height="58" rx="7" style="animation-delay:.9s"/><rect class="tile lit" x="630" y="244" width="78" height="58" rx="7" style="animation-delay:.6s"/><rect class="tile" x="726" y="244" width="78" height="58" rx="7" style="animation-delay:1.3s"/><rect class="tile" x="822" y="244" width="78" height="58" rx="7" style="animation-delay:.2s"/>
+<rect class="scan" x="626" y="92" width="10" height="214" rx="4"/>
+<text class="lbl" x="150" y="170">Satellite</text><text class="lbl hl" x="435" y="207">Edge GPU</text><text class="lbl" x="765" y="326">Live streams</text>
+</svg>"""
+
+MC_SVG = """<svg class="mcviz" viewBox="0 0 1000 420" role="img" aria-label="Animated distributed micro-cloud: GPU nodes in a mesh sharing intelligence through a control plane">
+<line class="link" x1="650" y1="210" x2="575" y2="340"/><line class="link" x1="575" y1="340" x2="425" y2="340"/><line class="link" x1="425" y1="340" x2="350" y2="210"/><line class="link" x1="350" y1="210" x2="425" y2="80"/><line class="link" x1="425" y1="80" x2="575" y2="80"/><line class="link" x1="575" y1="80" x2="650" y2="210"/>
+<line class="link lit" x1="650" y1="210" x2="500" y2="210"/><line class="link lit" x1="575" y1="340" x2="500" y2="210"/><line class="link lit" x1="425" y1="340" x2="500" y2="210"/><line class="link lit" x1="350" y1="210" x2="500" y2="210"/><line class="link lit" x1="425" y1="80" x2="500" y2="210"/><line class="link lit" x1="575" y1="80" x2="500" y2="210"/>
+<circle class="pkt" r="4"><animateMotion dur="1.8s" repeatCount="indefinite" path="M425,80 L500,210"/></circle><circle class="pkt" r="4"><animateMotion dur="2s" begin=".5s" repeatCount="indefinite" path="M500,210 L650,210"/></circle><circle class="pkt" r="4"><animateMotion dur="2.2s" begin="1s" repeatCount="indefinite" path="M575,340 L500,210"/></circle><circle class="pkt" r="4"><animateMotion dur="2.4s" begin=".3s" repeatCount="indefinite" path="M650,210 L575,340"/></circle><circle class="pkt" r="4"><animateMotion dur="2.1s" begin=".8s" repeatCount="indefinite" path="M425,80 L575,80"/></circle>
+<g class="gnode" style="animation-delay:0s"><rect class="gbox" x="608" y="182" width="84" height="56" rx="9"/><rect class="slice" x="618" y="220" width="18" height="8" rx="2"/><rect class="slice" x="641" y="220" width="18" height="8" rx="2"/><rect class="slice" x="664" y="220" width="18" height="8" rx="2"/></g>
+<g class="gnode" style="animation-delay:.2s"><rect class="gbox" x="533" y="312" width="84" height="56" rx="9"/><rect class="slice" x="543" y="350" width="18" height="8" rx="2"/><rect class="slice" x="566" y="350" width="18" height="8" rx="2"/><rect class="slice" x="589" y="350" width="18" height="8" rx="2"/></g>
+<g class="gnode" style="animation-delay:.4s"><rect class="gbox" x="383" y="312" width="84" height="56" rx="9"/><rect class="slice" x="393" y="350" width="18" height="8" rx="2"/><rect class="slice" x="416" y="350" width="18" height="8" rx="2"/><rect class="slice" x="439" y="350" width="18" height="8" rx="2"/></g>
+<g class="gnode" style="animation-delay:.6s"><rect class="gbox" x="308" y="182" width="84" height="56" rx="9"/><rect class="slice" x="318" y="220" width="18" height="8" rx="2"/><rect class="slice" x="341" y="220" width="18" height="8" rx="2"/><rect class="slice" x="364" y="220" width="18" height="8" rx="2"/></g>
+<g class="gnode" style="animation-delay:.8s"><rect class="gbox" x="383" y="52" width="84" height="56" rx="9"/><rect class="slice" x="393" y="90" width="18" height="8" rx="2"/><rect class="slice" x="416" y="90" width="18" height="8" rx="2"/><rect class="slice" x="439" y="90" width="18" height="8" rx="2"/></g>
+<g class="gnode" style="animation-delay:1s"><rect class="gbox" x="533" y="52" width="84" height="56" rx="9"/><rect class="slice" x="543" y="90" width="18" height="8" rx="2"/><rect class="slice" x="566" y="90" width="18" height="8" rx="2"/><rect class="slice" x="589" y="90" width="18" height="8" rx="2"/></g>
+<circle class="hub" cx="500" cy="210" r="24"/><text class="lbl hl" x="500" y="214">Control</text><text class="lbl" x="425" y="392">GPU node</text>
+</svg>"""
+
+GW_SVG = """<svg class="gwviz" viewBox="0 0 1000 420" role="img" aria-label="Animated gateway routing: requests routed to dynamically loaded models with live cost analysis">
+<circle class="req" cx="80" cy="150" r="6"/><circle class="req" cx="80" cy="210" r="6"/><circle class="req" cx="80" cy="270" r="6"/>
+<line class="route lit" x1="86" y1="150" x2="224" y2="210"/><line class="route lit" x1="86" y1="210" x2="224" y2="210"/><line class="route lit" x1="86" y1="270" x2="224" y2="210"/>
+<circle class="pkt" r="4"><animateMotion dur="1.6s" repeatCount="indefinite" path="M80,150 L250,210"/></circle><circle class="pkt" r="4"><animateMotion dur="1.9s" begin=".5s" repeatCount="indefinite" path="M80,270 L250,210"/></circle>
+<circle class="hub" cx="250" cy="210" r="28"/><text class="lbl hl" x="250" y="214">Route</text>
+<line class="route lit" x1="278" y1="200" x2="680" y2="81"/><line class="route lit" x1="278" y1="206" x2="680" y2="145"/><line class="route" x1="278" y1="212" x2="680" y2="209"/><line class="route" x1="278" y1="218" x2="680" y2="273"/><line class="route lit" x1="278" y1="224" x2="680" y2="337"/>
+<circle class="pkt" r="4"><animateMotion dur="2s" repeatCount="indefinite" path="M278,205 L680,81"/></circle><circle class="pkt" r="4"><animateMotion dur="2.3s" begin=".7s" repeatCount="indefinite" path="M278,210 L680,145"/></circle><circle class="pkt" r="4"><animateMotion dur="2.1s" begin="1.2s" repeatCount="indefinite" path="M278,222 L680,337"/></circle>
+<rect class="model loaded" x="680" y="60" width="170" height="42" rx="8"/><rect class="model loaded" x="680" y="124" width="170" height="42" rx="8"/><rect class="model loading" x="680" y="188" width="170" height="42" rx="8"/><rect class="model cold" x="680" y="252" width="170" height="42" rx="8"/><rect class="model loaded" x="680" y="316" width="170" height="42" rx="8"/>
+<text class="lbl" x="765" y="85">SLM · loaded</text><text class="lbl" x="765" y="149">vLLM · loaded</text><text class="lbl" x="765" y="213">Vision · loading</text><text class="lbl" x="765" y="277">Frontier · cold</text><text class="lbl" x="765" y="341">Embed · loaded</text>
+<rect class="gwbar" x="360" y="330" width="20" height="56" style="animation-delay:0s"/><rect class="gwbar" x="392" y="330" width="20" height="56" style="animation-delay:.3s"/><rect class="gwbar" x="424" y="330" width="20" height="56" style="animation-delay:.6s"/><rect class="gwbar" x="456" y="330" width="20" height="56" style="animation-delay:.9s"/>
+<text class="lbl" x="418" y="404">cost / token</text>
+</svg>"""
+
+SEC_SVG = """<svg class="secviz" viewBox="0 0 1000 420" role="img" aria-label="Animated edge defense: threat traffic and DDoS deflected at a shielded edge perimeter">
+<circle class="src" cx="120" cy="90" r="7" style="animation-delay:0s"/><circle class="src" cx="880" cy="90" r="7" style="animation-delay:.3s"/><circle class="src" cx="80" cy="210" r="7" style="animation-delay:.6s"/><circle class="src" cx="920" cy="210" r="7" style="animation-delay:.2s"/><circle class="src" cx="160" cy="340" r="7" style="animation-delay:.5s"/><circle class="src" cx="840" cy="340" r="7" style="animation-delay:.8s"/><circle class="src" cx="500" cy="36" r="7" style="animation-delay:.4s"/><circle class="src" cx="500" cy="384" r="7" style="animation-delay:.9s"/>
+<circle class="tpkt" r="3.5"><animateMotion dur="1.6s" repeatCount="indefinite" path="M120,90 L409,181"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.8s" begin=".2s" repeatCount="indefinite" path="M880,90 L591,181"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.5s" begin=".4s" repeatCount="indefinite" path="M80,210 L405,210"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.7s" begin=".1s" repeatCount="indefinite" path="M920,210 L595,210"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.9s" begin=".5s" repeatCount="indefinite" path="M160,340 L411,239"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.6s" begin=".7s" repeatCount="indefinite" path="M840,340 L589,239"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.5s" begin=".3s" repeatCount="indefinite" path="M500,36 L500,115"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.8s" begin=".6s" repeatCount="indefinite" path="M500,384 L500,305"/></circle>
+<circle class="impact" cx="409" cy="181" r="7" style="animation-delay:0s"/><circle class="impact" cx="591" cy="181" r="7" style="animation-delay:.5s"/><circle class="impact" cx="405" cy="210" r="7" style="animation-delay:.9s"/><circle class="impact" cx="500" cy="115" r="7" style="animation-delay:.3s"/><circle class="impact" cx="500" cy="305" r="7" style="animation-delay:.7s"/>
+<circle class="shield" cx="500" cy="210" r="95"/><circle class="shield2" cx="500" cy="210" r="68"/><circle class="core" cx="500" cy="210" r="38"/><text class="lbl hl" x="500" y="214">Edge</text>
+</svg>"""
+
 PLAT_EXTRA={
  "edge-data-fabric": (
-   f'<section><div class="wrap">{shead("03","Architecture","How the graph is built")}'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Knowledge graph</div><h2 class="rv">Context, <span class="serif" style="color:var(--steel)">connected.</span></h2></div><p class="lead rv">Every document, signal and record becomes a typed node; every relationship, an edge — assembled around a living domain ontology.</p></div><div class="kgwrap rv">' + KG_SVG + '</div></div></section>'
+   + f'<section><div class="wrap">{shead("03","Architecture","How the graph is built")}'
    + disc([
      ("/parse","Custom extraction models","Document- and table-structure models parse PDFs, images and text; an LLM emits structured records that become typed nodes and edges.",["doc-parse","tables","LLM"]),
      ("/construct","Graph construction + embeddings","Records are de-duplicated, transformed and persisted to a fast embeddable graph store, with embedding models writing vectors beside every node.",["KG build","embeddings","transform"]),
@@ -298,7 +353,8 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "edge-streaming-analytics": (
-   f'<section><div class="wrap">{shead("03","Detection catalog","A model graph, not a single model")}'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Live streams</div><h2 class="rv">From satellite to <span class="serif" style="color:var(--steel)">every screen.</span></h2></div><p class="lead rv">Telecom and satellite feeds land at the edge, get scored frame by frame, and serve verified media — at fleet scale.</p></div><div class="stwrap rv">' + ESI_SVG + '</div></div></section>'
+   + f'<section><div class="wrap">{shead("03","Detection catalog","A model graph, not a single model")}'
    + disc([
      ("/anomaly","Video anomaly detection","Freezes (consecutive pixel-difference), macro-blocking and pixelation (block-variance + Sobel edge density), tearing and stutter — flagged inside the stream buffer.",["optical-flow","Sobel","block-variance"]),
      ("/logo","Logo &amp; UI object detection","An RF-DETR detector with a CLIP refiner confirms logos, app tiles and widgets with bounding-box precision.",["RF-DETR","CLIP","bbox"]),
@@ -317,7 +373,8 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "gpu-microcloud": (
-   f'<section><div class="wrap">{shead("03","Architecture","Inside the micro-cloud")}'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Distributed by design</div><h2 class="rv">Many nodes, <span class="serif" style="color:var(--steel)">one intelligence.</span></h2></div><p class="lead rv">GPU nodes pool as one mesh — scheduled, partitioned and sharing state through a control plane. Workloads land anywhere; the cloud behaves as one.</p></div><div class="mcwrap rv">' + MC_SVG + '</div></div></section>'
+   + f'<section><div class="wrap">{shead("03","Architecture","Inside the micro-cloud")}'
    + disc([
      ("/compute","Heterogeneous compute pool","Edge GPUs, CPU servers and training boxes are pooled as one schedulable fabric — production racks plus a dedicated test / stage rack.",["edge GPU","servers","DGX"]),
      ("/orchestrate","Kubernetes control plane","A cloud-native control plane handles dynamic model deployment, job scheduling, capacity allocation and execution failover across namespaced dev / test / prod.",["Kubernetes","Helm","failover"]),
@@ -336,7 +393,8 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "gpu-edgegateway": (
-   f'<section><div class="wrap">{shead("03","Architecture","Inside the gateway")}'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Intelligent routing</div><h2 class="rv">Right model, <span class="serif" style="color:var(--steel)">least cost.</span></h2></div><p class="lead rv">Every request is routed across a mesh of models — loaded and unloaded on demand — to the cheapest path that meets the need.</p></div><div class="gwwrap rv">' + GW_SVG + '</div></div></section>'
+   + f'<section><div class="wrap">{shead("03","Architecture","Inside the gateway")}'
    + disc([
      ("/classify","Signal classification","Lightweight embedding and classifier models (candle / ONNX / OpenVINO) score intent, category, safety and modality in microseconds — the routing brain runs on the edge.",["embeddings","ONNX/OpenVINO","classifiers"]),
      ("/mesh","Mixture-of-models mesh","Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs across cost, privacy and latency boundaries — with category-aware semantic caching.",["vLLM","semantic cache","multi-provider"]),
@@ -354,7 +412,8 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "edge-security-intelligence": (
-   f'<section><div class="wrap">{shead("03","Architecture","Inside the pipeline")}'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Edge defense</div><h2 class="rv">Threats stop <span class="serif" style="color:var(--steel)">at the edge.</span></h2></div><p class="lead rv">DDoS floods and intrusion attempts are detected and deflected at a shielded perimeter — before they reach what matters.</p></div><div class="secwrap rv">' + SEC_SVG + '</div></div></section>'
+   + f'<section><div class="wrap">{shead("03","Architecture","Inside the pipeline")}'
    + disc([
      ("/ingest","Streaming ingest","High-throughput Kafka in KRaft mode (no ZooKeeper) feeds parallel consumers — backpressure-safe at tens of thousands of events per second.",["Kafka","KRaft","parallel"]),
      ("/infer","GPU inference server","An inference server runs the detection model on the GPU in batches, so classification scales with parallelism instead of CPU cores.",["Triton","Morpheus","GPU batch"]),
