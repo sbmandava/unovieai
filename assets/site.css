@@ -72,8 +72,8 @@ header.nav .logo{height:40px}
 #engineering>.wrap{position:relative;z-index:1}
 .planebg{position:absolute;inset:0;z-index:0;pointer-events:none}
 .planebg svg{width:100%;height:100%;display:block}
-.uplane{fill:var(--steel);opacity:.32}
-.utrail{fill:var(--steel)}
+.uplane{fill:#6468ac;opacity:.42}
+.utrail{fill:#6468ac}
 @media(prefers-reduced-motion:reduce){.planebg{display:none}}
 .navlinks{display:flex;align-items:center;gap:34px}
 .navlinks a{font-size:14.5px;color:var(--fg-mut);font-weight:500;position:relative;padding:6px 0;transition:color .2s}
