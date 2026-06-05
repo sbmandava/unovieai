@@ -490,6 +490,69 @@ open(f"{ROOT}/sitemap.xml","w",encoding="utf-8").write(
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + _rows + '\n</urlset>\n')
 open(f"{ROOT}/robots.txt","w",encoding="utf-8").write(
-    "User-agent: *\nAllow: /\n\nSitemap: https://unovie.ai/sitemap.xml\n")
+    "User-agent: *\nAllow: /\n\n# Machine-readable indexes for AI agents\n# llms.txt: https://unovie.ai/llms.txt\n# vector index: https://unovie.ai/agents/index.json\n\nSitemap: https://unovie.ai/sitemap.xml\n")
 
-print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + about + assets + sitemap({len(_pages)} urls)")
+# ---- vector-ready index for agents (llms.txt discovery + agents/index.json chunks) ----
+import html as _htmlmod, json as _json
+def _strip(s):
+    s=re.sub(r'<(script|style|svg)\b[^>]*>.*?</\1>',' ',s,flags=re.S|re.I)
+    s=re.sub(r'<[^>]+>',' ',s)
+    return re.sub(r'\s+',' ',_htmlmod.unescape(s)).strip()
+def _pagetitle(h):
+    m=re.search(r'<title>(.*?)</title>',h,re.S); return _strip(m.group(1)) if m else "Unovie.AI"
+def _firstsent(t):
+    t=_strip(t); return re.split(r'(?<=[.!?])\s',t,1)[0]
+def _ptype(p):
+    return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/")
+            else "resource" if p.startswith("resources/") else "company")
+# chunked records, one per <section>, from the rendered HTML (nav/footer/scripts/svg stripped)
+records=[]
+for p in _pages:
+    fp=f"{ROOT}/index.html" if p=="" else f"{ROOT}/{p}"
+    try: h=open(fp,encoding="utf-8").read()
+    except OSError: continue
+    title=_pagetitle(h); url=_u(p); typ=_ptype(p)
+    secs=re.findall(r'<section\b[^>]*>(.*?)</section>', h, flags=re.S) or [h]
+    n=0
+    for sec in secs:
+        hm=re.search(r'<h[1-3][^>]*>(.*?)</h[1-3]>',sec,re.S)
+        head=_strip(hm.group(1)) if hm else ""
+        text=_strip(sec)
+        if len(text)<40: continue
+        n+=1
+        records.append({"id":f"{(p or 'home').replace('/','_').replace('.html','')}#{n}",
+                        "url":url,"type":typ,"title":title,"section":head,"text":text})
+os.makedirs(f"{ROOT}/agents",exist_ok=True)
+open(f"{ROOT}/agents/index.json","w",encoding="utf-8").write(_json.dumps({
+    "site":SITE,"name":"Unovie.AI",
+    "description":"Vector-ready content index of unovie.ai for AI agents and RAG ingestion. Each record is an embeddable chunk: {id,url,type,title,section,text}.",
+    "schema":{"record":["id","url","type","title","section","text"]},
+    "generated_by":"build_pages.py","lastmod":LASTMOD,"count":len(records),"records":records},
+    ensure_ascii=False,indent=1))
+# llms.txt — agent discovery index (https://llmstxt.org)
+_sol="\n".join(f"- [{_strip(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL)
+_plat="\n".join(f"- [{_strip(s[2])}]({_u('platform/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in PLATP)
+open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
+
+> AI-engineering studio that designs, builds and operates custom edge-AI systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
+
+## Solutions
+{_sol}
+
+## Platform
+{_plat}
+
+## Resources
+- [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
+- [Frozen-Base Doctrine — Whitepaper]({_u('resources/edge-ai-whitepaper.html')}): adapting custom models on the edge without retraining.
+
+## Company
+- [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
+- [Contact]({_u('contact.html')}): start a project.
+
+## Machine-readable
+- [Vector index (JSON)]({SITE}/agents/index.json): embeddable, chunked content records for RAG.
+- [Sitemap]({SITE}/sitemap.xml)
+""")
+
+print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt")

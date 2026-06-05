@@ -1,0 +1,33 @@
+# Unovie.AI
+
+> AI-engineering studio that designs, builds and operates custom edge-AI systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
+
+## Solutions
+- [Smart Factory Floor](https://unovie.ai/solutions/smart-factory-floor.html): Vision-driven inspection and quality control that runs on the line, in real time, on hardware you own — no cloud round-trip, no data egress.
+- [Smart Warehouse](https://unovie.ai/solutions/smart-warehouse.html): Edge-AI for inventory and movement: see stock in real time, optimize slotting, and cut stockouts — running where the cameras and sensors already are.
+- [OSHA Compliance Monitoring](https://unovie.ai/solutions/osha-compliance.html): AI-powered safety analytics that spot compliance risks — missing PPE, unsafe zones, hazards — and alert in real time, with an evidence trail.
+- [Vision Intelligence](https://unovie.ai/solutions/vision-intelligence.html): Real-time computer vision for an OTT and pay-TV operator.
+- [Batch Process Optimization](https://unovie.ai/solutions/batch-optimization.html): Automate the optimization of batch processes in chemical and pharmaceutical manufacturing — higher quality, less waste, per batch.
+- [Remote Expertise Platform](https://unovie.ai/solutions/remote-expertise.html): Connect remote experts with on-site teams for real-time, grounded guidance — so knowledge scales without the travel.
+- [Maritime Digital Twin](https://unovie.ai/solutions/maritime-digital-twin.html): A living digital twin for large tanker and LNG fleets.
+- [Connected-Vehicle Digital Twin](https://unovie.ai/solutions/connected-vehicle-twin.html): A VIN-level digital twin for multi-brand connected-EV fleets.
+- [Corporate-Travel Sales Intelligence](https://unovie.ai/solutions/corporate-travel-sales.html): An AI co-pilot for an airline corporate-sales team.
+
+## Platform
+- [Edge Data Fabric](https://unovie.ai/platform/edge-data-fabric.html): A domain ontology, a knowledge graph and vector memory — one living context layer for everything you know.
+- [Edge Streaming Intelligence](https://unovie.ai/platform/edge-streaming-analytics.html): Real-time vision and audio intelligence over live streams, at fleet scale.
+- [GPU MicroCloud](https://unovie.ai/platform/gpu-microcloud.html): We stand up a full private cloud on your floor: racks of edge GPUs and servers, software-defined storage, a 10G fabric and a Kubernetes control plane — all on-prem.
+- [GPU EdgeGateway](https://unovie.ai/platform/gpu-edgegateway.html): An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best.
+- [IT/OT Edge Security Intelligence](https://unovie.ai/platform/edge-security-intelligence.html): A GPU-native SIEM that detects threats while the data is still moving.
+
+## Resources
+- [Edge AI Models — Field Guide](https://unovie.ai/resources/edge-ai-models.html): a 25-chapter architect's eBook on how edge-AI models actually learn.
+- [Frozen-Base Doctrine — Whitepaper](https://unovie.ai/resources/edge-ai-whitepaper.html): adapting custom models on the edge without retraining.
+
+## Company
+- [About](https://unovie.ai/about.html): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
+- [Contact](https://unovie.ai/contact.html): start a project.
+
+## Machine-readable
+- [Vector index (JSON)](https://unovie.ai/agents/index.json): embeddable, chunked content records for RAG.
+- [Sitemap](https://unovie.ai/sitemap.xml)

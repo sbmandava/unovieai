@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Machine-readable indexes for AI agents
+# llms.txt: https://unovie.ai/llms.txt
+# vector index: https://unovie.ai/agents/index.json
+
 Sitemap: https://unovie.ai/sitemap.xml
