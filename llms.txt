@@ -20,6 +20,10 @@
 - [GPU EdgeGateway](https://unovie.ai/platform/gpu-edgegateway.html): An agent-first, signal-driven gateway built on one routing contract: signals become projections, projections drive decisions, decisions choose the model — across a mesh of local, private and frontier models.
 - [IT/OT Edge Security Intelligence](https://unovie.ai/platform/edge-security-intelligence.html): A GPU-native SIEM that detects threats while the data is still moving.
 
+## Device Platform
+- [NVIDIA AGX Thor](https://unovie.ai/device/nvidia-agx-thor.html): A Blackwell-class edge supercomputer for physical AI.
+- [NVIDIA DGX Spark](https://unovie.ai/device/nvidia-dgx-spark.html): A petaFLOP AI supercomputer that fits on a desk.
+
 ## Resources
 - [Edge AI Models — Field Guide](https://unovie.ai/resources/edge-ai-models.html): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper](https://unovie.ai/resources/edge-ai-whitepaper.html): adapting custom models on the edge without retraining.

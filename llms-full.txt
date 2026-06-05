@@ -359,3 +359,47 @@ Edge defense Threats stop at the edge. Five nested layers — business contexts 
 
 ## Detect threats in the data path.
 Let's build Detect threats in the data path. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# NVIDIA AGX Thor — Unovie.AI
+URL: https://unovie.ai/device/nvidia-agx-thor.html
+
+## NVIDIA AGX Thor
+Home / Device Platform / NVIDIA AGX Thor Device · Robotics edge NVIDIA AGX Thor A Blackwell-class edge supercomputer for physical AI. NVIDIA Jetson AGX Thor packs up to 2,070 FP4 TFLOPS of generative-AI compute and 128 GB of unified memory into a power-configurable module small enough to live inside a robot, a vehicle or a machine — running several large models, vision and multi-sensor fusion at once, on-prem. We build, optimize and operate the full Unovie stack on Thor, so your edge agents run where the data is born. Start a project → Read the field guide 2,070 TFLOPS FP4 AI compute 128 GB unified LPDDR5X ~7.5 × vs Jetson Orin
+
+## Physical AI at the edge
+01 — What it does Physical AI at the edge /blackwell Blackwell on a module A datacenter-class Blackwell GPU with FP4 and a transformer engine, packed into a module — generative and vision models that used to need a rack now run inside the machine. Blackwell FP4 transformer-engine /fusion Multi-sensor, multi-model A 14-core Arm Neoverse CPU and high-bandwidth memory run camera, lidar, radar and language models together, fused in real time for autonomy and inspection. sensor-fusion multi-model real-time /safety Partitioned & safety-ready MIG carves the GPU into isolated slices inside a configurable 40–130W envelope, with a functional-safety design for robots and autonomous machines. MIG 40–130W safety
+
+## Silicon to autonomy
+02 — How it works Silicon to autonomy 01 Provision Image Thor with the Unovie edge stack. 02 Serve Local models + Nexus context, on-device. 03 Fuse Vision, sensors and agents reason live. 04 Act Closed-loop control, fully on-prem.
+
+## Built for the machine
+03 — Architecture Built for the machine /compute Blackwell GPU + Tensor Cores 2,560 CUDA cores and next-gen Tensor Cores with FP4 and a transformer engine for on-device generative AI. CUDA Tensor FP4 /cpu 14-core Arm Neoverse A 14-core Arm Neoverse-V3AE cluster feeds the GPU and runs the control plane, sensors and OS. Neoverse-V3AE 14-core /io Sensor-grade I/O High-speed camera, networking and PCIe lanes ingest many sensors at once with deterministic latency. MIPI/CSI PCIe 10/25G
+
+## By the numbers
+04 — By the numbers By the numbers 2,070 TFLOPS FP4 (sparse) 128 GB LPDDR5X 273 GB/s memory bandwidth 40–130 W configurable
+
+## Run the model inside the machine.
+Let's build Run the model inside the machine. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
+
+
+# NVIDIA DGX Spark — Unovie.AI
+URL: https://unovie.ai/device/nvidia-dgx-spark.html
+
+## NVIDIA DGX Spark
+Home / Device Platform / NVIDIA DGX Spark Device · Desktop supercomputer NVIDIA DGX Spark A petaFLOP AI supercomputer that fits on a desk. NVIDIA DGX Spark pairs the GB10 Grace Blackwell Superchip with 128 GB of coherent unified memory and up to 1,000 TOPS of FP4 compute — enough to prototype, fine-tune and run models up to ~200B parameters locally, or ~405B across a linked pair. We run it as your private development and inference node: the full Unovie stack, your data, your room. Start a project → Read the field guide 1 PFLOP FP4 AI compute 128 GB coherent memory 200 B params, local
+
+## A supercomputer you own
+01 — What it does A supercomputer you own /gb10 Grace Blackwell GB10 A 20-core Arm Grace CPU and a Blackwell GPU joined by NVLink-C2C share one coherent memory space — no PCIe copies between CPU and GPU. GB10 NVLink-C2C coherent /memory 128 GB for big models Unified LPDDR5X holds models up to ~200B parameters; two units linked over ConnectX scale to ~405B — inference and fine-tuning without the cloud. 200B local 405B linked ConnectX /stack The full NVIDIA AI stack Runs NIM microservices, CUDA frameworks and the same containers as DGX in the datacenter — develop locally, deploy to the edge unchanged. NIM CUDA portable
+
+## Desk to deployment
+02 — How it works Desk to deployment 01 Build Prototype & fine-tune locally on Spark. 02 Ground Wire in your Nexus context and data. 03 Validate Run the same containers as production. 04 Promote Ship unchanged to edge or MicroCloud.
+
+## One coherent memory space
+03 — Architecture One coherent memory space /superchip GB10 Grace Blackwell Grace CPU and Blackwell GPU on one package, joined by NVLink-C2C at chip-to-chip bandwidth. GB10 NVLink-C2C /memory 128 GB unified LPDDR5X CPU and GPU address one coherent pool — no host-device copies, and room for ~200B-parameter models. unified coherent 200B /fabric ConnectX scale-out ConnectX networking links two Sparks into a single ~405B-parameter inference target. ConnectX RDMA 405B
+
+## By the numbers
+04 — By the numbers By the numbers 1,000 TOPS FP4 AI 128 GB unified memory 20 Arm Grace cores 4 TB NVMe storage
+
+## Your own AI supercomputer, on your desk.
+Let's build Your own AI supercomputer, on your desk. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions

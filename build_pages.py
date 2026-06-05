@@ -82,6 +82,10 @@ def NAV(base):
   <nav class="navlinks">
     <a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
     <a href="{h}#platform">Platform</a>
+    <div class="drop"><button data-cursor>Device Platform ▾</button><div class="menu">
+      <a href="{base}device/nvidia-agx-thor.html"><span class="ic">01</span><span><span class="t">NVIDIA AGX Thor</span><br><span class="s">Blackwell robotics &amp; physical-AI edge</span></span></a>
+      <a href="{base}device/nvidia-dgx-spark.html"><span class="ic">02</span><span><span class="t">NVIDIA DGX Spark</span><br><span class="s">Grace-Blackwell desktop AI supercomputer</span></span></a>
+    </div></div>
     <div class="drop"><button data-cursor>Research ▾</button><div class="menu">
       <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
       <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
@@ -94,8 +98,10 @@ def NAV(base):
   <a href="{h}#engineering"><span class="mono">01</span><br>AI Engineering</a>
   <a href="{h}#accelerators"><span class="mono">02</span><br>Solutions</a>
   <a href="{h}#platform"><span class="mono">03</span><br>Platform</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">04</span><br>Research</a>
-  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">05</span><br>Start a project →</a>
+  <a href="{base}device/nvidia-agx-thor.html"><span class="mono">04</span><br>NVIDIA AGX Thor</a>
+  <a href="{base}device/nvidia-dgx-spark.html"><span class="mono">05</span><br>NVIDIA DGX Spark</a>
+  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">06</span><br>Research</a>
+  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">07</span><br>Start a project →</a>
 </div>'''
 
 def FOOTER(base):
@@ -110,6 +116,8 @@ def FOOTER(base):
     <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Intelligence</a>
     <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a>
     <a href="{base}platform/edge-security-intelligence.html">Edge Security Intelligence</a></div>
+  <div class="fcol"><h4>Device Platform</h4>
+    <a href="{base}device/nvidia-agx-thor.html">NVIDIA AGX Thor</a><a href="{base}device/nvidia-dgx-spark.html">NVIDIA DGX Spark</a></div>
   <div class="fcol"><h4>Research</h4>
     <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
@@ -493,6 +501,39 @@ PLAT_EXTRA={
 }
 for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7],PLAT_EXTRA.get(s[0],""))
 
+# ----- DEVICE PLATFORM -----
+DEVP=[
+ ("nvidia-agx-thor","Device · Robotics edge","NVIDIA AGX <span class='serif' style='color:var(--accent)'>Thor</span>",
+  "A Blackwell-class edge supercomputer for physical AI. NVIDIA Jetson AGX Thor packs up to 2,070 FP4 TFLOPS of generative-AI compute and 128 GB of unified memory into a power-configurable module small enough to live inside a robot, a vehicle or a machine — running several large models, vision and multi-sensor fusion at once, on-prem. We build, optimize and operate the full Unovie stack on Thor, so your edge agents run where the data is born.",
+  [("2,070<span class='o'>TFLOPS</span>","FP4 AI compute"),("128<span class='o'>GB</span>","unified LPDDR5X"),("~7.5<span class='o'>&#215;</span>","vs Jetson Orin")],
+  ("Physical AI at the edge",[("/blackwell","Blackwell on a module","A datacenter-class Blackwell GPU with FP4 and a transformer engine, packed into a module — generative and vision models that used to need a rack now run inside the machine.",["Blackwell","FP4","transformer-engine"]),
+   ("/fusion","Multi-sensor, multi-model","A 14-core Arm Neoverse CPU and high-bandwidth memory run camera, lidar, radar and language models together, fused in real time for autonomy and inspection.",["sensor-fusion","multi-model","real-time"]),
+   ("/safety","Partitioned &amp; safety-ready","MIG carves the GPU into isolated slices inside a configurable 40&#8211;130W envelope, with a functional-safety design for robots and autonomous machines.",["MIG","40&#8211;130W","safety"])]),
+  ("Silicon to autonomy",[("Provision","Image Thor with the Unovie edge stack."),("Serve","Local models + Nexus context, on-device."),("Fuse","Vision, sensors and agents reason live."),("Act","Closed-loop control, fully on-prem.")]),
+  "Run the model inside <span class='serif' style='color:var(--accent)'>the machine.</span>"),
+ ("nvidia-dgx-spark","Device · Desktop supercomputer","NVIDIA DGX <span class='serif' style='color:var(--accent)'>Spark</span>",
+  "A petaFLOP AI supercomputer that fits on a desk. NVIDIA DGX Spark pairs the GB10 Grace Blackwell Superchip with 128 GB of coherent unified memory and up to 1,000 TOPS of FP4 compute — enough to prototype, fine-tune and run models up to ~200B parameters locally, or ~405B across a linked pair. We run it as your private development and inference node: the full Unovie stack, your data, your room.",
+  [("1<span class='o'>PFLOP</span>","FP4 AI compute"),("128<span class='o'>GB</span>","coherent memory"),("200<span class='o'>B</span>","params, local")],
+  ("A supercomputer you own",[("/gb10","Grace Blackwell GB10","A 20-core Arm Grace CPU and a Blackwell GPU joined by NVLink-C2C share one coherent memory space — no PCIe copies between CPU and GPU.",["GB10","NVLink-C2C","coherent"]),
+   ("/memory","128 GB for big models","Unified LPDDR5X holds models up to ~200B parameters; two units linked over ConnectX scale to ~405B — inference and fine-tuning without the cloud.",["200B local","405B linked","ConnectX"]),
+   ("/stack","The full NVIDIA AI stack","Runs NIM microservices, CUDA frameworks and the same containers as DGX in the datacenter — develop locally, deploy to the edge unchanged.",["NIM","CUDA","portable"])]),
+  ("Desk to deployment",[("Build","Prototype &amp; fine-tune locally on Spark."),("Ground","Wire in your Nexus context and data."),("Validate","Run the same containers as production."),("Promote","Ship unchanged to edge or MicroCloud.")]),
+  "Your own AI supercomputer, <span class='serif' style='color:var(--accent)'>on your desk.</span>"),
+]
+DEV_EXTRA={
+ "nvidia-agx-thor": platx("Built for the machine",[
+   ("/compute","Blackwell GPU + Tensor Cores","2,560 CUDA cores and next-gen Tensor Cores with FP4 and a transformer engine for on-device generative AI.",["CUDA","Tensor","FP4"]),
+   ("/cpu","14-core Arm Neoverse","A 14-core Arm Neoverse-V3AE cluster feeds the GPU and runs the control plane, sensors and OS.",["Neoverse-V3AE","14-core"]),
+   ("/io","Sensor-grade I/O","High-speed camera, networking and PCIe lanes ingest many sensors at once with deterministic latency.",["MIPI/CSI","PCIe","10/25G"])],
+   "By the numbers",[("2,070<span class='o'>TFLOPS</span>","FP4 (sparse)"),("128<span class='o'>GB</span>","LPDDR5X"),("273<span class='o'>GB/s</span>","memory bandwidth"),("40&#8211;130<span class='o'>W</span>","configurable")]),
+ "nvidia-dgx-spark": platx("One coherent memory space",[
+   ("/superchip","GB10 Grace Blackwell","Grace CPU and Blackwell GPU on one package, joined by NVLink-C2C at chip-to-chip bandwidth.",["GB10","NVLink-C2C"]),
+   ("/memory","128 GB unified LPDDR5X","CPU and GPU address one coherent pool — no host-device copies, and room for ~200B-parameter models.",["unified","coherent","200B"]),
+   ("/fabric","ConnectX scale-out","ConnectX networking links two Sparks into a single ~405B-parameter inference target.",["ConnectX","RDMA","405B"])],
+   "By the numbers",[("1,000<span class='o'>TOPS</span>","FP4 AI"),("128<span class='o'>GB</span>","unified memory"),("20","Arm Grace cores"),("4<span class='o'>TB</span>","NVMe storage")]),
+}
+for s in DEVP: page(B,"device",s[0],s[1],"Device Platform",s[2],s[3],s[4],s[5],s[6],s[7],DEV_EXTRA.get(s[0],""))
+
 # ----- ABOUT -----
 about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs, builds, and operates custom edge-AI systems.")}{NAV("")}
 <section class="phero"><div class="wrap">
@@ -530,9 +571,10 @@ _pages=["", "about.html", "contact.html",
         "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
+_pages += [f"device/{s[0]}.html" for s in DEVP]
 def _prio(p):
     if p=="": return "1.0"
-    if p.startswith(("solutions/","platform/")): return "0.9"
+    if p.startswith(("solutions/","platform/","device/")): return "0.9"
     if p.startswith("resources/"): return "0.6"
     return "0.7"
 _rows="\n".join(
@@ -556,7 +598,7 @@ def _pagetitle(h):
 def _firstsent(t):
     t=_strip(t); return re.split(r'(?<=[.!?])\s',t,1)[0]
 def _ptype(p):
-    return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/")
+    return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/") else "device" if p.startswith("device/")
             else "resource" if p.startswith("resources/") else "company")
 # chunked records, one per <section>, from the rendered HTML (nav/footer/scripts/svg stripped)
 records=[]
@@ -603,6 +645,7 @@ open(f"{ROOT}/llms-full.txt","w",encoding="utf-8").write("\n".join(_full)+"\n")
 # llms.txt — agent discovery index (https://llmstxt.org)
 _sol="\n".join(f"- [{_strip(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL)
 _plat="\n".join(f"- [{_strip(s[2])}]({_u('platform/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in PLATP)
+_dev="\n".join(f"- [{_strip(s[2])}]({_u('device/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in DEVP)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
 > AI-engineering studio that designs, builds and operates custom edge-AI systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
@@ -612,6 +655,9 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
 ## Platform
 {_plat}
+
+## Device Platform
+{_dev}
 
 ## Resources
 - [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
@@ -627,4 +673,4 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [Sitemap]({SITE}/sitemap.xml)
 """)
 
-print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt + llms-full.txt")
+print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + {len(DEVP)} device + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt + llms-full.txt")

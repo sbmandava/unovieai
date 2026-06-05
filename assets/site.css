@@ -258,7 +258,7 @@ section{padding:clamp(80px,11vw,140px) 0;position:relative}
 /* footer */
 footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 .fgrid{display:grid;gap:40px}
-@media(min-width:760px){.fgrid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(min-width:760px){.fgrid{grid-template-columns:1.4fr 1fr 1fr 1fr 1fr}}
 .fcol h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin:0 0 16px}
 .fcol a{display:block;color:var(--fg-mut);font-size:14.5px;padding:5px 0;transition:color .2s}
 .fcol a:hover{color:var(--accent)}
