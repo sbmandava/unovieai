@@ -646,7 +646,7 @@
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
    "section": "GPU EdgeGateway",
-   "text": "Home / Platform / GPU EdgeGateway Platform GPU EdgeGateway An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best. Drop-in for any client, multimodal, governed like production, on hardware you own. Start a project → Read the field guide OpenAI compatible /v1 agent-first intelligent routing policy sandboxed execution"
+   "text": "Home / Platform / GPU EdgeGateway Platform GPU EdgeGateway An agent-first, signal-driven gateway built on one routing contract: signals become projections, projections drive decisions, decisions choose the model — across a mesh of local, private and frontier models. Session-aware routing keeps multi-turn agents coherent, sandboxed runtimes keep tools safe, and every policy change is shadow-tested before it goes live. OpenAI- and Anthropic-compatible, multimodal, governed like production, on hardware you own. Start a project → Read the field guide OpenAI +Anthropic compatible signal→model one routing contract session-aware agentic routing"
   },
   {
    "id": "platform_gpu-edgegateway#2",
@@ -654,15 +654,15 @@
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
    "section": "Route, reason, act",
-   "text": "01 — What it does Route, reason, act /route Signal-driven model routing Each request is classified by intent, modality, complexity and risk, then routed across a local-to-frontier model mesh — reasoning only when it pays. intent mixture-of-models when-to-reason /agents Agent-first execution Agents plan, spawn parallel subagents and call tools via RPC; skills are learned and reused — multimodal in, action out. agents subagents skills /sandbox Sandboxed & governed Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access. MicroVM policy-as-code no-exfil"
+   "text": "01 — What it does Route, reason, act /route Signal-driven routing Intent, complexity, modality and risk become projections and policy bands, then route across a local-to-frontier mesh — reasoning only when it pays. intent projections when-to-reason /session Session-aware agentic routing Stateful guards keep multi-turn agents coherent: hard locks block unsafe model switches mid-tool-loop, weighing quality gap, prefix locality and turn priors. SAAR tool-loop locks continuity /sandbox Sandboxed & governed Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access. MicroVM policy-as-code no-exfil"
   },
   {
    "id": "platform_gpu-edgegateway#3",
    "url": "https://unovie.ai/platform/gpu-edgegateway.html",
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
-   "section": "Request to action",
-   "text": "02 — How it works Request to action 01 Authenticate Identity, role & policy. 02 Classify Score intent, modality, risk. 03 Route Pick model, agent or tool. 04 Serve Sandboxed, observed, metered."
+   "section": "Signal to decision",
+   "text": "02 — How it works Signal to decision 01 Signal Score intent, risk, modality, context. 02 Project Normalise into policy bands. 03 Decide Pick model, agent or tool. 04 Serve Sandboxed, observed, metered."
   },
   {
    "id": "platform_gpu-edgegateway#4",
@@ -678,7 +678,7 @@
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
    "section": "Inside the gateway",
-   "text": "03 — Architecture Inside the gateway /classify Signal classification Lightweight embedding and classifier models (candle / ONNX / OpenVINO) score intent, category, safety and modality in microseconds — the routing brain runs on the edge. embeddings ONNX/OpenVINO classifiers /mesh Mixture-of-models mesh Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs across cost, privacy and latency boundaries — with category-aware semantic caching. vLLM semantic cache multi-provider /safe Safety & policy gate Jailbreak, prompt-injection and sensitive-data detection guard every call; declarative policy governs what agents and tools may touch. jailbreak PII policy /runtime Sandboxed agent runtime Agents and tools execute in isolated MicroVM sandboxes with no data exfiltration — spawned, parallelized and torn down per task. MicroVM sandbox RPC tools"
+   "text": "03 — Architecture Inside the gateway /contract One routing contract Signals become projections, projections drive decisions, decisions choose the model — the same pipeline whether configured in YAML, the console, the CLI or Kubernetes. signals projections decisions /mesh Mixture-of-models mesh Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs with semantic caching; the classifiers run on OpenVINO, CUDA or ROCm — one control plane, any backend. vLLM semantic cache OpenVINO/CUDA/ROCm /safe Safety & protocol History-aware PII, jailbreak and prompt-injection scanning across every turn — behind an OpenAI- and Anthropic-compatible ingress with explicit, lossless translation. PII jailbreak OpenAI/Anthropic /lifecycle Shadow, activate, revert Every routing policy is versioned and shadow-tested on replayed traffic before activation, with one-click rollback — routing never drifts silently. shadow replay rollback"
   },
   {
    "id": "platform_gpu-edgegateway#6",
@@ -686,7 +686,7 @@
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
    "section": "Multimodal in, action out",
-   "text": "04 — Agent-first delivery Multimodal in, action out /multimodal Every modality, one path Text, voice, image and event inputs are normalized, routed to the right modality model, and turned into grounded responses or tool actions. text·voice·image normalize actions /learn A learning loop The platform learns skills from experience, recalls past sessions and improves routing over time — every path measured. skills recall self-improving /omni Omni-channel reach One gateway serves API clients, chat, voice and apps alike — consistent identity, context and policy across every surface. omni-channel one identity context"
+   "text": "04 — Agent-first delivery Multimodal in, action out /multimodal Every modality, one path Text, voice, image and event inputs are normalised, routed to the right modality model, and turned into grounded responses or tool actions. text·voice·image normalise actions /context Long-context, calibrated Online calibration learns token-estimate ratios from real responses, and domain compression profiles — coding, medical, security, multi-turn — extract signal without clipping long prompts. calibration compression long-context /observe Topology you can trace A console traces every signal → projection → decision with replay-backed insights, and meters per-route latency, tokens and cost — every call accountable. topology replay metering"
   },
   {
    "id": "platform_gpu-edgegateway#7",
@@ -694,7 +694,7 @@
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
    "section": "Governed like production",
-   "text": "05 — By the numbers Governed like production <1 ms route decision 200 + models reachable MicroVM per-task isolation"
+   "text": "05 — By the numbers Governed like production <1 ms signal → decision 15 + signal families shadow→activate policy lifecycle"
   },
   {
    "id": "platform_gpu-edgegateway#8",

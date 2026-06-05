@@ -264,12 +264,12 @@ PLATP=[
   ("Pool to bill",[("Pool","Aggregate edge GPUs."),("Schedule","Place workloads."),("Isolate","Partition tenants."),("Meter","Account &amp; bill.")]),
   "Datacenter discipline, <span class='serif' style='color:var(--steel)'>on-prem.</span>"),
  ("gpu-edgegateway","Platform","GPU <span class='serif' style='color:var(--steel)'>EdgeGateway</span>",
-  "An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best. Drop-in for any client, multimodal, governed like production, on hardware you own.",
-  [("OpenAI","compatible /v1"),("agent-first","intelligent routing"),("policy","sandboxed execution")],
-  ("Route, reason, act",[("/route","Signal-driven model routing","Each request is classified by intent, modality, complexity and risk, then routed across a local-to-frontier model mesh — reasoning only when it pays.",["intent","mixture-of-models","when-to-reason"]),
-   ("/agents","Agent-first execution","Agents plan, spawn parallel subagents and call tools via RPC; skills are learned and reused — multimodal in, action out.",["agents","subagents","skills"]),
+  "An agent-first, signal-driven gateway built on one routing contract: signals become projections, projections drive decisions, decisions choose the model — across a mesh of local, private and frontier models. Session-aware routing keeps multi-turn agents coherent, sandboxed runtimes keep tools safe, and every policy change is shadow-tested before it goes live. OpenAI- and Anthropic-compatible, multimodal, governed like production, on hardware you own.",
+  [("OpenAI<span class='s'>+Anthropic</span>","compatible"),("signal→model","one routing contract"),("session-aware","agentic routing")],
+  ("Route, reason, act",[("/route","Signal-driven routing","Intent, complexity, modality and risk become projections and policy bands, then route across a local-to-frontier mesh — reasoning only when it pays.",["intent","projections","when-to-reason"]),
+   ("/session","Session-aware agentic routing","Stateful guards keep multi-turn agents coherent: hard locks block unsafe model switches mid-tool-loop, weighing quality gap, prefix locality and turn priors.",["SAAR","tool-loop locks","continuity"]),
    ("/sandbox","Sandboxed &amp; governed","Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access.",["MicroVM","policy-as-code","no-exfil"])]),
-  ("Request to action",[("Authenticate","Identity, role &amp; policy."),("Classify","Score intent, modality, risk."),("Route","Pick model, agent or tool."),("Serve","Sandboxed, observed, metered.")]),
+  ("Signal to decision",[("Signal","Score intent, risk, modality, context."),("Project","Normalise into policy bands."),("Decide","Pick model, agent or tool."),("Serve","Sandboxed, observed, metered.")]),
   "Serve models <span class='serif' style='color:var(--steel)'>safely.</span>"),
  ("edge-security-intelligence","Platform","IT/OT Edge Security <span class='serif' style='color:var(--steel)'>Intelligence</span>",
   "A GPU-native SIEM that detects threats while the data is still moving. Instead of collecting logs and correlating them later, it tokenizes, classifies and enriches every event in flight on the GPU — semantic AI detection, not regex chains — then indexes to a sharded, authenticated store. Tens of thousands of events per second on a single edge node, on-prem.",
@@ -439,19 +439,19 @@ PLAT_EXTRA={
    '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Intelligent routing</div><h2 class="rv">Right model, <span class="serif" style="color:var(--steel)">least cost.</span></h2></div><p class="lead rv">Every request is routed across a mesh of models — loaded and unloaded on demand — to the cheapest path that meets the need.</p></div><div class="gwwrap rv">' + GW_SVG + '</div></div></section>'
    + f'<section><div class="wrap">{shead("03","Architecture","Inside the gateway")}'
    + disc([
-     ("/classify","Signal classification","Lightweight embedding and classifier models (candle / ONNX / OpenVINO) score intent, category, safety and modality in microseconds — the routing brain runs on the edge.",["embeddings","ONNX/OpenVINO","classifiers"]),
-     ("/mesh","Mixture-of-models mesh","Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs across cost, privacy and latency boundaries — with category-aware semantic caching.",["vLLM","semantic cache","multi-provider"]),
-     ("/safe","Safety &amp; policy gate","Jailbreak, prompt-injection and sensitive-data detection guard every call; declarative policy governs what agents and tools may touch.",["jailbreak","PII","policy"]),
-     ("/runtime","Sandboxed agent runtime","Agents and tools execute in isolated MicroVM sandboxes with no data exfiltration — spawned, parallelized and torn down per task.",["MicroVM","sandbox","RPC tools"]),
+     ("/contract","One routing contract","Signals become projections, projections drive decisions, decisions choose the model — the same pipeline whether configured in YAML, the console, the CLI or Kubernetes.",["signals","projections","decisions"]),
+     ("/mesh","Mixture-of-models mesh","Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs with semantic caching; the classifiers run on OpenVINO, CUDA or ROCm — one control plane, any backend.",["vLLM","semantic cache","OpenVINO/CUDA/ROCm"]),
+     ("/safe","Safety &amp; protocol","History-aware PII, jailbreak and prompt-injection scanning across every turn — behind an OpenAI- and Anthropic-compatible ingress with explicit, lossless translation.",["PII","jailbreak","OpenAI/Anthropic"]),
+     ("/lifecycle","Shadow, activate, revert","Every routing policy is versioned and shadow-tested on replayed traffic before activation, with one-click rollback — routing never drifts silently.",["shadow","replay","rollback"]),
    ]) + '</div></section>'
    + f'<section><div class="wrap">{shead("04","Agent-first delivery","Multimodal in, action out")}'
    + disc([
-     ("/multimodal","Every modality, one path","Text, voice, image and event inputs are normalized, routed to the right modality model, and turned into grounded responses or tool actions.",["text·voice·image","normalize","actions"]),
-     ("/learn","A learning loop","The platform learns skills from experience, recalls past sessions and improves routing over time — every path measured.",["skills","recall","self-improving"]),
-     ("/omni","Omni-channel reach","One gateway serves API clients, chat, voice and apps alike — consistent identity, context and policy across every surface.",["omni-channel","one identity","context"]),
+     ("/multimodal","Every modality, one path","Text, voice, image and event inputs are normalised, routed to the right modality model, and turned into grounded responses or tool actions.",["text·voice·image","normalise","actions"]),
+     ("/context","Long-context, calibrated","Online calibration learns token-estimate ratios from real responses, and domain compression profiles — coding, medical, security, multi-turn — extract signal without clipping long prompts.",["calibration","compression","long-context"]),
+     ("/observe","Topology you can trace","A console traces every signal &#8594; projection &#8594; decision with replay-backed insights, and meters per-route latency, tokens and cost — every call accountable.",["topology","replay","metering"]),
    ]) + '</div></section>'
    + f'<section><div class="wrap">{shead("05","By the numbers","Governed like production")}'
-   + metrics([("&lt;1<span class='o'>ms</span>","route decision"),("200<span class='s'>+</span>","models reachable"),("MicroVM","per-task isolation")])
+   + metrics([("&lt;1<span class='o'>ms</span>","signal → decision"),("15<span class='s'>+</span>","signal families"),("shadow→activate","policy lifecycle")])
    + '</div></section>'
  ),
  "edge-security-intelligence": (

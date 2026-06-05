@@ -17,7 +17,7 @@
 - [Edge Data Fabric](https://unovie.ai/platform/edge-data-fabric.html): Unovie helps you own your enterprise context foundation — on your terms, with your data — to power the AI-native initiatives ahead.
 - [Edge Streaming Intelligence](https://unovie.ai/platform/edge-streaming-analytics.html): Real-time vision and audio intelligence over live streams, at fleet scale.
 - [GPU MicroCloud](https://unovie.ai/platform/gpu-microcloud.html): We stand up a full private cloud on your floor: racks of edge GPUs and servers, software-defined storage, a 10G fabric and a Kubernetes control plane — all on-prem.
-- [GPU EdgeGateway](https://unovie.ai/platform/gpu-edgegateway.html): An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best.
+- [GPU EdgeGateway](https://unovie.ai/platform/gpu-edgegateway.html): An agent-first, signal-driven gateway built on one routing contract: signals become projections, projections drive decisions, decisions choose the model — across a mesh of local, private and frontier models.
 - [IT/OT Edge Security Intelligence](https://unovie.ai/platform/edge-security-intelligence.html): A GPU-native SIEM that detects threats while the data is still moving.
 
 ## Resources
