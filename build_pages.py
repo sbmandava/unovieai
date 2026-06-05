@@ -101,7 +101,8 @@ def FOOTER(base):
     <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a></div>
   <div class="fcol"><h4>Platform</h4>
     <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Intelligence</a>
-    <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a></div>
+    <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a>
+    <a href="{base}platform/edge-security-intelligence.html">Edge Security Intelligence</a></div>
   <div class="fcol"><h4>Research</h4>
     <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
@@ -263,6 +264,14 @@ PLATP=[
    ("/sandbox","Sandboxed &amp; governed","Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access.",["MicroVM","policy-as-code","no-exfil"])]),
   ("Request to action",[("Authenticate","Identity, role &amp; policy."),("Classify","Score intent, modality, risk."),("Route","Pick model, agent or tool."),("Serve","Sandboxed, observed, metered.")]),
   "Serve models <span class='serif' style='color:var(--steel)'>safely.</span>"),
+ ("edge-security-intelligence","Platform","IT/OT Edge Security <span class='serif' style='color:var(--steel)'>Intelligence</span>",
+  "A GPU-native SIEM that detects threats while the data is still moving. Instead of collecting logs and correlating them later, it tokenizes, classifies and enriches every event in flight on the GPU — semantic AI detection, not regex chains — then indexes to a sharded, authenticated store. Tens of thousands of events per second on a single edge node, on-prem.",
+  [("21K<span class='o'>+</span>","events / sec, peak"),("semantic","AI, not regex"),("single-node","on-prem")],
+  ("Detection at ingest",[("/inflight","Detection in the data path","Events are tokenized, classified and scored on the GPU as they stream in — alerts fire near ingestion, not after a delayed search job.",["in-flight","low-latency","streaming"]),
+   ("/semantic","Semantic threat detection","A BERT classifier reads intent and meaning in raw log text, catching threats that static rules and regex miss.",["BERT","intent","beyond-regex"]),
+   ("/resilient","Hardened &amp; bounded","A dead-letter queue protects failed batches, retention keeps storage bounded, and authenticated, sharded indexing keeps search fast.",["DLQ","retention","auth"])]),
+  ("Log to incident",[("Ingest","Logs land in a Kafka stream."),("Batch","Workers tokenize on the GPU."),("Classify","BERT inference scores intent."),("Index","Enriched incidents to search.")]),
+  "Detect threats <span class='serif' style='color:var(--steel)'>in the data path.</span>"),
 ]
 
 def platx(arch_title, arch_cards, num_title, specs):
@@ -342,6 +351,24 @@ PLAT_EXTRA={
    ]) + '</div></section>'
    + f'<section><div class="wrap">{shead("05","By the numbers","Governed like production")}'
    + metrics([("&lt;1<span class='o'>ms</span>","route decision"),("200<span class='s'>+</span>","models reachable"),("MicroVM","per-task isolation")])
+   + '</div></section>'
+ ),
+ "edge-security-intelligence": (
+   f'<section><div class="wrap">{shead("03","Architecture","Inside the pipeline")}'
+   + disc([
+     ("/ingest","Streaming ingest","High-throughput Kafka in KRaft mode (no ZooKeeper) feeds parallel consumers — backpressure-safe at tens of thousands of events per second.",["Kafka","KRaft","parallel"]),
+     ("/infer","GPU inference server","An inference server runs the detection model on the GPU in batches, so classification scales with parallelism instead of CPU cores.",["Triton","Morpheus","GPU batch"]),
+     ("/enrich","Enrich &amp; index","Scores and metadata are attached, then incidents are written to an authenticated, multi-shard search index for fast investigation.",["enrichment","Elasticsearch","8-shard"]),
+     ("/harden","Operational hardening","Dead-letter queue, health checks, retention enforcement and authentication keep the pipeline resilient and storage bounded.",["DLQ","healthchecks","retention"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("04","IT + OT coverage","One lens over both estates")}'
+   + disc([
+     ("/it","IT telemetry","Logs, endpoints, identity and network events are classified for intent — credential abuse, lateral movement and exfiltration patterns surfaced in flight.",["logs","identity","network"]),
+     ("/ot","OT &amp; edge signals","Operational-technology and device telemetry are watched on the same pipeline, so anomalies on the plant floor and at the edge are caught beside IT threats.",["OT","ICS","device"]),
+     ("/correlate","Unified incidents","IT and OT detections land in one store with shared scoring and timelines — correlation across both estates, not two disconnected tools.",["correlation","timeline","single-pane"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("05","By the numbers","Engineered for throughput")}'
+   + metrics([("21K<span class='s'>+</span>","EPS peak"),("13.8K<span class='s'>+</span>","EPS sustained"),("~3<span class='o'>s</span>","AI inference latency")])
    + '</div></section>'
  ),
 }
