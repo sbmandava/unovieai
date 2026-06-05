@@ -248,8 +248,8 @@ PLATP=[
   ("Stream to decision",[("Decode","Feeds decode into GPU memory."),("Detect","A model graph scores every frame."),("Decide","Validate sub-ms; reason in minutes."),("Act","Drive devices, publish, alert.")]),
   "Real-time, <span class='serif' style='color:var(--steel)'>actually.</span>"),
  ("gpu-microcloud","Platform","GPU <span class='serif' style='color:var(--steel)'>MicroCloud</span>",
-  "Your on-prem GPUs, run like a private cloud. A scheduler places workloads across the pool with fair-share queuing, MIG partitions give each tenant hard isolation, and every minute of compute is metered for real chargeback. Capacity you own, governed like a cloud region.",
-  [("MIG","hard isolation"),("fair-share","scheduling"),("metered","per-tenant chargeback")],
+  "We stand up a full private cloud on your floor: racks of edge GPUs and servers, software-defined storage, a 10G fabric and a Kubernetes control plane — all on-prem. Workloads are scheduled and bin-packed across the pool, MIG carves each GPU into isolated slices, zero-trust policy gates every call, and every minute is metered for chargeback. Datacenter discipline, where your data lives.",
+  [("Kubernetes","cloud-native, on-prem"),("MIG","hard isolation"),("metered","per-tenant chargeback")],
   ("Your GPUs, run like cloud",[("/schedule","Fair-share scheduling","A priority-and-quota scheduler places jobs across the pool, preempts politely, and keeps expensive silicon busy.",["queue","quota","preempt"]),
    ("/isolate","Hard multi-tenant isolation","MIG partitioning carves each GPU into isolated slices, so tenants share hardware without sharing blast radius.",["MIG","cgroups","secure"]),
    ("/meter","Metering &amp; chargeback","Per-tenant, per-job accounting turns shared capacity into auditable cost and showback reports.",["metering","showback","reports"])]),
@@ -294,11 +294,25 @@ PLAT_EXTRA={
    + metrics([("~512","streams · 4 racks in parallel"),("&lt;50<span class='o'>ms</span>","inference / frame"),("30<span class='o'>fps</span>","sustained per stream")])
    + '</div></section>'
  ),
- "gpu-microcloud": platx("Inside the microcloud",[
-   ("/partition","MIG slice fabric","GPUs are partitioned into right-sized MIG instances and exposed as schedulable resources to the cluster.",["MIG","device-plugin","k8s"]),
-   ("/place","Topology-aware placement","Workloads are bin-packed by memory, NVLink topology and priority — fragmentation down, utilization up.",["bin-pack","NVLink","priority"]),
-   ("/account","Usage accounting","Per-slice utilization and runtime stream to a metering store for chargeback, quotas and capacity planning.",["telemetry","quotas","chargeback"])],
-   "Run like a cloud region",[("7<span class='s'>×</span>","MIG slices / GPU"),("k8s","native scheduling"),("per-min","metering")]),
+ "gpu-microcloud": (
+   f'<section><div class="wrap">{shead("03","Architecture","Inside the micro-cloud")}'
+   + disc([
+     ("/compute","Heterogeneous compute pool","Edge GPUs, CPU servers and training boxes are pooled as one schedulable fabric — production racks plus a dedicated test / stage rack.",["edge GPU","servers","DGX"]),
+     ("/orchestrate","Kubernetes control plane","A cloud-native control plane handles dynamic model deployment, job scheduling, capacity allocation and execution failover across namespaced dev / test / prod.",["Kubernetes","Helm","failover"]),
+     ("/storage","Software-defined storage","CEPH block / file / object, an S3-compatible object store and NFS / iSCSI SAN give every workload durable, shared state — no external cloud.",["CEPH","S3","NFS/iSCSI"]),
+     ("/partition","MIG slice fabric","Each GPU is partitioned into right-sized MIG instances and bin-packed by memory and NVLink topology — tenants share silicon, never blast radius.",["MIG","NVLink","bin-pack"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("04","Governance","Governed like a cloud region")}'
+   + disc([
+     ("/zerotrust","Zero-trust by default","Policy-as-code and OAuth2 / OpenID gate every call; per-tenant namespaces and RBAC separate workloads and data end to end.",["OPA","OAuth2/OIDC","RBAC"]),
+     ("/observe","Deep observability","OpenTelemetry and eBPF trace every workload; metrics, logs and dashboards make utilization and cost visible in real time.",["OpenTelemetry","eBPF","Grafana"]),
+     ("/data","Stateful data services","Cache, queue and database services run inside the cloud beside the compute, with columnar analytics for usage and reporting.",["Redis","PostgreSQL","ClickHouse"]),
+     ("/meter","Metering &amp; chargeback","Per-tenant, per-job accounting turns shared capacity into auditable showback — quotas, reports and capacity planning.",["metering","quotas","showback"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("05","By the numbers","The fabric underneath")}'
+   + metrics([("10<span class='o'>G</span>","overlay SAN + LAN"),("7<span class='s'>×</span>","MIG slices / GPU"),("3","namespaces · dev/test/prod")])
+   + '</div></section>'
+ ),
  "gpu-edgegateway": platx("Inside the gateway",[
    ("/gate","Auth &amp; policy gate","Every request is authenticated, rate-limited and policy-checked before it ever reaches a backend.",["JWT","rate-limit","policy"]),
    ("/route","Load-aware router","The router tracks per-backend token throughput and KV-cache pressure, steering traffic to the fastest healthy replica.",["KV-aware","health","failover"]),
