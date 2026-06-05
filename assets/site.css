@@ -310,8 +310,8 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 /* ---------- platform graph / stream animations ---------- */
 .kgwrap,.stwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
 .kgviz,.stviz{display:block;width:100%;height:auto}
-.kgviz .memb{fill:none;stroke:#8b5cf6;stroke-width:16;opacity:.85}
-.kgviz .mlbl{fill:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.12em;font-weight:700;text-anchor:middle}
+.kgviz .memb{fill:none;stroke:#8b5cf6;stroke-width:32;opacity:.85}
+.kgviz .mlbl{fill:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.12em;font-weight:700;text-anchor:middle}
 .kgviz .kweb{stroke:#a78bfa;stroke-width:1;fill:none;opacity:.3}
 .kgviz .kspoke{stroke:#a78bfa;stroke-width:1.2;fill:none;opacity:.45}
 .kgviz .knode{fill:var(--surface);stroke:#a78bfa;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.2s ease-in-out infinite}

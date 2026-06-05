@@ -292,7 +292,7 @@ _kp=['<svg class="kgviz" viewBox="0 0 1000 640" role="img" aria-label="An ontolo
      '<defs><radialGradient id="kgcore" cx="50%" cy="42%" r="62%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="55%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6d28d9"/></radialGradient></defs>']
 # external forces flowing inward toward the membrane
 for _i,(_nm,_ang) in enumerate([("Market",-90),("Customers",-45),("Attackers",0),("Regulation",45),("Agents",90),("Exceptions",135),("Competitors",180),("Change",-135)]):
-    _ax,_ay=_pt(250,_ang); _bx,_by=_pt(202,_ang); _lx,_ly=_pt(274,_ang)
+    _ax,_ay=_pt(252,_ang); _bx,_by=_pt(214,_ang); _lx,_ly=_pt(276,_ang)
     _kp.append(f'<line class="xline" x1="{_ax}" y1="{_ay}" x2="{_bx}" y2="{_by}"/>')
     _kp.append(f'<circle class="xpkt" r="3.5"><animateMotion dur="{round(2.0+0.13*_i,2)}s" begin="{round(0.12*_i,2)}s" repeatCount="indefinite" path="M{_ax},{_ay} L{_bx},{_by}"/></circle>')
     _kp.append(f'<text class="xlbl" x="{_lx}" y="{_ly+4}">{_nm}</text>')
