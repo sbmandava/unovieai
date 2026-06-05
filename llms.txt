@@ -21,8 +21,10 @@
 - [IT/OT Edge Security Intelligence](https://unovie.ai/platform/edge-security-intelligence.html): A GPU-native SIEM that detects threats while the data is still moving.
 
 ## Device Platform
-- [NVIDIA AGX Thor](https://unovie.ai/device/nvidia-agx-thor.html): A Blackwell-class edge supercomputer for physical AI.
-- [NVIDIA DGX Spark](https://unovie.ai/device/nvidia-dgx-spark.html): A petaFLOP AI supercomputer that fits on a desk.
+- [NVIDIA AGX Thor](https://unovie.ai/device-platform.html#agx-thor): A Blackwell-class edge supercomputer for physical AI.
+- [NVIDIA DGX Spark](https://unovie.ai/device-platform.html#dgx-spark): A petaFLOP AI supercomputer that fits on a desk.
+- [Qualcomm QCS6490](https://unovie.ai/device-platform.html#qcs6490): A power-efficient edge-AI processor for robots, cameras and handhelds.
+- [AMD Ryzen AI Max+ 395](https://unovie.ai/device-platform.html#ryzen-ai-max-395): A private AI server in a small metal box.
 
 ## Resources
 - [Edge AI Models — Field Guide](https://unovie.ai/resources/edge-ai-models.html): a 25-chapter architect's eBook on how edge-AI models actually learn.

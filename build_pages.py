@@ -83,8 +83,10 @@ def NAV(base):
     <a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
     <a href="{h}#platform">Platform</a>
     <div class="drop"><button data-cursor>Device Platform ▾</button><div class="menu">
-      <a href="{base}device/nvidia-agx-thor.html"><span class="ic">01</span><span><span class="t">NVIDIA AGX Thor</span><br><span class="s">Blackwell robotics &amp; physical-AI edge</span></span></a>
-      <a href="{base}device/nvidia-dgx-spark.html"><span class="ic">02</span><span><span class="t">NVIDIA DGX Spark</span><br><span class="s">Grace-Blackwell desktop AI supercomputer</span></span></a>
+      <a href="{base}device-platform.html#agx-thor"><span class="ic">01</span><span><span class="t">NVIDIA AGX Thor</span><br><span class="s">Blackwell robotics &amp; physical-AI edge</span></span></a>
+      <a href="{base}device-platform.html#dgx-spark"><span class="ic">02</span><span><span class="t">NVIDIA DGX Spark</span><br><span class="s">Grace-Blackwell desktop AI supercomputer</span></span></a>
+      <a href="{base}device-platform.html#qcs6490"><span class="ic">03</span><span><span class="t">Qualcomm QCS6490</span><br><span class="s">Power-efficient far-edge AI processor</span></span></a>
+      <a href="{base}device-platform.html#ryzen-ai-max-395"><span class="ic">04</span><span><span class="t">AMD Ryzen AI Max+ 395</span><br><span class="s">Private 70B-class AI server node</span></span></a>
     </div></div>
     <div class="drop"><button data-cursor>Research ▾</button><div class="menu">
       <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
@@ -98,10 +100,9 @@ def NAV(base):
   <a href="{h}#engineering"><span class="mono">01</span><br>AI Engineering</a>
   <a href="{h}#accelerators"><span class="mono">02</span><br>Solutions</a>
   <a href="{h}#platform"><span class="mono">03</span><br>Platform</a>
-  <a href="{base}device/nvidia-agx-thor.html"><span class="mono">04</span><br>NVIDIA AGX Thor</a>
-  <a href="{base}device/nvidia-dgx-spark.html"><span class="mono">05</span><br>NVIDIA DGX Spark</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">06</span><br>Research</a>
-  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">07</span><br>Start a project →</a>
+  <a href="{base}device-platform.html"><span class="mono">04</span><br>Device Platform</a>
+  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Research</a>
+  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">06</span><br>Start a project →</a>
 </div>'''
 
 def FOOTER(base):
@@ -117,7 +118,7 @@ def FOOTER(base):
     <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a>
     <a href="{base}platform/edge-security-intelligence.html">Edge Security Intelligence</a></div>
   <div class="fcol"><h4>Device Platform</h4>
-    <a href="{base}device/nvidia-agx-thor.html">NVIDIA AGX Thor</a><a href="{base}device/nvidia-dgx-spark.html">NVIDIA DGX Spark</a></div>
+    <a href="{base}device-platform.html#agx-thor">NVIDIA AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a><a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a></div>
   <div class="fcol"><h4>Research</h4>
     <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
@@ -501,8 +502,6 @@ PLAT_EXTRA={
 }
 for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7],PLAT_EXTRA.get(s[0],""))
 
-THOR_SVG = """<svg class="thorviz" viewBox="0 0 1000 470" role="img" aria-label="Animated isometric wireframe of a compact edge AI node: a fan-cooled chassis with a dense front I/O wall, an accent stripe and side vents, energising as data flows out of its ports"><ellipse class="thglow" cx="505" cy="205" rx="300" ry="120"/><polygon class="thface top" points="250,170 610,140 760,45 400,75"/><polygon class="thface side" points="610,140 760,45 760,215 610,310"/><polygon class="thface" points="250,170 610,140 610,310 250,340"/><polygon class="thstripe" points="250,193.8 610,163.8 610,177.4 250,207.4"/><line class="thvent" x1="632.5" y1="146.2" x2="632.5" y2="275.4" style="animation-delay:0.0s"/><line class="thvent" x1="652.0" y1="133.8" x2="652.0" y2="263.0" style="animation-delay:0.18s"/><line class="thvent" x1="671.5" y1="121.4" x2="671.5" y2="250.6" style="animation-delay:0.36s"/><line class="thvent" x1="691.0" y1="109.1" x2="691.0" y2="238.3" style="animation-delay:0.54s"/><line class="thvent" x1="710.5" y1="96.8" x2="710.5" y2="225.9" style="animation-delay:0.72s"/><line class="thvent" x1="730.0" y1="84.4" x2="730.0" y2="213.6" style="animation-delay:0.9s"/><path class="thwire" d="M250,340 L250,170 L400,75 L760,45 L760,215 L610,310 Z M250,170 L610,140 M610,140 L760,45 M610,140 L610,310"/><polygon class="thport" points="281.0,279.6 305.4,277.6 305.4,301.4 281.0,303.4" style="animation-delay:0.0s"/><polygon class="thport st" points="315.2,276.8 339.6,274.7 339.6,298.5 315.2,300.6" style="animation-delay:0.16s"/><polygon class="thport" points="349.4,273.9 373.8,271.9 373.8,295.7 349.4,297.7" style="animation-delay:0.32s"/><polygon class="thport st" points="383.6,271.1 408.0,269.0 408.0,292.8 383.6,294.9" style="animation-delay:0.48s"/><polygon class="thport" points="417.8,268.2 442.2,266.2 442.2,290.0 417.8,292.0" style="animation-delay:0.64s"/><polygon class="thport st" points="452.0,265.4 476.4,263.3 476.4,287.1 452.0,289.2" style="animation-delay:0.8s"/><polygon class="thport" points="486.2,262.5 510.6,260.5 510.6,284.3 486.2,286.3" style="animation-delay:0.96s"/><polygon class="thport st" points="520.4,259.7 544.8,257.6 544.8,281.4 520.4,283.5" style="animation-delay:1.12s"/><polygon class="thport" points="554.6,256.8 579.0,254.8 579.0,278.6 554.6,280.6" style="animation-delay:1.28s"/><path class="thdraw" pathLength="1000" d="M250,340 L250,170 L400,75 L760,45 L760,215 L610,310 Z M250,170 L610,140 M610,140 L760,45 M610,140 L610,310"/><line class="thlink" x1="361.6" y1="296.7" x2="291.6" y2="374.7"/><circle class="pkt" r="4"><animateMotion dur="2.0s" begin="0.0s" repeatCount="indefinite" path="M361.6,296.7 L291.6,374.7"/></circle><line class="thlink" x1="464.2" y1="288.1" x2="458.2" y2="384.1"/><circle class="pkt st" r="4"><animateMotion dur="2.4s" begin="0.5s" repeatCount="indefinite" path="M464.2,288.1 L458.2,384.1"/></circle><line class="thlink" x1="532.6" y1="282.4" x2="590.6" y2="364.4"/><circle class="pkt" r="4"><animateMotion dur="2.8s" begin="1.0s" repeatCount="indefinite" path="M532.6,282.4 L590.6,364.4"/></circle><circle class="pkt" r="3.5"><animateMotion dur="3.4s" repeatCount="indefinite" path="M400,75 L760,45"/></circle></svg>"""
-
 # ----- DEVICE PLATFORM -----
 DEVP=[
  ("nvidia-agx-thor","Device · Robotics edge","NVIDIA AGX <span class='serif' style='color:var(--accent)'>Thor</span>",
@@ -521,9 +520,44 @@ DEVP=[
    ("/stack","The full NVIDIA AI stack","Runs NIM microservices, CUDA frameworks and the same containers as DGX in the datacenter — develop locally, deploy to the edge unchanged.",["NIM","CUDA","portable"])]),
   ("Desk to deployment",[("Build","Prototype &amp; fine-tune locally on Spark."),("Ground","Wire in your Nexus context and data."),("Validate","Run the same containers as production."),("Promote","Ship unchanged to edge or MicroCloud.")]),
   "Your own AI supercomputer, <span class='serif' style='color:var(--accent)'>on your desk.</span>"),
+ ("qualcomm-qcs6490","Device · Power-efficient edge","Qualcomm <span class='serif' style='color:var(--accent)'>QCS6490</span>",
+  "A power-efficient edge-AI processor for robots, cameras and handhelds. The Qualcomm QCS6490 pairs an octa-core Kryo CPU, an Adreno GPU and a Hexagon AI processor for up to 12 TOPS — multi-camera vision and on-device models on a fanless, battery-friendly power budget, with Wi-Fi 6E and long industrial lifecycle support. We bring the Unovie stack to it, so intelligence runs at the far edge, on hardware you own.",
+  [("12<span class='o'>TOPS</span>","Hexagon AI"),("5","concurrent cameras"),("Wi-Fi <span class='o'>6E</span>","FastConnect")],
+  ("AI on a power budget",[("/hexagon","Hexagon AI at low watts","Up to 12 TOPS from the Hexagon processor with a fused tensor accelerator — vision, speech and sensor models on a budget that fits a fanless box or a battery.",["12 TOPS","Hexagon","low-power"]),
+   ("/vision","Triple ISP, many cameras","A Spectra triple ISP ingests up to five concurrent cameras with computer-vision hardware — multi-camera perception for robots, handhelds and smart cameras.",["Spectra ISP","5 cameras","CV"]),
+   ("/connect","Wi-Fi 6E, built to last","FastConnect Wi-Fi 6E and Bluetooth 5.2 keep the edge connected wirelessly, with wide-temperature, long-lifecycle industrial availability.",["Wi-Fi 6E","BT 5.2","industrial"])]),
+  ("Sense to inference",[("Capture","Up to 5 cameras and sensors stream in."),("Process","Kryo CPU + Adreno GPU + Hexagon NPU."),("Infer","Vision and language models on-device."),("Connect","Results over Wi-Fi 6E, no cloud.")]),
+  "Intelligence at the <span class='serif' style='color:var(--accent)'>far edge.</span>"),
+ ("amd-ryzen-ai-max-395","Device · Private AI server","AMD Ryzen AI <span class='serif' style='color:var(--accent)'>Max+ 395</span>",
+  "A private AI server in a small metal box. The AMD Ryzen AI Max+ 395 fuses 16 Zen 5 CPU cores, a Radeon 8060S iGPU and a next-gen XDNA 2 NPU for 126 platform AI TOPS, paired with 128 GB of LPDDR5X-8000 — enough to run 70B-class models locally, behind dual 10GbE and USB4 so nodes cluster into a compute hub. We deploy the Unovie stack on it for secure, private inference on hardware you own.",
+  [("126<span class='o'>TOPS</span>","platform AI"),("128<span class='o'>GB</span>","LPDDR5X-8000"),("70<span class='o'>B</span>","models, local")],
+  ("A private model server",[("/apu","16 Zen 5 + Radeon + XDNA 2","Sixteen Zen 5 CPU cores, a Radeon 8060S iGPU and a next-gen XDNA 2 NPU combine for 126 AI TOPS — CPU, GPU and NPU inference in one package.",["Zen 5","Radeon 8060S","XDNA 2"]),
+   ("/memory","128 GB for big models","128 GB of LPDDR5X-8000 keeps large models — 70B-class and up — resident and private, with no weights leaving the box.",["128 GB","LPDDR5X-8000","70B local"]),
+   ("/cluster","Clusters into a hub","Dual 10GbE and dual USB4 at 40 Gbps link nodes into an AI compute hub for distributed, local inference.",["dual 10GbE","USB4 40G","clustering"])]),
+  ("Box to private cloud",[("Load","70B-class models resident in 128 GB."),("Serve","CPU + Radeon iGPU + XDNA 2 NPU."),("Cluster","Link nodes over 10GbE / USB4."),("Operate","Private inference, fully on-prem.")]),
+  "Private models, <span class='serif' style='color:var(--accent)'>your box.</span>"),
 ]
-DEV_EXTRA={
- "nvidia-agx-thor": ('<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>The device</div><h2 class="rv">An edge box you can <span class="serif" style="color:var(--accent)">hold.</span></h2></div><p class="lead rv">Thor ships as a compact, fan-cooled edge node: a dense I/O wall of USB, networking, display and capture, with a Blackwell GPU and 128&#8201;GB of unified memory behind it. Mount it on the line, in the cab or at the cell — and run the models where the data is born.</p></div><div class="gwwrap rv">' + THOR_SVG + '</div></div></section>') + platx("Built for the machine",[
+def devshot(vh, vlead, img, alt):
+    return ('<section><div class="wrap"><div class="shead"><div class="l">'
+            '<div class="num rv"><span class="ln"></span>The device</div>'
+            f'<h2 class="rv">{vh}</h2></div><p class="lead rv">{vlead}</p></div>'
+            f'<div class="devshot rv"><img class="devimg" src="assets/images/{img}.png" width="820" height="440" alt="{alt}" loading="lazy"></div></div></section>')
+DEV_VIS={
+ "nvidia-agx-thor": devshot("An edge box you can <span class='serif' style='color:var(--accent)'>hold.</span>",
+   "Thor ships as a compact, fan-cooled edge node: a dense I/O wall of USB, networking, display and capture, with a Blackwell GPU and 128&#8201;GB of unified memory behind it. Mount it on the line, in the cab or at the cell — and run the models where the data is born.",
+   "agx-thor","NVIDIA AGX Thor edge node — periwinkle line drawing of the chassis and front I/O"),
+ "nvidia-dgx-spark": devshot("A supercomputer that fits on a <span class='serif' style='color:var(--accent)'>desk.</span>",
+   "Spark is a desktop-sized chassis with a perforated cooling top and a full I/O wall — a GB10 Grace Blackwell Superchip and 128&#8201;GB of coherent memory inside. Develop, fine-tune and serve large models locally; promote them to the edge unchanged.",
+   "dgx-spark","NVIDIA DGX Spark desktop AI supercomputer — periwinkle line drawing"),
+ "qualcomm-qcs6490": devshot("Built for the far <span class='serif' style='color:var(--accent)'>edge.</span>",
+   "QCS6490 reference hardware brings a full I/O wall — USB-C, USB 3.0, dual Ethernet, 10GbE and HDMI — to a compact, fanless box. Premium-tier on-device AI without the power bill, deployed where wires and watts are scarce.",
+   "qcs6490","Qualcomm QCS6490 edge box — periwinkle line drawing of the chassis and front I/O"),
+ "amd-ryzen-ai-max-395": devshot("A server that hides in <span class='serif' style='color:var(--accent)'>plain sight.</span>",
+   "An all-metal chassis with a built-in 230&#8201;W supply exposes dual 10GbE, dual USB4 and fast PCIe 4.0 NVMe on its I/O wall — a quiet, durable node you can rack a few of, or set one on a desk.",
+   "ryzen-ai-max-395","AMD Ryzen AI Max+ 395 mini AI server — periwinkle line drawing"),
+}
+DEV_ARCH={
+ "nvidia-agx-thor": platx("Built for the machine",[
    ("/compute","Blackwell GPU + Tensor Cores","2,560 CUDA cores and next-gen Tensor Cores with FP4 and a transformer engine for on-device generative AI.",["CUDA","Tensor","FP4"]),
    ("/cpu","14-core Arm Neoverse","A 14-core Arm Neoverse-V3AE cluster feeds the GPU and runs the control plane, sensors and OS.",["Neoverse-V3AE","14-core"]),
    ("/io","Sensor-grade I/O","High-speed camera, networking and PCIe lanes ingest many sensors at once with deterministic latency.",["MIPI/CSI","PCIe","10/25G"])],
@@ -533,8 +567,50 @@ DEV_EXTRA={
    ("/memory","128 GB unified LPDDR5X","CPU and GPU address one coherent pool — no host-device copies, and room for ~200B-parameter models.",["unified","coherent","200B"]),
    ("/fabric","ConnectX scale-out","ConnectX networking links two Sparks into a single ~405B-parameter inference target.",["ConnectX","RDMA","405B"])],
    "By the numbers",[("1,000<span class='o'>TOPS</span>","FP4 AI"),("128<span class='o'>GB</span>","unified memory"),("20","Arm Grace cores"),("4<span class='o'>TB</span>","NVMe storage")]),
+ "qualcomm-qcs6490": platx("A heterogeneous compute engine",[
+   ("/cpu","Octa-core Kryo CPU","A 6&#8201;nm octa-core Qualcomm Kryo CPU runs the OS, control and classical workloads beside the AI engines.",["Kryo","octa-core","6 nm"]),
+   ("/npu","Hexagon + Adreno","The Hexagon processor with a fused tensor accelerator and the Adreno GPU share inference and graphics — up to 12 TOPS.",["Hexagon","Adreno","12 TOPS"]),
+   ("/isp","Spectra triple ISP","A triple ISP captures up to five concurrent camera streams with 4K HDR video and on-sensor computer vision.",["Spectra","5 cameras","4K HDR"])],
+   "By the numbers",[("12<span class='o'>TOPS</span>","Hexagon AI"),("5","concurrent cameras"),("Wi-Fi <span class='o'>6E</span>","FastConnect"),("6<span class='o'>nm</span>","process")]),
+ "amd-ryzen-ai-max-395": platx("One package, three engines",[
+   ("/cpu","16 Zen 5 cores","A 16-core Zen 5 CPU drives orchestration, data prep and classical workloads alongside inference.",["Zen 5","16-core"]),
+   ("/gpu","Radeon 8060S + XDNA 2","The Radeon 8060S iGPU and XDNA 2 NPU share AI work for 126 TOPS across vision, language and agents.",["Radeon 8060S","XDNA 2","126 TOPS"]),
+   ("/thermal","140W, vapor-chamber cooled","Dual turbine fans and a full-coverage vapor chamber sustain 140&#8201;W at about 32&#8201;dB — full performance, near silence.",["140W TDP","vapor chamber","~32 dB"])],
+   "By the numbers",[("126<span class='o'>TOPS</span>","platform AI"),("128<span class='o'>GB</span>","LPDDR5X-8000"),("16<span class='o'>TB</span>","NVMe · PCIe 4.0"),("140<span class='o'>W</span>","TDP, ~32 dB")]),
 }
-for s in DEVP: page(B,"device",s[0],s[1],"Device Platform",s[2],s[3],s[4],s[5],s[6],s[7],DEV_EXTRA.get(s[0],""))
+def _devkey(slug): return slug.split("-",1)[1]
+def devpanel(s, first):
+    slug,cat,title,lead,kpis,feats,hows,cta=s; key=_devkey(slug)
+    return (f'<div class="tpanel{" active" if first else ""}" id="{key}" role="tabpanel" aria-labelledby="tab-{key}">'
+      f'<section class="psub"><div class="wrap"><div class="tag rv">{cat}</div>'
+      f'<h2 class="rv" style="margin-top:10px">{title}</h2><p class="lead rv">{lead}</p>{metrics(kpis)}</div></section>'
+      f'{DEV_VIS.get(slug,"")}'
+      f'<section><div class="wrap">{shead("01","What it does",feats[0])}{disc(feats[1])}</div></section>'
+      f'<section><div class="wrap">{shead("02","How it works",hows[0])}{steps(hows[1])}</div></section>'
+      f'{DEV_ARCH.get(slug,"")}</div>')
+_dtabs="".join(f'<button class="tab{" active" if i==0 else ""}" id="tab-{_devkey(s[0])}" data-tab="{_devkey(s[0])}" role="tab" aria-selected="{"true" if i==0 else "false"}" data-cursor>{re.sub("<[^>]+>","",s[2])}</button>' for i,s in enumerate(DEVP))
+_dpanels="".join(devpanel(s,i==0) for i,s in enumerate(DEVP))
+_devhead=HEAD("","Device Platform — NVIDIA, Qualcomm and AMD edge AI — Unovie.AI","NVIDIA AGX Thor and DGX Spark, Qualcomm QCS6490 and AMD Ryzen AI Max+ 395 — edge devices we build, optimize and operate end-to-end, on hardware you own.")
+_devbody=f"""{NAV("")}
+<section class="phero"><div class="wrap">
+  <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Device Platform</span></div>
+  <div class="tag rv">Device Platform</div>
+  <h1 class="rv" style="margin-top:18px">Hardware you <span class="serif" style="color:var(--accent)">own.</span></h1>
+  <p class="lead rv">The NVIDIA, Qualcomm and AMD platforms we build, optimize and operate end-to-end — from a power-efficient far-edge processor to a desktop AI supercomputer. The same Unovie stack, your data, on silicon you own.</p>
+  <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Start a project <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read the field guide</a></div>
+</div></section>
+<section class="tabwrap"><div class="wrap"><div class="tabs" role="tablist" aria-label="Device platform">{_dtabs}</div></div></section>
+{_dpanels}
+<section id="contact"><div class="wrap"><div class="cta-final rv">
+  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
+  <h2 style="margin-top:16px">Pick the silicon. <span class="serif" style="color:var(--accent)">We'll run it.</span></h2>
+  <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
+  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="index.html#accelerators" data-cursor>See all solutions</a></div>
+</div></div></section>
+{FOOTER("")}"""
+open(f"{ROOT}/device-platform.html","w",encoding="utf-8").write(_devhead+_devbody)
 
 # ----- ABOUT -----
 about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs, builds, and operates custom edge-AI systems.")}{NAV("")}
@@ -573,10 +649,10 @@ _pages=["", "about.html", "contact.html",
         "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
-_pages += [f"device/{s[0]}.html" for s in DEVP]
+_pages += ["device-platform.html"]
 def _prio(p):
     if p=="": return "1.0"
-    if p.startswith(("solutions/","platform/","device/")): return "0.9"
+    if p=="device-platform.html" or p.startswith(("solutions/","platform/")): return "0.9"
     if p.startswith("resources/"): return "0.6"
     return "0.7"
 _rows="\n".join(
@@ -600,7 +676,7 @@ def _pagetitle(h):
 def _firstsent(t):
     t=_strip(t); return re.split(r'(?<=[.!?])\s',t,1)[0]
 def _ptype(p):
-    return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/") else "device" if p.startswith("device/")
+    return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/") else "device" if p=="device-platform.html"
             else "resource" if p.startswith("resources/") else "company")
 # chunked records, one per <section>, from the rendered HTML (nav/footer/scripts/svg stripped)
 records=[]
@@ -647,7 +723,7 @@ open(f"{ROOT}/llms-full.txt","w",encoding="utf-8").write("\n".join(_full)+"\n")
 # llms.txt — agent discovery index (https://llmstxt.org)
 _sol="\n".join(f"- [{_strip(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL)
 _plat="\n".join(f"- [{_strip(s[2])}]({_u('platform/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in PLATP)
-_dev="\n".join(f"- [{_strip(s[2])}]({_u('device/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in DEVP)
+_dev="\n".join(f"- [{_strip(s[2])}]({_u('device-platform.html')}#{s[0].split('-',1)[1]}): {_firstsent(s[3])}" for s in DEVP)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
 > AI-engineering studio that designs, builds and operates custom edge-AI systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
@@ -675,4 +751,4 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [Sitemap]({SITE}/sitemap.xml)
 """)
 
-print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + {len(DEVP)} device + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt + llms-full.txt")
+print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + device-platform({len(DEVP)} tabs) + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt + llms-full.txt")

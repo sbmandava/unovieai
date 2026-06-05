@@ -47,3 +47,17 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
     row.appendChild(grp);
   }
 })();
+
+// device-platform tabs
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab[data-tab]'));
+  if(!tabs.length)return;
+  var panels=[].slice.call(document.querySelectorAll('.tpanel'));
+  function activate(key){
+    tabs.forEach(function(t){var on=t.dataset.tab===key;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false');});
+    panels.forEach(function(p){var on=p.id===key;p.classList.toggle('active',on);if(on)p.querySelectorAll('.rv').forEach(function(e){e.classList.add('in');});});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){activate(t.dataset.tab);if(history.replaceState)history.replaceState(null,'','#'+t.dataset.tab);});});
+  var hk=(location.hash||'').replace('#',''),el=hk&&document.getElementById(hk);
+  if(el&&el.classList.contains('tpanel'))activate(hk);
+})();
