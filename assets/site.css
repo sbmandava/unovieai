@@ -363,6 +363,12 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 .secviz .shield{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-dasharray:8 8;opacity:.8;animation:kgflow 3s linear infinite}
 .secviz .shield2{fill:none;stroke:var(--steel);stroke-width:1.6;opacity:.5;transform-box:fill-box;transform-origin:center;animation:secpulse 2.6s ease-in-out infinite}
 .secviz .core{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
+.secviz .ring{fill:none;stroke-width:1.5}
+.secviz .ring.rdata{stroke:var(--accent);opacity:.5}
+.secviz .ring.ragents{stroke:var(--steel);opacity:.45}
+.secviz .spoke{stroke:var(--line-2);stroke-width:1.2;stroke-dasharray:3 6;opacity:.4;animation:kgflow 3s linear infinite}
+.secviz .ipkt{fill:var(--accent)}
+.secviz .sensor{fill:var(--surface);stroke:var(--steel);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kgpulse 3s ease-in-out infinite}
 .secviz .src{fill:#e5544b;opacity:.85;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.2s ease-in-out infinite}
 .secviz .tpkt{fill:#e5544b}
 .secviz .impact{fill:#e5544b;transform-box:fill-box;transform-origin:center;animation:secimpact 1.8s ease-out infinite}
@@ -372,4 +378,4 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 @keyframes gwbar{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
 @keyframes secpulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.08);opacity:.85}}
 @keyframes secimpact{0%{opacity:0;transform:scale(.4)}30%{opacity:.7}100%{opacity:0;transform:scale(1.7)}}
-@media(prefers-reduced-motion:reduce){.gwviz *,.secviz *{animation:none!important}.gwviz .pkt,.secviz .tpkt,.secviz .impact{display:none}}
+@media(prefers-reduced-motion:reduce){.gwviz *,.secviz *{animation:none!important}.gwviz .pkt,.secviz .tpkt,.secviz .impact,.secviz .ipkt{display:none}}

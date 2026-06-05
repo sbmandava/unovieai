@@ -346,7 +346,7 @@ Home / Platform / IT/OT Edge Security Intelligence Platform IT/OT Edge Security 
 02 — How it works Log to incident 01 Ingest Logs land in a Kafka stream. 02 Batch Workers tokenize on the GPU. 03 Classify BERT inference scores intent. 04 Index Enriched incidents to search.
 
 ## Threats stop at the edge.
-Edge defense Threats stop at the edge. DDoS floods and intrusion attempts are detected and deflected at a shielded perimeter — before they reach what matters.
+Edge defense Threats stop at the edge. Business context at the core, business data around it, and edge sensor-agents at the rim — all behind one shielded perimeter. DDoS floods and intrusions are detected and deflected before they reach the core.
 
 ## Inside the pipeline
 03 — Architecture Inside the pipeline /ingest Streaming ingest High-throughput Kafka in KRaft mode (no ZooKeeper) feeds parallel consumers — backpressure-safe at tens of thousands of events per second. Kafka KRaft parallel /infer GPU inference server An inference server runs the detection model on the GPU in batches, so classification scales with parallelism instead of CPU cores. Triton Morpheus GPU batch /enrich Enrich & index Scores and metadata are attached, then incidents are written to an authenticated, multi-shard search index for fast investigation. enrichment Elasticsearch 8-shard /harden Operational hardening Dead-letter queue, health checks, retention enforcement and authentication keep the pipeline resilient and storage bounded. DLQ healthchecks retention
