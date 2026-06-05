@@ -412,3 +412,19 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 @keyframes secpulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.08);opacity:.85}}
 @keyframes secimpact{0%{opacity:0;transform:scale(.4)}30%{opacity:.7}100%{opacity:0;transform:scale(1.7)}}
 @media(prefers-reduced-motion:reduce){.gwviz *,.secviz *{animation:none!important}.gwviz .pkt,.secviz .tpkt,.secviz .impact,.secviz .ipkt{display:none}}
+.thorviz{display:block;width:100%;height:auto}
+.thorviz .thglow{fill:var(--accent);opacity:.13;filter:blur(22px)}
+.thorviz .thface{fill:var(--surface);opacity:.5}
+.thorviz .thface.top{fill:var(--surface-2);opacity:.6}
+.thorviz .thface.side{fill:var(--surface-2);opacity:.38}
+.thorviz .thwire{fill:none;stroke:var(--line-2);stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.thorviz .thdraw{fill:none;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:90 1000;animation:thdraw 5.5s linear infinite}
+.thorviz .thstripe{fill:var(--steel);opacity:.5}
+.thorviz .thport{fill:var(--surface-2);stroke:var(--accent);stroke-width:1.4;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;animation:kgpulse 3s ease-in-out infinite}
+.thorviz .thport.st{stroke:var(--steel)}
+.thorviz .thvent{stroke:var(--accent);stroke-width:1.2;opacity:.4;vector-effect:non-scaling-stroke;stroke-dasharray:4 6;animation:kgflow 3s linear infinite}
+.thorviz .thlink{stroke:var(--line-2);stroke-width:1.3;fill:none;stroke-dasharray:4 6;opacity:.5;animation:kgflow 2.4s linear infinite}
+.thorviz .pkt{fill:var(--accent)}
+.thorviz .pkt.st{fill:var(--steel)}
+@keyframes thdraw{from{stroke-dashoffset:1080}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.thorviz *{animation:none!important}.thorviz .pkt{display:none}}

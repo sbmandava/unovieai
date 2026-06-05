@@ -14,7 +14,7 @@
  },
  "generated_by": "build_pages.py",
  "lastmod": "2026-06-05",
- "count": 106,
+ "count": 107,
  "records": [
   {
    "id": "home#1",
@@ -797,11 +797,19 @@
    "url": "https://unovie.ai/device/nvidia-agx-thor.html",
    "type": "device",
    "title": "NVIDIA AGX Thor — Unovie.AI",
+   "section": "An edge box you can hold.",
+   "text": "The device An edge box you can hold. Thor ships as a compact, fan-cooled edge node: a dense I/O wall of USB, networking, display and capture, with a Blackwell GPU and 128 GB of unified memory behind it. Mount it on the line, in the cab or at the cell — and run the models where the data is born."
+  },
+  {
+   "id": "device_nvidia-agx-thor#5",
+   "url": "https://unovie.ai/device/nvidia-agx-thor.html",
+   "type": "device",
+   "title": "NVIDIA AGX Thor — Unovie.AI",
    "section": "Built for the machine",
    "text": "03 — Architecture Built for the machine /compute Blackwell GPU + Tensor Cores 2,560 CUDA cores and next-gen Tensor Cores with FP4 and a transformer engine for on-device generative AI. CUDA Tensor FP4 /cpu 14-core Arm Neoverse A 14-core Arm Neoverse-V3AE cluster feeds the GPU and runs the control plane, sensors and OS. Neoverse-V3AE 14-core /io Sensor-grade I/O High-speed camera, networking and PCIe lanes ingest many sensors at once with deterministic latency. MIPI/CSI PCIe 10/25G"
   },
   {
-   "id": "device_nvidia-agx-thor#5",
+   "id": "device_nvidia-agx-thor#6",
    "url": "https://unovie.ai/device/nvidia-agx-thor.html",
    "type": "device",
    "title": "NVIDIA AGX Thor — Unovie.AI",
@@ -809,7 +817,7 @@
    "text": "04 — By the numbers By the numbers 2,070 TFLOPS FP4 (sparse) 128 GB LPDDR5X 273 GB/s memory bandwidth 40–130 W configurable"
   },
   {
-   "id": "device_nvidia-agx-thor#6",
+   "id": "device_nvidia-agx-thor#7",
    "url": "https://unovie.ai/device/nvidia-agx-thor.html",
    "type": "device",
    "title": "NVIDIA AGX Thor — Unovie.AI",

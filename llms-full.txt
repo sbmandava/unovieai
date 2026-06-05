@@ -373,6 +373,9 @@ Home / Device Platform / NVIDIA AGX Thor Device · Robotics edge NVIDIA AGX Thor
 ## Silicon to autonomy
 02 — How it works Silicon to autonomy 01 Provision Image Thor with the Unovie edge stack. 02 Serve Local models + Nexus context, on-device. 03 Fuse Vision, sensors and agents reason live. 04 Act Closed-loop control, fully on-prem.
 
+## An edge box you can hold.
+The device An edge box you can hold. Thor ships as a compact, fan-cooled edge node: a dense I/O wall of USB, networking, display and capture, with a Blackwell GPU and 128 GB of unified memory behind it. Mount it on the line, in the cab or at the cell — and run the models where the data is born.
+
 ## Built for the machine
 03 — Architecture Built for the machine /compute Blackwell GPU + Tensor Cores 2,560 CUDA cores and next-gen Tensor Cores with FP4 and a transformer engine for on-device generative AI. CUDA Tensor FP4 /cpu 14-core Arm Neoverse A 14-core Arm Neoverse-V3AE cluster feeds the GPU and runs the control plane, sensors and OS. Neoverse-V3AE 14-core /io Sensor-grade I/O High-speed camera, networking and PCIe lanes ingest many sensors at once with deterministic latency. MIPI/CSI PCIe 10/25G
 
