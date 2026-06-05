@@ -232,12 +232,12 @@ for s in SOL: page(B,"solutions",s[0],s[1],"Solutions",s[2],s[3],s[4],s[5],s[6],
 # ----- PLATFORM -----
 PLATP=[
  ("edge-data-fabric","Platform · Nexus","Edge Data <span class='serif' style='color:var(--steel)'>Fabric</span>",
-  "A typed knowledge graph fused with vector memory — a living model of your domain that grows with every document, record and decision. It extracts entities and relationships, embeds them beside the source text, and serves grounded, cited answers from hardware you own. Nothing leaves the building.",
-  [("graph<span class='s'>+vector</span>","one memory"),("0<span class='o'>B</span>","egress · on-prem"),("hybrid","BM25 + dense recall")],
-  ("Context that compounds",[("/ingest","Continuous, incremental ingest","Documents, databases and streams are walked, de-duplicated and turned into typed, queryable structure — incrementally, as they change.",["typed","incremental","dedupe"]),
-   ("/search","Hybrid grounded retrieval","Sparse BM25 and dense-vector recall are fused and re-ranked, so every answer is grounded in — and cited to — source records.",["BM25","dense","re-rank"]),
-   ("/isolation","Governed multi-tenancy","Per-collection, per-tier boundaries are enforced end to end, with lineage on every fact for audit and rollback.",["multi-tenant","lineage","governed"])]),
-  ("Ingest to serve",[("Ingest","Walk &amp; dedupe sources."),("Structure","Extract typed entities &amp; relations."),("Index","Graph + vector, side by side."),("Serve","Grounded, cited answers.")]),
+  "A domain ontology, a knowledge graph and vector memory — one living context layer for everything you know. Custom models read your documents, telemetry and records, construct a typed graph of entities and relationships, and embed it for hybrid retrieval. Domain fine-tuned agents reason over it, and your teams query it in plain language. It grows continuously, versions every fact, and runs entirely on-prem.",
+  [("ontology","domain-modelled"),("graph<span class='s'>+vector</span>","hybrid recall"),("0<span class='o'>B</span>","egress · on-prem")],
+  ("Context that compounds",[("/ontology","A domain ontology","Your world modelled as typed entities and relationships — the who, what, when, where and why — so context is structured, not guessed.",["typed","relationships","semantic"]),
+   ("/graph","Knowledge graph + vector","A graph store and vector memory side by side: subgraph traversal for structure, dense and sparse embeddings for meaning, fused into one answer.",["graph","vector","hybrid"]),
+   ("/selfserve","Self-service by language","Teams author and query in natural language; domain fine-tuned agents plan, retrieve and act — no SQL, no data team in the loop.",["NL query","agents","no-code"])]),
+  ("Documents in, decisions out",[("Extract","Parse docs, tables and signals."),("Construct","Build the typed graph."),("Index","Embed for graph + vector."),("Serve","Grounded answers &amp; agents.")]),
   "Know what you know — and <span class='serif' style='color:var(--steel)'>why.</span>"),
  ("edge-streaming-analytics","Platform","Edge Streaming <span class='serif' style='color:var(--steel)'>Intelligence</span>",
   "Real-time vision and audio intelligence over live streams, at fleet scale. A zero-copy GPU pipeline decodes hundreds of feeds straight into device memory, runs a catalog of detectors on every frame, and turns raw video into a verified, queryable signal — with sub-millisecond validation and an agent layer that reasons and acts on top. Proven on broadcast-grade media: 1,000+ concurrent 4K streams across racks of edge GPUs.",
@@ -270,11 +270,24 @@ def platx(arch_title, arch_cards, num_title, specs):
             f'<section><div class="wrap">{shead("04","By the numbers",num_title)}{metrics(specs)}</div></section>')
 
 PLAT_EXTRA={
- "edge-data-fabric": platx("Inside the fabric",[
-   ("/extract","Entity &amp; relation extraction","Source text is parsed into a typed schema — entities, relations and attributes — with provenance kept on every node and edge.",["schema","NER","provenance"]),
-   ("/embed","Dual-index store","Each chunk is embedded and written beside its graph node, so structure and semantics are queryable in a single hop.",["embeddings","graph store","vector"]),
-   ("/retrieve","Fused retrieval + rerank","Sparse, dense and graph-walk candidates are merged and re-ranked before they reach the model — recall without hallucination.",["fusion","rerank","grounding"])],
-   "Built to ground every answer",[("graph+vector","unified index"),("BM25 + dense","hybrid recall"),("lineage","on every fact")]),
+ "edge-data-fabric": (
+   f'<section><div class="wrap">{shead("03","Architecture","How the graph is built")}'
+   + disc([
+     ("/parse","Custom extraction models","Document- and table-structure models parse PDFs, images and text; an LLM emits structured records that become typed nodes and edges.",["doc-parse","tables","LLM"]),
+     ("/construct","Graph construction + embeddings","Records are de-duplicated, transformed and persisted to a fast embeddable graph store, with embedding models writing vectors beside every node.",["KG build","embeddings","transform"]),
+     ("/retrieve","Hybrid fused retrieval","Traditional indices, text and sparse embeddings and subgraph traversal feed a tensor-based fused ranker and query-rewrite models — grounded Top-K, not guesses.",["fusion","rerank","query-rewrite"]),
+     ("/version","Temporal &amp; governed","Graph OLTP keeps every node and edge temporally versioned with an immutable audit trail; columnar OLAP serves analytics — multi-tenant, OAuth2 / RBAC, zero-trust.",["temporal","audit","RBAC"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("04","Custom models","Models and agents, tuned to your domain")}'
+   + disc([
+     ("/models","A catalog of custom models","Document-parsing, embedding, NER and query-rewrite models, plus domain fine-tuned SLMs — trained on your domain, swappable and multi-model routed.",["fine-tuned SLM","NER","multi-model"]),
+     ("/agents","Domain agent accelerators","Pre-built agents — diagnostics, differential, referral, next-best-action and triage — reason over the graph and call tools to act.",["agents","NBA","tools"]),
+     ("/nlp","Natural-language self-service","Self-service portals let users ask, author and govern in plain language across chat, voice and app — every answer traceable to source.",["NL authoring","omni-channel","traceable"]),
+   ]) + '</div></section>'
+   + f'<section><div class="wrap">{shead("05","By the numbers","Built for scale")}'
+   + metrics([("100<span class='s'>M</span>","object nodes"),("2.5<span class='s'>B</span>","relationships"),("260<span class='s'>+</span>","prebuilt connectors")])
+   + '</div></section>'
+ ),
  "edge-streaming-analytics": (
    f'<section><div class="wrap">{shead("03","Detection catalog","A model graph, not a single model")}'
    + disc([
