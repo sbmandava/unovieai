@@ -369,6 +369,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 .secviz .spoke{stroke:var(--line-2);stroke-width:1.2;stroke-dasharray:3 6;opacity:.4;animation:kgflow 3s linear infinite}
 .secviz .ipkt{fill:var(--accent)}
 .secviz .sensor{fill:var(--surface);stroke:var(--steel);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kgpulse 3s ease-in-out infinite}
+.secviz .lring{fill:none;stroke-width:2.5;opacity:.9}
+.secviz .lcore{fill:var(--surface-2);stroke-width:2.5}
+.secviz .lshield{fill:none;stroke-width:3;stroke-dasharray:9 9;animation:kgflow 3.5s linear infinite}
+.secviz .ldot{transform-box:fill-box;transform-origin:center;animation:kgpulse 3s ease-in-out infinite}
+.secviz .llbl{font-family:var(--mono);font-size:12.5px;font-weight:600;text-anchor:middle}
 .secviz .src{fill:#e5544b;opacity:.85;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.2s ease-in-out infinite}
 .secviz .tpkt{fill:#e5544b}
 .secviz .impact{fill:#e5544b;transform-box:fill-box;transform-origin:center;animation:secimpact 1.8s ease-out infinite}

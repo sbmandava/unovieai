@@ -332,19 +332,23 @@ GW_SVG = """<svg class="gwviz" viewBox="0 0 1000 420" role="img" aria-label="Ani
 <text class="lbl" x="418" y="404">cost / token</text>
 </svg>"""
 
-SEC_SVG = """<svg class="secviz" viewBox="0 0 1000 460" role="img" aria-label="Animated edge defense: business context, data and edge sensor-agents in nested layers, protected by a shield that deflects threats and DDoS">
-<circle class="shield" cx="500" cy="230" r="186"/>
-<circle class="ring ragents" cx="500" cy="230" r="148"/><circle class="ring rdata" cx="500" cy="230" r="96"/>
-<line class="spoke" x1="500" y1="230" x2="648" y2="230"/><line class="spoke" x1="500" y1="230" x2="585" y2="351"/><line class="spoke" x1="500" y1="230" x2="415" y2="351"/><line class="spoke" x1="500" y1="230" x2="352" y2="230"/><line class="spoke" x1="500" y1="230" x2="415" y2="109"/><line class="spoke" x1="500" y1="230" x2="585" y2="109"/>
-<circle class="ipkt" r="3.5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M500,230 L648,230"/></circle><circle class="ipkt" r="3.5"><animateMotion dur="2.8s" begin=".6s" repeatCount="indefinite" path="M500,230 L415,109"/></circle><circle class="ipkt" r="3.5"><animateMotion dur="2.6s" begin="1.1s" repeatCount="indefinite" path="M500,230 L585,351"/></circle>
+SEC_SVG = """<svg class="secviz" viewBox="0 0 1000 470" role="img" aria-label="Five nested concentric layers protected by a shield: Business Contexts at the core, then Business Data, Edge Agents, Sensors, and an outer Shield deflecting threats and DDoS">
+<circle class="lshield" cx="500" cy="230" r="204" stroke="#22d3ee"/>
+<circle class="lring" cx="500" cy="230" r="164" stroke="#f59e0b"/>
+<circle class="lring" cx="500" cy="230" r="124" stroke="#a78bfa"/>
+<circle class="lring" cx="500" cy="230" r="84" stroke="#38bdf8"/>
+<line class="spoke" x1="500" y1="230" x2="664" y2="230"/><line class="spoke" x1="500" y1="230" x2="384" y2="346"/><line class="spoke" x1="500" y1="230" x2="616" y2="114"/>
+<circle class="ipkt" r="3.5" style="fill:#34d399"><animateMotion dur="2.5s" repeatCount="indefinite" path="M500,230 L664,230"/></circle><circle class="ipkt" r="3.5" style="fill:#34d399"><animateMotion dur="2.9s" begin=".6s" repeatCount="indefinite" path="M500,230 L616,114"/></circle><circle class="ipkt" r="3.5" style="fill:#34d399"><animateMotion dur="2.7s" begin="1.2s" repeatCount="indefinite" path="M500,230 L384,346"/></circle>
+<circle class="ldot" cx="664" cy="230" r="6" fill="#f59e0b" style="animation-delay:0s"/><circle class="ldot" cx="336" cy="230" r="6" fill="#f59e0b" style="animation-delay:.5s"/><circle class="ldot" cx="616" cy="346" r="6" fill="#f59e0b" style="animation-delay:.9s"/><circle class="ldot" cx="384" cy="346" r="6" fill="#f59e0b" style="animation-delay:.3s"/>
 <circle class="src" cx="90" cy="70" r="7" style="animation-delay:0s"/><circle class="src" cx="910" cy="70" r="7" style="animation-delay:.3s"/><circle class="src" cx="60" cy="230" r="7" style="animation-delay:.6s"/><circle class="src" cx="940" cy="230" r="7" style="animation-delay:.2s"/><circle class="src" cx="120" cy="400" r="7" style="animation-delay:.5s"/><circle class="src" cx="880" cy="400" r="7" style="animation-delay:.8s"/><circle class="src" cx="330" cy="420" r="7" style="animation-delay:.4s"/><circle class="src" cx="670" cy="420" r="7" style="animation-delay:.9s"/>
-<circle class="tpkt" r="3.5"><animateMotion dur="1.7s" repeatCount="indefinite" path="M90,70 L327,162"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.9s" begin=".2s" repeatCount="indefinite" path="M910,70 L673,162"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.5s" begin=".4s" repeatCount="indefinite" path="M60,230 L314,230"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.8s" begin=".1s" repeatCount="indefinite" path="M940,230 L686,230"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.6s" begin=".5s" repeatCount="indefinite" path="M120,400 L330,306"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.9s" begin=".7s" repeatCount="indefinite" path="M880,400 L670,306"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.6s" begin=".3s" repeatCount="indefinite" path="M330,420 L376,369"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.8s" begin=".6s" repeatCount="indefinite" path="M670,420 L624,369"/></circle>
-<circle class="impact" cx="327" cy="162" r="7" style="animation-delay:0s"/><circle class="impact" cx="673" cy="162" r="7" style="animation-delay:.5s"/><circle class="impact" cx="314" cy="230" r="7" style="animation-delay:.9s"/><circle class="impact" cx="330" cy="306" r="7" style="animation-delay:.3s"/><circle class="impact" cx="670" cy="306" r="7" style="animation-delay:.7s"/>
-<circle class="sensor" cx="648" cy="230" r="13" style="animation-delay:0s"/><circle class="sensor" cx="585" cy="351" r="13" style="animation-delay:.4s"/><circle class="sensor" cx="415" cy="351" r="13" style="animation-delay:.8s"/><circle class="sensor" cx="352" cy="230" r="13" style="animation-delay:.2s"/><circle class="sensor" cx="415" cy="109" r="13" style="animation-delay:.6s"/><circle class="sensor" cx="585" cy="109" r="13" style="animation-delay:1s"/>
-<circle class="core" cx="500" cy="230" r="46"/>
-<text class="lbl hl" x="500" y="226">Business</text><text class="lbl hl" x="500" y="242">Contexts</text>
-<text class="lbl hl" x="500" y="156">Business Data</text>
-<text class="lbl hl" x="500" y="70">Edge Agents · Sensor Systems</text>
+<circle class="tpkt" r="3.5"><animateMotion dur="1.7s" repeatCount="indefinite" path="M90,70 L310,156"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.9s" begin=".2s" repeatCount="indefinite" path="M910,70 L690,156"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.5s" begin=".4s" repeatCount="indefinite" path="M60,230 L296,230"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.8s" begin=".1s" repeatCount="indefinite" path="M940,230 L704,230"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.6s" begin=".5s" repeatCount="indefinite" path="M120,400 L314,313"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.9s" begin=".7s" repeatCount="indefinite" path="M880,400 L686,313"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.6s" begin=".3s" repeatCount="indefinite" path="M330,420 L364,382"/></circle><circle class="tpkt" r="3.5"><animateMotion dur="1.8s" begin=".6s" repeatCount="indefinite" path="M670,420 L636,382"/></circle>
+<circle class="impact" cx="310" cy="156" r="7" style="animation-delay:0s"/><circle class="impact" cx="690" cy="156" r="7" style="animation-delay:.5s"/><circle class="impact" cx="296" cy="230" r="7" style="animation-delay:.9s"/><circle class="impact" cx="314" cy="313" r="7" style="animation-delay:.3s"/><circle class="impact" cx="636" cy="382" r="7" style="animation-delay:.7s"/>
+<circle class="lcore" cx="500" cy="230" r="44" stroke="#34d399"/>
+<text class="llbl" x="500" y="46" fill="#22d3ee">Shield</text>
+<text class="llbl" x="500" y="86" fill="#f59e0b">Sensors</text>
+<text class="llbl" x="500" y="126" fill="#a78bfa">Edge Agents</text>
+<text class="llbl" x="500" y="166" fill="#38bdf8">Business Data</text>
+<text class="llbl" x="500" y="226" fill="#34d399">Business</text><text class="llbl" x="500" y="242" fill="#34d399">Contexts</text>
 </svg>"""
 
 PLAT_EXTRA={
@@ -427,7 +431,7 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "edge-security-intelligence": (
-   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Edge defense</div><h2 class="rv">Threats stop <span class="serif" style="color:var(--steel)">at the edge.</span></h2></div><p class="lead rv">Business context at the core, business data around it, and edge sensor-agents at the rim — all behind one shielded perimeter. DDoS floods and intrusions are detected and deflected before they reach the core.</p></div><div class="secwrap rv">' + SEC_SVG + '</div></div></section>'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Edge defense</div><h2 class="rv">Threats stop <span class="serif" style="color:var(--steel)">at the edge.</span></h2></div><p class="lead rv">Five nested layers — business contexts at the core, then business data, edge agents and sensors — wrapped in one shield. DDoS floods and intrusions are detected and deflected before they ever reach the core.</p></div><div class="secwrap rv">' + SEC_SVG + '</div></div></section>'
    + f'<section><div class="wrap">{shead("03","Architecture","Inside the pipeline")}'
    + disc([
      ("/ingest","Streaming ingest","High-throughput Kafka in KRaft mode (no ZooKeeper) feeds parallel consumers — backpressure-safe at tens of thousands of events per second.",["Kafka","KRaft","parallel"]),
