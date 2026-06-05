@@ -669,8 +669,8 @@
    "url": "https://unovie.ai/platform/gpu-edgegateway.html",
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",
-   "section": "Right model, least cost.",
-   "text": "Intelligent routing Right model, least cost. Every request is routed across a mesh of models — loaded and unloaded on demand — to the cheapest path that meets the need."
+   "section": "A self-improving router.",
+   "text": "Control plane · data plane A self-improving router. A control plane governs policy, identity and guardrails; a data plane serves fast, observable, cost-aware inference; and a self-improving router between them turns every request into a better next decision — research that closes the loop."
   },
   {
    "id": "platform_gpu-edgegateway#5",

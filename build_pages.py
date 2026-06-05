@@ -343,17 +343,34 @@ MC_SVG = """<svg class="mcviz" viewBox="0 0 1000 420" role="img" aria-label="Ani
 <circle class="hub" cx="500" cy="210" r="24"/><text class="lbl hl" x="500" y="214">Control</text><text class="lbl" x="425" y="392">GPU node</text>
 </svg>"""
 
-GW_SVG = """<svg class="gwviz" viewBox="0 0 1000 420" role="img" aria-label="Animated gateway routing: requests routed to dynamically loaded models with live cost analysis">
-<circle class="req" cx="80" cy="150" r="6"/><circle class="req" cx="80" cy="210" r="6"/><circle class="req" cx="80" cy="270" r="6"/>
-<line class="route lit" x1="86" y1="150" x2="224" y2="210"/><line class="route lit" x1="86" y1="210" x2="224" y2="210"/><line class="route lit" x1="86" y1="270" x2="224" y2="210"/>
-<circle class="pkt" r="4"><animateMotion dur="1.6s" repeatCount="indefinite" path="M80,150 L250,210"/></circle><circle class="pkt" r="4"><animateMotion dur="1.9s" begin=".5s" repeatCount="indefinite" path="M80,270 L250,210"/></circle>
-<circle class="hub" cx="250" cy="210" r="28"/><text class="lbl hl" x="250" y="214">Route</text>
-<line class="route lit" x1="278" y1="200" x2="680" y2="81"/><line class="route lit" x1="278" y1="206" x2="680" y2="145"/><line class="route" x1="278" y1="212" x2="680" y2="209"/><line class="route" x1="278" y1="218" x2="680" y2="273"/><line class="route lit" x1="278" y1="224" x2="680" y2="337"/>
-<circle class="pkt" r="4"><animateMotion dur="2s" repeatCount="indefinite" path="M278,205 L680,81"/></circle><circle class="pkt" r="4"><animateMotion dur="2.3s" begin=".7s" repeatCount="indefinite" path="M278,210 L680,145"/></circle><circle class="pkt" r="4"><animateMotion dur="2.1s" begin="1.2s" repeatCount="indefinite" path="M278,222 L680,337"/></circle>
-<rect class="model loaded" x="680" y="60" width="170" height="42" rx="8"/><rect class="model loaded" x="680" y="124" width="170" height="42" rx="8"/><rect class="model loading" x="680" y="188" width="170" height="42" rx="8"/><rect class="model cold" x="680" y="252" width="170" height="42" rx="8"/><rect class="model loaded" x="680" y="316" width="170" height="42" rx="8"/>
-<text class="lbl" x="765" y="85">SLM · loaded</text><text class="lbl" x="765" y="149">vLLM · loaded</text><text class="lbl" x="765" y="213">Vision · loading</text><text class="lbl" x="765" y="277">Frontier · cold</text><text class="lbl" x="765" y="341">Embed · loaded</text>
-<rect class="gwbar" x="360" y="330" width="20" height="56" style="animation-delay:0s"/><rect class="gwbar" x="392" y="330" width="20" height="56" style="animation-delay:.3s"/><rect class="gwbar" x="424" y="330" width="20" height="56" style="animation-delay:.6s"/><rect class="gwbar" x="456" y="330" width="20" height="56" style="animation-delay:.9s"/>
-<text class="lbl" x="418" y="404">cost / token</text>
+GW_SVG = """<svg class="gwviz" viewBox="0 0 1000 430" role="img" aria-label="A control plane and a data plane around a self-improving router core, with feature modules above and a research loop below that closes back to the core">
+<circle class="gwglow" cx="500" cy="202" r="72"/>
+<rect class="gwbox" x="64" y="150" width="150" height="150" rx="14"/><text class="tlbl hl" x="139" y="140">CONTROL PLANE</text>
+<circle class="gwnode" cx="86" cy="184" r="5" style="animation-delay:0s"/><text class="lbl sm" x="152" y="188">Policies</text>
+<circle class="gwnode" cx="86" cy="212" r="5" style="animation-delay:.3s"/><text class="lbl sm" x="152" y="216">Identities</text>
+<circle class="gwnode" cx="86" cy="240" r="5" style="animation-delay:.6s"/><text class="lbl sm" x="152" y="244">API keys</text>
+<circle class="gwnode" cx="86" cy="268" r="5" style="animation-delay:.9s"/><text class="lbl sm" x="152" y="272">Guardrails</text>
+<rect class="gwbox" x="786" y="150" width="150" height="150" rx="14"/><text class="tlbl hl" x="861" y="140">DATA PLANE</text>
+<circle class="gwnode st" cx="808" cy="184" r="5" style="animation-delay:.2s"/><text class="lbl sm" x="876" y="188">Fast inference</text>
+<circle class="gwnode st" cx="808" cy="212" r="5" style="animation-delay:.5s"/><text class="lbl sm" x="876" y="216">Model routing</text>
+<circle class="gwnode st" cx="808" cy="240" r="5" style="animation-delay:.8s"/><text class="lbl sm" x="876" y="244">Observability</text>
+<circle class="gwnode st" cx="808" cy="268" r="5" style="animation-delay:1.1s"/><text class="lbl sm" x="876" y="272">Cost-aware</text>
+<line class="gwlink" x1="214" y1="212" x2="405" y2="202"/><line class="gwlink" x1="595" y1="202" x2="786" y2="212"/>
+<circle class="pkt" r="4"><animateMotion dur="2.2s" repeatCount="indefinite" path="M214,212 L405,202"/></circle><circle class="pkt" r="4"><animateMotion dur="2.6s" begin=".9s" repeatCount="indefinite" path="M214,212 L405,202"/></circle>
+<circle class="pkt st" r="4"><animateMotion dur="2.2s" begin=".4s" repeatCount="indefinite" path="M595,202 L786,212"/></circle><circle class="pkt st" r="4"><animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite" path="M595,202 L786,212"/></circle>
+<line class="gwlink" x1="380" y1="104" x2="470" y2="162"/><line class="gwlink" x1="460" y1="104" x2="490" y2="162"/><line class="gwlink" x1="540" y1="104" x2="510" y2="162"/><line class="gwlink" x1="620" y1="104" x2="530" y2="162"/>
+<circle class="gwnode" cx="380" cy="100" r="5" style="animation-delay:.1s"/><text class="tlbl" x="380" y="86">SAAR</text>
+<circle class="gwnode" cx="460" cy="100" r="5" style="animation-delay:.5s"/><text class="tlbl" x="460" y="86">Evals</text>
+<circle class="gwnode" cx="540" cy="100" r="5" style="animation-delay:.9s"/><text class="tlbl" x="540" y="86">CLI-first</text>
+<circle class="gwnode" cx="620" cy="100" r="5" style="animation-delay:1.3s"/><text class="tlbl" x="620" y="86">Router models</text>
+<rect class="gwcore" x="405" y="164" width="190" height="78" rx="16"/>
+<text class="lbl hl" x="500" y="197" style="font-size:13px">Self-improving</text><text class="lbl hl" x="500" y="217" style="font-size:13px">Router</text>
+<path class="gwloop" d="M377,318 H623 Q650,318 650,345 Q650,372 623,372 H377 Q350,372 350,345 Q350,318 377,318 Z"/>
+<circle class="gwnode st" cx="410" cy="318" r="4.5" style="animation-delay:0s"/><circle class="gwnode st" cx="470" cy="318" r="4.5" style="animation-delay:.4s"/><circle class="gwnode st" cx="530" cy="318" r="4.5" style="animation-delay:.8s"/><circle class="gwnode st" cx="590" cy="318" r="4.5" style="animation-delay:1.2s"/>
+<line class="gwlink" x1="500" y1="242" x2="500" y2="318"/>
+<circle class="pkt" r="4"><animateMotion dur="1.7s" repeatCount="indefinite" path="M500,242 L500,318"/></circle>
+<circle class="pkt st" r="4.5"><animateMotion dur="6s" repeatCount="indefinite" path="M377,318 H623 Q650,318 650,345 Q650,372 623,372 H377 Q350,372 350,345 Q350,318 377,318 Z"/></circle>
+<text class="tlbl" x="500" y="398">research loop &#8594; closes the loop</text>
 </svg>"""
 
 SEC_SVG = """<svg class="secviz" viewBox="0 0 1000 470" role="img" aria-label="Five nested concentric layers protected by a shield: Business Contexts at the core, then Business Data, Edge Agents, Sensors, and an outer Shield deflecting threats and DDoS">
@@ -436,7 +453,7 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "gpu-edgegateway": (
-   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Intelligent routing</div><h2 class="rv">Right model, <span class="serif" style="color:var(--steel)">least cost.</span></h2></div><p class="lead rv">Every request is routed across a mesh of models — loaded and unloaded on demand — to the cheapest path that meets the need.</p></div><div class="gwwrap rv">' + GW_SVG + '</div></div></section>'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Control plane · data plane</div><h2 class="rv">A self-improving <span class="serif" style="color:var(--steel)">router.</span></h2></div><p class="lead rv">A control plane governs policy, identity and guardrails; a data plane serves fast, observable, cost-aware inference; and a self-improving router between them turns every request into a better next decision — research that closes the loop.</p></div><div class="gwwrap rv">' + GW_SVG + '</div></div></section>'
    + f'<section><div class="wrap">{shead("03","Architecture","Inside the gateway")}'
    + disc([
      ("/contract","One routing contract","Signals become projections, projections drive decisions, decisions choose the model — the same pipeline whether configured in YAML, the console, the CLI or Kubernetes.",["signals","projections","decisions"]),

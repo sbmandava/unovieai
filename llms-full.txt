@@ -317,8 +317,8 @@ Home / Platform / GPU EdgeGateway Platform GPU EdgeGateway An agent-first, signa
 ## Signal to decision
 02 — How it works Signal to decision 01 Signal Score intent, risk, modality, context. 02 Project Normalise into policy bands. 03 Decide Pick model, agent or tool. 04 Serve Sandboxed, observed, metered.
 
-## Right model, least cost.
-Intelligent routing Right model, least cost. Every request is routed across a mesh of models — loaded and unloaded on demand — to the cheapest path that meets the need.
+## A self-improving router.
+Control plane · data plane A self-improving router. A control plane governs policy, identity and guardrails; a data plane serves fast, observable, cost-aware inference; and a self-improving router between them turns every request into a better next decision — research that closes the loop.
 
 ## Inside the gateway
 03 — Architecture Inside the gateway /contract One routing contract Signals become projections, projections drive decisions, decisions choose the model — the same pipeline whether configured in YAML, the console, the CLI or Kubernetes. signals projections decisions /mesh Mixture-of-models mesh Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs with semantic caching; the classifiers run on OpenVINO, CUDA or ROCm — one control plane, any backend. vLLM semantic cache OpenVINO/CUDA/ROCm /safe Safety & protocol History-aware PII, jailbreak and prompt-injection scanning across every turn — behind an OpenAI- and Anthropic-compatible ingress with explicit, lossless translation. PII jailbreak OpenAI/Anthropic /lifecycle Shadow, activate, revert Every routing policy is versioned and shadow-tested on replayed traffic before activation, with one-click rollback — routing never drifts silently. shadow replay rollback

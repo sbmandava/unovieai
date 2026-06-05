@@ -374,18 +374,20 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 /* ---------- gpu-edgegateway: routing + cost + dynamic models ---------- */
 .gwwrap,.secwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
 .gwviz,.secviz{display:block;width:100%;height:auto}
-.gwviz .route{stroke:var(--line-2);stroke-width:1.4;fill:none;stroke-dasharray:5 7;opacity:.5;animation:kgflow 2.6s linear infinite}
-.gwviz .route.lit{stroke:var(--accent);opacity:.7}
-.gwviz .hub{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
-.gwviz .req{fill:var(--steel);opacity:.75;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.4s ease-in-out infinite}
-.gwviz .model{fill:var(--surface);stroke:var(--line-2);stroke-width:1.5}
-.gwviz .model.loaded{stroke:var(--accent);stroke-width:2}
-.gwviz .model.cold{stroke-dasharray:4 5;opacity:.45}
-.gwviz .model.loading{stroke:var(--accent);stroke-width:2;animation:gwload 3.6s ease-in-out infinite}
-.gwviz .gwbar{fill:var(--steel);opacity:.8;transform-box:fill-box;transform-origin:bottom;animation:gwbar 2.4s ease-in-out infinite}
+.gwviz .gwbox{fill:var(--surface);stroke:var(--line-2);stroke-width:1.5}
+.gwviz .gwcore{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
+.gwviz .gwglow{fill:var(--accent);opacity:.16;filter:blur(13px)}
+.gwviz .gwlink{stroke:var(--line-2);stroke-width:1.4;fill:none;stroke-dasharray:5 7;opacity:.55;animation:kgflow 2.6s linear infinite}
+.gwviz .gwloop{stroke:var(--steel);stroke-width:1.6;fill:none;stroke-dasharray:6 6;opacity:.6;animation:kgflow 3.4s linear infinite}
+.gwviz .gwnode{fill:var(--surface);stroke:var(--accent);stroke-width:1.8;transform-box:fill-box;transform-origin:center;animation:kgpulse 3s ease-in-out infinite}
+.gwviz .gwnode.st{stroke:var(--steel)}
 .gwviz .pkt{fill:var(--accent)}
+.gwviz .pkt.st{fill:var(--steel)}
 .gwviz .lbl{fill:var(--fg-mut);font-family:var(--mono);font-size:12px;text-anchor:middle}
+.gwviz .lbl.sm{font-size:10.5px}
 .gwviz .lbl.hl{fill:var(--fg)}
+.gwviz .tlbl{fill:var(--fg-mut);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-anchor:middle}
+.gwviz .tlbl.hl{fill:var(--fg);letter-spacing:.14em}
 .secviz .shield{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-dasharray:8 8;opacity:.8;animation:kgflow 3s linear infinite}
 .secviz .shield2{fill:none;stroke:var(--steel);stroke-width:1.6;opacity:.5;transform-box:fill-box;transform-origin:center;animation:secpulse 2.6s ease-in-out infinite}
 .secviz .core{fill:var(--surface-2);stroke:var(--accent);stroke-width:2.5}
