@@ -388,7 +388,7 @@ The device An edge box you can hold. Thor ships as a compact, fan-cooled edge no
 04 — By the numbers By the numbers 2,070 TFLOPS FP4 (sparse) 128 GB LPDDR5X 273 GB/s memory bandwidth 40–130 W configurable
 
 ## NVIDIA DGX Spark
-Device · Desktop supercomputer NVIDIA DGX Spark A petaFLOP AI supercomputer that fits on a desk. NVIDIA DGX Spark pairs the GB10 Grace Blackwell Superchip with 128 GB of coherent unified memory and up to 1,000 TOPS of FP4 compute — enough to prototype, fine-tune and run models up to ~200B parameters locally, or ~405B across a linked pair. We run it as your private development and inference node: the full Unovie stack, your data, your room. 1 PFLOP FP4 AI compute 128 GB coherent memory 200 B params, local
+Device · Desktop supercomputer NVIDIA DGX Spark A petaFLOP AI supercomputer that fits on a desk. NVIDIA DGX Spark pairs the GB10 Grace Blackwell Superchip with 128 GB of coherent unified memory and up to 1,000 TFLOPS of FP4 compute — enough to prototype, fine-tune and run models up to ~200B parameters locally, or ~405B across a linked pair. We run it as your private development and inference node: the full Unovie stack, your data, your room. 1,000 TFLOPS FP4 AI compute 128 GB coherent memory 200 B params, local
 
 ## A supercomputer that fits on a desk.
 The device A supercomputer that fits on a desk. Spark is a desktop-sized chassis with a perforated cooling top and a full I/O wall — a GB10 Grace Blackwell Superchip and 128 GB of coherent memory inside. Develop, fine-tune and serve large models locally; promote them to the edge unchanged.
@@ -403,43 +403,43 @@ The device A supercomputer that fits on a desk. Spark is a desktop-sized chassis
 03 — Architecture One coherent memory space /superchip GB10 Grace Blackwell Grace CPU and Blackwell GPU on one package, joined by NVLink-C2C at chip-to-chip bandwidth. GB10 NVLink-C2C /memory 128 GB unified LPDDR5X CPU and GPU address one coherent pool — no host-device copies, and room for ~200B-parameter models. unified coherent 200B /fabric ConnectX scale-out ConnectX networking links two Sparks into a single ~405B-parameter inference target. ConnectX RDMA 405B
 
 ## By the numbers
-04 — By the numbers By the numbers 1,000 TOPS FP4 AI 128 GB unified memory 20 Arm Grace cores 4 TB NVMe storage
+04 — By the numbers By the numbers 1,000 TFLOPS FP4 AI 128 GB unified memory 20 Arm Grace cores 4 TB NVMe storage
 
 ## Qualcomm QCS6490
-Device · Power-efficient edge Qualcomm QCS6490 A power-efficient edge-AI processor for robots, cameras and handhelds. The Qualcomm QCS6490 pairs an octa-core Kryo CPU, an Adreno GPU and a Hexagon AI processor for up to 12 TOPS — multi-camera vision and on-device models on a fanless, battery-friendly power budget, with Wi-Fi 6E and long industrial lifecycle support. We bring the Unovie stack to it, so intelligence runs at the far edge, on hardware you own. 12 TOPS Hexagon AI 5 concurrent cameras Wi-Fi 6E FastConnect
+Device · Power-efficient edge Qualcomm QCS6490 A power-efficient edge-AI processor for robots, cameras and handhelds. The Qualcomm QCS6490 pairs an octa-core Kryo CPU, an Adreno GPU and a Hexagon AI processor for up to 12 TFLOPS — multi-camera vision and on-device models on a fanless, battery-friendly power budget, with Wi-Fi 6E and long industrial lifecycle support. We bring the Unovie stack to it, so intelligence runs at the far edge, on hardware you own. 12 TFLOPS Hexagon AI 5 concurrent cameras Wi-Fi 6E FastConnect
 
 ## Built for the far edge.
 The device Built for the far edge. QCS6490 reference hardware brings a full I/O wall — USB-C, USB 3.0, dual Ethernet, 10GbE and HDMI — to a compact, fanless box. Premium-tier on-device AI without the power bill, deployed where wires and watts are scarce.
 
 ## AI on a power budget
-01 — What it does AI on a power budget /hexagon Hexagon AI at low watts Up to 12 TOPS from the Hexagon processor with a fused tensor accelerator — vision, speech and sensor models on a budget that fits a fanless box or a battery. 12 TOPS Hexagon low-power /vision Triple ISP, many cameras A Spectra triple ISP ingests up to five concurrent cameras with computer-vision hardware — multi-camera perception for robots, handhelds and smart cameras. Spectra ISP 5 cameras CV /connect Wi-Fi 6E, built to last FastConnect Wi-Fi 6E and Bluetooth 5.2 keep the edge connected wirelessly, with wide-temperature, long-lifecycle industrial availability. Wi-Fi 6E BT 5.2 industrial
+01 — What it does AI on a power budget /hexagon Hexagon AI at low watts Up to 12 TFLOPS from the Hexagon processor with a fused tensor accelerator — vision, speech and sensor models on a budget that fits a fanless box or a battery. 12 TFLOPS Hexagon low-power /vision Triple ISP, many cameras A Spectra triple ISP ingests up to five concurrent cameras with computer-vision hardware — multi-camera perception for robots, handhelds and smart cameras. Spectra ISP 5 cameras CV /connect Wi-Fi 6E, built to last FastConnect Wi-Fi 6E and Bluetooth 5.2 keep the edge connected wirelessly, with wide-temperature, long-lifecycle industrial availability. Wi-Fi 6E BT 5.2 industrial
 
 ## Sense to inference
 02 — How it works Sense to inference 01 Capture Up to 5 cameras and sensors stream in. 02 Process Kryo CPU + Adreno GPU + Hexagon NPU. 03 Infer Vision and language models on-device. 04 Connect Results over Wi-Fi 6E, no cloud.
 
 ## A heterogeneous compute engine
-03 — Architecture A heterogeneous compute engine /cpu Octa-core Kryo CPU A 6 nm octa-core Qualcomm Kryo CPU runs the OS, control and classical workloads beside the AI engines. Kryo octa-core 6 nm /npu Hexagon + Adreno The Hexagon processor with a fused tensor accelerator and the Adreno GPU share inference and graphics — up to 12 TOPS. Hexagon Adreno 12 TOPS /isp Spectra triple ISP A triple ISP captures up to five concurrent camera streams with 4K HDR video and on-sensor computer vision. Spectra 5 cameras 4K HDR
+03 — Architecture A heterogeneous compute engine /cpu Octa-core Kryo CPU A 6 nm octa-core Qualcomm Kryo CPU runs the OS, control and classical workloads beside the AI engines. Kryo octa-core 6 nm /npu Hexagon + Adreno The Hexagon processor with a fused tensor accelerator and the Adreno GPU share inference and graphics — up to 12 TFLOPS. Hexagon Adreno 12 TFLOPS /isp Spectra triple ISP A triple ISP captures up to five concurrent camera streams with 4K HDR video and on-sensor computer vision. Spectra 5 cameras 4K HDR
 
 ## By the numbers
-04 — By the numbers By the numbers 12 TOPS Hexagon AI 5 concurrent cameras Wi-Fi 6E FastConnect 6 nm process
+04 — By the numbers By the numbers 12 TFLOPS Hexagon AI 5 concurrent cameras Wi-Fi 6E FastConnect 6 nm process
 
 ## AMD Ryzen AI Max+ 395
-Device · Private AI server AMD Ryzen AI Max+ 395 A private AI server in a small metal box. The AMD Ryzen AI Max+ 395 fuses 16 Zen 5 CPU cores, a Radeon 8060S iGPU and a next-gen XDNA 2 NPU for 126 platform AI TOPS, paired with 128 GB of LPDDR5X-8000 — enough to run 70B-class models locally, behind dual 10GbE and USB4 so nodes cluster into a compute hub. We deploy the Unovie stack on it for secure, private inference on hardware you own. 126 TOPS platform AI 128 GB LPDDR5X-8000 70 B models, local
+Device · Private AI server AMD Ryzen AI Max+ 395 A private AI server in a small metal box. The AMD Ryzen AI Max+ 395 fuses 16 Zen 5 CPU cores, a Radeon 8060S iGPU and a next-gen XDNA 2 NPU for 126 platform AI TFLOPS, paired with 128 GB of LPDDR5X-8000 — enough to run 70B-class models locally, behind dual 10GbE and USB4 so nodes cluster into a compute hub. We deploy the Unovie stack on it for secure, private inference on hardware you own. 126 TFLOPS platform AI 128 GB LPDDR5X-8000 70 B models, local
 
 ## A server that hides in plain sight.
 The device A server that hides in plain sight. An all-metal chassis with a built-in 230 W supply exposes dual 10GbE, dual USB4 and fast PCIe 4.0 NVMe on its I/O wall — a quiet, durable node you can rack a few of, or set one on a desk.
 
 ## A private model server
-01 — What it does A private model server /apu 16 Zen 5 + Radeon + XDNA 2 Sixteen Zen 5 CPU cores, a Radeon 8060S iGPU and a next-gen XDNA 2 NPU combine for 126 AI TOPS — CPU, GPU and NPU inference in one package. Zen 5 Radeon 8060S XDNA 2 /memory 128 GB for big models 128 GB of LPDDR5X-8000 keeps large models — 70B-class and up — resident and private, with no weights leaving the box. 128 GB LPDDR5X-8000 70B local /cluster Clusters into a hub Dual 10GbE and dual USB4 at 40 Gbps link nodes into an AI compute hub for distributed, local inference. dual 10GbE USB4 40G clustering
+01 — What it does A private model server /apu 16 Zen 5 + Radeon + XDNA 2 Sixteen Zen 5 CPU cores, a Radeon 8060S iGPU and a next-gen XDNA 2 NPU combine for 126 AI TFLOPS — CPU, GPU and NPU inference in one package. Zen 5 Radeon 8060S XDNA 2 /memory 128 GB for big models 128 GB of LPDDR5X-8000 keeps large models — 70B-class and up — resident and private, with no weights leaving the box. 128 GB LPDDR5X-8000 70B local /cluster Clusters into a hub Dual 10GbE and dual USB4 at 40 Gbps link nodes into an AI compute hub for distributed, local inference. dual 10GbE USB4 40G clustering
 
 ## Box to private cloud
 02 — How it works Box to private cloud 01 Load 70B-class models resident in 128 GB. 02 Serve CPU + Radeon iGPU + XDNA 2 NPU. 03 Cluster Link nodes over 10GbE / USB4. 04 Operate Private inference, fully on-prem.
 
 ## One package, three engines
-03 — Architecture One package, three engines /cpu 16 Zen 5 cores A 16-core Zen 5 CPU drives orchestration, data prep and classical workloads alongside inference. Zen 5 16-core /gpu Radeon 8060S + XDNA 2 The Radeon 8060S iGPU and XDNA 2 NPU share AI work for 126 TOPS across vision, language and agents. Radeon 8060S XDNA 2 126 TOPS /thermal 140W, vapor-chamber cooled Dual turbine fans and a full-coverage vapor chamber sustain 140 W at about 32 dB — full performance, near silence. 140W TDP vapor chamber ~32 dB
+03 — Architecture One package, three engines /cpu 16 Zen 5 cores A 16-core Zen 5 CPU drives orchestration, data prep and classical workloads alongside inference. Zen 5 16-core /gpu Radeon 8060S + XDNA 2 The Radeon 8060S iGPU and XDNA 2 NPU share AI work for 126 TFLOPS across vision, language and agents. Radeon 8060S XDNA 2 126 TFLOPS /thermal 140W, vapor-chamber cooled Dual turbine fans and a full-coverage vapor chamber sustain 140 W at about 32 dB — full performance, near silence. 140W TDP vapor chamber ~32 dB
 
 ## By the numbers
-04 — By the numbers By the numbers 126 TOPS platform AI 128 GB LPDDR5X-8000 16 TB NVMe · PCIe 4.0 140 W TDP, ~32 dB
+04 — By the numbers By the numbers 126 TFLOPS platform AI 128 GB LPDDR5X-8000 16 TB NVMe · PCIe 4.0 140 W TDP, ~32 dB
 
 ## Pick the silicon. We'll run it.
 Let's build Pick the silicon. We'll run it. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
