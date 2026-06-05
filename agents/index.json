@@ -454,7 +454,7 @@
    "type": "platform",
    "title": "Edge Data Fabric — Unovie.AI",
    "section": "Edge Data Fabric",
-   "text": "Home / Platform / Edge Data Fabric Platform · Nexus Edge Data Fabric A domain ontology, a knowledge graph and vector memory — one living context layer for everything you know. Custom models read your documents, telemetry and records, construct a typed graph of entities and relationships, and embed it for hybrid retrieval. Domain fine-tuned agents reason over it, and your teams query it in plain language. It grows continuously, versions every fact, and runs entirely on-prem. Start a project → Read the field guide ontology domain-modelled graph +vector hybrid recall 0 B egress · on-prem"
+   "text": "Home / Platform / Edge Data Fabric Platform · Nexus Edge Data Fabric Unovie helps you own your enterprise context foundation — on your terms, with your data — to power the AI-native initiatives ahead. A domain ontology, a knowledge graph and vector memory become one living model of your world: you can buy the models and the agents, but the context — the boundary that makes you a coherent system — is yours to build, woven from open standards, on-prem. Custom models read your documents, telemetry and records into a typed graph; agents reason over it; your teams query it in plain language. Start a project → Read the field guide ontology domain-modelled graph +vector hybrid recall 0 B egress · on-prem"
   },
   {
    "id": "platform_edge-data-fabric#2",
@@ -477,8 +477,8 @@
    "url": "https://unovie.ai/platform/edge-data-fabric.html",
    "type": "platform",
    "title": "Edge Data Fabric — Unovie.AI",
-   "section": "Context, connected.",
-   "text": "Knowledge graph Context, connected. Every document, signal and record becomes a typed node; every relationship, an edge — assembled around a living domain ontology."
+   "section": "Your context is your membrane.",
+   "text": "The context membrane Your context is your membrane. Your context is not a feature you bolt on — it is your model of your own world, the boundary that lets your organisation perceive, predict and act as one coherent system. An ontology core, a living knowledge graph, and a membrane of identifiers, rules, meaning and processes that lets the world in without losing what makes you you. A context you can buy is a context your competitors can buy too. You can buy the models. You can buy the agents. The context — the boundary that defines you — you build and own, woven from open standards, on your terms. Outsource it, and you become a component in a system someone else defines."
   },
   {
    "id": "platform_edge-data-fabric#5",

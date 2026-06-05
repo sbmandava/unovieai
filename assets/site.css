@@ -310,13 +310,18 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 /* ---------- platform graph / stream animations ---------- */
 .kgwrap,.stwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
 .kgviz,.stviz{display:block;width:100%;height:auto}
-.kgviz .edge{stroke:var(--line-2);stroke-width:1.4;fill:none;stroke-dasharray:5 7;opacity:.5;animation:kgflow 2.6s linear infinite}
-.kgviz .edge.lit{stroke:var(--accent);opacity:.7}
-.kgviz .edge.stl{stroke:var(--steel);opacity:.6}
-.kgviz .node{fill:var(--surface);stroke:var(--accent);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.4s ease-in-out infinite}
-.kgviz .node.stl{stroke:var(--steel)}
-.kgviz .hub{fill:var(--surface-2);stroke:var(--steel);stroke-width:2.5}
-.kgviz .sm{fill:var(--accent);opacity:.7;transform-box:fill-box;transform-origin:center;animation:kgpulse 2.8s ease-in-out infinite}
+.kgviz .memb{fill:none;stroke:#8b5cf6;stroke-width:16;opacity:.85}
+.kgviz .mlbl{fill:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.12em;font-weight:700;text-anchor:middle}
+.kgviz .kweb{stroke:#a78bfa;stroke-width:1;fill:none;opacity:.3}
+.kgviz .kspoke{stroke:#a78bfa;stroke-width:1.2;fill:none;opacity:.45}
+.kgviz .knode{fill:var(--surface);stroke:#a78bfa;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.2s ease-in-out infinite}
+.kgviz .kglow{fill:#8b5cf6;filter:blur(14px);transform-box:fill-box;transform-origin:center;animation:kgglow 3.6s ease-in-out infinite}
+.kgviz .kcore{fill:url(#kgcore);transform-box:fill-box;transform-origin:center;animation:kgcorepulse 3.6s ease-in-out infinite}
+.kgviz .xline{stroke:var(--line-2);stroke-width:1.2;fill:none;stroke-dasharray:4 5;opacity:.5}
+.kgviz .xpkt{fill:#a78bfa}
+.kgviz .xlbl{fill:var(--fg-mut);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-anchor:middle}
+.kgquote{text-align:center;font-family:var(--disp);font-weight:700;font-size:clamp(19px,2.6vw,28px);letter-spacing:-.01em;color:var(--steel);max-width:none;margin:24px auto 8px;line-height:1.25}
+.kgsub{text-align:center;color:var(--fg-mut);font-size:14.5px;line-height:1.6;max-width:64ch;margin:0 auto;padding-bottom:6px}
 .kgviz .pkt,.stviz .pkt{fill:var(--accent)}
 .kgviz .lbl,.stviz .lbl{fill:var(--fg-mut);font-family:var(--mono);font-size:12px;text-anchor:middle}
 .kgviz .lbl.hl,.stviz .lbl.hl{fill:var(--fg)}
@@ -329,9 +334,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 .stviz .scan{fill:var(--accent);opacity:.16;animation:stscan 3.4s ease-in-out infinite}
 @keyframes kgflow{to{stroke-dashoffset:-24}}
 @keyframes kgpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes kgglow{0%,100%{transform:scale(1);opacity:.28}50%{transform:scale(1.12);opacity:.5}}
+@keyframes kgcorepulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @keyframes stwave{0%{transform:scale(.35);opacity:.7}80%{opacity:0}100%{transform:scale(1.7);opacity:0}}
 @keyframes stscan{0%,100%{transform:translateX(0)}50%{transform:translateX(264px)}}
-@media(prefers-reduced-motion:reduce){.kgviz *,.stviz *{animation:none!important}.kgviz .pkt,.stviz .pkt,.stviz .wave{display:none}}
+@media(prefers-reduced-motion:reduce){.kgviz *,.stviz *{animation:none!important}.kgviz .pkt,.kgviz .xpkt,.stviz .pkt,.stviz .wave{display:none}}
 /* ---------- gpu-microcloud: distributed mesh ---------- */
 .mcwrap{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(120% 130% at 50% 0%,var(--surface-2),var(--surface));padding:14px;margin-top:6px;overflow:hidden}
 .mcviz{display:block;width:100%;height:auto}

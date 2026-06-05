@@ -240,7 +240,7 @@ for s in SOL: page(B,"solutions",s[0],s[1],"Solutions",s[2],s[3],s[4],s[5],s[6],
 # ----- PLATFORM -----
 PLATP=[
  ("edge-data-fabric","Platform · Nexus","Edge Data <span class='serif' style='color:var(--steel)'>Fabric</span>",
-  "A domain ontology, a knowledge graph and vector memory — one living context layer for everything you know. Custom models read your documents, telemetry and records, construct a typed graph of entities and relationships, and embed it for hybrid retrieval. Domain fine-tuned agents reason over it, and your teams query it in plain language. It grows continuously, versions every fact, and runs entirely on-prem.",
+  "Unovie helps you own your enterprise context foundation — on your terms, with your data — to power the AI-native initiatives ahead. A domain ontology, a knowledge graph and vector memory become one living model of your world: you can buy the models and the agents, but the context — the boundary that makes you a coherent system — is yours to build, woven from open standards, on-prem. Custom models read your documents, telemetry and records into a typed graph; agents reason over it; your teams query it in plain language.",
   [("ontology","domain-modelled"),("graph<span class='s'>+vector</span>","hybrid recall"),("0<span class='o'>B</span>","egress · on-prem")],
   ("Context that compounds",[("/ontology","A domain ontology","Your world modelled as typed entities and relationships — the who, what, when, where and why — so context is structured, not guessed.",["typed","relationships","semantic"]),
    ("/graph","Knowledge graph + vector","A graph store and vector memory side by side: subgraph traversal for structure, dense and sparse embeddings for meaning, fused into one answer.",["graph","vector","hybrid"]),
@@ -285,14 +285,38 @@ def platx(arch_title, arch_cards, num_title, specs):
     return (f'<section><div class="wrap">{shead("03","Architecture",arch_title)}{disc(arch_cards)}</div></section>'
             f'<section><div class="wrap">{shead("04","By the numbers",num_title)}{metrics(specs)}</div></section>')
 
-KG_SVG = """<svg class="kgviz" viewBox="0 0 1000 460" role="img" aria-label="Animated knowledge graph: documents, telemetry and records become typed nodes and edges around a domain ontology">
-<line class="edge stl" x1="500" y1="230" x2="500" y2="80"/><line class="edge lit" x1="500" y1="230" x2="170" y2="120"/><line class="edge lit" x1="500" y1="230" x2="830" y2="120"/><line class="edge" x1="500" y1="230" x2="140" y2="350"/><line class="edge stl" x1="500" y1="230" x2="860" y2="350"/><line class="edge" x1="500" y1="230" x2="350" y2="410"/><line class="edge lit" x1="500" y1="230" x2="650" y2="410"/><line class="edge" x1="170" y1="120" x2="300" y2="200"/><line class="edge" x1="300" y1="200" x2="500" y2="230"/><line class="edge" x1="830" y1="120" x2="700" y2="200"/><line class="edge" x1="700" y1="200" x2="500" y2="230"/><line class="edge" x1="350" y1="410" x2="420" y2="330"/><line class="edge" x1="650" y1="410" x2="580" y2="330"/><line class="edge" x1="170" y1="120" x2="140" y2="350"/><line class="edge" x1="830" y1="120" x2="860" y2="350"/>
-<circle class="pkt" r="4"><animateMotion dur="2.4s" repeatCount="indefinite" path="M170,120 L500,230"/></circle><circle class="pkt" r="4"><animateMotion dur="2.8s" begin=".6s" repeatCount="indefinite" path="M830,120 L500,230"/></circle><circle class="pkt" r="4"><animateMotion dur="2.6s" begin="1.1s" repeatCount="indefinite" path="M500,80 L500,230"/></circle><circle class="pkt" r="4"><animateMotion dur="3s" begin=".3s" repeatCount="indefinite" path="M650,410 L500,230"/></circle>
-<circle class="sm" cx="300" cy="200" r="6" style="animation-delay:.2s"/><circle class="sm" cx="700" cy="200" r="6" style="animation-delay:.9s"/><circle class="sm" cx="420" cy="330" r="6" style="animation-delay:.5s"/><circle class="sm" cx="580" cy="330" r="6" style="animation-delay:1.3s"/>
-<circle class="node" cx="170" cy="120" r="18" style="animation-delay:0s"/><circle class="node stl" cx="830" cy="120" r="18" style="animation-delay:.7s"/><circle class="node" cx="140" cy="350" r="18" style="animation-delay:1s"/><circle class="node stl" cx="860" cy="350" r="18" style="animation-delay:.4s"/><circle class="node" cx="350" cy="410" r="18" style="animation-delay:1.4s"/><circle class="node" cx="650" cy="410" r="18" style="animation-delay:.2s"/><circle class="node stl" cx="500" cy="80" r="18" style="animation-delay:.9s"/>
-<circle class="hub" cx="500" cy="230" r="34"/>
-<text class="lbl hl" x="500" y="234">Ontology</text><text class="lbl" x="500" y="56">Source</text><text class="lbl" x="170" y="90">Document</text><text class="lbl" x="830" y="90">Telemetry</text><text class="lbl" x="140" y="386">Records</text><text class="lbl" x="860" y="386">Vector</text><text class="lbl" x="350" y="446">Entity</text><text class="lbl" x="650" y="446">Relation</text>
-</svg>"""
+import math as _mth
+def _pt(r,deg):
+    a=_mth.radians(deg); return (round(500+r*_mth.cos(a),1), round(300+r*_mth.sin(a),1))
+_kp=['<svg class="kgviz" viewBox="0 0 1000 640" role="img" aria-label="An ontology core wrapped in a living knowledge graph and a context membrane of ontology, identifiers, rules, meaning and processes; external forces (market, customers, change, regulation, competitors, exceptions, attackers, agents) flow in at the gates. Your context is your membrane.">',
+     '<defs><radialGradient id="kgcore" cx="50%" cy="42%" r="62%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="55%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6d28d9"/></radialGradient></defs>']
+# external forces flowing inward toward the membrane
+for _i,(_nm,_ang) in enumerate([("Market",-90),("Customers",-45),("Attackers",0),("Regulation",45),("Agents",90),("Exceptions",135),("Competitors",180),("Change",-135)]):
+    _ax,_ay=_pt(250,_ang); _bx,_by=_pt(202,_ang); _lx,_ly=_pt(274,_ang)
+    _kp.append(f'<line class="xline" x1="{_ax}" y1="{_ay}" x2="{_bx}" y2="{_by}"/>')
+    _kp.append(f'<circle class="xpkt" r="3.5"><animateMotion dur="{round(2.0+0.13*_i,2)}s" begin="{round(0.12*_i,2)}s" repeatCount="indefinite" path="M{_ax},{_ay} L{_bx},{_by}"/></circle>')
+    _kp.append(f'<text class="xlbl" x="{_lx}" y="{_ly+4}">{_nm}</text>')
+# radial knowledge graph (web ring + spokes + nodes)
+_NODES=[_pt(118,_i*30-90) for _i in range(12)]
+for _i in range(12):
+    _x1,_y1=_NODES[_i]; _x2,_y2=_NODES[(_i+1)%12]; _kp.append(f'<line class="kweb" x1="{_x1}" y1="{_y1}" x2="{_x2}" y2="{_y2}"/>')
+for _x,_y in _NODES: _kp.append(f'<line class="kspoke" x1="500" y1="300" x2="{_x}" y2="{_y}"/>')
+for _i,(_x,_y) in enumerate(_NODES):
+    _kp.append(f'<circle class="knode" cx="{_x}" cy="{_y}" r="{10 if _i%2==0 else 6}" style="animation-delay:{round(_i*0.16,2)}s"/>')
+# glowing ontology core
+_kp.append('<circle class="kglow" cx="500" cy="300" r="46"/><circle class="kcore" cx="500" cy="300" r="40"/>')
+# membrane ring: 5 labeled segments (curved text)
+for _i,(_nm,_mid) in enumerate([("ONTOLOGY",-90),("IDENTIFIERS",-18),("RULES",54),("MEANING",126),("PROCESSES",198)]):
+    _x0,_y0=_pt(190,_mid-29); _x1,_y1=_pt(190,_mid+29)
+    _kp.append(f'<path class="memb" d="M{_x0},{_y0} A190,190 0 0 1 {_x1},{_y1}"/>')
+    if _mth.sin(_mth.radians(_mid))>0.2:
+        _px0,_py0=_pt(190,_mid+29); _px1,_py1=_pt(190,_mid-29); _sw=0
+    else:
+        _px0,_py0=_pt(190,_mid-29); _px1,_py1=_pt(190,_mid+29); _sw=1
+    _kp.append(f'<path id="kseg{_i}" d="M{_px0},{_py0} A190,190 0 0 {_sw} {_px1},{_py1}" fill="none"/>')
+    _kp.append(f'<text class="mlbl"><textPath href="#kseg{_i}" startOffset="50%">{_nm}</textPath></text>')
+_kp.append('</svg>')
+KG_SVG="".join(_kp)
 
 ESI_SVG = """<svg class="stviz" viewBox="0 0 1000 380" role="img" aria-label="Animated telecom and satellite media: feeds beamed to an edge GPU and scored across a grid of live streams">
 <circle class="wave" cx="150" cy="120" r="30" style="animation-delay:0s"/><circle class="wave" cx="150" cy="120" r="30" style="animation-delay:1s"/><circle class="wave" cx="150" cy="120" r="30" style="animation-delay:2s"/>
@@ -353,7 +377,7 @@ SEC_SVG = """<svg class="secviz" viewBox="0 0 1000 470" role="img" aria-label="F
 
 PLAT_EXTRA={
  "edge-data-fabric": (
-   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Knowledge graph</div><h2 class="rv">Context, <span class="serif" style="color:var(--steel)">connected.</span></h2></div><p class="lead rv">Every document, signal and record becomes a typed node; every relationship, an edge — assembled around a living domain ontology.</p></div><div class="kgwrap rv">' + KG_SVG + '</div></div></section>'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>The context membrane</div><h2 class="rv">Your context is your <span class="serif" style="color:var(--steel)">membrane.</span></h2></div><p class="lead rv">Your context is not a feature you bolt on — it is your model of your own world, the boundary that lets your organisation perceive, predict and act as one coherent system. An ontology core, a living knowledge graph, and a membrane of identifiers, rules, meaning and processes that lets the world in without losing what makes you you.</p></div><div class="kgwrap rv">' + KG_SVG + '<p class="kgquote rv">A context you can buy is a context your competitors can buy too.</p><p class="kgsub rv">You can buy the models. You can buy the agents. The context — the boundary that defines you — you build and own, woven from open standards, on your terms. Outsource it, and you become a component in a system someone else defines.</p></div></div></section>'
    + f'<section><div class="wrap">{shead("03","Architecture","How the graph is built")}'
    + disc([
      ("/parse","Custom extraction models","Document- and table-structure models parse PDFs, images and text; an LLM emits structured records that become typed nodes and edges.",["doc-parse","tables","LLM"]),

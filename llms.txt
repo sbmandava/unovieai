@@ -14,7 +14,7 @@
 - [Corporate-Travel Sales Intelligence](https://unovie.ai/solutions/corporate-travel-sales.html): An AI co-pilot for an airline corporate-sales team.
 
 ## Platform
-- [Edge Data Fabric](https://unovie.ai/platform/edge-data-fabric.html): A domain ontology, a knowledge graph and vector memory — one living context layer for everything you know.
+- [Edge Data Fabric](https://unovie.ai/platform/edge-data-fabric.html): Unovie helps you own your enterprise context foundation — on your terms, with your data — to power the AI-native initiatives ahead.
 - [Edge Streaming Intelligence](https://unovie.ai/platform/edge-streaming-analytics.html): Real-time vision and audio intelligence over live streams, at fleet scale.
 - [GPU MicroCloud](https://unovie.ai/platform/gpu-microcloud.html): We stand up a full private cloud on your floor: racks of edge GPUs and servers, software-defined storage, a 10G fabric and a Kubernetes control plane — all on-prem.
 - [GPU EdgeGateway](https://unovie.ai/platform/gpu-edgegateway.html): An agent-first, signal-driven gateway — one OpenAI-compatible endpoint that routes every request by intent, modality, cost and privacy across a mesh of local, private and frontier models, runs agents and tools in sandboxed runtimes governed by policy, and learns which path is best.
