@@ -68,8 +68,8 @@ header.nav.stuck{background:rgba(11,10,9,.72);backdrop-filter:blur(14px) saturat
 .logo{height:24px;width:auto;display:block}
 header.nav .logo{height:40px}
 /* flying paper-plane background — hero, AI Engineering, Solutions, Platform */
-.hero,#engineering,#accelerators,#platform{position:relative;overflow:hidden}
-.hero>.wrap,#engineering>.wrap,#accelerators>.wrap,#platform>.wrap{position:relative;z-index:1}
+.hero,#engineering,#accelerators,#platform,.phero{position:relative;overflow:hidden}
+.hero>.wrap,#engineering>.wrap,#accelerators>.wrap,#platform>.wrap,.phero>.wrap{position:relative;z-index:1}
 .planebg{position:absolute;inset:0;z-index:0;pointer-events:none}
 .planebg svg{width:100%;height:100%;display:block}
 .uplane{opacity:.6}
@@ -82,7 +82,15 @@ header.nav .logo{height:40px}
 .shipfly{position:absolute;bottom:120px;left:0;width:210px;z-index:0;pointer-events:none;animation:shipcross 240s linear infinite}
 .shipfly svg{width:100%;height:auto;display:block}
 @keyframes shipcross{from{transform:translateX(0)}to{transform:translateX(100vw)}}
-@media(prefers-reduced-motion:reduce){.planebg,.shipfly{display:none}}
+.ngbg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.ngbg .ngviz{width:100%;height:100%;display:block}
+.ngviz .ngedge{stroke:var(--steel);stroke-width:1.2;fill:none;stroke-dasharray:4 7;opacity:.5;animation:kgflow 3.4s linear infinite}
+.ngviz .ngdot{fill:var(--surface);stroke:var(--steel);stroke-width:1.8;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.6s ease-in-out infinite}
+.ngviz .ngdot.ac{stroke:var(--accent)}
+.ngviz .ngdot.hub{stroke-width:2.4}
+.ngviz .pkt{fill:var(--steel)}
+.ngviz .pkt.ac{fill:var(--accent)}
+@media(prefers-reduced-motion:reduce){.planebg,.shipfly,.ngbg{display:none}}
 .navlinks{display:flex;align-items:center;gap:34px}
 .navlinks a{font-size:14.5px;color:var(--fg-mut);font-weight:500;position:relative;padding:6px 0;transition:color .2s}
 .navlinks a:hover{color:var(--fg)}
