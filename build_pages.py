@@ -484,6 +484,11 @@ PLAT_EXTRA={
    + f'<section><div class="wrap">{shead("05","By the numbers","Governed like production")}'
    + metrics([("&lt;1<span class='o'>ms</span>","signal → decision"),("~90<span class='o'>%</span>","cached-token discount"),("least cost","per-turn path"),("shadow→activate","policy lifecycle")])
    + '</div></section>'
+   + '<section><div class="wrap">' + shead("06","Further reading","Whitepapers for your team","The architecture and the economics behind this platform — read in the browser or export to PDF.")
+   + '<div class="disc">'
+   + '<a class="dcard rv" href="../gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/economics</div><h3>The Edge-Native Inference Gateway</h3><p>For infrastructure leaders: turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.</p><div class="spec"><span class="chip">predictable cost</span><span class="chip">edge-native</span><span class="chip">PDF</span></div></a>'
+   + '<a class="dcard rv" href="../resources/edge-ai-whitepaper.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/doctrine</div><h3>Training Without Retraining</h3><p>The frozen-base doctrine: adapting custom models on the edge through context and self-verification, not weight updates.</p><div class="spec"><span class="chip">frozen-base</span><span class="chip">on-device</span><span class="chip">PDF</span></div></a>'
+   + '</div></div></section>'
  ),
  "edge-security-intelligence": (
    '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Edge defense</div><h2 class="rv">Threats stop <span class="serif" style="color:var(--steel)">at the edge.</span></h2></div><p class="lead rv">Five nested layers — business contexts at the core, then business data, edge agents and sensors — wrapped in one shield. DDoS floods and intrusions are detected and deflected before they ever reach the core.</p></div><div class="secwrap rv">' + SEC_SVG + '</div></div></section>'

@@ -14,7 +14,7 @@
  },
  "generated_by": "build_pages.py",
  "lastmod": "2026-06-05",
- "count": 122,
+ "count": 123,
  "records": [
   {
    "id": "home#1",
@@ -706,6 +706,14 @@
   },
   {
    "id": "platform_gpu-edgegateway#8",
+   "url": "https://unovie.ai/platform/gpu-edgegateway.html",
+   "type": "platform",
+   "title": "GPU EdgeGateway — Unovie.AI",
+   "section": "Whitepapers for your team",
+   "text": "06 — Further reading Whitepapers for your team The architecture and the economics behind this platform — read in the browser or export to PDF. /economics The Edge-Native Inference Gateway For infrastructure leaders: turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge. predictable cost edge-native PDF /doctrine Training Without Retraining The frozen-base doctrine: adapting custom models on the edge through context and self-verification, not weight updates. frozen-base on-device PDF"
+  },
+  {
+   "id": "platform_gpu-edgegateway#9",
    "url": "https://unovie.ai/platform/gpu-edgegateway.html",
    "type": "platform",
    "title": "GPU EdgeGateway — Unovie.AI",

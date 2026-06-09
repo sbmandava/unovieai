@@ -336,6 +336,9 @@ Control plane · data plane A self-improving router. A control plane governs pol
 ## Governed like production
 05 — By the numbers Governed like production <1 ms signal → decision ~90 % cached-token discount least cost per-turn path shadow→activate policy lifecycle
 
+## Whitepapers for your team
+06 — Further reading Whitepapers for your team The architecture and the economics behind this platform — read in the browser or export to PDF. /economics The Edge-Native Inference Gateway For infrastructure leaders: turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge. predictable cost edge-native PDF /doctrine Training Without Retraining The frozen-base doctrine: adapting custom models on the edge through context and self-verification, not weight updates. frozen-base on-device PDF
+
 ## Serve models safely.
 Let's build Serve models safely. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions
 
