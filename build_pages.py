@@ -595,7 +595,7 @@ def devpanel(s, first):
 _dtabs="".join(f'<button class="tab{" active" if i==0 else ""}" id="tab-{_devkey(s[0])}" data-tab="{_devkey(s[0])}" role="tab" aria-selected="{"true" if i==0 else "false"}" data-cursor>{re.sub("<[^>]+>","",s[2])}</button>' for i,s in enumerate(DEVP))
 _dpanels="".join(devpanel(s,i==0) for i,s in enumerate(DEVP))
 _devhead=HEAD("","Device Platform — NVIDIA, Qualcomm and AMD edge AI — Unovie.AI","NVIDIA AGX Thor and DGX Spark, Qualcomm QCS6490 and AMD Ryzen AI Max+ 395 — edge devices we build, optimize and operate end-to-end, on hardware you own.")
-_devbody=f"""{NAV("")}
+_devbody=f"""{NGBG}{NAV("")}
 <section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Device Platform</span></div>
   <div class="tag rv">Device Platform</div>
