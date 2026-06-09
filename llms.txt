@@ -29,6 +29,7 @@
 ## Resources
 - [Edge AI Models — Field Guide](https://unovie.ai/resources/edge-ai-models.html): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper](https://unovie.ai/resources/edge-ai-whitepaper.html): adapting custom models on the edge without retraining.
+- [Edge-Native Inference Gateway — Whitepaper](https://unovie.ai/gpu-edgegateway-whitepaper.html): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
 
 ## Company
 - [About](https://unovie.ai/about.html): an AI-engineering studio for Industry 4.0, built in Austin, Texas.

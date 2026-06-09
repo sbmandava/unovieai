@@ -93,6 +93,7 @@ def NAV(base):
     <div class="drop"><button data-cursor>Research ▾</button><div class="menu">
       <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
       <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
+      <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost on owned silicon</span></span></a>
     </div></div>
   </nav>
   <a class="navcta" href="{h}#contact" data-cursor>Start a project <span class="ar">→</span></a>
@@ -123,7 +124,7 @@ def FOOTER(base):
   <div class="fcol"><h4>Device Platform</h4>
     <a href="{base}device-platform.html#agx-thor">NVIDIA AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a><a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a></div>
+    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">EdgeGateway Economics</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 
@@ -650,14 +651,14 @@ LASTMOD="2026-06-05"   # bump when content materially changes (kept fixed for id
 def _u(path):  # path relative to site root; "" = homepage
     return SITE + "/" + path
 _pages=["", "about.html", "contact.html",
-        "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html"]
+        "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html", "gpu-edgegateway-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
 _pages += ["device-platform.html"]
 def _prio(p):
     if p=="": return "1.0"
     if p=="device-platform.html" or p.startswith(("solutions/","platform/")): return "0.9"
-    if p.startswith("resources/"): return "0.6"
+    if p.startswith("resources/") or p=="gpu-edgegateway-whitepaper.html": return "0.6"
     return "0.7"
 _rows="\n".join(
     f'  <url><loc>{_u(p)}</loc><lastmod>{LASTMOD}</lastmod><changefreq>monthly</changefreq><priority>{_prio(p)}</priority></url>'
@@ -681,7 +682,7 @@ def _firstsent(t):
     t=_strip(t); return re.split(r'(?<=[.!?])\s',t,1)[0]
 def _ptype(p):
     return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/") else "device" if p=="device-platform.html"
-            else "resource" if p.startswith("resources/") else "company")
+            else "resource" if p.startswith("resources/") or p=="gpu-edgegateway-whitepaper.html" else "company")
 # chunked records, one per <section>, from the rendered HTML (nav/footer/scripts/svg stripped)
 records=[]
 for p in _pages:
@@ -744,6 +745,7 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 ## Resources
 - [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper]({_u('resources/edge-ai-whitepaper.html')}): adapting custom models on the edge without retraining.
+- [Edge-Native Inference Gateway — Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
 
 ## Company
 - [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.

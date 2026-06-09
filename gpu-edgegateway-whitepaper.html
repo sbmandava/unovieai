@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-590ZL8SE2M"></script>
+<script data-ga>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-590ZL8SE2M');</script>
+<link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="author" content="Suresh Mandava (suresh@unovie.com)">
+<meta name="description" content="Why an edge-native inference gateway on owned silicon turns unpredictable, metered AI opex into fixed, predictable cost for industrial edge use cases. A whitepaper for infrastructure leaders.">
+<title>The Edge-Native Inference Gateway — Predictable AI Economics for the Industrial Edge</title>
+<script>(function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>
+<style>
+  :root{
+    --bg:#ffffff; --panel:#f7f9fc; --ink:#11171f; --soft:#3d4a5c; --muted:#65728a;
+    --line:#e2e8f1; --line2:#cdd7e5; --acc:#1f7a5a; --acc2:#0f5e44; --blue:#1f6feb;
+    --code-bg:#0e1620; --code-ink:#cdd9e5; --warn:#9a6a00; --warnbg:#fff7e6;
+    --maxw:820px;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1117; --panel:#141b24; --ink:#e8eef6; --soft:#c2cdda; --muted:#93a1b4;
+    --line:#222c38; --line2:#33414f; --acc:#5fd0a2; --acc2:#8ee3bd; --blue:#6ea8ff;
+    --code-bg:#0a0f15; --code-ink:#cdd9e5; --warn:#e0b057; --warnbg:#241b08;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px 120px}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.hero{padding:64px 0 30px;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc)}
+  h1{font-size:34px;line-height:1.18;margin:14px 0 12px;letter-spacing:-.4px;font-weight:850}
+  .sub{font-size:18px;color:var(--soft);line-height:1.5;max-width:740px;margin:0}
+  .byline{margin-top:22px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px}
+  .byline b{color:var(--soft);font-weight:700}
+
+  .abstract{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:30px 0}
+  .abstract h4{margin:0 0 8px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc)}
+  .abstract p{margin:0;color:var(--soft);font-size:15.5px}
+
+  nav.toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:26px 0}
+  nav.toc h4{margin:0 0 10px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+  nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:32px}
+  nav.toc li{margin:4px 0;font-size:14.5px;break-inside:avoid}
+  nav.toc a{color:var(--soft)}
+
+  h2{font-size:24px;margin:50px 0 4px;letter-spacing:-.3px;font-weight:820;scroll-margin-top:20px}
+  h2 .n{color:var(--acc);font-weight:850;margin-right:10px}
+  h3{font-size:18px;margin:30px 0 4px;font-weight:760;color:var(--ink)}
+  p{margin:14px 0}
+  p,li{color:var(--soft)}
+  strong,b{color:var(--ink);font-weight:680}
+  em{color:var(--soft)}
+  ul,ol{padding-left:22px}
+  li{margin:7px 0}
+  hr{border:0;border-top:1px solid var(--line);margin:46px 0}
+  .lead{font-size:17.5px;color:var(--soft)}
+
+  .principle{border:1px solid var(--line2);border-left:4px solid var(--acc);background:var(--panel);
+    border-radius:0 12px 12px 0;padding:14px 20px;margin:22px 0}
+  .principle .tag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--acc)}
+  .principle p{margin:6px 0 0;color:var(--ink);font-weight:600;font-size:15.5px}
+  .note{border:1px solid var(--line2);border-left:4px solid var(--warn);background:var(--warnbg);
+    border-radius:0 12px 12px 0;padding:12px 18px;margin:22px 0;font-size:14.5px;color:var(--soft)}
+  .note b{color:var(--ink)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .stat .v{font-size:24px;font-weight:850;color:var(--ink);letter-spacing:-.5px}
+  .stat .v small{font-size:14px;color:var(--acc);font-weight:700}
+  .stat .l{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.4}
+
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14.5px}
+  caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);margin-bottom:8px;font-style:italic}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{color:var(--ink);background:var(--panel);font-weight:720;border-bottom:1px solid var(--line2)}
+  tbody tr:hover td{background:var(--panel)}
+  td b{color:var(--ink)}
+
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:var(--panel);
+    border:1px solid var(--line);border-radius:5px;padding:.5px 5px;color:var(--acc2)}
+  .refs{font-size:13.5px}
+  .refs ol{padding-left:26px}
+  .refs li{margin:9px 0;color:var(--soft)}
+  .refs li span{color:var(--muted)}
+  footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+  .toolbar{position:fixed;top:16px;right:18px;z-index:30;display:flex;gap:8px}
+  .tbtn{height:40px;border-radius:10px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);
+    cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:0 13px;font:600 13.5px/1 inherit}
+  .tbtn.icon{width:40px;padding:0}
+  .tbtn:hover{border-color:var(--acc);color:var(--acc)}
+  .tbtn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .tbtn .moon{display:none}
+  :root[data-theme="dark"] .tbtn .sun{display:none}
+  :root[data-theme="dark"] .tbtn .moon{display:block}
+
+  figure{margin:30px 0}
+  figure svg{display:block;width:100%;height:auto;background:var(--bg);border:1px solid var(--line2);border-radius:14px;padding:18px 16px}
+  figcaption{font-size:12.5px;color:var(--muted);margin-top:10px;font-style:italic;text-align:center;line-height:1.5}
+
+  @media (max-width:640px){ nav.toc ol{columns:1} h1{font-size:27px} .stats{grid-template-columns:repeat(2,1fr)} .tbtn span{display:none} .tbtn{padding:0;width:40px} }
+  @media print{
+    .toolbar{display:none} a{color:inherit}
+    body{font-size:10.5pt;background:#fff;color:#000}
+    :root{--bg:#fff;--ink:#000;--soft:#222;--muted:#444;--panel:#f4f6f9;--line:#ccc;--line2:#bbb;--acc:#0f5e44}
+    h2{page-break-after:avoid} table,figure,.principle,.stats,.note{page-break-inside:avoid}
+    header.hero{padding-top:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="tbtn" onclick="window.print()" title="Download / print as PDF">
+    <svg viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+    <span>Download PDF</span>
+  </button>
+  <button class="tbtn icon" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light / dark">
+    <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Technical Whitepaper · Edge-AI Economics</div>
+  <h1>The Edge-Native Inference Gateway: Turning Unpredictable AI Opex into Fixed, Predictable Cost</h1>
+  <p class="sub">For infrastructure leaders. How an inference-native routing gateway on hardware you own converts
+  metered, unbounded cloud-inference spend into capex-based, predictable cost — without giving up capability,
+  safety, latency, or data control. Written for the industrial edge.</p>
+  <div class="byline">
+    <span><b>Suresh Mandava</b> · <a href="mailto:suresh@unovie.com">suresh@unovie.com</a></span>
+    <span><b>Unovie.AI</b> · EdgeAI Context Engineering</span>
+    <span>Revision 1.0 · June 2026</span>
+    <span>Reference hardware: NVIDIA DGX Spark · AMD Ryzen AI Max+ 395</span>
+  </div>
+</header>
+
+<div class="abstract">
+  <h4>Abstract</h4>
+  <p>Metered cloud inference is the fastest-growing and least predictable line in many enterprise AI budgets: cost
+  scales with every token, every retry, and every agent loop, and the bill arrives after the spend is already
+  committed. We argue that for the <b>industrial edge</b> — factories, depots, substations, vehicles, regulated
+  sites — the durable answer is an <b>edge-native inference gateway</b>: own the silicon, run the models on-prem, and
+  put a single inference-native gateway in front of them that decides <em>which</em> model handles each request,
+  reuses cached computation, sends only the context a turn needs, and enforces safety and policy inline. This converts
+  a variable opex stream into a <b>fixed capex plus near-electricity marginal cost</b>, makes spend
+  <b>predictable and bounded</b>, keeps data on-premises, and removes the cloud round-trip. We describe the
+  architecture for the CTO, the cost model for the infrastructure VP, the four token-economics levers that bend the
+  curve, a three-year TCO comparison, and a deployment blueprint on owned reference hardware.</p>
+</div>
+
+<nav class="toc" aria-label="Table of contents">
+  <h4>Contents</h4>
+  <ol>
+    <li><a href="#problem">The unpredictable-opex problem</a></li>
+    <li><a href="#arch">Architecture: the edge-native gateway</a></li>
+    <li><a href="#cto">Why edge-native — the CTO view</a></li>
+    <li><a href="#levers">Four token-economics levers</a></li>
+    <li><a href="#econ">The economics — the Infra-VP view</a></li>
+    <li><a href="#hw">Reference hardware on owned silicon</a></li>
+    <li><a href="#tco">A three-year TCO comparison</a></li>
+    <li><a href="#usecases">Industrial edge use cases</a></li>
+    <li><a href="#blueprint">Deployment blueprint</a></li>
+    <li><a href="#gov">Governance, safety &amp; reversibility</a></li>
+    <li><a href="#reco">Recommendations &amp; checklist</a></li>
+    <li><a href="#refs">References</a></li>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<h2 id="problem"><span class="n">1</span>The unpredictable-opex problem</h2>
+<p class="lead">AI moved from a pilot line item to a production dependency, and the bill followed. The trouble is not
+only that it is large — it is that it is <em>unbounded and arrives in arrears.</em></p>
+<p>Metered inference prices the wrong thing for an operator. You are billed per token, so cost scales with prompt
+length, retries, multi-turn agent loops, tool output pasted back into context, and traffic you do not control. A
+single agent that "thinks harder" or re-reads a large document can multiply the cost of an outcome by 10× with no
+change in business value. Budgets are set annually; token spend compounds daily. The result is a line item that
+finance cannot forecast and infrastructure cannot cap.</p>
+<p>For the <b>industrial edge</b> three more constraints stack on top of cost:</p>
+<ul>
+  <li><b>Data gravity and sovereignty.</b> Telemetry, video, control logs and process data are large, sensitive, and
+  often regulated. Shipping them to a cloud model is a governance liability and an egress bill.</li>
+  <li><b>Latency and availability.</b> A line, a vehicle or a substation cannot wait on a round-trip to a region, and
+  cannot stop when the link does.</li>
+  <li><b>Determinism.</b> Operations need the same answer, at the same latency, at the same cost — not a number that
+  drifts with a vendor's pricing or capacity.</li>
+</ul>
+<div class="principle"><div class="tag">The thesis</div>
+  <p>Stop renting inference by the token for steady-state industrial workloads. Own the silicon, run the models where
+  the data is, and govern every request through one gateway — so cost becomes capex you control, not opex you discover.</p>
+</div>
+
+<!-- 2 -->
+<h2 id="arch"><span class="n">2</span>Architecture: the edge-native inference gateway</h2>
+<p class="lead">The gateway is not a proxy bolted in front of a model. It is the control point where workload, routing,
+serving, caching and policy meet — designed from the inference engine out, not around it.</p>
+<p>Every request enters through one <b>routing contract</b>: signals become projections, projections drive a decision,
+and the decision chooses the model — across a mesh of local small models, on-prem large models, and (only when it
+genuinely pays) an external frontier API. The same gateway protects reusable computation, trims context to the
+evidence a turn needs, and runs safety and policy inline. Because it is co-designed with a high-throughput,
+memory-efficient serving engine, it follows the engine's optimization rules instead of treating every call as generic
+chat traffic.</p>
+
+<figure>
+<svg viewBox="0 0 920 340" role="img" aria-label="Edge-native inference gateway architecture: workloads enter a gateway that routes, caches, selects context and enforces safety, then serves from a pool of models on owned silicon, with an optional frontier API used only when it pays.">
+  <!-- workloads -->
+  <rect x="24" y="60" width="170" height="220" rx="12" fill="var(--panel)" stroke="var(--line2)"/>
+  <text x="109" y="48" text-anchor="middle" fill="var(--muted)" font-size="12" font-family="sans-serif" font-weight="700">EDGE WORKLOADS</text>
+  <g font-family="sans-serif" font-size="12.5" fill="var(--ink)" text-anchor="middle">
+    <rect x="44" y="80" width="130" height="40" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="109" y="104">Apps &amp; agents</text>
+    <rect x="44" y="130" width="130" height="40" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="109" y="154">OT &amp; sensors</text>
+    <rect x="44" y="180" width="130" height="40" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="109" y="204">Vision streams</text>
+    <rect x="44" y="230" width="130" height="40" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="109" y="254">Control room</text>
+  </g>
+  <!-- gateway -->
+  <rect x="300" y="48" width="300" height="244" rx="14" fill="var(--panel)" stroke="var(--acc)" stroke-width="2"/>
+  <text x="450" y="36" text-anchor="middle" fill="var(--acc)" font-size="13" font-family="sans-serif" font-weight="800">INFERENCE GATEWAY</text>
+  <g font-family="sans-serif" font-size="12.5" fill="var(--ink)" text-anchor="middle">
+    <rect x="320" y="66" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="89">Signal &#8594; decision routing</text>
+    <rect x="320" y="112" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="135">Prefix-cache reuse</text>
+    <rect x="320" y="158" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="181">Context selection</text>
+    <rect x="320" y="204" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="227">Safety &amp; policy</text>
+  </g>
+  <rect x="320" y="252" width="260" height="30" rx="8" fill="var(--bg)" stroke="var(--line2)" stroke-dasharray="3 4"/>
+  <text x="450" y="272" text-anchor="middle" fill="var(--muted)" font-size="11.5" font-family="sans-serif">metering · audit · shadow / revert</text>
+  <!-- model pool -->
+  <rect x="706" y="86" width="190" height="194" rx="12" fill="var(--panel)" stroke="var(--line2)"/>
+  <text x="801" y="74" text-anchor="middle" fill="var(--muted)" font-size="12" font-family="sans-serif" font-weight="700">MODEL POOL · OWNED SILICON</text>
+  <g font-family="sans-serif" font-size="12" fill="var(--ink)" text-anchor="middle">
+    <rect x="722" y="100" width="158" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="801" y="123">Local small models</text>
+    <rect x="722" y="146" width="158" height="38" rx="8" fill="var(--bg)" stroke="var(--acc)"/><text x="801" y="169">On-prem large model</text>
+    <rect x="722" y="192" width="158" height="38" rx="8" fill="var(--bg)" stroke="var(--acc)"/><text x="801" y="215">Edge inference node</text>
+    <rect x="722" y="238" width="158" height="32" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="801" y="259">Semantic cache</text>
+  </g>
+  <!-- frontier optional -->
+  <rect x="706" y="14" width="190" height="46" rx="10" fill="var(--bg)" stroke="var(--muted)" stroke-dasharray="4 4"/>
+  <text x="801" y="33" text-anchor="middle" fill="var(--muted)" font-size="11.5" font-family="sans-serif" font-weight="700">Frontier API</text>
+  <text x="801" y="49" text-anchor="middle" fill="var(--muted)" font-size="10.5" font-family="sans-serif">only when it pays</text>
+  <!-- arrows -->
+  <g stroke="var(--acc)" stroke-width="2" fill="none">
+    <path d="M194,170 L298,170" marker-end="url(#ah)"/>
+    <path d="M600,170 L704,170" marker-end="url(#ah)"/>
+  </g>
+  <path d="M600,120 C650,90 660,60 704,42" stroke="var(--muted)" stroke-width="1.6" fill="none" stroke-dasharray="4 4" marker-end="url(#ahm)"/>
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--acc)"/></marker>
+    <marker id="ahm" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/></marker>
+  </defs>
+</svg>
+<figcaption>Figure 1 — One gateway between edge workloads and a pool of models on owned silicon. It routes by signal,
+reuses cached prefixes, selects context, and enforces safety; the frontier path is reserved for the rare request that
+justifies it.</figcaption>
+</figure>
+
+<!-- 3 -->
+<h2 id="cto"><span class="n">3</span>Why edge-native — the CTO view</h2>
+<p class="lead">Edge-native is an architectural choice before it is a cost choice. It changes where data lives, where
+decisions happen, and what you can guarantee.</p>
+<table>
+  <thead><tr><th>Property</th><th>Cloud-metered inference</th><th>Edge-native gateway on owned silicon</th></tr></thead>
+  <tbody>
+    <tr><td><b>Data path</b></td><td>Sensitive data egresses to a third party</td><td>Data stays on-prem; nothing leaves the boundary</td></tr>
+    <tr><td><b>Latency</b></td><td>Region round-trip + queue, variable</td><td>Local, deterministic, sub-network</td></tr>
+    <tr><td><b>Availability</b></td><td>Depends on the link and the vendor</td><td>Runs through link and provider outages</td></tr>
+    <tr><td><b>Sovereignty</b></td><td>Subject to external jurisdiction &amp; retention</td><td>Wholly within your governance domain</td></tr>
+    <tr><td><b>Reversibility</b></td><td>Vendor sets pricing, models, deprecations</td><td>You version, shadow-test and revert policy</td></tr>
+    <tr><td><b>Cost shape</b></td><td>Variable opex, billed in arrears</td><td>Fixed capex + near-electricity marginal cost</td></tr>
+  </tbody>
+</table>
+<p>The gateway is what makes "edge-native" operationally real rather than a pile of GPUs. It gives one place to set
+policy, one place to meter spend, one OpenAI- and Anthropic-compatible ingress so applications do not change, and one
+lifecycle (<code>shadow &#8594; activate &#8594; revert</code>) so routing never drifts silently. Capability is not
+sacrificed: hard requests still reach a large on-prem model, and the rare request that truly needs a frontier model
+can still take that path — by exception, under policy, with the cost attributed.</p>
+
+<!-- 4 -->
+<h2 id="levers"><span class="n">4</span>Four token-economics levers</h2>
+<p class="lead">Owning the silicon caps the <em>denominator</em> (you stop paying per token). The gateway shrinks the
+<em>numerator</em> — the work each outcome actually costs — with four compounding levers.</p>
+<table>
+  <thead><tr><th>Lever</th><th>Mechanism</th><th>Effect on cost-per-outcome</th></tr></thead>
+  <tbody>
+    <tr><td><b>Signal-driven routing</b></td><td>Each request is classified by intent, complexity, risk and modality; mechanical and easy turns go to small local models, and reasoning is invoked only when it pays.</td><td>Routed paths run at a small fraction of an always-large path</td></tr>
+    <tr><td><b>Prefix-cache discipline</b></td><td>Stable prompt prefixes, deterministic tool schemas and bounded, append-only context keep reusable prefixes intact across a long session.</td><td>Cached tokens are reused at a steep discount instead of recomputed every turn</td></tr>
+    <tr><td><b>Context selection</b></td><td>The gateway sends the evidence a turn needs — selected, bounded and compressed — rather than pasting whole documents and tool dumps.</td><td>Large reductions in prompt and tool-output tokens, with continuity preserved</td></tr>
+    <tr><td><b>Semantic caching</b></td><td>Semantically-equivalent requests reuse a prior answer instead of triggering fresh inference.</td><td>Repeat and near-repeat traffic costs nothing to serve</td></tr>
+  </tbody>
+</table>
+<div class="note"><b>Why this matters more on the edge.</b> Industrial workloads are highly repetitive — the same
+inspection prompt, the same maintenance query, the same shift handover — so cache reuse and small-model routing hit
+rates are high. The levers that look marginal in a chatbot are dominant in a plant.</div>
+
+<!-- 5 -->
+<h2 id="econ"><span class="n">5</span>The economics — the Infra-VP view</h2>
+<p class="lead">The job is not to minimize this month's invoice; it is to make next year's number <em>knowable</em>.
+Edge-native does that by changing the <em>shape</em> of the cost curve.</p>
+<div class="stats">
+  <div class="stat"><div class="v">Capex</div><div class="l">One-time, depreciable hardware you own — not a recurring meter</div></div>
+  <div class="stat"><div class="v">&#8776;&nbsp;kWh</div><div class="l">Marginal cost of an extra request approaches electricity</div></div>
+  <div class="stat"><div class="v">Fixed</div><div class="l">Spend is bounded by capacity, not by traffic or token length</div></div>
+  <div class="stat"><div class="v">0<small>&nbsp;egress</small></div><div class="l">No per-GB data egress, no cross-border transfer cost</div></div>
+</div>
+<p>Metered inference is a line that rises with usage and never flattens; every new agent, every longer prompt, every
+retry adds to it forever. Owned capacity is a step (the purchase) followed by a nearly flat line (power, space,
+maintenance). Past a modest, steady utilization the two curves cross — and beyond the crossover, every additional unit
+of work on owned silicon is effectively free relative to the meter.</p>
+
+<figure>
+<svg viewBox="0 0 720 360" role="img" aria-label="Cumulative-cost chart: metered cloud cost rises steeply and linearly with workload, while edge-native cost starts higher (capex) but stays nearly flat; the two cross at a break-even point, after which owned capacity is cheaper.">
+  <!-- axes -->
+  <line x1="64" y1="36" x2="64" y2="312" stroke="var(--line2)" stroke-width="1.5"/>
+  <line x1="64" y1="312" x2="680" y2="312" stroke="var(--line2)" stroke-width="1.5"/>
+  <text x="58" y="30" text-anchor="end" fill="var(--muted)" font-size="12" font-family="sans-serif">Cumulative cost</text>
+  <text x="676" y="332" text-anchor="end" fill="var(--muted)" font-size="12" font-family="sans-serif">Workload volume / time &#8594;</text>
+  <!-- cloud line -->
+  <polyline points="64,300 680,70" fill="none" stroke="var(--blue)" stroke-width="2.5"/>
+  <!-- edge line: capex step then flat-ish -->
+  <polyline points="64,300 64,212 680,168" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <!-- crossover -->
+  <circle cx="404" cy="176" r="5" fill="var(--ink)"/>
+  <line x1="404" y1="176" x2="404" y2="312" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="404" y="330" text-anchor="middle" fill="var(--muted)" font-size="11.5" font-family="sans-serif">break-even</text>
+  <!-- legend -->
+  <g font-family="sans-serif" font-size="12.5">
+    <line x1="420" y1="60" x2="450" y2="60" stroke="var(--blue)" stroke-width="2.5"/><text x="458" y="64" fill="var(--soft)">Metered cloud (variable opex)</text>
+    <line x1="420" y1="84" x2="450" y2="84" stroke="var(--acc)" stroke-width="2.5"/><text x="458" y="88" fill="var(--soft)">Edge-native (capex + power)</text>
+  </g>
+  <text x="74" y="206" fill="var(--acc)" font-size="11" font-family="sans-serif">capex step</text>
+</svg>
+<figcaption>Figure 2 — Illustrative cost shape. Metered inference rises without bound; owned capacity is a step then a
+near-flat line. Beyond break-even, extra work is effectively free relative to the meter. Exact crossover depends on
+utilization and token mix.</figcaption>
+</figure>
+
+<!-- 6 -->
+<h2 id="hw"><span class="n">6</span>Reference hardware on owned silicon</h2>
+<p class="lead">Predictable economics need predictable units. Two complementary, commodity-priced platforms cover the
+develop-and-serve lifecycle on hardware you keep on your floor.</p>
+<h3>NVIDIA DGX Spark — the on-prem development &amp; large-model node</h3>
+<p>A GB10 Grace Blackwell desktop supercomputer with <b>128&nbsp;GB of coherent unified memory</b> and roughly
+<b>1,000&nbsp;TFLOPS (FP4)</b> of AI compute — enough to prototype, fine-tune and serve models up to ~200B parameters
+locally, or ~405B across a linked pair over its built-in high-speed fabric. It runs the same container stack as the
+datacenter, so what you build here promotes to the edge unchanged.</p>
+<h3>AMD Ryzen AI Max+ 395 — the private inference node</h3>
+<p>A small, all-metal node fusing <b>16 Zen&nbsp;5 cores</b>, a Radeon&nbsp;8060S iGPU and an XDNA&nbsp;2 NPU for
+<b>~126&nbsp;TFLOPS</b> of platform AI, with <b>128&nbsp;GB of LPDDR5X-8000</b> — enough to keep 70B-class models
+resident and private. Dual 10GbE and dual USB4 let nodes cluster into a compute hub, so capacity scales by adding
+fixed-price units, not by raising a meter.</p>
+<div class="stats">
+  <div class="stat"><div class="v">128<small>&nbsp;GB</small></div><div class="l">Unified memory per node — large models stay resident, on-prem</div></div>
+  <div class="stat"><div class="v">200<small>B&#8594;405B</small></div><div class="l">Local model scale on a node, or a linked pair</div></div>
+  <div class="stat"><div class="v">70<small>B</small></div><div class="l">Class of model served privately on a single edge node</div></div>
+  <div class="stat"><div class="v">10GbE<small>·USB4</small></div><div class="l">Cluster fixed-price nodes into a private compute hub</div></div>
+</div>
+<div class="note"><b>Why two tiers.</b> Develop and fine-tune on the large node; serve steady-state traffic on a fleet
+of small nodes governed by the gateway. The same artifacts run on both, so there is one pipeline and one cost basis.</div>
+
+<!-- 7 -->
+<h2 id="tco"><span class="n">7</span>A three-year TCO comparison</h2>
+<p class="lead">An illustrative model for a single industrial site running a steady mix of copilots, vision triage and
+maintenance queries. Figures are directional — the point is the <em>shape</em>, not a quote.</p>
+<table>
+  <caption>Illustrative 3-year total cost of ownership for one industrial site (parameters, not a price quote).</caption>
+  <thead><tr><th>Dimension</th><th>Metered cloud inference</th><th>Edge-native gateway (owned)</th></tr></thead>
+  <tbody>
+    <tr><td><b>Upfront capex</b></td><td>~$0</td><td>One-time node fleet + setup (depreciable, resaleable)</td></tr>
+    <tr><td><b>Recurring cost</b></td><td>Per-token bill that grows with usage, retries and context</td><td>Power, space, maintenance, support — roughly flat</td></tr>
+    <tr><td><b>Marginal cost of +1 request</b></td><td>Full token price, every time</td><td>Approaches electricity once capacity exists</td></tr>
+    <tr><td><b>Data egress</b></td><td>Per-GB transfer for telemetry, video, documents</td><td>None — data never leaves the site</td></tr>
+    <tr><td><b>Budget predictability</b></td><td>Forecast error grows with adoption</td><td>Known within power and capacity envelopes</td></tr>
+    <tr><td><b>3-year trajectory</b></td><td>Rises every quarter; no natural ceiling</td><td>Step at year 0, near-flat thereafter</td></tr>
+    <tr><td><b>Exit / change cost</b></td><td>Re-platform on vendor pricing &amp; deprecations</td><td>Hardware retained; policy versioned and reversible</td></tr>
+  </tbody>
+</table>
+<div class="principle"><div class="tag">The infra-VP takeaway</div>
+  <p>For steady-state industrial workloads, edge-native turns "how much will AI cost next year?" from a forecast into a
+  capacity-planning question — the same discipline you already apply to compute, storage and network.</p>
+</div>
+
+<!-- 8 -->
+<h2 id="usecases"><span class="n">8</span>Industrial edge use cases</h2>
+<table>
+  <thead><tr><th>Use case</th><th>Why edge-native</th><th>Primary saving</th></tr></thead>
+  <tbody>
+    <tr><td><b>Vision QC on the line</b></td><td>High-rate video can't egress; needs sub-second local decisions</td><td>No egress; small-model routing on repetitive frames</td></tr>
+    <tr><td><b>Predictive maintenance</b></td><td>Continuous sensor streams, mostly normal; rare anomalies</td><td>Cache + cheap path for normal; reserve large model for anomalies</td></tr>
+    <tr><td><b>OT / IT security</b></td><td>Detection must run in the data path, on-prem, always-on</td><td>Local inference; no telemetry leaves the boundary</td></tr>
+    <tr><td><b>Field &amp; control-room copilots</b></td><td>Repetitive shift queries; must work offline and fast</td><td>High cache &amp; small-model hit rates; predictable cost</td></tr>
+    <tr><td><b>Regulated document &amp; agent automation</b></td><td>Sensitive records can't be sent to third-party models</td><td>Sovereignty; context selection trims long-document tokens</td></tr>
+  </tbody>
+</table>
+
+<!-- 9 -->
+<h2 id="blueprint"><span class="n">9</span>Deployment blueprint</h2>
+<ol>
+  <li><b>Develop on the large node.</b> Prototype, fine-tune and evaluate on the on-prem development supercomputer; keep models and data inside the boundary.</li>
+  <li><b>Promote unchanged.</b> Ship the same containers to a fleet of small edge inference nodes — one pipeline, one artifact, one cost basis.</li>
+  <li><b>Front everything with the gateway.</b> All traffic flows through one OpenAI- and Anthropic-compatible ingress that routes by signal, reuses prefixes, selects context, and enforces safety.</li>
+  <li><b>Meter and attribute.</b> Every route is logged with latency, tokens and cost, so spend is accountable per team and per workload — while the task runs, not after.</li>
+  <li><b>Shadow, activate, revert.</b> Test every routing or policy change on replayed traffic before activation, with one-click rollback.</li>
+  <li><b>Scale by units, not by meter.</b> Add fixed-price nodes to the cluster as demand grows; the cost curve stays a series of known steps.</li>
+</ol>
+
+<!-- 10 -->
+<h2 id="gov"><span class="n">10</span>Governance, safety &amp; reversibility</h2>
+<p>Owning the inference path is also the strongest governance posture available. Sensitive context never leaves the
+site, so leaked vectors and prompts handed to models you do not control — a business liability and a governance
+violation — simply cannot happen. Safety classifiers for sensitive-data leakage, prompt injection and unsafe output
+run <b>inline</b> on every turn, not as an afterthought. Tools and code execute in policy-governed sandboxes. And
+because the whole control plane is versioned, every change is shadow-tested and reversible — the opposite of a vendor
+deprecating a model under you.</p>
+<div class="note"><b>Capability is not the trade-off.</b> Edge-native does not mean "smaller answers." Hard requests
+still reach a large on-prem model, and the gateway can escalate to a frontier API by explicit, attributed exception —
+so you keep the ceiling while removing the floor of wasted spend.</div>
+
+<!-- 11 -->
+<h2 id="reco"><span class="n">11</span>Recommendations &amp; checklist</h2>
+<ul>
+  <li><b>Inventory steady-state workloads.</b> Repetitive, high-volume, latency- or sovereignty-sensitive traffic is the first to move edge-native.</li>
+  <li><b>Buy capacity, not tokens, for that traffic.</b> Size a node fleet to steady demand; keep a frontier path for the long tail.</li>
+  <li><b>Make the gateway the single ingress.</b> One routing contract, one policy plane, one meter, compatible APIs so apps don't change.</li>
+  <li><b>Turn on all four levers.</b> Routing, prefix-cache discipline, context selection and semantic caching compound.</li>
+  <li><b>Keep data on-prem by default.</b> Treat egress as an exception that needs justification.</li>
+  <li><b>Version and shadow-test policy.</b> Never let routing drift silently; always be able to revert.</li>
+  <li><b>Attribute cost continuously.</b> Per-route metering turns AI spend into a capacity-planning input.</li>
+  <li><b>Plan the two-tier fleet.</b> Develop on the large node; serve on small nodes; promote artifacts unchanged.</li>
+</ul>
+
+<hr>
+<h2 id="refs"><span class="n">12</span>References</h2>
+<div class="refs">
+<ol>
+  <li id="r1">NVIDIA (2026). <em>DGX Spark — Personal AI Supercomputer (GB10 Grace Blackwell).</em> <span>128&nbsp;GB LPDDR5X coherent unified memory; ~1,000&nbsp;TFLOPS FP4; high-speed fabric for linked-pair scaling.</span></li>
+  <li id="r2">AMD (2026). <em>Ryzen AI Max+ 395 (Strix Halo).</em> <span>16 Zen&nbsp;5 cores, Radeon&nbsp;8060S iGPU, XDNA&nbsp;2 NPU; ~126 platform AI TFLOPS; 128&nbsp;GB LPDDR5X-8000.</span></li>
+  <li id="r3">Workload–router–pool architecture for inference optimization (2026). <span>Signal-driven routing across a mixture of models by cost, capability, privacy and risk.</span></li>
+  <li id="r4">When-to-reason routing (2025). <span>Invoking expensive reasoning paths only when expected value justifies the cost.</span></li>
+  <li id="r5">Category-aware semantic caching for heterogeneous workloads (2025). <span>Reusing answers for semantically-equivalent requests.</span></li>
+  <li id="r6">Prefix / KV-cache reuse in high-throughput serving. <span>Cached prompt prefixes billed at a steep discount versus recomputation.</span></li>
+  <li id="r7">Inference-native agent harness practice (2026). <span>Prefix-cache discipline, context selection and bounded tool output for long-horizon work.</span></li>
+  <li id="r8">Unovie.AI. <em>GPU EdgeGateway &amp; Device Platform.</em> <span>unovie.ai/platform/gpu-edgegateway · unovie.ai/device-platform</span></li>
+</ol>
+</div>
+
+<footer>
+  <p><b>Unovie.AI · EdgeAI Context Engineering.</b> This whitepaper synthesizes internal edge-deployment practice with
+  public hardware specifications and well-established inference-optimization concepts (signal-driven routing, prefix /
+  KV-cache reuse, semantic caching, context selection). Cost figures are illustrative parameters, not price quotes;
+  actual results depend on workload mix, utilization, token profile and energy cost. Hardware specifications reflect
+  vendor figures as of June 2026. Revision 1.0.</p>
+</footer>
+
+</div>
+
+<script>
+  function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('wpTheme',t);}catch(e){}}
+  function toggleTheme(){var cur=document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light';applyTheme(cur==='dark'?'light':'dark');}
+</script>
+</body>
+</html>
