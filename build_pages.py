@@ -148,8 +148,8 @@ def page(base, folder, slug, cat, crumb_cat, title_html, lead, kpis, feats, hows
     full = f"{ROOT}/{folder}" if folder else ROOT
     os.makedirs(full, exist_ok=True)
     head=HEAD(base, f"{re.sub('<[^>]+>','',title_html)} — Unovie.AI", lead[:150])
-    body=f'''{NAV(base)}
-<section class="phero">{NGBG if folder=='platform' else ''}<div class="wrap">
+    body=f'''{NGBG if folder=='platform' else ''}{NAV(base)}
+<section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="{base}index.html">Home</a><span class="sep">/</span><a href="{base}index.html#{'accelerators' if folder=='solutions' else 'platform'}">{crumb_cat}</a><span class="sep">/</span><span style="color:var(--fg-mut)">{re.sub('<[^>]+>','',title_html)}</span></div>
   <div class="tag rv">{cat}</div>
   <h1 class="rv" style="margin-top:18px">{title_html}</h1>
