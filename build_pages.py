@@ -274,10 +274,10 @@ PLATP=[
   ("Pool to bill",[("Pool","Aggregate edge GPUs."),("Schedule","Place workloads."),("Isolate","Partition tenants."),("Meter","Account &amp; bill.")]),
   "Datacenter discipline, <span class='serif' style='color:var(--steel)'>on-prem.</span>"),
  ("gpu-edgegateway","Platform","GPU <span class='serif' style='color:var(--steel)'>EdgeGateway</span>",
-  "An agent-first, signal-driven gateway built on one routing contract: signals become projections, projections drive decisions, decisions choose the model — across a mesh of local, private and frontier models. Session-aware routing keeps multi-turn agents coherent, sandboxed runtimes keep tools safe, and every policy change is shadow-tested before it goes live. OpenAI- and Anthropic-compatible, multimodal, governed like production, on hardware you own.",
-  [("OpenAI<span class='s'>+Anthropic</span>","compatible"),("signal→model","one routing contract"),("session-aware","agentic routing")],
+  "Most gateways sit in front of the models and treat inference as a black box. This one is built from the inference engine out: one routing contract turns signals into projections, projections into decisions, and decisions into the model — across a mesh of local, private and frontier engines — while the prefix cache is protected, context is selected rather than pasted, and every turn takes the least-cost path that still meets the need. Session-aware across long-running agents, sandboxed for tool safety, and shadow-tested before any policy goes live. OpenAI- and Anthropic-compatible, multimodal, governed like production, on hardware you own.",
+  [("signal→model","one routing contract"),("prefix-cache","reuse-protected"),("least cost","per-turn path")],
   ("Route, reason, act",[("/route","Signal-driven routing","Intent, complexity, modality and risk become projections and policy bands, then route across a local-to-frontier mesh — reasoning only when it pays.",["intent","projections","when-to-reason"]),
-   ("/session","Session-aware agentic routing","Stateful guards keep multi-turn agents coherent: hard locks block unsafe model switches mid-tool-loop, weighing quality gap, prefix locality and turn priors.",["SAAR","tool-loop locks","continuity"]),
+   ("/session","Session-aware agentic routing","Stateful guards keep multi-turn agents coherent: hard locks block unsafe model switches mid-tool-loop, weighing quality gap, prefix locality and turn priors.",["session-aware","tool-loop locks","continuity"]),
    ("/sandbox","Sandboxed &amp; governed","Tools and code run in policy-governed MicroVM sandboxes — no unauthorized file, credential or network access.",["MicroVM","policy-as-code","no-exfil"])]),
   ("Signal to decision",[("Signal","Score intent, risk, modality, context."),("Project","Normalise into policy bands."),("Decide","Pick model, agent or tool."),("Serve","Sandboxed, observed, metered.")]),
   "Serve models <span class='serif' style='color:var(--steel)'>safely.</span>"),
@@ -463,22 +463,23 @@ PLAT_EXTRA={
    + '</div></section>'
  ),
  "gpu-edgegateway": (
-   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Control plane · data plane</div><h2 class="rv">A self-improving <span class="serif" style="color:var(--steel)">router.</span></h2></div><p class="lead rv">A control plane governs policy, identity and guardrails; a data plane serves fast, observable, cost-aware inference; and a self-improving router between them turns every request into a better next decision — research that closes the loop.</p></div><div class="gwwrap rv">' + GW_SVG + '</div></div></section>'
+   '<section><div class="wrap"><div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Control plane · data plane</div><h2 class="rv">A self-improving <span class="serif" style="color:var(--steel)">router.</span></h2></div><p class="lead rv">A control plane governs policy, identity and guardrails; a data plane serves fast, observable, cost-aware inference; and a self-improving router between them turns every request into a better next decision — protecting the prefix cache and selecting context so the work stays cheap as it grows.</p></div><div class="gwwrap rv">' + GW_SVG + '</div></div></section>'
    + f'<section><div class="wrap">{shead("03","Architecture","Inside the gateway")}'
    + disc([
      ("/contract","One routing contract","Signals become projections, projections drive decisions, decisions choose the model — the same pipeline whether configured in YAML, the console, the CLI or Kubernetes.",["signals","projections","decisions"]),
-     ("/mesh","Mixture-of-models mesh","Token- and capability-aware routing spans vLLM, local SLMs and frontier APIs with semantic caching; the classifiers run on OpenVINO, CUDA or ROCm — one control plane, any backend.",["vLLM","semantic cache","OpenVINO/CUDA/ROCm"]),
+     ("/mesh","Mixture-of-models mesh","Token- and capability-aware routing spans self-hosted engines, local SLMs and frontier APIs with semantic caching; classifiers run on any accelerator — one control plane, any backend.",["self-hosted","semantic cache","any accelerator"]),
      ("/safe","Safety &amp; protocol","History-aware PII, jailbreak and prompt-injection scanning across every turn — behind an OpenAI- and Anthropic-compatible ingress with explicit, lossless translation.",["PII","jailbreak","OpenAI/Anthropic"]),
+     ("/cache","Prefix-cache discipline","Stable prompt epochs, deterministic tool-schema ordering and bounded, append-only context keep reusable prefixes intact — so cached tokens are reused across a long session at a fraction of the price instead of re-billed every turn.",["prompt epochs","stable schema","cache reuse"]),
      ("/lifecycle","Shadow, activate, revert","Every routing policy is versioned and shadow-tested on replayed traffic before activation, with one-click rollback — routing never drifts silently.",["shadow","replay","rollback"]),
    ]) + '</div></section>'
    + f'<section><div class="wrap">{shead("04","Agent-first delivery","Multimodal in, action out")}'
    + disc([
      ("/multimodal","Every modality, one path","Text, voice, image and event inputs are normalised, routed to the right modality model, and turned into grounded responses or tool actions.",["text·voice·image","normalise","actions"]),
-     ("/context","Long-context, calibrated","Online calibration learns token-estimate ratios from real responses, and domain compression profiles — coding, medical, security, multi-turn — extract signal without clipping long prompts.",["calibration","compression","long-context"]),
-     ("/observe","Topology you can trace","A console traces every signal &#8594; projection &#8594; decision with replay-backed insights, and meters per-route latency, tokens and cost — every call accountable.",["topology","replay","metering"]),
+     ("/context","Context selected, not pasted","Graph-shaped code evidence, bounded tool output and domain-aware compression extract the signal a turn actually needs and drop the rest — fewer prompt and tool-output tokens, without losing continuity across a long task.",["select not paste","graph context","bounded output"]),
+     ("/observe","Topology &amp; token ledger","A console traces every signal &#8594; projection &#8594; decision with replay, and a live ledger shows cache reuse, context savings and per-route latency, tokens and cost — spend is accountable while the task runs, not after.",["topology","savings ledger","metering"]),
    ]) + '</div></section>'
    + f'<section><div class="wrap">{shead("05","By the numbers","Governed like production")}'
-   + metrics([("&lt;1<span class='o'>ms</span>","signal → decision"),("15<span class='s'>+</span>","signal families"),("shadow→activate","policy lifecycle")])
+   + metrics([("&lt;1<span class='o'>ms</span>","signal → decision"),("~90<span class='o'>%</span>","cached-token discount"),("least cost","per-turn path"),("shadow→activate","policy lifecycle")])
    + '</div></section>'
  ),
  "edge-security-intelligence": (
