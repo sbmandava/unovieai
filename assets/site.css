@@ -82,14 +82,8 @@ header.nav .logo{height:40px}
 .shipfly{position:absolute;bottom:120px;left:0;width:210px;z-index:0;pointer-events:none;animation:shipcross 240s linear infinite}
 .shipfly svg{width:100%;height:auto;display:block}
 @keyframes shipcross{from{transform:translateX(0)}to{transform:translateX(100vw)}}
-.ngbg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5}
-.ngbg .ngviz{width:100%;height:100%;display:block}
-.ngviz .ngedge{stroke:var(--steel);stroke-width:1.2;fill:none;stroke-dasharray:4 7;opacity:.5;animation:kgflow 3.4s linear infinite}
-.ngviz .ngdot{fill:var(--surface);stroke:var(--steel);stroke-width:1.8;transform-box:fill-box;transform-origin:center;animation:kgpulse 3.6s ease-in-out infinite}
-.ngviz .ngdot.ac{stroke:var(--accent)}
-.ngviz .ngdot.hub{stroke-width:2.4}
-.ngviz .pkt{fill:var(--steel)}
-.ngviz .pkt.ac{fill:var(--accent)}
+.ngbg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.ngbg canvas{display:block;width:100%;height:100%}
 @media(prefers-reduced-motion:reduce){.planebg,.shipfly,.ngbg{display:none}}
 .navlinks{display:flex;align-items:center;gap:34px}
 .navlinks a{font-size:14.5px;color:var(--fg-mut);font-weight:500;position:relative;padding:6px 0;transition:color .2s}
