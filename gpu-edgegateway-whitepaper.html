@@ -104,6 +104,7 @@
 
   figure{margin:30px 0}
   figure svg{display:block;width:100%;height:auto;background:var(--bg);border:1px solid var(--line2);border-radius:14px;padding:18px 16px}
+  figure.plate img{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--line2);border-radius:14px;padding:14px}
   figcaption{font-size:12.5px;color:var(--muted);margin-top:10px;font-style:italic;text-align:center;line-height:1.5}
 
   @media (max-width:640px){ nav.toc ol{columns:1} h1{font-size:27px} .stats{grid-template-columns:repeat(2,1fr)} .tbtn span{display:none} .tbtn{padding:0;width:40px} }
@@ -187,6 +188,10 @@ length, retries, multi-turn agent loops, tool output pasted back into context, a
 single agent that "thinks harder" or re-reads a large document can multiply the cost of an outcome by 10× with no
 change in business value. Budgets are set annually; token spend compounds daily. The result is a line item that
 finance cannot forecast and infrastructure cannot cap.</p>
+<figure class="plate">
+  <img src="assets/images/token-price-paradox.png" alt="Two panels. 2024: a user sends about 2,000 tokens to a single model for roughly $0.02. 2026: an agent fans out to subagents, tool calls, retrieval, validation and another model, consuming about 500,000 tokens for roughly $5.00. Footer: token price down ~75% times tokens-per-task up ~250x equals you pay more.">
+  <figcaption>Figure 1 &mdash; The token-price paradox. Per-token prices fell, but agentic workloads multiplied tokens-per-task by orders of magnitude &mdash; so the cost per outcome rose even as unit prices dropped. The cost risk is the meter and the token sprawl behind it, not the headline price.</figcaption>
+</figure>
 <p>For the <b>industrial edge</b> three more constraints stack on top of cost:</p>
 <ul>
   <li><b>Data gravity and sovereignty.</b> Telemetry, video, control logs and process data are large, sensitive, and
@@ -258,7 +263,7 @@ chat traffic.</p>
     <marker id="ahm" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/></marker>
   </defs>
 </svg>
-<figcaption>Figure 1 — One gateway between edge workloads and a pool of models on owned silicon. It routes by signal,
+<figcaption>Figure 2 — One gateway between edge workloads and a pool of models on owned silicon. It routes by signal,
 reuses cached prefixes, selects context, and enforces safety; the frontier path is reserved for the rare request that
 justifies it.</figcaption>
 </figure>
@@ -338,7 +343,7 @@ of work on owned silicon is effectively free relative to the meter.</p>
   </g>
   <text x="74" y="206" fill="var(--acc)" font-size="11" font-family="sans-serif">capex step</text>
 </svg>
-<figcaption>Figure 2 — Illustrative cost shape. Metered inference rises without bound; owned capacity is a step then a
+<figcaption>Figure 3 — Illustrative cost shape. Metered inference rises without bound; owned capacity is a step then a
 near-flat line. Beyond break-even, extra work is effectively free relative to the meter. Exact crossover depends on
 utilization and token mix.</figcaption>
 </figure>
