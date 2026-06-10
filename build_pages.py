@@ -94,6 +94,7 @@ def NAV(base):
       <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
       <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
       <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost on owned silicon</span></span></a>
+      <a href="{base}ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">AI SOC Modernization — Whitepaper</span><br><span class="s">Edge-native, identity-driven security for IT/OT</span></span></a>
     </div></div>
   </nav>
   <a class="navcta" href="{h}#contact" data-cursor>Start a project <span class="ar">→</span></a>
@@ -124,7 +125,7 @@ def FOOTER(base):
   <div class="fcol"><h4>Device Platform</h4>
     <a href="{base}device-platform.html#agx-thor">NVIDIA AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a><a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">EdgeGateway Economics</a></div>
+    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">EdgeGateway Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 
@@ -508,6 +509,11 @@ PLAT_EXTRA={
    + f'<section><div class="wrap">{shead("05","By the numbers","Engineered for throughput")}'
    + metrics([("21K<span class='s'>+</span>","EPS peak"),("13.8K<span class='s'>+</span>","EPS sustained"),("~3<span class='o'>s</span>","AI inference latency")])
    + '</div></section>'
+   + '<section><div class="wrap">' + shead("06","Further reading","Whitepapers for your team","The architecture and the economics behind this platform — read in the browser or export to PDF.")
+   + '<div class="disc">'
+   + '<a class="dcard rv" href="../ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/ai-soc</div><h3>AI SOC Modernization</h3><p>For CISOs: an edge-native, identity-driven AI SOC for distributed IT/OT in the agentic era — detection at ingest, knowledge-graph context, autonomous response.</p><div class="spec"><span class="chip">IT/OT</span><span class="chip">identity-driven</span><span class="chip">PDF</span></div></a>'
+   + '<a class="dcard rv" href="../gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/economics</div><h3>The Edge-Native Inference Gateway</h3><p>Turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.</p><div class="spec"><span class="chip">predictable cost</span><span class="chip">edge-native</span><span class="chip">PDF</span></div></a>'
+   + '</div></div></section>'
  ),
 }
 for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7],PLAT_EXTRA.get(s[0],""))
@@ -656,14 +662,14 @@ LASTMOD="2026-06-05"   # bump when content materially changes (kept fixed for id
 def _u(path):  # path relative to site root; "" = homepage
     return SITE + "/" + path
 _pages=["", "about.html", "contact.html",
-        "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html", "gpu-edgegateway-whitepaper.html"]
+        "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html", "gpu-edgegateway-whitepaper.html", "ai-soc-modernization-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
 _pages += ["device-platform.html"]
 def _prio(p):
     if p=="": return "1.0"
     if p=="device-platform.html" or p.startswith(("solutions/","platform/")): return "0.9"
-    if p.startswith("resources/") or p=="gpu-edgegateway-whitepaper.html": return "0.6"
+    if p.startswith("resources/") or p in ("gpu-edgegateway-whitepaper.html","ai-soc-modernization-whitepaper.html"): return "0.6"
     return "0.7"
 _rows="\n".join(
     f'  <url><loc>{_u(p)}</loc><lastmod>{LASTMOD}</lastmod><changefreq>monthly</changefreq><priority>{_prio(p)}</priority></url>'
@@ -687,7 +693,7 @@ def _firstsent(t):
     t=_strip(t); return re.split(r'(?<=[.!?])\s',t,1)[0]
 def _ptype(p):
     return ("home" if p=="" else "solution" if p.startswith("solutions/") else "platform" if p.startswith("platform/") else "device" if p=="device-platform.html"
-            else "resource" if p.startswith("resources/") or p=="gpu-edgegateway-whitepaper.html" else "company")
+            else "resource" if p.startswith("resources/") or p in ("gpu-edgegateway-whitepaper.html","ai-soc-modernization-whitepaper.html") else "company")
 # chunked records, one per <section>, from the rendered HTML (nav/footer/scripts/svg stripped)
 records=[]
 for p in _pages:
@@ -751,6 +757,7 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper]({_u('resources/edge-ai-whitepaper.html')}): adapting custom models on the edge without retraining.
 - [Edge-Native Inference Gateway — Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
+- [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): modernizing the SOC for the agentic era with an edge-native, identity-driven architecture for distributed IT/OT.
 
 ## Company
 - [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
