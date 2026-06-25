@@ -14,7 +14,7 @@
  },
  "generated_by": "build_pages.py",
  "lastmod": "2026-06-05",
- "count": 125,
+ "count": 130,
  "records": [
   {
    "id": "home#1",
@@ -22,7 +22,7 @@
    "type": "home",
    "title": "Unovie.AI — AI engineering, delivered. Edge-AI systems, end to end.",
    "section": "Edge-AI, engineered end to end.",
-   "text": "AI engineering · as a service · est. on the edge Edge-AI, engineered end to end. Unovie is an AI-engineering studio. We design, build, and operate custom edge-AI systems — fixed scope, fixed cost , on hardware you own. From architecture to production, we accept full responsibility. Start a project → Read the field guide Trusted with NVIDIA AMD Qualcomm Siemens GE Live · Edge node NVFP4 Throughput 0 tok/s Power 0 W Egress 0 bytes"
+   "text": "AI engineering · as a service · est. on the edge Edge-AI, engineered end to end. Unovie is an AI-engineering studio. We design, build, and operate custom Edge-AI Agentic Systems — fixed scope, fixed cost , on hardware you own. From architecture to production, we accept full responsibility. Start a project → Read the field guide Trusted with NVIDIA AMD Qualcomm Siemens GE Live · Edge node NVFP4 Throughput 0 tok/s Power 0 W Egress 0 bytes"
   },
   {
    "id": "home#2",
@@ -86,7 +86,7 @@
    "type": "company",
    "title": "About — Unovie.AI",
    "section": "We engineer AI that ships.",
-   "text": "Home / About About · Unovie.AI We engineer AI that ships. Unovie is an AI-engineering studio for Industry 4.0. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you own and can audit. Start a project → Read our field guide 4 engineering disciplines 5 -step methodology fixed time & cost"
+   "text": "Home / About About · Unovie.AI We engineer AI that ships. Unovie is an AI-engineering studio for Industry 4.0, founder-led by a team whose vision matches the most ambitious in the field — and measured by what reaches production. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you own and can audit. While the market splits between multi-year transformation programs and big-vision manifestos, we take the third path: production-grade, agentic systems you own, delivered in weeks at a fixed cost. Start a project → Read our field guide 4 engineering disciplines 5 -step methodology fixed time & cost"
   },
   {
    "id": "about#2",
@@ -109,8 +109,48 @@
    "url": "https://unovie.ai/about.html",
    "type": "company",
    "title": "About — Unovie.AI",
+   "section": "Vision that ships.",
+   "text": "03 — Why teams choose us Vision that ships. /leadership Founder-led vision Led by founders whose ambition matches the field's most visionary — and who insist that vision reach production. founder-led visionary /velocity Execution velocity Production-grade agentic systems in weeks, not multi-year programs — fixed scope, fixed cost. weeks fixed cost /sovereignty Owned & sovereign On-prem on hardware you own, auditable and reversible — your context never leaves your boundary. on-prem auditable Why Unovie →"
+  },
+  {
+   "id": "about#5",
+   "url": "https://unovie.ai/about.html",
+   "type": "company",
+   "title": "About — Unovie.AI",
    "section": "Trusted with NVIDIA · AMD · Qualcomm · Siemens · GE.",
    "text": "Partners Trusted with NVIDIA · AMD · Qualcomm · Siemens · GE. Manufacturing · Logistics · Oil & Gas · Food Processing. Bring us a problem; we will return a system. Talk to our engineers →"
+  },
+  {
+   "id": "why-unovie#1",
+   "url": "https://unovie.ai/why-unovie.html",
+   "type": "company",
+   "title": "Why Unovie — vision that ships, owned and predictable",
+   "section": "Vision that ships.",
+   "text": "Home / Why Unovie Why Unovie Vision that ships. Unovie is founder-led by a team whose ambition matches the field's most visionary — and who insist that vision reach production. The market has split between multi-year enterprise transformation and big-vision manifestos, and both leave you waiting. We are the third path: production-grade, agentic Edge-AI systems you own, delivered in weeks on a fixed scope and a fixed cost, on hardware that never leaves your floor. Start a project → Read the economics weeks to production, not years fixed scope & cost 100 % on-prem · you own it"
+  },
+  {
+   "id": "why-unovie#2",
+   "url": "https://unovie.ai/why-unovie.html",
+   "type": "company",
+   "title": "Why Unovie — vision that ships, owned and predictable",
+   "section": "Built for outcomes, not programs.",
+   "text": "01 — Where we are different Built for outcomes, not programs. /leadership Founder-led vision Led by founders whose ambition matches the field's most visionary — and who measure that vision by what reaches production, on your terms. founder-led visionary ships /velocity Execution velocity Production-ready agentic systems in weeks, not multi-year programs — architecture to POC to MVP to production, with no bureaucracy in the path. weeks agentic production /roi ROI realism We answer POC fatigue with a direct line to cost and throughput: capex you own, marginal cost near electricity, spend you can forecast. predictable capex TCO /vertical Vertical depth Manufacturing, logistics, energy and OT — domain ontologies and edge systems built for your floor, not generic AI wrappers. industrial OT domain /sovereignty Governance by architecture Your data stays on-prem on hardware you own; safety runs inline, every decision is auditable and reversible, and context never leaves your boundary. on-prem auditable sovereign /platform A platform, not a manifesto The Nexus Context Platform, GPU EdgeGateway and Device Platform run today — owned silicon and a real stack, not slides and a destination. Nexus running owned"
+  },
+  {
+   "id": "why-unovie#3",
+   "url": "https://unovie.ai/why-unovie.html",
+   "type": "company",
+   "title": "Why Unovie — vision that ships, owned and predictable",
+   "section": "We are the third path.",
+   "text": "02 — The market is bifurcated We are the third path. /transformation The transformation play Global integrators rebuild the entire digital estate. Valuable — but multi-year, multi-million, and slow to first value. multi-year whole-estate /vision The vision play Vision-led firms sell the destination. Inspiring — but often a roadmap without a delivery engine. inspiring no engine /unovie The Unovie play Founder-level vision married to an engineering studio that ships: a working, vertical, owned system in production in weeks. vision + execution owned weeks"
+  },
+  {
+   "id": "why-unovie#4",
+   "url": "https://unovie.ai/why-unovie.html",
+   "type": "company",
+   "title": "Why Unovie — vision that ships, owned and predictable",
+   "section": "Bring us a problem. We will return a system.",
+   "text": "Let's build Bring us a problem. We will return a system. Turnkey Edge-AI — fixed time, fixed cost, full responsibility, on hardware you own. Talk to our engineers → About the studio"
   },
   {
    "id": "contact#1",
@@ -118,7 +158,7 @@
    "type": "company",
    "title": "Contact — Unovie.AI · Built in Austin, Texas",
    "section": "Bring us a problem. We'll return a system.",
-   "text": "Home / Contact Contact · Let's build Bring us a problem. We'll return a system. Tell us the outcome you need. Our engineers will scope the path to production — fixed time, fixed cost, full responsibility. Get in touch → Read the field guide"
+   "text": "Home / Contact Contact · Let's build Bring us a problem. We'll return a system. Tell us the outcome you need. Our engineers will scope the path to production — fixed time, fixed cost, full responsibility. Not a multi-year program and not a slide deck — founder-led vision delivered as a working system you own. Get in touch → Read the field guide"
   },
   {
    "id": "contact#2",

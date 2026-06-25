@@ -1,6 +1,6 @@
 # Unovie.AI
 
-> AI-engineering studio that designs, builds and operates custom edge-AI systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
+> AI-engineering studio that designs, builds and operates custom Edge-AI Agentic Systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
 
 ## Solutions
 - [Smart Factory Floor](https://unovie.ai/solutions/smart-factory-floor.html): Vision-driven inspection and quality control that runs on the line, in real time, on hardware you own — no cloud round-trip, no data egress.
@@ -33,6 +33,7 @@
 - [AI SOC Modernization — Whitepaper](https://unovie.ai/ai-soc-modernization-whitepaper.html): modernizing the SOC for the agentic era with an edge-native, identity-driven architecture for distributed IT/OT.
 
 ## Company
+- [Why Unovie](https://unovie.ai/why-unovie.html): the third path — founder-led vision delivered as production-grade, agentic Edge-AI you own, in weeks.
 - [About](https://unovie.ai/about.html): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
 - [Contact](https://unovie.ai/contact.html): start a project.
 

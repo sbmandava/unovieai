@@ -10,7 +10,7 @@ deploys straight from `main`.
 | `index.html` | **hand-authored** | Homepage = the design system of record: nav, hero, the **Solutions card grid**, footer. |
 | `build_pages.py` | the generator | Produces `solutions/*`, `platform/*`, `about.html`. Also `assets/site.{css,js}` **on first run only**. |
 | `assets/site.css`, `assets/site.js` | **live source** | Shared styles/scripts. The generator will NOT overwrite these once the homepage is slimmed — **edit them directly**. |
-| `solutions/*.html` (9), `platform/*.html` (5), `device-platform.html`, `about.html` | **generated** | Do not hand-edit — change `build_pages.py` and regenerate. `device-platform.html` is one page with tabs (one per `DEVP` entry); panels switch via `.tab`/`.tpanel` in `site.js`. |
+| `solutions/*.html` (9), `platform/*.html` (5), `device-platform.html`, `why-unovie.html`, `about.html` | **generated** | Do not hand-edit — change `build_pages.py` and regenerate. `device-platform.html` is one page with tabs (one per `DEVP` entry); panels switch via `.tab`/`.tpanel` in `site.js`. |
 | `contact.html`, `resources/edge-ai-models.html`, `resources/edge-ai-whitepaper.html` | **hand-authored standalone** | Not produced by the generator. Have their own inline `<style>`/theme script. |
 
 Solution slugs: `maritime-digital-twin`, `connected-vehicle-twin`, `corporate-travel-sales`,
@@ -36,6 +36,8 @@ reusing existing assets/site.{css,js}` is **normal** — it means it's reusing t
   company/customer names, vessel names, vehicle makes/models, airline names, account names,
   partners/competitors, product codenames (e.g. `C2C`, `MarineTwin`, `TwinVin`, `MARSX`,
   `Easybiz`, `Komodo`), or `Snapdragon`/SoC model numbers.
+- **Studio descriptor:** always write the studio's offering as **"custom Edge-AI Agentic Systems"** (capitalized as a branded term) — never "custom edge-AI systems".
+- **Positioning:** Unovie is **founder-led by visionary-caliber founders** who also ship. Frame the market as a third path between (a) slow multi-year SI transformation and (b) abstract big-vision consulting — Unovie = vision **and** execution **and** ownership. Don't name competitors (no Infosys / Hang Ten / Sikka / their client logos).
 - `Qualcomm` appears **only** in the partner ticker (`NVIDIA · AMD · Qualcomm · Siemens · GE`) —
   keep it there, don't add it elsewhere. **Exception:** the **Device Platform** tabs name real
   vendor silicon by design (NVIDIA AGX Thor / DGX Spark, Qualcomm QCS6490, AMD Ryzen AI Max+ 395) —

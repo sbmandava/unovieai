@@ -82,7 +82,7 @@ def NAV(base):
     return f'''<header class="nav"><div class="wrap"><div class="row">
   <a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
-    <a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
+    <a href="{base}why-unovie.html">Why Unovie</a><a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
     <a href="{h}#platform">Platform</a>
     <div class="drop"><button data-cursor>Device Platform ▾</button><div class="menu">
       <a href="{base}device-platform.html#agx-thor"><span class="ic">01</span><span><span class="t">NVIDIA AGX Thor</span><br><span class="s">Blackwell robotics &amp; physical-AI edge</span></span></a>
@@ -101,22 +101,23 @@ def NAV(base):
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 </div></div></header>
 <div class="mobile" id="mobile">
-  <a href="{h}#engineering"><span class="mono">01</span><br>AI Engineering</a>
-  <a href="{h}#accelerators"><span class="mono">02</span><br>Solutions</a>
-  <a href="{h}#platform"><span class="mono">03</span><br>Platform</a>
-  <a href="{base}device-platform.html"><span class="mono">04</span><br>Device Platform</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">05</span><br>Field Guide (eBook)</a>
-  <a href="{base}resources/edge-ai-whitepaper.html" target="_blank"><span class="mono">06</span><br>Whitepaper</a>
-  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">07</span><br>Start a project →</a>
+  <a href="{base}why-unovie.html"><span class="mono">01</span><br>Why Unovie</a>
+  <a href="{h}#engineering"><span class="mono">02</span><br>AI Engineering</a>
+  <a href="{h}#accelerators"><span class="mono">03</span><br>Solutions</a>
+  <a href="{h}#platform"><span class="mono">04</span><br>Platform</a>
+  <a href="{base}device-platform.html"><span class="mono">05</span><br>Device Platform</a>
+  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">06</span><br>Field Guide (eBook)</a>
+  <a href="{base}resources/edge-ai-whitepaper.html" target="_blank"><span class="mono">07</span><br>Whitepaper</a>
+  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">08</span><br>Start a project →</a>
 </div>'''
 
 def FOOTER(base):
     h=base+"index.html"
     return f'''<footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
-    <p>AI engineering as a service. We design, build, and operate custom edge-AI systems — on hardware you own.</p></div>
+    <p>AI engineering as a service. We design, build, and operate custom Edge-AI Agentic Systems — on hardware you own.</p></div>
   <div class="fcol"><h4>Company</h4>
-    <a href="{h}#engineering">AI Engineering</a><a href="{h}#delivery">How we deliver</a>
+    <a href="{base}why-unovie.html">Why Unovie</a><a href="{h}#engineering">AI Engineering</a><a href="{h}#delivery">How we deliver</a>
     <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a></div>
   <div class="fcol"><h4>Platform</h4>
     <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Intelligence</a>
@@ -629,12 +630,12 @@ _devbody=f"""{NGBG}{NAV("")}
 open(f"{ROOT}/device-platform.html","w",encoding="utf-8").write(_devhead+_devbody)
 
 # ----- ABOUT -----
-about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs, builds, and operates custom edge-AI systems.")}{NAV("")}
+about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs, builds, and operates custom Edge-AI Agentic Systems.")}{NAV("")}
 <section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">About</span></div>
   <div class="tag rv">About <span class="o">·</span> Unovie.AI</div>
   <h1 class="rv" style="margin-top:18px">We engineer AI that <span class="serif" style="color:var(--accent)">ships.</span></h1>
-  <p class="lead rv">Unovie is an AI-engineering studio for Industry 4.0. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you own and can audit.</p>
+  <p class="lead rv">Unovie is an AI-engineering studio for Industry 4.0, founder-led by a team whose vision matches the most ambitious in the field — and measured by what reaches production. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you own and can audit. While the market splits between multi-year transformation programs and big-vision manifestos, we take the third path: production-grade, agentic systems you own, delivered in weeks at a fixed cost.</p>
   <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Start a project <span class="ar">→</span></a>
     <a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read our field guide</a></div>
   {metrics([("4","engineering disciplines"),("5","-step methodology"),("fixed","time &amp; cost")])}
@@ -647,6 +648,10 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
 <section id="delivery"><div class="wrap">{shead("02","How we deliver","A proven, success-based methodology.")}{steps([
   ("Assess &amp; plan","Workshops, ROI, value outcomes."),("Solution design","Roadmap &amp; reference architecture."),
   ("Build &amp; test","Data, models, testing, monitoring."),("Optimize","KPI tracking &amp; feedback loops."),("Train &amp; support","Enablement &amp; adoption.")])}</div></section>
+<section><div class="wrap">{shead("03","Why teams choose us","Vision that ships.")}{disc([
+  ("/leadership","Founder-led vision","Led by founders whose ambition matches the field's most visionary — and who insist that vision reach production.",["founder-led","visionary"]),
+  ("/velocity","Execution velocity","Production-grade agentic systems in weeks, not multi-year programs — fixed scope, fixed cost.",["weeks","fixed cost"]),
+  ("/sovereignty","Owned &amp; sovereign","On-prem on hardware you own, auditable and reversible — your context never leaves your boundary.",["on-prem","auditable"])])}<div class="cta rv" style="margin-top:8px"><a class="btn btn-gh" href="why-unovie.html" data-cursor>Why Unovie <span class="ar">→</span></a></div></div></section>
 <section><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Partners</div>
   <h2 style="margin-top:16px">Trusted with <span class="serif" style="color:var(--accent)">NVIDIA · AMD · Qualcomm · Siemens · GE.</span></h2>
@@ -656,18 +661,51 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
 {FOOTER("")}'''
 open(f"{ROOT}/about.html","w",encoding="utf-8").write(about)
 
+# ----- WHY UNOVIE -----
+why=f'''{HEAD("","Why Unovie — vision that ships, owned and predictable","Why enterprises choose Unovie: founder-led vision delivered as production-grade, agentic Edge-AI you own — in weeks, at a fixed cost, on hardware that never leaves your floor.")}{NAV("")}
+<section class="phero"><div class="wrap">
+  <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Why Unovie</span></div>
+  <div class="tag rv">Why Unovie</div>
+  <h1 class="rv" style="margin-top:18px">Vision that <span class="serif" style="color:var(--accent)">ships.</span></h1>
+  <p class="lead rv">Unovie is founder-led by a team whose ambition matches the field's most visionary — and who insist that vision reach production. The market has split between multi-year enterprise transformation and big-vision manifestos, and both leave you waiting. We are the third path: production-grade, agentic Edge-AI systems you own, delivered in weeks on a fixed scope and a fixed cost, on hardware that never leaves your floor.</p>
+  <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Start a project <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="gpu-edgegateway-whitepaper.html" target="_blank" data-cursor>Read the economics</a></div>
+  {metrics([("weeks","to production, not years"),("fixed","scope &amp; cost"),("100<span class='o'>%</span>","on-prem · you own it")])}
+</div></section>
+<section><div class="wrap">{shead("01","Where we are different","Built for outcomes, not programs.")}{disc([
+  ("/leadership","Founder-led vision","Led by founders whose ambition matches the field's most visionary — and who measure that vision by what reaches production, on your terms.",["founder-led","visionary","ships"]),
+  ("/velocity","Execution velocity","Production-ready agentic systems in weeks, not multi-year programs — architecture to POC to MVP to production, with no bureaucracy in the path.",["weeks","agentic","production"]),
+  ("/roi","ROI realism","We answer POC fatigue with a direct line to cost and throughput: capex you own, marginal cost near electricity, spend you can forecast.",["predictable","capex","TCO"]),
+  ("/vertical","Vertical depth","Manufacturing, logistics, energy and OT — domain ontologies and edge systems built for your floor, not generic AI wrappers.",["industrial","OT","domain"]),
+  ("/sovereignty","Governance by architecture","Your data stays on-prem on hardware you own; safety runs inline, every decision is auditable and reversible, and context never leaves your boundary.",["on-prem","auditable","sovereign"]),
+  ("/platform","A platform, not a manifesto","The Nexus Context Platform, GPU EdgeGateway and Device Platform run today — owned silicon and a real stack, not slides and a destination.",["Nexus","running","owned"])])}</div></section>
+<section><div class="wrap">{shead("02","The market is bifurcated","We are the third path.")}{disc([
+  ("/transformation","The transformation play","Global integrators rebuild the entire digital estate. Valuable — but multi-year, multi-million, and slow to first value.",["multi-year","whole-estate"]),
+  ("/vision","The vision play","Vision-led firms sell the destination. Inspiring — but often a roadmap without a delivery engine.",["inspiring","no engine"]),
+  ("/unovie","The Unovie play","Founder-level vision married to an engineering studio that ships: a working, vertical, owned system in production in weeks.",["vision + execution","owned","weeks"])])}</div></section>
+<section id="contact"><div class="wrap"><div class="cta-final rv">
+  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
+  <h2 style="margin-top:16px">Bring us a problem. <span class="serif" style="color:var(--accent)">We will return a system.</span></h2>
+  <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility, on hardware you own.</p>
+  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="about.html" data-cursor>About the studio</a></div>
+</div></div></section>
+{FOOTER("")}'''
+open(f"{ROOT}/why-unovie.html","w",encoding="utf-8").write(why)
+
 # ---- sitemap.xml + robots.txt (Google indexing) ----
 SITE="https://unovie.ai"
 LASTMOD="2026-06-05"   # bump when content materially changes (kept fixed for idempotent builds)
 def _u(path):  # path relative to site root; "" = homepage
     return SITE + "/" + path
-_pages=["", "about.html", "contact.html",
+_pages=["", "about.html", "why-unovie.html", "contact.html",
         "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html", "gpu-edgegateway-whitepaper.html", "ai-soc-modernization-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
 _pages += ["device-platform.html"]
 def _prio(p):
     if p=="": return "1.0"
+    if p=="why-unovie.html": return "0.8"
     if p=="device-platform.html" or p.startswith(("solutions/","platform/")): return "0.9"
     if p.startswith("resources/") or p in ("gpu-edgegateway-whitepaper.html","ai-soc-modernization-whitepaper.html"): return "0.6"
     return "0.7"
@@ -742,7 +780,7 @@ _plat="\n".join(f"- [{_strip(s[2])}]({_u('platform/'+s[0]+'.html')}): {_firstsen
 _dev="\n".join(f"- [{_strip(s[2])}]({_u('device-platform.html')}#{s[0].split('-',1)[1]}): {_firstsent(s[3])}" for s in DEVP)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
-> AI-engineering studio that designs, builds and operates custom edge-AI systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
+> AI-engineering studio that designs, builds and operates custom Edge-AI Agentic Systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
 
 ## Solutions
 {_sol}
@@ -760,6 +798,7 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): modernizing the SOC for the agentic era with an edge-native, identity-driven architecture for distributed IT/OT.
 
 ## Company
+- [Why Unovie]({_u('why-unovie.html')}): the third path — founder-led vision delivered as production-grade, agentic Edge-AI you own, in weeks.
 - [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
 - [Contact]({_u('contact.html')}): start a project.
 
