@@ -705,6 +705,7 @@ _pages=["", "about.html", "why-unovie.html", "contact.html",
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
 _pages += ["device-platform.html"]
+_pages += ["resources/medsdlc-html/"+p for p in ("index.html","exec-brief.html","01-requirements.html","02-maturity-model.html","03-reference-architecture.html","04-model-strategy-and-finetuning.html","05-evaluation-and-validation.html","06-agentic-workflows.html","07-security-and-compliance.html","08-token-and-gpu-economics.html","09-adoption-roadmap.html","scorecard.html","diagrams.html")]
 def _prio(p):
     if p=="": return "1.0"
     if p=="why-unovie.html": return "0.8"
@@ -797,6 +798,8 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper]({_u('resources/edge-ai-whitepaper.html')}): adapting custom models on the edge without retraining.
 - [Edge-Native Inference Gateway — Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
+- [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): edge-native, identity-driven security operations for IT/OT.
+- [Agentic SDLC for Regulated MedTech]({_u('resources/medsdlc-html/index.html')}): a self-hosted, validated, agent-native software development lifecycle for FDA / IEC 62304 medical-device engineering — overview, maturity model, reference architecture, evaluation, security, economics and adoption roadmap.
 - [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): modernizing the SOC for the agentic era with an edge-native, identity-driven architecture for distributed IT/OT.
 
 ## Company
