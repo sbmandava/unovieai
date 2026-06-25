@@ -798,7 +798,6 @@ open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 - [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper]({_u('resources/edge-ai-whitepaper.html')}): adapting custom models on the edge without retraining.
 - [Edge-Native Inference Gateway — Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
-- [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): edge-native, identity-driven security operations for IT/OT.
 - [Agentic SDLC for Regulated MedTech]({_u('resources/medsdlc-html/index.html')}): a self-hosted, validated, agent-native software development lifecycle for FDA / IEC 62304 medical-device engineering — overview, maturity model, reference architecture, evaluation, security, economics and adoption roadmap.
 - [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): modernizing the SOC for the agentic era with an edge-native, identity-driven architecture for distributed IT/OT.
 
