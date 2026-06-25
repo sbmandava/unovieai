@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive Brief · Agentic-Native SDLC for Regulated MedTech</title>
+<script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-590ZL8SE2M"></script>
+<script data-ga>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-590ZL8SE2M');</script>
+<link rel="icon" href="../../assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="../../assets/favicon.png"><link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="../../index.html" title="Back to Unovie.AI" style="display:inline-flex;align-items:center;gap:6px;margin-right:14px;font-weight:700;font-size:13px;color:var(--text);text-decoration:none;opacity:.82">&larr;&nbsp;Unovie.AI</a>
+
+  <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="index.html"><span class="brand-mark">◆</span> Agentic-Native SDLC <em>· Regulated MedTech</em></a>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" onclick="toggleTheme()"></button>
+</header>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="side-t">Documents</div>
+    <ul><li><a href="index.html">Overview</a></li><li class="active"><a href="exec-brief.html">Executive Brief</a></li><li><a href="01-requirements.html">01 · Requirements</a></li><li><a href="02-maturity-model.html">02 · Maturity Model</a></li><li><a href="03-reference-architecture.html">03 · Reference Architecture</a></li><li><a href="04-model-strategy-and-finetuning.html">04 · Model Strategy & Fine-Tuning</a></li><li><a href="05-evaluation-and-validation.html">05 · Evaluation & Validation</a></li><li><a href="06-agentic-workflows.html">06 · Agentic Workflows</a></li><li><a href="07-security-and-compliance.html">07 · Security & Compliance</a></li><li><a href="08-token-and-gpu-economics.html">08 · Token & GPU Economics</a></li><li><a href="09-adoption-roadmap.html">09 · Adoption Roadmap</a></li><li><a href="scorecard.html">Assessment Scorecard</a></li><li><a href="diagrams.html">Diagrams (SVG)</a></li></ul>
+    <div class="side-foot">Self-hosted · FDA / IEC&nbsp;62304 · ≥99.9% gate</div>
+  </nav>
+  <main class="content">
+    <article class="prose">
+      
+<h1>Executive Brief<a class="anchor" href="#top">#</a></h1>
+<p class="eyebrow">Board-level summary · one page</p>
+<p class="lead">We will adopt an <strong>agent-native software development lifecycle</strong> for our regulated
+medical-device software &mdash; capturing the productivity of AI while meeting our FDA / IEC&nbsp;62304 obligations,
+keeping all models and data inside our own infrastructure, and controlling cost. This is an engineering and
+quality discipline, <strong>not &ldquo;vibe coding.&rdquo;</strong></p>
+
+<div class="callout"><span class="k">The bet</span><span>Generation is becoming free; <strong>correctness, validation, traceability, and cost control are the
+engineering</strong>. Our advantage comes from the system around the model, not the model alone.</span></div>
+
+<h2>Why now</h2>
+<p>AI now writes a large share of new code industry-wide, compressing implementation from weeks to hours. Our
+competitors are moving. The risk is not adopting too slowly &mdash; it is adopting <em>without assurance</em>,
+which in a regulated context means recalls, findings, and IP leakage. A disciplined framework lets us move fast
+<em>and</em> stay defensible.</p>
+
+<h2>What we are building</h2>
+<div class="grid2">
+  <div class="gcard"><h4>A self-hosted model fleet</h4><p>Open-weight, fine-tuned models served on our existing
+  Kubernetes/GPU platform. <strong>No Claude / OpenAI / Gemini APIs</strong> &mdash; for cost at scale, data
+  sovereignty, and regulatory control.</p></div>
+  <div class="gcard"><h4>A six-level maturity model</h4><p>ASMM-Med moves us from ungoverned &ldquo;shadow AI&rdquo;
+  to <strong>validated autonomous agents</strong>, in assurance-gated steps each signed off by Engineering,
+  Quality/Regulatory, and Security.</p></div>
+  <div class="gcard"><h4>Deterministic assurance</h4><p>Every AI output passes <strong>deterministic
+  verifiers</strong> (compilers, tests, static analysis, formal checks) plus human review before it can ship.
+  The model proposes; the system disposes.</p></div>
+  <div class="gcard"><h4>Cost as a first-class metric</h4><p>We optimize <strong>cost-per-verified-change</strong>,
+  not cost-per-token &mdash; via tiered model routing, caching, quantization, and in-loop budget limits.</p></div>
+</div>
+
+<h2>The three questions the board will ask</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Question</th><th>Our answer</th></tr></thead>
+<tbody>
+<tr><td><strong>How do we hit 99.9% accuracy if the AI is probabilistic?</strong></td>
+<td>99.9% is a property of the <em>system</em>, not the model. We wrap every generation in deterministic checks
+and human checkpoints (<em>Generate &rarr; Verify &rarr; Repair &rarr; Gate &rarr; Sign</em>). The model is the
+least-trusted component; trust is manufactured around it. The highest-risk software (IEC&nbsp;62304 Class C)
+always requires dual human sign-off.</td></tr>
+<tr><td><strong>Can we afford the GPU cost?</strong></td>
+<td>Self-hosting converts per-token vendor billing into an owned, amortizable GPU fleet. A small &ldquo;reflex&rdquo;
+model handles the majority of calls cheaply; large reasoning models are used sparingly. At our scale this is
+materially cheaper than API pricing &mdash; and sovereignty/IP control make it non-optional regardless.</td></tr>
+<tr><td><strong>Will regulators accept it?</strong></td>
+<td>Yes, when the agent is treated as <em>validated production software</em> under FDA Computer Software Assurance,
+with documented intended use, risk-based evidence, full traceability, and immutable 21&nbsp;CFR Part&nbsp;11 records.
+The framework is built to produce that evidence automatically.</td></tr>
+</tbody></table></div>
+
+<h2>What it unlocks</h2>
+<ul>
+<li><strong>Throughput</strong> &mdash; faster implementation, test generation, documentation, and safe modernization
+of legacy code that was previously &ldquo;too risky to touch.&rdquo;</li>
+<li><strong>Quality</strong> &mdash; more comprehensive automated test and evaluation coverage than humans can produce
+in the same time, lowering escape-rate into regulated products.</li>
+<li><strong>Leverage</strong> &mdash; smaller teams tackle larger problems; engineers shift from writing code to
+designing, validating, and directing the systems that produce it.</li>
+</ul>
+
+<h2>Investment &amp; timeline (illustrative)</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Horizon</th><th>Maturity target</th><th>Focus</th></tr></thead>
+<tbody>
+<tr><td>Quarters&nbsp;1&ndash;2</td><td><span class="pill">L1</span> Governed Assistance</td><td>Kill shadow AI; stand up self-hosted serving + full logging</td></tr>
+<tr><td>Quarters&nbsp;3&ndash;4</td><td><span class="pill">L2</span> Spec-Driven</td><td>Specs in-repo; deterministic evaluation harness in CI</td></tr>
+<tr><td>Quarters&nbsp;5&ndash;7</td><td><span class="pill">L3</span> Orchestrated</td><td>Sandboxed agents, model fleet + routing, policy server</td></tr>
+<tr><td>Quarters&nbsp;8&ndash;11</td><td><span class="pill">L4</span> Validated Autonomous</td><td>CSA-validate agents; 99.9% gates; full traceability</td></tr>
+<tr><td>Quarter&nbsp;12+</td><td><span class="pill">L5</span> Self-Optimizing</td><td>Closed-loop fine-tuning; cost-optimized at scale</td></tr>
+</tbody></table></div>
+<p>Primary investment: GPU capacity, a platform/MLOps team, evaluation engineering, and quality/regulatory
+integration. Resourcing and figures are placeholders for the funded business case.</p>
+
+<h2>What we ask of the board</h2>
+<ol>
+<li>Endorse the <strong>self-hosted, assurance-gated strategy</strong> (no external LLM APIs).</li>
+<li>Fund <strong>Phase&nbsp;1 (L1)</strong> &mdash; serving platform, logging, and the end of shadow AI.</li>
+<li>Affirm the governance principle that <strong>autonomy never outruns assurance</strong>: no maturity level is
+granted without joint Engineering + Quality/Regulatory + Security sign-off.</li>
+</ol>
+
+<div class="callout"><span class="k">Bottom line</span><span><strong>Structure scales; vibes don&rsquo;t.</strong> AI
+amplifies our engineering and quality culture &mdash; both its strengths and its weaknesses. This framework
+ensures it amplifies the right ones. <em>Full detail:</em> see the <a href="02-maturity-model.html">Maturity Model</a>
+and the <a href="index.html">document set</a>.</span></div>
+
+    </article>
+    <nav class="prevnext"><a class="pn prev" href="index.html"><span>← Previous</span><b>Overview</b></a><a class="pn next" href="01-requirements.html"><span>Next →</span><b>01 · Requirements</b></a></nav>
+  </main>
+  
+</div>
+<div class="nav-scrim" onclick="document.body.classList.remove('nav-open')"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

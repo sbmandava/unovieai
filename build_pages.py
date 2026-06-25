@@ -95,6 +95,7 @@ def NAV(base):
       <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
       <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost on owned silicon</span></span></a>
       <a href="{base}ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">AI SOC Modernization — Whitepaper</span><br><span class="s">Edge-native, identity-driven security for IT/OT</span></span></a>
+      <a href="{base}resources/medsdlc-html/index.html" target="_blank" rel="noopener"><span class="ic">05</span><span><span class="t">Agentic SDLC — Regulated MedTech</span><br><span class="s">Validated, self-hosted, agent-native lifecycle</span></span></a>
     </div></div>
     <a href="{base}why-unovie.html">Why Unovie</a>
   </nav>
@@ -127,7 +128,7 @@ def FOOTER(base):
   <div class="fcol"><h4>Device Platform</h4>
     <a href="{base}device-platform.html#agx-thor">NVIDIA AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a><a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">EdgeGateway Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
+    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">EdgeGateway Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a><a href="{base}resources/medsdlc-html/index.html" target="_blank">Regulated MedTech SDLC</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 

@@ -12,6 +12,7 @@ deploys straight from `main`.
 | `assets/site.css`, `assets/site.js` | **live source** | Shared styles/scripts. The generator will NOT overwrite these once the homepage is slimmed — **edit them directly**. |
 | `solutions/*.html` (9), `platform/*.html` (5), `device-platform.html`, `why-unovie.html`, `about.html` | **generated** | Do not hand-edit — change `build_pages.py` and regenerate. `device-platform.html` is one page with tabs (one per `DEVP` entry); panels switch via `.tab`/`.tpanel` in `site.js`. |
 | `contact.html`, `resources/edge-ai-models.html`, `resources/edge-ai-whitepaper.html` | **hand-authored standalone** | Not produced by the generator. Have their own inline `<style>`/theme script. |
+| `resources/medsdlc-html/` | **self-contained sub-site** | "Agentic SDLC for Regulated MedTech" — its own `build.py`, theme, nav and `assets/`. Don't regenerate from the main `build_pages.py`. Each page carries the Unovie GA tag, favicons (`../../assets/...`) and a `← Unovie.AI` back link in its `.topbar`. Linked from the Research dropdown + footer. |
 
 Solution slugs: `maritime-digital-twin`, `connected-vehicle-twin`, `corporate-travel-sales`,
 `smart-factory-floor`, `smart-warehouse`, `osha-compliance`, `food-safety`,

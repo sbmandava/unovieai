@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assessment Scorecard · Agentic-Native SDLC for Regulated MedTech</title>
+<script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-590ZL8SE2M"></script>
+<script data-ga>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-590ZL8SE2M');</script>
+<link rel="icon" href="../../assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="../../assets/favicon.png"><link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="../../index.html" title="Back to Unovie.AI" style="display:inline-flex;align-items:center;gap:6px;margin-right:14px;font-weight:700;font-size:13px;color:var(--text);text-decoration:none;opacity:.82">&larr;&nbsp;Unovie.AI</a>
+
+  <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <a class="brand" href="index.html"><span class="brand-mark">◆</span> Agentic-Native SDLC <em>· Regulated MedTech</em></a>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" onclick="toggleTheme()"></button>
+</header>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="side-t">Documents</div>
+    <ul><li><a href="index.html">Overview</a></li><li><a href="exec-brief.html">Executive Brief</a></li><li><a href="01-requirements.html">01 · Requirements</a></li><li><a href="02-maturity-model.html">02 · Maturity Model</a></li><li><a href="03-reference-architecture.html">03 · Reference Architecture</a></li><li><a href="04-model-strategy-and-finetuning.html">04 · Model Strategy & Fine-Tuning</a></li><li><a href="05-evaluation-and-validation.html">05 · Evaluation & Validation</a></li><li><a href="06-agentic-workflows.html">06 · Agentic Workflows</a></li><li><a href="07-security-and-compliance.html">07 · Security & Compliance</a></li><li><a href="08-token-and-gpu-economics.html">08 · Token & GPU Economics</a></li><li><a href="09-adoption-roadmap.html">09 · Adoption Roadmap</a></li><li class="active"><a href="scorecard.html">Assessment Scorecard</a></li><li><a href="diagrams.html">Diagrams (SVG)</a></li></ul>
+    <div class="side-foot">Self-hosted · FDA / IEC&nbsp;62304 · ≥99.9% gate</div>
+  </nav>
+  <main class="content">
+    <article class="prose">
+      <h1>ASMM-Med Assessment Scorecard<a class="anchor" href="#top">#</a></h1>
+<p>A fillable, self-contained template for a quarterly maturity assessment. Select the satisfied level (0&ndash;5) for each of the eight dimensions and record the supporting evidence. Your <strong>governing level = min(D1, D4, D6)</strong> is computed live &mdash; capability can never outrun governance, evaluation, and security. Entries save to this browser; use <em>Print</em> to produce a PDF for the quality record. See <a href="02-maturity-model.html">the maturity model</a> for full cell descriptors.</p>
+<div class="sc-toolbar"><button id="scSave">Save</button><button class="ghost" id="scPrint">Print / PDF</button><button class="ghost" id="scReset">Reset</button><span class="saved-tag" id="savedTag"></span><div class="sc-readout"><div class="ro gov">Governing level<b id="ro-gov">&mdash;</b></div><div class="ro">Capability avg<b id="ro-cap">&mdash;</b></div></div></div>
+<form id="scorecard">
+<div class="sc-meta"><label>Organization / Business unit<input name="org" type="text" placeholder="e.g. Imaging Software, Site X"></label><label>Assessor(s)<input name="assessor" type="text" placeholder="name, role"></label><label>Assessment date<input name="date" type="date"></label></div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D1</span><span class="nm">Governance, Quality &amp; Regulatory</span><span class="gv">governing</span></div>
+<div class="dim-desc">QMS integration, IEC 62304 / ISO 13485 / QMSR alignment, CSA validation, traceability, change control</div>
+<div class="levels">
+<label><input type="radio" name="d1" value="0">L0<small>None / shadow AI</small></label>
+<label><input type="radio" name="d1" value="1">L1<small>AUP + logging</small></label>
+<label><input type="radio" name="d1" value="2">L2<small>QMS + SDD controlled</small></label>
+<label><input type="radio" name="d1" value="3">L3<small>GAMP risk-class + 42001</small></label>
+<label><input type="radio" name="d1" value="4">L4<small>CSA-validated + traceable</small></label>
+<label><input type="radio" name="d1" value="5">L5<small>PCCP + auto-evidence</small></label>
+</div>
+<textarea name="ev1" placeholder="Evidence / artifacts / gaps for D1 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D2</span><span class="nm">Model Infrastructure &amp; MLOps</span></div>
+<div class="dim-desc">Self-hosted serving, fine-tuning pipeline, registry, reproducibility, multi-LoRA, GPU platform</div>
+<div class="levels">
+<label><input type="radio" name="d2" value="0">L0<small>None / SaaS</small></label>
+<label><input type="radio" name="d2" value="1">L1<small>Single self-hosted</small></label>
+<label><input type="radio" name="d2" value="2">L2<small>Registry + first fine-tunes</small></label>
+<label><input type="radio" name="d2" value="3">L3<small>Tiered fleet + multi-LoRA</small></label>
+<label><input type="radio" name="d2" value="4">L4<small>Reproducible validated pipelines</small></label>
+<label><input type="radio" name="d2" value="5">L5<small>Continuous FT + auto-promote</small></label>
+</div>
+<textarea name="ev2" placeholder="Evidence / artifacts / gaps for D2 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D3</span><span class="nm">Context &amp; Knowledge Engineering</span></div>
+<div class="dim-desc">Specs, rule files, RAG over code/docs/regulatory corpus, memory, context hygiene</div>
+<div class="levels">
+<label><input type="radio" name="d3" value="0">L0<small>Editor buffer only</small></label>
+<label><input type="radio" name="d3" value="1">L1<small>System prompts</small></label>
+<label><input type="radio" name="d3" value="2">L2<small>specs + AGENTS.md + RAG</small></label>
+<label><input type="radio" name="d3" value="3">L3<small>Governed RAG + skills + hygiene</small></label>
+<label><input type="radio" name="d3" value="4">L4<small>Validated sources + provenance</small></label>
+<label><input type="radio" name="d3" value="5">L5<small>Self-curating + measured</small></label>
+</div>
+<textarea name="ev3" placeholder="Evidence / artifacts / gaps for D3 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D4</span><span class="nm">Evaluation, Validation &amp; Assurance</span><span class="gv">governing</span></div>
+<div class="dim-desc">Deterministic verifiers, eval suites, trajectory eval, the 99.9% gate, abstention</div>
+<div class="levels">
+<label><input type="radio" name="d4" value="0">L0<small>None / “looks right”</small></label>
+<label><input type="radio" name="d4" value="1">L1<small>Lint + CI</small></label>
+<label><input type="radio" name="d4" value="2">L2<small>Deterministic harness in CI</small></label>
+<label><input type="radio" name="d4" value="3">L3<small>Output + trajectory evals</small></label>
+<label><input type="radio" name="d4" value="4">L4<small>≥ 99.9% gate + statistical</small></label>
+<label><input type="radio" name="d4" value="5">L5<small>Continuous + closed-loop</small></label>
+</div>
+<textarea name="ev4" placeholder="Evidence / artifacts / gaps for D4 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D5</span><span class="nm">Agentic Orchestration &amp; Tooling</span></div>
+<div class="dim-desc">Single &rarr; multi-agent, MCP/A2A, sandboxing, HITL design, workflow engine</div>
+<div class="levels">
+<label><input type="radio" name="d5" value="0">L0<small>None</small></label>
+<label><input type="radio" name="d5" value="1">L1<small>Inline only</small></label>
+<label><input type="radio" name="d5" value="2">L2<small>Single-step bounded</small></label>
+<label><input type="radio" name="d5" value="3">L3<small>Multi-step sandboxed + MCP</small></label>
+<label><input type="radio" name="d5" value="4">L4<small>Multi-agent A2A + hooks</small></label>
+<label><input type="radio" name="d5" value="5">L5<small>Self-orchestrating</small></label>
+</div>
+<textarea name="ev5" placeholder="Evidence / artifacts / gaps for D5 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D6</span><span class="nm">Security &amp; Zero-Trust</span><span class="gv">governing</span></div>
+<div class="dim-desc">Identity, egress control, prompt-injection defense, supply chain, secrets, audit immutability</div>
+<div class="levels">
+<label><input type="radio" name="d6" value="0">L0<small>Uncontrolled</small></label>
+<label><input type="radio" name="d6" value="1">L1<small>SSO + RBAC + DLP</small></label>
+<label><input type="radio" name="d6" value="2">L2<small>Repo-scoped + Vault</small></label>
+<label><input type="radio" name="d6" value="3">L3<small>Zero-trust + OPA + sandbox</small></label>
+<label><input type="radio" name="d6" value="4">L4<small>Supply-chain + WORM + 62443</small></label>
+<label><input type="radio" name="d6" value="5">L5<small>Continuous red-team</small></label>
+</div>
+<textarea name="ev6" placeholder="Evidence / artifacts / gaps for D6 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D7</span><span class="nm">Observability &amp; FinOps</span></div>
+<div class="dim-desc">Tracing, eval dashboards, token/GPU metering, routing economics, budget guardrails</div>
+<div class="levels">
+<label><input type="radio" name="d7" value="0">L0<small>None</small></label>
+<label><input type="radio" name="d7" value="1">L1<small>Basic logs + GPU util</small></label>
+<label><input type="radio" name="d7" value="2">L2<small>Usage + cost dashboards</small></label>
+<label><input type="radio" name="d7" value="3">L3<small>Tracing + cost/task</small></label>
+<label><input type="radio" name="d7" value="4">L4<small>Cost-per-green-PR SLO</small></label>
+<label><input type="radio" name="d7" value="5">L5<small>Closed-loop cost opt</small></label>
+</div>
+<textarea name="ev7" placeholder="Evidence / artifacts / gaps for D7 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<div class="dim">
+<div class="dim-h"><span class="tag">D8</span><span class="nm">People, Skills &amp; Operating Model</span></div>
+<div class="dim-desc">Roles (conductor/orchestrator), review culture, training, approval-fatigue controls</div>
+<div class="levels">
+<label><input type="radio" name="d8" value="0">L0<small>Individual experiments</small></label>
+<label><input type="radio" name="d8" value="1">L1<small>Training + champions</small></label>
+<label><input type="radio" name="d8" value="2">L2<small>Spec/review skills</small></label>
+<label><input type="radio" name="d8" value="3">L3<small>Orchestrator role emerges</small></label>
+<label><input type="radio" name="d8" value="4">L4<small>Formal roles + failure-mode review</small></label>
+<label><input type="radio" name="d8" value="5">L5<small>Judgment-first hiring</small></label>
+</div>
+<textarea name="ev8" placeholder="Evidence / artifacts / gaps for D8 (logs, validation records, eval reports, policy configs)…"></textarea>
+</div>
+<blockquote><strong>Promotion rule.</strong> The overall operating level is the minimum across D1, D4, and D6. Advancing requires this scorecard plus documented evidence, signed by Engineering, Quality/Regulatory, and Security. Even at L4/L5, IEC&nbsp;62304 Class&nbsp;C changes always require dual human control.</blockquote>
+<h2>Sign-off</h2>
+<div class="sign"><label>Engineering<input name="sign_eng" type="text" placeholder="name / date"></label><label>Quality &amp; Regulatory<input name="sign_qa" type="text" placeholder="name / date"></label><label>Security<input name="sign_sec" type="text" placeholder="name / date"></label></div>
+</form>
+    </article>
+    <nav class="prevnext"><a class="pn prev" href="09-adoption-roadmap.html"><span>← Previous</span><b>09 · Adoption Roadmap</b></a><a class="pn next" href="diagrams.html"><span>Next →</span><b>Diagrams (SVG)</b></a></nav>
+  </main>
+  
+</div>
+<div class="nav-scrim" onclick="document.body.classList.remove('nav-open')"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
