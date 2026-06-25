@@ -82,7 +82,7 @@ def NAV(base):
     return f'''<header class="nav"><div class="wrap"><div class="row">
   <a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
-    <a href="{base}why-unovie.html">Why Unovie</a><a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
+    <a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
     <a href="{h}#platform">Platform</a>
     <div class="drop"><button data-cursor>Device Platform ▾</button><div class="menu">
       <a href="{base}device-platform.html#agx-thor"><span class="ic">01</span><span><span class="t">NVIDIA AGX Thor</span><br><span class="s">Blackwell robotics &amp; physical-AI edge</span></span></a>
@@ -96,6 +96,7 @@ def NAV(base):
       <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost on owned silicon</span></span></a>
       <a href="{base}ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">AI SOC Modernization — Whitepaper</span><br><span class="s">Edge-native, identity-driven security for IT/OT</span></span></a>
     </div></div>
+    <a href="{base}why-unovie.html">Why Unovie</a>
   </nav>
   <a class="navcta" href="{h}#contact" data-cursor>Start a project <span class="ar">→</span></a>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
