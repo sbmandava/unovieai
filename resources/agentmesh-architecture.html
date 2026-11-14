@@ -203,6 +203,7 @@
     <li><a href="#summary">The short version</a></li>
     <li><a href="#context">Where it fits</a></li>
     <li><a href="#layers">How it's organised</a></li>
+    <li><a href="#hardware">The four-server pod</a></li>
     <li><a href="#flows">What happens, step by step</a></li>
     <li><a href="#reason">Work orders and records</a></li>
     <li><a href="#kiln">Getting better every night</a></li>
@@ -331,7 +332,7 @@ many sites.</p>
 connection to the machines and is the only part allowed to write outputs. The <b>Thinker</b> role
 holds the slow path: reasoning, records and the nightly review. Each role runs on its own server,
 and each role has a warm standby on another server, so either server can carry everything
-if the other fails. Everything runs as microservices on CNCF-conformant cluster software.</p>
+if the other fails. The four-server pod has two such pairs (section 4). Everything runs as microservices on CNCF-conformant cluster software.</p>
 
 <table>
   <tr><th>Service</th><th>Stage</th><th>Role</th><th>What it does</th></tr>
@@ -390,15 +391,128 @@ if the other fails. Everything runs as microservices on CNCF-conformant cluster 
 </figure>
 
 <!-- 4 -->
-<h2 id="flows"><span class="n">4</span>What happens, step by step</h2>
+<h2 id="hardware"><span class="n">4</span>The four-server pod</h2>
+<p>The Sovereign Pod is one 3U shelf holding four compact servers, all the same model: AMD Ryzen AI
+Max+ 395, with processor, graphics and AI accelerator on one chip. Unovie provides the pod
+configured and tested. Because every server is the same, there is one spare-parts kit and one
+software image, and a replacement server sets itself up from the slot it's put in.</p>
+
+<p>The four servers form two pairs. Each pair has a Reflex server and a Thinker server that stand in
+for each other, as described above. A pair can watch its own line or its own set of domain kits.
+A pod can start as one pair and grow to two without a rebuild.</p>
+
+<figure>
+<svg viewBox="0 0 900 470" role="img" aria-labelledby="f3t f3d">
+  <title id="f3t">The four-server Sovereign Pod</title>
+  <desc id="f3d">Four servers in a 3U shelf, arranged as pair A (server 1 Reflex, server 2 Thinker) and pair B (server 3 Reflex, server 4 Thinker with more memory). Fast direct cables join every server to every other: a ring plus two diagonals. Each server has two 10 gigabit ports, one to the machine network and one to the site network.</desc>
+  <defs>
+    <marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker>
+  </defs>
+  <text x="20" y="26" class="tl">ONE 3U SHELF · FOUR SERVERS · DIRECT CABLES IN A FULL MESH</text>
+
+  <rect x="20" y="40" width="560" height="330" rx="10" class="bx"/>
+  <text x="40" y="66" class="tb">Pair A</text>
+  <text x="330" y="66" class="tb">Pair B</text>
+
+  <rect x="40" y="80" width="200" height="96" rx="8" class="bx-blue"/>
+  <text x="56" y="106" class="tblue">Server 1 · Reflex</text>
+  <text x="56" y="128" class="ts">Sense · Decide</text>
+  <text x="56" y="148" class="ts">64 GB unified memory</text>
+  <text x="56" y="166" class="ts">cluster control</text>
+
+  <rect x="40" y="250" width="200" height="96" rx="8" class="bx-violet"/>
+  <text x="56" y="276" class="tviolet">Server 2 · Thinker</text>
+  <text x="56" y="298" class="ts">Reason · Data Triad</text>
+  <text x="56" y="318" class="ts">64 GB unified memory</text>
+  <text x="56" y="336" class="ts">cluster control</text>
+
+  <rect x="330" y="80" width="200" height="96" rx="8" class="bx-blue"/>
+  <text x="346" y="106" class="tblue">Server 3 · Reflex</text>
+  <text x="346" y="128" class="ts">Sense · Decide</text>
+  <text x="346" y="148" class="ts">64 GB unified memory</text>
+  <text x="346" y="166" class="ts">cluster control</text>
+
+  <rect x="330" y="250" width="200" height="96" rx="8" class="bx-violet"/>
+  <text x="346" y="276" class="tviolet">Server 4 · Thinker</text>
+  <text x="346" y="298" class="ts">Reason · more kits · Kiln</text>
+  <text x="346" y="318" class="ts">128 GB unified memory</text>
+  <text x="346" y="336" class="ts">workloads only</text>
+
+  <!-- ring -->
+  <line x1="140" y1="176" x2="140" y2="250" class="ln-thick"/>
+  <line x1="430" y1="176" x2="430" y2="250" class="ln-thick"/>
+  <line x1="240" y1="128" x2="330" y2="128" class="ln-thick"/>
+  <line x1="240" y1="298" x2="330" y2="298" class="ln-thick"/>
+  <!-- diagonals -->
+  <line x1="240" y1="176" x2="330" y2="250" class="ln-dash"/>
+  <line x1="330" y1="176" x2="240" y2="250" class="ln-dash"/>
+  <text x="148" y="218" class="ts">pair link</text>
+  <text x="438" y="218" class="ts">pair link</text>
+  <text x="252" y="118" class="ts">ring</text>
+  <text x="252" y="290" class="ts">ring</text>
+  <text x="260" y="246" class="ts">diagonals</text>
+
+  <!-- networks -->
+  <text x="620" y="26" class="tl">TWO 10 GB/S PORTS PER SERVER</text>
+  <rect x="620" y="80" width="260" height="96" rx="8" class="bx-accent"/>
+  <text x="636" y="106" class="tb">Machine network</text>
+  <text x="636" y="128" class="ts">read-only connectors</text>
+  <text x="636" y="148" class="ts">listed outputs only</text>
+  <text x="636" y="166" class="ts">one owner writes at a time</text>
+  <rect x="620" y="250" width="260" height="96" rx="8" class="bx2"/>
+  <text x="636" y="276" class="tb">Site network</text>
+  <text x="636" y="298" class="ts">management</text>
+  <text x="636" y="318" class="ts">work orders and findings,</text>
+  <text x="636" y="336" class="ts">outbound only</text>
+  <line x1="580" y1="128" x2="618" y2="128" class="ln" marker-end="url(#a4)" marker-start="url(#a4)"/>
+  <line x1="580" y1="298" x2="618" y2="298" class="ln" marker-end="url(#a4)"/>
+
+  <rect x="20" y="392" width="860" height="60" rx="8" class="bx-green"/>
+  <text x="38" y="418" class="tgreen">Shared across the pod</text>
+  <text x="38" y="438" class="ts">One software image · cluster control on three servers, so it survives losing any one · records copied between pair members over the direct cables</text>
+</svg>
+<figcaption>Figure 3. The four-server pod. Copies of data and the heartbeat travel over the direct cables, so the two network ports stay free for machine and site traffic.</figcaption>
+</figure>
+
+<h3>One server</h3>
+<table>
+  <tr><th>Item</th><th>What it is</th><th>What it's used for</th></tr>
+  <tr><td>Processor</td><td>AMD Ryzen AI Max+ 395, 16 cores</td><td>Gateway, rules, Reason service, the system itself</td></tr>
+  <tr><td>Graphics processor</td><td>Radeon 8060S, on the same chip</td><td>Signal fingerprints and the decision models on Reflex servers; the Reasoning Model on Thinker servers</td></tr>
+  <tr><td>AI accelerator (NPU)</td><td>XDNA 2, about 50 TOPS</td><td>Reserved for small helper models once they're tested on it</td></tr>
+  <tr><td>Memory</td><td>64 GB unified, shared by processor and graphics (128 GB on server 4)</td><td>Models, the in-memory Vector Memory index and signal buffers. Memory is what we plan around most carefully.</td></tr>
+  <tr><td>Storage</td><td>NVMe solid-state drives in three tiers</td><td>A system drive; a fast drive for the live index and working data; a four-drive card for signal history and the Data Triad's archive</td></tr>
+  <tr><td>Network</td><td>Two 10 Gb/s ports, plus direct cables to the other three servers</td><td>One port to the machine network and one to the site network, so the two never share a cable</td></tr>
+</table>
+
+<h3>Why it's built this way</h3>
+<table>
+  <tr><th>Choice</th><th>Why</th></tr>
+  <tr><td>Two Reflex/Thinker pairs</td><td>Each pair can lose a server and keep deciding. Two pairs double the lines or kits one pod can carry.</td></tr>
+  <tr><td>Cluster control on three servers</td><td>Cluster control needs a majority to keep working. Three members survive losing any one; the fourth server gives all its memory to work.</td></tr>
+  <tr><td>More memory on server 4</td><td>Room for longer reasoning context, more domain kits and the nightly Kiln. Pair B's essential work still fits a 64 GB server, so if server 4 fails, server 3 carries it and only the extras pause.</td></tr>
+  <tr><td>Direct cables in a full mesh</td><td>Every server is one hop from every other. Heartbeats and copies of data don't depend on the site switches, and a failed cable has another path.</td></tr>
+  <tr><td>Separate machine and site ports</td><td>The machine network and the business network never touch on the same port, which keeps the boundary simple to inspect.</td></tr>
+  <tr><td>One model of server</td><td>One spare-parts kit, one image, and any server can replace any other.</td></tr>
+</table>
+
+<div class="stats">
+  <div class="stat"><div class="v">4</div><div class="l">servers in one 3U shelf</div></div>
+  <div class="stat"><div class="v">2</div><div class="l">Reflex/Thinker pairs</div></div>
+  <div class="stat"><div class="v">2 × 10G</div><div class="l">network ports per server</div></div>
+  <div class="stat"><div class="v">3 of 4</div><div class="l">servers share cluster control</div></div>
+</div>
+
+<!-- 4 -->
+<h2 id="flows"><span class="n">5</span>What happens, step by step</h2>
 <p>An event goes through the same steps every time. There is no language model on this path: every
 step is either a small, fast model with a fixed set of answers or a fixed rule, so the same input
 always gives the same, auditable answer.</p>
 
 <figure>
-<svg viewBox="0 0 900 300" role="img" aria-labelledby="f3t f3d">
-  <title id="f3t">From signal to action</title>
-  <desc id="f3d">Five steps from left to right: Gateway reads the signal, the Signal Encoder makes a fingerprint, Vector Memory finds similar past events, the Policy and Bounds Gatekeeper applies fixed rules, then the event goes to Lane A for a direct low-consequence action or Lane B for an alarm and request to the PLC. Every decision is written to the Evidence Log and handed to Reason.</desc>
+<svg viewBox="0 0 900 300" role="img" aria-labelledby="f4t f4d">
+  <title id="f4t">From signal to action</title>
+  <desc id="f4d">Five steps from left to right: Gateway reads the signal, the Signal Encoder makes a fingerprint, Vector Memory finds similar past events, the Policy and Bounds Gatekeeper applies fixed rules, then the event goes to Lane A for a direct low-consequence action or Lane B for an alarm and request to the PLC. Every decision is written to the Evidence Log and handed to Reason.</desc>
   <defs>
     <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker>
   </defs>
@@ -442,7 +556,7 @@ always gives the same, auditable answer.</p>
   <line x1="610" y1="128" x2="300" y2="208" class="ln-dash" marker-end="url(#a3)"/>
   <line x1="640" y1="128" x2="660" y2="208" class="ln-dash" marker-end="url(#a3)"/>
 </svg>
-<figcaption>Figure 3. The Decide path and its planning budget per step. The window of signal being judged is collected before the clock starts.</figcaption>
+<figcaption>Figure 4. The Decide path and its planning budget per step. The window of signal being judged is collected before the clock starts.</figcaption>
 </figure>
 
 <table>
@@ -479,7 +593,7 @@ always gives the same, auditable answer.</p>
 </div>
 
 <!-- 5 -->
-<h2 id="reason"><span class="n">5</span>Work orders and records</h2>
+<h2 id="reason"><span class="n">6</span>Work orders and records</h2>
 <p>Every decision is handed to the Thinker with a short snippet of the signal. The Reason Service
 gathers what the site knows about that machine (its nameplate, recent events, active alarms and
 the last work order) from the Data Triad, and asks the Unovie Reasoning Model to write it up. The
@@ -492,7 +606,7 @@ answer is checked against a fixed form before it goes anywhere.</p>
 </ul>
 
 <!-- 6 -->
-<h2 id="kiln"><span class="n">6</span>Getting better every night</h2>
+<h2 id="kiln"><span class="n">7</span>Getting better every night</h2>
 <p>A site's playbook holds what it has learned: which patterns mean what, which checks to run,
 how to word a work order. The Kiln improves the playbook, not the model.</p>
 <table>
@@ -507,7 +621,7 @@ refuses to load weights that don't match. What improves is the playbook, which a
 review and roll back.</div>
 
 <!-- 7 -->
-<h2 id="data"><span class="n">7</span>Keeping data safe</h2>
+<h2 id="data"><span class="n">8</span>Keeping data safe</h2>
 <p>AgentMesh is designed against NIST SP 800-53 controls and the NIST AI Risk Management Framework.
 It is not a safety function and carries no SIL rating: the PLC and the safety system remain the
 safety layer.</p>
@@ -522,7 +636,7 @@ safety layer.</p>
 </table>
 
 <!-- 8 -->
-<h2 id="failures"><span class="n">8</span>When something breaks</h2>
+<h2 id="failures"><span class="n">9</span>When something breaks</h2>
 <p>The Mesh Arbiter on each server sends a heartbeat every 10 milliseconds on three separate paths.
 If a server misses ten heartbeats in a row on all three, about 100 ms (target), the other server
 takes over its role.</p>
@@ -541,7 +655,7 @@ each site's agreement, together with the safe default the PLC uses in that windo
 customer's controls engineer.</div>
 
 <!-- 9 -->
-<h2 id="kits"><span class="n">9</span>Domain kits</h2>
+<h2 id="kits"><span class="n">10</span>Domain kits</h2>
 <p>Every kit runs on the same loop. A kit is a set of connectors, encoders, a playbook and an
 equipment graph for one kind of problem. Images can confirm or locate a fault, but they are never a
 kit's main signal. The first kit built end to end is Rotating Equipment Health.</p>
@@ -560,7 +674,7 @@ kit's main signal. The first kit built end to end is Rotating Equipment Health.<
 </table>
 
 <!-- 10 -->
-<h2 id="glossary"><span class="n">10</span>Glossary</h2>
+<h2 id="glossary"><span class="n">11</span>Glossary</h2>
 <dl class="gloss">
   <dt>AgentNexus</dt><dd>Unovie's rack for a fleet of sites. It runs agents that work across sites, at business speed, and never controls equipment.</dd>
   <dt>DAQ</dt><dd>Data acquisition hardware that samples sensors such as accelerometers or microphones.</dd>
