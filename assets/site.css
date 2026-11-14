@@ -579,7 +579,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 50px;margin-top:30px}
 
 /* ---------- homepage hero (mock) ---------- */
 .hero{padding:140px 0 60px}
-.hero h1.hero-h1{font-size:clamp(32px,3.7vw,52px);line-height:1.05;letter-spacing:-.03em;max-width:none}
+.hero h1.hero-h1{font-size:clamp(30px,3.25vw,46px);line-height:1.05;letter-spacing:-.03em;max-width:none}
 .hero .sub{font-size:clamp(16px,1.25vw,19px);margin:22px 0 30px;max-width:54ch}
 .proof{list-style:none;margin:30px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;gap:14px}
 @media(min-width:640px){.proof{grid-template-columns:repeat(2,1fr);gap:16px 28px}}
@@ -824,3 +824,6 @@ body:has(.ph2) section{padding-top:72px;padding-bottom:72px}
 @media(prefers-reduced-motion:reduce){.dv-quad,.dv-deckdrone{transform:none}}
 
 .domainviz text.dv-l1{font-size:9px;letter-spacing:.1em}
+/* tighter space above the hero eyebrow (CNCF-conformant · Microservices native) */
+.hero{padding-top:104px}
+@media(max-width:768px){.hero{padding-top:96px}}
