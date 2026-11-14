@@ -14,21 +14,21 @@
  },
  "generated_by": "build_pages.py",
  "lastmod": "2026-11-14",
- "count": 135,
+ "count": 136,
  "records": [
   {
    "id": "home#1",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
-   "section": "The sovereign Agentic Physical AI platform for Industry 4.0.",
-   "text": "AgentMesh · AgentNexus · AMD & NVIDIA The sovereign Agentic Physical AI platform for Industry 4.0. Unovie designs, builds and operates custom Edge-AI Agentic Systems for industrial operations — AgentMesh at the machine, AgentNexus across every plant. Fixed scope, fixed cost. Start a project → See AgentMesh & AgentNexus Safety stays with you PLC, safety system and operator decide Low-latency decisions < 30 ms at the machine · design target Air-gapped by default no plant data leaves the site AMD or NVIDIA on hardware you own Trusted with NVIDIA AMD Qualcomm Siemens GE AgentMesh Sovereign Pod 4 × AMD Ryzen AI Max+ 395 · 3U · plant DMZ Live · Edge node AgentMesh Throughput 0 tok/s Power 0 W Egress 0 bytes"
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
+   "section": "Sovereign AI engine for the physical frontier.",
+   "text": "AgentMesh · AgentNexus · AMD & NVIDIA Sovereign AI engine for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for industrial operations — AgentMesh at the machine, AgentNexus across every plant. Fixed scope, fixed cost. Start a project → See AgentMesh & AgentNexus Safety stays with you PLC, safety system and operator decide Low-latency decisions < 30 ms at the machine · design target Air-gapped by default no plant data leaves the site AMD or NVIDIA on hardware you own Trusted with NVIDIA AMD Qualcomm Siemens GE AgentMesh Sovereign Pod 4 × AMD Ryzen AI Max+ 395 · 3U · plant DMZ Live · Edge node AgentMesh Throughput 0 tok/s Power 0 W Egress 0 bytes"
   },
   {
    "id": "home#2",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "We own the whole arc, from whiteboard to production.",
    "text": "00 — The model We own the whole arc, from whiteboard to production. Not advisory decks. Working systems — assessed, designed, built, optimized, and supported within committed timelines. 01 Architecture Reference architecture & solution blueprint, scoped to a fixed outcome. 02 POC A graded proof against your data — value proven before you commit further. 03 MVP Production-shaped build: data, models, testing, monitoring. 04 Production Hardened, observed, and operated — on hardware you own."
   },
@@ -36,7 +36,7 @@
    "id": "home#3",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Four things we are genuinely good at.",
    "text": "01 — Engineering disciplines Four things we are genuinely good at. / model-engineering Signal & Model Engineering We turn your equipment's own signals — vibration, electrical, battery, process and network data — into fingerprints and small, specialised models. New skills are trained as small adapters by the Kiln, on a base model that never changes, and go live only after they beat what's running on cases they've never seen. signal encoders skill adapters held-out tests / ot-integration Safe OT Integration AI that fits how plants already run. Read-only connections to sensors, historians and the control network; Lane A acts only where a wrong call costs little; Lane B raises an alarm and a request so your PLC, safety system and operator decide. Every decision is written to a signed Evidence Log. read-only Lane A · Lane B Evidence Log / edge-efficiency Edge Efficiency Fast answers on small, owned hardware. A 30-millisecond decision budget at the machine, careful memory budgeting on shared-memory AMD and NVIDIA servers, compact model copies for speed and skill adapters instead of ever-bigger models. < 30 ms target AMD · NVIDIA compact models / sovereign-reliable Sovereign & Reliable Operations Systems you own and can run without us. Air-gapped by default, built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves. air-gapped Mesh Arbiter fixed cost"
   },
@@ -44,7 +44,7 @@
    "id": "home#4",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Industrial outcomes, pre-engineered.",
    "text": "02 — Solution accelerators Industrial outcomes, pre-engineered. Agentic blueprints for plants, process lines, warehouses and fleets — each with quantified goals, running on AgentMesh and AgentNexus, deployed in weeks, not quarters. 01 / Manufacturing Smart Factory Floor Automated inspection & quality control on the line. −30% errors · +25% speed 02 / Process Batch Optimization Chemical & pharma batch processes. +25% quality · −15% waste 03 / Safety OSHA Compliance Risk analytics with real-time alerting. −25% fines · +30% training 04 / Logistics Smart Warehouse Inventory management & real-time tracking. −20% stockouts · +15% fill 05 / Maritime Maritime Digital Twin Edge-AI fleet monitoring & predictive maintenance. −6mo overhauls · 100% on-vessel 06 / Workforce Remote Expertise Real-time expert guidance to teams. +20% output · −30% visits"
   },
@@ -52,7 +52,7 @@
    "id": "home#5",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Two systems. One agent-native platform.",
    "text": "03 — The Unovie platform Two systems. One agent-native platform. AgentMesh keeps the fast loop at the machine. AgentNexus works at business speed across every plant. Same agents, same models, same safety boundary — on AMD or NVIDIA hardware you own. AgentMesh · at the machine AI on your equipment's signals, next to the control system. A Sovereign Pod in the plant DMZ reads vibration, electrical, battery and network signals read-only, decides inside a 30-millisecond budget, and acts only where the consequence is low. Anything safety-related becomes an alarm and a request to your PLC, safety system and operators. Every decision lands in a signed Evidence Log. Lane A · Lane B domain kits Evidence Log air-gapped Explore AgentMesh → AgentNexus · across every plant Agents that work across sites, and get better from production. One rack in a central cabinet hosts thousands of agents in sealed sandboxes, connects to every AgentMesh pod and turns plant events into analysis, plans and work orders within half a second. New skills are tested before they go live. It never moves plant equipment. Unovie Agent Runtime Model Router skill adapters Kiln Explore AgentNexus → AgentMesh AgentNexus Where it runs Next to the machines, in the plant's industrial DMZ A central cabinet serving every plant How fast A 30-millisecond decision budget Answers within half a second What it does Reads asset signals, decides, raises alarms and requests, drafts work orders Runs agents across sites, plans maintenance, learns from production What it never does Overrule your PLC, safety system or operator Move plant equipment at all Hardware AMD Ryzen AI Max+ 395 · NVIDIA Jetson AGX Thor (robotics & DeepVision) · NVIDIA DGX Spark AMD Ryzen AI Max+ 395 rack · NVIDIA DGX Spark"
   },
@@ -60,7 +60,7 @@
    "id": "home#6",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "AMD or NVIDIA. Your choice, your hardware.",
    "text": "04 — Hardware AMD or NVIDIA. Your choice, your hardware. The same platform on two hardware families, so you choose the hardware that fits the site — and own it. Runs today AMD Ryzen AI Max+ 395 Sovereign plant intelligence. An AgentMesh Sovereign Pod in 3U at each plant, and an AgentNexus rack for the fleet. Available on NVIDIA Jetson AGX Thor Robotics & DeepVision for fabs. Inspection, robot cells and wafer handling, at the tool. Available on NVIDIA DGX Spark AI engineering lab. Train skill adapters, analyse test stands and run a site AgentNexus."
   },
@@ -68,7 +68,7 @@
    "id": "home#7",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "A proven, success-based methodology.",
    "text": "05 — How we deliver A proven, success-based methodology. Full responsibility, committed timelines — every phase with enterprise-grade execution. 01 Assess & plan Workshops, ROI, value outcomes. 02 Solution design Roadmap, reference architecture, blueprints. 03 Build & test Data, models, testing, monitoring. 04 Optimize KPI tracking, feedback loops, reviews. 05 Train & support Enablement & ongoing adoption."
   },
@@ -76,7 +76,7 @@
    "id": "home#8",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Read the thinking behind the work.",
    "text": "06 — Research Read the thinking behind the work. Architecture overview AgentNexus, in plain terms How the rack is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders. Read the overview → Free eBook · Field Guide Edge AI Models Without the PhD How AI models actually learn — gradient descent, backprop — and why fine-tuning is the wrong reflex on the edge. 25 chapters, diagrams, real results. Read the field guide → Whitepaper Training Without Retraining The frozen-base doctrine: keep the weights fixed, adapt in context, verify against a frozen baseline — and let throughput compound the gains nightly. Read the whitepaper →"
   },
@@ -84,7 +84,7 @@
    "id": "home#9",
    "url": "https://unovie.ai/",
    "type": "home",
-   "title": "Unovie.AI — The sovereign Agentic Physical AI platform for Industry 4.0",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Bring us an asset. We'll return a system .",
    "text": "Let's build Bring us an asset. We'll return a system . Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Tell us the outcome you need; we'll engineer the path to production. Talk to our engineers → Explore the field guide"
   },
@@ -566,7 +566,7 @@
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
    "section": "Agent Mesh",
-   "text": "Home / Platform / AgentMesh Platform · AgentMesh Agent Mesh AI on the signals your equipment produces — next to the control system, inside a 30-millisecond decision budget. Low-consequence actions happen directly; anything safety-related goes to your PLC, safety system and operators. Start a project → See how it works vibration electrical battery OT network air-gapped AgentMesh operator portal Refinery Sector 4 · compressor K-201 · illustration · click to enlarge <30 ms decision budget · target 0 B leaves site by default 10 domain kits 2 safety lanes"
+   "text": "Home / Platform / AgentMesh Platform · AgentMesh Agent Mesh Agentic Physical AI for brownfield plants. AgentMesh works alongside the SCADA and control systems you already run, puts AI on the signals your equipment produces, and decides inside a 30-millisecond budget. Low-consequence actions happen directly; anything safety-related goes to your PLC, safety system and operators. Start a project → See how it works works with SCADA brownfield vibration · electrical OT network air-gapped AgentMesh operator portal Refinery Sector 4 · compressor K-201 · illustration · click to enlarge <30 ms decision budget · target 0 B leaves site by default 10 domain kits 2 safety lanes"
   },
   {
    "id": "platform_agentmesh#2",
@@ -581,51 +581,59 @@
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
-   "section": "From signal to action, at the machine.",
-   "text": "02 — How it works From signal to action, at the machine. A Sovereign Pod in the plant's industrial DMZ keeps the fast loop local. It reads, decides and records — and leaves control where it belongs. 01 Perceive The Unovie Gateway reads sensors and network traffic read-only. Signal Encoders turn each window into a fingerprint. Unovie Gateway · Signal Encoders 02 Decide Vector Memory checks what this looks like from history; the Unovie Decision Engine applies your rules and picks a lane. Vector Memory · Decision Engine 03 Reason After the event, the Unovie Reasoning Model names the likely root cause and drafts the work order. Unovie Reasoning Model 04 Adapt Each night the Kiln proposes small playbook changes and keeps them only if a held-out test improves. Kiln · Evidence Log"
+   "section": "Works with the SCADA you already run.",
+   "text": "02 — Brownfield ready Works with the SCADA you already run. Most plants are brownfield: decades of equipment, a SCADA system that works, and no appetite for replacing it. AgentMesh brings Agentic Physical AI intelligence to that environment as it is. /scada Alongside your SCADA and DCS AgentMesh reads from the SCADA, DCS, PLCs and historians already on site — over OPC UA, Modbus, DNP3, MQTT and historian interfaces — read-only, through the Unovie Gateway. Nothing in your control system is replaced or reconfigured. SCADA · DCS · PLC historians read-only /legacy Legacy equipment, new signals Older assets without modern instrumentation get clamp-on vibration, ultrasonic and current sensors through partner data-acquisition boxes, so decades-old pumps and compressors join the same picture. retrofit sensors DAQ no downtime /handoff Results land where operators already work Alarms appear on your existing alarm system and HMI, Lane B requests go to registers your PLC or safety system reads, and work orders go to SAP or Maximo. No new console to watch. existing alarms PLC registers SAP · Maximo /multivendor Multi-vendor, no rip-and-replace Brownfield plants run equipment from many vendors and many decades. AgentMesh adds Agentic Physical AI intelligence on top of all of it, in the plant's industrial DMZ, without a platform migration. multi-vendor industrial DMZ no migration 01 Tap Read-only connections to SCADA tags, historians and new retrofit sensors. Unovie Gateway 02 Learn Baselines from your own history: what normal and bad look like on each asset. Vector Memory 03 Add intelligence Agents watch, decide, explain and draft the work — inside the safety lanes. Decision Engine · Reasoning Model 04 Hand off Alarms, requests and work orders flow into the systems your team already uses. alarms · PLC registers · work orders"
   },
   {
    "id": "platform_agentmesh#4",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
-   "section": "Two lanes. Your control system stays in charge.",
-   "text": "03 — The safety boundary Two lanes. Your control system stays in charge. Lane A Acts directly Only for outputs where a wrong call costs little and is easy to undo. Reject gate a part with a bad weld signature goes to the reject bin Diverter product is routed to rework instead of shipping IT quarantine a suspicious device is isolated on the IT side Lane B Alarm + request Anything that touches process safety. AgentMesh asks; people and safety systems decide. Alarm raised on your existing alarm system Request written to a register your PLC or safety system reads Operator sees the request and the evidence, and decides Never: AgentMesh does not write to valves or safety functions on its own, and the language model is never in the path that moves equipment. Every decision — in either lane — is written to the signed Evidence Log."
+   "section": "From signal to action, at the machine.",
+   "text": "03 — How it works From signal to action, at the machine. A Sovereign Pod in the plant's industrial DMZ keeps the fast loop local. It reads, decides and records — and leaves control where it belongs. 01 Perceive The Unovie Gateway reads sensors and network traffic read-only. Signal Encoders turn each window into a fingerprint. Unovie Gateway · Signal Encoders 02 Decide Vector Memory checks what this looks like from history; the Unovie Decision Engine applies your rules and picks a lane. Vector Memory · Decision Engine 03 Reason After the event, the Unovie Reasoning Model names the likely root cause and drafts the work order. Unovie Reasoning Model 04 Adapt Each night the Kiln proposes small playbook changes and keeps them only if a held-out test improves. Kiln · Evidence Log"
   },
   {
    "id": "platform_agentmesh#5",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
-   "section": "Where AgentMesh earns its place.",
-   "text": "04 — In the field Where AgentMesh earns its place. The same pod, the same lanes — packaged for the assets each industry runs. Energy & refining Compressor & leak signal fusion Vibration and ultrasonic on compressors, flare monitoring and leak signals, fused on site. Isolation is always a request to the operator — never automatic. Advanced manufacturing Weld signatures & spindle health Weld current and spindle vibration flag a bad weld or a wearing spindle without cameras. A bad part goes to the reject bin through Lane A. Maritime Machinery health at sea Engine and generator vibration plus hull thickness, analysed on board. No satellite link needed; findings sync when the vessel reconnects."
+   "section": "Two lanes. Your control system stays in charge.",
+   "text": "04 — The safety boundary Two lanes. Your control system stays in charge. Lane A Acts directly Only for outputs where a wrong call costs little and is easy to undo. Reject gate a part with a bad weld signature goes to the reject bin Diverter product is routed to rework instead of shipping IT quarantine a suspicious device is isolated on the IT side Lane B Alarm + request Anything that touches process safety. AgentMesh asks; people and safety systems decide. Alarm raised on your existing alarm system Request written to a register your PLC or safety system reads Operator sees the request and the evidence, and decides Never: AgentMesh does not write to valves or safety functions on its own, and the language model is never in the path that moves equipment. Every decision — in either lane — is written to the signed Evidence Log."
   },
   {
    "id": "platform_agentmesh#6",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
-   "section": "Packaged for the assets you run.",
-   "text": "05 — Domain kits Packaged for the assets you run. Each kit packages the connections, fingerprints, rules, playbook and reports for one class of asset. A pod can run several. Rotating Equipment Health Bearings, cavitation and imbalance on pumps, compressors, motors and drives — with a drafted work order. vibration · ultrasonic Battery Safety Fusion Early warning of thermal-runaway precursors, as an alarm into the fire panel. battery data · off-gas Electrical Health Early signs of arcing and insulation failure in switchgear, transformers and inverters. partial discharge · power quality Leak & Energy Loss Ranked leak lists with a value attached to each. ultrasonic · flow · pressure Test Campaign Monitor Anomaly flags to the test conductor during a run, and a drafted post-test report. pressure · strain · acoustics OT Network Watch Unauthorized writes and unusual commands on the plant network, with evidence for audits. control traffic · alarms Vibration + ultrasonic sensors Hazardous-area vibration DAQ Weld-current clamp Marine vibration transmitter Generic partner hardware · illustrations"
+   "section": "Where AgentMesh earns its place.",
+   "text": "05 — In the field Where AgentMesh earns its place. The same pod, the same lanes — packaged for the assets each industry runs. Energy & refining Compressor & leak signal fusion Vibration and ultrasonic on compressors, flare monitoring and leak signals, fused on site. Isolation is always a request to the operator — never automatic. Advanced manufacturing Weld signatures & spindle health Weld current and spindle vibration flag a bad weld or a wearing spindle without cameras. A bad part goes to the reject bin through Lane A. Maritime Machinery health at sea Engine and generator vibration plus hull thickness, analysed on board. No satellite link needed; findings sync when the vessel reconnects."
   },
   {
    "id": "platform_agentmesh#7",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
-   "section": "AMD or NVIDIA. Hardware you own.",
-   "text": "06 — Runs on AMD or NVIDIA. Hardware you own. Same kits, same lanes, same Evidence Log on every platform. Runs today AMD Ryzen AI Max+ 395 The reference Sovereign Pod: four servers in 3U, quiet enough for a plant DMZ rack. Available on NVIDIA Jetson AGX Thor Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab. Available on NVIDIA DGX Spark The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot."
+   "section": "Packaged for the assets you run.",
+   "text": "06 — Domain kits Packaged for the assets you run. Each kit packages the connections, fingerprints, rules, playbook and reports for one class of asset. A pod can run several. Rotating Equipment Health Bearings, cavitation and imbalance on pumps, compressors, motors and drives — with a drafted work order. vibration · ultrasonic Battery Safety Fusion Early warning of thermal-runaway precursors, as an alarm into the fire panel. battery data · off-gas Electrical Health Early signs of arcing and insulation failure in switchgear, transformers and inverters. partial discharge · power quality Leak & Energy Loss Ranked leak lists with a value attached to each. ultrasonic · flow · pressure Test Campaign Monitor Anomaly flags to the test conductor during a run, and a drafted post-test report. pressure · strain · acoustics OT Network Watch Unauthorized writes and unusual commands on the plant network, with evidence for audits. control traffic · alarms Vibration + ultrasonic sensors Hazardous-area vibration DAQ Weld-current clamp Marine vibration transmitter Generic partner hardware · illustrations"
   },
   {
    "id": "platform_agentmesh#8",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
-   "section": "Built for the plant, not the slide.",
-   "text": "07 — Why teams choose it Built for the plant, not the slide. Yours hardware, models, playbooks and evidence Air-gapped by default · nothing leaves site Per asset priced on failures avoided, not seats Weeks to a working pod, not quarters"
+   "section": "AMD or NVIDIA. Hardware you own.",
+   "text": "07 — Runs on AMD or NVIDIA. Hardware you own. Same kits, same lanes, same Evidence Log on every platform. Runs today AMD Ryzen AI Max+ 395 The reference Sovereign Pod: four servers in 3U, quiet enough for a plant DMZ rack. Available on NVIDIA Jetson AGX Thor Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab. Available on NVIDIA DGX Spark The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot."
   },
   {
    "id": "platform_agentmesh#9",
+   "url": "https://unovie.ai/platform/agentmesh.html",
+   "type": "platform",
+   "title": "AgentMesh — Unovie.AI",
+   "section": "Built for the plant, not the slide.",
+   "text": "08 — Why teams choose it Built for the plant, not the slide. Yours hardware, models, playbooks and evidence Air-gapped by default · nothing leaves site Per asset priced on failures avoided, not seats Weeks to a working pod, not quarters"
+  },
+  {
+   "id": "platform_agentmesh#10",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",
@@ -633,7 +641,7 @@
    "text": "Pairs with AgentNexus One pod per plant. One AgentNexus for the fleet. AgentMesh sends what it finds to AgentNexus, where agents compare sites, plan maintenance and learn from what happened — without ever reaching back into plant control. Explore AgentNexus →"
   },
   {
-   "id": "platform_agentmesh#10",
+   "id": "platform_agentmesh#11",
    "url": "https://unovie.ai/platform/agentmesh.html",
    "type": "platform",
    "title": "AgentMesh — Unovie.AI",

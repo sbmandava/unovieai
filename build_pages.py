@@ -535,7 +535,7 @@ def sec(num,label,title,body,lead=""):
 
 PLATP=[
  ("agentmesh","Platform · AgentMesh","Agent"+A+"Mesh"+E,
-  "AgentMesh puts AI on the signals your equipment produces — vibration, ultrasonic, electrical, battery and OT-network data — in a Sovereign Pod on the plant network. It spots what is going wrong inside a 30-millisecond decision budget, acts on its own only where the consequence is low, and sends anything safety-related to your PLC, safety system and operators as an alarm and a request. Every decision is written to a signed Evidence Log. Air-gapped by default, on AMD or NVIDIA hardware you own.",
+  "AgentMesh brings Agentic Physical AI to brownfield plants: it works alongside the SCADA you already run and puts AI on the signals your equipment produces — vibration, ultrasonic, electrical, battery and OT-network data — in a Sovereign Pod on the plant network. It spots what is going wrong inside a 30-millisecond decision budget, acts on its own only where the consequence is low, and sends anything safety-related to your PLC, safety system and operators as an alarm and a request. Every decision is written to a signed Evidence Log. Air-gapped by default, on AMD or NVIDIA hardware you own.",
   [("&lt;30<span class='o'>ms</span>","decision budget · target"),("0<span class='o'>B</span>","leaves the site by default"),("10","domain kits")],
   ("Four jobs at the machine",[
    ("/perceive","Perceive the asset's own signals","The Unovie Gateway reads sensors, data-acquisition boxes, historian tags and network traffic — read-only, with allow-listed protocols and an audit trail. Signal Encoders turn each window of signal into a compact fingerprint.",["vibration","electrical","battery","OT network"]),
@@ -852,26 +852,39 @@ NEXUS_HMI = S("01","Fleet HMI","The fleet, "+T_+"on one screen."+E_, hmi_showcas
    ("hmi-fleet","Fleet operations","portal-fleet","AgentNexus fleet operations · findings, agents, routing, plans and adapter rollout")],
    "Plant findings from every AgentMesh pod, cross-site patterns, the agents at work, how requests are routed, the plans waiting for sign-off and the skill adapters being trialled."), id_="hmi")
 
+
+MESH_BROWNFIELD = S("02","Brownfield ready","Works with the SCADA "+A_+"you already run."+E_,
+  disc([
+   ("/scada","Alongside your SCADA and DCS","AgentMesh reads from the SCADA, DCS, PLCs and historians already on site — over OPC UA, Modbus, DNP3, MQTT and historian interfaces — read-only, through the Unovie Gateway. Nothing in your control system is replaced or reconfigured.",["SCADA · DCS · PLC","historians","read-only"]),
+   ("/legacy","Legacy equipment, new signals","Older assets without modern instrumentation get clamp-on vibration, ultrasonic and current sensors through partner data-acquisition boxes, so decades-old pumps and compressors join the same picture.",["retrofit sensors","DAQ","no downtime"]),
+   ("/handoff","Results land where operators already work","Alarms appear on your existing alarm system and HMI, Lane B requests go to registers your PLC or safety system reads, and work orders go to SAP or Maximo. No new console to watch.",["existing alarms","PLC registers","SAP · Maximo"]),
+   ("/multivendor","Multi-vendor, no rip-and-replace","Brownfield plants run equipment from many vendors and many decades. AgentMesh adds Agentic Physical AI intelligence on top of all of it, in the plant's industrial DMZ, without a platform migration.",["multi-vendor","industrial DMZ","no migration"])])
+  + flow4([("Tap","Read-only connections to SCADA tags, historians and new retrofit sensors.","Unovie Gateway"),
+           ("Learn","Baselines from your own history: what normal and bad look like on each asset.","Vector Memory"),
+           ("Add intelligence","Agents watch, decide, explain and draft the work — inside the safety lanes.","Decision Engine · Reasoning Model"),
+           ("Hand off","Alarms, requests and work orders flow into the systems your team already uses.","alarms · PLC registers · work orders")]),
+  "Most plants are brownfield: decades of equipment, a SCADA system that works, and no appetite for replacing it. AgentMesh brings Agentic Physical AI intelligence to that environment as it is.")
+
 MESH_SECTIONS = (
-  S("02","How it works","From signal to action, "+A_+"at the machine."+E_,
+  S("03","How it works","From signal to action, "+A_+"at the machine."+E_,
     f'<div class="axwrap rv">{SVG_MESH}</div>'
     + flow4([("Perceive","The Unovie Gateway reads sensors and network traffic read-only. Signal Encoders turn each window into a fingerprint.","Unovie Gateway · Signal Encoders"),
              ("Decide","Vector Memory checks what this looks like from history; the Unovie Decision Engine applies your rules and picks a lane.","Vector Memory · Decision Engine"),
              ("Reason","After the event, the Unovie Reasoning Model names the likely root cause and drafts the work order.","Unovie Reasoning Model"),
              ("Adapt","Each night the Kiln proposes small playbook changes and keeps them only if a held-out test improves.","Kiln · Evidence Log")]),
     "A Sovereign Pod in the plant's industrial DMZ keeps the fast loop local. It reads, decides and records — and leaves control where it belongs.", "how")
-  + S("03","The safety boundary","Two lanes. "+A_+"Your control system stays in charge."+E_,
+  + S("04","The safety boundary","Two lanes. "+A_+"Your control system stays in charge."+E_,
     '<div class="lanes">'
     '<div class="lane a rv"><div class="tag" style="color:var(--accent)">Lane A</div><div class="big">Acts directly</div><p>Only for outputs where a wrong call costs little and is easy to undo.</p><ul><li><b>Reject gate</b>a part with a bad weld signature goes to the reject bin</li><li><b>Diverter</b>product is routed to rework instead of shipping</li><li><b>IT quarantine</b>a suspicious device is isolated on the IT side</li></ul></div>'
     '<div class="lane b rv"><div class="tag" style="color:var(--steel)">Lane B</div><div class="big">Alarm + request</div><p>Anything that touches process safety. AgentMesh asks; people and safety systems decide.</p><ul><li><b>Alarm</b>raised on your existing alarm system</li><li><b>Request</b>written to a register your PLC or safety system reads</li><li><b>Operator</b>sees the request and the evidence, and decides</li></ul></div>'
     '</div><div class="never rv"><b>Never:</b> AgentMesh does not write to valves or safety functions on its own, and the language model is never in the path that moves equipment. Every decision — in either lane — is written to the signed Evidence Log.</div>')
-  + S("04","In the field","Where AgentMesh "+A_+"earns its place."+E_,
+  + S("05","In the field","Where AgentMesh "+A_+"earns its place."+E_,
     '<div class="field">'
     '<div class="fcard rv"><div class="sk"><img src="../assets/images/sketch/refinery.jpg" alt="Illustration of a refinery skyline with flare stacks" loading="lazy"></div><div class="bd"><div class="tag">Energy &amp; refining</div><h4>Compressor &amp; leak signal fusion</h4><p>Vibration and ultrasonic on compressors, flare monitoring and leak signals, fused on site. Isolation is always a request to the operator — never automatic.</p></div></div>'
     '<div class="fcard rv"><div class="sk"><img src="../assets/images/sketch/weld-clamp.jpg" alt="Illustration of a weld-current clamp on a welding cable, cabled to a weld DAQ" loading="lazy"></div><div class="bd"><div class="tag">Advanced manufacturing</div><h4>Weld signatures &amp; spindle health</h4><p>Weld current and spindle vibration flag a bad weld or a wearing spindle without cameras. A bad part goes to the reject bin through Lane A.</p></div></div>'
     '<div class="fcard rv"><div class="sk"><img src="../assets/images/sketch/engine-room.jpg" alt="Illustration of a ship engine room with vibration sensors on the main engine and generator" loading="lazy"></div><div class="bd"><div class="tag">Maritime</div><h4>Machinery health at sea</h4><p>Engine and generator vibration plus hull thickness, analysed on board. No satellite link needed; findings sync when the vessel reconnects.</p></div></div>'
     '</div>', "The same pod, the same lanes — packaged for the assets each industry runs.")
-  + S("05","Domain kits","Packaged for "+A_+"the assets you run."+E_,
+  + S("06","Domain kits","Packaged for "+A_+"the assets you run."+E_,
     kits([("rot","Rotating Equipment Health","Bearings, cavitation and imbalance on pumps, compressors, motors and drives — with a drafted work order.","vibration · ultrasonic"),
           ("bat","Battery Safety Fusion","Early warning of thermal-runaway precursors, as an alarm into the fire panel.","battery data · off-gas"),
           ("ele","Electrical Health","Early signs of arcing and insulation failure in switchgear, transformers and inverters.","partial discharge · power quality"),
@@ -882,12 +895,12 @@ MESH_SECTIONS = (
     + "".join(f'<figure class="rv"><img src="../assets/images/sketch/{f}.jpg" alt="Illustration: {c}" loading="lazy"><figcaption>{c}</figcaption></figure>' for f,c in [("sensors","Vibration + ultrasonic sensors"),("daq","Hazardous-area vibration DAQ"),("weld-clamp","Weld-current clamp"),("marine-sensor","Marine vibration transmitter")])
     + '</div><p class="illus rv" style="margin-top:10px">Generic partner hardware · illustrations</p>',
     "Each kit packages the connections, fingerprints, rules, playbook and reports for one class of asset. A pod can run several.")
-  + S("06","Runs on","AMD or NVIDIA. "+A_+"Hardware you own."+E_,
+  + S("07","Runs on","AMD or NVIDIA. "+A_+"Hardware you own."+E_,
     hwrow([("sketch/sovereign-pod","ryzen-ai-max-395","Runs today",True,"AMD Ryzen AI Max+ 395","The reference Sovereign Pod: four servers in 3U, quiet enough for a plant DMZ rack."),
            ("sketch/agx-thor","agx-thor","Available on",False,"NVIDIA Jetson AGX Thor","Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab."),
            ("sketch/dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot.")]),
     "Same kits, same lanes, same Evidence Log on every platform.")
-  + S("07","Why teams choose it","Built for the plant, "+A_+"not the slide."+E_,
+  + S("08","Why teams choose it","Built for the plant, "+A_+"not the slide."+E_,
     kpistrip([("Yours","hardware, models, playbooks and evidence"),("Air-gapped","by default · nothing leaves site"),("Per asset","priced on failures avoided, not seats"),("Weeks","to a working pod, not quarters")]))
   + '<section><div class="wrap"><div class="pairs rv"><div><div class="tag" style="color:var(--steel)">Pairs with AgentNexus</div><h3>One pod per plant. '+T_+'One AgentNexus for the fleet.'+E_+'</h3><p>AgentMesh sends what it finds to AgentNexus, where agents compare sites, plan maintenance and learn from what happened — without ever reaching back into plant control.</p></div><a class="btn btn-gh" href="agentnexus.html" data-cursor>Explore AgentNexus <span class="ar">→</span></a></div></div></section>'
 )
@@ -934,10 +947,10 @@ NEXUS_PANEL = ('<figure class="portalfig rv"><div class="pimg"><a href="../asset
   '<figcaption><b>AgentNexus fleet HMI</b><span>Fleet operations · illustration · click to enlarge</span></figcaption></figure>')
 
 product_page("agentmesh","Platform · AgentMesh","Agent"+A_+"Mesh"+E_,
-  "AI on the signals your equipment produces — next to the control system, inside a 30-millisecond decision budget. Low-consequence actions happen directly; anything safety-related goes to your PLC, safety system and operators.",
-  ["vibration","electrical","battery","OT network","air-gapped"],
+  "Agentic Physical AI for brownfield plants. AgentMesh works alongside the SCADA and control systems you already run, puts AI on the signals your equipment produces, and decides inside a 30-millisecond budget. Low-consequence actions happen directly; anything safety-related goes to your PLC, safety system and operators.",
+  ["works with SCADA","brownfield","vibration · electrical","OT network","air-gapped"],
   [("&lt;30<span class='o'>ms</span>","decision budget · target"),("0<span class='o'>B</span>","leaves site by default"),("10","domain kits"),("2","safety lanes")],
-  MESH_PANEL, MESH_HMI+MESH_SECTIONS, "Put AI on "+A_+"your equipment's signals."+E_,
+  MESH_PANEL, MESH_HMI+MESH_BROWNFIELD+MESH_SECTIONS, "Put AI on "+A_+"your equipment's signals."+E_,
   "AgentMesh puts AI on the signals your equipment produces, next to the control system, with a clear safety boundary and a signed Evidence Log.")
 product_page("agentnexus","Platform · AgentNexus","Agent"+T_+"Nexus"+E_,
   "Agents that work across every plant — comparing sites, planning maintenance and drafting work orders within half a second. It learns from production, tests every improvement first, and never moves plant equipment.",
@@ -1479,7 +1492,7 @@ _sol="\n".join(f"- [{_name(_solmap[k][2])}]({_u('solutions/'+k+'.html')}): {_fir
 _oth="\n".join(f"- [{_name(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL if s[0] not in _IND)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
-> The sovereign Agentic Physical AI platform for Industry 4.0. Unovie designs, builds and operates custom Edge-AI Agentic Systems for industrial operations — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on the signals equipment produces, next to the plant's control system; AgentNexus runs AI agents across every plant. Air-gapped by default; safety decisions stay with the customer's PLC, safety system and operators.
+> Sovereign AI engine for the physical frontier — the Agentic Physical AI platform for Industry 4.0. Unovie designs, builds and operates custom Edge-AI Agentic Systems for industrial operations — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on the signals equipment produces, next to the plant's control system; AgentNexus runs AI agents across every plant. Air-gapped by default; safety decisions stay with the customer's PLC, safety system and operators.
 
 Unovie is an engineering-first, AI-native company based in Austin, Texas, built for Physical AI. The team brings 20+ years of building complex industrial OT environments (control systems, plant networks, historians, safety systems). Its offering is written as "custom Edge-AI Agentic Systems". Figures on this site marked "target" or "estimate" are design targets, not measurements.
 
@@ -1500,7 +1513,7 @@ Unovie is an engineering-first, AI-native company based in Austin, Texas, built 
 Pricing is per monitored asset and domain kit, never per seat or per camera.
 
 ## Platform
-- [AgentMesh]({_u('platform/agentmesh.html')}): AI at the machine. A Sovereign Pod (four AMD Ryzen AI Max+ 395 servers in 3U) sits in the plant's industrial DMZ, reads asset signals read-only, decides within a 30 ms decision budget (target), acts directly only on low-consequence outputs (Lane A) and sends anything safety-related to the PLC, safety system and operator as an alarm and a request (Lane B). Every decision is written to a signed Evidence Log. Runs today on AMD; available on NVIDIA Jetson AGX Thor and DGX Spark.
+- [AgentMesh]({_u('platform/agentmesh.html')}): Agentic Physical AI at the machine, for brownfield plants: it works alongside existing SCADA, DCS, PLCs and historians (read-only, via OPC UA, Modbus, DNP3, MQTT and historian interfaces) with no rip-and-replace, and hands results back as alarms on the existing alarm system, PLC request registers and SAP/Maximo work orders. A Sovereign Pod (four AMD Ryzen AI Max+ 395 servers in 3U) sits in the plant's industrial DMZ, reads asset signals read-only, decides within a 30 ms decision budget (target), acts directly only on low-consequence outputs (Lane A) and sends anything safety-related to the PLC, safety system and operator as an alarm and a request (Lane B). Every decision is written to a signed Evidence Log. Runs today on AMD; available on NVIDIA Jetson AGX Thor and DGX Spark.
 - [AgentNexus]({_u('platform/agentnexus.html')}): AI agents across every plant. One 42U rack (twelve shelves of four servers, 48 in total) in a central cabinet runs thousands of agents in sealed sandboxes, connects to every AgentMesh pod, and turns plant findings into cross-site analysis, maintenance plans and work orders within a 0.5 s response budget (target). It learns from production through the Kiln and never moves plant equipment. Reference design on AMD; a small site version is available on NVIDIA DGX Spark.
 
 ## Core concepts
