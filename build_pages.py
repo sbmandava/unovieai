@@ -56,7 +56,7 @@ open(f"{ROOT}/index.html","w",encoding="utf-8").write(idx)
 # Inline theme bootstrap (runs in <head>, before first paint → no flash).
 # Default: light on desktop, dark on mobile/touch. A saved toggle (uvTheme) always wins.
 # The `data-theme-init` attribute keeps the homepage-slimming regex (bare <script>) from matching it.
-THEMEINIT = "<script data-theme-init>(function(){try{var s=localStorage.getItem('uvTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>"
+THEMEINIT = "<script data-theme-init>(function(){var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}var s=null;try{s=m?sessionStorage.getItem('uvTheme'):localStorage.getItem('uvTheme');}catch(e){}document.documentElement.setAttribute('data-theme',(s==='light'||s==='dark')?s:(m?'dark':'light'));})();</script>"
 
 # Google Analytics 4 (gtag.js). The config <script> carries a data-ga attribute so the
 # homepage-slimming regex (which matches a bare <script>) never touches it.
@@ -1635,3 +1635,14 @@ Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
 """)
 
 print(f"built: index + {len(SOL)} solutions + {len(PLATP)} platform + device-platform({len(DEVP)} tabs) + about + assets + sitemap({len(_pages)}) + agents-index({len(records)} chunks) + llms.txt + llms-full.txt")
+
+# ----- cache-busting: stamp assets/site.{css,js} with a content hash on every page -----
+import hashlib as _hl, glob as _gl
+def _asset_v(rel): return _hl.md5(open(f"{ROOT}/{rel}","rb").read()).hexdigest()[:10]
+_AV={"assets/site.css":_asset_v("assets/site.css"),"assets/site.js":_asset_v("assets/site.js")}
+for _f in _gl.glob(f"{ROOT}/**/*.html",recursive=True):
+    if "/resources/medsdlc-html/" in _f: continue
+    _s=open(_f,encoding="utf-8").read()
+    _n=re.sub(r'(assets/site\.(?:css|js))(?:\?v=[0-9a-f]+)?"',lambda m:f'{m.group(1)}?v={_AV[m.group(1)]}"',_s)
+    if _n!=_s: open(_f,"w",encoding="utf-8").write(_n)
+print("cache-bust:",_AV)

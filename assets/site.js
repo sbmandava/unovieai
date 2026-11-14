@@ -32,7 +32,7 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
 
 // theme — default is set inline in <head> (light on desktop, dark on mobile/touch); this button toggles & persists the choice
 (function(){
-  function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('uvTheme',t);}catch(e){}}
+  function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{(matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches?sessionStorage:localStorage).setItem('uvTheme',t);}catch(e){}}  /* phones: dark by default every visit; toggle lasts for the session */
   function toggle(){applyTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}
   var row=document.querySelector('header.nav .row');
   if(row){
@@ -138,7 +138,8 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
 
 /* ===== MOCK: hero live AgentMesh console ===== */
 (function(){
-  var root=document.querySelector('.meshviz'); if(!root||matchMedia('(max-width:768px)').matches) return;  /* phones get the recorded GIF */
+  var root=document.querySelector('.meshviz'); if(!root) return;
+  if(matchMedia('(max-width:768px)').matches){ root.style.display='none'; return; }  /* phones get the recorded GIF */
   var PER=64, dots=[], byJob={};
   [].slice.call(root.querySelectorAll('.mv-row')).forEach(function(r){var box=r.querySelector('.mv-dots'), job=r.dataset.job; byJob[job]=[];
     for(var k=0;k<PER;k++){var d=document.createElement('i'); box.appendChild(d); dots.push(d); byJob[job].push(d);} });
