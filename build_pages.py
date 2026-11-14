@@ -917,7 +917,7 @@ MESH_SECTIONS = (
     + '</div><p class="illus rv" style="margin-top:10px">Generic partner hardware · illustrations</p>',
     "Each kit packages the connections, fingerprints, rules, playbook and reports for one class of asset. A pod can run several.")
   + S("09","Runs on","AMD or NVIDIA. "+A_+"Hardware you own."+E_,
-    hwrow([("sketch/sovereign-pod","ryzen-ai-max-395","Runs today",True,"AMD Ryzen AI Max+ 395","The reference Sovereign Pod: four servers in 3U, quiet enough for a rack on the factory floor."),
+    hwrow([("sketch/sovereign-pod","ryzen-ai-max-395","Runs today",True,"AMD Ryzen AI Max+ 395","The reference Sovereign Pod: four servers in 3U with 2 × 10GbE networking and NVMe storage, quiet enough for a rack on the factory floor."),
            ("sketch/agx-thor","agx-thor","Available on",False,"NVIDIA Jetson AGX Thor","Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab."),
            ("sketch/dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot.")]),
     "Same kits, same lanes, same Evidence Log on every platform.")
@@ -1088,7 +1088,7 @@ DEVP=[
   "Built for sovereign factory intelligence: AI on the signals your lines and equipment produce, kept inside your site. Four of these quiet, compact servers make an AgentMesh Sovereign Pod in 3U next to the control system; twelve pods make an AgentNexus rack that runs agents across the fleet. Each server has sixteen Zen 5 cores, a Radeon 8060S graphics processor and an XDNA 2 AI accelerator sharing one pool of memory.",
   [("Asset health","purpose"),("4 / 3U","servers per Sovereign Pod"),("48 / 42U","servers per AgentNexus rack")],
   ("What runs on it",[
-   ("/agentmesh","AgentMesh Sovereign Pod","Four servers in 3U on the factory network: Signal Encoders, the Unovie Decision Engine, the Unovie Reasoning Model and the Kiln — air-gapped by default.",["4 servers","3U","factory network"]),
+   ("/agentmesh","AgentMesh Sovereign Pod","Four servers in 3U with 2 × 10GbE networking and NVMe storage, on the factory network: Signal Encoders, the Unovie Decision Engine, the Unovie Reasoning Model and the Kiln — air-gapped by default.",["4 servers · 3U","2 × 10GbE","NVMe"]),
    ("/agentnexus","AgentNexus rack","Twelve pods in one 42U rack: agents on the processors; models, skill adapters and training on the graphics processors; data copied across shelves.",["48 servers","42U","one system"]),
    ("/npu","An AI accelerator for small models","The XDNA 2 accelerator (51 TOPS, measured on our servers) is being tested for small helper models, to free graphics time for the main model.",["XDNA 2","51 TOPS","in test"])]),
   ("Server to fleet",[("Server","One box, three compute engines."),("Pod","Four servers in 3U, linked."),("Rack","Twelve pods, one system."),("Fleet","A pod per plant, one AgentNexus.")]),
@@ -1203,9 +1203,9 @@ DEV_EXTRA={
            ("fleet","Fleet learning","The same fault pattern seen on one line is recognised on the next; tested skill adapters roll out fleet-wide.","AgentNexus · Kiln")]),
      "The same server runs both systems: four in a Sovereign Pod at each line or site, forty-eight in one AgentNexus rack.")
    + S("04","Two deployment shapes","One server, "+A_+"pod or rack."+E_,
-     sketchpair([("sovereign-pod","Illustration of the AgentMesh Sovereign Pod","AgentMesh","Sovereign Pod · 3U","Four servers on a sliding shelf in a compact cabinet, on the factory network."),
+     sketchpair([("sovereign-pod","Illustration of the AgentMesh Sovereign Pod","AgentMesh","Sovereign Pod · 3U","Four servers on a sliding shelf in a compact cabinet, with 2 × 10GbE networking and NVMe storage, on the factory network."),
                  ("agentnexus-rack","Illustration of the AgentNexus reference rack","AgentNexus","Reference rack · 42U","Twelve trays of four servers, two switches and dual power feeds, in a central cabinet.")])
-     + factlist([("Where it sits","Factory network (pod) · central cabinet (rack)"),("Form","4 servers in 3U · 48 servers in 42U"),("Per server","16 Zen 5 cores · Radeon 8060S graphics · XDNA 2 accelerator · 64 GB shared memory"),
+     + factlist([("Where it sits","Factory network (pod) · central cabinet (rack)"),("Form","4 servers in 3U · 48 servers in 42U"),("Per server","16 Zen 5 cores · Radeon 8060S graphics · XDNA 2 accelerator · 64 GB shared memory · NVMe storage"),
                  ("Network","2 × 10GbE per server to two switches · fast cables inside each shelf"),("Environment","Climate-controlled rack, 0–35 °C"),("Status","Pod runs today · rack is a reference design on the same server")]))
    + S("05","What runs on it","The full Unovie platform",
      stackmatrix(["Sovereign Pod","AgentNexus rack"],
@@ -1339,7 +1339,7 @@ _devbody=f"""{NGBG}{NAV("")}
   <div class="tag rv">Hardware</div>
   <h1 class="rv" style="margin-top:18px">Two hardware families. <span class="serif" style="color:var(--accent)">One platform.</span></h1>
   <p class="lead rv">AgentMesh and AgentNexus run the same agents, models, safety lanes and Evidence Log on AMD and NVIDIA hardware you own. AMD Ryzen AI Max+ 395 is the reference build for both. NVIDIA Jetson AGX Thor brings AgentMesh inside the machine; NVIDIA DGX Spark runs AgentMesh on a desk or a small AgentNexus for a site; Qualcomm QCS6490 extends sensing to the far edge.</p>
-  <div class="runs rv" style="margin:26px 0 22px"><div class="run"><span class="st now">Runs today</span><h4>AMD Ryzen AI Max+ 395</h4><p>The AgentMesh Sovereign Pod runs today; the AgentNexus rack is a reference design on the same server.</p></div><div class="run"><span class="st">Available on</span><h4>NVIDIA Jetson AGX Thor · DGX Spark</h4><p>Robotics &amp; DeepVision at the tool; the AI engineering lab — brought to NVIDIA per project.</p></div><div class="run"><span class="st">Far edge</span><h4>Qualcomm QCS6490</h4><p>Remote and mobile assets, feeding the nearest AgentMesh pod.</p></div></div>
+  <div class="runs rv" style="margin:26px 0 22px"><div class="run"><span class="st now">Runs today</span><h4>AMD Ryzen AI Max+ 395</h4><p>The AgentMesh Sovereign Pod (2 × 10GbE, NVMe) runs today; the AgentNexus rack is a reference design on the same server.</p></div><div class="run"><span class="st">Available on</span><h4>NVIDIA Jetson AGX Thor · DGX Spark</h4><p>Robotics &amp; DeepVision at the tool; the AI engineering lab — brought to NVIDIA per project.</p></div><div class="run"><span class="st">Far edge</span><h4>Qualcomm QCS6490</h4><p>Remote and mobile assets, feeding the nearest AgentMesh pod.</p></div></div>
   <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
     <a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read the field guide</a></div>
 </div></section>
@@ -1568,11 +1568,11 @@ Pricing is per monitored asset and domain kit, never per seat or per camera.
 - The evidence pack is material for customers' own programs — SP 800-171/CMMC, IEC 62443, SEMI E187, aerospace quality records, battery-site safety reviews. Unovie does not claim certification; compliance is determined by the customer's assessor.
 
 ## Platform
-- [AgentMesh]({_u('platform/agentmesh.html')}): Agentic Physical AI at the machine for next-generation factories (battery lines, chip fabs and suppliers, space hardware, robotics and autonomous systems). A Sovereign Pod (four AMD Ryzen AI Max+ 395 servers in 3U) on the factory network connects to robot controllers, vision systems (DeepVision on NVIDIA Jetson AGX Thor), sensors, test rigs and the factory network; decides inside a 30 ms budget (target); acts directly only on low-consequence outputs (Lane A, e.g. diverting a part to rework) and sends anything safety-related as an alarm and a request to the safety PLC, cell controller and operators (Lane B). Results go to MES, QMS, test-data and work-order systems. Also works with existing control systems. Every decision is written to a signed Evidence Log; air-gapped by default; the language model is never on the path that moves equipment.
+- [AgentMesh]({_u('platform/agentmesh.html')}): Agentic Physical AI at the machine for next-generation factories (battery lines, chip fabs and suppliers, space hardware, robotics and autonomous systems). A Sovereign Pod (four AMD Ryzen AI Max+ 395 servers in 3U, with 2 × 10GbE networking and NVMe storage) on the factory network connects to robot controllers, vision systems (DeepVision on NVIDIA Jetson AGX Thor), sensors, test rigs and the factory network; decides inside a 30 ms budget (target); acts directly only on low-consequence outputs (Lane A, e.g. diverting a part to rework) and sends anything safety-related as an alarm and a request to the safety PLC, cell controller and operators (Lane B). Results go to MES, QMS, test-data and work-order systems. Also works with existing control systems. Every decision is written to a signed Evidence Log; air-gapped by default; the language model is never on the path that moves equipment.
 - [AgentNexus]({_u('platform/agentnexus.html')}): AI agents across every site a next-generation manufacturer runs — gigafactories and storage fleets, factories and test stands, fabs and supplier plants, robot fleets, shipyards and dual-use programs. One 42U rack (twelve shelves of four servers, 48 in total) runs thousands of agents in sealed sandboxes, connects to every AgentMesh pod, and turns findings into cross-site analysis, maintenance plans, non-conformance reports, quality records and work orders (drafted in English or Spanish) within a 0.5 s response budget (target). It learns from production through the Kiln (train, test on unseen cases, trial, switch on) and never moves equipment. Runs in the customer's own enclave.
 
 ## Core concepts
-- Sovereign Pod: the AgentMesh appliance — four servers in 3U on the plant network, air-gapped by default.
+- Sovereign Pod: the AgentMesh appliance — four servers in 3U with 2 × 10GbE networking and NVMe storage, on the factory network, air-gapped by default.
 - Lane A: low-consequence outputs AgentMesh may act on directly (reject gate, diverter, IT-side quarantine).
 - Lane B: anything touching process safety — AgentMesh raises an alarm and writes a request; the PLC, safety system and operator decide.
 - Evidence Log: append-only, signed record of every decision, action, request and change.
@@ -1610,7 +1610,7 @@ Packaged jobs for next-generation lines (each a domain kit with its connections,
 
 ## Hardware
 Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
-- [AMD Ryzen AI Max+ 395]({_u('device-platform.html')}#ryzen-ai-max-395): sovereign factory intelligence. The reference server for the AgentMesh Sovereign Pod (4 servers, 3U) and the AgentNexus rack (48 servers, 42U); 64 GB per server in Unovie's build. Status: runs today.
+- [AMD Ryzen AI Max+ 395]({_u('device-platform.html')}#ryzen-ai-max-395): sovereign factory intelligence. The reference server for the AgentMesh Sovereign Pod (4 servers, 3U, 2 × 10GbE networking, NVMe storage) and the AgentNexus rack (48 servers, 42U); 64 GB per server in Unovie's build. Status: runs today.
 - [NVIDIA Jetson AGX Thor]({_u('device-platform.html')}#agx-thor): robotics and DeepVision for fabs — wafer, die and panel inspection, robot-cell quality, wafer handling and mobile robots, at the tool. Status: available on, per project.
 - [NVIDIA DGX Spark]({_u('device-platform.html')}#dgx-spark): the AI engineering lab — skill adapter training, test-stand analytics, digital-twin experiments and a site-level AgentNexus. Status: available on, per project.
 - [Qualcomm QCS6490]({_u('device-platform.html')}#qcs6490): mobile and remote assets — mobile robots, AGVs, drone docks and battery containers, feeding the nearest AgentMesh pod.

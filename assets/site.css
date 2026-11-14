@@ -760,3 +760,9 @@ body:has(.ph2) section{padding-top:72px;padding-bottom:72px}
 .mv-field i.off{background:transparent;box-shadow:inset 0 0 0 1px var(--fg-dim);opacity:.6}
 .mv-meta .mv-c-watch{color:var(--steel)}.mv-meta .mv-c-retry{color:var(--violet)}.mv-meta .mv-c-off{color:var(--fg-dim)}
 @media(max-width:1279px){.mv-gl{display:none}.mv-meta{font-size:9.5px;letter-spacing:0;white-space:nowrap}.mv-gh{justify-content:flex-end}}
+
+/* phones: show the recorded console GIF instead of the live one; keep the hero from overflowing */
+.hero .grid>*{min-width:0}
+.mv-gif{display:none}
+@media(max-width:768px){.herovis .meshviz{display:none}.mv-gif{display:block;margin-top:14px}.mv-gif img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line-2)}}
+@media(max-width:1279px){.herovis .podfig figcaption span{letter-spacing:.04em;font-size:10px}}

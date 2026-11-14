@@ -138,12 +138,12 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
 
 /* ===== MOCK: hero live AgentMesh console ===== */
 (function(){
-  var root=document.querySelector('.meshviz'); if(!root) return;
+  var root=document.querySelector('.meshviz'); if(!root||matchMedia('(max-width:768px)').matches) return;  /* phones get the recorded GIF */
   var PER=64, dots=[], byJob={};
   [].slice.call(root.querySelectorAll('.mv-row')).forEach(function(r){var box=r.querySelector('.mv-dots'), job=r.dataset.job; byJob[job]=[];
     for(var k=0;k<PER;k++){var d=document.createElement('i'); box.appendChild(d); dots.push(d); byJob[job].push(d);} });
   var N=dots.length;
-  var cW=root.querySelector('.mv-c-watch'), cR=root.querySelector('.mv-c-retry'), cF=root.querySelector('.mv-c-flag'), cO=root.querySelector('.mv-c-off'), cD=root.querySelector('.mv-c-dec'), last=root.querySelector('.mv-last');
+  var cW=root.querySelector('.mv-c-watch'), cR=root.querySelector('.mv-c-retry'), cF=root.querySelector('.mv-c-flag'), cO=root.querySelector('.mv-c-off'), cD=root.querySelector('.mv-c-dec'), cL=root.querySelector('.mv-c-lat'), last=root.querySelector('.mv-last');
   /* channel budget — always sums to N (512): watching + retrying + flagged + offline */
   var OFFLINE=8, FLAGGED=15, R_MIN=4, R_MAX=23;   /* watching = 512-15-8-retrying = 466–485 */
   var RETRY=R_MIN+Math.floor(Math.random()*(R_MAX-R_MIN+1));
@@ -197,7 +197,7 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
     var t=free[Math.floor(Math.random()*free.length)], job=t.dataset.job, opts=EV[job], ev=opts[Math.floor(Math.random()*opts.length)], name=t.querySelector('b').textContent;
     var row=(byJob[t.dataset.row||job]||dots).filter(function(x){return x.className==='w'||x.className==='f';}), d=row[Math.floor(Math.random()*row.length)]; if(!d) return; busy[job]=1;
     d.className='d'; setTile(t,'d',60); counts(); say(name+' · signal flagged · deciding…');
-    setTimeout(function(){ d.className=ev[0]; setTile(t,ev[0],100); decisions++; counts(); say(name+' → '+ev[1]+' · '+ev[2]); },900);
+    setTimeout(function(){ var ms=(18+Math.random()*8).toFixed(1)+' ms'; d.className=ev[0]; setTile(t,ev[0],100); decisions++; if(cL) cL.textContent=ms; counts(); say(name+' → '+ev[1]+' · '+ms); },900);
     setTimeout(function(){ setTile(t,'r',75); d.className='w'; counts(); say(name+' · '+ev[3]); },2600);
     setTimeout(function(){ setTile(t,'w',20+Math.random()*30); busy[job]=0; counts(); },4400);
   }
