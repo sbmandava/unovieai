@@ -50,6 +50,14 @@ reusing existing assets/site.{css,js}` is **normal** — it means it's reusing t
 - Source projects (`/opt/projects/qualcomm/*`, `/opt/projects/unovie/sales-mca`,
   `/opt/projects/unovie/sales-intel`) are **read-only reference** — never edit them.
 
+## Platform restructure (November 2026)
+- **Platform** = two product pages, `platform/agentmesh.html` and `platform/agentnexus.html`, built by `product_page()` in `build_pages.py` (hero with an operator-HMI illustration, Operator HMI showcase, sections, "Runs on" hardware). The five old capability pages were removed; `_redirects` (Cloudflare Pages) sends their URLs to AgentMesh / AgentNexus.
+- **Hardware** lives under the Platform menu and on `device-platform.html` (tabs from `DEVP`, Industry 4.0 content from `DEV_EXTRA` / `DEV_SIGNALS`). One purpose per device: AMD Ryzen AI Max+ 395 = sovereign plant intelligence; NVIDIA Jetson AGX Thor = robotics & DeepVision for fabs; NVIDIA DGX Spark = AI engineering lab; Qualcomm QCS6490 = remote & mobile assets.
+- **Illustrations** live in `assets/images/sketch/` (periwinkle `#6468ac` line art on white). The HMI screens are rendered from the deck's HMI SVGs with project names replaced by Unovie terms.
+- `resources/agentnexus-architecture.html` is hand-authored in the whitepaper theme (toolbar, PDF, light/dark).
+- **Terminology:** use Unovie platform names (Sovereign Pod, Unovie Gateway, Signal Encoders, Vector Memory, Unovie Decision Engine, Unovie Reasoning Model, skill adapters, Kiln, Evidence Log, Unovie Agent Runtime, Unovie Model Router, Mesh Arbiter, Lane A / Lane B). **Never name open-source projects** on the site (e.g. vLLM, LanceDB, Gemma, Kubernetes).
+- Unmeasured numbers carry "target", "estimate" or "vendor spec"; industry-signal claims are labelled "vendor-reported" and never name third-party companies.
+
 ## Theme
 - Default: **light on desktop, dark on mobile/touch** — `matchMedia('(max-width:768px),
   (hover:none) and (pointer:coarse)')`. Set **inline in `<head>`** (`<script data-theme-init>`)

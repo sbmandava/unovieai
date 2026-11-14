@@ -73,7 +73,7 @@ def HEAD(base,title,desc):
 <link rel="icon" href="{base}assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="{base}assets/favicon.png"><link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/site.css">{THEMEINIT}</head><body>
 <div class="grain"></div><div class="cur"></div><div class="cur-r"></div>'''
 
@@ -82,34 +82,37 @@ def NAV(base):
     return f'''<header class="nav"><div class="wrap"><div class="row">
   <a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
-    <a href="{h}#engineering">AI Engineering</a><a href="{h}#accelerators">Solutions</a>
-    <a href="{h}#platform">Platform</a>
-    <div class="drop"><button data-cursor>Device Platform ▾</button><div class="menu">
-      <a href="{base}device-platform.html#agx-thor"><span class="ic">01</span><span><span class="t">NVIDIA AGX Thor</span><br><span class="s">Blackwell robotics &amp; physical-AI edge</span></span></a>
-      <a href="{base}device-platform.html#dgx-spark"><span class="ic">02</span><span><span class="t">NVIDIA DGX Spark</span><br><span class="s">Grace-Blackwell desktop AI supercomputer</span></span></a>
-      <a href="{base}device-platform.html#qcs6490"><span class="ic">03</span><span><span class="t">Qualcomm QCS6490</span><br><span class="s">Power-efficient far-edge AI processor</span></span></a>
-      <a href="{base}device-platform.html#ryzen-ai-max-395"><span class="ic">04</span><span><span class="t">AMD Ryzen AI Max+ 395</span><br><span class="s">Private 70B-class AI server node</span></span></a>
+    <a href="{h}#accelerators">Solutions</a>
+    <div class="drop"><button data-cursor>Platform ▾</button><div class="menu">
+      <a href="{base}platform/agentmesh.html"><span class="ic">01</span><span><span class="t">AgentMesh</span><br><span class="s">AI at the machine, next to the control system</span></span></a>
+      <a href="{base}platform/agentnexus.html"><span class="ic">02</span><span><span class="t">AgentNexus</span><br><span class="s">Agents working across every plant</span></span></a>
+      <div class="msub">Hardware</div>
+      <a href="{base}device-platform.html#ryzen-ai-max-395"><span class="ic">03</span><span><span class="t">AMD Ryzen AI Max+ 395</span><br><span class="s">Sovereign plant intelligence</span></span></a>
+      <a href="{base}device-platform.html#agx-thor"><span class="ic">04</span><span><span class="t">NVIDIA Jetson AGX Thor</span><br><span class="s">Robotics &amp; DeepVision for fabs</span></span></a>
+      <a href="{base}device-platform.html#dgx-spark"><span class="ic">05</span><span><span class="t">NVIDIA DGX Spark</span><br><span class="s">AI engineering lab &amp; training</span></span></a>
+      <a href="{base}device-platform.html#qcs6490"><span class="ic">06</span><span><span class="t">Qualcomm QCS6490</span><br><span class="s">Remote &amp; mobile assets</span></span></a>
     </div></div>
     <div class="drop"><button data-cursor>Research ▾</button><div class="menu">
-      <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
-      <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
-      <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost on owned silicon</span></span></a>
-      <a href="{base}ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">AI SOC Modernization — Whitepaper</span><br><span class="s">Edge-native, identity-driven security for IT/OT</span></span></a>
-      <a href="{base}resources/medsdlc-html/index.html" target="_blank" rel="noopener"><span class="ic">05</span><span><span class="t">Agentic SDLC — Regulated MedTech</span><br><span class="s">Validated, self-hosted, agent-native lifecycle</span></span></a>
+      <a href="{base}resources/agentnexus-architecture.html" target="_blank" rel="noopener"><span class="ic">01</span><span><span class="t">AgentNexus — Architecture Overview</span><br><span class="s">For architects and business leaders</span></span></a>
+      <a href="{base}resources/edge-ai-models.html" target="_blank" rel="noopener"><span class="ic">02</span><span><span class="t">Edge AI Models — Field Guide</span><br><span class="s">A 25-chapter architect's eBook</span></span></a>
+      <a href="{base}resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
+      <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost on owned silicon</span></span></a>
+      <a href="{base}ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">05</span><span><span class="t">AI SOC Modernization — Whitepaper</span><br><span class="s">Edge-native security for IT/OT</span></span></a>
     </div></div>
+    <a href="{h}#engineering">AI Engineering</a>
     <a href="{base}why-unovie.html">Why Unovie</a>
   </nav>
   <a class="navcta" href="{h}#contact" data-cursor>Start a project <span class="ar">→</span></a>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 </div></div></header>
 <div class="mobile" id="mobile">
-  <a href="{base}why-unovie.html"><span class="mono">01</span><br>Why Unovie</a>
-  <a href="{h}#engineering"><span class="mono">02</span><br>AI Engineering</a>
+  <a href="{base}platform/agentmesh.html"><span class="mono">01</span><br>AgentMesh</a>
+  <a href="{base}platform/agentnexus.html"><span class="mono">02</span><br>AgentNexus</a>
   <a href="{h}#accelerators"><span class="mono">03</span><br>Solutions</a>
-  <a href="{h}#platform"><span class="mono">04</span><br>Platform</a>
-  <a href="{base}device-platform.html"><span class="mono">05</span><br>Device Platform</a>
-  <a href="{base}resources/edge-ai-models.html" target="_blank"><span class="mono">06</span><br>Field Guide (eBook)</a>
-  <a href="{base}resources/edge-ai-whitepaper.html" target="_blank"><span class="mono">07</span><br>Whitepaper</a>
+  <a href="{base}device-platform.html"><span class="mono">04</span><br>Hardware</a>
+  <a href="{base}why-unovie.html"><span class="mono">05</span><br>Why Unovie</a>
+  <a href="{h}#engineering"><span class="mono">06</span><br>AI Engineering</a>
+  <a href="{base}resources/agentnexus-architecture.html" target="_blank"><span class="mono">07</span><br>Architecture overview</a>
   <a href="{h}#contact" style="color:var(--accent)"><span class="mono">08</span><br>Start a project →</a>
 </div>'''
 
@@ -117,19 +120,17 @@ def FOOTER(base):
     h=base+"index.html"
     return f'''<footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
-    <p>AI engineering as a service. We design, build, and operate custom Edge-AI Agentic Systems — on hardware you own.</p></div>
+    <p>Agent-native industrial AI. We design, build, and operate custom Edge-AI Agentic Systems — on AMD or NVIDIA hardware you own.</p></div>
+  <div class="fcol"><h4>Platform</h4>
+    <a href="{base}platform/agentmesh.html">AgentMesh</a><a href="{base}platform/agentnexus.html">AgentNexus</a></div>
+  <div class="fcol"><h4>Hardware</h4>
+    <a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a><a href="{base}device-platform.html#agx-thor">NVIDIA Jetson AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a></div>
   <div class="fcol"><h4>Company</h4>
     <a href="{base}why-unovie.html">Why Unovie</a><a href="{h}#engineering">AI Engineering</a><a href="{h}#delivery">How we deliver</a>
     <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a></div>
-  <div class="fcol"><h4>Platform</h4>
-    <a href="{base}platform/edge-data-fabric.html">Edge Data Fabric</a><a href="{base}platform/edge-streaming-analytics.html">Streaming Intelligence</a>
-    <a href="{base}platform/gpu-microcloud.html">GPU MicroCloud</a><a href="{base}platform/gpu-edgegateway.html">GPU EdgeGateway</a>
-    <a href="{base}platform/edge-security-intelligence.html">Edge Security Intelligence</a></div>
-  <div class="fcol"><h4>Device Platform</h4>
-    <a href="{base}device-platform.html#agx-thor">NVIDIA AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a><a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">EdgeGateway Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a><a href="{base}resources/medsdlc-html/index.html" target="_blank">Regulated MedTech SDLC</a></div>
-</div><div class="fbot"><span>© 2026 Unovie · EdgeAI Context Engineering</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
+    <a href="{base}resources/agentnexus-architecture.html" target="_blank">AgentNexus Architecture</a><a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
+</div><div class="fbot"><span>© 2026 Unovie · Agent-native industrial AI</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 
 def metrics(items):  # list of (value_html, label)
@@ -519,7 +520,433 @@ PLAT_EXTRA={
    + '</div></div></section>'
  ),
 }
-for s in PLATP: page(B,"platform",s[0],s[1],"Platform",s[2],s[3],s[4],s[5],s[6],s[7],PLAT_EXTRA.get(s[0],""))
+SVG_MESH='<svg class="axviz" viewBox="0 0 1000 430" role="img" aria-label="AgentMesh: asset signals flow into the Sovereign Pod, which perceives, decides, reasons and adapts; Lane A acts directly on low-consequence outputs, Lane B raises an alarm and a request to the PLC or safety system and the operator; work orders go to the maintenance system and every decision is written to the Evidence Log."><defs><marker id="axh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs><text x="20" y="22" class="l">ASSET SIGNALS</text><rect x="20" y="36" width="210" height="52" rx="10" class="bx"/><text x="34" y="60" class="t">Vibration · ultrasonic</text><text x="34" y="80" class="s">accelerometers, acoustic</text><line x1="230" y1="62" x2="288" y2="215" class="lk" marker-end="url(#axh)"/><rect x="20" y="100" width="210" height="52" rx="10" class="bx"/><text x="34" y="124" class="t">Electrical</text><text x="34" y="144" class="s">power quality, partial discharge</text><line x1="230" y1="126" x2="288" y2="215" class="lk" marker-end="url(#axh)"/><rect x="20" y="164" width="210" height="52" rx="10" class="bx"/><text x="34" y="188" class="t">Battery data</text><text x="34" y="208" class="s">cells, temperature, off-gas</text><line x1="230" y1="190" x2="288" y2="215" class="lk" marker-end="url(#axh)"/><rect x="20" y="228" width="210" height="52" rx="10" class="bx"/><text x="34" y="252" class="t">Test-rig channels</text><text x="34" y="272" class="s">pressure, strain, acoustics</text><line x1="230" y1="254" x2="288" y2="215" class="lk" marker-end="url(#axh)"/><rect x="20" y="292" width="210" height="52" rx="10" class="bx"/><text x="34" y="316" class="t">Weld current</text><text x="34" y="336" class="s">process signatures</text><line x1="230" y1="318" x2="288" y2="215" class="lk" marker-end="url(#axh)"/><rect x="20" y="356" width="210" height="52" rx="10" class="bx"/><text x="34" y="380" class="t">OT network · alarms</text><text x="34" y="400" class="s">control traffic, alarm floods</text><line x1="230" y1="382" x2="288" y2="215" class="lk" marker-end="url(#axh)"/><rect x="290" y="30" width="420" height="380" rx="14" class="bx-a"/><text x="310" y="56" class="l">AGENTMESH · SOVEREIGN POD · PLANT DMZ</text><rect x="310" y="70" width="380" height="66" rx="10" class="bx"/><text x="324" y="94" class="t">1 · Perceive</text><text x="324" y="114" class="s">Unovie Gateway (read-only) → Signal Encoders</text><rect x="310" y="154" width="380" height="66" rx="10" class="bx"/><text x="324" y="178" class="t">2 · Decide</text><text x="324" y="198" class="s">Vector Memory + Unovie Decision Engine</text><rect x="310" y="238" width="380" height="66" rx="10" class="bx"/><text x="324" y="262" class="t">3 · Reason</text><text x="324" y="282" class="s">Unovie Reasoning Model drafts root cause</text><rect x="310" y="322" width="380" height="66" rx="10" class="bx"/><text x="324" y="346" class="t">4 · Adapt</text><text x="324" y="366" class="s">Kiln: nightly, tested, signed</text><text x="310" y="402" class="s">air-gapped by default · 30 ms decision budget (target)</text><text x="770" y="22" class="l">OUTCOMES</text><rect x="770" y="36" width="210" height="70" rx="10" class="bx-a"/><text x="784" y="60" class="t">Lane A · acts directly</text><text x="784" y="80" class="s">reject gate · diverter</text><text x="784" y="98" class="s">IT-side quarantine</text><rect x="770" y="122" width="210" height="70" rx="10" class="bx-s"/><text x="784" y="146" class="t">Lane B · alarm + request</text><text x="784" y="166" class="s">PLC / safety system</text><text x="784" y="184" class="s">and operator decide</text><rect x="770" y="208" width="210" height="56" rx="10" class="bx"/><text x="784" y="232" class="t">Work order</text><text x="784" y="252" class="s">to SAP / Maximo</text><rect x="770" y="280" width="210" height="56" rx="10" class="bx"/><text x="784" y="304" class="t">Evidence Log</text><text x="784" y="324" class="s">signed record of every decision</text><line x1="690" y1="187" x2="768" y2="71" class="lk-a" marker-end="url(#axh)"/><line x1="690" y1="190" x2="768" y2="157" class="lk-s" marker-end="url(#axh)"/><line x1="690" y1="271" x2="768" y2="236" class="lk" marker-end="url(#axh)"/><line x1="690" y1="350" x2="768" y2="308" class="lk" marker-end="url(#axh)"/><text x="770" y="372" class="s">plant control stays with</text><text x="770" y="390" class="s">your PLCs and operators</text></svg>'
+SVG_NEXUS='<svg class="axviz" viewBox="0 0 1000 430" role="img" aria-label="AgentNexus: AgentMesh pods at many plants connect to one AgentNexus rack, which runs agents in sealed sandboxes, the Unovie Model Router and models, the Kiln for new skill adapters, and a platform that copies data across shelves. Results go to IT systems; plant control stays at the plant."><defs><marker id="axh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs><text x="20" y="22" class="l">PLANTS</text><rect x="20" y="40" width="190" height="64" rx="10" class="bx"/><text x="34" y="64" class="t">AgentMesh pod</text><text x="34" y="84" class="s">Plant A · fast local loop</text><line x1="210" y1="72" x2="268" y2="215" class="lk" marker-end="url(#axh)" marker-start="url(#axh)"/><rect x="20" y="132" width="190" height="64" rx="10" class="bx"/><text x="34" y="156" class="t">AgentMesh pod</text><text x="34" y="176" class="s">Plant B · fast local loop</text><line x1="210" y1="164" x2="268" y2="215" class="lk" marker-end="url(#axh)" marker-start="url(#axh)"/><rect x="20" y="224" width="190" height="64" rx="10" class="bx"/><text x="34" y="248" class="t">AgentMesh pod</text><text x="34" y="268" class="s">Plant C · fast local loop</text><line x1="210" y1="256" x2="268" y2="215" class="lk" marker-end="url(#axh)" marker-start="url(#axh)"/><text x="20" y="330" class="s">… and every other site,</text><text x="20" y="348" class="s">over encrypted links</text><rect x="270" y="30" width="460" height="380" rx="14" class="bx-a"/><text x="290" y="56" class="l">AGENTNEXUS · CENTRAL CABINET · 0.5 s RESPONSE BUDGET</text><rect x="290" y="70" width="420" height="66" rx="10" class="bx-s"/><text x="304" y="94" class="t">Agents · Unovie Agent Runtime</text><text x="304" y="114" class="s">sealed sandboxes · sleep when idle · wake on demand</text><rect x="290" y="148" width="420" height="84" rx="10" class="bx"/><text x="304" y="172" class="t">Models · Unovie Model Router</text><text x="304" y="192" class="s">Unovie Decision Models pick the route</text><text x="304" y="210" class="s">Unovie Reasoning Model + skill adapters · Vector Memory</text><rect x="290" y="244" width="420" height="66" rx="10" class="bx"/><text x="304" y="268" class="t">Learning · Kiln</text><text x="304" y="288" class="s">new skill adapters: train → test → trial → switch on</text><rect x="290" y="322" width="420" height="66" rx="10" class="bx"/><text x="304" y="346" class="t">Platform · Mesh Arbiter</text><text x="304" y="366" class="s">12 shelves · one cluster · data copied across shelves</text><text x="790" y="22" class="l">BUSINESS</text><rect x="790" y="60" width="190" height="64" rx="10" class="bx"/><text x="804" y="84" class="t">IT systems</text><text x="804" y="104" class="s">SAP · Maximo · reports</text><rect x="790" y="170" width="190" height="64" rx="10" class="bx"/><text x="804" y="194" class="t">People</text><text x="804" y="214" class="s">engineers · operators</text><rect x="790" y="300" width="190" height="64" rx="10" class="bx-d"/><text x="804" y="326" class="t">Never moves</text><text x="804" y="346" class="s">plant equipment</text><line x1="730" y1="120" x2="788" y2="92" class="lk" marker-end="url(#axh)"/><line x1="730" y1="190" x2="788" y2="202" class="lk" marker-end="url(#axh)"/></svg>'
+# ===================== MOCK: Unovie Platform (AgentMesh + AgentNexus) =====================
+A="<span class='serif' style='color:var(--accent)'>"; T="<span class='serif' style='color:var(--steel)'>"; E="</span>"
+
+def runs(items):  # (status, now?, title, text)
+    cells="".join(f'<div class="run rv"><span class="st{" now" if now else ""}">{st}</span><h4>{t}</h4><p>{d}</p></div>' for st,now,t,d in items)
+    return f'<div class="runs">{cells}</div>'
+def diagram(svg, caption):
+    return f'<div class="axwrap rv">{svg}</div><p class="lead rv" style="margin-top:14px;font-size:15px">{caption}</p>'
+def sec(num,label,title,body,lead=""):
+    return f'<section><div class="wrap">{shead(num,label,title,lead)}{body}</div></section>'
+
+PLATP=[
+ ("agentmesh","Platform · AgentMesh","Agent"+A+"Mesh"+E,
+  "AgentMesh puts AI on the signals your equipment produces — vibration, ultrasonic, electrical, battery and OT-network data — in a Sovereign Pod on the plant network. It spots what is going wrong inside a 30-millisecond decision budget, acts on its own only where the consequence is low, and sends anything safety-related to your PLC, safety system and operators as an alarm and a request. Every decision is written to a signed Evidence Log. Air-gapped by default, on AMD or NVIDIA hardware you own.",
+  [("&lt;30<span class='o'>ms</span>","decision budget · target"),("0<span class='o'>B</span>","leaves the site by default"),("10","domain kits")],
+  ("Four jobs at the machine",[
+   ("/perceive","Perceive the asset's own signals","The Unovie Gateway reads sensors, data-acquisition boxes, historian tags and network traffic — read-only, with allow-listed protocols and an audit trail. Signal Encoders turn each window of signal into a compact fingerprint.",["vibration","electrical","battery","OT network"]),
+   ("/decide","Decide, with a safety boundary","Vector Memory answers \"have we seen this before, and was it bad?\" The Unovie Decision Engine applies your rules and a small decision model, then picks a lane: Lane A acts directly on low-consequence outputs; Lane B raises an alarm and a request.",["Lane A","Lane B","rules + model"]),
+   ("/reason","Explain it, and draft the work","After the event, the Unovie Reasoning Model pulls in equipment history, manuals and past failures, names the likely root cause and drafts the work order. It is never in the path that moves equipment.",["root cause","work orders","on-site model"]),
+   ("/adapt","Improve every night, safely","The Kiln replays the day, proposes at most three playbook edits and keeps them only if they beat a held-out test. Model weights stay frozen in the field; every change is signed and can be rolled back.",["Kiln","held-out test","signed"])]),
+  ("Signal to action",[("Sense","Read-only taps stream asset signals."),("Decide","Compare, apply rules, choose a lane."),("Act or request","Lane A acts; Lane B alarms and asks."),("Record","Evidence Log entry and a drafted work order.")]),
+  "Put AI on "+A+"your equipment's signals."+E),
+ ("agentnexus","Platform · AgentNexus","Agent"+A+"Nexus"+E,
+  "AgentNexus is where your AI agents work across sites. One rack in a central cabinet hosts thousands of agents in sealed sandboxes, connects to every AgentMesh pod in your fleet, and turns plant events into cross-site analysis, maintenance plans and work orders — answering within half a second. It learns from what happens in production, tests every improvement before it goes live, and never moves plant equipment. On AMD or NVIDIA hardware you own.",
+  [("0.5<span class='o'>s</span>","response budget · target"),("48","servers in one 42U rack"),("0","plant equipment it controls")],
+  ("One rack, three layers",[
+   ("/agents","Agents in sealed sandboxes","The Unovie Agent Runtime gives every agent its own sealed space. Idle agents are saved and put to sleep, then woken on any free server when they're needed — so one rack holds far more agents than it could keep running. Network access is allow-listed and passwords never reach the agent.",["sandboxed","sleep and wake","allow-listed"]),
+   ("/models","One model family, specialised per job","The Unovie Model Router reads each request and, with the Unovie Decision Models, picks the model and the skill adapter. The Unovie Reasoning Model answers — a compact copy for speed, a full copy that takes skill adapters swapped in while it runs. Vector Memory powers search.",["model router","skill adapters","open weights"]),
+   ("/learn","Gets better from production","Outcomes reported by agents and operators become training data. The Kiln trains new skill adapters on the rack, tests them on cases they have never seen, tries them on a slice of live traffic and switches them on only if they do better.",["train","test","trial","switch on"]),
+   ("/resilient","Built to keep running","Twelve identical shelves of four servers run as one system. Important data is copied across shelves and the Mesh Arbiter moves work when a server or a whole shelf stops — losing capacity, not saved work.",["12 shelves","copied data","Mesh Arbiter"])]),
+  ("Plant event to business action",[("Event","An AgentMesh pod sends what it found."),("Wake","The right agent wakes in its sandbox."),("Reason","Models compare across sites and history."),("Act","Work orders and reports reach IT systems.")]),
+  "Run agents "+A+"across every plant."+E),
+ ("edge-streaming-analytics","Platform · Capability","Asset Signal "+T+"Intelligence"+E,
+  "The signals that tell you an asset is failing are fast and specific: vibration and ultrasonic at up to 25.6 kHz, power-quality and partial-discharge waveforms, battery cell data, test-rig pressure and strain, weld current, control-system tags and network traffic. Asset Signal Intelligence reads them read-only, turns them into fingerprints and compares them with your plant's own history in real time. It is not video monitoring: imaging is used only as context.",
+  [("25.6<span class='o'>kHz</span>","vibration sampling"),("read-only","plant connections"),("0","cameras required")],
+  ("Signals, not screens",[
+   ("/connect","Read-only plant connections","The Unovie Gateway connects to data-acquisition boxes, industrial protocols, historians and a network mirror port — read-only, with allow-listed protocols and an audit trail.",["DAQ","historian","mirror port"]),
+   ("/encode","A fingerprint for every window","Signal Encoders built for each signal type turn raw waveforms into compact fingerprints, on the GPU or the NPU where it fits.",["spectral","signature","fingerprint"]),
+   ("/memory","Seen this before?","Vector Memory finds the closest past patterns and what happened next, so a new fault is judged against your plant's own record, not a generic threshold.",["Vector Memory","history","labels"])]),
+  ("Signal to fingerprint",[("Connect","Read-only taps on sensors and tags."),("Window","Buffer each channel in short windows."),("Encode","Turn windows into fingerprints."),("Compare","Match against the plant's history.")]),
+  "Listen to "+T+"your assets."+E),
+ ("edge-data-fabric","Platform · Capability","Unovie Context "+T+"Fabric"+E,
+  "Your plant's own knowledge — assets, sensors, lines, procedures, past failures and work orders — modelled as a typed plant model, a knowledge graph and Vector Memory, on-prem. AgentMesh uses it to explain an event in seconds; AgentNexus uses it to reason across sites. You can buy models and agents; your context is the part only you can build, and it stays yours.",
+  [("plant","model, typed"),("graph<span class='s'>+vector</span>","recall"),("0<span class='o'>B</span>","egress · on-prem")],
+  ("Context that compounds",[
+   ("/model","A plant model","Assets, lines, sensors, procedures and failure modes as typed entities and relationships — the what, where, when and why behind every signal.",["assets","procedures","failures"]),
+   ("/graph","Knowledge graph + Vector Memory","Structure and meaning side by side: follow the links from a pump to its motor, its manual and its last failure, and find similar cases by meaning.",["graph","vector","both"]),
+   ("/ask","Ask in plain language","Engineers and planners ask questions and get answers traced back to the source document or record — no query language, no data team in the loop.",["plain language","traceable","self-service"])]),
+  ("Documents in, decisions out",[("Extract","Read manuals, records and tables."),("Build","Grow the plant model and graph."),("Index","Add meaning for search."),("Serve","Grounded answers for agents and people.")]),
+  "Know your plant — and "+T+"why."+E),
+ ("gpu-edgegateway","Platform · Capability","Unovie Model "+T+"Router"+E,
+  "One address for every model request. The Unovie Model Router reads each request, asks the Unovie Decision Models which model and skill adapter fit, and sends it to the right server in your rack — a compact model for speed, a full model with a task-specific skill adapter when the job needs it. Safety checks run on every turn, routing rules are trialled on recorded traffic before they go live, and every route is traced and metered.",
+  [("one","address for every agent"),("≤100<span class='o'>ms</span>","routing budget · target"),("trial → live","rule lifecycle")],
+  ("Route, check, record",[
+   ("/route","The right model, every time","Request type, difficulty and risk decide the route, so simple work stays fast and only hard work uses the bigger model.",["routing","skill adapters","cost-aware"]),
+   ("/decide","Typed decisions, not guesses","The Unovie Decision Models answer fixed questions — which option, yes or no, how urgent — with a probability for each answer, in one quick pass.",["Decision Models","probabilities","fast"]),
+   ("/govern","Safe and accountable","Sensitive data and unsafe requests are caught inline; every routing change is versioned, trialled and reversible.",["inline checks","versioned","reversible"])]),
+  ("Request to answer",[("Read","Understand the request and its risk."),("Decide","Decision Models pick model and adapter."),("Serve","The chosen server answers."),("Record","Trace, cost and outcome logged.")]),
+  "The right model, "+T+"every request."+E),
+ ("edge-security-intelligence","Platform · Capability","OT Security "+T+"Intelligence"+E,
+  "Threats on the plant network are caught while the data is still moving. Control traffic, logs and alarm streams are read in flight: unauthorized writes to controllers, unusual commands, alarm floods and lateral movement are flagged as they happen, and every finding becomes evidence for your cybersecurity plan and auditors. Delivered as the OT Network Watch and Alarm Flood Triage domain kits, on-prem.",
+  [("in flight","not after the fact"),("read-only","network mirror"),("signed","evidence")],
+  ("Detection on the plant network",[
+   ("/writes","Unauthorized writes","Writes to controllers from unexpected sources or outside allowed windows are flagged at once, with the full context of who, what and when.",["controllers","allow-lists","context"]),
+   ("/alarms","Alarm flood triage","When hundreds of alarms fire together, the first-out cause is found and ranked so operators see what started it.",["first-out","ranking","operators"]),
+   ("/evidence","Evidence you can hand over","Every detection is recorded in the Evidence Log and summarised for cybersecurity plans and audits.",["Evidence Log","audit","plans"])]),
+  ("Traffic to evidence",[("Mirror","Copy network traffic, read-only."),("Read","Understand control commands and alarms."),("Flag","Score what is unusual or unsafe."),("Record","Evidence and a clear summary.")]),
+  "Secure the plant "+T+"network."+E),
+ ("gpu-microcloud","Platform · Capability","Private AI "+T+"Rack"+E,
+  "The platform under AgentNexus: twelve shelves of four servers in one 42U rack, run as a single system on your floor. Two network switches, fast cables inside each shelf, copies of important data on more than one shelf, and the Mesh Arbiter to move work when a server or a whole shelf stops. AMD or NVIDIA servers, shared fairly between teams and metered like cloud — without the cloud.",
+  [("42U","12 shelves × 4 servers"),("1","system to run"),("2","switches · no single point")],
+  ("Your AI servers, run like cloud",[
+   ("/place","Work placed by role","Each server's role — answering, specialised answering, training — is a label, so capacity moves between jobs without reinstalling.",["roles","labels","no reinstall"]),
+   ("/protect","Data protected across shelves","Records and saved agents are copied across shelves, so losing a server or a shelf loses capacity, not work.",["copies","shelves","recovery"]),
+   ("/meter","Shared fairly, metered","Teams and sites get quotas; every job is accounted for, so shared capacity becomes clear cost.",["quotas","metering","showback"])]),
+  ("Rack to service",[("Rack","Identical shelves, one design."),("Join","One system across all shelves."),("Protect","Data copied across shelves."),("Meter","Per-team accounting.")]),
+  "AI capacity you "+T+"own."+E),
+]
+
+PLAT_EXTRA={
+ "agentmesh": sec("03","Architecture","Inside the Sovereign Pod", diagram(SVG_MESH,"AgentMesh sits in the plant's industrial DMZ, reads asset signals read-only and keeps the fast loop local. Low-consequence actions happen directly; safety decisions stay with your PLC, safety system and operators."))
+   + sec("04","Domain kits","Packaged for the assets you run", disc([
+     ("/rotating","Rotating Equipment Health","Bearings, cavitation and imbalance on pumps, compressors, motors and drives — fault class, severity and a drafted work order.",["vibration","ultrasonic","work order"]),
+     ("/battery","Battery Safety Fusion","Early warning of thermal-runaway precursors from battery data and off-gas sensors, as an alarm into the fire panel.",["BMS","off-gas","Lane B"]),
+     ("/electrical","Electrical Health","Early signs of arcing and insulation failure in switchgear, transformers and inverters.",["partial discharge","power quality"]),
+     ("/leak","Leak &amp; Energy Loss","Ranked leak lists with a value attached, from airborne ultrasonic, flow and pressure data.",["ultrasonic","flow","value"]),
+     ("/test","Test Campaign Monitor","Anomaly flags to the test conductor during a run, and a drafted post-test report.",["pressure","strain","acoustics"]),
+     ("/ot","OT Network Watch","Unauthorized writes and unusual commands on the plant network, with evidence for cybersecurity plans.",["control traffic","alarms","evidence"]),
+   ]))
+   + sec("05","Runs on","AMD or NVIDIA hardware you own", runs([
+     ("Runs today",True,"AMD Ryzen AI Max+ 395","The reference Sovereign Pod: four nodes in 3U, quiet enough for a plant DMZ rack."),
+     ("Available on",False,"NVIDIA Jetson AGX Thor","Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab."),
+     ("Available on",False,"NVIDIA DGX Spark","The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot."),
+   ]) + '<p class="lead rv" style="font-size:15px;margin-top:16px">Same domain kits, same safety lanes, same Evidence Log on every platform. <a href="../device-platform.html" style="color:var(--accent)">Compare the hardware →</a></p>')
+   + sec("06","Why teams choose it","Built for the plant, not the slide", disc([
+     ("/control","Works with your control system","Lane A outputs and Lane B request registers fit how plants already run: the PLC, the safety system and the operator stay in charge.",["PLC","safety system","operator"]),
+     ("/own","You own it","Off-the-shelf hardware, models that run without us, and an evidence pack and playbooks that belong to you.",["no lock-in","on-site","yours"]),
+     ("/price","Priced per asset and kit","Value is measured in failures, leaks and scrap avoided — not in seats.",["per asset","per kit","outcomes"]),
+   ])),
+ "agentnexus": sec("03","Architecture","One rack for a fleet of plants", diagram(SVG_NEXUS,"AgentMesh keeps the fast loop at each plant. AgentNexus works at business speed across all of them, sends results to your business systems, and never moves plant equipment."))
+   + sec("04","What it runs","Agents, models and learning in one place", disc([
+     ("/runtime","Unovie Agent Runtime","Sealed sandboxes, sleep and wake on demand, allow-listed network access and no passwords in agents' hands.",["sandboxes","wake on demand"]),
+     ("/router","Unovie Model Router + Decision Models","Picks the model and skill adapter for every request; small decision models answer typed questions with probabilities.",["routing","typed decisions"]),
+     ("/reasoning","Unovie Reasoning Model + skill adapters","One open-weight model family for every answer, specialised per job by small adapters that are swapped in without a restart.",["open weights","skill adapters"]),
+     ("/kiln","Kiln","Trains, tests, trials and promotes new skill adapters from production outcomes — nothing goes live without beating what's running.",["train","test","promote"]),
+   ]))
+   + sec("05","Runs on","AMD or NVIDIA hardware you own", runs([
+     ("Reference design",True,"AMD Ryzen AI Max+ 395 rack","Twelve shelves of four servers in one 42U rack — the same server as the AgentMesh pod."),
+     ("Available on",False,"NVIDIA DGX Spark","One to four units for a site or a pilot, and the place new skill adapters are trained."),
+     ("Pairs with",False,"Every AgentMesh pod","On AMD or NVIDIA Jetson AGX Thor, at every plant in the fleet."),
+   ]))
+   + sec("06","By design","Sized for a fleet", metrics([("~860","agents awake at once · estimate"),("1000s","agents in total, mostly asleep"),("4 of 12","shelves can fail without losing saved agents")])
+     + '<p class="lead rv" style="font-size:15px;margin-top:16px">Estimates from measurements on single servers; we replace them with measured numbers after our bench tests.</p>'
+     + '<div class="disc" style="margin-top:22px"><a class="dcard rv" href="../resources/agentnexus-architecture.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/architecture</div><h3>AgentNexus — Architecture Overview</h3><p>How the rack is organised, what happens step by step, how data is kept safe and what happens when something breaks — written for architects and business leaders.</p><div class="spec"><span class="chip">overview</span><span class="chip">diagrams</span></div></a></div>'),
+ "edge-streaming-analytics": sec("03","Signals we read","The data that predicts failure", disc([
+     ("/vibration","Vibration and ultrasonic","Accelerometers and acoustic sensors on bearings, gearboxes, pumps and compressors.",["25.6 kHz","bearings"]),
+     ("/electrical","Electrical waveforms","Power quality and partial discharge in switchgear, transformers and inverters.",["power quality","partial discharge"]),
+     ("/battery","Battery systems","Cell voltage and temperature, read-only from the battery management system, plus off-gas sensors.",["cells","off-gas"]),
+     ("/process","Process signatures","Weld current, test-rig pressure and strain, and control-system tags from the historian.",["weld","test rig","historian"]),
+   ])) + sec("04","By the numbers","Engineered for fast signals", metrics([("25.6<span class='o'>kHz</span>","per vibration channel"),("&lt;30<span class='o'>ms</span>","to a decision · target"),("read-only","by design")])),
+ "edge-data-fabric": sec("03","How it's built","From documents to a living plant model", disc([
+     ("/extract","Reads what you already have","Manuals, procedures, maintenance records and tables become structured records.",["manuals","records"]),
+     ("/link","Links it together","Records become a typed graph: this pump, its motor, its manual, its last three failures.",["graph","links"]),
+     ("/find","Finds by meaning","Vector Memory finds similar cases even when the words differ.",["meaning","similar cases"]),
+     ("/history","Keeps the history","Every change is versioned with an audit trail, so you can see what was known when.",["versioned","audit"]),
+   ])),
+ "gpu-edgegateway": sec("03","How it decides","Typed questions, clear answers", disc([
+     ("/choice","Which option?","Pick a model, an adapter or a route from a fixed list — with a probability for each.",["choice"]),
+     ("/yesno","Yes or no?","Is this safe, is it in scope, does it need a person?",["yes / no"]),
+     ("/score","How much?","Urgency, difficulty or risk on a fixed scale.",["score"]),
+   ])) + '<section><div class="wrap">' + shead("04","Further reading","The economics behind it","Read in the browser or export to PDF.")
+   + '<div class="disc"><a class="dcard rv" href="../gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/economics</div><h3>Edge-Native Economics</h3><p>Turning unpredictable, metered AI spend into fixed, predictable cost for the industrial edge.</p><div class="spec"><span class="chip">whitepaper</span></div></a></div></div></section>',
+ "edge-security-intelligence": '<section><div class="wrap">' + shead("03","Further reading","For your security team","Read in the browser or export to PDF.")
+   + '<div class="disc"><a class="dcard rv" href="../ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/ai-soc</div><h3>AI SOC Modernization</h3><p>An edge-native, identity-driven security architecture for distributed IT/OT.</p><div class="spec"><span class="chip">whitepaper</span></div></a></div></div></section>',
+ "gpu-microcloud": sec("03","By design","The rack, in numbers", metrics([("12","shelves, each its own failure zone"),("4","servers per shelf, linked by fast cables"),("5","shelves share cluster control")])),
+}
+# ===================== /MOCK =====================
+
+PLATP=[x for x in PLATP if x[0] in ("agentmesh","agentnexus")]
+# ===================== MOCK: product page presentation =====================
+PCSS = """
+/* ---------- product pages ---------- */
+.ph2{padding:140px 0 40px}
+.ph2 .grid{display:grid;gap:40px;align-items:center}
+@media(min-width:980px){.ph2 .grid{grid-template-columns:1.05fr .95fr}}
+.ph2 h1{font-size:clamp(46px,7vw,92px);margin:16px 0 0}
+.ph2 .lead{margin:22px 0 28px;max-width:52ch}
+.ph2 .pill{display:inline-flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.kstrip{display:grid;gap:0;margin-top:46px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+@media(min-width:720px){.kstrip{grid-template-columns:repeat(4,1fr)}}
+.kstrip>div{padding:22px 24px;border-right:1px solid var(--line)}
+.kstrip>div:last-child{border-right:0}
+.kstrip .v{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3vw,38px);letter-spacing:-.03em;color:var(--fg)}
+.kstrip .v .o{color:var(--accent)}
+.kstrip .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin-top:6px}
+.livep{border:1px solid var(--line-2);border-radius:var(--r-lg);background:linear-gradient(160deg,var(--surface-2),var(--ink-2));box-shadow:0 40px 90px -40px rgba(0,0,0,.45);overflow:hidden}
+.livep .hd{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.livep .hd .tag{font-size:10.5px}
+.livep .wave{height:120px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(90deg,transparent,transparent 31px,rgba(128,128,160,.07) 31px,rgba(128,128,160,.07) 32px)}
+.livep .wave svg{width:100%;height:100%;display:block}
+.livep .rows{padding:6px 18px 14px}
+.livep .r{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.livep .r:last-child{border-bottom:0}
+.livep .r .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+.livep .r .v{color:var(--fg);font-weight:600;text-align:right}
+.livep .r .v.a{color:var(--accent)} .livep .r .v.s{color:var(--steel)}
+.livep .ft{padding:10px 18px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);border-top:1px solid var(--line)}
+.flow4{display:grid;gap:14px;margin-top:34px;counter-reset:f}
+@media(min-width:860px){.flow4{grid-template-columns:repeat(4,1fr)}}
+.flow4 .st{position:relative;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 22px 22px;background:var(--surface)}
+.flow4 .st .n{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent);margin-bottom:16px}
+.flow4 .st:nth-child(even) .n{background:var(--steel);color:#fff}
+.flow4 .st h3{font-size:21px;margin:0 0 8px}
+.flow4 .st p{font-size:15px;margin:0}
+.flow4 .st .who{margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+@media(min-width:860px){.flow4 .st:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:44px;color:var(--fg-dim);font-size:18px;z-index:2;background:var(--ink);padding:0 2px}}
+.lanes{display:grid;gap:18px;margin-top:34px}
+@media(min-width:860px){.lanes{grid-template-columns:1fr 1fr}}
+.lane{border-radius:var(--r-lg);padding:30px;border:1px solid var(--line-2);background:var(--surface)}
+.lane.a{border-color:color-mix(in srgb,var(--accent) 55%,var(--line-2));background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 9%,var(--surface)),var(--surface))}
+.lane.b{border-color:color-mix(in srgb,var(--steel) 55%,var(--line-2));background:linear-gradient(180deg,color-mix(in srgb,var(--steel) 9%,var(--surface)),var(--surface))}
+.lane .big{font-family:var(--disp);font-weight:800;font-size:clamp(30px,3.6vw,44px);letter-spacing:-.03em;margin:6px 0 4px}
+.lane.a .big{color:var(--accent)} .lane.b .big{color:var(--steel)}
+.lane ul{margin:16px 0 0;padding:0;list-style:none}
+.lane li{padding:10px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--fg-mut);display:flex;gap:10px}
+.lane li b{color:var(--fg);font-weight:600;min-width:118px}
+.never{margin-top:18px;border:1px dashed var(--line-2);border-radius:var(--r);padding:16px 20px;font-size:15px;color:var(--fg-mut)}
+.never b{color:var(--fg)}
+.kits{display:grid;gap:12px;margin-top:34px}
+@media(min-width:640px){.kits{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.kits{grid-template-columns:repeat(3,1fr)}}
+.kit{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;background:var(--surface);transition:border-color .25s,transform .25s var(--e)}
+.kit:hover{border-color:var(--accent);transform:translateY(-2px)}
+.kit .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);margin-bottom:12px}
+.kit .ico svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.kit h4{margin:0 0 6px;font-family:var(--disp);font-size:18px;color:var(--fg)}
+.kit p{margin:0;font-size:14.5px}
+.kit .sig{margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-dim)}
+.hwrow{display:grid;gap:16px;margin-top:34px}
+@media(min-width:860px){.hwrow{grid-template-columns:repeat(3,1fr)}}
+.hw{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface);display:flex;flex-direction:column;text-decoration:none;transition:border-color .25s,transform .25s var(--e)}
+.hw:hover{border-color:var(--accent);transform:translateY(-3px)}
+.hw .im{background:var(--surface-2);border-bottom:1px solid var(--line);padding:18px;display:grid;place-items:center}
+.hw .im img{width:100%;max-width:300px;height:auto;display:block}
+.hw .bd{padding:20px 22px 22px}
+.hw .st{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line-2);color:var(--fg-mut)}
+.hw .st.now{border-color:var(--accent);color:var(--accent)}
+.hw h4{margin:12px 0 6px;font-family:var(--disp);font-size:19px;color:var(--fg)}
+.hw p{margin:0;font-size:15px}
+.layers{display:grid;gap:10px;margin-top:34px}
+.layer{display:grid;gap:14px;align-items:center;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 26px;background:var(--surface)}
+@media(min-width:860px){.layer{grid-template-columns:220px 1fr 260px}}
+.layer .nm{font-family:var(--disp);font-weight:800;font-size:22px;color:var(--fg)}
+.layer .nm small{display:block;font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:4px}
+.layer p{margin:0;font-size:15.5px}
+.layer .chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-start}
+.layer:nth-child(1){border-left:4px solid var(--steel)} .layer:nth-child(2){border-left:4px solid var(--accent)}
+.layer:nth-child(3){border-left:4px solid var(--violet)} .layer:nth-child(4){border-left:4px solid var(--fg-dim)}
+.loopwrap{display:grid;gap:30px;align-items:center;margin-top:30px}
+@media(min-width:900px){.loopwrap{grid-template-columns:1fr 1fr}}
+.loopviz{width:100%;max-width:460px;height:auto;display:block;margin:0 auto}
+.loopviz .ring{fill:none;stroke:var(--line-2);stroke-width:2;stroke-dasharray:6 8;animation:kgflow 3s linear infinite}
+.loopviz .nd{fill:var(--surface);stroke:var(--accent);stroke-width:2}
+.loopviz .nd.s{stroke:var(--steel)}
+.loopviz .t{fill:var(--fg);font-family:var(--disp);font-weight:700;font-size:16px;text-anchor:middle}
+.loopviz .s{fill:var(--fg-mut);font-family:var(--body);font-size:12px;text-anchor:middle}
+.loopviz .c{fill:var(--fg);font-family:var(--disp);font-weight:800;font-size:22px;text-anchor:middle}
+.gate{display:grid;gap:10px}
+.gate div{border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;background:var(--surface);font-size:15px;color:var(--fg-mut)}
+.gate b{color:var(--fg)}
+.pairs{display:grid;gap:24px;align-items:center;border:1px solid var(--line-2);border-radius:var(--r-lg);padding:34px;background:linear-gradient(135deg,var(--surface-2),var(--surface))}
+@media(min-width:860px){.pairs{grid-template-columns:1fr auto}}
+.pairs h3{margin:0 0 8px;font-size:clamp(24px,2.6vw,32px)}
+.pairs p{margin:0;max-width:62ch}
+.glance{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.glance th,.glance td{padding:15px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
+.glance tr:last-child td{border-bottom:0}
+.glance th{font-family:var(--disp);font-size:18px;color:var(--fg)}
+.glance th.m{color:var(--accent)} .glance th.n{color:var(--steel)}
+.glance td:first-child{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);width:22%}
+.glance td{color:var(--fg-mut)}
+.illus{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
+"""
+
+ICO={
+ "rot":'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg>',
+ "bat":'<svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10v4M7 10v4M11 10v4"/></svg>',
+ "ele":'<svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+ "leak":'<svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg>',
+ "test":'<svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 4-7 5 9"/><path d="M3 21h18"/></svg>',
+ "ot":'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>',
+}
+
+def kpistrip(items):
+    return '<div class="kstrip rv">'+"".join(f'<div><div class="v">{v}</div><div class="k">{k}</div></div>' for v,k in items)+'</div>'
+def flow4(items):
+    return '<div class="flow4">'+"".join(f'<div class="st rv"><div class="n">{i+1:02d}</div><h3>{t}</h3><p>{d}</p><div class="who">{w}</div></div>' for i,(t,d,w) in enumerate(items))+'</div>'
+def kits(items):
+    return '<div class="kits">'+"".join(f'<div class="kit rv"><div class="ico">{ICO[i]}</div><h4>{t}</h4><p>{d}</p><div class="sig">{s}</div></div>' for i,t,d,s in items)+'</div>'
+def hwrow(items, base="../"):
+    out=[]
+    for img,anchor,st,now,t,d in items:
+        out.append(f'<a class="hw rv" href="{base}device-platform.html#{anchor}" data-cursor><div class="im"><img src="{base}assets/images/{img}{'' if img.endswith(('.jpg','.png')) else ('.jpg' if img.startswith('sketch/') else '.png')}" alt="{t}" loading="lazy"></div><div class="bd"><span class="st{" now" if now else ""}">{st}</span><h4>{t}</h4><p>{d}</p></div></a>')
+    return '<div class="hwrow">'+"".join(out)+'</div>'
+def layers(items):
+    return '<div class="layers">'+"".join(f'<div class="layer rv"><div class="nm"><small>{k}</small>{n}</div><p>{d}</p><div class="chips">{"".join(f"<span class=chip>{c}</span>" for c in ch)}</div></div>' for k,n,d,ch in items)+'</div>'
+def wave_svg(burst=True):
+    pts="M0,60 "+" ".join(f"L{x},{60+((-1)**(x//20))*(8 if not (burst and 380<x<470) else 34)}" for x in range(0,801,10))
+    return f'<svg viewBox="0 0 800 120" preserveAspectRatio="none"><path d="{pts}" fill="none" stroke="var(--accent)" stroke-width="2"/><path d="{pts}" fill="none" stroke="var(--accent)" stroke-width="7" opacity=".12"/></svg>'
+def livepanel(title, tag, rows, foot, wave=True):
+    r="".join(f'<div class="r"><span class="k">{k}</span><span class="v {c}">{v}</span></div>' for k,v,c in rows)
+    w=f'<div class="wave">{wave_svg()}</div>' if wave else ''
+    return f'<div class="livep rv"><div class="hd"><span class="tag" style="color:var(--fg-mut)">{title}</span><span class="tag" style="color:var(--steel)">{tag}</span></div>{w}<div class="rows">{r}</div><div class="ft">{foot}</div></div>'
+def loop_svg():
+    import math
+    nodes=[("Learn","outcomes become data",-90,""),("Train","new skill adapter",0,"s"),("Test","cases never seen",90,""),("Trial","slice of live traffic",180,"s")]
+    p=['<svg class="loopviz" viewBox="0 0 460 460" role="img" aria-label="The Kiln learning loop: learn from outcomes, train a new skill adapter, test it on unseen cases, trial it on live traffic, and switch it on only if it is better.">',
+       '<circle class="ring" cx="230" cy="230" r="150"/>','<text x="230" y="224" class="c">Kiln</text><text x="230" y="248" class="s">switch on only if better</text>']
+    for t,s,a,c in nodes:
+        x=230+150*math.cos(math.radians(a)); y=230+150*math.sin(math.radians(a))
+        p.append(f'<circle class="nd {"ns" if c else ""}" cx="{x:.0f}" cy="{y:.0f}" r="58"/><text x="{x:.0f}" y="{y-2:.0f}" class="t">{t}</text><text x="{x:.0f}" y="{y+18:.0f}" class="s">{s}</text>')
+    p.append('</svg>'); return "".join(p)
+
+def product_page(slug, cat, title_html, lead, pills, kpis, panel, sections, cta_lead, desc):
+    head=HEAD("../", f"{re.sub('<[^>]+>','',title_html)} — Unovie.AI", desc)
+    chips="".join(f'<span class="chip">{c}</span>' for c in pills)
+    body=f'''{NGBG}{NAV("../")}
+<section class="ph2"><div class="wrap">
+  <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#platform">Platform</a><span class="sep">/</span><span style="color:var(--fg-mut)">{re.sub('<[^>]+>','',title_html)}</span></div>
+  <div class="grid">
+    <div><div class="tag rv">{cat}</div><h1 class="rv">{title_html}</h1><p class="lead rv">{lead}</p>
+      <div class="cta rv"><a class="btn btn-acc" href="../index.html#contact" data-cursor>Start a project <span class="ar">→</span></a><a class="btn btn-gh" href="#how" data-cursor>See how it works</a></div>
+      <div class="pill rv">{chips}</div></div>
+    <div>{panel}</div>
+  </div>
+  {kpistrip(kpis)}
+</div></section>
+{sections}
+<section id="contact"><div class="wrap"><div class="cta-final rv">
+  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
+  <h2 style="margin-top:16px">{cta_lead}</h2>
+  <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
+  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="../index.html#accelerators" data-cursor>See industrial solutions</a></div>
+</div></div></section>
+{FOOTER("../")}'''
+    os.makedirs(f"{ROOT}/platform",exist_ok=True)
+    open(f"{ROOT}/platform/{slug}.html","w",encoding="utf-8").write(head+body)
+
+def S(num,label,title,body,lead="",id_=""):
+    i=f' id="{id_}"' if id_ else ''
+    return f'<section{i}><div class="wrap">{shead(num,label,title,lead)}{body}</div></section>'
+
+A_="<span class='serif' style='color:var(--accent)'>"; T_="<span class='serif' style='color:var(--steel)'>"; E_="</span>"
+
+
+def hmi_showcase(screens, lead):
+    tabs="".join(f'<button class="tab{" active" if k==0 else ""}" data-tab="{sid}" role="tab" aria-selected="{"true" if k==0 else "false"}" data-cursor>{label}</button>' for k,(sid,label,img,cap) in enumerate(screens)) if len(screens)>1 else ""
+    panels="".join(f'<div class="tpanel{" active" if k==0 else ""}" id="{sid}" role="tabpanel"><figure class="hmiframe"><div class="bezel"><a href="../assets/images/sketch/{img}.jpg" target="_blank" rel="noopener" title="Open full size"><img src="../assets/images/sketch/{img}.jpg" alt="Illustration: {cap}" loading="lazy" width="2400" height="1350"></a></div><div class="stand"></div><figcaption>{cap} · illustration · targets, not measured · click to enlarge</figcaption></figure></div>' for k,(sid,label,img,cap) in enumerate(screens))
+    t=f'<div class="tabs hmitabs" role="tablist" aria-label="Operator HMI">{tabs}</div>' if tabs else ''
+    return f'<p class="lead rv" style="margin-top:-6px">{lead}</p>{t}{panels}'
+MESH_HMI = S("01","Operator HMI","What operators "+A_+"see."+E_, hmi_showcase([
+   ("hmi-refinery","Refinery · compressor K-201","portal-refinery","Refinery Sector 4 · compressor K-201 & flare header · Lane B request"),
+   ("hmi-line","Assembly line · weld cell 3","portal-assembly","Precision Assembly Line B · weld cell 3 & spindle 04 · Lane A reject"),
+   ("hmi-vessel","LNG carrier · engine room","portal-lng","LNG carrier G-77 · engine room & hull · advisory at sea")],
+   "Every AgentMesh pod comes with an operator screen: live asset signals, the decision and its lane, similar past events, the drafted work order and the nightly Kiln evidence pack — on one page."), id_="hmi")
+NEXUS_HMI = S("01","Fleet HMI","The fleet, "+T_+"on one screen."+E_, hmi_showcase([
+   ("hmi-fleet","Fleet operations","portal-fleet","AgentNexus fleet operations · findings, agents, routing, plans and adapter rollout")],
+   "Plant findings from every AgentMesh pod, cross-site patterns, the agents at work, how requests are routed, the plans waiting for sign-off and the skill adapters being trialled."), id_="hmi")
+
+MESH_SECTIONS = (
+  S("02","How it works","From signal to action, "+A_+"at the machine."+E_,
+    f'<div class="axwrap rv">{SVG_MESH}</div>'
+    + flow4([("Perceive","The Unovie Gateway reads sensors and network traffic read-only. Signal Encoders turn each window into a fingerprint.","Unovie Gateway · Signal Encoders"),
+             ("Decide","Vector Memory checks what this looks like from history; the Unovie Decision Engine applies your rules and picks a lane.","Vector Memory · Decision Engine"),
+             ("Reason","After the event, the Unovie Reasoning Model names the likely root cause and drafts the work order.","Unovie Reasoning Model"),
+             ("Adapt","Each night the Kiln proposes small playbook changes and keeps them only if a held-out test improves.","Kiln · Evidence Log")]),
+    "A Sovereign Pod in the plant's industrial DMZ keeps the fast loop local. It reads, decides and records — and leaves control where it belongs.", "how")
+  + S("03","The safety boundary","Two lanes. "+A_+"Your control system stays in charge."+E_,
+    '<div class="lanes">'
+    '<div class="lane a rv"><div class="tag" style="color:var(--accent)">Lane A</div><div class="big">Acts directly</div><p>Only for outputs where a wrong call costs little and is easy to undo.</p><ul><li><b>Reject gate</b>a part with a bad weld signature goes to the reject bin</li><li><b>Diverter</b>product is routed to rework instead of shipping</li><li><b>IT quarantine</b>a suspicious device is isolated on the IT side</li></ul></div>'
+    '<div class="lane b rv"><div class="tag" style="color:var(--steel)">Lane B</div><div class="big">Alarm + request</div><p>Anything that touches process safety. AgentMesh asks; people and safety systems decide.</p><ul><li><b>Alarm</b>raised on your existing alarm system</li><li><b>Request</b>written to a register your PLC or safety system reads</li><li><b>Operator</b>sees the request and the evidence, and decides</li></ul></div>'
+    '</div><div class="never rv"><b>Never:</b> AgentMesh does not write to valves or safety functions on its own, and the language model is never in the path that moves equipment. Every decision — in either lane — is written to the signed Evidence Log.</div>')
+  + S("04","In the field","Where AgentMesh "+A_+"earns its place."+E_,
+    '<div class="field">'
+    '<div class="fcard rv"><div class="sk"><img src="../assets/images/sketch/refinery.jpg" alt="Illustration of a refinery skyline with flare stacks" loading="lazy"></div><div class="bd"><div class="tag">Energy &amp; refining</div><h4>Compressor &amp; leak signal fusion</h4><p>Vibration and ultrasonic on compressors, flare monitoring and leak signals, fused on site. Isolation is always a request to the operator — never automatic.</p></div></div>'
+    '<div class="fcard rv"><div class="sk"><img src="../assets/images/sketch/weld-clamp.jpg" alt="Illustration of a weld-current clamp on a welding cable, cabled to a weld DAQ" loading="lazy"></div><div class="bd"><div class="tag">Advanced manufacturing</div><h4>Weld signatures &amp; spindle health</h4><p>Weld current and spindle vibration flag a bad weld or a wearing spindle without cameras. A bad part goes to the reject bin through Lane A.</p></div></div>'
+    '<div class="fcard rv"><div class="sk"><img src="../assets/images/sketch/engine-room.jpg" alt="Illustration of a ship engine room with vibration sensors on the main engine and generator" loading="lazy"></div><div class="bd"><div class="tag">Maritime</div><h4>Machinery health at sea</h4><p>Engine and generator vibration plus hull thickness, analysed on board. No satellite link needed; findings sync when the vessel reconnects.</p></div></div>'
+    '</div>', "The same pod, the same lanes — packaged for the assets each industry runs.")
+  + S("05","Domain kits","Packaged for "+A_+"the assets you run."+E_,
+    kits([("rot","Rotating Equipment Health","Bearings, cavitation and imbalance on pumps, compressors, motors and drives — with a drafted work order.","vibration · ultrasonic"),
+          ("bat","Battery Safety Fusion","Early warning of thermal-runaway precursors, as an alarm into the fire panel.","battery data · off-gas"),
+          ("ele","Electrical Health","Early signs of arcing and insulation failure in switchgear, transformers and inverters.","partial discharge · power quality"),
+          ("leak","Leak &amp; Energy Loss","Ranked leak lists with a value attached to each.","ultrasonic · flow · pressure"),
+          ("test","Test Campaign Monitor","Anomaly flags to the test conductor during a run, and a drafted post-test report.","pressure · strain · acoustics"),
+          ("ot","OT Network Watch","Unauthorized writes and unusual commands on the plant network, with evidence for audits.","control traffic · alarms")])
+    + '<div class="sensors">'
+    + "".join(f'<figure class="rv"><img src="../assets/images/sketch/{f}.jpg" alt="Illustration: {c}" loading="lazy"><figcaption>{c}</figcaption></figure>' for f,c in [("sensors","Vibration + ultrasonic sensors"),("daq","Hazardous-area vibration DAQ"),("weld-clamp","Weld-current clamp"),("marine-sensor","Marine vibration transmitter")])
+    + '</div><p class="illus rv" style="margin-top:10px">Generic partner hardware · illustrations</p>',
+    "Each kit packages the connections, fingerprints, rules, playbook and reports for one class of asset. A pod can run several.")
+  + S("06","Runs on","AMD or NVIDIA. "+A_+"Hardware you own."+E_,
+    hwrow([("sketch/sovereign-pod","ryzen-ai-max-395","Runs today",True,"AMD Ryzen AI Max+ 395","The reference Sovereign Pod: four servers in 3U, quiet enough for a plant DMZ rack."),
+           ("sketch/agx-thor","agx-thor","Available on",False,"NVIDIA Jetson AGX Thor","Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab."),
+           ("sketch/dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot.")]),
+    "Same kits, same lanes, same Evidence Log on every platform.")
+  + S("07","Why teams choose it","Built for the plant, "+A_+"not the slide."+E_,
+    kpistrip([("Yours","hardware, models, playbooks and evidence"),("Air-gapped","by default · nothing leaves site"),("Per asset","priced on failures avoided, not seats"),("Weeks","to a working pod, not quarters")]))
+  + '<section><div class="wrap"><div class="pairs rv"><div><div class="tag" style="color:var(--steel)">Pairs with AgentNexus</div><h3>One pod per plant. '+T_+'One AgentNexus for the fleet.'+E_+'</h3><p>AgentMesh sends what it finds to AgentNexus, where agents compare sites, plan maintenance and learn from what happened — without ever reaching back into plant control.</p></div><a class="btn btn-gh" href="agentnexus.html" data-cursor>Explore AgentNexus <span class="ar">→</span></a></div></div></section>'
+)
+
+NEXUS_SECTIONS = (
+  S("02","How it works","One rack for "+T_+"a fleet of plants."+E_,
+    f'<div class="axwrap rv">{SVG_NEXUS}</div>'
+    + flow4([("Event","An AgentMesh pod sends what it found, over an encrypted link.","AgentMesh → AgentNexus"),
+             ("Wake","The right agent wakes in its sealed sandbox on any free server.","Unovie Agent Runtime"),
+             ("Reason","The Unovie Model Router picks the model and skill adapter; the agent compares sites and history.","Model Router · Reasoning Model"),
+             ("Act","Work orders, plans and reports go to SAP, Maximo and your people.","Business systems")]),
+    "AgentMesh keeps the fast loop at each plant. AgentNexus works at business speed across all of them — and never moves plant equipment.", "how")
+  + S("03","Inside the rack","Four layers, "+T_+"one system."+E_,
+    '<figure class="rackfig rv"><img src="../assets/images/sketch/agentnexus-rack.jpg" alt="Illustration of the AgentNexus reference rack: a 42U cabinet with two 10GbE switches, twelve 3U trays of four AMD Ryzen AI Max+ 395 nodes, one tray pulled out, and dual PDUs" loading="lazy"><figcaption>Reference rack · 42U · 12 trays × 4 AMD Ryzen AI Max+ 395 · illustration</figcaption></figure>'
+    + layers([("Layer 1","Agents","The Unovie Agent Runtime gives every agent a sealed sandbox. Idle agents sleep and wake on demand, network access is allow-listed, and passwords never reach the agent.",["sandboxed","sleep · wake","allow-listed"]),
+            ("Layer 2","Models","The Unovie Model Router and Decision Models pick the model and skill adapter for every request. The Unovie Reasoning Model answers; Vector Memory powers search.",["Model Router","skill adapters","open weights"]),
+            ("Layer 3","Learning","The Kiln turns production outcomes into new skill adapters — tested and trialled before they go live.",["Kiln","tested","reversible"]),
+            ("Layer 4","Platform","Twelve shelves of four servers run as one system. Data is copied across shelves; the Mesh Arbiter moves work when something stops.",["12 shelves","copied data","Mesh Arbiter"])]))
+  + S("04","Gets better from production","Nothing goes live "+T_+"unless it's better."+E_,
+    '<div class="loopwrap"><div class="rv">'+loop_svg()+'</div><div class="gate">'
+    '<div class="rv"><b>Learn.</b> Agents and operators report outcomes; the router records what was asked and what worked.</div>'
+    '<div class="rv"><b>Train.</b> The Kiln trains a small skill adapter for one job on the rack — the base model stays the same.</div>'
+    '<div class="rv"><b>Test.</b> The new adapter must beat the current one on cases it has never seen.</div>'
+    '<div class="rv"><b>Trial, then switch on.</b> It quietly answers a slice of live traffic first; only then is it switched on everywhere, with a one-step rollback.</div>'
+    '</div></div>')
+  + S("05","Runs on","AMD or NVIDIA. "+T_+"Hardware you own."+E_,
+    hwrow([("sketch/agentnexus-rack","ryzen-ai-max-395","Reference design",True,"AMD Ryzen AI Max+ 395 rack","Twelve shelves of four servers in one 42U rack — the same server as the AgentMesh pod."),
+           ("dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab: where new skill adapters are trained, and a small AgentNexus for one site."),
+           ("agx-thor","agx-thor","Pairs with",False,"AgentMesh on Jetson AGX Thor","Robotics and DeepVision tools in the fab report to the same AgentNexus.")]))
+  + S("06","By design","Sized for a fleet",
+    kpistrip([("~860","agents awake at once · estimate"),("1000s","agents in total, mostly asleep"),("4 of 12","shelves can fail without losing saved agents"),("0.5<span class='o'>s</span>","response budget · target")])
+    + '<p class="lead rv" style="font-size:15px;margin-top:14px">Estimates from measurements on single servers; we replace them with measured numbers after our bench tests.</p>'
+    + '<div class="disc" style="margin-top:22px"><a class="dcard rv" href="../resources/agentnexus-architecture.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/architecture</div><h3>AgentNexus — Architecture Overview</h3><p>How the rack is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders.</p><div class="spec"><span class="chip">overview</span><span class="chip">diagrams</span></div></a></div>')
+  + '<section><div class="wrap"><div class="pairs rv"><div><div class="tag" style="color:var(--accent)">Starts with AgentMesh</div><h3>The fleet view is only as good as '+A_+'what each plant sees.'+E_+'</h3><p>AgentMesh puts AI on the signals at every plant, with safety decisions left to your control systems. AgentNexus brings the fleet together.</p></div><a class="btn btn-gh" href="agentmesh.html" data-cursor>Explore AgentMesh <span class="ar">→</span></a></div></div></section>'
+)
+
+MESH_PANEL = livepanel("Pump P-101 · bearing 3","AgentMesh",[("Signal","vibration 25.6 kHz",""),("Fingerprint","matches past outer-race wear","a"),("Lane","B · alarm + request sent","s"),("Work order","drafted for planner review",""),("Evidence","signed · logged","")],"Illustration")
+NEXUS_PANEL = livepanel("Fleet · this morning","AgentNexus",[("Plant A","AgentMesh event · pump wear","a"),("Plant C","same pattern, two weeks ago","s"),("Agent","maintenance planner · awake",""),("Proposal","align repair with planned outage",""),("To","work order in the maintenance system","")],"Illustration",wave=False)
+
+
+MESH_PANEL = ('<figure class="portalfig rv"><div class="pimg"><a href="../assets/images/sketch/portal-refinery.jpg" target="_blank" rel="noopener" title="Open full size"><img src="../assets/images/sketch/portal-refinery.jpg" alt="Illustration of the AgentMesh operator portal for Refinery Sector 4: live signals, the decision lane, similar past events, a drafted work order and the nightly Kiln evidence pack" width="2400" height="1350"></a></div>'
+  '<figcaption><b>AgentMesh operator portal</b><span>Refinery Sector 4 · compressor K-201 · illustration · click to enlarge</span></figcaption></figure>')
+NEXUS_PANEL = ('<figure class="portalfig rv"><div class="pimg"><a href="../assets/images/sketch/portal-fleet.jpg" target="_blank" rel="noopener" title="Open full size"><img src="../assets/images/sketch/portal-fleet.jpg" alt="Illustration of the AgentNexus fleet HMI: plant findings, cross-site patterns, agents, model routing, a proposed maintenance plan and a skill adapter rollout" width="2400" height="1350"></a></div>'
+  '<figcaption><b>AgentNexus fleet HMI</b><span>Fleet operations · illustration · click to enlarge</span></figcaption></figure>')
+
+product_page("agentmesh","Platform · AgentMesh","Agent"+A_+"Mesh"+E_,
+  "AI on the signals your equipment produces — next to the control system, inside a 30-millisecond decision budget. Low-consequence actions happen directly; anything safety-related goes to your PLC, safety system and operators.",
+  ["vibration","electrical","battery","OT network","air-gapped"],
+  [("&lt;30<span class='o'>ms</span>","decision budget · target"),("0<span class='o'>B</span>","leaves site by default"),("10","domain kits"),("2","safety lanes")],
+  MESH_PANEL, MESH_HMI+MESH_SECTIONS, "Put AI on "+A_+"your equipment's signals."+E_,
+  "AgentMesh puts AI on the signals your equipment produces, next to the control system, with a clear safety boundary and a signed Evidence Log.")
+product_page("agentnexus","Platform · AgentNexus","Agent"+T_+"Nexus"+E_,
+  "Agents that work across every plant — comparing sites, planning maintenance and drafting work orders within half a second. It learns from production, tests every improvement first, and never moves plant equipment.",
+  ["sealed agents","model router","skill adapters","Kiln","AMD · NVIDIA"],
+  [("0.5<span class='o'>s</span>","response budget · target"),("48","servers in one 42U rack"),("12","shelves, each its own failure zone"),("0","plant equipment it controls")],
+  NEXUS_PANEL, NEXUS_HMI+NEXUS_SECTIONS, "Run agents "+T_+"across every plant."+E_,
+  "AgentNexus runs AI agents across every plant: sealed sandboxes, a model router with skill adapters, and models that improve from production — on AMD or NVIDIA hardware you own.")
+# ===================== /MOCK product pages =====================
+
 
 # ----- DEVICE PLATFORM -----
 DEVP=[
@@ -597,6 +1024,68 @@ DEV_ARCH={
    ("/thermal","140W, vapor-chamber cooled","Dual turbine fans and a full-coverage vapor chamber sustain 140&#8201;W at about 32&#8201;dB — full performance, near silence.",["140W TDP","vapor chamber","~32 dB"])],
    "By the numbers",[("126<span class='o'>TFLOPS</span>","platform AI"),("128<span class='o'>GB</span>","LPDDR5X-8000"),("16<span class='o'>TB</span>","NVMe · PCIe 4.0"),("140<span class='o'>W</span>","TDP, ~32 dB")]),
 }
+# ===================== MOCK: Hardware families =====================
+A="<span class='serif' style='color:var(--accent)'>"; E="</span>"
+DEVP=[
+ ("amd-ryzen-ai-max-395","Sovereign plant intelligence · AMD","AMD Ryzen AI "+A+"Max+ 395"+E,
+  "Built for sovereign plant intelligence: AI on the signals your equipment produces, kept inside your plant. Four of these quiet, compact servers make an AgentMesh Sovereign Pod in 3U next to the control system; twelve pods make an AgentNexus rack that runs agents across the fleet. Each server has sixteen Zen 5 cores, a Radeon 8060S graphics processor and an XDNA 2 AI accelerator sharing one pool of memory.",
+  [("Asset health","purpose"),("4 / 3U","servers per Sovereign Pod"),("48 / 42U","servers per AgentNexus rack")],
+  ("What runs on it",[
+   ("/agentmesh","AgentMesh Sovereign Pod","Four servers in 3U on the plant network: Signal Encoders, the Unovie Decision Engine, the Unovie Reasoning Model and the Kiln — air-gapped by default.",["4 servers","3U","plant DMZ"]),
+   ("/agentnexus","AgentNexus rack","Twelve pods in one 42U rack: agents on the processors; models, skill adapters and training on the graphics processors; data copied across shelves.",["48 servers","42U","one system"]),
+   ("/npu","An AI accelerator for small models","The XDNA 2 accelerator (51 TOPS, measured on our servers) is being tested for small helper models, to free graphics time for the main model.",["XDNA 2","51 TOPS","in test"])]),
+  ("Server to fleet",[("Server","One box, three compute engines."),("Pod","Four servers in 3U, linked."),("Rack","Twelve pods, one system."),("Fleet","A pod per plant, one AgentNexus.")]),
+  "Sovereign intelligence for "+A+"every plant."+E),
+ ("nvidia-agx-thor","Robotics &amp; DeepVision · NVIDIA","NVIDIA Jetson AGX "+A+"Thor"+E,
+  "Built for robotics and DeepVision in the fab. Jetson AGX Thor puts a Blackwell-class graphics processor and 128 GB of memory into a module that lives inside a robot cell, an inspection tool or a mobile robot — running high-resolution vision models next to the camera and the motion controller, with AgentMesh's safety lanes and Evidence Log around every decision.",
+  [("Robotics + vision","purpose"),("2,070<span class='o'>TFLOPS</span>","FP4 AI · NVIDIA spec"),("128<span class='o'>GB</span>","unified memory")],
+  ("Vision and motion, at the tool",[
+   ("/deepvision","DeepVision inspection","High-resolution vision models find defects, particles and misalignment on wafers, dies, panels and assemblies at line speed — on the tool, without sending images off the floor.",["defects","particles","on-tool"]),
+   ("/robotics","Robot cells and mobile robots","Perception and checks for robot cells, wafer-handling robots and autonomous mobile robots, combined with motor, drive and vibration signals.",["robot cells","AMRs","handling"]),
+   ("/lanes","Same lanes, same evidence","A reject or a hold is Lane A; anything that touches people or process safety is Lane B — an alarm and a request to the cell controller and the operator. Every decision lands in the Evidence Log.",["Lane A","Lane B","Evidence Log"])]),
+  ("Image to action",[("See","Cameras and sensors stream into Thor."),("Detect","Vision models score every part."),("Decide","Lanes apply the safety boundary."),("Learn","Findings flow to AgentNexus and the Kiln.")]),
+  "DeepVision and robotics, "+A+"at the tool."+E),
+ ("nvidia-dgx-spark","AI engineering lab · NVIDIA","NVIDIA DGX "+A+"Spark"+E,
+  "Built for the AI engineering lab. DGX Spark pairs a Grace Blackwell superchip with 128 GB of shared memory on a desk: train and test new skill adapters, run test-stand analytics and digital-twin experiments on recorded data, and host a small AgentNexus for one site — then move the same models to the plant unchanged.",
+  [("Lab + training","purpose"),("1,000<span class='o'>TFLOPS</span>","FP4 AI · NVIDIA spec"),("128<span class='o'>GB</span>","shared memory")],
+  ("Three roles, one box",[
+   ("/train","Skill adapter training","The Kiln trains new skill adapters here, which then go through the same tests before they reach production.",["Kiln","skill adapters"]),
+   ("/lab","Test stands and digital twins","Analyse test-rig runs and replay recorded plant data against new models before anything touches the plant network.",["test stands","replay","digital twin"]),
+   ("/nexus","Site AgentNexus","One to four units host agents, the Unovie Model Router and skill adapters for a single site or a pilot.",["site","pilot","1–4 units"])]),
+  ("Lab to plant",[("Record","Bring in recorded plant data."),("Train","The Kiln trains a skill adapter."),("Test","Prove it on unseen cases."),("Ship","Same model to the plant.")]),
+  "Build and prove it "+A+"in the lab."+E),
+ ("qualcomm-qcs6490","Remote &amp; mobile assets · Qualcomm","Qualcomm "+A+"QCS6490"+E,
+  "Built for remote and mobile assets. Where wires and watts are scarce — a remote pump, a pipeline segment, a well pad, a battery container — a fanless QCS6490 box collects and pre-processes signals on site and forwards compact fingerprints to the nearest AgentMesh pod.",
+  [("Remote assets","purpose"),("12<span class='o'>TFLOPS</span>","on-device AI"),("fanless","low power")],
+  ("Reach the hard-to-wire assets",[
+   ("/collect","Collect on site","Reads sensors where running cables would be costly or impossible.",["remote","low power"]),
+   ("/prepare","Prepare locally","Turns raw signal into compact fingerprints before sending anything.",["fingerprints","bandwidth"]),
+   ("/forward","Forward to AgentMesh","Sends findings to the nearest pod, where the safety lanes and Evidence Log apply.",["AgentMesh","lanes"])]),
+  ("Sensor to pod",[("Sense","Sensors on remote assets."),("Prepare","Fingerprints on the device."),("Forward","Wireless to the nearest pod."),("Decide","AgentMesh applies the lanes.")]),
+  "Reach the "+A+"far edge."+E),
+]
+DEV_ARCH["amd-ryzen-ai-max-395"]=platx("One package, three engines",[
+   ("/cpu","16 Zen 5 cores","Run the agents, the plant connections and the system itself.",["Zen 5","16 cores"]),
+   ("/gpu","Radeon 8060S graphics","Runs the Unovie Reasoning Model, skill adapters and training.",["Radeon 8060S"]),
+   ("/npu","XDNA 2 AI accelerator","Being tested for small helper models.",["XDNA 2","51 TOPS"])],
+   "By the numbers",[("16","Zen 5 cores"),("64–128<span class='o'>GB</span>","shared memory"),("2 × 10<span class='o'>GbE</span>","network"),("6 × 2<span class='o'>TB</span>","NVMe in our build")])
+DEV_ARCH["nvidia-agx-thor"]=platx("Built for the machine",[
+   ("/compute","Blackwell-class graphics","Runs models on the equipment itself.",["Blackwell"]),
+   ("/cpu","14 Arm cores","Run the plant connections and the AgentMesh services.",["Arm","14 cores"]),
+   ("/io","Fast sensor I/O","Many sensors and networks at once.",["sensors","networking"])],
+   "By the numbers · NVIDIA spec",[("2,070<span class='o'>TFLOPS</span>","FP4 (sparse)"),("128<span class='o'>GB</span>","unified memory"),("273<span class='o'>GB/s</span>","memory bandwidth"),("40–130<span class='o'>W</span>","configurable")])
+DEV_ARCH["nvidia-dgx-spark"]=platx("One shared memory space",[
+   ("/superchip","Grace Blackwell","Arm processor and Blackwell graphics in one package.",["GB10"]),
+   ("/memory","128 GB shared","Room for models, agents and training on one unit.",["128 GB"]),
+   ("/link","Links to a second unit","Two units can work as one.",["scale-out"])],
+   "By the numbers · NVIDIA spec",[("1,000<span class='o'>TFLOPS</span>","FP4 AI"),("128<span class='o'>GB</span>","shared memory"),("20","Arm cores"),("4<span class='o'>TB</span>","NVMe storage")])
+DEV_ARCH["qualcomm-qcs6490"]=platx("Built for low power",[
+   ("/cpu","Eight-core processor","Runs the device and its connections.",["8 cores"]),
+   ("/ai","On-device AI engine","Pre-processes signals before sending.",["12 TFLOPS"]),
+   ("/connect","Wireless built in","Wi-Fi 6E and Bluetooth.",["Wi-Fi 6E"])],
+   "By the numbers · Qualcomm spec",[("12<span class='o'>TFLOPS</span>","on-device AI"),("6<span class='o'>nm</span>","process"),("Wi-Fi <span class='o'>6E</span>","wireless"),("fanless","design")])
+# ===================== /MOCK =====================
+
 def _devkey(slug): return slug.split("-",1)[1]
 def devpanel(s, first):
     slug,cat,title,lead,kpis,feats,hows,cta=s; key=_devkey(slug)
@@ -607,23 +1096,202 @@ def devpanel(s, first):
       f'<section><div class="wrap">{shead("01","What it does",feats[0])}{disc(feats[1])}</div></section>'
       f'<section><div class="wrap">{shead("02","How it works",hows[0])}{steps(hows[1])}</div></section>'
       f'{DEV_ARCH.get(slug,"")}</div>')
+# ===================== MOCK: Hardware page, Industry 4.0 content =====================
+ICO.update({
+ "truck":'<svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>',
+ "cell":'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+ "clip":'<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8 12h8M8 16h5"/></svg>',
+ "pin":'<svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+ "pipe":'<svg viewBox="0 0 24 24"><path d="M2 9h8v6H2zM14 9h8v6h-8zM10 11h4v2h-4z"/></svg>',
+ "fleet":'<svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg>',
+ "flask":'<svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 20h16L14 9V3"/></svg>',
+ "wafer":'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 9h10M6 12h12M7 15h10M9 6v12M12 3v18M15 6v12"/></svg>',
+ "eye":'<svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+})
+
+def factlist(items):
+    return '<table class="glance rv facts">'+"".join(f'<tr><td>{k}</td><td>{v}</td></tr>' for k,v in items)+'</table>'
+
+STACK_ROWS=[
+ ("Unovie Gateway","read-only plant connections"),
+ ("Signal Encoders","signal fingerprints"),
+ ("Vector Memory","\"seen this before?\""),
+ ("Unovie Decision Engine","Lane A / Lane B"),
+ ("Unovie Reasoning Model","root cause, work orders"),
+ ("Kiln","tested improvements"),
+ ("Evidence Log","signed record"),
+ ("Unovie Agent Runtime","fleet agents in sandboxes"),
+ ("Unovie Model Router","model + skill adapter per request"),
+ ("Mesh Arbiter","failover"),
+]
+def stackmatrix(cols, marks, note):
+    head='<tr><th>Unovie platform component</th>'+''.join(f'<th>{c}</th>' for c in cols)+'</tr>'
+    sym={"y":'<span class="mk y" title="runs here">●</span>',"p":'<span class="mk p" title="light / partial">◐</span>',"n":'<span class="mk n">—</span>'}
+    rows=''.join(f'<tr><td><b>{n}</b><small>{d}</small></td>'+''.join(f'<td>{sym[m]}</td>' for m in marks[i])+'</tr>' for i,(n,d) in enumerate(STACK_ROWS))
+    return f'<div class="stackwrap rv"><table class="stackm">{head}{rows}</table></div><p class="illus rv" style="margin-top:10px">{note}</p>'
+
+def sketchpair(items):
+    return '<div class="field" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">'+''.join(
+        f'<div class="fcard rv"><div class="sk" style="aspect-ratio:16/10"><img src="assets/images/sketch/{img}.jpg" alt="{alt}" loading="lazy" style="object-fit:contain;padding:10px"></div><div class="bd"><div class="tag">{tag}</div><h4>{t}</h4><p>{d}</p></div></div>'
+        for img,alt,tag,t,d in items)+'</div>'
+
+DEV_EXTRA={
+ "amd-ryzen-ai-max-395":
+   S("03","Industry 4.0 use cases","Agentic jobs it runs "+A_+"today."+E_,
+     kits([("rot","Predictive maintenance","Rotating Equipment Health on pumps, compressors, motors and drives: fault class, severity and a drafted work order.","AgentMesh · vibration · ultrasonic"),
+           ("bat","Battery storage safety","Battery Safety Fusion on BESS sites: runaway precursors raised as an alarm into the fire panel.","AgentMesh · battery data · off-gas"),
+           ("ele","Electrical health","Early arcing and insulation warnings for switchgear, transformers and inverters.","AgentMesh · partial discharge"),
+           ("ot","OT network security","Unauthorized writes and alarm floods caught on the plant network, with evidence for audits.","AgentMesh · control traffic"),
+           ("clip","Maintenance planning","Planner agents group findings across sites, align repairs with planned outages and draft work orders.","AgentNexus · agents"),
+           ("fleet","Fleet learning","The same fault pattern seen at one plant is recognised at the next; tested skill adapters roll out fleet-wide.","AgentNexus · Kiln")]),
+     "The same server runs both systems: four in a Sovereign Pod at each plant, forty-eight in one AgentNexus rack.")
+   + S("04","Two deployment shapes","One server, "+A_+"pod or rack."+E_,
+     sketchpair([("sovereign-pod","Illustration of the AgentMesh Sovereign Pod","AgentMesh","Sovereign Pod · 3U","Four servers on a sliding shelf in a compact cabinet, in the plant's industrial DMZ."),
+                 ("agentnexus-rack","Illustration of the AgentNexus reference rack","AgentNexus","Reference rack · 42U","Twelve trays of four servers, two switches and dual power feeds, in a central cabinet.")])
+     + factlist([("Where it sits","Plant industrial DMZ (pod) · central cabinet (rack)"),("Form","4 servers in 3U · 48 servers in 42U"),("Per server","16 Zen 5 cores · Radeon 8060S graphics · XDNA 2 accelerator · 64 GB shared memory"),
+                 ("Network","2 × 10GbE per server to two switches · fast cables inside each shelf"),("Environment","Climate-controlled rack, 0–35 °C"),("Status","Pod runs today · rack is a reference design on the same server")]))
+   + S("05","What runs on it","The full Unovie platform",
+     stackmatrix(["Sovereign Pod","AgentNexus rack"],
+       [list("yp"),list("yn"),list("yy"),list("yn"),list("yy"),list("yy"),list("yy"),list("py"),list("py"),list("yy")],
+       "● runs here · ◐ light or partial role · — not used. The pod forwards events to AgentNexus; the rack never reaches back into plant control.")),
+ "nvidia-agx-thor":
+   S("03","Industry 4.0 use cases","Robotics and DeepVision "+A_+"for the fab."+E_,
+     kits([("eye","Wafer &amp; die inspection","DeepVision models find defects, particles and scratches on wafers and dies at the tool, holding or rejecting a lot through Lane A.","semiconductor · electronics"),
+           ("wafer","Panel &amp; assembly inspection","Solder, placement and surface defects on boards, panels and assemblies, checked at line speed.","PCB · display · assembly"),
+           ("cell","Robot-cell quality","Vision plus process signatures — weld current, torque, vibration — confirm every robot cycle.","robot cells · welding · fastening"),
+           ("truck","Wafer handling &amp; AMRs","Perception and health checks for wafer-handling robots and autonomous mobile robots moving lots between tools.","handling · AMRs · drives"),
+           ("rot","Tool health","Vacuum pumps, chillers and motion stages watched through their own vibration and electrical signals.","vibration · electrical"),
+           ("pin","Clean-room sovereignty","Images and models stay on the tool; only findings and evidence move to AgentNexus.","no images off the floor")]),
+     "Thor is where Unovie uses vision first: the cameras and models sit on the tool, inside the same safety lanes as every AgentMesh decision.")
+   + S("04","Deployment","Where it lives",
+     factlist([("Where it sits","Inside an inspection tool, a robot cell, a wafer-handling robot or an AMR"),("Form","Compact module · 40–130 W configurable (NVIDIA spec)"),("Memory","128 GB unified (NVIDIA spec)"),
+               ("Connectivity","Works disconnected · findings sync to AgentNexus"),("Status","Available on — the AgentMesh software is brought to Thor per project")]))
+   + S("05","What runs on it","AgentMesh, at the tool",
+     stackmatrix(["Jetson AGX Thor"],[list("y"),list("y"),list("y"),list("y"),list("y"),list("p"),list("y"),list("n"),list("n"),list("n")],
+       "● runs here · ◐ light role (nightly playbook only; training happens on AgentNexus or DGX Spark) · — not used.")),
+ "nvidia-dgx-spark":
+   S("03","Industry 4.0 use cases","The lab where "+A_+"plant AI is built."+E_,
+     kits([("flask","Skill adapter training","The Kiln trains new skill adapters on recorded plant outcomes, ready for testing.","Kiln · training"),
+           ("test","Test-stand analytics","Pressure, strain and acoustic data from test rigs analysed run by run, with drafted test reports.","aerospace · energy · automotive"),
+           ("fleet","Digital-twin experiments","Replay recorded plant data against new models and rules before anything reaches the plant.","replay · what-if"),
+           ("clip","Site AgentNexus","A small AgentNexus for one site: planner, shift-handover and quality agents working across lines.","AgentNexus · 1–4 units")]),
+     "When a pilot grows, the same agents, models and adapters move to the AMD rack unchanged.")
+   + S("04","Deployment","Where it lives",
+     factlist([("Where it sits","Engineering office, server room or a shelf near the line"),("Form","Desk-sized unit · two can be linked"),("Memory","128 GB shared (NVIDIA spec)"),
+               ("Roles","Single-unit AgentMesh · site AgentNexus · training node"),("Status","Available on — brought to Spark per project")]))
+   + S("05","What runs on it","Mesh, Nexus or training",
+     stackmatrix(["As AgentMesh","As site AgentNexus"],
+       [list("yp"),list("yn"),list("yy"),list("yn"),list("yy"),list("yy"),list("yy"),list("ny"),list("py"),list("pp")],
+       "● runs here · ◐ light or partial role · — not used.")),
+ "qualcomm-qcs6490":
+   S("03","Industry 4.0 use cases","Remote and mobile assets, "+A_+"in the loop."+E_,
+     kits([("pin","Remote pumps &amp; well pads","Vibration and pressure on assets far from any cabinet, pre-processed on site.","vibration · pressure"),
+           ("pipe","Pipeline segments","Leak and flow signals along a line, with only compact findings sent back.","ultrasonic · flow"),
+           ("bat","Battery containers","Battery and off-gas data from remote containers, forwarded to the nearest pod for the safety lanes.","battery data · off-gas"),
+           ("rot","Wireless retrofits","Sensing on older rotating equipment without running new cable.","retrofit · wireless")]),
+     "QCS6490 senses and prepares; the decisions, lanes and Evidence Log stay on the nearest AgentMesh pod.")
+   + S("04","Deployment","Where it lives",
+     factlist([("Where it sits","Next to remote assets, in a small fanless enclosure"),("Power","Low power, fanless (Qualcomm spec)"),("Connectivity","Wi-Fi 6E and Bluetooth · forwards to the nearest pod"),("Status","Far-edge sensing that feeds AgentMesh")]))
+   + S("05","What runs on it","Sensing and fingerprints",
+     stackmatrix(["QCS6490"],[list("p"),list("y"),list("n"),list("n"),list("n"),list("n"),list("n"),list("n"),list("n"),list("n")],
+       "● runs here · ◐ light role (local sensor connections) · — runs on the nearest AgentMesh pod instead.")),
+}
+
+
+def signals(title, items, note):
+    return S("06","Industry signals",title, disc(items) + f'<p class="illus rv" style="margin-top:14px">{note}</p>')
+SIG_NOTE="Public announcements and vendor material, November 2026 · vendor-reported, not Unovie measurements"
+DEV_SIGNALS={
+ "amd-ryzen-ai-max-395": signals("What the industry is doing "+A_+"on this chip."+E_,[
+   ("/on-prem-llm","On-premise industrial AI boxes","Industrial PC makers now ship compact systems built on the Ryzen AI Max+ 395 with dual 10GbE, aimed at running language models on-premise in plants.",["industrial PCs","on-premise","vendor-reported"]),
+   ("/maintenance","Predictive maintenance with local models","Industrial AI software partners run local models on Ryzen AI processors to detect anomalies, predict failures and trigger guided actions from live plant data — without cloud inference bills.",["anomaly detection","predictive maintenance","vendor-reported"]),
+   ("/embedded","An embedded family for robots and machine vision","AMD's embedded Ryzen AI line extends the same architecture to robotics, industrial PCs and machine vision, with industrial lifecycles.",["robotics","machine vision","embedded"]),
+   ("/unovie","Where Unovie fits","AgentMesh and AgentNexus put these servers to work as a complete system: asset signals, safety lanes, evidence and fleet agents — not just a box that runs a model.",["AgentMesh","AgentNexus"])], SIG_NOTE),
+ "nvidia-agx-thor": signals("What the industry is doing "+A_+"on Thor."+E_,[
+   ("/inspection","Multi-camera quality inspection","Industrial Thor systems are being deployed for multi-camera quality inspection, automated optical inspection and defect detection on the line.",["AOI","defect detection","vendor-reported"]),
+   ("/robots","Industrial robots and manufacturing cells","Industrial robot makers and heavy-equipment makers are adopting Thor for manufacturing cells and autonomous equipment that fuse many sensor streams on the device.",["robot cells","autonomous equipment","vendor-reported"]),
+   ("/agentic","Agentic factory operations","A major industrial computer maker reports running an agentic “factory brain” on Thor in its own manufacturing plants.",["agentic AI","factory operations","vendor-reported"]),
+   ("/sensors","High-speed sensor ingest","Thor with a sensor bridge ingests camera, LiDAR, IMU and encoder data for real-time pipelines in harsh, vibrating environments.",["camera","LiDAR · IMU","rugged"]),
+   ("/fab","Where Unovie fits","Unovie focuses Thor on DeepVision in fabs — wafer, die and panel inspection and wafer handling — inside AgentMesh's safety lanes. Public fab deployments on Thor are still emerging.",["DeepVision","fabs","AgentMesh"])], SIG_NOTE),
+ "nvidia-dgx-spark": signals("What the industry is doing "+A_+"on Spark."+E_,[
+   ("/plantfloor","Language models on the plant floor","Industrial DataOps platforms now run on DGX Spark, bringing language-model capability to factory data with lower latency and data kept on site.",["industrial data","on site","vendor-reported"]),
+   ("/twin","Live digital twins","Demonstrations stream real camera feeds into DGX Spark to keep a simulation-based digital twin of a cell continuously in step with the physical world.",["digital twin","simulation","demo"]),
+   ("/support","Supported for edge and on-prem","A supported software stack with lifecycle management and security updates is offered for smart-manufacturing and inspection deployments.",["supported stack","on-prem"]),
+   ("/lab","Where Unovie fits","Unovie uses Spark as the AI engineering lab: training and testing skill adapters, replaying recorded plant data, and hosting a small AgentNexus for a pilot.",["Kiln","test stands","site AgentNexus"])], SIG_NOTE),
+ "qualcomm-qcs6490": signals("What the industry is doing "+A_+"on QCS6490."+E_,[
+   ("/handhelds","Rugged handhelds, scanners and HMIs","Qualcomm targets rugged handhelds and tablets, industrial scanners, industrial PCs and operator panels with this processor.",["rugged","HMI","vendor-reported"]),
+   ("/robots","Mobile robots and inspection drones","Autonomous mobile robots, companion robots and site-inspection drones are listed robotics targets.",["AMRs","site inspection"]),
+   ("/maint","Anomaly detection at hazardous sites","Third-party inspection robots built on QCS6490 use multimodal sensing to flag anomalies and support predictive maintenance in factories and hazardous sites.",["multimodal sensing","predictive maintenance","vendor-reported"]),
+   ("/lifecycle","Long industrial lifecycle","Part of a product-longevity programme with extended software support, and runs Linux, Ubuntu, Android and Windows IoT.",["longevity","multi-OS"])], SIG_NOTE),
+}
+
+def devpanel(s, first):
+    slug,cat,title,lead,kpis,feats,hows,cta=s; key=_devkey(slug)
+    return (f'<div class="tpanel{" active" if first else ""}" id="{key}" role="tabpanel" aria-labelledby="tab-{key}">'
+      f'<section class="psub"><div class="wrap"><div class="tag rv">{cat}</div>'
+      f'<h2 class="rv" style="margin-top:10px">{title}</h2><p class="lead rv">{lead}</p>{metrics(kpis)}</div></section>'
+      f'{DEV_VIS.get(slug,"") if slug!="amd-ryzen-ai-max-395" else ""}'
+      f'<section><div class="wrap">{shead("01","What it does",feats[0])}{disc(feats[1])}</div></section>'
+      f'<section><div class="wrap">{shead("02","How it works",hows[0])}{steps(hows[1])}</div></section>'
+      f'{DEV_EXTRA.get(slug,"")}'
+      f'{DEV_SIGNALS.get(slug,"")}'
+      f'</div>')
+
+HW_MATRIX='''<section style="padding-top:20px"><div class="wrap">
+  <div class="shead"><div class="l"><div class="num rv"><span class="ln"></span>Choose by job</div><h2 class="rv">Which hardware <span class="serif" style="color:var(--accent)">for which job.</span></h2></div>
+  <p class="lead rv">Every option runs the same Unovie platform. Pick by where the work happens and how much of it there is.</p></div>
+  <div class="stackwrap rv"><table class="glance hwm">
+    <tr><th></th><th>AMD Ryzen AI Max+ 395</th><th>NVIDIA Jetson AGX Thor</th><th>NVIDIA DGX Spark</th><th>Qualcomm QCS6490</th></tr>
+    <tr><td>Industry 4.0 purpose</td><td><b>Sovereign plant intelligence</b></td><td><b>Robotics &amp; DeepVision for fabs</b></td><td><b>AI engineering lab</b></td><td><b>Remote &amp; mobile assets</b></td></tr>
+    <tr><td>Role</td><td>AgentMesh Sovereign Pod · AgentNexus rack</td><td>AgentMesh at the tool or robot</td><td>Training · test stands · site AgentNexus</td><td>Far-edge sensing for AgentMesh</td></tr>
+    <tr><td>Where it sits</td><td>Plant DMZ · central cabinet</td><td>Inspection tool · robot cell · AMR</td><td>Engineering lab · server room</td><td>Remote assets</td></tr>
+    <tr><td>Agentic jobs</td><td>Predictive maintenance · BESS safety · electrical health · OT security · fleet planning</td><td>Wafer &amp; die inspection · robot-cell quality · wafer handling &amp; AMRs · tool health</td><td>Skill adapter training · test-stand analytics · digital-twin experiments · site agents</td><td>Remote pumps · pipelines · well pads · battery containers</td></tr>
+    <tr><td>Memory</td><td>64 GB per server (128 GB builds)</td><td>128 GB unified</td><td>128 GB shared</td><td>On-device</td></tr>
+    <tr><td>Form</td><td>4 servers / 3U · 48 servers / 42U</td><td>Module · 40–130 W</td><td>Desk-sized unit</td><td>Fanless box</td></tr>
+    <tr><td>Status</td><td><span class="st now">Runs today</span></td><td><span class="st">Available on</span></td><td><span class="st">Available on</span></td><td><span class="st">Far edge</span></td></tr>
+  </table></div>
+</div></section>
+'''
+HWCSS='''
+/* ---------- hardware page (mock) ---------- */
+.stackwrap{overflow-x:auto;margin-top:30px}
+.stackm{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.stackm th,.stackm td{padding:12px 18px;border-bottom:1px solid var(--line);text-align:center;font-size:14.5px;color:var(--fg-mut)}
+.stackm th{font-family:var(--disp);font-size:15px;color:var(--fg);background:var(--surface-2)}
+.stackm th:first-child,.stackm td:first-child{text-align:left}
+.stackm td:first-child b{display:block;color:var(--fg);font-weight:600}
+.stackm td:first-child small{font-size:12.5px;color:var(--fg-dim)}
+.stackm tr:last-child td{border-bottom:0}
+.mk{font-size:17px}.mk.y{color:var(--accent)}.mk.p{color:var(--steel)}.mk.n{color:var(--fg-dim)}
+.glance.facts{margin-top:22px}
+.glance.facts td:first-child{width:24%}
+.glance.hwm{min-width:860px}
+.glance.hwm th{font-size:15px;color:var(--fg)}
+.glance.hwm td:first-child{width:14%}
+.glance .st{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line-2);color:var(--fg-mut)}
+.glance .st.now{border-color:var(--accent);color:var(--accent)}
+'''
+# ===================== /MOCK hardware =====================
+
 _dtabs="".join(f'<button class="tab{" active" if i==0 else ""}" id="tab-{_devkey(s[0])}" data-tab="{_devkey(s[0])}" role="tab" aria-selected="{"true" if i==0 else "false"}" data-cursor>{re.sub("<[^>]+>","",s[2])}</button>' for i,s in enumerate(DEVP))
 _dpanels="".join(devpanel(s,i==0) for i,s in enumerate(DEVP))
-_devhead=HEAD("","Device Platform — NVIDIA, Qualcomm and AMD edge AI — Unovie.AI","NVIDIA AGX Thor and DGX Spark, Qualcomm QCS6490 and AMD Ryzen AI Max+ 395 — edge devices we build, optimize and operate end-to-end, on hardware you own.")
+_devhead=HEAD("","Hardware — AgentMesh and AgentNexus on AMD and NVIDIA — Unovie.AI","AgentMesh and AgentNexus run the same agents, models and safety lanes on AMD Ryzen AI Max+ 395, NVIDIA Jetson AGX Thor and NVIDIA DGX Spark, with Qualcomm QCS6490 at the far edge.")
 _devbody=f"""{NGBG}{NAV("")}
 <section class="phero"><div class="wrap">
-  <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Device Platform</span></div>
-  <div class="tag rv">Device Platform</div>
-  <h1 class="rv" style="margin-top:18px">Hardware you <span class="serif" style="color:var(--accent)">own.</span></h1>
-  <p class="lead rv">The NVIDIA, Qualcomm and AMD platforms we build, optimize and operate end-to-end — from a power-efficient far-edge processor to a desktop AI supercomputer. The same Unovie stack, your data, on silicon you own.</p>
+  <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Hardware</span></div>
+  <div class="tag rv">Hardware</div>
+  <h1 class="rv" style="margin-top:18px">Two hardware families. <span class="serif" style="color:var(--accent)">One platform.</span></h1>
+  <p class="lead rv">AgentMesh and AgentNexus run the same agents, models, safety lanes and Evidence Log on AMD and NVIDIA hardware you own. AMD Ryzen AI Max+ 395 is the reference build for both. NVIDIA Jetson AGX Thor brings AgentMesh inside the machine; NVIDIA DGX Spark runs AgentMesh on a desk or a small AgentNexus for a site; Qualcomm QCS6490 extends sensing to the far edge.</p>
+  <div class="runs rv" style="margin:26px 0 22px"><div class="run"><span class="st now">Runs today</span><h4>AMD Ryzen AI Max+ 395</h4><p>The AgentMesh Sovereign Pod runs today; the AgentNexus rack is a reference design on the same server.</p></div><div class="run"><span class="st">Available on</span><h4>NVIDIA Jetson AGX Thor · DGX Spark</h4><p>Robotics &amp; DeepVision at the tool; the AI engineering lab — brought to NVIDIA per project.</p></div><div class="run"><span class="st">Far edge</span><h4>Qualcomm QCS6490</h4><p>Remote and mobile assets, feeding the nearest AgentMesh pod.</p></div></div>
   <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Start a project <span class="ar">→</span></a>
     <a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read the field guide</a></div>
 </div></section>
-<section class="tabwrap"><div class="wrap"><div class="tabs" role="tablist" aria-label="Device platform">{_dtabs}</div></div></section>
+{HW_MATRIX}
+<section class="tabwrap"><div class="wrap"><div class="tabs" role="tablist" aria-label="Hardware">{_dtabs}</div></div></section>
 {_dpanels}
 <section id="contact"><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
-  <h2 style="margin-top:16px">Pick the silicon. <span class="serif" style="color:var(--accent)">We'll run it.</span></h2>
+  <h2 style="margin-top:16px">Pick the hardware. <span class="serif" style="color:var(--accent)">We'll run the platform on it.</span></h2>
   <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
   <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
     <a class="btn btn-gh" href="index.html#accelerators" data-cursor>See all solutions</a></div>
@@ -643,10 +1311,10 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
   {metrics([("4","engineering disciplines"),("5","-step methodology"),("fixed","time &amp; cost")])}
 </div></section>
 <section id="engineering"><div class="wrap">{shead("01","What we are good at","Four engineering disciplines.")}{disc([
-  ("/model-engineering","Model Engineering","Self-learning loops and skill optimization that compound accuracy without retraining risk.",["verifiers","skill opt"]),
-  ("/edge-efficiency","Edge Efficiency","Small models on Blackwell silicon — PLE-safe NVFP4, unified-memory budgeting.",["NVFP4","Jetson Thor"]),
-  ("/opex-efficiency","Opex Efficiency","Capex, not a metered bill — marginal cost near electricity.",["on-prem","fixed cost"]),
-  ("/reliable-hpc","Reliable HPC Systems","Gated, reversible, regression-safe — every change logged and revertible.",["gated","auditable"])])}</div></section>
+  ("/model-engineering","Signal &amp; Model Engineering","We turn your equipment's own signals — vibration, electrical, battery, process and network data — into fingerprints and small, specialised models.",['signal encoders', 'skill adapters', 'held-out tests']),
+  ("/ot-integration","Safe OT Integration","AI that fits how plants already run.",['read-only', 'Lane A · Lane B', 'Evidence Log']),
+  ("/edge-efficiency","Edge Efficiency","Fast answers on small, owned hardware.",['&lt; 30 ms target', 'AMD · NVIDIA', 'compact models']),
+  ("/sovereign-reliable","Sovereign &amp; Reliable Operations","Systems you own and can run without us.",['air-gapped', 'Mesh Arbiter', 'fixed cost'])])}</div></section>
 <section id="delivery"><div class="wrap">{shead("02","How we deliver","A proven, success-based methodology.")}{steps([
   ("Assess &amp; plan","Workshops, ROI, value outcomes."),("Solution design","Roadmap &amp; reference architecture."),
   ("Build &amp; test","Data, models, testing, monitoring."),("Optimize","KPI tracking &amp; feedback loops."),("Train &amp; support","Enablement &amp; adoption.")])}</div></section>
@@ -664,32 +1332,58 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
 open(f"{ROOT}/about.html","w",encoding="utf-8").write(about)
 
 # ----- WHY UNOVIE -----
-why=f'''{HEAD("","Why Unovie — vision that ships, owned and predictable","Why enterprises choose Unovie: founder-led vision delivered as production-grade, agentic Edge-AI you own — in weeks, at a fixed cost, on hardware that never leaves your floor.")}{NAV("")}
+why=f'''{HEAD("","Why Unovie — Austin, Texas · the sovereign agentic AI platform for Industry 4.0","Unovie is an Austin, Texas AI-engineering studio that takes industrial AI from pilot to production in a quarter: on-site OT engineers, a 6-week paid pilot on your data, and AgentMesh and AgentNexus running on hardware you own.")}{NAV("")}
 <section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Why Unovie</span></div>
-  <div class="tag rv">Why Unovie</div>
-  <h1 class="rv" style="margin-top:18px">Vision that <span class="serif" style="color:var(--accent)">ships.</span></h1>
-  <p class="lead rv">Unovie is founder-led by a team whose ambition matches the field's most visionary — and who insist that vision reach production. The market has split between multi-year enterprise transformation and big-vision manifestos, and both leave you waiting. We are the third path: production-grade, agentic Edge-AI systems you own, delivered in weeks on a fixed scope and a fixed cost, on hardware that never leaves your floor.</p>
-  <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Start a project <span class="ar">→</span></a>
-    <a class="btn btn-gh" href="gpu-edgegateway-whitepaper.html" target="_blank" data-cursor>Read the economics</a></div>
-  {metrics([("weeks","to production, not years"),("fixed","scope &amp; cost"),("100<span class='o'>%</span>","on-prem · you own it")])}
+  <div class="tag rv">Why Unovie <span class="o">·</span> Engineering first <span class="o">·</span> AI native <span class="o">·</span> Austin, Texas</div>
+  <h1 class="rv" style="margin-top:18px">Built in Austin. <span class="serif" style="color:var(--accent)">Ready for your plant.</span></h1>
+  <p class="lead rv">Unovie is an engineering-first, AI-native company based in Austin, Texas, built for Physical AI. Our team brings 20+ years of building complex industrial OT environments — control systems, plant networks and safety boundaries — and we put that experience into the sovereign agentic AI platform for Industry 4.0. Most industrial AI is still stuck in pilots; we take it to production in a quarter, with your data on site and safety decisions left with your control systems and operators.</p>
+  <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Meet us in Austin <span class="ar">→</span></a>
+    <a class="btn btn-gh" href="platform/agentmesh.html" data-cursor>See the platform</a></div>
+  {metrics([("20+ yrs","building industrial OT environments"),("Austin, TX","headquarters · on site across Texas"),("6 weeks","paid pilot on your own data"),("1 quarter","from pilot to a production site")])}
 </div></section>
-<section><div class="wrap">{shead("01","Where we are different","Built for outcomes, not programs.")}{disc([
-  ("/leadership","Founder-led vision","Led by founders whose ambition matches the field's most visionary — and who measure that vision by what reaches production, on your terms.",["founder-led","visionary","ships"]),
-  ("/velocity","Execution velocity","Production-ready agentic systems in weeks, not multi-year programs — architecture to POC to MVP to production, with no bureaucracy in the path.",["weeks","agentic","production"]),
-  ("/roi","ROI realism","We answer POC fatigue with a direct line to cost and throughput: capex you own, marginal cost near electricity, spend you can forecast.",["predictable","capex","TCO"]),
-  ("/vertical","Vertical depth","Manufacturing, logistics, energy and OT — domain ontologies and edge systems built for your floor, not generic AI wrappers.",["industrial","OT","domain"]),
-  ("/sovereignty","Governance by architecture","Your data stays on-prem on hardware you own; safety runs inline, every decision is auditable and reversible, and context never leaves your boundary.",["on-prem","auditable","sovereign"]),
-  ("/platform","A platform, not a manifesto","The Nexus Context Platform, GPU EdgeGateway and Device Platform run today — owned silicon and a real stack, not slides and a destination.",["Nexus","running","owned"])])}</div></section>
-<section><div class="wrap">{shead("02","The market is bifurcated","We are the third path.")}{disc([
+<section><div class="wrap">{shead("01","Who we are","Engineering first. "+A_+"AI native."+E_,"We started in the plant, not in the model. Two decades of industrial OT engineering, rebuilt around agents and small specialised models from day one.")}{disc([
+  ("/engineering-first","Engineering first","20+ years designing, building and running complex industrial OT environments: control systems, plant networks, historians, safety systems and the boundaries between them. We start from how your plant really works.",["20+ years","industrial OT","plant-first"]),
+  ("/ot-depth","Deep in the control layer","Read-only integration with PLCs, DCS, safety systems, historians and industrial protocols such as OPC UA and Modbus — and the discipline to never write where we shouldn't.",["PLC · DCS · SIS","OPC UA · Modbus","read-only"]),
+  ("/ai-native","AI native","Agents, small specialised models, Vector Memory and a test-gated improvement loop are built into the platform from the start — not AI bolted onto legacy software.",["agents","small models","Kiln"]),
+  ("/evidence","Engineered to be audited","Every decision, request and change is written to a signed Evidence Log, so engineers, auditors and insurers can see exactly what the AI did and why.",["Evidence Log","auditable","reversible"])])}</div></section>
+<section><div class="wrap">{shead("02","Built for Physical AI","From bits "+A_+"to atoms."+E_,"Physical AI means AI that reads the real world through its signals and acts on real equipment — so it has to be fast, local and safe. That is what AgentMesh and AgentNexus are built for.")}{steps([
+  ("Perceive","Vibration, electrical, battery, process and network signals, read where they start."),
+  ("Reason","Context from the plant's own history, manuals and failures — explained, with evidence."),
+  ("Act","Low-consequence actions directly; safety-related actions as requests your systems decide."),
+  ("Adapt","Tested improvements every night, signed and reversible — the base model never drifts.")])}</div></section>
+<section><div class="wrap">{shead("03","Based in Texas","Where Texas industry "+A_+"is being built."+E_,"Texas is switching on what it just built — battery fleets, fab suppliers, LNG trains, test stands and ports. These sites carry sensitive operating data that can't go to the cloud, and too few people to watch them. We're close enough to be on your floor this week.")}{disc([
+  ("/i-35","Austin &amp; the I-35 corridor","Fab suppliers, advanced manufacturing and aerospace factories: pumps, chillers, scrubbers and spindles watched through their own signals, and weld and machining signatures driving reject gates.",["fab suppliers","advanced manufacturing","aerospace"]),
+  ("/bess","Battery storage across Texas","Battery-storage fleets: early warning of thermal-runaway precursors and electrical faults, alarmed into the fire panel, with the evidence new site-safety rules ask for.",["battery storage","Electrical Health","evidence"]),
+  ("/gulf","Houston to Corpus Christi","Ports, terminals, LNG and energy on the Gulf Coast: rotating equipment during commissioning, leak and energy loss, and OT network security for cybersecurity plans.",["ports &amp; terminals","LNG","OT security"]),
+  ("/test","Test stands","Aerospace and energy test stands in Central Texas and Houston: anomaly flags to the test conductor during a run, and drafted post-test reports — never in the flight-critical path.",["test stands","AS9100 QA","reports"])])}</div></section>
+<section><div class="wrap">{shead("04","Why now","Ready for "+A_+"2027."+E_,"Several dated changes are turning industrial AI from a pilot into a requirement.")}{disc([
+  ("/pilots","Pilots need to become production","Most manufacturers are still in pilots or limited deployments. Buyers want a partner who reaches production in a quarter, on their own hardware.",["pilot to production","one quarter"]),
+  ("/rules","New safety and security deadlines","Battery-site safety rules and Coast Guard cybersecurity-plan deadlines in 2027 create a need for monitoring and evidence, not just dashboards.",["battery sites","port cybersecurity","2027"]),
+  ("/governance","Governance decides what survives","Texas's AI governance law and the NIST AI RMF reward systems that can show their work. Every Unovie site ships a signed evidence pack mapped to NIST AI RMF and IEC 62443.",["NIST AI RMF","IEC 62443","evidence pack"]),
+  ("/hardware","Hardware you own, AMD or NVIDIA","Memory and accelerator prices are volatile. Our platform runs on AMD and NVIDIA, so you choose the hardware — or let us own and refresh it as a service.",["AMD","NVIDIA","as-a-service"])])}</div></section>
+<section><div class="wrap">{shead("05","How we engage","From site audit to "+A_+"fleet."+E_)}{steps([
+  ("Site audit","An OT engineer reviews your sensors, network, historian and PLCs before anything is signed."),
+  ("6-week pilot","One domain kit on your own data, a baseline ROI view and a measured latency report — credited toward production."),
+  ("Production site","An AgentMesh Sovereign Pod integrated with your sensors, PLC request registers and work-order system."),
+  ("Fleet rollout","Sister sites reuse the playbook; AgentNexus brings the fleet together."),
+  ("Operate","Kiln updates, evidence pack and support under one subscription — or hardware-as-a-service.")])}</div></section>
+<section><div class="wrap">{shead("06","Where we are different","Built for outcomes, not programs.")}{disc([
+  ("/plant","Engineers who have worked inside plants","Every engagement is led by a pair with deep plant experience: one person who speaks operations and OT security, and one engineer who audits and delivers — backed by 20+ years of industrial OT engineering.",["OT experience","site audit","delivery"]),
+  ("/safety","Safety stays with you","AI never sits on the path that moves equipment. Low-consequence actions happen directly; anything safety-related is an alarm and a request your PLC, safety system and operator decide.",["Lane A","Lane B","no SIL claim"]),
+  ("/sovereignty","Sovereign by default","Air-gapped by default, on hardware you own, with read-only plant connections. Nothing leaves the site unless you want it to.",["air-gapped","read-only","on-prem"]),
+  ("/price","Priced per asset and kit","We price by monitored asset and domain kit — never per seat or per camera — and the pilot is credited toward production.",["per asset","per kit","creditable pilot"]),
+  ("/platform","A platform, not a manifesto","AgentMesh runs today on owned AMD hardware next to the control system, AgentNexus extends it across plants, and both come to NVIDIA Jetson AGX Thor and DGX Spark.",["AgentMesh","AgentNexus","AMD · NVIDIA"]),
+  ("/leadership","Founder-led vision that ships","Founders whose ambition matches the field's most visionary — measured by what reaches production, on your terms.",["founder-led","ships"])])}</div></section>
+<section><div class="wrap">{shead("07","The market is bifurcated","We are the third path.")}{disc([
   ("/transformation","The transformation play","Global integrators rebuild the entire digital estate. Valuable — but multi-year, multi-million, and slow to first value.",["multi-year","whole-estate"]),
   ("/vision","The vision play","Vision-led firms sell the destination. Inspiring — but often a roadmap without a delivery engine.",["inspiring","no engine"]),
-  ("/unovie","The Unovie play","Founder-level vision married to an engineering studio that ships: a working, vertical, owned system in production in weeks.",["vision + execution","owned","weeks"])])}</div></section>
+  ("/unovie","The Unovie play","Founder-level vision married to an Austin engineering studio that ships: a working, vertical, owned system in production in a quarter.",["vision + execution","owned","one quarter"])])}</div></section>
 <section id="contact"><div class="wrap"><div class="cta-final rv">
-  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
-  <h2 style="margin-top:16px">Bring us a problem. <span class="serif" style="color:var(--accent)">We will return a system.</span></h2>
-  <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility, on hardware you own.</p>
-  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Austin, Texas</div>
+  <h2 style="margin-top:16px">Bring us an asset. <span class="serif" style="color:var(--accent)">We'll be on your floor.</span></h2>
+  <p class="lead">On site across Texas — from the I-35 corridor to the Gulf Coast. Fixed scope, fixed cost, full responsibility, on hardware you own.</p>
+  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Site%20visit%20request" data-cursor>Request a site visit <span class="ar">→</span></a>
     <a class="btn btn-gh" href="about.html" data-cursor>About the studio</a></div>
 </div></div></section>
 {FOOTER("")}'''
@@ -697,10 +1391,10 @@ open(f"{ROOT}/why-unovie.html","w",encoding="utf-8").write(why)
 
 # ---- sitemap.xml + robots.txt (Google indexing) ----
 SITE="https://unovie.ai"
-LASTMOD="2026-06-05"   # bump when content materially changes (kept fixed for idempotent builds)
+LASTMOD="2026-11-14"   # bump when content materially changes (kept fixed for idempotent builds)
 def _u(path):  # path relative to site root; "" = homepage
     return SITE + "/" + path
-_pages=["", "about.html", "why-unovie.html", "contact.html",
+_pages=["", "about.html", "why-unovie.html", "contact.html", "resources/agentnexus-architecture.html",
         "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html", "gpu-edgegateway-whitepaper.html", "ai-soc-modernization-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
@@ -778,31 +1472,88 @@ for _p in _pages:
 open(f"{ROOT}/llms-full.txt","w",encoding="utf-8").write("\n".join(_full)+"\n")
 
 # llms.txt — agent discovery index (https://llmstxt.org)
-_sol="\n".join(f"- [{_strip(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL)
-_plat="\n".join(f"- [{_strip(s[2])}]({_u('platform/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in PLATP)
-_dev="\n".join(f"- [{_strip(s[2])}]({_u('device-platform.html')}#{s[0].split('-',1)[1]}): {_firstsent(s[3])}" for s in DEVP)
+def _name(h): return re.sub(r'\s+',' ',_strip(re.sub(r'<span[^>]*>(.*?)</span>',r'\1',h))).strip()
+_IND=["smart-factory-floor","batch-optimization","osha-compliance","smart-warehouse","maritime-digital-twin","remote-expertise"]
+_solmap={s[0]:s for s in SOL}
+_sol="\n".join(f"- [{_name(_solmap[k][2])}]({_u('solutions/'+k+'.html')}): {_firstsent(_solmap[k][3])}" for k in _IND if k in _solmap)
+_oth="\n".join(f"- [{_name(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL if s[0] not in _IND)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
-> AI-engineering studio that designs, builds and operates custom Edge-AI Agentic Systems — fixed scope, fixed cost, on hardware you own. Built on the Nexus Context Platform: a typed knowledge graph + vector memory, edge GPU serving, and self-learning agents, all on-prem.
+> The sovereign Agentic Physical AI platform for Industry 4.0. Unovie designs, builds and operates custom Edge-AI Agentic Systems for industrial operations — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on the signals equipment produces, next to the plant's control system; AgentNexus runs AI agents across every plant. Air-gapped by default; safety decisions stay with the customer's PLC, safety system and operators.
 
-## Solutions
-{_sol}
+Unovie is an engineering-first, AI-native company based in Austin, Texas, built for Physical AI. The team brings 20+ years of building complex industrial OT environments (control systems, plant networks, historians, safety systems). Its offering is written as "custom Edge-AI Agentic Systems". Figures on this site marked "target" or "estimate" are design targets, not measurements.
+
+## About Unovie
+- Engineering first: 20+ years designing, building and running complex industrial OT environments; read-only integration with PLCs, DCS, safety systems, historians and industrial protocols such as OPC UA and Modbus.
+- AI native: agents, small specialised models, Vector Memory and a test-gated improvement loop (the Kiln) are built into the platform from the start, not added to legacy software.
+- Built for Physical AI ("from bits to atoms"): Perceive (signals read where they start) → Reason (plant history, manuals, failures, with evidence) → Act (low-consequence actions directly; safety-related actions as requests the customer's systems decide) → Adapt (tested, signed, reversible improvements; the base model never drifts).
+- Location: Austin, Texas; on site across Texas, from the I-35 corridor to the Gulf Coast (Houston to Corpus Christi).
+- Industries served: battery-storage fleets, fab suppliers and advanced manufacturing, aerospace factories and test stands, ports, terminals, LNG and energy.
+- Safety boundary: a language model is never on the path that moves equipment; Unovie does not act as a safety instrumented function and makes no SIL claim.
+
+## How Unovie engages
+1. Site audit: an OT engineer reviews sensors, network, historian and PLCs before a contract is signed.
+2. Paid pilot (6 weeks): one domain kit on the customer's own data, a baseline ROI view and a measured latency report; credited toward a production site.
+3. Production site (about one quarter from pilot): an AgentMesh Sovereign Pod integrated with sensors, PLC request registers and the work-order system (SAP, Maximo).
+4. Fleet rollout: sister sites reuse the playbook; AgentNexus brings the fleet together.
+5. Operate: Kiln updates, the governed-AI evidence pack (mapped to NIST AI RMF and IEC 62443) and support under one subscription, or hardware-as-a-service.
+Pricing is per monitored asset and domain kit, never per seat or per camera.
 
 ## Platform
-{_plat}
+- [AgentMesh]({_u('platform/agentmesh.html')}): AI at the machine. A Sovereign Pod (four AMD Ryzen AI Max+ 395 servers in 3U) sits in the plant's industrial DMZ, reads asset signals read-only, decides within a 30 ms decision budget (target), acts directly only on low-consequence outputs (Lane A) and sends anything safety-related to the PLC, safety system and operator as an alarm and a request (Lane B). Every decision is written to a signed Evidence Log. Runs today on AMD; available on NVIDIA Jetson AGX Thor and DGX Spark.
+- [AgentNexus]({_u('platform/agentnexus.html')}): AI agents across every plant. One 42U rack (twelve shelves of four servers, 48 in total) in a central cabinet runs thousands of agents in sealed sandboxes, connects to every AgentMesh pod, and turns plant findings into cross-site analysis, maintenance plans and work orders within a 0.5 s response budget (target). It learns from production through the Kiln and never moves plant equipment. Reference design on AMD; a small site version is available on NVIDIA DGX Spark.
 
-## Device Platform
-{_dev}
+## Core concepts
+- Sovereign Pod: the AgentMesh appliance — four servers in 3U on the plant network, air-gapped by default.
+- Lane A: low-consequence outputs AgentMesh may act on directly (reject gate, diverter, IT-side quarantine).
+- Lane B: anything touching process safety — AgentMesh raises an alarm and writes a request; the PLC, safety system and operator decide.
+- Evidence Log: append-only, signed record of every decision, action, request and change.
+- Unovie Gateway: read-only connection to sensors, data-acquisition boxes, historians and the control network.
+- Signal Encoders: turn windows of raw signal into compact fingerprints.
+- Vector Memory: finds similar past events ("have we seen this before, and was it bad?").
+- Unovie Decision Engine: applies rules and small decision models and picks the lane.
+- Unovie Decision Models: small models that answer typed questions (choice, yes/no, score) with a probability for each answer.
+- Unovie Reasoning Model: the open-weight language model that explains events, finds root causes and drafts work orders; never in the path that moves equipment.
+- Skill adapters: small add-ons that specialise the Unovie Reasoning Model for one job, swapped in without a restart.
+- Kiln: the improvement loop — trains, tests on unseen cases, trials on live traffic and promotes changes only if they beat what is running.
+- Unovie Agent Runtime: runs each AgentNexus agent in a sealed sandbox, sleeps idle agents and wakes them on demand.
+- Unovie Model Router: picks the model and skill adapter for every request.
+- Mesh Arbiter: failover service that moves work when a server or shelf stops.
+- Domain kit: a packaged domain (connections, fingerprints, rules, playbook, reports) for one class of asset.
+- Operator HMI: the screen each AgentMesh pod provides — live asset signals, the decision and its lane, similar past events, the drafted work order and the nightly Kiln evidence pack. AgentNexus has a fleet HMI showing findings across sites, agents at work, model routing, plans awaiting sign-off and skill adapters in trial.
+
+## Domain kits
+- Rotating Equipment Health: bearings, cavitation and imbalance on pumps, compressors, motors and drives (vibration, ultrasonic).
+- Battery Safety Fusion: thermal-runaway precursors at battery-storage sites, alarmed into the fire panel (battery data, off-gas).
+- Electrical Health: arcing and insulation failure in switchgear, transformers and inverters (partial discharge, power quality).
+- Leak & Energy Loss: ranked leak lists with a value attached (airborne ultrasonic, flow, pressure).
+- Test Campaign Monitor: anomaly flags during test-stand runs and drafted test reports (pressure, strain, acoustics).
+- OT Network Watch: unauthorized writes and unusual commands on the plant network, with audit evidence.
+- Process Signature QA and Alarm Flood Triage: weld and process signatures; first-out cause in alarm floods.
+
+## Hardware
+Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
+- [AMD Ryzen AI Max+ 395]({_u('device-platform.html')}#ryzen-ai-max-395): sovereign plant intelligence. The reference server for the AgentMesh Sovereign Pod (4 servers, 3U) and the AgentNexus rack (48 servers, 42U); 64 GB per server in Unovie's build. Status: runs today.
+- [NVIDIA Jetson AGX Thor]({_u('device-platform.html')}#agx-thor): robotics and DeepVision for fabs — wafer, die and panel inspection, robot-cell quality, wafer handling and mobile robots, at the tool. Status: available on, per project.
+- [NVIDIA DGX Spark]({_u('device-platform.html')}#dgx-spark): the AI engineering lab — skill adapter training, test-stand analytics, digital-twin experiments and a site-level AgentNexus. Status: available on, per project.
+- [Qualcomm QCS6490]({_u('device-platform.html')}#qcs6490): remote and mobile assets — remote pumps, pipelines, well pads and battery containers, feeding the nearest AgentMesh pod.
+
+## Industrial solutions
+{_sol}
+
+## Other work
+{_oth}
 
 ## Resources
+- [AgentNexus — Architecture Overview]({_u('resources/agentnexus-architecture.html')}): how AgentNexus is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders.
 - [Edge AI Models — Field Guide]({_u('resources/edge-ai-models.html')}): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper]({_u('resources/edge-ai-whitepaper.html')}): adapting custom models on the edge without retraining.
 - [Edge-Native Inference Gateway — Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
-- [Agentic SDLC for Regulated MedTech]({_u('resources/medsdlc-html/index.html')}): a self-hosted, validated, agent-native software development lifecycle for FDA / IEC 62304 medical-device engineering — overview, maturity model, reference architecture, evaluation, security, economics and adoption roadmap.
-- [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): modernizing the SOC for the agentic era with an edge-native, identity-driven architecture for distributed IT/OT.
+- [AI SOC Modernization — Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): an edge-native, identity-driven security architecture for distributed IT/OT.
+- [Agentic SDLC for Regulated MedTech]({_u('resources/medsdlc-html/index.html')}): a self-hosted, validated, agent-native software development lifecycle for FDA / IEC 62304 medical-device engineering.
 
 ## Company
-- [Why Unovie]({_u('why-unovie.html')}): the third path — founder-led vision delivered as production-grade, agentic Edge-AI you own, in weeks.
+- [Why Unovie]({_u('why-unovie.html')}): an engineering-first, AI-native company built for Physical AI, with 20+ years of building complex industrial OT environments; based in Austin, Texas and on site across Texas — from the I-35 corridor to the Gulf Coast. Site audit, a 6-week paid pilot on the customer's own data, and a production site in a quarter, for battery storage, fab suppliers and advanced manufacturing, aerospace test stands, ports, terminals and LNG.
 - [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
 - [Contact]({_u('contact.html')}): start a project.
 

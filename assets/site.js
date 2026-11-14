@@ -58,8 +58,14 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
     panels.forEach(function(p){var on=p.id===key;p.classList.toggle('active',on);if(on)p.querySelectorAll('.rv').forEach(function(e){e.classList.add('in');});});
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){activate(t.dataset.tab);if(history.replaceState)history.replaceState(null,'','#'+t.dataset.tab);});});
-  var hk=(location.hash||'').replace('#',''),el=hk&&document.getElementById(hk);
-  if(el&&el.classList.contains('tpanel'))activate(hk);
+  function fromHash(scroll){
+    var hk=(location.hash||'').replace('#',''),el=hk&&document.getElementById(hk);
+    if(!(el&&el.classList.contains('tpanel')))return;
+    activate(hk);
+    if(scroll){var bar=document.querySelector('.tabwrap');if(bar)setTimeout(function(){bar.scrollIntoView({behavior:'smooth',block:'start'});},30);}
+  }
+  fromHash(!!location.hash);
+  window.addEventListener('hashchange',function(){fromHash(true);});
 })();
 
 // node-graph background — page-wide 3D force-graph look (no deps). A node "ball" with
