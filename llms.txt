@@ -80,6 +80,7 @@ Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
 - [Qualcomm QCS6490](https://unovie.ai/device-platform.html#qcs6490): mobile and remote assets — mobile robots, AGVs, drone docks and battery containers, feeding the nearest AgentMesh pod.
 
 ## Resources
+- [AgentMesh — Architecture Overview](https://unovie.ai/resources/agentmesh-architecture.html): how the AgentMesh Sovereign Pod is organised, what happens from signal to action inside the 30 ms decision budget, how data is kept safe and what happens when a server fails — for architects and business leaders.
 - [AgentNexus — Architecture Overview](https://unovie.ai/resources/agentnexus-architecture.html): how AgentNexus is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders.
 - [Edge AI Models — Field Guide](https://unovie.ai/resources/edge-ai-models.html): a 25-chapter architect's eBook on how edge-AI models actually learn.
 - [Frozen-Base Doctrine — Whitepaper](https://unovie.ai/resources/edge-ai-whitepaper.html): adapting custom models on the edge without retraining.
