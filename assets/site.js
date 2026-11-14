@@ -218,3 +218,11 @@ document.querySelectorAll('form.pilotform').forEach(function(f){
     location.href='mailto:'+f.getAttribute('data-to')+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
   });
 });
+
+/* ===== hero: drone ship starts just off the left edge of the screen ===== */
+(function(){
+  var sail=document.querySelector('.dv-sail'); if(!sail) return;
+  var svg=sail.ownerSVGElement; var r=svg.getBoundingClientRect(); if(!r.width) return;
+  var units=(r.left+r.width*0.30)/(r.width/330);     /* px from screen edge → viewBox units, plus the boat's own length */
+  sail.style.setProperty('--dv-from',(-Math.round(units))+'px');
+})();

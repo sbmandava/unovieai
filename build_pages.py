@@ -171,7 +171,7 @@ def page(base, folder, slug, cat, crumb_cat, title_html, lead, kpis, feats, hows
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
   <h2 style="margin-top:16px">{cta_lead}</h2>
   <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
-  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+  <div class="cta"><a class="btn btn-acc" href="mailto:contact@unovie.ai?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
     <a class="btn btn-gh" href="{base}index.html#accelerators" data-cursor>See all solutions</a></div>
 </div></div></section>
 {FOOTER(base)}'''
@@ -827,7 +827,7 @@ def product_page(slug, cat, title_html, lead, pills, kpis, panel, sections, cta_
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
   <h2 style="margin-top:16px">{cta_lead}</h2>
   <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
-  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+  <div class="cta"><a class="btn btn-acc" href="mailto:contact@unovie.ai?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
     <a class="btn btn-gh" href="../index.html#accelerators" data-cursor>See industrial solutions</a></div>
 </div></div></section>
 {FOOTER("../")}'''
@@ -1350,7 +1350,7 @@ _devbody=f"""{NGBG}{NAV("")}
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
   <h2 style="margin-top:16px">Pick the hardware. <span class="serif" style="color:var(--accent)">We'll run the platform on it.</span></h2>
   <p class="lead">Turnkey Edge-AI — fixed time, fixed cost, full responsibility.</p>
-  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
+  <div class="cta"><a class="btn btn-acc" href="mailto:contact@unovie.ai?subject=Project%20enquiry" data-cursor>Talk to our engineers <span class="ar">→</span></a>
     <a class="btn btn-gh" href="index.html#accelerators" data-cursor>See all solutions</a></div>
 </div></div></section>
 {FOOTER("")}"""
@@ -1383,7 +1383,7 @@ about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs,
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Partners</div>
   <h2 style="margin-top:16px">Trusted with <span class="serif" style="color:var(--accent)">NVIDIA · AMD · Qualcomm · Siemens · GE.</span></h2>
   <p class="lead">Manufacturing · Logistics · Oil &amp; Gas · Food Processing. Bring us a problem; we will return a system.</p>
-  <div class="cta"><a class="btn btn-acc" href="mailto:suresh@unovie.com" data-cursor>Talk to our engineers <span class="ar">→</span></a></div>
+  <div class="cta"><a class="btn btn-acc" href="mailto:contact@unovie.ai" data-cursor>Talk to our engineers <span class="ar">→</span></a></div>
 </div></div></section>
 {FOOTER("")}'''
 open(f"{ROOT}/about.html","w",encoding="utf-8").write(about)
