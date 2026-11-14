@@ -877,3 +877,10 @@ body:has(.ph2) section{padding-top:72px;padding-bottom:72px}
 .loopviz.ax2 .bx.ly{stroke:var(--steel);stroke-width:1.4;fill:var(--surface)}
 .loopviz.ax2 .bx.ly.gate{stroke:#e8b04a;stroke-width:1.8}
 .loopviz.ax2 .bx.ly.on{stroke:#3fbf7f;stroke-width:1.8}
+
+/* events strip: LinkedIn follow link */
+.ev-h{flex-wrap:wrap}
+.ev-li{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--line-2);border-radius:999px;font-size:13.5px;font-weight:600;color:var(--fg);text-decoration:none;transition:border-color .3s}
+.ev-li:hover{border-color:var(--accent)}
+.ev-li svg{width:16px;height:16px;fill:#0A66C2;flex:none}
+@media(max-width:800px){.ev-li{margin-left:0}}
