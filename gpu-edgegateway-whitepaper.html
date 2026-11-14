@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-590ZL8SE2M"></script>
 <script data-ga>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-590ZL8SE2M');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="author" content="Suresh Mandava">
-<meta name="description" content="Why an edge-native inference gateway on owned silicon turns unpredictable, metered AI opex into fixed, predictable cost for industrial edge use cases. A whitepaper for infrastructure leaders.">
+<meta name="description" content="Why an edge-native inference gateway on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, turns unpredictable, metered AI opex into fixed, predictable cost for industrial edge use cases. A whitepaper for infrastructure leaders.">
 <title>The Edge-Native Inference Gateway — Predictable AI Economics for the Industrial Edge</title>
 <script>(function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>
 <style>
@@ -136,13 +137,13 @@
 <header class="hero">
   <div class="eyebrow">Technical Whitepaper · Edge-AI Economics</div>
   <h1>The Edge-Native Inference Gateway: Turning Unpredictable AI Opex into Fixed, Predictable Cost</h1>
-  <p class="sub">For infrastructure leaders. How an inference-native routing gateway on hardware you own converts
-  metered, unbounded cloud-inference spend into capex-based, predictable cost — without giving up capability,
+  <p class="sub">For infrastructure leaders. How an inference-native routing gateway on Unovie's custom-built hardware accelerators, engineered for agentic
+  performance, low latency and high availability, converts metered, unbounded cloud-inference spend into fixed, predictable cost — without giving up capability,
   safety, latency, or data control. Written for the industrial edge.</p>
   <div class="byline">
     <span><b>Suresh Mandava</b></span>
     <span><b>Unovie.AI</b> · EdgeAI Context Engineering</span>
-    <span>Revision 1.0 · June 2026</span>
+    <span>Revision 1.1 · November 2026</span>
     <span>Reference hardware: NVIDIA DGX Spark · AMD Ryzen AI Max+ 395</span>
   </div>
 </header>
@@ -152,13 +153,13 @@
   <p>Metered cloud inference is the fastest-growing and least predictable line in many enterprise AI budgets: cost
   scales with every token, every retry, and every agent loop, and the bill arrives after the spend is already
   committed. We argue that for the <b>industrial edge</b> — factories, depots, substations, vehicles, regulated
-  sites — the durable answer is an <b>edge-native inference gateway</b>: own the silicon, run the models on-prem, and
+  sites — the durable answer is an <b>edge-native inference gateway</b>: run the models on-prem on custom-built, high-availability hardware accelerators, and
   put a single inference-native gateway in front of them that decides <em>which</em> model handles each request,
   reuses cached computation, sends only the context a turn needs, and enforces safety and policy inline. This converts
-  a variable opex stream into a <b>fixed capex plus near-electricity marginal cost</b>, makes spend
+  a variable opex stream into a <b>fixed, known price for capacity plus near-electricity marginal cost</b>, makes spend
   <b>predictable and bounded</b>, keeps data on-premises, and removes the cloud round-trip. We describe the
   architecture for the CTO, the cost model for the infrastructure VP, the four token-economics levers that bend the
-  curve, a three-year TCO comparison, and a deployment blueprint on owned reference hardware.</p>
+  curve, a three-year TCO comparison, and a deployment blueprint on Unovie's reference hardware.</p>
 </div>
 
 <nav class="toc" aria-label="Table of contents">
@@ -169,7 +170,7 @@
     <li><a href="#cto">Why edge-native — the CTO view</a></li>
     <li><a href="#levers">Four token-economics levers</a></li>
     <li><a href="#econ">The economics — the Infra-VP view</a></li>
-    <li><a href="#hw">Reference hardware on owned silicon</a></li>
+    <li><a href="#hw">Custom-built hardware accelerators</a></li>
     <li><a href="#tco">A three-year TCO comparison</a></li>
     <li><a href="#usecases">Industrial edge use cases</a></li>
     <li><a href="#blueprint">Deployment blueprint</a></li>
@@ -202,8 +203,8 @@ finance cannot forecast and infrastructure cannot cap.</p>
   drifts with a vendor's pricing or capacity.</li>
 </ul>
 <div class="principle"><div class="tag">The thesis</div>
-  <p>Stop renting inference by the token for steady-state industrial workloads. Own the silicon, run the models where
-  the data is, and govern every request through one gateway — so cost becomes capex you control, not opex you discover.</p>
+  <p>Stop renting inference by the token for steady-state industrial workloads. Put custom-built capacity where
+  the data is, and govern every request through one gateway — so cost becomes a fixed price you plan, not opex you discover.</p>
 </div>
 
 <!-- 2 -->
@@ -218,7 +219,7 @@ memory-efficient serving engine, it follows the engine's optimization rules inst
 chat traffic.</p>
 
 <figure>
-<svg viewBox="0 0 920 340" role="img" aria-label="Edge-native inference gateway architecture: workloads enter a gateway that routes, caches, selects context and enforces safety, then serves from a pool of models on owned silicon, with an optional frontier API used only when it pays.">
+<svg viewBox="0 0 920 340" role="img" aria-label="Edge-native inference gateway architecture: workloads enter a gateway that routes, caches, selects context and enforces safety, then serves from a pool of models on on-site hardware, with an optional frontier API used only when it pays.">
   <!-- workloads -->
   <rect x="24" y="60" width="170" height="220" rx="12" fill="var(--panel)" stroke="var(--line2)"/>
   <text x="109" y="48" text-anchor="middle" fill="var(--muted)" font-size="12" font-family="sans-serif" font-weight="700">EDGE WORKLOADS</text>
@@ -241,7 +242,7 @@ chat traffic.</p>
   <text x="450" y="272" text-anchor="middle" fill="var(--muted)" font-size="11.5" font-family="sans-serif">metering · audit · shadow / revert</text>
   <!-- model pool -->
   <rect x="706" y="86" width="190" height="194" rx="12" fill="var(--panel)" stroke="var(--line2)"/>
-  <text x="801" y="74" text-anchor="middle" fill="var(--muted)" font-size="12" font-family="sans-serif" font-weight="700">MODEL POOL · OWNED SILICON</text>
+  <text x="801" y="74" text-anchor="middle" fill="var(--muted)" font-size="12" font-family="sans-serif" font-weight="700">MODEL POOL · ON-SITE HARDWARE</text>
   <g font-family="sans-serif" font-size="12" fill="var(--ink)" text-anchor="middle">
     <rect x="722" y="100" width="158" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="801" y="123">Local small models</text>
     <rect x="722" y="146" width="158" height="38" rx="8" fill="var(--bg)" stroke="var(--acc)"/><text x="801" y="169">On-prem large model</text>
@@ -263,7 +264,7 @@ chat traffic.</p>
     <marker id="ahm" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--muted)"/></marker>
   </defs>
 </svg>
-<figcaption>Figure 2 — One gateway between edge workloads and a pool of models on owned silicon. It routes by signal,
+<figcaption>Figure 2 — One gateway between edge workloads and a pool of models on on-site hardware. It routes by signal,
 reuses cached prefixes, selects context, and enforces safety; the frontier path is reserved for the rare request that
 justifies it.</figcaption>
 </figure>
@@ -273,14 +274,14 @@ justifies it.</figcaption>
 <p class="lead">Edge-native is an architectural choice before it is a cost choice. It changes where data lives, where
 decisions happen, and what you can guarantee.</p>
 <table>
-  <thead><tr><th>Property</th><th>Cloud-metered inference</th><th>Edge-native gateway on owned silicon</th></tr></thead>
+  <thead><tr><th>Property</th><th>Cloud-metered inference</th><th>Edge-native gateway on on-site hardware</th></tr></thead>
   <tbody>
     <tr><td><b>Data path</b></td><td>Sensitive data egresses to a third party</td><td>Data stays on-prem; nothing leaves the boundary</td></tr>
     <tr><td><b>Latency</b></td><td>Region round-trip + queue, variable</td><td>Local, deterministic, sub-network</td></tr>
     <tr><td><b>Availability</b></td><td>Depends on the link and the vendor</td><td>Runs through link and provider outages</td></tr>
     <tr><td><b>Sovereignty</b></td><td>Subject to external jurisdiction &amp; retention</td><td>Wholly within your governance domain</td></tr>
     <tr><td><b>Reversibility</b></td><td>Vendor sets pricing, models, deprecations</td><td>You version, shadow-test and revert policy</td></tr>
-    <tr><td><b>Cost shape</b></td><td>Variable opex, billed in arrears</td><td>Fixed capex + near-electricity marginal cost</td></tr>
+    <tr><td><b>Cost shape</b></td><td>Variable opex, billed in arrears</td><td>Fixed price for capacity + near-electricity marginal cost</td></tr>
   </tbody>
 </table>
 <p>The gateway is what makes "edge-native" operationally real rather than a pile of GPUs. It gives one place to set
@@ -291,7 +292,7 @@ can still take that path — by exception, under policy, with the cost attribute
 
 <!-- 4 -->
 <h2 id="levers"><span class="n">4</span>Four token-economics levers</h2>
-<p class="lead">Owning the silicon caps the <em>denominator</em> (you stop paying per token). The gateway shrinks the
+<p class="lead">Fixed, on-site capacity caps the <em>denominator</em> (you stop paying per token). The gateway shrinks the
 <em>numerator</em> — the work each outcome actually costs — with four compounding levers.</p>
 <table>
   <thead><tr><th>Lever</th><th>Mechanism</th><th>Effect on cost-per-outcome</th></tr></thead>
@@ -311,18 +312,18 @@ rates are high. The levers that look marginal in a chatbot are dominant in a pla
 <p class="lead">The job is not to minimize this month's invoice; it is to make next year's number <em>knowable</em>.
 Edge-native does that by changing the <em>shape</em> of the cost curve.</p>
 <div class="stats">
-  <div class="stat"><div class="v">Capex</div><div class="l">One-time, depreciable hardware you own — not a recurring meter</div></div>
+  <div class="stat"><div class="v">Fixed</div><div class="l">A known price for custom-built capacity — bought outright or as a service, not a recurring meter</div></div>
   <div class="stat"><div class="v">&#8776;&nbsp;kWh</div><div class="l">Marginal cost of an extra request approaches electricity</div></div>
   <div class="stat"><div class="v">Fixed</div><div class="l">Spend is bounded by capacity, not by traffic or token length</div></div>
   <div class="stat"><div class="v">0<small>&nbsp;egress</small></div><div class="l">No per-GB data egress, no cross-border transfer cost</div></div>
 </div>
 <p>Metered inference is a line that rises with usage and never flattens; every new agent, every longer prompt, every
-retry adds to it forever. Owned capacity is a step (the purchase) followed by a nearly flat line (power, space,
-maintenance). Past a modest, steady utilization the two curves cross — and beyond the crossover, every additional unit
-of work on owned silicon is effectively free relative to the meter.</p>
+retry adds to it forever. Fixed capacity is a step (the hardware) followed by a nearly flat line (power, space,
+support); taken as a service, it is a flat fee from the start. Past a modest, steady utilization the two curves cross — and beyond the crossover, every additional unit
+of work on that capacity is effectively free relative to the meter.</p>
 
 <figure>
-<svg viewBox="0 0 720 360" role="img" aria-label="Cumulative-cost chart: metered cloud cost rises steeply and linearly with workload, while edge-native cost starts higher (capex) but stays nearly flat; the two cross at a break-even point, after which owned capacity is cheaper.">
+<svg viewBox="0 0 720 360" role="img" aria-label="Cumulative-cost chart: metered cloud cost rises steeply and linearly with workload, while edge-native cost starts higher (fixed capacity) but stays nearly flat; the two cross at a break-even point, after which fixed capacity is cheaper.">
   <!-- axes -->
   <line x1="64" y1="36" x2="64" y2="312" stroke="var(--line2)" stroke-width="1.5"/>
   <line x1="64" y1="312" x2="680" y2="312" stroke="var(--line2)" stroke-width="1.5"/>
@@ -330,7 +331,7 @@ of work on owned silicon is effectively free relative to the meter.</p>
   <text x="676" y="332" text-anchor="end" fill="var(--muted)" font-size="12" font-family="sans-serif">Workload volume / time &#8594;</text>
   <!-- cloud line -->
   <polyline points="64,300 680,70" fill="none" stroke="var(--blue)" stroke-width="2.5"/>
-  <!-- edge line: capex step then flat-ish -->
+  <!-- edge line: capacity step then flat-ish -->
   <polyline points="64,300 64,212 680,168" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
   <!-- crossover -->
   <circle cx="404" cy="176" r="5" fill="var(--ink)"/>
@@ -339,19 +340,19 @@ of work on owned silicon is effectively free relative to the meter.</p>
   <!-- legend -->
   <g font-family="sans-serif" font-size="12.5">
     <line x1="420" y1="60" x2="450" y2="60" stroke="var(--blue)" stroke-width="2.5"/><text x="458" y="64" fill="var(--soft)">Metered cloud (variable opex)</text>
-    <line x1="420" y1="84" x2="450" y2="84" stroke="var(--acc)" stroke-width="2.5"/><text x="458" y="88" fill="var(--soft)">Edge-native (capex + power)</text>
+    <line x1="420" y1="84" x2="450" y2="84" stroke="var(--acc)" stroke-width="2.5"/><text x="458" y="88" fill="var(--soft)">Edge-native (fixed capacity + power)</text>
   </g>
-  <text x="74" y="206" fill="var(--acc)" font-size="11" font-family="sans-serif">capex step</text>
+  <text x="74" y="206" fill="var(--acc)" font-size="11" font-family="sans-serif">capacity step</text>
 </svg>
-<figcaption>Figure 3 — Illustrative cost shape. Metered inference rises without bound; owned capacity is a step then a
+<figcaption>Figure 3 — Illustrative cost shape. Metered inference rises without bound; fixed capacity is a step then a
 near-flat line. Beyond break-even, extra work is effectively free relative to the meter. Exact crossover depends on
 utilization and token mix.</figcaption>
 </figure>
 
 <!-- 6 -->
-<h2 id="hw"><span class="n">6</span>Reference hardware on owned silicon</h2>
-<p class="lead">Predictable economics need predictable units. Two complementary, commodity-priced platforms cover the
-develop-and-serve lifecycle on hardware you keep on your floor.</p>
+<h2 id="hw"><span class="n">6</span>Custom-built hardware accelerators</h2>
+<p class="lead">Predictable economics need predictable units. Unovie custom-builds the hardware accelerators to meet agentic performance, low-latency and high-availability
+requirements, configured, tested and supported with the platform, on two complementary platforms that cover the develop-and-serve lifecycle on your site.</p>
 <h3>NVIDIA DGX Spark — the on-prem development &amp; large-model node</h3>
 <p>A GB10 Grace Blackwell desktop supercomputer with <b>128&nbsp;GB of coherent unified memory</b> and roughly
 <b>1,000&nbsp;TFLOPS (FP4)</b> of AI compute — enough to prototype, fine-tune and serve models up to ~200B parameters
@@ -361,7 +362,7 @@ datacenter, so what you build here promotes to the edge unchanged.</p>
 <p>A small, all-metal node fusing <b>16 Zen&nbsp;5 cores</b>, a Radeon&nbsp;8060S iGPU and an XDNA&nbsp;2 NPU for
 <b>~126&nbsp;TFLOPS</b> of platform AI, with <b>128&nbsp;GB of LPDDR5X-8000</b> — enough to keep 70B-class models
 resident and private. Dual 10GbE and dual USB4 let nodes cluster into a compute hub, so capacity scales by adding
-fixed-price units, not by raising a meter.</p>
+fixed-price units that Unovie builds, not by raising a meter.</p>
 <div class="stats">
   <div class="stat"><div class="v">128<small>&nbsp;GB</small></div><div class="l">Unified memory per node — large models stay resident, on-prem</div></div>
   <div class="stat"><div class="v">200<small>B&#8594;405B</small></div><div class="l">Local model scale on a node, or a linked pair</div></div>
@@ -377,15 +378,15 @@ of small nodes governed by the gateway. The same artifacts run on both, so there
 maintenance queries. Figures are directional — the point is the <em>shape</em>, not a quote.</p>
 <table>
   <caption>Illustrative 3-year total cost of ownership for one industrial site (parameters, not a price quote).</caption>
-  <thead><tr><th>Dimension</th><th>Metered cloud inference</th><th>Edge-native gateway (owned)</th></tr></thead>
+  <thead><tr><th>Dimension</th><th>Metered cloud inference</th><th>Edge-native gateway (Unovie hardware)</th></tr></thead>
   <tbody>
-    <tr><td><b>Upfront capex</b></td><td>~$0</td><td>One-time node fleet + setup (depreciable, resaleable)</td></tr>
-    <tr><td><b>Recurring cost</b></td><td>Per-token bill that grows with usage, retries and context</td><td>Power, space, maintenance, support — roughly flat</td></tr>
+    <tr><td><b>Upfront cost</b></td><td>~$0</td><td>Custom-built node fleet and setup from Unovie: bought outright, or as a service with no upfront cost</td></tr>
+    <tr><td><b>Recurring cost</b></td><td>Per-token bill that grows with usage, retries and context</td><td>Power, space and Unovie support (or the service fee) — roughly flat</td></tr>
     <tr><td><b>Marginal cost of +1 request</b></td><td>Full token price, every time</td><td>Approaches electricity once capacity exists</td></tr>
     <tr><td><b>Data egress</b></td><td>Per-GB transfer for telemetry, video, documents</td><td>None — data never leaves the site</td></tr>
     <tr><td><b>Budget predictability</b></td><td>Forecast error grows with adoption</td><td>Known within power and capacity envelopes</td></tr>
     <tr><td><b>3-year trajectory</b></td><td>Rises every quarter; no natural ceiling</td><td>Step at year 0, near-flat thereafter</td></tr>
-    <tr><td><b>Exit / change cost</b></td><td>Re-platform on vendor pricing &amp; deprecations</td><td>Hardware retained; policy versioned and reversible</td></tr>
+    <tr><td><b>Exit / change cost</b></td><td>Re-platform on vendor pricing &amp; deprecations</td><td>Models, playbooks and evidence stay yours; policy versioned and reversible</td></tr>
   </tbody>
 </table>
 <div class="principle"><div class="tag">The infra-VP takeaway</div>
@@ -419,7 +420,7 @@ maintenance queries. Figures are directional — the point is the <em>shape</em>
 
 <!-- 10 -->
 <h2 id="gov"><span class="n">10</span>Governance, safety &amp; reversibility</h2>
-<p>Owning the inference path is also the strongest governance posture available. Sensitive context never leaves the
+<p>Keeping the inference path on site is also the strongest governance posture available. Sensitive context never leaves the
 site, so leaked vectors and prompts handed to models you do not control — a business liability and a governance
 violation — simply cannot happen. Safety classifiers for sensitive-data leakage, prompt injection and unsafe output
 run <b>inline</b> on every turn, not as an afterthought. Tools and code execute in policy-governed sandboxes. And
@@ -433,7 +434,7 @@ so you keep the ceiling while removing the floor of wasted spend.</div>
 <h2 id="reco"><span class="n">11</span>Recommendations &amp; checklist</h2>
 <ul>
   <li><b>Inventory steady-state workloads.</b> Repetitive, high-volume, latency- or sovereignty-sensitive traffic is the first to move edge-native.</li>
-  <li><b>Buy capacity, not tokens, for that traffic.</b> Size a node fleet to steady demand; keep a frontier path for the long tail.</li>
+  <li><b>Plan capacity, not tokens, for that traffic.</b> Size the Unovie node fleet to steady demand; keep a frontier path for the long tail.</li>
   <li><b>Make the gateway the single ingress.</b> One routing contract, one policy plane, one meter, compatible APIs so apps don't change.</li>
   <li><b>Turn on all four levers.</b> Routing, prefix-cache discipline, context selection and semantic caching compound.</li>
   <li><b>Keep data on-prem by default.</b> Treat egress as an exception that needs justification.</li>
@@ -462,7 +463,7 @@ so you keep the ceiling while removing the floor of wasted spend.</div>
   public hardware specifications and well-established inference-optimization concepts (signal-driven routing, prefix /
   KV-cache reuse, semantic caching, context selection). Cost figures are illustrative parameters, not price quotes;
   actual results depend on workload mix, utilization, token profile and energy cost. Hardware specifications reflect
-  vendor figures as of June 2026. Revision 1.0.</p>
+  vendor figures as of November 2026. Revision 1.1.</p>
 </footer>
 
 </div>
