@@ -215,7 +215,7 @@ document.querySelectorAll('form.pilotform').forEach(function(f){
     var seg=f.seg.value, stage=f.stage.value, what=(f.what.value||'').trim();
     var subj='Pilot on your line — '+seg;
     var body='Industry: '+seg+'\nWhere we are: '+stage+'\nWhat to watch first: '+(what||'(to discuss)')+'\n\nName:\nCompany:\nPhone:\n';
-    location.href='mailto:'+f.getAttribute('data-to')+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    location.href='mailto:'+unm(f.getAttribute('data-m'))+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
   });
 });
 
@@ -226,3 +226,12 @@ document.querySelectorAll('form.pilotform').forEach(function(f){
   var units=(r.left+r.width*0.30)/(r.width/330);     /* px from screen edge → viewBox units, plus the boat's own length */
   sail.style.setProperty('--dv-from',(-Math.round(units))+'px');
 })();
+
+/* ===== email: the address is never in the page source; decoded here for real visitors ===== */
+function unm(t){ return t ? t.split('').reverse().join('').replace('|','@') : ''; }
+document.querySelectorAll('[data-m]').forEach(function(el){
+  if (el.tagName==='FORM') return;
+  var a=unm(el.getAttribute('data-m'));
+  if (el.tagName==='A'){ var sj=el.getAttribute('data-subject'); el.setAttribute('href','mailto:'+a+(sj?'?subject='+encodeURIComponent(sj):'')); }
+  else { el.textContent=a; }
+});

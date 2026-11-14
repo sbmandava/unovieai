@@ -106,3 +106,8 @@ that dodges a global `insteadOf` rewrite in `~/.gitconfig`.
 - CTA everywhere: "Pilot on your line". Pilot form (`form.pilotform`, homepage + contact) builds a mailto in `site.js` — no backend.
 - Homepage hero: live AgentMesh console (`.meshviz`, `site.js`) — 512 channels = watching + retrying + 15 flagged + 8 offline, always summing to 512.
 - Strategy doc of record: `/opt/projects/unovie/mini/research_notes/website-gtm-strategy.md`.
+
+## Email addresses (November 2026)
+- The only public address is solutions@unovie.com. It never appears in plain text in page source or in llms*.txt / agents/index.json.
+- In HTML, write email links as `href="/contact.html" data-m="moc.eivonu|snoitulos" data-subject="…"` (the address reversed, `@` → `|`); assets/site.js (`unm()`) turns them into mailto links for visitors. Visible text: `<span data-m="…">use the form below</span>`. Pilot forms use `data-m`.
+- Whitepapers credit Suresh Mandava by name only (no email). Cloudflare Email Address Obfuscation stays on as a second layer.
