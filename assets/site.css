@@ -827,3 +827,53 @@ body:has(.ph2) section{padding-top:72px;padding-bottom:72px}
 /* tighter space above the hero eyebrow (CNCF-conformant · Microservices native) */
 .hero{padding-top:104px}
 @media(max-width:768px){.hero{padding-top:96px}}
+
+/* ===== platform diagram v2 ===== */
+.ax2 .t2{fill:var(--fg);font-family:var(--disp);font-weight:700;font-size:13px}
+.ax2 .s2{fill:var(--fg-mut);font-family:var(--body);font-size:11px}
+.ax2 .xs{fill:var(--fg-dim);font-family:var(--mono);font-size:8.5px;letter-spacing:.12em}
+.ax2 .l2{fill:var(--fg-dim);font-family:var(--mono);font-size:9px;letter-spacing:.12em}
+.ax2 .srv{fill:color-mix(in srgb,var(--steel) 18%,var(--surface));stroke:var(--steel);stroke-width:1}
+.ax2 .led{fill:#3fbf7f;animation:blink 1.4s steps(1) infinite}
+.ax2 .ly{fill:color-mix(in srgb,var(--surface) 85%,transparent)}
+.ax2 .lk-c{fill:none;stroke:var(--line-2);stroke-width:1.5;stroke-dasharray:4 5}
+.ax2 .lk-o{fill:none;stroke:var(--line-2);stroke-width:1.5}
+.ax2 .ah{fill:var(--fg-dim)}
+.ax2 .fl-a{fill:var(--accent)}
+.ax2 .fl-s{fill:var(--steel)}
+@media(max-width:760px){.axwrap2{overflow-x:auto;-webkit-overflow-scrolling:touch}.axwrap2 .ax2{min-width:760px}}
+@media(prefers-reduced-motion:reduce){.ax2 animateMotion{display:none}.ax2 .led{animation:none}}
+
+/* ===== diagrams v2: signal-to-action, fleet rack, Kiln loop ===== */
+.ax2 .spark{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-linejoin:round;stroke-dasharray:6 3;animation:sparkmove 1.2s linear infinite;opacity:.9}
+@keyframes sparkmove{to{stroke-dashoffset:-18}}
+.ax2 .budget{fill:var(--accent);opacity:.55;transform-box:fill-box;transform-origin:left center;animation:budget 2.4s ease-in-out infinite}
+@keyframes budget{0%{transform:scaleX(.05)}55%,80%{transform:scaleX(.74)}100%{transform:scaleX(.05)}}
+.ax2 .tick{stroke:var(--fg);stroke-width:1.6;stroke-dasharray:3 3}
+.ax2 .brk{fill:none;stroke:var(--accent);stroke-width:1.6}
+.ax2 .brk.dim{stroke:var(--steel);stroke-dasharray:4 4}
+.ax2 .slow{stroke-dasharray:5 4}
+.ax2 .bx.oa{stroke:#3fbf7f;fill:color-mix(in srgb,#3fbf7f 8%,var(--surface))}
+.ax2 .bx.ob{stroke:#e07b5f;fill:color-mix(in srgb,#e07b5f 8%,var(--surface))}
+.ax2 .fl-g{fill:#3fbf7f}.ax2 .fl-o{fill:#e07b5f}
+.ax2 .rack{fill:color-mix(in srgb,var(--steel) 6%,var(--surface));stroke:var(--line-2);stroke-width:1.4}
+.ax2 .shelf{fill:var(--surface);stroke:var(--line-2);stroke-width:1}
+.ax2 .led.tw{animation:twk 2s steps(1) infinite}
+@keyframes twk{0%,40%{opacity:1}41%,70%{opacity:.25}71%,100%{opacity:1}}
+.ax2 .ag{fill:var(--line-2);animation:agbreathe 4s ease-in-out infinite}
+.ax2 .ag.aw{fill:var(--accent);animation:agwake 1.6s ease-in-out infinite}
+@keyframes agbreathe{0%,100%{opacity:.55}50%{opacity:.9}}
+@keyframes agwake{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6}}
+.ax2 .ring2{fill:none;stroke:var(--line-2);stroke-width:2;stroke-dasharray:2 7}
+.ax2 .arc{fill:none;stroke:var(--accent);stroke-width:2}
+.ax2 .core{fill:color-mix(in srgb,var(--accent) 7%,var(--surface));stroke:var(--accent);stroke-width:1.6}
+.ax2 .kc{fill:var(--fg);font-family:var(--disp);font-weight:800;font-size:24px}
+.ax2 .bx.gate{stroke:#e8b04a;stroke-width:1.8}
+.ax2 .bx.on{stroke:#3fbf7f;stroke-width:1.8}
+.loopviz.ax2{max-width:480px}
+@media(max-width:760px){.axwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.axwrap .ax2:not(.loopviz){min-width:760px}}
+@media(prefers-reduced-motion:reduce){.ax2 .spark,.ax2 .budget,.ax2 .ag,.ax2 .led{animation:none}}
+
+.loopviz.ax2 .bx.ly{stroke:var(--steel);stroke-width:1.4;fill:var(--surface)}
+.loopviz.ax2 .bx.ly.gate{stroke:#e8b04a;stroke-width:1.8}
+.loopviz.ax2 .bx.ly.on{stroke:#3fbf7f;stroke-width:1.8}

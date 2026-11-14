@@ -808,6 +808,141 @@ def loop_svg():
         p.append(f'<circle class="nd {"ns" if c else ""}" cx="{x:.0f}" cy="{y:.0f}" r="58"/><text x="{x:.0f}" y="{y-2:.0f}" class="t">{t}</text><text x="{x:.0f}" y="{y+18:.0f}" class="s">{s}</text>')
     p.append('</svg>'); return "".join(p)
 
+
+# ===================== diagrams v2 (AgentMesh signal-to-action, AgentNexus fleet, Kiln loop) =====================
+import math as _m, random as _rnd
+
+def _flow(d, cls="fl-a", dur=2.4, begin=0.0, rev=False, r=3.2):
+    kp = ' keyPoints="1;0" keyTimes="0;1" calcMode="linear"' if rev else ''
+    return f'<circle r="{r}" cx="-50" class="{cls}"><animateMotion dur="{dur}s" begin="-{begin:.2f}s" repeatCount="indefinite"{kp} path="{d}"/></circle>'
+
+def _svg_mesh_v2():
+    o = ['<svg class="axviz ax2" viewBox="0 0 1000 500" role="img" aria-label="AgentMesh signal to action: robot, vision, vibration, electrical, battery and test-rig signals stream into the Sovereign Pod, which perceives, decides and acts inside a 30 millisecond budget — Lane A acts directly on low-consequence outputs, Lane B raises an alarm and a request the safety PLC, cell controller and operator decide — then reasons after the event, drafting records, and adapts nightly through the Kiln. Every decision goes to the signed Evidence Log.">',
+         '<defs><marker id="axh3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs>',
+         '<text x="20" y="24" class="l">SIGNALS</text><text x="300" y="24" class="l">SOVEREIGN POD · FACTORY NETWORK</text><text x="780" y="24" class="l">OUTCOMES</text>']
+    sig = [("Robot joints", "current · torque"), ("Vision", "DeepVision at the cell"), ("Vibration", "ultrasonic · bearings"),
+           ("Electrical", "power quality · drives"), ("Battery", "weld · formation · off-gas"), ("Test rigs", "pressure · strain")]
+    _rnd.seed(7)
+    for n, (a, b) in enumerate(sig):
+        y = 40 + n * 66
+        o.append(f'<rect x="20" y="{y}" width="230" height="56" rx="9" class="bx"/><text x="32" y="{y+22}" class="t2">{a}</text><text x="32" y="{y+40}" class="s2">{b}</text>')
+        pts = " ".join(f"{150+i*6.6:.1f},{y+17+_rnd.uniform(-6,6) if i%3 else y+17:.1f}" for i in range(15))
+        o.append(f'<polyline points="{pts}" class="spark" style="animation-delay:-{n*0.35:.2f}s"/>')
+        d = f"M250,{y+28} C278,{y+28} 274,{150 if n<3 else 190} 300,{150 if n<3 else 190}"
+        o.append(f'<path d="{d}" class="lk-c"/>')
+        o.append(_flow(d, "fl-a", 1.6, n*0.27, r=2.6))
+    # pod frame
+    o.append('<rect x="300" y="40" width="390" height="390" rx="12" class="bx-a"/>')
+    # latency budget bar
+    o.append('<text x="316" y="64" class="l2">DECIDE BUDGET · TARGET &lt; 30 MS</text>')
+    o.append('<rect x="316" y="72" width="358" height="12" rx="6" class="bx"/><rect x="316" y="72" width="358" height="12" rx="6" class="budget"/>')
+    o.append('<line x1="644" y1="66" x2="644" y2="90" class="tick"/><text x="640" y="100" class="xs" text-anchor="end">30 MS</text>')
+    stages = [("1 · Perceive", "Unovie Gateway reads · Signal Encoders fingerprint"),
+              ("2 · Decide", "Vector Memory + Decision Engine pick a lane"),
+              ("3 · Act or ask", "Lane A acts · Lane B alarms and requests"),
+              ("4 · Reason", "Reasoning Model names the cause, drafts the record"),
+              ("5 · Adapt", "Kiln: nightly, tested on unseen cases, signed")]
+    for n, (a, b) in enumerate(stages):
+        y = 112 + n * 62
+        cls = "bx ly" if n < 3 else "bx ly slow"
+        o.append(f'<rect x="316" y="{y}" width="300" height="50" rx="8" class="{cls}"/><text x="330" y="{y+21}" class="t2">{a}</text><text x="330" y="{y+38}" class="s2">{b}</text>')
+        if n < 4:
+            o.append(f'<path d="M466,{y+50} V{y+62}" class="lk-o" marker-end="url(#axh3)"/>')
+    # loop brackets
+    o.append('<path d="M626,112 h10 v174 h-10" class="brk"/><text x="652" y="204" class="l2 vert" transform="rotate(90 652 204)" text-anchor="middle">FAST LOOP</text>')
+    o.append('<path d="M626,298 h10 v112 h-10" class="brk dim"/><text x="652" y="354" class="l2 vert" transform="rotate(90 652 354)" text-anchor="middle">AFTER THE EVENT</text>')
+    # outcomes
+    outs = [("Lane A · acts directly", "reject gate · divert to rework", 40, "oa"), ("Lane B · alarm + request", "safety PLC · cell controller · operator decide", 140, "ob"),
+            ("Drafted records", "NCRs · work orders → MES · QMS", 240, ""), ("Evidence Log", "signed record of every decision", 340, "")]
+    srcy = [237, 237, 323, 0]
+    for k, (a, b, y, c) in enumerate(outs):
+        o.append(f'<rect x="780" y="{y}" width="200" height="74" rx="10" class="bx {c}"/><text x="794" y="{y+28}" class="t2">{a}</text><text x="794" y="{y+47}" class="s2">{b.split(" · ")[0] if len(b)>34 else b}</text>')
+        if len(b) > 34:
+            o.append(f'<text x="794" y="{y+63}" class="s2">{" · ".join(b.split(" · ")[1:])}</text>')
+    paths = [("M616,237 C700,237 700,77 778,77", "fl-g"), ("M616,237 C700,237 700,177 778,177", "fl-o"), ("M616,323 C700,323 700,277 778,277", "fl-a")]
+    for d, c in paths:
+        o.append(f'<path d="{d}" class="lk-o" marker-end="url(#axh3)"/>')
+        o.append(_flow(d, c, 1.8, 0.4 if c == "fl-o" else 0))
+    o.append('<path d="M690,410 C730,410 740,377 778,377" class="lk-c" marker-end="url(#axh3)"/>')
+    o.append(_flow("M690,410 C730,410 740,377 778,377", "fl-s", 2.6))
+    o.append('<rect x="20" y="452" width="960" height="30" rx="15" class="bx-d"/><text x="500" y="471" class="l" text-anchor="middle">THE LANGUAGE MODEL IS NEVER ON THE PATH THAT MOVES EQUIPMENT · EVERY DECISION IS SIGNED</text>')
+    o.append('</svg>')
+    return "".join(o)
+
+def _svg_nexus_v2():
+    o = ['<svg class="axviz ax2" viewBox="0 0 1000 470" role="img" aria-label="AgentNexus: AgentMesh pods at cell lines, fab bays, test stands, shipyards and storage fleets send findings over encrypted links to one 42U rack of twelve shelves with four servers each. Thousands of agents sleep in sealed sandboxes and wake on demand; the Model Router, Reasoning Model, Vector Memory and Kiln serve them, tested skill updates flow back to the pods, and results go to MES, QMS, work-order systems and people. AgentNexus never moves equipment.">',
+         '<defs><marker id="axh4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs>',
+         '<text x="20" y="24" class="l">SITES · AGENTMESH PODS</text><text x="290" y="24" class="l">AGENTNEXUS · ONE RACK · YOUR ENCLAVE</text><text x="790" y="24" class="l">BUSINESS</text>']
+    sites = [("Cell Line 2", "battery"), ("Fab Bay 3", "chip fab"), ("Test Stand 2", "space"), ("Yard 1", "shipyard"), ("Storage fleet", "14 sites")]
+    for n, (a, b) in enumerate(sites):
+        y = 40 + n * 74
+        o.append(f'<rect x="20" y="{y}" width="200" height="58" rx="9" class="bx"/><text x="34" y="{y+24}" class="t2">{a}</text><text x="34" y="{y+42}" class="s2">{b} · fast local loop</text><circle cx="206" cy="{y+14}" r="2.6" class="led" style="animation-delay:{n*.3}s"/>')
+        d = f"M220,{y+29} C255,{y+29} 260,{150+n*40} 290,{150+n*40}"
+        o.append(f'<path d="{d}" class="lk-c"/>')
+        o.append(_flow(d, "fl-a", 2.2, n*0.45))
+        o.append(_flow(d, "fl-s", 3.0, 1.0+n*0.5, rev=True, r=2.8))
+    o.append('<text x="20" y="430" class="s2">… and every other site, over encrypted links</text>')
+    # rack
+    o.append('<rect x="290" y="40" width="470" height="380" rx="12" class="bx-a"/>')
+    o.append('<rect x="306" y="56" width="132" height="348" rx="6" class="rack"/>')
+    for sh in range(12):
+        y = 66 + sh * 27.5
+        o.append(f'<rect x="314" y="{y:.1f}" width="116" height="21" rx="3" class="shelf"/>')
+        for k in range(4):
+            o.append(f'<rect x="{319+k*28}" y="{y+4:.1f}" width="22" height="13" rx="2" class="srv"/><circle cx="{337+k*28}" cy="{y+8:.1f}" r="1.6" class="led tw" style="animation-delay:{((sh*4+k)*0.137)%2:.2f}s"/>')
+    o.append('<text x="372" y="414" class="xs" text-anchor="middle">12 SHELVES × 4 · 42U</text>')
+    # agent field
+    o.append('<text x="456" y="66" class="l2">AGENTS · SEALED SANDBOXES</text>')
+    _rnd.seed(3)
+    for r in range(6):
+        for c in range(22):
+            awake = _rnd.random() < 0.14
+            o.append(f'<circle cx="{460+c*12.6:.1f}" cy="{80+r*12}" r="3.2" class="ag {"aw" if awake else ""}" style="animation-delay:-{_rnd.uniform(0,4):.2f}s"/>')
+    o.append('<text x="456" y="160" class="s2">most asleep · any agent wakes in &lt; 0.5 s (target)</text>')
+    layers = [("Model Router", "picks the model and skill adapter"), ("Reasoning Model", "compares sites, drafts records and plans"),
+              ("Vector Memory", "cross-site patterns and history"), ("Kiln", "trains skill adapters · tested before release")]
+    for n, (a, b) in enumerate(layers):
+        y = 174 + n * 54
+        o.append(f'<rect x="456" y="{y}" width="290" height="46" rx="8" class="bx ly"/><text x="470" y="{y+20}" class="t2">{a}</text><text x="470" y="{y+37}" class="s2">{b}</text>')
+    o.append('<text x="460" y="404" class="l2">MESH ARBITER · DATA COPIED ACROSS SHELVES</text>')
+    outs = [("MES · QMS", "quality records · NCRs", 40, ""), ("Work orders", "SAP · Maximo · planning", 130, ""), ("People", "engineers · operators", 220, ""), ("Never moves", "equipment — advisory only", 330, "dash")]
+    for a, b, y, c in outs:
+        cls = "bx-d" if c else "bx"
+        o.append(f'<rect x="790" y="{y}" width="190" height="64" rx="10" class="{cls}"/><text x="804" y="{y+27}" class="t2">{a}</text><text x="804" y="{y+45}" class="s2">{b}</text>')
+        if not c:
+            d = f"M760,230 C778,230 772,{y+32} 788,{y+32}"
+            o.append(f'<path d="{d}" class="lk-o" marker-end="url(#axh4)"/>')
+            o.append(_flow(d, "fl-a", 2.0, (y/90)*0.5))
+    o.append('<rect x="20" y="440" width="960" height="24" rx="12" class="bx-d"/><text x="500" y="456" class="l" text-anchor="middle">SECURE BY DESIGN · CNCF-CONFORMANT · MICROSERVICES NATIVE · RUNS AIR-GAPPED IN YOUR ENCLAVE</text>')
+    o.append('</svg>')
+    return "".join(o)
+
+def loop_svg():
+    st = [("Learn", "outcomes become data", -90), ("Train", "new skill adapter", -18), ("Test", "beat it on unseen cases", 54), ("Trial", "slice of live traffic", 126), ("Switch on", "fleet-wide, rollback ready", 198)]
+    cx, cy, R = 240, 240, 160
+    o = ['<svg class="loopviz ax2" viewBox="0 0 480 480" role="img" aria-label="The Kiln learning loop: learn from outcomes, train a new skill adapter, test it on cases it has never seen, trial it on a slice of live traffic, then switch it on fleet-wide with a one-step rollback. The base model stays the same.">',
+         '<defs><marker id="axh5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs>',
+         f'<circle cx="{cx}" cy="{cy}" r="{R}" class="ring2"/>']
+    for k in range(5):
+        a0 = _m.radians(-90 + k*72 + 20); a1 = _m.radians(-90 + k*72 + 52)
+        x0, y0 = cx + R*_m.cos(a0), cy + R*_m.sin(a0); x1, y1 = cx + R*_m.cos(a1), cy + R*_m.sin(a1)
+        o.append(f'<path d="M{x0:.1f},{y0:.1f} A{R},{R} 0 0 1 {x1:.1f},{y1:.1f}" class="arc" marker-end="url(#axh5)"/>')
+    ring = f"M{cx},{cy-R} A{R},{R} 0 1 1 {cx-0.01},{cy-R}"
+    o.append(_flow(ring, "fl-a", 7.5, 0, r=5))
+    o.append(f'<circle cx="{cx}" cy="{cy}" r="74" class="core"/><text x="{cx}" y="{cy-8}" class="kc" text-anchor="middle">Kiln</text>'
+             f'<text x="{cx}" y="{cy+14}" class="s2" text-anchor="middle">base model unchanged</text><text x="{cx}" y="{cy+30}" class="s2" text-anchor="middle">one-step rollback</text>')
+    for n, (a, b, deg) in enumerate(st):
+        x = cx + R*_m.cos(_m.radians(deg)); y = cy + R*_m.sin(_m.radians(deg))
+        w = 150
+        cls = "bx ly gate" if a == "Test" else ("bx ly on" if a == "Switch on" else "bx ly")
+        o.append(f'<rect x="{x-w/2:.1f}" y="{y-24:.1f}" width="{w}" height="48" rx="24" class="{cls}"/><text x="{x:.1f}" y="{y-3:.1f}" class="t2" text-anchor="middle">{n+1} · {a}</text><text x="{x:.1f}" y="{y+14:.1f}" class="s2" text-anchor="middle">{b}</text>')
+    o.append('</svg>')
+    return "".join(o)
+
+SVG_MESH = _svg_mesh_v2()
+SVG_NEXUS = _svg_nexus_v2()
+# =================== /diagrams v2 ===================
+
 def product_page(slug, cat, title_html, lead, pills, kpis, panel, sections, cta_lead, desc):
     head=HEAD("../", f"{re.sub('<[^>]+>','',title_html)} — Unovie.AI", desc)
     chips="".join(f'<span class="chip">{c}</span>' for c in pills)
