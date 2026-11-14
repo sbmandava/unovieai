@@ -128,7 +128,7 @@ def FOOTER(base):
     <a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a><a href="{base}device-platform.html#agx-thor">NVIDIA Jetson AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a></div>
   <div class="fcol"><h4>Company</h4>
     <a href="{base}why-unovie.html">Why Unovie</a><a href="{h}#engineering">AI Engineering</a><a href="{h}#delivery">How we deliver</a>
-    <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a><a href="https://www.linkedin.com/company/103762866/" target="_blank" rel="noopener">LinkedIn</a></div>
+    <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
   <div class="fcol"><h4>Research</h4>
     <a href="{base}resources/agentmesh-architecture.html" target="_blank">AgentMesh Architecture</a><a href="{base}resources/agentnexus-architecture.html" target="_blank">AgentNexus Architecture</a><a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
 </div><div class="fbot"><span>© 2026 Unovie · Agent-native industrial AI</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
@@ -1765,7 +1765,7 @@ Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
 - [Why Unovie]({_u('why-unovie.html')}): a young company with veteran founders — each founder brings 20+ years in OT and Physical AI, and the company has spent four years building its sovereign AI platform for next-generation manufacturing. Headquartered in Austin, Texas, serving customers nationally. Site audit, a 6-week paid pilot on the customer's own line, and production in a quarter.
 - [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
 - [Contact]({_u('contact.html')}): start a project.
-- [LinkedIn](https://www.linkedin.com/company/103762866/): company page — news and the events Unovie attends.
+- [LinkedIn](https://www.linkedin.com/company/unovie/): company page — news and the events Unovie attends.
 
 ## Machine-readable
 - [Full content (llms-full.txt)]({SITE}/llms-full.txt): the entire site as one markdown document for direct LLM/agent consumption.

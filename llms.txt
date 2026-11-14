@@ -92,7 +92,7 @@ Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
 - [Why Unovie](https://unovie.ai/why-unovie.html): a young company with veteran founders — each founder brings 20+ years in OT and Physical AI, and the company has spent four years building its sovereign AI platform for next-generation manufacturing. Headquartered in Austin, Texas, serving customers nationally. Site audit, a 6-week paid pilot on the customer's own line, and production in a quarter.
 - [About](https://unovie.ai/about.html): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
 - [Contact](https://unovie.ai/contact.html): start a project.
-- [LinkedIn](https://www.linkedin.com/company/103762866/): company page — news and the events Unovie attends.
+- [LinkedIn](https://www.linkedin.com/company/unovie/): company page — news and the events Unovie attends.
 
 ## Machine-readable
 - [Full content (llms-full.txt)](https://unovie.ai/llms-full.txt): the entire site as one markdown document for direct LLM/agent consumption.
