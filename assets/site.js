@@ -135,3 +135,85 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
     raf=requestAnimationFrame(tick);
   });
 })();
+
+/* ===== MOCK: hero live AgentMesh console ===== */
+(function(){
+  var root=document.querySelector('.meshviz'); if(!root) return;
+  var PER=64, dots=[], byJob={};
+  [].slice.call(root.querySelectorAll('.mv-row')).forEach(function(r){var box=r.querySelector('.mv-dots'), job=r.dataset.job; byJob[job]=[];
+    for(var k=0;k<PER;k++){var d=document.createElement('i'); box.appendChild(d); dots.push(d); byJob[job].push(d);} });
+  var N=dots.length;
+  var cW=root.querySelector('.mv-c-watch'), cR=root.querySelector('.mv-c-retry'), cF=root.querySelector('.mv-c-flag'), cO=root.querySelector('.mv-c-off'), cD=root.querySelector('.mv-c-dec'), last=root.querySelector('.mv-last');
+  /* channel budget — always sums to N (512): watching + retrying + flagged + offline */
+  var OFFLINE=8, FLAGGED=15, R_MIN=4, R_MAX=23;   /* watching = 512-15-8-retrying = 466–485 */
+  var RETRY=R_MIN+Math.floor(Math.random()*(R_MAX-R_MIN+1));
+  function pick(arr){return arr.splice(Math.floor(Math.random()*arr.length),1)[0];}
+  function of(c){return dots.filter(function(d){return d.className===c;});}
+  function isFlag(d){return d.className==='f'||d.className==='d'||d.className==='a'||d.className==='b';}
+  dots.forEach(function(d){d.className='w';});
+  var offs=dots.slice(); for(var k=0;k<OFFLINE;k++) pick(offs).className='off';
+  function balance(){
+    var fl=dots.filter(isFlag).length, f=of('f'), w;
+    while(fl>FLAGGED&&f.length){pick(f).className='w';fl--;}
+    w=of('w'); while(fl<FLAGGED&&w.length){pick(w).className='f';fl++;}
+    var rt=of('rt'); w=of('w');
+    while(rt.length>RETRY){pick(rt).className='w'; rt=of('rt');}
+    while(of('rt').length<RETRY&&w.length){pick(w).className='rt';}
+  }
+  function counts(){
+    balance();
+    var n={w:0,rt:0,fl:0,off:0}; dots.forEach(function(d){var c=d.className; if(c==='w')n.w++; else if(c==='rt')n.rt++; else if(c==='off')n.off++; else n.fl++;});
+    cW.textContent=n.w; cR.textContent=n.rt; cF.textContent=n.fl; cO.textContent=n.off; cD.textContent=decisions.toLocaleString();
+  }
+  function say(txt){last.classList.add('fade'); setTimeout(function(){last.textContent=txt; last.classList.remove('fade');},250);}
+  function ambient(){
+    RETRY=Math.max(R_MIN,Math.min(R_MAX,RETRY+Math.round((Math.random()-.5)*6)));
+    /* channels recover and others start retrying: swap a few, and move a few flags around */
+    var rt=of('rt'), w=of('w'), f=of('f');
+    for(var k=0;k<Math.min(5,rt.length,w.length);k++){pick(rt).className='w'; pick(w).className='rt';}
+    w=of('w'); for(var k2=0;k2<Math.min(2,f.length,w.length);k2++){pick(f).className='w'; pick(w).className='f';}
+    counts();
+  }
+  var tiles=[].slice.call(root.querySelectorAll('.mv-tile'));
+  var EV={
+    robot:[['a','Lane A · part diverted to rework','11.8 ms','drafting work order · joint 3'],['a','Lane A · cell slowed to safe speed band','10.9 ms','drafting gearbox inspection'],['b','Lane B · request: stop cell at end of cycle','13.1 ms','drafting WO · servo 4']],
+    vision:[['a','Lane A · defect found · panel held','9.4 ms','drafting NCR · cell 6'],['a','Lane A · weld bead off-spec · part to rework','8.7 ms','adding image + signal to evidence'],['b','Lane B · lens contamination · request cleaning','12.2 ms','drafting maintenance note']],
+    weld:[['a','Lane A · module diverted to rework','11.6 ms','drafting NCR-7714'],['a','Lane A · tab weld re-queued','10.2 ms','updating traceability record'],['b','Lane B · request: change protective glass','12.8 ms','drafting WO · head 5']],
+    pump:[['b','Lane B · request: swap to standby at lot boundary','17.3 ms','drafting WO F-3318'],['b','Lane B · bearing tones rising · facilities notified','16.4 ms','checking supplier units'],['a','Lane A · tool idle hint to scheduler','14.9 ms','evidence pack updated']],
+    test:[['b','Lane B · flag to test conductor','19.8 ms','drafting post-test report'],['b','Lane B · strain trend matches run 112','18.5 ms','attaching spectrogram to run record'],['a','Lane A · channel marked for review','15.0 ms','drafting test-data note']],
+    net:[['b','Lane B · unusual write · OT team notified','14.2 ms','evidence pack updated'],['a','Lane A · unknown laptop quarantined (IT side)','9.8 ms','drafting incident record'],['b','Lane B · firmware change outside window','15.6 ms','drafting change review']],
+    formation:[['a','Lane A · cell held for extended aging','12.4 ms','drafting grading note · F-12'],['b','Lane B · self-discharge cluster · request review','16.1 ms','drafting quality record'],['a','Lane A · cell re-binned to lower grade','11.0 ms','updating traceability record']],
+    agv:[['a','Lane A · AGV 7 rerouted around aisle 4','8.9 ms','drafting wheel-motor WO'],['b','Lane B · battery temp high · request return to dock','13.7 ms','drafting battery health note'],['a','Lane A · AGV 3 speed capped in shared zone','9.6 ms','evidence pack updated']],
+    layup:[['a','Lane A · ply wrinkle · panel held for review','10.4 ms','drafting NCR · layup L-1'],['b','Lane B · cure oven ramp off-profile · request hold','16.8 ms','attaching thermal trace to record'],['a','Lane A · fibre gap flagged · ply re-queued','9.9 ms','updating traceability record']],
+    storage:[['b','Lane B · off-gas rising · alarm to fire panel','14.6 ms','drafting incident record · BS-9'],['b','Lane B · cell temp spread · request derate','15.2 ms','drafting inspection note'],['a','Lane A · string marked for next inspection','11.3 ms','evidence pack updated']],
+    drone:[['a','Lane A · flight held · wind above limit','8.6 ms','logging decision to evidence'],['b','Lane B · motor 3 vibration · request inspection','13.9 ms','drafting WO · D-2'],['a','Lane A · battery swap queued before next flight','9.2 ms','drafting battery health note']],
+    chiller:[['b','Lane B · request: stage backup chiller','18.2 ms','drafting WO · CH-2'],['a','Lane A · setpoint trim within approved band','12.7 ms','logging energy saving'],['b','Lane B · compressor current drift · facilities notified','17.6 ms','drafting inspection plan']]};
+  var LBL={w:'watching',d:'deciding',a:'Lane A acted',b:'Lane B request',r:'drafting'};
+  var decisions=1840+Math.floor(Math.random()*60), RMo=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function setTile(t,st,w){t.setAttribute('data-s',st); t.querySelector('.mv-st').textContent=LBL[st]; t.querySelector('.mv-bar i').style.width=w+'%';}
+  var busy={};
+  function event(){
+    var free=tiles.filter(function(t){return !busy[t.dataset.job];}); if(!free.length) return;
+    var t=free[Math.floor(Math.random()*free.length)], job=t.dataset.job, opts=EV[job], ev=opts[Math.floor(Math.random()*opts.length)], name=t.querySelector('b').textContent;
+    var row=(byJob[t.dataset.row||job]||dots).filter(function(x){return x.className==='w'||x.className==='f';}), d=row[Math.floor(Math.random()*row.length)]; if(!d) return; busy[job]=1;
+    d.className='d'; setTile(t,'d',60); counts(); say(name+' · signal flagged · deciding…');
+    setTimeout(function(){ d.className=ev[0]; setTile(t,ev[0],100); decisions++; counts(); say(name+' → '+ev[1]+' · '+ev[2]); },900);
+    setTimeout(function(){ setTile(t,'r',75); d.className='w'; counts(); say(name+' · '+ev[3]); },2600);
+    setTimeout(function(){ setTile(t,'w',20+Math.random()*30); busy[job]=0; counts(); },4400);
+  }
+  tiles.forEach(function(t){setTile(t,'w',20+Math.random()*40);});
+  counts();
+  if(RMo) return;
+  setInterval(ambient,700); setInterval(event,1100); setTimeout(event,300); setTimeout(event,900);
+})();
+
+/* ===== MOCK: pilot form → mailto (no backend; nothing sent until the visitor presses send) ===== */
+document.querySelectorAll('form.pilotform').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var seg=f.seg.value, stage=f.stage.value, what=(f.what.value||'').trim();
+    var subj='Pilot on your line — '+seg;
+    var body='Industry: '+seg+'\nWhere we are: '+stage+'\nWhat to watch first: '+(what||'(to discuss)')+'\n\nName:\nCompany:\nPhone:\n';
+    location.href='mailto:'+f.getAttribute('data-to')+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  });
+});

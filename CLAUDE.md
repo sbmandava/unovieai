@@ -98,3 +98,11 @@ that dodges a global `insteadOf` rewrite in `~/.gitconfig`.
 - Don't commit `.claude/` (Claude "mind" memory + lock), `__pycache__/`, or `.DS_Store` — see `.gitignore`.
 - An `unoweb` auto-committer may exist on this host; the repo is `vdesibabu`-owned now, so git
   operations should run as `vdesibabu` with the deploy key (as above), not as `unoweb`.
+
+## Deep-tech repositioning (November 2026)
+- Audience: next-generation, sensor-/AI-/robot-heavy manufacturing (battery, chip fabs & suppliers, space & aerospace, robotics & autonomous systems, defense & dual-use, advanced energy). No brownfield/legacy-plant framing.
+- **Solution pages retired:** `solutions/*` removed; `SOL` is emptied in `build_pages.py` (`RETIRED_SOL`), old URLs 301 via `_redirects`. The homepage `#accelerators` grid is now "Agentic jobs" (hand-authored in `index.html`); nav label "Agentic jobs".
+- Messaging rules: "CNCF-conformant" (Certified Kubernetes) — never "CNCF certified/compliant"; security is "designed against NIST SP 800-53 / NIST AI RMF", never "compliant/certified". Founders have 20+ years each; company is 4 years old.
+- CTA everywhere: "Pilot on your line". Pilot form (`form.pilotform`, homepage + contact) builds a mailto in `site.js` — no backend.
+- Homepage hero: live AgentMesh console (`.meshviz`, `site.js`) — 512 channels = watching + retrying + 15 flagged + 8 offline, always summing to 512.
+- Strategy doc of record: `/opt/projects/unovie/mini/research_notes/website-gtm-strategy.md`.
