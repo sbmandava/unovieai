@@ -209,6 +209,7 @@
     <li><a href="#failures">When something breaks</a></li>
     <li><a href="#capacity">How much it can do</a></li>
     <li><a href="#reuse">What's reused and what's new</a></li>
+    <li><a href="#skills">Business skills: Claude and your ERP</a></li>
     <li><a href="#glossary">Glossary</a></li>
   </ol>
 </nav>
@@ -239,7 +240,8 @@ runs. It answers within about half a second.</p>
     <span class="tag plat">Platform</span>
     <h4>Keep it running</h4>
     <p>One cluster runs everything. Data is copied so that losing a server, or a whole
-    shelf of four servers, doesn't lose work that was saved. Nothing depends on the internet.</p>
+    shelf of four servers, doesn't lose work that was saved. The core runs on its own; only the
+    business skills (section 10) call out, to Claude and your ERP.</p>
   </div>
 </div>
 
@@ -248,11 +250,15 @@ runs. It answers within about half a second.</p>
 <p>Plants keep their own AgentMesh pods. AgentNexus sits above them in a central cabinet and talks
 to them over encrypted links. It sends finished results, such as work orders, to business systems.
 It never sends commands to plant equipment.</p>
+<p>Unlike the AgentMesh pods, which stay air-gapped at the plant, AgentNexus can also connect out:
+its business skills (section 10) draft quotes, quality reports and the morning production report
+using Claude, Anthropic's language model, and read the customer's ERP and document systems. Those
+calls go out only, and nothing is sent to a customer or supplier until a named person approves it.</p>
 
 <figure>
 <svg viewBox="0 0 900 380" role="img" aria-labelledby="f1t f1d">
   <title id="f1t">AgentNexus in context</title>
-  <desc id="f1d">Three plants with AgentMesh pods connect over encrypted links to the AgentNexus rack, which has an agents part on CPUs, a models part on GPUs and a shared platform. AgentNexus sends results to IT systems and is used by engineers and pipelines.</desc>
+  <desc id="f1d">Three plants with AgentMesh pods connect over encrypted links to the AgentNexus rack, which has an agents part on CPUs, a models part on GPUs and a shared platform. AgentNexus sends results to IT systems and is used by engineers and pipelines. Its business skills call Claude and the customer's ERP and document systems outbound only, and people approve its drafts and read its dashboards.</desc>
   <defs>
     <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker>
   </defs>
@@ -292,17 +298,25 @@ It never sends commands to plant equipment.</p>
   <text x="236" y="352" class="ts">encrypted links · answers in ~0.5 s</text>
 
   <text x="690" y="28" class="tl">OUTSIDE</text>
-  <rect x="690" y="88" width="190" height="76" rx="8" class="bx2"/>
-  <text x="706" y="116" class="tb">IT systems</text>
-  <text x="706" y="138" class="ts">SAP, Maximo, reports</text>
-  <rect x="690" y="216" width="190" height="76" rx="8" class="bx2"/>
-  <text x="706" y="244" class="tb">People and pipelines</text>
-  <text x="706" y="266" class="ts">engineers, CI, operators</text>
-  <line x1="630" y1="126" x2="688" y2="126" class="ln" marker-end="url(#a1)"/>
-  <text x="636" y="116" class="ts">results</text>
-  <line x1="688" y1="254" x2="632" y2="254" class="ln" marker-end="url(#a1)"/>
+  <rect x="690" y="44" width="190" height="64" rx="8" class="bx2"/>
+  <text x="706" y="70" class="tb">IT systems</text>
+  <text x="706" y="92" class="ts">SAP, Maximo, reports</text>
+  <rect x="690" y="124" width="190" height="94" rx="8" class="bx-amber"/>
+  <text x="706" y="150" class="tb">Cloud services</text>
+  <text x="706" y="170" class="ts">Claude (language model),</text>
+  <text x="706" y="188" class="ts">ERP and documents,</text>
+  <text x="706" y="204" class="ts">read only</text>
+  <rect x="690" y="228" width="190" height="88" rx="8" class="bx2"/>
+  <text x="706" y="254" class="tb">People and pipelines</text>
+  <text x="706" y="276" class="ts">engineers, CI, operators,</text>
+  <text x="706" y="294" class="ts">approvals and dashboards</text>
+  <line x1="630" y1="76" x2="688" y2="76" class="ln" marker-end="url(#a1)"/>
+  <text x="636" y="68" class="ts">results</text>
+  <line x1="630" y1="168" x2="688" y2="168" class="ln-dash" marker-end="url(#a1)"/>
+  <text x="636" y="160" class="ts">out only</text>
+  <line x1="688" y1="272" x2="632" y2="272" class="ln" marker-end="url(#a1)"/>
 </svg>
-<figcaption>Figure 1. AgentNexus between the plants and the business systems. Results go out; plant control stays at the plant.</figcaption>
+<figcaption>Figure 1. AgentNexus between the plants and the business systems. Results go out; plant control stays at the plant. The dashed path is the business-skills link to Claude and the customer's ERP (section 10).</figcaption>
 </figure>
 
 <!-- 3 -->
@@ -363,7 +377,7 @@ underneath keeps them running.</p>
   <tr><th>Part</th><th>What it does</th><th>Where it comes from</th></tr>
   <tr><td><b>Agent tasks</b></td><td>Lets people describe an agent task in a short file (what to run, what code to fetch, how much memory) and start, pause or stop it.</td><td>Unovie Agent Runtime</td></tr>
   <tr><td><b>Unovie Agent Runtime</b></td><td>Runs each agent in a sealed sandbox. Saves idle agents to storage and wakes them on demand. Controls what each agent can reach on the network and keeps passwords out of the agents' hands.</td><td>Unovie platform, built on open source</td></tr>
-  <tr><td><b>Unovie Model Router</b></td><td>Looks at each request and decides which model, and which adapter, should answer it.</td><td>Unovie platform, built on open source</td></tr>
+  <tr><td><b>Unovie Model Router</b></td><td>Looks at each request and decides which model, and which adapter, should answer it — local first. Private decisions stay on the rack's own models; only work that needs an external model such as Claude goes out.</td><td>Unovie platform, built on open source</td></tr>
   <tr><td><b>Unovie Decision Models</b></td><td>Small models that answer typed questions (pick one of these options, yes or no, score from 1 to 5) with a probability for each answer, without writing text. The smallest helps the router choose; larger ones grade training attempts and check new adapters.</td><td>Open weights; the smallest already runs in AgentMesh</td></tr>
   <tr><td><b>Unovie Runtime</b></td><td>Runs the language models on the graphics processors and answers requests.</td><td>Already used in AgentMesh</td></tr>
   <tr><td><b>Kiln</b></td><td>Trains small adapters that change how the model behaves for a task, using examples and scored attempts. Training runs as a job on one server at a time.</td><td>Unovie, extended from AgentMesh's nightly Kiln</td></tr>
@@ -470,7 +484,8 @@ served the same way. Using another model is a deliberate, recorded decision.</p>
 
 <p><b>A. An agent asks a model.</b> The agent sends its request to one address. The router reads it,
 asks a small decision model which option fits, and sends it to the Unovie Reasoning Model: the compressed copy for
-general work, or the full copy with a specialised adapter. The router's own work is meant to take
+general work, or the full copy with a specialised adapter. Only work that needs an external model,
+such as a business skill that calls Claude, is sent out through the exit gate. The router's own work is meant to take
 under a tenth of a second.</p>
 <p><b>B. A plant talks to an agent.</b> Most agents are asleep most of the time, saved to storage.
 When a request arrives, the agent is loaded onto any free server and woken. The target for waking
@@ -628,14 +643,85 @@ and we'll measure it with real workloads.</div>
   </tr>
 </table>
 <p>Apart from three small pieces of our own (the job that switches adapters on, the service that starts training jobs, and the link between the router and the decision model), everything new is open source. The rack runs without internet access: software, models and
-updates are brought in and checked before use.</p>
+updates are brought in and checked before use. The one exception is the business-skills layer
+(section 10), which needs an outbound link to Claude and the customer's ERP, and is simply switched
+off at sites without one.</p>
+
+<!-- 10 -->
+<h2 id="skills"><span class="n">10</span>Business skills: Claude and your ERP</h2>
+<p>Much of a plant's day is paperwork built from records: pricing a new job, writing up a failed
+inspection, working out why a machine stopped, asking suppliers for quotes, and assembling the
+morning production report. Anthropic publishes a set of 17 ready-made skills for this work,
+Claude for Manufacturing, as open source. They were written for exports that land once a night.
+AgentNexus can run them on the plant's own live, time-stamped records from AgentMesh, so a
+breakdown write-up can be waiting when the technician arrives, not the next morning.</p>
+
+<figure>
+<svg viewBox="0 0 900 230" role="img" aria-labelledby="f6t f6d">
+  <title id="f6t">A plant event becomes a draft for a person</title>
+  <desc id="f6d">A plant event or a schedule starts a skill on AgentNexus. The skill reads plant data and the business systems, read only, and asks Claude through the exit gate. The result is a draft that a named person approves and sends. Only the morning report runs without anyone approving it, because it changes nothing.</desc>
+  <defs>
+    <marker id="a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker>
+  </defs>
+  <text x="20" y="26" class="tl">E · A PLANT EVENT BECOMES A DRAFT</text>
+  <rect x="20" y="38" width="150" height="76" rx="8" class="bx-accent"/><text x="34" y="64" class="tb">Trigger</text><text x="34" y="84" class="ts">machine stops, failed</text><text x="34" y="100" class="ts">test, or 05:30 report</text>
+  <rect x="195" y="38" width="150" height="76" rx="8" class="bx-blue"/><text x="209" y="64" class="tb">Skill runs</text><text x="209" y="84" class="ts">as an agent in a</text><text x="209" y="100" class="ts">sealed sandbox</text>
+  <rect x="370" y="38" width="150" height="76" rx="8" class="bx"/><text x="384" y="64" class="tb">Reads records</text><text x="384" y="84" class="ts">plant data, ERP,</text><text x="384" y="100" class="ts">documents · read only</text>
+  <rect x="545" y="38" width="150" height="76" rx="8" class="bx-amber"/><text x="559" y="64" class="tb">Claude</text><text x="559" y="84" class="ts">through the exit gate,</text><text x="559" y="100" class="ts">filtered and logged</text>
+  <rect x="720" y="38" width="160" height="76" rx="8" class="bx-green"/><text x="734" y="64" class="tb">Draft for a person</text><text x="734" y="84" class="ts">a named person</text><text x="734" y="100" class="ts">approves and sends</text>
+  <line x1="170" y1="76" x2="193" y2="76" class="ln" marker-end="url(#a6)"/>
+  <line x1="345" y1="76" x2="368" y2="76" class="ln" marker-end="url(#a6)"/>
+  <line x1="520" y1="76" x2="543" y2="76" class="ln" marker-end="url(#a6)"/>
+  <line x1="695" y1="76" x2="718" y2="76" class="ln" marker-end="url(#a6)"/>
+  <text x="20" y="150" class="tl">STAYS ON SITE</text>
+  <text x="20" y="172" class="ts">machine control and safety settings · raw signals (unless the site allows them) · controlled programs ·</text>
+  <text x="20" y="190" class="ts">the plant's memory, dashboards and approvals</text>
+  <text x="20" y="214" class="tl">GOES OUT, ONE WAY</text>
+  <text x="170" y="214" class="ts">requests to Claude · read requests to the customer's own cloud business systems</text>
+</svg>
+<figcaption>Figure 6. The business-skills flow. The skills never write to a business system or operate equipment; a person sends every quote, report and supplier email.</figcaption>
+</figure>
+
+<table>
+  <tr><th>Skills</th><th>What they draft</th><th>What AgentNexus adds</th></tr>
+  <tr><td>Operations</td><td>Morning production report with OEE and downtime; breakdown diagnosis with the likely causes ranked</td><td>Downtime from the machines' own record; the signals before a failure</td></tr>
+  <tr><td>Quality</td><td>Nonconformance write-ups and 8D corrective-action reports</td><td>Process data lined up in time with the defect, which the skills insist on before linking cause and effect</td></tr>
+  <tr><td>Supply chain</td><td>Supplier quote requests and side-by-side bid comparisons</td><td>Actual part usage and failure history across sites</td></tr>
+  <tr><td>Sales and design</td><td>Quotes from drawings; design comparisons</td><td>Shop load from real machine availability; field performance per design</td></tr>
+</table>
+
+<p><b>The router decides what goes out.</b> The Unovie Model Router is the single integration
+point between agents and every model, local or external. It keeps private decisions and routine
+work, such as classifying an event, checking a figure or drafting from a template, on the rack's own
+models, and sends only the work that needs Claude out through the exit gate. Each external call is a
+metered cost and a copy of data leaving the building, so routing locally first keeps the running
+cost of external models down and keeps private decisions private.</p>
+
+<p><b>Commissioning by interview.</b> The same layer can set up a new AgentMesh pod. Claude interviews the
+site engineer about the hardware and drafts a reference file for every asset and output, plus the site's
+output map. The customer's controls engineer and Unovie review every lane and limit, and the result goes to the
+pod as a signed site-config release, the same way software images and models do. AgentNexus never opens a live
+connection into the pod, and nothing reaches it unreviewed.</p>
+
+<p><b>How it connects.</b> Each skill runs as an ordinary agent (flow B) with a few new services
+around it: one that serves plant data in the shape the skills expect, a store for the plant's
+settings and the two dashboards, an approvals inbox, and a scheduler. The business systems are
+reached outbound and read only: Oracle NetSuite or Infor M3 for orders and costs, Microsoft 365 for
+documents. Autodesk Fusion stays on the engineer's own computer, because it only accepts
+connections from that machine.</p>
+
+<div class="note"><b>In design.</b> This layer is designed, not yet built. Only AgentNexus connects
+out; the AgentMesh pods stay air-gapped. The layer needs an outbound link to Claude, so it is
+switched off at sites with no internet, and controlled data (export-controlled or CUI) never leaves
+the rack: on controlled defense programs the skills stay off.</div>
 
 <!-- 11 -->
-<h2 id="glossary"><span class="n">10</span>Glossary</h2>
+<h2 id="glossary"><span class="n">11</span>Glossary</h2>
 <dl class="gloss">
   <dt>Agent</dt><dd>A program that works on a task on its own, using models and tools, sometimes over hours or days.</dd>
   <dt>Adapter (LoRA)</dt><dd>A small add-on to a language model that changes its behaviour for a specific job, without retraining the whole model.</dd>
   <dt>AgentMesh</dt><dd>Unovie's pod at each plant. It reacts to equipment signals within milliseconds.</dd>
+  <dt>Claude</dt><dd>Anthropic's language model, reached over the internet. AgentNexus uses it only for the business skills (section 10), and the router sends it only the work the local models shouldn't handle; the AgentMesh pods never call it.</dd>
   <dt>CPU / GPU</dt><dd>The general-purpose processor, and the graphics processor used for model work.</dd>
   <dt>Decision model</dt><dd>A model that answers fixed, typed questions with a probability for each possible answer, instead of writing free text. Fast and easy to check.</dd>
   <dt>Embedding</dt><dd>A list of numbers that stands for the meaning of a piece of text, so that similar texts can be found quickly.</dd>

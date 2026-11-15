@@ -9,7 +9,7 @@
 <script data-ga>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-590ZL8SE2M');</script>
 <link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <title>Unovie.AI — Physical AI built for deep-tech industries</title>
-<meta name="description" content="Physical AI technology built for deep-tech industries: the agentic platform for battery, chip, space, robotics, defense and advanced-energy factories. AgentMesh puts AI on the signals your equipment produces, next to the control system; AgentNexus runs agents across every site. Air-gapped by default, on Unovie's custom-built AMD or NVIDIA hardware accelerators, engineered for agentic performance, low latency and high availability.">
+<meta name="description" content="Physical AI technology built for deep-tech industries: the agentic platform for battery, chip, space, robotics, defense and advanced-energy factories. AgentMesh puts AI on the signals your equipment produces, next to the control system; AgentNexus runs agents across every site and connects to Claude and your ERP. AgentMesh is air-gapped by default, on Unovie's custom-built AMD or NVIDIA hardware accelerators, engineered for agentic performance, low latency and high availability.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -86,7 +86,7 @@
     <ul class="proof rv">
       <li><b>Safety stays with you</b><span>PLC, safety system and operator decide</span></li>
       <li><b>Low-latency decisions &lt; 30 ms</b><span>at the machine · design target</span></li>
-      <li><b>Air-gapped by default</b><span>no plant data leaves the site</span></li>
+      <li><b>Air-gapped at the machine</b><span>AgentMesh keeps plant data on site</span></li>
       <li><b>Born with compliance in mind</b><span>NIST SP 800-53 · NIST AI RMF</span></li>
     </ul>
     <div class="ticker rv">
@@ -212,7 +212,7 @@
       <p><b class="outcome">Answers in milliseconds, on hardware sized for the job.</b> How: a 30-millisecond decision budget at the machine, careful memory budgeting on shared-memory AMD and NVIDIA servers, compact model copies for speed and skill adapters instead of ever-bigger models.</p>
       <div class="spec"><span class="chip">&lt; 30 ms target</span><span class="chip">AMD · NVIDIA</span><span class="chip">compact models</span></div></div>
     <div class="dcard rv"><div class="glow" style="background:var(--steel)"></div><div class="ix">/ sovereign-reliable</div><h3>Sovereign &amp; Reliable Operations</h3>
-      <p><b class="outcome">Keeps running when a server fails or the internet drops, at a fixed cost.</b> How: systems your team can run without us — cloud-native microservices on a CNCF-conformant platform your team already knows. Air-gapped by default, built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves.</p>
+      <p><b class="outcome">Keeps running when a server fails or the internet drops, at a fixed cost.</b> How: systems your team can run without us — cloud-native microservices on a CNCF-conformant platform your team already knows. AgentMesh is air-gapped by default and AgentNexus connects out only where you allow it; both are built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves, and AgentNexus's model router keeps private decisions on local models, sending only what needs it to Claude, so the external-model bill stays small.</p>
       <div class="spec"><span class="chip">air-gapped</span><span class="chip">Mesh Arbiter</span><span class="chip">fixed cost</span></div></div>
   </div>
 </div></section>
@@ -266,9 +266,9 @@
     <tr><th></th><th class="m">AgentMesh</th><th class="n">AgentNexus</th></tr>
     <tr><td>Where it runs</td><td>Next to the lines and cells, on the factory network</td><td>A central cabinet serving every site</td></tr>
     <tr><td>How fast</td><td>A 30-millisecond decision budget</td><td>Answers within half a second</td></tr>
-    <tr><td>What it does</td><td>Reads robot, vision and sensor signals, decides, diverts, raises alarms and requests, drafts records</td><td>Runs agents across sites, drafts quality records and plans, learns from production</td></tr>
+    <tr><td>What it does</td><td>Reads robot, vision and sensor signals, decides, diverts, raises alarms and requests, drafts records</td><td>Runs agents across sites, drafts quotes, quality records and plans with Claude and your ERP, learns from production</td></tr>
     <tr><td>Architecture</td><td>Microservices on a CNCF Certified Kubernetes distribution · runs air-gapped</td><td>One CNCF-conformant cluster of 48 servers · microservices · sandboxed agents</td></tr>
-    <tr><td>Security</td><td>Designed against NIST SP 800-53 and the NIST AI RMF · air-gapped</td><td>Sealed agents · least privilege · inside your enclave</td></tr>
+    <tr><td>Security</td><td>Designed against NIST SP 800-53 and the NIST AI RMF · air-gapped</td><td>Sealed agents · least privilege · inside your enclave · outbound-only to Claude and your ERP</td></tr>
     <tr><td>What it never does</td><td>Overrule your PLC, safety system or operator</td><td>Move equipment at all</td></tr>
     <tr><td>Hardware</td><td>AMD Ryzen AI Max+ 395 · NVIDIA Jetson AGX Thor (robotics &amp; DeepVision) · NVIDIA DGX Spark</td><td>AMD Ryzen AI Max+ 395 rack · NVIDIA DGX Spark</td></tr>
   </table>

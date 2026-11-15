@@ -37,6 +37,13 @@ reusing existing assets/site.{css,js}` is **normal** — it means it's reusing t
   company/customer names, vessel names, vehicle makes/models, airline names, account names,
   partners/competitors, product codenames (e.g. `C2C`, `MarineTwin`, `TwinVin`, `MARSX`,
   `Easybiz`, `Komodo`), or `Snapdragon`/SoC model numbers.
+- **Third-party systems may be named (allowed 15 Nov 2026):** the external systems AgentNexus
+  connects to (e.g. Claude / Anthropic, Oracle NetSuite, Infor M3, Microsoft 365, SAP, Maximo,
+  Autodesk Fusion) can be named as integrations. This does **not** lift customer anonymization,
+  the no-competitor rule, or the ban on logos/endorsement language without written agreements.
+- **Air-gap scope:** only **AgentMesh** is air-gapped. AgentNexus connects out (Claude, ERP),
+  and its Model Router routes local-first: private decisions stay on rack models, only what needs
+  Claude goes out (lower external-model opex). Controlled programs keep the outbound skills off.
 - **Studio descriptor:** always write the studio's offering as **"custom Edge-AI Agentic Systems"** (capitalized as a branded term) — never "custom edge-AI systems".
 - **Positioning:** Unovie is **founder-led by visionary-caliber founders** who also ship. Frame the market as a third path between (a) slow multi-year SI transformation and (b) abstract big-vision consulting — Unovie = vision **and** execution **and** ownership. Don't name competitors (no Infosys / Hang Ten / Sikka / their client logos).
 - The old partner ticker (`NVIDIA · AMD · Qualcomm · Siemens · GE`) was **removed 15 Nov 2026** (read as endorsements). Hero now says "Runs on AMD · NVIDIA / Connects to PLCs · MES …". Don't add partner or customer logos without written agreements. **Exception:** the **Device Platform** tabs name real

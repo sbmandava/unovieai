@@ -210,6 +210,7 @@
     <li><a href="#data">Keeping data safe</a></li>
     <li><a href="#failures">When something breaks</a></li>
     <li><a href="#kits">Domain kits</a></li>
+    <li><a href="#devices">Describing devices</a></li>
     <li><a href="#glossary">Glossary</a></li>
   </ol>
 </nav>
@@ -673,8 +674,28 @@ kit's main signal. The first kit built end to end is Rotating Equipment Health.<
   <tr><td>Document Copilot</td><td>Manuals, procedures, work orders</td><td>None (no outputs)</td></tr>
 </table>
 
-<!-- 10 -->
-<h2 id="glossary"><span class="n">11</span>Glossary</h2>
+<!-- 11 -->
+<h2 id="devices"><span class="n">11</span>Describing devices</h2>
+<p>Agents are starting to operate lab and factory hardware through standard device descriptions. Anthropic's
+Model Hardware Standard (MHS) is one, in research preview since August 2026, by application and with no public
+spec yet. OpenMHS is an independent open project with a published spec and schemas. AgentMesh uses the idea for
+the opposite purpose: to pin down what the pod may read, what it may ask for, and what it may never touch.</p>
+<table>
+  <tr><th>Where it fits</th><th>What it gives us</th></tr>
+  <tr><td>Device descriptions</td><td>A machine-checkable reference file for every asset, sensor and output: what it measures, what may be changed, which lane, the enforced limits. The site's output map is built from these files.</td></tr>
+  <tr><td>Evidence</td><td>The Evidence Log exports signed bundles that verify offline, anywhere. Rejected and refused actions are recorded too.</td></tr>
+  <tr><td>Simulation and replay</td><td>Bench simulators are declared as simulated, with their gaps written down. Replaying a day's data is read-only.</td></tr>
+  <tr><td>The language model's view</td><td>Reason and the document assistant see devices through read tools only. No write tool exists for them.</td></tr>
+</table>
+<p>Where it does <b>not</b> fit: the path from signal to Lane A or Lane B. The Gateway and the Decision Engine
+never call a device-description endpoint, and the pod enforces limits itself. AgentNexus never opens a live
+connection into the pod; reference files and evidence bundles leave it as files.</p>
+<div class="note"><b>In design.</b> We use the OpenMHS schemas until we have access to Anthropic's preview, and keep
+our own device model standard-neutral so adding Anthropic's format later is an exporter, not a rewrite. We don't
+claim MHS compatibility: no spec is public.</div>
+
+<!-- 12 -->
+<h2 id="glossary"><span class="n">12</span>Glossary</h2>
 <dl class="gloss">
   <dt>AgentNexus</dt><dd>Unovie's rack for a fleet of sites. It runs agents that work across sites, at business speed, and never controls equipment.</dd>
   <dt>DAQ</dt><dd>Data acquisition hardware that samples sensors such as accelerometers or microphones.</dd>

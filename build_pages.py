@@ -884,7 +884,7 @@ def _svg_mesh_v2():
     return "".join(o)
 
 def _svg_nexus_v2():
-    o = ['<svg class="axviz ax2" viewBox="0 0 1000 470" role="img" aria-label="AgentNexus: AgentMesh pods at cell lines, fab bays, test stands, shipyards and storage fleets send findings over encrypted links to one 42U rack of twelve shelves with four servers each. Thousands of agents sleep in sealed sandboxes and wake on demand; the Model Router, Reasoning Model, Vector Memory and Kiln serve them, tested skill updates flow back to the pods, and results go to MES, QMS, work-order systems and people. AgentNexus never moves equipment.">',
+    o = ['<svg class="axviz ax2" viewBox="0 0 1000 470" role="img" aria-label="AgentNexus: AgentMesh pods at cell lines, fab bays, test stands, shipyards and storage fleets send findings over encrypted links to one 42U rack of twelve shelves with four servers each. Thousands of agents sleep in sealed sandboxes and wake on demand; the Model Router, Reasoning Model, Vector Memory and Kiln serve them, tested skill updates flow back to the pods, and results go to MES, QMS, ERP and work-order systems and people; business skills can call Claude, outbound only. AgentNexus never moves equipment.">',
          '<defs><marker id="axh4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs>',
          '<text x="20" y="24" class="l">SITES · AGENTMESH PODS</text><text x="290" y="24" class="l">AGENTNEXUS · ONE RACK · YOUR ENCLAVE</text><text x="790" y="24" class="l">BUSINESS</text>']
     sites = [("Cell Line 2", "battery"), ("Fab Bay 3", "chip fab"), ("Test Stand 2", "space"), ("Yard 1", "shipyard"), ("Storage fleet", "14 sites")]
@@ -913,13 +913,13 @@ def _svg_nexus_v2():
             awake = _rnd.random() < 0.14
             o.append(f'<circle cx="{460+c*12.6:.1f}" cy="{80+r*12}" r="3.2" class="ag {"aw" if awake else ""}" style="animation-delay:-{_rnd.uniform(0,4):.2f}s"/>')
     o.append('<text x="456" y="160" class="s2">most asleep · any agent wakes in &lt; 0.5 s (target)</text>')
-    layers = [("Model Router", "picks the model and skill adapter"), ("Reasoning Model", "compares sites, drafts records and plans"),
+    layers = [("Model Router", "local first · Claude only when needed"), ("Reasoning Model", "compares sites, drafts records and plans"),
               ("Vector Memory", "cross-site patterns and history"), ("Kiln", "trains skill adapters · tested before release")]
     for n, (a, b) in enumerate(layers):
         y = 174 + n * 54
         o.append(f'<rect x="456" y="{y}" width="290" height="46" rx="8" class="bx ly"/><text x="470" y="{y+20}" class="t2">{a}</text><text x="470" y="{y+37}" class="s2">{b}</text>')
     o.append('<text x="460" y="404" class="l2">MESH ARBITER · DATA COPIED ACROSS SHELVES</text>')
-    outs = [("MES · QMS", "quality records · NCRs", 40, ""), ("Work orders", "SAP · Maximo · planning", 130, ""), ("People", "engineers · operators", 220, ""), ("Never moves", "equipment — advisory only", 330, "dash")]
+    outs = [("MES · QMS", "quality records · NCRs", 40, ""), ("ERP · work orders", "SAP · NetSuite · Infor · Maximo", 130, ""), ("People", "engineers · operators", 220, ""), ("Never moves", "equipment — advisory only", 330, "dash")]
     for a, b, y, c in outs:
         cls = "bx-d" if c else "bx"
         o.append(f'<rect x="790" y="{y}" width="190" height="64" rx="10" class="{cls}"/><text x="804" y="{y+27}" class="t2">{a}</text><text x="804" y="{y+45}" class="s2">{b}</text>')
@@ -927,7 +927,7 @@ def _svg_nexus_v2():
             d = f"M760,230 C778,230 772,{y+32} 788,{y+32}"
             o.append(f'<path d="{d}" class="lk-o" marker-end="url(#axh4)"/>')
             o.append(_flow(d, "fl-a", 2.0, (y/90)*0.5))
-    o.append('<rect x="20" y="440" width="960" height="24" rx="12" class="bx-d"/><text x="500" y="456" class="l" text-anchor="middle">SECURE BY DESIGN · CNCF-CONFORMANT · MICROSERVICES NATIVE · RUNS AIR-GAPPED IN YOUR ENCLAVE</text>')
+    o.append('<rect x="20" y="440" width="960" height="24" rx="12" class="bx-d"/><text x="500" y="456" class="l" text-anchor="middle">SECURE BY DESIGN · CNCF-CONFORMANT · IN YOUR ENCLAVE · CONNECTS TO CLAUDE AND YOUR ERP</text>')
     o.append('</svg>')
     return "".join(o)
 
@@ -1031,24 +1031,32 @@ MESH_SECTIONS = (
     '<div class="lane a rv"><div class="tag" style="color:var(--accent)">Lane A</div><div class="big">Acts directly</div><p>Only for outputs where a wrong call costs little and is easy to undo.</p><ul><li><b>Reject gate</b>a part with a bad weld signature goes to the reject bin</li><li><b>Diverter</b>product is routed to rework instead of shipping</li><li><b>IT quarantine</b>a suspicious device is isolated on the IT side</li></ul></div>'
     '<div class="lane b rv"><div class="tag" style="color:var(--steel)">Lane B</div><div class="big">Alarm + request</div><p>Anything that touches process safety. AgentMesh asks; people and safety systems decide.</p><ul><li><b>Alarm</b>raised on your existing alarm system</li><li><b>Request</b>written to a register your PLC or safety system reads</li><li><b>Operator</b>sees the request and the evidence, and decides</li></ul></div>'
     '</div><div class="never rv"><b>Never:</b> AgentMesh does not write to valves or safety functions on its own, and the language model is never in the path that moves equipment. Every decision — in either lane — is written to the signed Evidence Log.</div>')
-  + S("05","Deep-tech sites","Built for the factories "+A_+"being built now."+E_,
+  + S("05","Every device, described","A reference file "+A_+"for every machine."+E_,
+    disc([
+     ("/reference","Every device and output, described","Each asset, sensor and output gets a machine-checkable reference file: what it measures, what may be changed, which lane it belongs to and the limits that are enforced. The site's output map is built from these files, so a typo is a load error, not a lost limit.",["reference files","enforced limits","output map"]),
+     ("/evidence","Evidence that verifies anywhere","The Evidence Log exports signed evidence bundles that verify offline — on the standby server, in your IT, or on your auditor's laptop. Change one receipt and verification fails.",["signed bundles","offline verify","tamper-evident"]),
+     ("/simulation","Honest simulation and replay","Bench simulators are declared as simulated, with their gaps written down, so they can never answer for real hardware. Replaying a day's data is read-only by construction.",["simulated","stated gaps","read-only replay"]),
+     ("/read-only","Read-only for the language model","The assistant that explains events and drafts records reaches devices only through read tools. There is no write tool for it to misuse.",["read tools only","no write path","drafts only"])])
+    + '<p class="lead rv" style="font-size:15px;margin-top:14px">We describe devices with the open <b>OpenMHS</b> schemas for now, and keep our own model standard-neutral so we can add Anthropic\'s <b>Model Hardware Standard</b> when its format is published (it is a research preview today, with no public spec). Whichever standard wins, one rule holds: the description is for checking and evidence, not for an agent to drive the machine. The pod\'s own Gatekeeper enforces the limits, and Lane B stays a request your PLC decides. In design.</p>',
+    "Agents are starting to operate lab and factory hardware through standard device descriptions. We use the same idea the other way round: to pin down exactly what AgentMesh may read, what it may ask for, and what it may never touch.", "devices")
+  + S("06","Deep-tech sites","Built for the factories "+A_+"being built now."+E_,
     '<div class="disc"><a class="dcard rv" href="../sectors/battery.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/battery</div><h3>Battery &amp; energy storage</h3><p>In-line weld and formation QA; thermal-runaway warning on storage sites, as an alarm.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/fabs.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/fab</div><h3>Chip fabs &amp; suppliers</h3><p>Fab utilities and supplier plants, watched through ramp-up. IP stays on site.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/space.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/space</div><h3>Space &amp; aerospace</h3><p>Test stands watched run by run, beside the qualified test system; quality records drafted.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/robotics.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/robotics</div><h3>Robotics, drones &amp; autonomy</h3><p>Joint and gearbox health at every cell; fleet health for systems that run offline.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/defense.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/defense</div><h3>Defense &amp; dual-use</h3><p>Line and yard QA, machinery health and network watch, inside your enclave.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/energy.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/energy</div><h3>Advanced energy &amp; nuclear</h3><p>Balance of plant and site networks. Never on safety systems.</p><span class="go">Sector page →</span></a></div>',
     "Each sector has its own page: the problems, the jobs, what AgentMesh connects to and the pilot.", "sectors")
-  + S("06","Secure by design","Born with "+A_+"compliance in mind."+E_,
+  + S("07","Secure by design","Born with "+A_+"compliance in mind."+E_,
     disc([
      ("/sp800-53","Designed against NIST SP 800-53","Built around SP 800-53 Rev. 5 control families as tailored for OT by the SP 800-82r3 overlay: boundary protection (air-gapped, one-way outputs), least privilege, audit, change control, integrity and supply chain.",["SC · AC · AU","CM · SI · SR","OT overlay"]),
      ("/ai-rmf","Governed by the NIST AI RMF","Govern, Map, Measure, Manage: every kit declares its context and lane, every change is tested on unseen cases, and the language model only drafts — guided by the Generative AI Profile (NIST AI 600-1).",["AI RMF","AI 600-1","human sign-off"]),
      ("/your-frameworks","Evidence for your industry's frameworks","The nightly evidence pack is material for SP 800-171 and CMMC programs, IEC 62443, fab equipment-security reviews, aerospace quality records and battery-site safety reviews. Compliance stays with your assessor; we give them the evidence.",["800-171 · CMMC","IEC 62443","SEMI E187"]),
      ("/data","Data that can't leave, doesn't","Export-controlled, defense and IP-sensitive data stays on site, on Unovie's custom-built, high-availability hardware accelerators inside the security boundary you already maintain. Models improve on site; nothing is shared back to us.",["air-gapped","your enclave","on-site learning"])]),
     "Deep-tech sites can't bolt security on later, so we didn't either. AgentMesh was designed from day one against the frameworks their security and compliance teams already use.", "security")
-  + S("07","Cloud-native by design","CNCF-conformant. "+A_+"Microservices native."+E_,
+  + S("08","Cloud-native by design","CNCF-conformant. "+A_+"Microservices native."+E_,
     disc([
      ("/cncf","CNCF-conformant platform","Every Sovereign Pod runs a CNCF Certified Kubernetes distribution, with CNCF projects underneath. Your platform team runs it with the same tools, skills and practices as the rest of your estate — no proprietary appliance OS.",["Certified Kubernetes","CNCF projects","open standards"]),
      ("/microservices","Microservices native","The Unovie Gateway, Signal Encoders, Vector Memory, Decision Engine, Reasoning Model, Evidence Log and Kiln each run as their own containerised service, talking over typed contracts. Each one scales, updates and rolls back on its own.",["containerised services","typed gRPC contracts","independent rollout"]),
      ("/declarative","Declarative and repeatable","Pinned images and declarative manifests: the pod on a new line is the same as the pod on the last one. Playbooks and skill adapters ship as versioned artefacts, signed and reversible.",["pinned images","declarative","versioned"]),
      ("/secure-defaults","Secure defaults, built in","Default-deny network policy for every namespace, secrets encrypted at rest, sandboxed workloads — and failover handled by the Mesh Arbiter in milliseconds, not left to the scheduler.",["default-deny","encrypted secrets","Mesh Arbiter"])]),
     "AgentMesh is built the way modern platform teams already run software — cloud-native, on open standards — and still runs air-gapped at the machine.", "cloud-native")
-  + S("08","Domain kits","Packaged for "+A_+"the assets you run."+E_,
+  + S("09","Domain kits","Packaged for "+A_+"the assets you run."+E_,
     kits([("rot","Robot &amp; Motion Health","Joint, servo, gearbox and spindle health on robots, motion axes and conveyors — with a drafted work order.","joint current · torque · vibration"),
           ("bat","Battery Line &amp; Storage Safety","Weld, formation and aging signatures in line; thermal-runaway precursors on storage fleets, as an alarm.","weld · cycler · off-gas"),
           ("ele","Electrical Health","Drives, tool power, inverters and switchgear: early signs of arcing and insulation failure.","power quality · partial discharge"),
@@ -1059,7 +1067,7 @@ MESH_SECTIONS = (
     + "".join(f'<figure class="rv"><img src="../assets/images/sketch/{f}.jpg" alt="Illustration: {c}" loading="lazy"><figcaption>{c}</figcaption></figure>' for f,c in [("sensors","Vibration + ultrasonic sensors"),("daq","High-speed signal DAQ"),("weld-clamp","Weld-current clamp"),("agx-thor","DeepVision at the cell")])
     + '</div><p class="illus rv" style="margin-top:10px">Generic partner hardware · illustrations</p>',
     "Each kit packages the connections, fingerprints, rules, playbook and reports for one class of asset. A pod can run several.")
-  + S("09","Runs on","AMD or NVIDIA. "+A_+"Custom-built for agentic performance, low latency and high availability."+E_,
+  + S("10","Runs on","AMD or NVIDIA. "+A_+"Custom-built for agentic performance, low latency and high availability."+E_,
     hwrow([("sketch/sovereign-pod","ryzen-ai-max-395","Runs today",True,"AMD Ryzen AI Max+ 395","The reference Sovereign Pod: four servers in 3U with 2 × 10GbE networking and NVMe storage, quiet enough for a rack on the factory floor."),
            ("sketch/agx-thor","agx-thor","Available on",False,"NVIDIA Jetson AGX Thor","Robotics and DeepVision at the tool — inspection, robot cells and wafer handling in the fab."),
            ("sketch/dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot.")])
@@ -1082,38 +1090,48 @@ NEXUS_SECTIONS = (  S("03","How it works","One rack for "+T_+"a fleet of sites."
     f'<div class="axwrap rv">{SVG_NEXUS}</div>'
     + flow4([("Event","An AgentMesh pod sends what it found, over an encrypted link.","AgentMesh → AgentNexus"),
              ("Wake","The right agent wakes in its sealed sandbox on any free server.","Unovie Agent Runtime"),
-             ("Reason","The Unovie Model Router picks the model and skill adapter; the agent compares sites and history.","Model Router · Reasoning Model"),
-             ("Act","Work orders, quality records and reports go to MES, QMS, SAP or Maximo, and to your people.","Business systems")]),
+             ("Reason","The Unovie Model Router keeps private decisions on the rack's own models and sends only what needs it to Claude; the agent compares sites and history.","Model Router · local first"),
+             ("Act","Work orders, quality records and reports go to MES, QMS, your ERP or Maximo, and to your people.","Business systems")]),
     "AgentMesh keeps the fast loop at each line and site. AgentNexus works at business speed across all of them — and never moves equipment.", "how")
   + S("04","Inside the rack","Four layers, "+T_+"one system."+E_,
     '<figure class="rackfig rv"><img src="../assets/images/sketch/agentnexus-rack.jpg" alt="Illustration of the AgentNexus reference rack: a 42U cabinet with two 10GbE switches, twelve 3U trays of four AMD Ryzen AI Max+ 395 nodes, one tray pulled out, and dual PDUs" loading="lazy"><figcaption>Reference rack · 42U · 12 trays × 4 AMD Ryzen AI Max+ 395 · illustration</figcaption></figure>'
     + layers([("Layer 1","Agents","The Unovie Agent Runtime gives every agent a sealed sandbox. Idle agents sleep and wake on demand, network access is allow-listed, and passwords never reach the agent.",["sandboxed","sleep · wake","allow-listed"]),
-            ("Layer 2","Models","The Unovie Model Router and Decision Models pick the model and skill adapter for every request. The Unovie Reasoning Model answers; Vector Memory powers search.",["Model Router","skill adapters","open weights"]),
+            ("Layer 2","Models","The Unovie Model Router and Decision Models pick the model and skill adapter for every request — local first. Private decisions and routine work stay on the Unovie Reasoning Model in the rack; only work that needs Claude goes out. Vector Memory powers search.",["local first","skill adapters","Claude when needed"]),
             ("Layer 3","Learning","The Kiln turns production outcomes into new skill adapters — tested and trialled before they go live.",["Kiln","tested","reversible"]),
             ("Layer 4","Platform","Twelve shelves of four servers run as one system. Data is copied across shelves; the Mesh Arbiter moves work when something stops.",["12 shelves","copied data","Mesh Arbiter"])]))
-  + S("05","Gets better from production","Nothing goes live "+T_+"unless it's better."+E_,
+  + S("05","Business skills","Connected to Claude "+T_+"and your ERP."+E_,
+    disc([
+     ("/operations","Operations","The morning production report with OEE and downtime, and breakdown diagnosis with the likely causes ranked — built from the machines' own downtime record and the signals before the failure, so the write-up is waiting when the technician arrives.",["morning report","OEE","breakdown diagnosis"]),
+     ("/quality","Quality","Non-conformance write-ups and 8D corrective-action reports, with process data lined up in time with the defect before any cause is named.",["NCR","8D · CAPA","time-aligned"]),
+     ("/supply","Supply chain","Supplier quote requests and side-by-side bid comparisons, using actual part usage and failure history across every site.",["supplier RFQs","bid comparison","cross-site history"]),
+     ("/sales","Sales and design","Quotes from drawings and design comparisons, priced against real machine availability and field performance per design.",["quotes","trade studies","shop load"])])
+    + '<p class="lead rv" style="font-size:15px;margin-top:14px"><b>The router is the integration point.</b> The Unovie Model Router decides, request by request, what stays on the rack and what goes out: private plant decisions and routine drafting run on the local models, and only the work that needs Claude, Anthropic\'s language model, leaves through the rack\'s exit gate — filtered and logged. Fewer external calls means a smaller metered bill and less private data on the wire.</p>'
+    + '<p class="lead rv" style="font-size:15px;margin-top:10px">Skills run as sealed agents on the rack. They read your ERP and documents (SAP, Oracle NetSuite, Infor M3, Microsoft 365) outbound and read-only, and a named person approves every quote, report and supplier email before it is sent. Only AgentNexus connects out; the AgentMesh pods stay air-gapped. Controlled data never leaves the rack, and on controlled programs the skills stay off. In design.</p>'
+    + '<div class="disc" style="margin-top:22px"><div class="dcard rv"><div class="glow" style="background:var(--steel)"></div><div class="ix">/commissioning</div><h3>Commissioning by interview</h3><p>Claude on AgentNexus interviews your site engineer about the hardware and drafts the reference files and the output map for each AgentMesh pod. Your controls engineer and Unovie review every lane and limit, and only a signed site-config release reaches the pod — the same way images and models do. AgentNexus never opens a live connection into the pod, and nothing reaches it unreviewed. In design.</p><div class="spec"><span class="chip">interview</span><span class="chip">reviewed lanes and limits</span><span class="chip">signed release</span></div></div></div>',
+    "Much of a plant's day is paperwork built from records. AgentNexus runs business skills on the live, time-stamped records from every AgentMesh pod — drafting quotes, quality reports and the morning report for your people to approve.", "skills")
+  + S("06","Gets better from production","Nothing goes live "+T_+"unless it's better."+E_,
     '<div class="loopwrap"><div class="rv">'+loop_svg()+'</div><div class="gate">'
     '<div class="rv"><b>Learn.</b> Agents and operators report outcomes; the router records what was asked and what worked.</div>'
     '<div class="rv"><b>Train.</b> The Kiln trains a small skill adapter for one job on the rack — the base model stays the same.</div>'
     '<div class="rv"><b>Test.</b> The new adapter must beat the current one on cases it has never seen.</div>'
     '<div class="rv"><b>Trial, then switch on.</b> It quietly answers a slice of live traffic first; only then is it switched on everywhere, with a one-step rollback.</div>'
     '</div></div>')
-  + S("06","Runs on","AMD or NVIDIA. "+T_+"Custom-built for agentic performance, low latency and high availability."+E_,
+  + S("07","Runs on","AMD or NVIDIA. "+T_+"Custom-built for agentic performance, low latency and high availability."+E_,
     hwrow([("sketch/agentnexus-rack","ryzen-ai-max-395","Reference design",True,"AMD Ryzen AI Max+ 395 rack","Twelve shelves of four servers in one 42U rack — the same server as the AgentMesh pod."),
            ("dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab: where new skill adapters are trained, and a small AgentNexus for one site."),
            ("agx-thor","agx-thor","Pairs with",False,"AgentMesh on Jetson AGX Thor","Robotics and DeepVision tools in the fab report to the same AgentNexus.")]))
-  + S("07","By design","Sized for a fleet",
+  + S("08","By design","Sized for a fleet",
     kpistrip([("~860","agents awake at once · estimate"),("1000s","agents in total, mostly asleep"),("4 of 12","shelves can fail without losing saved agents"),("0.5<span class='o'>s</span>","response budget · target")])
     + '<p class="lead rv" style="font-size:15px;margin-top:14px">Estimates from measurements on single servers; we replace them with measured numbers after our bench tests.</p>'
     + '<div class="disc" style="margin-top:22px"><a class="dcard rv" href="../resources/agentnexus-architecture.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/architecture</div><h3>AgentNexus — Architecture Overview</h3><p>How the rack is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders.</p><div class="spec"><span class="chip">overview</span><span class="chip">diagrams</span></div></a></div>')
-  + S("08","Secure by design","Born with "+T_+"compliance in mind."+E_,
+  + S("09","Secure by design","Born with "+T_+"compliance in mind."+E_,
     disc([
      ("/sandbox","Least privilege for every agent","Each agent runs in a sealed sandbox with allow-listed network access, and credentials never reach the agent — access control and identification as SP 800-53 describes them.",["AC · IA","sealed sandboxes","allow-listed"]),
      ("/audit","Every action on the record","Agent actions, model routing decisions and drafted records are written to the signed Evidence Log, for audit and non-repudiation.",["AU","signed","exportable"]),
      ("/change","Change control for AI","New skill adapters are trained, tested on unseen cases, trialled and switched on only if better — with one-step rollback. That is AI RMF Measure and Manage, and SP 800-53 change control.",["CM · SI","AI RMF","rollback"]),
-     ("/enclave","Inside your enclave","AgentNexus runs on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, inside the boundary you already accredit — the natural home for CUI and export-controlled programs under SP 800-171 and CMMC.",["your enclave","800-171 · CMMC","dual-use"])]),
+     ("/enclave","Inside your enclave","AgentNexus runs on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, inside the boundary you already accredit — the natural home for CUI and export-controlled programs under SP 800-171 and CMMC. Controlled data never leaves the rack; the outbound business skills stay off on controlled programs.",["your enclave","800-171 · CMMC","dual-use"])]),
     "Designed against NIST SP 800-53 controls and the NIST AI Risk Management Framework from the first line of code — evidence for your assessors, not a certificate from us.", "security")
-  + S("09","Cloud-native by design","CNCF-conformant. "+T_+"Microservices native."+E_,
+  + S("10","Cloud-native by design","CNCF-conformant. "+T_+"Microservices native."+E_,
     disc([
      ("/cncf","CNCF-conformant cluster","The 48 servers run as one CNCF Certified Kubernetes cluster, with CNCF graduated and incubating projects for service networking, replicated storage and observability.",["Certified Kubernetes","CNCF projects","one cluster"]),
      ("/microservices","Microservices native","The Agent Runtime, Model Router, Decision Models, Reasoning Model, Vector Memory and Kiln are separate services with typed contracts — each scales, updates and rolls back on its own, across twelve failure zones.",["independent services","typed contracts","12 failure zones"]),
@@ -1320,7 +1338,7 @@ STACK_ROWS=[
  ("Kiln","tested improvements"),
  ("Evidence Log","signed record"),
  ("Unovie Agent Runtime","fleet agents in sandboxes"),
- ("Unovie Model Router","model + skill adapter per request"),
+ ("Unovie Model Router","local model, skill adapter or Claude, per request"),
  ("Mesh Arbiter","failover"),
 ]
 def stackmatrix(cols, marks, note):
@@ -1736,7 +1754,7 @@ for _t in SECTORS: sector_page(_t)
 
 # ----- FAQ -----
 FAQ=[
- ("Does any of our data leave the site?","No, not by default. AgentMesh runs air-gapped on your factory network, and raw signals, images and models stay on site. The only things that go out are the ones you choose, such as work orders to your maintenance system, over outbound-only connections."),
+ ("Does any of our data leave the site?","No, not by default. AgentMesh runs air-gapped on your factory network, and raw signals, images and models stay on site. The only things that go out are the ones you choose, such as work orders to your maintenance system, over outbound-only connections. AgentNexus, the central rack, can also connect out to Claude and your ERP for business skills such as quotes and quality reports — outbound only, with a named person approving every draft, and switched off on controlled programs."),
  ("What happens when the internet or site link drops?","Nothing changes at the machine. Each AgentMesh pod decides locally and keeps running without a link. Findings for AgentNexus queue up and sync when the link returns."),
  ("Is Unovie a safety system?","No. AgentMesh is never on the path that moves equipment and makes no SIL claim. It acts directly only on low-consequence outputs such as a reject gate or rework diverter (Lane A). Anything safety-related is an alarm and a request that your PLC, safety system and operators decide (Lane B)."),
  ("What hardware does it run on?","Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability. The reference AgentMesh pod is four AMD Ryzen AI Max+ 395 servers in a 3U shelf; NVIDIA Jetson AGX Thor serves robotics and vision at the tool, and NVIDIA DGX Spark serves as the AI engineering lab."),
@@ -1746,6 +1764,7 @@ FAQ=[
  ("How is production priced?","Per monitored asset and domain kit, never per seat or per camera. We quote production after the pilot, when we both know the asset count and the value."),
  ("How fast can we reach production?","The target is about one quarter from the end of the pilot to a production site, because the pilot's playbook, connections and models carry straight over."),
  ("Which systems does it connect to?","Sensors, robot controllers, vision stations, test rigs, PLCs (read-only, plus listed Lane A outputs), MES and quality systems, historians, and work-order systems such as SAP and Maximo. Industrial protocols include OPC UA, EtherCAT and Modbus."),
+ ("Do you support Anthropic's Model Hardware Standard (MHS)?","Not yet: Anthropic's MHS is a research preview, by application, with no public spec, and Unovie isn't in it. AgentMesh already describes every device and output in a machine-checkable reference file with enforced limits, using the open OpenMHS schemas for now, and keeps its own model standard-neutral so we can add Anthropic's format when it is published. One rule holds whichever standard wins: a language model never operates your equipment. The pod enforces the limits itself, and Lane B stays a request your PLC decides."),
  ("Is it certified or compliant with NIST, CMMC or IEC 62443?","Unovie is designed against NIST SP 800-53 and the NIST AI RMF and produces evidence for programs such as SP 800-171/CMMC and IEC 62443. Compliance is determined by your assessor, not by a product."),
  ("Does the AI change itself over time?","Only through tests. Each night the Kiln proposes small playbook and skill-adapter changes and keeps them only if they beat what is running on held-out cases. Every change is signed, logged and reversible, and the base model never changes."),
  ("Do you train on our data for other customers?","No. Models improve on your site, from your data, and nothing is shared back to Unovie or to other customers."),
@@ -1916,7 +1935,7 @@ _sol="\n".join(f"- [{_name(_solmap[k][2])}]({_u('solutions/'+k+'.html')}): {_fir
 _oth="\n".join(f"- [{_name(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL if s[0] not in _IND)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
-> Physical AI technology, built for deep-tech industries — the sovereign, agentic platform for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — sensor-dense, AI-heavy, robot-heavy factories in battery, chips, space, robotics and autonomous systems, defense and advanced energy — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on every signal a next-generation line produces — robots, vision, sensors and test rigs — at the machine; AgentNexus runs AI agents across every site. Air-gapped by default and designed against NIST SP 800-53 and the NIST AI RMF; safety decisions stay with the customer's safety PLC, cell controller and operators.
+> Physical AI technology, built for deep-tech industries — the sovereign, agentic platform for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — sensor-dense, AI-heavy, robot-heavy factories in battery, chips, space, robotics and autonomous systems, defense and advanced energy — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on every signal a next-generation line produces — robots, vision, sensors and test rigs — at the machine; AgentNexus runs AI agents across every site. AgentMesh is air-gapped by default; AgentNexus can connect out to Claude and the customer's ERP for business skills such as quotes, quality reports and the morning production report. Designed against NIST SP 800-53 and the NIST AI RMF; safety decisions stay with the customer's safety PLC, cell controller and operators.
 
 Unovie is a four-year-old, engineering-first, AI-native company built for Physical AI, headquartered in Austin, Texas and serving customers nationally. Each founder brings 20+ years in OT and Physical AI (control systems, robot cells, factory networks, safety systems and low-latency edge systems). Its offering is written as "custom Edge-AI Agentic Systems". Figures on this site marked "target" or "estimate" are design targets, not measurements.
 
@@ -1965,8 +1984,10 @@ Pricing is per monitored asset and domain kit, never per seat or per camera.
 - Skill adapters: small add-ons that specialise the Unovie Reasoning Model for one job, swapped in without a restart.
 - Kiln: the improvement loop — trains, tests on unseen cases, trials on live traffic and promotes changes only if they beat what is running.
 - Unovie Agent Runtime: runs each AgentNexus agent in a sealed sandbox, sleeps idle agents and wakes them on demand.
-- Unovie Model Router: picks the model and skill adapter for every request.
+- Unovie Model Router: picks the model and skill adapter for every request, local first — private decisions stay on the rack's own models and only work that needs an external model such as Claude goes out, which keeps external-model opex low.
 - Mesh Arbiter: failover service that moves work when a server or shelf stops.
+- Device reference files: every asset, sensor and output described in a machine-checkable file (what it measures, what may change, its lane, enforced limits), using the open OpenMHS schemas for now and kept standard-neutral for Anthropic's Model Hardware Standard when its format is published; Unovie does not claim MHS compatibility. Limits are enforced by the pod, never by a language model.
+- Commissioning by interview (in design): Claude on AgentNexus interviews the site engineer and drafts reference files and the output map; people review lanes and limits; a signed site-config release goes to the pod.
 - Domain kit: a packaged domain (connections, fingerprints, rules, playbook, reports) for one class of asset.
 - Operator HMI: the screen each AgentMesh pod provides — live asset signals, the decision and its lane, similar past events, the drafted work order and the nightly Kiln evidence pack. AgentNexus has a fleet HMI showing findings across sites, agents at work, model routing, plans awaiting sign-off and skill adapters in trial.
 
