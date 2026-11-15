@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=ea762d82ee">
+<link rel="stylesheet" href="assets/site.css?v=f31a268f2a">
 <script data-theme-init>(function(){var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}var s=null;try{s=m?sessionStorage.getItem('uvTheme'):localStorage.getItem('uvTheme');}catch(e){}document.documentElement.setAttribute('data-theme',(s==='light'||s==='dark')?s:(m?'dark':'light'));})();</script>
 </head>
 <body>
@@ -25,7 +25,14 @@
 <header class="nav"><div class="wrap"><div class="row">
   <a class="brand" href="index.html"><img class="logo" src="assets/images/logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
-    <a href="#accelerators">Agentic jobs</a>
+    <div class="drop"><button data-cursor>Sectors ▾</button><div class="menu">
+      <a href="sectors/battery.html"><span class="ic">01</span><span><span class="t">Battery &amp; energy storage</span><br><span class="s">Cell lines and storage sites</span></span></a>
+      <a href="sectors/fabs.html"><span class="ic">02</span><span><span class="t">Chip fabs &amp; suppliers</span><br><span class="s">Fab utilities and supplier plants</span></span></a>
+      <a href="sectors/space.html"><span class="ic">03</span><span><span class="t">Space &amp; aerospace</span><br><span class="s">Test stands and vehicle lines</span></span></a>
+      <a href="sectors/robotics.html"><span class="ic">04</span><span><span class="t">Robotics, drones &amp; autonomy</span><br><span class="s">Robot cells, drones and vessels</span></span></a>
+      <a href="sectors/defense.html"><span class="ic">05</span><span><span class="t">Defense &amp; dual-use</span><br><span class="s">Shipyards and dual-use factories</span></span></a>
+      <a href="sectors/energy.html"><span class="ic">06</span><span><span class="t">Advanced energy &amp; nuclear</span><br><span class="s">Balance of plant, non-safety only</span></span></a>
+    </div></div>
     <div class="drop"><button data-cursor>Platform ▾</button><div class="menu">
       <a href="platform/agentmesh.html"><span class="ic">01</span><span><span class="t">AgentMesh</span><br><span class="s">AI at the machine, next to the control system</span></span></a>
       <a href="platform/agentnexus.html"><span class="ic">02</span><span><span class="t">AgentNexus</span><br><span class="s">Agents working across every site</span></span></a>
@@ -42,22 +49,26 @@
       <a href="resources/edge-ai-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">Frozen-Base Doctrine — Whitepaper</span><br><span class="s">Training without retraining</span></span></a>
       <a href="gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">05</span><span><span class="t">Edge-Native Economics — Whitepaper</span><br><span class="s">Predictable AI cost at the edge</span></span></a>
       <a href="ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">06</span><span><span class="t">AI SOC Modernization — Whitepaper</span><br><span class="s">Edge-native security for IT/OT</span></span></a>
+      <div class="msub">Proof &amp; answers</div>
+      <a href="resources/case-study-device-certification.html"><span class="ic">07</span><span><span class="t">Case study — AI device certification</span><br><span class="s">12 months, 16 boxes per stream, air-gapped</span></span></a>
+      <a href="faq.html"><span class="ic">08</span><span><span class="t">FAQ for buyers</span><br><span class="s">Data, safety, hardware, pilot cost</span></span></a>
     </div></div>
-    <a href="#engineering">AI Engineering</a>
+    <a href="index.html#accelerators">Agentic jobs</a>
     <a href="why-unovie.html">Why Unovie</a>
   </nav>
-  <a class="navcta" href="#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
+  <a class="navcta" href="index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
 </div></div></header>
 <div class="mobile" id="mobile">
-  <a href="platform/agentmesh.html"><span class="mono">01</span><br>AgentMesh</a>
-  <a href="platform/agentnexus.html"><span class="mono">02</span><br>AgentNexus</a>
-  <a href="#accelerators"><span class="mono">03</span><br>Agentic jobs</a>
-  <a href="device-platform.html"><span class="mono">04</span><br>Hardware</a>
-  <a href="why-unovie.html"><span class="mono">05</span><br>Why Unovie</a>
-  <a href="#engineering"><span class="mono">06</span><br>AI Engineering</a>
-  <a href="resources/agentnexus-architecture.html" target="_blank"><span class="mono">07</span><br>Architecture overview</a>
-  <a href="#contact" style="color:var(--accent)"><span class="mono">08</span><br>Pilot on your line →</a>
+  <a href="index.html#deeptech"><span class="mono">01</span><br>Sectors</a>
+  <a href="platform/agentmesh.html"><span class="mono">02</span><br>AgentMesh</a>
+  <a href="platform/agentnexus.html"><span class="mono">03</span><br>AgentNexus</a>
+  <a href="index.html#accelerators"><span class="mono">04</span><br>Agentic jobs</a>
+  <a href="device-platform.html"><span class="mono">05</span><br>Hardware</a>
+  <a href="why-unovie.html"><span class="mono">06</span><br>Why Unovie</a>
+  <a href="resources/case-study-device-certification.html"><span class="mono">07</span><br>Case study</a>
+  <a href="faq.html"><span class="mono">08</span><br>FAQ</a>
+  <a href="index.html#contact" style="color:var(--accent)"><span class="mono">09</span><br>Pilot on your line →</a>
 </div>
 
 <!-- ============================== HERO ============================== -->
@@ -77,8 +88,10 @@
       <li><b>Born with compliance in mind</b><span>NIST SP 800-53 · NIST AI RMF</span></li>
     </ul>
     <div class="ticker rv">
-      <span class="tag">Trusted with</span>
-      <div class="partners"><span>NVIDIA</span><span>AMD</span><span>Qualcomm</span><span>Siemens</span><span>GE</span></div>
+      <span class="tag">Runs on</span>
+      <div class="partners"><span>AMD</span><span>NVIDIA</span></div>
+      <span class="tag">Connects to</span>
+      <div class="partners"><span>PLCs</span><span>MES</span><span>Test systems</span><span>SAP · Maximo</span></div>
     </div>
   </div>
 
@@ -151,12 +164,12 @@
     <p class="lead rv">Next-generation factories are built dense with sensors, cameras and robots — and produce far more data than people can watch. Battery lines, chip fabs, space factories, robot lines and new shipyards also share data that can't leave the site and audits that need evidence. That is what our platform is built for.</p>
   </div>
   <div class="disc">
-    <a class="dcard rv" href="platform/agentmesh.html#sectors" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/battery</div><h3>Battery &amp; energy storage</h3><p>Cell, module and pack lines watched in line — weld, formation and aging signals, with suspect parts diverted to rework. On storage fleets, early warning of thermal runaway as an alarm.</p><div class="spec"><span class="chip">in-line QA</span><span class="chip">storage fleets</span></div></a>
-    <a class="dcard rv" href="platform/agentmesh.html#sectors" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/fab</div><h3>Chip fabs &amp; suppliers</h3><p>Fab utilities and supplier gas, chemical and parts plants watched from their own signals, through ramp-up and beyond. Process and design data never leave the fence.</p><div class="spec"><span class="chip">fab utilities</span><span class="chip">IP stays on site</span></div></a>
-    <a class="dcard rv" href="platform/agentmesh.html#sectors" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/space</div><h3>Space &amp; aerospace</h3><p>Vehicle and satellite lines with vision QA and drafted quality records; rocket and engine test stands watched run by run, beside the qualified test system.</p><div class="spec"><span class="chip">test stands</span><span class="chip">quality records</span></div></a>
-    <a class="dcard rv" href="platform/agentmesh.html#sectors" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/robotics</div><h3>Robotics &amp; autonomous systems</h3><p>Robot-dense lines and the robots, drones and vessels they build: joint, motor and gearbox health at every cell, and fleet health for systems that run disconnected.</p><div class="spec"><span class="chip">robot cells</span><span class="chip">DeepVision</span></div></a>
-    <a class="dcard rv" href="platform/agentmesh.html#sectors" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/defense</div><h3>Defense &amp; dual-use</h3><p>New shipyards, autonomous-vessel yards and dual-use factories — line and yard QA, machinery health and network watch, inside your enclave.</p><div class="spec"><span class="chip">shipyards</span><span class="chip">your enclave</span></div></a>
-    <a class="dcard rv" href="platform/agentmesh.html#sectors" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/energy</div><h3>Advanced energy &amp; nuclear</h3><p>Construction, balance-of-plant and site-security monitoring on new reactor and power sites — never on reactor safety systems.</p><div class="spec"><span class="chip">non-safety only</span><span class="chip">condition reports</span></div></a>
+    <a class="dcard rv" href="sectors/battery.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/battery</div><h3>Battery &amp; energy storage</h3><p>Cell, module and pack lines watched in line — weld, formation and aging signals, with suspect parts diverted to rework. On storage fleets, early warning of thermal runaway as an alarm.</p><div class="spec"><span class="chip">in-line QA</span><span class="chip">storage fleets</span></div></a>
+    <a class="dcard rv" href="sectors/fabs.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/fab</div><h3>Chip fabs &amp; suppliers</h3><p>Fab utilities and supplier gas, chemical and parts plants watched from their own signals, through ramp-up and beyond. Process and design data never leave the fence.</p><div class="spec"><span class="chip">fab utilities</span><span class="chip">IP stays on site</span></div></a>
+    <a class="dcard rv" href="sectors/space.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/space</div><h3>Space &amp; aerospace</h3><p>Vehicle and satellite lines with vision QA and drafted quality records; rocket and engine test stands watched run by run, beside the qualified test system.</p><div class="spec"><span class="chip">test stands</span><span class="chip">quality records</span></div></a>
+    <a class="dcard rv" href="sectors/robotics.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/robotics</div><h3>Robotics &amp; autonomous systems</h3><p>Robot-dense lines and the robots, drones and vessels they build: joint, motor and gearbox health at every cell, and fleet health for systems that run disconnected.</p><div class="spec"><span class="chip">robot cells</span><span class="chip">DeepVision</span></div></a>
+    <a class="dcard rv" href="sectors/defense.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/defense</div><h3>Defense &amp; dual-use</h3><p>New shipyards, autonomous-vessel yards and dual-use factories — line and yard QA, machinery health and network watch, inside your enclave.</p><div class="spec"><span class="chip">shipyards</span><span class="chip">your enclave</span></div></a>
+    <a class="dcard rv" href="sectors/energy.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/energy</div><h3>Advanced energy &amp; nuclear</h3><p>Construction, balance-of-plant and site-security monitoring on new reactor and power sites — never on reactor safety systems.</p><div class="spec"><span class="chip">non-safety only</span><span class="chip">condition reports</span></div></a>
   </div>
 </div></section>
 
@@ -205,16 +218,16 @@
   </div>
   <div class="disc">
     <div class="dcard rv"><div class="glow"></div><div class="ix">/ model-engineering</div><h3>Signal &amp; Model Engineering</h3>
-      <p>We turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models. New skills are trained as small adapters by the Kiln, on a base model that never changes, and go live only after they beat what's running on cases they've never seen.</p>
+      <p><b class="outcome">Gets better every week, without retraining.</b> How: we turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models. New skills are trained as small adapters by the Kiln, on a base model that never changes, and go live only after they beat what's running on cases they've never seen.</p>
       <div class="spec"><span class="chip">signal encoders</span><span class="chip">skill adapters</span><span class="chip">held-out tests</span></div></div>
     <div class="dcard rv"><div class="glow" style="background:var(--steel)"></div><div class="ix">/ robotics-ot</div><h3>Robotics &amp; OT Integration</h3>
-      <p>AI built into sensor-dense, robotic lines. Connections to robot controllers, vision systems, test rigs and the factory network, designed against NIST SP 800-53 controls; Lane A acts only where a wrong call costs little; Lane B raises an alarm and a request so your safety PLC, cell controller and operator decide. Every decision is written to a signed Evidence Log.</p>
+      <p><b class="outcome">AI on the line that never takes control away from your safety systems.</b> How: AI built into sensor-dense, robotic lines. Connections to robot controllers, vision systems, test rigs and the factory network, designed against NIST SP 800-53 controls; Lane A acts only where a wrong call costs little; Lane B raises an alarm and a request so your safety PLC, cell controller and operator decide. Every decision is written to a signed Evidence Log.</p>
       <div class="spec"><span class="chip">robot cells</span><span class="chip">Lane A · Lane B</span><span class="chip">SP 800-53</span></div></div>
     <div class="dcard rv"><div class="glow"></div><div class="ix">/ edge-efficiency</div><h3>Edge Efficiency</h3>
-      <p>Fast answers on small, owned hardware. A 30-millisecond decision budget at the machine, careful memory budgeting on shared-memory AMD and NVIDIA servers, compact model copies for speed and skill adapters instead of ever-bigger models.</p>
+      <p><b class="outcome">Answers in milliseconds, on hardware sized for the job.</b> How: a 30-millisecond decision budget at the machine, careful memory budgeting on shared-memory AMD and NVIDIA servers, compact model copies for speed and skill adapters instead of ever-bigger models.</p>
       <div class="spec"><span class="chip">&lt; 30 ms target</span><span class="chip">AMD · NVIDIA</span><span class="chip">compact models</span></div></div>
     <div class="dcard rv"><div class="glow" style="background:var(--steel)"></div><div class="ix">/ sovereign-reliable</div><h3>Sovereign &amp; Reliable Operations</h3>
-      <p>Systems you own and can run without us — cloud-native microservices on a CNCF-conformant platform your team already knows. Air-gapped by default, built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves.</p>
+      <p><b class="outcome">Keeps running when a server fails or the internet drops, at a fixed cost.</b> How: systems your team can run without us — cloud-native microservices on a CNCF-conformant platform your team already knows. Air-gapped by default, built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves.</p>
       <div class="spec"><span class="chip">air-gapped</span><span class="chip">Mesh Arbiter</span><span class="chip">fixed cost</span></div></div>
   </div>
 </div></section>
@@ -229,11 +242,11 @@
     <p class="lead rv">Packaged jobs for next-generation lines — each a domain kit with its connections, fingerprints, rules, playbook and reports, running on AgentMesh and AgentNexus, deployed in weeks, not quarters.</p>
   </div>
   <div class="accel">
-    <div class="acard rv" data-href="platform/agentmesh.html#sectors" data-cursor style="--w:78%"><div class="n">01 / Robotics</div><h3>Robot &amp; Motion Health</h3><p>Joint, servo and gearbox drift caught before it scraps parts or stops the line.</p><div class="met">&lt;30 ms <span class="s">· Lane A divert</span></div><div class="bar"><i></i></div></div>
+    <div class="acard rv" data-href="sectors/robotics.html" data-cursor style="--w:78%"><div class="n">01 / Robotics</div><h3>Robot &amp; Motion Health</h3><p>Joint, servo and gearbox drift caught before it scraps parts or stops the line.</p><div class="met">&lt;30 ms <span class="s">· Lane A divert</span></div><div class="bar"><i></i></div></div>
     <div class="acard rv" data-href="device-platform.html#agx-thor" data-cursor style="--w:74%"><div class="n">02 / Quality</div><h3>Vision Quality Inspection</h3><p>DeepVision at the cell, fused with process signals, on Jetson AGX Thor.</p><div class="met">DeepVision <span class="s">· at the tool</span></div><div class="bar"><i></i></div></div>
-    <div class="acard rv" data-href="platform/agentmesh.html#sectors" data-cursor style="--w:72%"><div class="n">03 / Battery</div><h3>Battery Line &amp; Storage Safety</h3><p>Weld and formation signatures in line; thermal-runaway warning on fleets.</p><div class="met">in line <span class="s">· alarm on fleets</span></div><div class="bar"><i></i></div></div>
-    <div class="acard rv" data-href="platform/agentmesh.html#sectors" data-cursor style="--w:70%"><div class="n">04 / Fabs</div><h3>Fab Utilities Watch</h3><p>Pumps, chillers, scrubbers and gas systems at the fab and its suppliers.</p><div class="met">Lane B <span class="s">· facilities decide</span></div><div class="bar"><i></i></div></div>
-    <div class="acard rv" data-href="platform/agentmesh.html#sectors" data-cursor style="--w:66%"><div class="n">05 / Space</div><h3>Test Campaign Monitor</h3><p>Flags to the test conductor during a run; post-test report drafted.</p><div class="met">advisory <span class="s">· beside the test system</span></div><div class="bar"><i></i></div></div>
+    <div class="acard rv" data-href="sectors/battery.html" data-cursor style="--w:72%"><div class="n">03 / Battery</div><h3>Battery Line &amp; Storage Safety</h3><p>Weld and formation signatures in line; thermal-runaway warning on fleets.</p><div class="met">in line <span class="s">· alarm on fleets</span></div><div class="bar"><i></i></div></div>
+    <div class="acard rv" data-href="sectors/fabs.html" data-cursor style="--w:70%"><div class="n">04 / Fabs</div><h3>Fab Utilities Watch</h3><p>Pumps, chillers, scrubbers and gas systems at the fab and its suppliers.</p><div class="met">Lane B <span class="s">· facilities decide</span></div><div class="bar"><i></i></div></div>
+    <div class="acard rv" data-href="sectors/space.html" data-cursor style="--w:66%"><div class="n">05 / Space</div><h3>Test Campaign Monitor</h3><p>Flags to the test conductor during a run; post-test report drafted.</p><div class="met">advisory <span class="s">· beside the test system</span></div><div class="bar"><i></i></div></div>
     <div class="acard rv" data-href="platform/agentnexus.html#fleets" data-cursor style="--w:62%"><div class="n">06 / Records</div><h3>Quality Records &amp; NCRs</h3><p>Agents draft non-conformance reports and quality records for sign-off.</p><div class="met">drafted <span class="s">· EN / ES</span></div><div class="bar"><i></i></div></div>
   </div>
 </div></section>
@@ -301,6 +314,26 @@
 </div></section>
 
 <!-- ============================== DELIVERY ============================== -->
+<!-- ============================== COST SHAPE ============================== -->
+<section id="cost"><div class="wrap">
+  <div class="shead">
+    <div class="l">
+      <div class="num rv"><span class="ln"></span>Cost</div>
+      <h2 class="rv">A fixed price for capacity, <span class="serif" style="color:var(--accent)">not a metered bill.</span></h2>
+    </div>
+    <p class="lead rv">Metered cloud AI grows with every query, retry and camera you add. A Unovie pod is a known price, bought outright or as a service, and after that the cost of one more answer is close to the cost of electricity. Past a steady level of use, the two lines cross.</p>
+  </div>
+  <figure class="costfig rv"><svg viewBox="0 0 900 340" role="img" aria-labelledby="costT costD"><title id="costT">Illustrative three-year cost shape for one site</title><desc id="costD">An illustrative model, not measured results. Metered cloud AI cost rises every quarter over three years. A fixed-capacity Unovie pod is a step at the start and then nearly flat, so the lines cross and the gap widens after that.</desc>
+    <line x1="70" y1="290" x2="860" y2="290" class="ax"/><line x1="70" y1="290" x2="70" y2="30" class="ax"/>
+    <text x="70" y="314" class="tk">Start</text><text x="333" y="314" class="tk">Year 1</text><text x="596" y="314" class="tk">Year 2</text><text x="830" y="314" class="tk">Year 3</text>
+    <text x="24" y="160" class="tk" transform="rotate(-90 24 160)">Cumulative cost</text>
+    <path d="M70,290 C250,272 420,232 560,170 C680,118 780,72 860,40" class="cloud"/>
+    <path d="M70,290 L70,196 L860,170" class="pod"/>
+    <circle cx="534" cy="181" r="6" class="x"/><text x="470" y="210" class="tk">break-even</text>
+    <text x="560" y="112" class="lc">Metered cloud AI</text><text x="590" y="206" class="lp">Unovie pod: fixed capacity + power</text>
+  </svg><figcaption>Illustrative model, not measured results and not a quote. The real crossover depends on your query volume, model mix and power cost. The assumptions are in <a href="gpu-edgegateway-whitepaper.html#tco" target="_blank" rel="noopener">Edge-Native Economics, section 7 →</a></figcaption></figure>
+</div></section>
+
 <section id="delivery"><div class="wrap">
   <div class="shead">
     <div class="l">
@@ -327,6 +360,16 @@
     </div>
   </div>
   <div class="res">
+    <a class="rcard rv" href="resources/case-study-device-certification.html" data-cursor>
+      <div><span class="badge">Case study</span><h3>AI device certification, <span class="serif" style="color:var(--accent)">in twelve months</span></h3>
+      <p>An air-gapped GPU platform that watches 16 screens per stream, judges what it sees and attaches proof to every verdict. Detection mAP 0.836 → 0.961 after one in-house retrain.</p></div>
+      <span class="go">Read the case study <span class="ar">→</span></span>
+    </a>
+    <a class="rcard rv" href="faq.html" data-cursor>
+      <div><span class="badge" style="background:var(--steel);color:#04201c">FAQ</span><h3>Straight answers, <span class="serif" style="color:var(--steel)">first</span></h3>
+      <p>Does data leave the site? What if the link drops? Is it a safety system? What does a pilot cost? Fourteen buyer questions, answered in the first sentence.</p></div>
+      <span class="go" style="color:var(--steel)">Read the FAQ <span class="ar">→</span></span>
+    </a>
     <a class="rcard rv" href="resources/agentmesh-architecture.html" target="_blank" rel="noopener" data-cursor>
       <div><span class="badge">Architecture overview</span><h3>AgentMesh, <span class="serif" style="color:var(--accent)">in plain terms</span></h3>
       <p>How the pod at the machine is organised, what happens from signal to action, how data is kept safe and what happens when a server fails.</p></div>
@@ -363,6 +406,7 @@
     <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Let's build</div>
     <h2 style="margin-top:16px">Bring us an asset.<br>We'll return a <span class="serif" style="color:var(--accent)">system</span>.</h2>
     <p class="lead">A 6-week paid pilot on your own line — one domain kit, your data, a measured latency report — credited toward production. Tell us where you are; we'll engineer the path to production.</p>
+    <p class="pricenote rv"><b>Site audit:</b> no charge, 1–2 days on site <span class="o">·</span> <b>6-week paid pilot:</b> $40–60K, credited in full against a production site signed within 90 days</p>
     <form class="pilotform rv" data-m="moc.eivonu|snoitulos" novalidate>
       <label><span>Your industry</span><select name="seg"><option>Battery &amp; energy storage</option><option>Chip fabs &amp; suppliers</option><option>Space &amp; aerospace</option><option>Robotics &amp; autonomous systems</option><option>Defense &amp; dual-use manufacturing</option><option>Advanced energy &amp; nuclear</option><option>Other</option></select></label>
       <label><span>Where you are</span><select name="stage"><option>Building a new line or site</option><option>Ramping production</option><option>Running at scale</option></select></label>
@@ -381,14 +425,14 @@
 <footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="index.html"><img class="logo" src="assets/images/logo.png" alt="Unovie.AI"></a>
     <p>Agent-native industrial AI. We design, build, and operate custom Edge-AI Agentic Systems — on Unovie's custom-built AMD or NVIDIA hardware accelerators, engineered for agentic performance, low latency and high availability.</p></div>
-  <div class="fcol"><h4>Platform</h4>
-    <a href="platform/agentmesh.html">AgentMesh</a><a href="platform/agentnexus.html">AgentNexus</a></div>
+  <div class="fcol"><h4>Platform &amp; sectors</h4>
+    <a href="platform/agentmesh.html">AgentMesh</a><a href="platform/agentnexus.html">AgentNexus</a><a href="sectors/battery.html">Battery &amp; energy storage</a><a href="sectors/fabs.html">Chip fabs &amp; suppliers</a><a href="sectors/space.html">Space &amp; aerospace</a><a href="sectors/robotics.html">Robotics, drones &amp; autonomy</a><a href="sectors/defense.html">Defense &amp; dual-use</a><a href="sectors/energy.html">Advanced energy &amp; nuclear</a></div>
   <div class="fcol"><h4>Hardware</h4>
     <a href="device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a><a href="device-platform.html#agx-thor">NVIDIA Jetson AGX Thor</a><a href="device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="device-platform.html#qcs6490">Qualcomm QCS6490</a></div>
   <div class="fcol"><h4>Company</h4>
-    <a href="why-unovie.html">Why Unovie</a><a href="#engineering">AI Engineering</a><a href="#delivery">How we deliver</a>
+    <a href="why-unovie.html">Why Unovie</a><a href="index.html#engineering">AI Engineering</a><a href="index.html#delivery">How we deliver</a>
     <a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="resources/agentmesh-architecture.html" target="_blank">AgentMesh Architecture</a><a href="resources/agentnexus-architecture.html" target="_blank">AgentNexus Architecture</a><a href="resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
-</div><div class="fbot"><span>© 2026 Unovie · Agent-native industrial AI</span><span>Engineered for the edge with NVIDIA · AMD · Qualcomm · Siemens · GE</span></div></div></footer>
+    <a href="resources/agentmesh-architecture.html" target="_blank">AgentMesh Architecture</a><a href="resources/agentnexus-architecture.html" target="_blank">AgentNexus Architecture</a><a href="resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a><a href="resources/case-study-device-certification.html">Case study</a><a href="faq.html">FAQ</a></div>
+</div><div class="fbot"><span>© 2026 Unovie · Agent-native industrial AI</span><span>Runs on AMD and NVIDIA accelerators · integrates with your PLCs, MES and safety systems</span></div></div></footer>
 <script src="assets/site.js?v=e1bf187b05"></script></body></html>

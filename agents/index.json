@@ -14,7 +14,7 @@
  },
  "generated_by": "build_pages.py",
  "lastmod": "2026-11-14",
- "count": 109,
+ "count": 164,
  "records": [
   {
    "id": "home#1",
@@ -22,7 +22,7 @@
    "type": "home",
    "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Sovereign AI engine for the physical frontier.",
-   "text": "CNCF-conformant · Microservices native · AMD & NVIDIA Sovereign AI engine for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — the sensor-dense, AI-heavy, robot-heavy factories of battery, chips, space, robotics, defense and advanced energy. AgentMesh at the machine, AgentNexus across every site. Cloud-native, microservices native and secure by design. Fixed scope, fixed cost. Pilot on your line → See AgentMesh & AgentNexus Safety stays with you PLC, safety system and operator decide Low-latency decisions < 30 ms at the machine · design target Air-gapped by default no plant data leaves the site Born with compliance in mind NIST SP 800-53 · NIST AI RMF Trusted with NVIDIA AMD Qualcomm Siemens GE AgentMesh Sovereign Pod 4 × AMD Ryzen AI Max+ 395 · 3U 2 × 10G network · NVMe storage sovereign pod · cell-line-2 illustration Signals 512 ch · 0 watching · 0 retrying · 0 flagged · 8 offline robot joints vision weld · cells fab utilities test rigs network formation AGVs · AMRs ↳ Decision Engine watching every channel… Robot R-14 joint 3 · watching Vision · cell 6 DeepVision · watching Laser weld 5 module · watching Pump VP-3-14 fab utility · watching Test stand 2 run 117 · watching Network OT traffic · watching Formation F-12 cell aging · watching AGV fleet mobile robots · watching Chiller CH-2 fab utility · watching Layup L-1 composite · watching Storage BS-9 grid battery · watching Drone dock D-2 flight ops · watching Watching Deciding Lane A acted Lane B request Drafting 22.4 ms decide · last 0 decisions 0 B egress signed evidence"
+   "text": "CNCF-conformant · Microservices native · AMD & NVIDIA Sovereign AI engine for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — the sensor-dense, AI-heavy, robot-heavy factories of battery, chips, space, robotics, defense and advanced energy. AgentMesh at the machine, AgentNexus across every site. Cloud-native, microservices native and secure by design. Fixed scope, fixed cost. Pilot on your line → See AgentMesh & AgentNexus Safety stays with you PLC, safety system and operator decide Low-latency decisions < 30 ms at the machine · design target Air-gapped by default no plant data leaves the site Born with compliance in mind NIST SP 800-53 · NIST AI RMF Runs on AMD NVIDIA Connects to PLCs MES Test systems SAP · Maximo AgentMesh Sovereign Pod 4 × AMD Ryzen AI Max+ 395 · 3U 2 × 10G network · NVMe storage sovereign pod · cell-line-2 illustration Signals 512 ch · 0 watching · 0 retrying · 0 flagged · 8 offline robot joints vision weld · cells fab utilities test rigs network formation AGVs · AMRs ↳ Decision Engine watching every channel… Robot R-14 joint 3 · watching Vision · cell 6 DeepVision · watching Laser weld 5 module · watching Pump VP-3-14 fab utility · watching Test stand 2 run 117 · watching Network OT traffic · watching Formation F-12 cell aging · watching AGV fleet mobile robots · watching Chiller CH-2 fab utility · watching Layup L-1 composite · watching Storage BS-9 grid battery · watching Drone dock D-2 flight ops · watching Watching Deciding Lane A acted Lane B request Drafting 22.4 ms decide · last 0 decisions 0 B egress signed evidence"
   },
   {
    "id": "home#2",
@@ -54,7 +54,7 @@
    "type": "home",
    "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Four things we are genuinely good at.",
-   "text": "01 — Engineering disciplines Four things we are genuinely good at. / model-engineering Signal & Model Engineering We turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models. New skills are trained as small adapters by the Kiln, on a base model that never changes, and go live only after they beat what's running on cases they've never seen. signal encoders skill adapters held-out tests / robotics-ot Robotics & OT Integration AI built into sensor-dense, robotic lines. Connections to robot controllers, vision systems, test rigs and the factory network, designed against NIST SP 800-53 controls; Lane A acts only where a wrong call costs little; Lane B raises an alarm and a request so your safety PLC, cell controller and operator decide. Every decision is written to a signed Evidence Log. robot cells Lane A · Lane B SP 800-53 / edge-efficiency Edge Efficiency Fast answers on small, owned hardware. A 30-millisecond decision budget at the machine, careful memory budgeting on shared-memory AMD and NVIDIA servers, compact model copies for speed and skill adapters instead of ever-bigger models. < 30 ms target AMD · NVIDIA compact models / sovereign-reliable Sovereign & Reliable Operations Systems you own and can run without us — cloud-native microservices on a CNCF-conformant platform your team already knows. Air-gapped by default, built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves. air-gapped Mesh Arbiter fixed cost"
+   "text": "01 — Engineering disciplines Four things we are genuinely good at. / model-engineering Signal & Model Engineering Gets better every week, without retraining. How: we turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models. New skills are trained as small adapters by the Kiln, on a base model that never changes, and go live only after they beat what's running on cases they've never seen. signal encoders skill adapters held-out tests / robotics-ot Robotics & OT Integration AI on the line that never takes control away from your safety systems. How: AI built into sensor-dense, robotic lines. Connections to robot controllers, vision systems, test rigs and the factory network, designed against NIST SP 800-53 controls; Lane A acts only where a wrong call costs little; Lane B raises an alarm and a request so your safety PLC, cell controller and operator decide. Every decision is written to a signed Evidence Log. robot cells Lane A · Lane B SP 800-53 / edge-efficiency Edge Efficiency Answers in milliseconds, on hardware sized for the job. How: a 30-millisecond decision budget at the machine, careful memory budgeting on shared-memory AMD and NVIDIA servers, compact model copies for speed and skill adapters instead of ever-bigger models. < 30 ms target AMD · NVIDIA compact models / sovereign-reliable Sovereign & Reliable Operations Keeps running when a server fails or the internet drops, at a fixed cost. How: systems your team can run without us — cloud-native microservices on a CNCF-conformant platform your team already knows. Air-gapped by default, built from identical shelves of servers, with data copied across shelves and the Mesh Arbiter moving work when something fails. Capex, not a metered bill — cost stays flat while accuracy improves. air-gapped Mesh Arbiter fixed cost"
   },
   {
    "id": "home#6",
@@ -85,19 +85,27 @@
    "url": "https://unovie.ai/",
    "type": "home",
    "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
-   "section": "A proven, success-based methodology.",
-   "text": "05 — How we deliver A proven, success-based methodology. Full responsibility, committed timelines — every phase with enterprise-grade execution. 01 Assess & plan Workshops, ROI, value outcomes. 02 Solution design Roadmap, reference architecture, blueprints. 03 Build & test Data, models, testing, monitoring. 04 Optimize KPI tracking, feedback loops, reviews. 05 Train & support Enablement & ongoing adoption."
+   "section": "A fixed price for capacity, not a metered bill.",
+   "text": "Cost A fixed price for capacity, not a metered bill. Metered cloud AI grows with every query, retry and camera you add. A Unovie pod is a known price, bought outright or as a service, and after that the cost of one more answer is close to the cost of electricity. Past a steady level of use, the two lines cross. Illustrative model, not measured results and not a quote. The real crossover depends on your query volume, model mix and power cost. The assumptions are in Edge-Native Economics, section 7 →"
   },
   {
    "id": "home#10",
    "url": "https://unovie.ai/",
    "type": "home",
    "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
-   "section": "Read the thinking behind the work.",
-   "text": "06 — Research Read the thinking behind the work. Architecture overview AgentMesh, in plain terms How the pod at the machine is organised, what happens from signal to action, how data is kept safe and what happens when a server fails. Read the overview → Architecture overview AgentNexus, in plain terms How the rack is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders. Read the overview → Free eBook · Field Guide Edge AI Models Without the PhD How AI models actually learn — gradient descent, backprop — and why fine-tuning is the wrong reflex on the edge. 25 chapters, diagrams, real results. Read the field guide → Whitepaper Training Without Retraining The frozen-base doctrine: keep the weights fixed, adapt in context, verify against a frozen baseline — and let throughput compound the gains nightly. Read the whitepaper →"
+   "section": "A proven, success-based methodology.",
+   "text": "05 — How we deliver A proven, success-based methodology. Full responsibility, committed timelines — every phase with enterprise-grade execution. 01 Assess & plan Workshops, ROI, value outcomes. 02 Solution design Roadmap, reference architecture, blueprints. 03 Build & test Data, models, testing, monitoring. 04 Optimize KPI tracking, feedback loops, reviews. 05 Train & support Enablement & ongoing adoption."
   },
   {
    "id": "home#11",
+   "url": "https://unovie.ai/",
+   "type": "home",
+   "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
+   "section": "Read the thinking behind the work.",
+   "text": "06 — Research Read the thinking behind the work. Case study AI device certification, in twelve months An air-gapped GPU platform that watches 16 screens per stream, judges what it sees and attaches proof to every verdict. Detection mAP 0.836 → 0.961 after one in-house retrain. Read the case study → FAQ Straight answers, first Does data leave the site? What if the link drops? Is it a safety system? What does a pilot cost? Fourteen buyer questions, answered in the first sentence. Read the FAQ → Architecture overview AgentMesh, in plain terms How the pod at the machine is organised, what happens from signal to action, how data is kept safe and what happens when a server fails. Read the overview → Architecture overview AgentNexus, in plain terms How the rack is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders. Read the overview → Free eBook · Field Guide Edge AI Models Without the PhD How AI models actually learn — gradient descent, backprop — and why fine-tuning is the wrong reflex on the edge. 25 chapters, diagrams, real results. Read the field guide → Whitepaper Training Without Retraining The frozen-base doctrine: keep the weights fixed, adapt in context, verify against a frozen baseline — and let throughput compound the gains nightly. Read the whitepaper →"
+  },
+  {
+   "id": "home#12",
    "url": "https://unovie.ai/",
    "type": "home",
    "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
@@ -105,12 +113,12 @@
    "text": "2027 Heading to one of these? Let's meet. Follow Unovie on LinkedIn for event updates CERAWeek Houston · 8–12 Mar SXSW Austin · 13–21 Mar OTC Houston · 3–5 May Houston Energy & Climate Startup Week Houston · mid-Sep Dates as announced by organisers; check before you travel."
   },
   {
-   "id": "home#12",
+   "id": "home#13",
    "url": "https://unovie.ai/",
    "type": "home",
    "title": "Unovie.AI — Sovereign AI engine for the physical frontier",
    "section": "Bring us an asset. We'll return a system .",
-   "text": "Let's build Bring us an asset. We'll return a system . A 6-week paid pilot on your own line — one domain kit, your data, a measured latency report — credited toward production. Tell us where you are; we'll engineer the path to production. Your industry Battery & energy storage Chip fabs & suppliers Space & aerospace Robotics & autonomous systems Defense & dual-use manufacturing Advanced energy & nuclear Other Where you are Building a new line or site Ramping production Running at scale What should we watch first? Pilot on your line → Opens your email app with these details — nothing is sent until you press send. Talk to our engineers Explore the field guide"
+   "text": "Let's build Bring us an asset. We'll return a system . A 6-week paid pilot on your own line — one domain kit, your data, a measured latency report — credited toward production. Tell us where you are; we'll engineer the path to production. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days Your industry Battery & energy storage Chip fabs & suppliers Space & aerospace Robotics & autonomous systems Defense & dual-use manufacturing Advanced energy & nuclear Other Where you are Building a new line or site Ramping production Running at scale What should we watch first? Pilot on your line → Opens your email app with these details — nothing is sent until you press send. Talk to our engineers Explore the field guide"
   },
   {
    "id": "about#1",
@@ -118,7 +126,7 @@
    "type": "company",
    "title": "About — Unovie.AI",
    "section": "We engineer AI that ships.",
-   "text": "Home / About About · Unovie.AI We engineer AI that ships. Unovie is an AI-engineering studio for Industry 4.0, founder-led by a team whose vision matches the most ambitious in the field — and measured by what reaches production. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you own and can audit. While the market splits between multi-year transformation programs and big-vision manifestos, we take the third path: production-grade, agentic systems you own, delivered in weeks at a fixed cost. Pilot on your line → Read our field guide 4 engineering disciplines 5 -step methodology fixed time & cost"
+   "text": "Home / About About · Unovie.AI We engineer AI that ships. Unovie is an AI-engineering studio for Industry 4.0, founder-led by a team whose vision matches the most ambitious in the field — and measured by what reaches production. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you control and can audit. While the market splits between multi-year transformation programs and big-vision manifestos, we take the third path: production-grade, agentic systems you own, delivered in weeks at a fixed cost. Pilot on your line → Read our field guide 4 engineering disciplines 5 -step methodology fixed time & cost"
   },
   {
    "id": "about#2",
@@ -126,7 +134,7 @@
    "type": "company",
    "title": "About — Unovie.AI",
    "section": "Four engineering disciplines.",
-   "text": "01 — What we are good at Four engineering disciplines. /model-engineering Signal & Model Engineering We turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models. signal encoders skill adapters held-out tests /robotics-ot Robotics & OT Integration AI built into sensor-dense, robotic lines, designed against NIST SP 800-53 controls — your safety PLC, cell controller and operators stay in charge. robot cells Lane A · Lane B SP 800-53 /edge-efficiency Edge Efficiency Fast answers on small, owned hardware. < 30 ms target AMD · NVIDIA compact models /sovereign-reliable Sovereign & Reliable Operations Systems you own and can run without us. air-gapped Mesh Arbiter fixed cost"
+   "text": "01 — What we are good at Four engineering disciplines. /model-engineering Signal & Model Engineering Gets better every week, without retraining. We turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models. signal encoders skill adapters held-out tests /robotics-ot Robotics & OT Integration AI on the line that never takes control away from your safety systems. AI built into sensor-dense, robotic lines, designed against NIST SP 800-53 controls — your safety PLC, cell controller and operators stay in charge. robot cells Lane A · Lane B SP 800-53 /edge-efficiency Edge Efficiency Answers in milliseconds, on hardware sized for the job. A 30 ms decision budget on Unovie's custom-built AMD or NVIDIA accelerators. < 30 ms target AMD · NVIDIA compact models /sovereign-reliable Sovereign & Reliable Operations Keeps running when a server fails or the internet drops, at a fixed cost. Systems your team can run without us. air-gapped Mesh Arbiter fixed cost"
   },
   {
    "id": "about#3",
@@ -142,15 +150,15 @@
    "type": "company",
    "title": "About — Unovie.AI",
    "section": "Vision that ships.",
-   "text": "03 — Why teams choose us Vision that ships. /leadership Founder-led vision Led by founders whose ambition matches the field's most visionary — and who insist that vision reach production. founder-led visionary /velocity Execution velocity Production-grade agentic systems in weeks, not multi-year programs — fixed scope, fixed cost. weeks fixed cost /sovereignty Owned & sovereign On-prem on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, auditable and reversible — your context never leaves your boundary. on-prem auditable Why Unovie →"
+   "text": "03 — Why teams choose us Vision that ships. /leadership Founder-led vision Led by founders whose ambition matches the field's most visionary — and who insist that vision reach production. founder-led visionary /velocity Execution velocity Production-grade agentic systems in weeks, not multi-year programs — fixed scope, fixed cost. weeks fixed cost /sovereignty Sovereign by default On-prem on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, auditable and reversible — your context never leaves your boundary. on-prem auditable Why Unovie →"
   },
   {
    "id": "about#5",
    "url": "https://unovie.ai/about.html",
    "type": "company",
    "title": "About — Unovie.AI",
-   "section": "Trusted with NVIDIA · AMD · Qualcomm · Siemens · GE.",
-   "text": "Partners Trusted with NVIDIA · AMD · Qualcomm · Siemens · GE. Manufacturing · Logistics · Oil & Gas · Food Processing. Bring us a problem; we will return a system. Talk to our engineers →"
+   "section": "Next-generation manufacturing, on AMD and NVIDIA.",
+   "text": "Who we build for Next-generation manufacturing, on AMD and NVIDIA. Battery & energy storage · Chip fabs & suppliers · Space & aerospace · Robotics, drones & autonomous systems · Defense & dual-use · Advanced energy & nuclear. Bring us a problem; we will return a system. Talk to our engineers →"
   },
   {
    "id": "why-unovie#1",
@@ -198,7 +206,7 @@
    "type": "company",
    "title": "Why Unovie — veteran founders, sovereign AI for next-generation manufacturing",
    "section": "From site audit to fleet.",
-   "text": "05 — How we engage From site audit to fleet. 01 Site audit An engineer reviews your sensors, robots, network and control systems before anything is signed. 02 6-week pilot One domain kit on your own line, a baseline ROI view and a measured latency report — credited toward production. 03 Production site An AgentMesh Sovereign Pod integrated with your sensors, cell controllers, safety PLC, MES and work-order system. 04 Fleet rollout New lines and sites reuse the playbook; AgentNexus brings the fleet together. 05 Operate Kiln updates, evidence pack and support under one subscription — or hardware-as-a-service."
+   "text": "05 — How we engage From site audit to fleet. 01 Site audit · no charge An engineer reviews your sensors, robots, network and control systems before anything is signed — a 1–2 day visit. 02 6-week pilot · $40–60K One domain kit on your own line, a baseline ROI view and a measured latency report — credited in full against a production site signed within 90 days. 03 Production site An AgentMesh Sovereign Pod integrated with your sensors, cell controllers, safety PLC, MES and work-order system. 04 Fleet rollout New lines and sites reuse the playbook; AgentNexus brings the fleet together. 05 Operate Kiln updates, evidence pack and support under one subscription — or hardware-as-a-service."
   },
   {
    "id": "why-unovie#7",
@@ -206,7 +214,7 @@
    "type": "company",
    "title": "Why Unovie — veteran founders, sovereign AI for next-generation manufacturing",
    "section": "Built for outcomes, not programs.",
-   "text": "06 — Where we are different Built for outcomes, not programs. /floor Founders who have worked on the floor Every engagement is led by a pair with deep factory and OT experience: one person who speaks operations and OT security, and one engineer who audits and delivers — backed by founders with 20+ years each in OT and Physical AI. OT experience site audit delivery /safety Safety stays with you AI never sits on the path that moves equipment. Low-consequence actions happen directly; anything safety-related is an alarm and a request your PLC, safety system and operator decide. Lane A Lane B no SIL claim /sovereignty Sovereign by default Air-gapped by default, on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, with allow-listed connections. Nothing leaves the site unless you want it to. air-gapped read-only on-prem /price Priced per asset and kit We price by monitored asset and domain kit — never per seat or per camera — and the pilot is credited toward production. per asset per kit creditable pilot /platform A platform, not a manifesto AgentMesh runs today on owned AMD hardware next to the control system, AgentNexus extends it across sites, and both come to NVIDIA Jetson AGX Thor and DGX Spark. AgentMesh AgentNexus AMD · NVIDIA /leadership Founder-led vision that ships Founders whose ambition matches the field's most visionary — measured by what reaches production, on your terms. founder-led ships"
+   "text": "06 — Where we are different Built for outcomes, not programs. /floor Founders who have worked on the floor Every engagement is led by a pair with deep factory and OT experience: one person who speaks operations and OT security, and one engineer who audits and delivers — backed by founders with 20+ years each in OT and Physical AI. OT experience site audit delivery /safety Safety stays with you AI never sits on the path that moves equipment. Low-consequence actions happen directly; anything safety-related is an alarm and a request your PLC, safety system and operator decide. Lane A Lane B no SIL claim /sovereignty Sovereign by default Air-gapped by default, on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, with allow-listed connections. Nothing leaves the site unless you want it to. air-gapped read-only on-prem /price Priced per asset and kit We price by monitored asset and domain kit — never per seat or per camera. The 6-week pilot is $40–60K and is credited in full against a production site signed within 90 days. per asset per kit creditable pilot /platform A platform, not a manifesto AgentMesh runs today on Unovie's custom-built AMD hardware next to the control system, AgentNexus extends it across sites, and both come to NVIDIA Jetson AGX Thor and DGX Spark. AgentMesh AgentNexus AMD · NVIDIA /leadership Founder-led vision that ships Founders whose ambition matches the field's most visionary — measured by what reaches production, on your terms. founder-led ships"
   },
   {
    "id": "why-unovie#8",
@@ -246,7 +254,7 @@
    "type": "company",
    "title": "Contact — Unovie.AI · Built in Austin, Texas",
    "section": "Talk to our engineers.",
-   "text": "Reach us Talk to our engineers. ◍ Headquarters 651N N. Highway-183, Suite #4120 Austin, TX 78641 · USA ☎ Phone +1-636-579-9725 ✉ Email use the form below ◇ Engagement Turnkey · fixed time & cost · worldwide Your industry Battery & energy storage Chip fabs & suppliers Space & aerospace Robotics & autonomous systems Defense & dual-use manufacturing Advanced energy & nuclear Other Where you are Building a new line or site Ramping production Running at scale What should we watch first? Pilot on your line → Opens your email app with these details — nothing is sent until you press send."
+   "text": "Reach us Talk to our engineers. ◍ Headquarters 651N N. Highway-183, Suite #4120 Austin, TX 78641 · USA ☎ Phone +1-636-579-9725 ✉ Email use the form below ◇ How to start Site audit at no charge · 6-week paid pilot $40–60K, credited against production Your industry Battery & energy storage Chip fabs & suppliers Space & aerospace Robotics & autonomous systems Defense & dual-use manufacturing Advanced energy & nuclear Other Where you are Building a new line or site Ramping production Running at scale What should we watch first? Pilot on your line → Opens your email app with these details — nothing is sent until you press send."
   },
   {
    "id": "contact#4",
@@ -278,7 +286,7 @@
    "type": "resource",
    "title": "Edge AI Models Without the PhD — An Architect’s Field Guide",
    "section": "Edge AI Models Without the PhD",
-   "text": "Technical Field Guide · Edge AI Edge AI Models Without the PhD How AI models actually learn, why fine-tuning is the wrong reflex on the edge, and how to build custom, self-improving systems on hardware you own — written for enterprise architecture teams. Suresh Mandava Unovie.AI · EdgeAI Context Engineering Edition 1.0 · June 2026 Frozen base · in-context adaptation · self-verification · NVIDIA Jetson Thor · DGX Spark · RTX Spark ↓ Start reading"
+   "text": "Technical Field Guide · Edge AI Edge AI Models Without the PhD How AI models actually learn, why fine-tuning is the wrong reflex on the edge, and how to build custom, self-improving systems on Unovie's custom-built hardware accelerators — written for enterprise architecture teams. Suresh Mandava Unovie.AI · EdgeAI Context Engineering Edition 1.0 · June 2026 Frozen base · in-context adaptation · self-verification · NVIDIA Jetson Thor · DGX Spark · RTX Spark ↓ Start reading"
   },
   {
    "id": "resources_edge-ai-whitepaper#1",
@@ -302,7 +310,7 @@
    "type": "resource",
    "title": "Modernizing the SOC for the Agentic Era — Edge-Native, Identity-Driven Security for Distributed IT/OT",
    "section": "Modernizing the SOC for the Agentic Era: Edge-Native, Identity-Driven Security for Distributed IT/OT",
-   "text": "Modernizing the SOC for the Agentic Era — Edge-Native, Identity-Driven Security for Distributed IT/OT ← Unovie.AI Download PDF Technical Whitepaper · AI SOC Modernization Modernizing the SOC for the Agentic Era: Edge-Native, Identity-Driven Security for Distributed IT/OT For CISOs and security organizations running distributed estates across IT and OT. Why the cloud-SIEM model breaks as agents — and agentic threats — appear everywhere, and how an edge-native, identity-driven AI SOC keeps detection, response and governance on your own ground. Suresh Mandava Unovie.AI · EdgeAI Context Engineering Revision 1.0 · June 2026 Reference hardware: NVIDIA Jetson AGX Thor · DGX Spark (Blackwell, 128 GB unified) — on-site Abstract The Security Operations Center evolved for two decades — NOC, SOC, AI/ML-assisted detection, threat intelligence, SOAR — toward a cloud-SIEM, managed-service model. That model assumed telemetry could leave the site and that threats were authored by humans. Both assumptions break in 2025 and beyond : AI agents now act everywhere — yours automating operations, adversaries' automating attacks — and distributed IT/OT estates cannot ship sensitive, high-volume telemetry to a metered cloud. We argue for an edge-native, identity-driven AI SOC : a self-learning reasoning core that runs on-site on owned silicon, detecting in the ingestion path; a knowledge graph that replaces isolated alerts with traced blast-radius; and an identity-driven core that gives every human, service and agent a scoped identity and policy — connected or air-gapped. Unovie delivers this through two offerings — GPU EdgeGateway , which governs agentic AI traffic, and the AI SOC (AISOC) , which detects and responds on your floor — bound by a portable identity edge. The result: detections that compound on your environment, response that survives outages, compliance evidence that is continuous, and data that never leaves your boundary. Contents The 2025+ inflection: agents everywhere Why the cloud-SIEM model breaks for IT/OT From 20 tools to four cognitive platforms The self-learning, edge-native SOC analyst From alerts to a knowledge graph The identity-driven core Governing agentic workloads The Unovie offering: EdgeGateway + AISOC Deployment for the distributed enterprise Governance, compliance & reversibility Recommendations for the CISO References 1 The 2025+ inflection: agents everywhere The SOC has been climbing the same ladder for twenty years. In 2025 the ladder ended, and the ground changed. Each rung added capability to a fundamentally reactive posture: the network operations center became a security operations center; rules gained machine-learning assists; threat intelligence enriched alerts; and SOAR automated the runbooks. Useful, incremental, human-paced. The 2025+ inflection is not another rung — it is a change in who acts. Agents are now on both sides of the wire. Adversaries automate reconnaissance, exploitation and lateral movement at machine speed; defenders deploy their own agents to triage, hunt and remediate. The volume, velocity and autonomy of action all step up at once. Figure 1 — Two decades of incremental, reactive evolution meet an inflection: action becomes autonomous and bidirectional. The SOC must defend at machine speed against — and with — agents. The shift The SOC's job is no longer to collect logs and correlate them later. It is to reason over relationships in the ingestion path, act autonomously within guardrails, and govern an estate where humans, services and agents all take actions that must be attributed. 2 Why the cloud-SIEM model breaks for IT/OT The 2022–2025 reference design was a cloud-SIEM, managed-service model: ship everything to a regional SIEM, correlate centrally, bill per query. For a distributed IT/OT enterprise that model now works against you. Assumption of the cloud-SIEM model Reality for distributed IT/OT in 2026+ Telemetry can leave the site OT, IoMT, video and process data are large, sensitive and often regulated — egress is a data-exfil and compliance risk Cost scales gracefully Cloud-SIEM fees recur on every event and query; agentic volume multiplies them without a ceiling The link is always up Plants, depots, substations and vehicles operate through outages; a cloud round-trip stalls incident response Generic detections are enough Vendor rules miss your environment; OT protocols and device behavior need locally-learned models Detection is a search problem At machine speed, delayed search and scheduled correlation are too late — detection must happen at ingest The OT estate compounds every one of these: long-lived devices, brittle protocols, safety constraints, no patch window, and air-gapped or intermittently-connected enclaves where a cloud dependency is simply unavailable. A modern SOC for this world has to run where the data is born . 3 From 20 tools to four cognitive platforms The traditional SOC is twenty fragmented tools, each a console and a silo. The modern architecture consolidates them into four cognitive platforms feeding a single reasoning core that takes autonomous action. Figure 2 — The 2026++ SOC. Four telemetry domains feed four cognitive platforms, which feed one self-learning reasoning core that drives four autonomous actions — entirely on owned silicon, with no cloud dependency. Each legacy control does not disappear; it is absorbed into a platform and made cognitive. The point is consolidation of data flows , not just consoles: Control What it was What the reasoning core makes it CSPM Finds cloud misconfig & drift Generates and tests infrastructure-as-code PRs to auto-close drift SIEM Centralized log search & retention Correlates events as a graph, not sequential log scans SOAR Hard-coded mitigation playbooks Playbooks reason over live topology instead of static scripts EDR Endpoint detect & remediate Explains endpoint anomalies and auto-scopes remediation MITRE ATT&CK Manual tactic mapping Auto-maps detections to adversary tactics in real time MEC (edge) Compute at the network edge Compiles hyper-local models that detect anomalies at the edge IDAM Identity, RBAC, MFA Adapts access policy to user, service and agent context in real time 4 The self-learning, edge-native SOC analyst The reasoning core is not a chatbot bolted onto a SIEM. It is a frozen open model adapted by external stores, improved by a verifier-graded loop, and run entirely on-device. Detection happens in the ingestion path , on the GPU, while events are still moving — tokenized, classified and enriched before indexing, using a compact transformer classifier rather than regex chains. A streaming bus in broker-only mode feeds parallel GPU workers; an inference server runs the model with dynamic batching; enriched incidents land in a sharded, authenticated index; a dead-letter queue protects failed batches and retention keeps storage bounded. On a single Blackwell-class node this sustains production-grade throughput: 21,300 + EPS Peak ingestion & AI-classification throughput, single node 13,800 + EPS Sustained production baseline ~3 s AI inference latency at ingest, under load 1.29 B/day Events at the 15K-EPS baseline (~1.55 TB enriched) Frozen base, reversible adaptation The model learns your environment without drifting. A frozen base never has its weights merged; adaptation lives in external, reversible stores — a knowledge layer (graph + retrieval), composable skills, and lightweight runtime controllers. A verifier-graded loop proposes updates, grades them against schema and grounding, and a regression gate commits only changes that beat the prior baseline on held-out data — otherwise it auto-reverts. Dual-path serving keeps a fast path for real-time detection and a deeper path for reflection. Why it is safe Because the base is frozen and every self-update is reversible and must clear an automatic regression gate before it goes live, detections only ever improve — the model compounds accuracy on your attacks, on-site, at near-zero marginal cost, with no weight drift and no data egress. 5 From alerts to a knowledge graph Isolated alerts hide multi-stage attacks. A knowledge graph models the enterprise as a web of relationships, so a low-severity signal can be traced to its true blast radius. Figure 3 — Relationship semantic context. When a low-severity anomaly fires on a workload, the core queries the graph — who owns the identity, what it talks to, where it runs, what it exposes — and traces the blast radius to catch the multi-stage attack the isolated alert would have missed. 6 The identity-driven core Distributed IT/OT and agentic workloads share one root requirement: every actor needs a verifiable identity and a scoped policy — whether the site is connected or air-gapped. That is the job of a thin identity edge. Rather than operate a heavy identity provider at every site, the architecture uses a thin authentication edge (an OAuth2/OIDC proxy with server-side sessions and edge RBAC) that delegates identity to the right issuer and injects a consistent identity context downstream. One pluggable setting selects the issuer; everything behind it stays identity-agnostic. Connected sites Air-gapped / disconnected enclaves Issuer The enterprise IdP — SSO, MFA and lifecycle stay where they already live; no local IdP to run A self-contained on-prem OIDC issuer with its own user/group store — no external database, no cloud reach Edge Same thin proxy; same server-side sessions; same RBAC on a roles claim; downstream services receive identity via standard headers Switch One pluggable issuer setting — applications and the SOC never change Secrets Held in the platform secret store; never committed; sessions in a local cache Identity-driven core A portable identity edge gives humans, services and agents one scoped identity model across the whole distributed estate — connected or air-gapped — and becomes the control point the SOC and the gateway both reason over. 7 Governing agentic workloads Agents are a new class of actor. They act on behalf of users, call tools, read sensitive data and spawn sub-agents — at machine speed. Each action must carry an identity, a scoped credential, a policy and an audit trail. This is where identity, the gateway and the SOC meet. The GPU EdgeGateway governs the agent's traffic : it routes each request to the right model on owned silicon, runs tools and code in policy-governed sandboxes (no unauthorized file, credential or network access), checks for sensitive-data leakage and prompt injection inline, and meters every call. The AI SOC governs the agent's behavior : it watches agent actions the way UEBA watches users, and uses the knowledge graph to bound what a compromised or misbehaving agent can reach. Agentic risk Control An agent acts with no attributable identity Identity-driven core issues a scoped identity per agent and human-on-behalf-of relationship An agent over-reaches its tools or data EdgeGateway sandboxes tools/code and enforces policy-as-code on every call A prompt injection or leak rides the request Inline safety classifiers (PII, jailbreak, injection) on every turn at the gateway A compromised agent moves laterally AISOC traces blast radius on the graph and contains by relationship Spend and action go unaudited Every route metered and attributed; every action logged for review 8 The Unovie offering: EdgeGateway + AISOC Unovie delivers this architecture as two offerings bound by the identity-driven core, all on hardware you own. GPU EdgeGateway — govern the agentic AI An inference-native, agent-first gateway. One routing contract turns signals into decisions across a mesh of local, private and frontier models; the prefix cache is protected; context is selected, not pasted; tools run sandboxed; and every policy change is shadow-tested before it goes live. It is the safe, governed, least-cost path for every agentic request — and the enforcement point for agent identity and policy. AI SOC (AISOC) — detect and respond on your floor An edge-native, self-learning security operations capability: GPU-native detection in the ingestion path, a knowledge graph for relationship context and blast-radius, a verifier-graded learning loop that compounds accuracy on your environment, and autonomous action — remediation-as-code, graph-traced containment, adaptive policy and continuous compliance evidence. It runs on-site, learns from your own attacks, and never ships telemetry off the boundary. See it on the platform. The detection-at-ingest, knowledge-graph and IT/OT coverage described here are productized as IT/OT Edge Security Intelligence — unovie.ai/platform/agentmesh . The agent-traffic governance layer is GPU EdgeGateway — unovie.ai/platform/agentnexus . 9 Deployment for the distributed enterprise An edge SOC node per site. Place a Blackwell-class node (Jetson AGX Thor / DGX Spark) where the data is — plant, depot, substation, clinic, vehicle bay — running detection-at-ingest and the reasoning core locally. One pipeline for IT and OT. IT telemetry (logs, identity, network, cloud) and OT/device telemetry land on the same local pipeline, so anomalies on the floor are correlated beside IT threats. Connected or air-gapped, same design. The identity edge points at the enterprise IdP where connected and a self-contained issuer where isolated; nothing downstream changes. Local autonomy, central correlation. Each node detects and responds on its own; a thin central layer correlates across sites without ever pulling raw telemetry off-site — only enriched, scoped findings travel. Govern agents through the gateway. All agentic AI traffic flows through EdgeGateway for routing, sandboxing, safety and metering. Own the model, not a subscription. Capacity is owned silicon; marginal cost approaches electricity; there is no per-query SIEM meter and no egress bill. 100 % On-site — telemetry never leaves the boundary $0 /query No recurring cloud-SIEM or per-event fees 24/7 Detection & response survive link and provider outages Weekly Detections compound from your own attacks 10 Governance, compliance & reversibility Owning the detection and inference path is the strongest governance posture available to a distributed enterprise. Sensitive IT/OT and regulated data never leaves the site, so data-exfil and cross-border transfer risk are removed at the source. Controls map continuously to frameworks — NIST guidelines, sector standards such as FHIR for health data — producing continuous compliance evidence rather than point-in-time audits. Because the reasoning core's base is frozen and every self-update is reversible behind a regression gate, the security model never drifts out from under you — the opposite of a cloud detection set that changes on a vendor's schedule. A live asset inventory (CMDB) tracks device firmware, end-of-life and protocol risk across the IT/OT estate, and the knowledge graph keeps identity, asset and vulnerability context joined. Capability without exposure. Hard problems still reach a large on-prem model, and the rare request that genuinely needs a frontier model can take that path by explicit, attributed exception through the gateway — so you keep the ceiling while keeping the data home. 11 Recommendations for the CISO Move detection to where the data is born. Stand up an edge SOC node per site; reserve the cloud for cross-site, scoped correlation only. Consolidate toward four cognitive platforms. Collapse the twenty-tool sprawl into cloud/workload, DevSecOps, cyber-ops and identity/asset platforms feeding one reasoning core. Detect at ingest, correlate on a graph. Treat detection as an in-path engineering problem; model the estate as relationships to catch multi-stage attacks. Make identity the core. Deploy a thin, pluggable identity edge so connected and air-gapped sites share one scoped model — for humans, services and agents. Govern every agent. Route agentic traffic through a gateway that sandboxes tools, enforces policy-as-code, checks safety inline and attributes every action. Own the model. Prefer a frozen-base, self-learning core you operate over a per-query subscription whose detections you do not control. Keep it reversible and provable. Gate every self-update on a regression test; map controls continuously to your compliance frameworks. Plan for IT and OT together. One pipeline, one identity model, one graph — not two disconnected programs. 12 References Unovie.AI. IT/OT Edge Security Intelligence. unovie.ai/platform/edge-security-intelligence — GPU-native detection at ingest, knowledge-graph correlation, IT + OT coverage. Unovie.AI. GPU EdgeGateway. unovie.ai/platform/gpu-edgegateway — inference-native, agent-first routing and governance on owned silicon. GPU-native SIEM reference architecture (single Blackwell node). Detection-at-ingest with a compact transformer classifier; ~21,300 EPS peak / ~13,800 EPS sustained; broker-only streaming, sharded authenticated index, dead-letter queue, retention enforcement. Self-learning, edge-native analyst pattern. Frozen base + external adaptation stores (knowledge / skills / controllers); verifier-graded loop with an automatic regression gate; dual-path serving; fully on-device. Thin authentication edge pattern. OAuth2/OIDC proxy with server-side sessions and edge RBAC; pluggable issuer — enterprise IdP (connected) or a self-contained on-prem OIDC issuer (air-gapped); identity-agnostic downstream. MITRE ATT&CK. Adversary tactics & techniques mapping used for real-time detection-to-tactic correlation. NIST guidance (incl. SP 800-190, container/IoT security) and sector standards (e.g., FHIR for health data interoperability). Continuous control mapping for compliance evidence. NVIDIA. Jetson AGX Thor & DGX Spark (Blackwell). On-site, 128 GB unified memory, NVFP4 — the owned-silicon target for edge SOC nodes. Unovie.AI · EdgeAI Context Engineering. This whitepaper synthesizes internal edge-security architecture with public hardware specifications and well-established security concepts (detection-at-ingest, knowledge-graph correlation, frozen-base self-learning, thin identity edges, MITRE ATT&CK, NIST). Throughput figures reflect a single-node reference benchmark and will vary with workload, hardware and configuration. Revision 1.0."
+   "text": "Modernizing the SOC for the Agentic Era — Edge-Native, Identity-Driven Security for Distributed IT/OT ← Unovie.AI Download PDF Technical Whitepaper · AI SOC Modernization Modernizing the SOC for the Agentic Era: Edge-Native, Identity-Driven Security for Distributed IT/OT For CISOs and security organizations running distributed estates across IT and OT. Why the cloud-SIEM model breaks as agents — and agentic threats — appear everywhere, and how an edge-native, identity-driven AI SOC keeps detection, response and governance on your own ground. Suresh Mandava Unovie.AI · EdgeAI Context Engineering Revision 1.0 · June 2026 Reference hardware: NVIDIA Jetson AGX Thor · DGX Spark (Blackwell, 128 GB unified) — on-site Abstract The Security Operations Center evolved for two decades — NOC, SOC, AI/ML-assisted detection, threat intelligence, SOAR — toward a cloud-SIEM, managed-service model. That model assumed telemetry could leave the site and that threats were authored by humans. Both assumptions break in 2025 and beyond : AI agents now act everywhere — yours automating operations, adversaries' automating attacks — and distributed IT/OT estates cannot ship sensitive, high-volume telemetry to a metered cloud. We argue for an edge-native, identity-driven AI SOC : a self-learning reasoning core that runs on-site on owned silicon, detecting in the ingestion path; a knowledge graph that replaces isolated alerts with traced blast-radius; and an identity-driven core that gives every human, service and agent a scoped identity and policy — connected or air-gapped. Unovie delivers this through two offerings — GPU EdgeGateway , which governs agentic AI traffic, and the AI SOC (AISOC) , which detects and responds on your floor — bound by a portable identity edge. The result: detections that compound on your environment, response that survives outages, compliance evidence that is continuous, and data that never leaves your boundary. Contents The 2025+ inflection: agents everywhere Why the cloud-SIEM model breaks for IT/OT From 20 tools to four cognitive platforms The self-learning, edge-native SOC analyst From alerts to a knowledge graph The identity-driven core Governing agentic workloads The Unovie offering: EdgeGateway + AISOC Deployment for the distributed enterprise Governance, compliance & reversibility Recommendations for the CISO References 1 The 2025+ inflection: agents everywhere The SOC has been climbing the same ladder for twenty years. In 2025 the ladder ended, and the ground changed. Each rung added capability to a fundamentally reactive posture: the network operations center became a security operations center; rules gained machine-learning assists; threat intelligence enriched alerts; and SOAR automated the runbooks. Useful, incremental, human-paced. The 2025+ inflection is not another rung — it is a change in who acts. Agents are now on both sides of the wire. Adversaries automate reconnaissance, exploitation and lateral movement at machine speed; defenders deploy their own agents to triage, hunt and remediate. The volume, velocity and autonomy of action all step up at once. Figure 1 — Two decades of incremental, reactive evolution meet an inflection: action becomes autonomous and bidirectional. The SOC must defend at machine speed against — and with — agents. The shift The SOC's job is no longer to collect logs and correlate them later. It is to reason over relationships in the ingestion path, act autonomously within guardrails, and govern an estate where humans, services and agents all take actions that must be attributed. 2 Why the cloud-SIEM model breaks for IT/OT The 2022–2025 reference design was a cloud-SIEM, managed-service model: ship everything to a regional SIEM, correlate centrally, bill per query. For a distributed IT/OT enterprise that model now works against you. Assumption of the cloud-SIEM model Reality for distributed IT/OT in 2026+ Telemetry can leave the site OT, IoMT, video and process data are large, sensitive and often regulated — egress is a data-exfil and compliance risk Cost scales gracefully Cloud-SIEM fees recur on every event and query; agentic volume multiplies them without a ceiling The link is always up Plants, depots, substations and vehicles operate through outages; a cloud round-trip stalls incident response Generic detections are enough Vendor rules miss your environment; OT protocols and device behavior need locally-learned models Detection is a search problem At machine speed, delayed search and scheduled correlation are too late — detection must happen at ingest The OT estate compounds every one of these: long-lived devices, brittle protocols, safety constraints, no patch window, and air-gapped or intermittently-connected enclaves where a cloud dependency is simply unavailable. A modern SOC for this world has to run where the data is born . 3 From 20 tools to four cognitive platforms The traditional SOC is twenty fragmented tools, each a console and a silo. The modern architecture consolidates them into four cognitive platforms feeding a single reasoning core that takes autonomous action. Figure 2 — The 2026++ SOC. Four telemetry domains feed four cognitive platforms, which feed one self-learning reasoning core that drives four autonomous actions — entirely on owned silicon, with no cloud dependency. Each legacy control does not disappear; it is absorbed into a platform and made cognitive. The point is consolidation of data flows , not just consoles: Control What it was What the reasoning core makes it CSPM Finds cloud misconfig & drift Generates and tests infrastructure-as-code PRs to auto-close drift SIEM Centralized log search & retention Correlates events as a graph, not sequential log scans SOAR Hard-coded mitigation playbooks Playbooks reason over live topology instead of static scripts EDR Endpoint detect & remediate Explains endpoint anomalies and auto-scopes remediation MITRE ATT&CK Manual tactic mapping Auto-maps detections to adversary tactics in real time MEC (edge) Compute at the network edge Compiles hyper-local models that detect anomalies at the edge IDAM Identity, RBAC, MFA Adapts access policy to user, service and agent context in real time 4 The self-learning, edge-native SOC analyst The reasoning core is not a chatbot bolted onto a SIEM. It is a frozen open model adapted by external stores, improved by a verifier-graded loop, and run entirely on-device. Detection happens in the ingestion path , on the GPU, while events are still moving — tokenized, classified and enriched before indexing, using a compact transformer classifier rather than regex chains. A streaming bus in broker-only mode feeds parallel GPU workers; an inference server runs the model with dynamic batching; enriched incidents land in a sharded, authenticated index; a dead-letter queue protects failed batches and retention keeps storage bounded. On a single Blackwell-class node this sustains production-grade throughput: 21,300 + EPS Peak ingestion & AI-classification throughput, single node 13,800 + EPS Sustained production baseline ~3 s AI inference latency at ingest, under load 1.29 B/day Events at the 15K-EPS baseline (~1.55 TB enriched) Frozen base, reversible adaptation The model learns your environment without drifting. A frozen base never has its weights merged; adaptation lives in external, reversible stores — a knowledge layer (graph + retrieval), composable skills, and lightweight runtime controllers. A verifier-graded loop proposes updates, grades them against schema and grounding, and a regression gate commits only changes that beat the prior baseline on held-out data — otherwise it auto-reverts. Dual-path serving keeps a fast path for real-time detection and a deeper path for reflection. Why it is safe Because the base is frozen and every self-update is reversible and must clear an automatic regression gate before it goes live, detections only ever improve — the model compounds accuracy on your attacks, on-site, at near-zero marginal cost, with no weight drift and no data egress. 5 From alerts to a knowledge graph Isolated alerts hide multi-stage attacks. A knowledge graph models the enterprise as a web of relationships, so a low-severity signal can be traced to its true blast radius. Figure 3 — Relationship semantic context. When a low-severity anomaly fires on a workload, the core queries the graph — who owns the identity, what it talks to, where it runs, what it exposes — and traces the blast radius to catch the multi-stage attack the isolated alert would have missed. 6 The identity-driven core Distributed IT/OT and agentic workloads share one root requirement: every actor needs a verifiable identity and a scoped policy — whether the site is connected or air-gapped. That is the job of a thin identity edge. Rather than operate a heavy identity provider at every site, the architecture uses a thin authentication edge (an OAuth2/OIDC proxy with server-side sessions and edge RBAC) that delegates identity to the right issuer and injects a consistent identity context downstream. One pluggable setting selects the issuer; everything behind it stays identity-agnostic. Connected sites Air-gapped / disconnected enclaves Issuer The enterprise IdP — SSO, MFA and lifecycle stay where they already live; no local IdP to run A self-contained on-prem OIDC issuer with its own user/group store — no external database, no cloud reach Edge Same thin proxy; same server-side sessions; same RBAC on a roles claim; downstream services receive identity via standard headers Switch One pluggable issuer setting — applications and the SOC never change Secrets Held in the platform secret store; never committed; sessions in a local cache Identity-driven core A portable identity edge gives humans, services and agents one scoped identity model across the whole distributed estate — connected or air-gapped — and becomes the control point the SOC and the gateway both reason over. 7 Governing agentic workloads Agents are a new class of actor. They act on behalf of users, call tools, read sensitive data and spawn sub-agents — at machine speed. Each action must carry an identity, a scoped credential, a policy and an audit trail. This is where identity, the gateway and the SOC meet. The GPU EdgeGateway governs the agent's traffic : it routes each request to the right model on owned silicon, runs tools and code in policy-governed sandboxes (no unauthorized file, credential or network access), checks for sensitive-data leakage and prompt injection inline, and meters every call. The AI SOC governs the agent's behavior : it watches agent actions the way UEBA watches users, and uses the knowledge graph to bound what a compromised or misbehaving agent can reach. Agentic risk Control An agent acts with no attributable identity Identity-driven core issues a scoped identity per agent and human-on-behalf-of relationship An agent over-reaches its tools or data EdgeGateway sandboxes tools/code and enforces policy-as-code on every call A prompt injection or leak rides the request Inline safety classifiers (PII, jailbreak, injection) on every turn at the gateway A compromised agent moves laterally AISOC traces blast radius on the graph and contains by relationship Spend and action go unaudited Every route metered and attributed; every action logged for review 8 The Unovie offering: EdgeGateway + AISOC Unovie delivers this architecture as two offerings bound by the identity-driven core, all on Unovie's custom-built hardware accelerators. GPU EdgeGateway — govern the agentic AI An inference-native, agent-first gateway. One routing contract turns signals into decisions across a mesh of local, private and frontier models; the prefix cache is protected; context is selected, not pasted; tools run sandboxed; and every policy change is shadow-tested before it goes live. It is the safe, governed, least-cost path for every agentic request — and the enforcement point for agent identity and policy. AI SOC (AISOC) — detect and respond on your floor An edge-native, self-learning security operations capability: GPU-native detection in the ingestion path, a knowledge graph for relationship context and blast-radius, a verifier-graded learning loop that compounds accuracy on your environment, and autonomous action — remediation-as-code, graph-traced containment, adaptive policy and continuous compliance evidence. It runs on-site, learns from your own attacks, and never ships telemetry off the boundary. See it on the platform. The detection-at-ingest, knowledge-graph and IT/OT coverage described here are productized as IT/OT Edge Security Intelligence — unovie.ai/platform/agentmesh . The agent-traffic governance layer is GPU EdgeGateway — unovie.ai/platform/agentnexus . 9 Deployment for the distributed enterprise An edge SOC node per site. Place a Blackwell-class node (Jetson AGX Thor / DGX Spark) where the data is — plant, depot, substation, clinic, vehicle bay — running detection-at-ingest and the reasoning core locally. One pipeline for IT and OT. IT telemetry (logs, identity, network, cloud) and OT/device telemetry land on the same local pipeline, so anomalies on the floor are correlated beside IT threats. Connected or air-gapped, same design. The identity edge points at the enterprise IdP where connected and a self-contained issuer where isolated; nothing downstream changes. Local autonomy, central correlation. Each node detects and responds on its own; a thin central layer correlates across sites without ever pulling raw telemetry off-site — only enriched, scoped findings travel. Govern agents through the gateway. All agentic AI traffic flows through EdgeGateway for routing, sandboxing, safety and metering. Own the model, not a subscription. Capacity is owned silicon; marginal cost approaches electricity; there is no per-query SIEM meter and no egress bill. 100 % On-site — telemetry never leaves the boundary $0 /query No recurring cloud-SIEM or per-event fees 24/7 Detection & response survive link and provider outages Weekly Detections compound from your own attacks 10 Governance, compliance & reversibility Owning the detection and inference path is the strongest governance posture available to a distributed enterprise. Sensitive IT/OT and regulated data never leaves the site, so data-exfil and cross-border transfer risk are removed at the source. Controls map continuously to frameworks — NIST guidelines, sector standards such as FHIR for health data — producing continuous compliance evidence rather than point-in-time audits. Because the reasoning core's base is frozen and every self-update is reversible behind a regression gate, the security model never drifts out from under you — the opposite of a cloud detection set that changes on a vendor's schedule. A live asset inventory (CMDB) tracks device firmware, end-of-life and protocol risk across the IT/OT estate, and the knowledge graph keeps identity, asset and vulnerability context joined. Capability without exposure. Hard problems still reach a large on-prem model, and the rare request that genuinely needs a frontier model can take that path by explicit, attributed exception through the gateway — so you keep the ceiling while keeping the data home. 11 Recommendations for the CISO Move detection to where the data is born. Stand up an edge SOC node per site; reserve the cloud for cross-site, scoped correlation only. Consolidate toward four cognitive platforms. Collapse the twenty-tool sprawl into cloud/workload, DevSecOps, cyber-ops and identity/asset platforms feeding one reasoning core. Detect at ingest, correlate on a graph. Treat detection as an in-path engineering problem; model the estate as relationships to catch multi-stage attacks. Make identity the core. Deploy a thin, pluggable identity edge so connected and air-gapped sites share one scoped model — for humans, services and agents. Govern every agent. Route agentic traffic through a gateway that sandboxes tools, enforces policy-as-code, checks safety inline and attributes every action. Own the model. Prefer a frozen-base, self-learning core you operate over a per-query subscription whose detections you do not control. Keep it reversible and provable. Gate every self-update on a regression test; map controls continuously to your compliance frameworks. Plan for IT and OT together. One pipeline, one identity model, one graph — not two disconnected programs. 12 References Unovie.AI. IT/OT Edge Security Intelligence. unovie.ai/platform/edge-security-intelligence — GPU-native detection at ingest, knowledge-graph correlation, IT + OT coverage. Unovie.AI. GPU EdgeGateway. unovie.ai/platform/gpu-edgegateway — inference-native, agent-first routing and governance on owned silicon. GPU-native SIEM reference architecture (single Blackwell node). Detection-at-ingest with a compact transformer classifier; ~21,300 EPS peak / ~13,800 EPS sustained; broker-only streaming, sharded authenticated index, dead-letter queue, retention enforcement. Self-learning, edge-native analyst pattern. Frozen base + external adaptation stores (knowledge / skills / controllers); verifier-graded loop with an automatic regression gate; dual-path serving; fully on-device. Thin authentication edge pattern. OAuth2/OIDC proxy with server-side sessions and edge RBAC; pluggable issuer — enterprise IdP (connected) or a self-contained on-prem OIDC issuer (air-gapped); identity-agnostic downstream. MITRE ATT&CK. Adversary tactics & techniques mapping used for real-time detection-to-tactic correlation. NIST guidance (incl. SP 800-190, container/IoT security) and sector standards (e.g., FHIR for health data interoperability). Continuous control mapping for compliance evidence. NVIDIA. Jetson AGX Thor & DGX Spark (Blackwell). On-site, 128 GB unified memory, NVFP4 — the owned-silicon target for edge SOC nodes. Unovie.AI · EdgeAI Context Engineering. This whitepaper synthesizes internal edge-security architecture with public hardware specifications and well-established security concepts (detection-at-ingest, knowledge-graph correlation, frozen-base self-learning, thin identity edges, MITRE ATT&CK, NIST). Throughput figures reflect a single-node reference benchmark and will vary with workload, hardware and configuration. Revision 1.0."
   },
   {
    "id": "platform_agentmesh#1",
@@ -783,6 +791,438 @@
    "title": "Hardware — AgentMesh and AgentNexus on AMD and NVIDIA — Unovie.AI",
    "section": "Pick the hardware. We'll run the platform on it.",
    "text": "Let's build Pick the hardware. We'll run the platform on it. Turnkey Edge-AI — fixed time, fixed cost, full responsibility. Talk to our engineers → See all solutions"
+  },
+  {
+   "id": "faq#1",
+   "url": "https://unovie.ai/faq.html",
+   "type": "faq",
+   "title": "FAQ — Unovie.AI: data, safety, hardware and pilot cost",
+   "section": "Straight answers, first.",
+   "text": "Home / FAQ FAQ · For buyers Straight answers, first. The questions plant, quality, security and finance teams ask us before a pilot, answered in the first sentence."
+  },
+  {
+   "id": "faq#2",
+   "url": "https://unovie.ai/faq.html",
+   "type": "faq",
+   "title": "FAQ — Unovie.AI: data, safety, hardware and pilot cost",
+   "section": "",
+   "text": "01 Does any of our data leave the site? No, not by default. AgentMesh runs air-gapped on your factory network, and raw signals, images and models stay on site. The only things that go out are the ones you choose, such as work orders to your maintenance system, over outbound-only connections. 02 What happens when the internet or site link drops? Nothing changes at the machine. Each AgentMesh pod decides locally and keeps running without a link. Findings for AgentNexus queue up and sync when the link returns. 03 Is Unovie a safety system? No. AgentMesh is never on the path that moves equipment and makes no SIL claim. It acts directly only on low-consequence outputs such as a reject gate or rework diverter (Lane A). Anything safety-related is an alarm and a request that your PLC, safety system and operators decide (Lane B). 04 What hardware does it run on? Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability. The reference AgentMesh pod is four AMD Ryzen AI Max+ 395 servers in a 3U shelf; NVIDIA Jetson AGX Thor serves robotics and vision at the tool, and NVIDIA DGX Spark serves as the AI engineering lab. 05 Do we have to buy the hardware? No. Unovie supplies the hardware configured and tested. You can buy it outright or take it as a service with no upfront hardware cost. 06 What does a pilot cost? The site audit is at no charge: a 1–2 day visit on site, followed by written findings and a pilot plan. The 6-week paid pilot is $40–60K and is credited in full against a production site signed within 90 days. 07 What do we get at the end of the pilot? One domain kit running on your own data, a baseline ROI view, a measured latency report and a signed evidence pack of what the system did and why. 08 How is production priced? Per monitored asset and domain kit, never per seat or per camera. We quote production after the pilot, when we both know the asset count and the value. 09 How fast can we reach production? The target is about one quarter from the end of the pilot to a production site, because the pilot's playbook, connections and models carry straight over. 10 Which systems does it connect to? Sensors, robot controllers, vision stations, test rigs, PLCs (read-only, plus listed Lane A outputs), MES and quality systems, historians, and work-order systems such as SAP and Maximo. Industrial protocols include OPC UA, EtherCAT and Modbus. 11 Is it certified or compliant with NIST, CMMC or IEC 62443? Unovie is designed against NIST SP 800-53 and the NIST AI RMF and produces evidence for programs such as SP 800-171/CMMC and IEC 62443. Compliance is determined by your assessor, not by a product. 12 Does the AI change itself over time? Only through tests. Each night the Kiln proposes small playbook and skill-adapter changes and keeps them only if they beat what is running on held-out cases. Every change is signed, logged and reversible, and the base model never changes. 13 Do you train on our data for other customers? No. Models improve on your site, from your data, and nothing is shared back to Unovie or to other customers. 14 Where are your engineers? Unovie is headquartered in Austin, Texas, with engineers on site across Texas and serving customers nationally. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "faq#3",
+   "url": "https://unovie.ai/faq.html",
+   "type": "faq",
+   "title": "FAQ — Unovie.AI: data, safety, hardware and pilot cost",
+   "section": "Ask an engineer, not a chatbot.",
+   "text": "Still have a question? Ask an engineer, not a chatbot. Talk to our engineers → Pilot on your line"
+  },
+  {
+   "id": "resources_case-study-device-certification#1",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "One year, one platform: AI-driven certification for satellite set-top boxes.",
+   "text": "Home / Research / Case study Case study · Device test automation · 12 months One year, one platform: AI-driven certification for satellite set-top boxes. A national satellite pay-TV provider asked us to replace manual set-top box testing with automation they could trust. In twelve months we designed, built and deployed an air-gapped, GPU-accelerated verification platform in their device lab. It presses real remote buttons, watches the real video output, judges what it sees and hands engineers an evidenced verdict. By the end of the year the whole QA team could test at once, the client was building its own vision models in-house, and every result could be read in plain English. 19 / 19 verification features delivered and verified 16 boxes verified in parallel from one 4K stream 0.836 → 0.961 detection mAP after one in-house retrain 16 / 16 boxes per stream with audio certified, up from 0 8 equipment rooms on one rack blueprint 0 bytes of test data leaving the lab"
+  },
+  {
+   "id": "resources_case-study-device-certification#2",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "The engagement.",
+   "text": "01 — At a glance The engagement. Client National satellite pay-TV provider (name withheld) Problem Manual, unrepeatable certification of set-top box firmware across six product lines Deployment Air-gapped, on-premise NVIDIA GPU fabric inside the client's device lab Duration 12 months, from first design to lab-wide operation Design scale 128 boxes per rack · 50 racks · 6,400 devices · 300 ms from frame to verdict (design targets)"
+  },
+  {
+   "id": "resources_case-study-device-certification#3",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "A tester, a remote and a screen.",
+   "text": "02 — The problem A tester, a remote and a screen. The lab certifies every firmware build for six product lines, each with several versions in test at once. The goal was never to review faster. It was to make exhaustive certification cheaper than sampling. /manual Manual and unrepeatable Coverage was whatever one person could get through in a day, and no two runs were quite the same. /brittle Brittle when automated Earlier tools compared screenshots pixel by pixel. A font tweak or a new promo tile broke the test, so most failures were the tool's fault. /evidence Verdicts without evidence A note in a spreadsheet is a recollection. An annotated proof frame and a log start a different conversation with a developer. /audio No audio at scale One capture stream showed sixteen boxes, but the audio path reached one box at a time, so audio wasn't verified at scale at all."
+  },
+  {
+   "id": "resources_case-study-device-certification#4",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "Thousands of screens, judged in 300 ms.",
+   "text": "03 — Why it's hard Thousands of screens, judged in 300 ms. Design target Per stream Per rack (128 boxes) Full build-out (50 racks) Devices under test 16 128 6,400 4K capture streams 1 8 400 Device-lane frames per second 960 7,680 384,000 Uncompressed video ~6 Gbps ~48 Gbps ~2.4 Tbps Capture → verdict 300 ms 300 ms 300 ms Engineering estimates at 60 fps, 8-bit 4:2:0 video · design targets, not measured /copy Moving data is the bottleneck At terabits per second of decoded video, frames can't be copied through the CPU. Every step has to run in GPU memory. /time Failures happen over time Freeze, macroblocking, stuck splash screens and audio dropouts only show across a sequence of frames. /matrix A matrix, not a checklist Six product lines × several firmware versions: the same check has a different correct answer on each. /physical Physical control at scale Every verdict starts with a real IR keypress. Thousands of remotes need scheduling, with hardware locked so jobs never collide."
+  },
+  {
+   "id": "resources_case-study-device-certification#5",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "An engine, then a platform.",
+   "text": "04 — What we delivered An engine, then a platform. /engine The verification engine Drives the remote, reads the screen with detection and OCR, judges A/V health on the GPU and attaches proof frames and a written report to every verdict. Sixteen boxes per 4K stream, sliced on the GPU. Tests are configuration, not code. 19 of 19 features on schedule /factory The model factory An on-premise path from raw footage to labelled dataset to trained, versioned model. The client now retrains its own detectors: mAP rose from 0.836 to 0.961 in one cycle. in-house models versioned /channels Adding a channel is a data task Channels are matched against a managed library of reference images, so a new or rebranded channel needs a picture, not a retrain. The library rebuilds in under two seconds. Below a confidence margin the answer is “unknown” and a person looks. no retraining honest unknown /scheduling Lab-wide scheduling The whole QA team tests at once across 8 equipment rooms, with hardware locked per job, per-user attribution, a full audit trail and inventory synced from the client's own configuration database. no collisions audit trail /language A private language layer Plain-English reports and plain-English test authoring, on separate inference hardware inside the lab. Facts such as channel numbers come from configuration, never from the model. no cloud no made-up facts /audio Audio, from zero to sixteen Networked control of the audio routing lets one scenario step cycle through every box and check measured signal level, so audio is certified on all sixteen paths. 16 / 16 measured signal"
+  },
+  {
+   "id": "resources_case-study-device-certification#6",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "After twelve months.",
+   "text": "05 — Results After twelve months. Outcome What changed Automation the team trusts Interpretation replaced screenshot comparison, so harmless UI changes no longer cause false failures. Evidence on every verdict Pass, fail or partial, each with an annotated proof frame and a per-lane log, one click away. In-house model ownership The client builds, versions and retrains its own models. Flat cost as the line-up grows New and rebranded channels take minutes, not a retraining project. Fails safely Low-confidence frames return “unknown” and go to a person. The system never guesses. Data sovereignty Fully air-gapped. No footage, labels, models or results leave the lab."
+  },
+  {
+   "id": "resources_case-study-device-certification#7",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "The same discipline, on the factory floor.",
+   "text": "06 — What carries over The same discipline, on the factory floor. This project was in media device testing, not manufacturing. What carries over is how it was engineered. /vision Vision QA at the line GPU video pipelines that judge what they see, not pixel diffs, are the core of our Vision Quality Inspection kit and DeepVision at the cell. Vision QA DeepVision /evidence Evidence first Every verdict carries its proof. In AgentMesh that becomes the signed Evidence Log and the nightly evidence pack. Evidence Log /data Data over retraining Where the business changes often, the change goes into managed reference data, not model weights. The same idea runs through Vector Memory and the frozen-base doctrine. Vector Memory frozen base /sovereign Air-gapped by default Nothing left the lab. Nothing leaves your site either. air-gapped"
+  },
+  {
+   "id": "resources_case-study-device-certification#8",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "",
+   "text": "Client details are withheld under confidentiality. Year-one results were measured in the client's lab; scale figures are engineering design targets."
+  },
+  {
+   "id": "resources_case-study-device-certification#9",
+   "url": "https://unovie.ai/resources/case-study-device-certification.html",
+   "type": "resource",
+   "title": "Case study: AI-driven certification for satellite set-top boxes — Unovie.AI",
+   "section": "Bring us a line. We'll make exhaustive checks cheaper than sampling.",
+   "text": "Still checking by hand? Bring us a line. We'll make exhaustive checks cheaper than sampling. Pilot on your line → Talk to our engineers"
+  },
+  {
+   "id": "sectors_battery#1",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "Every weld, every cell, watched in line.",
+   "text": "Home / Sectors / Battery & energy storage Battery & energy storage · Battery lines · storage sites Every weld, every cell, watched in line. Cell, module and pack lines produce more weld, formation and aging data than any team can read. AgentMesh watches it in line and diverts suspect parts to rework. On storage sites it gives early warning of thermal runaway, as an alarm on the systems you already have. Pilot on your line → See the pilot cell · module · pack formation & aging storage sites Illustration · targets, not measured · click to enlarge < 30 ms divert decision · target In line every weld judged, not sampled Alarm only on storage sites 0 raw signals sent off site"
+  },
+  {
+   "id": "sectors_battery#2",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "What gets in the way.",
+   "text": "01 — The problem What gets in the way. /ramp Ramp-up scrap A new line learns as it runs. A bad weld found at end-of-line test has already cost a finished module. /safety Storage-site safety reviews Fire codes, insurers and safety reviews ask for evidence that warning signs were watched, every hour, on every rack. /ip Process data is the IP Cell chemistry, weld schedules and formation recipes can't go to someone else's cloud."
+  },
+  {
+   "id": "sectors_battery#3",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "What AgentMesh does here.",
+   "text": "02 — The agentic jobs What AgentMesh does here. Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several. /line Battery Line & Storage Safety Weld, formation and aging signatures judged in line. On the line, Lane A diverts a suspect part to rework. On storage sites, early signs of thermal runaway go out as an alarm. Lane A divert alarm on fleets /vision Vision Quality Inspection Weld seams, tab alignment and electrode defects checked by DeepVision and fused with the process signals for the same part. DeepVision fused signals /records Quality records, drafted Non-conformance reports and traceability records drafted with the evidence attached, ready for your quality engineer to sign. NCR drafts sign-off"
+  },
+  {
+   "id": "sectors_battery#4",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "Into the systems you already run.",
+   "text": "03 — What it connects to Into the systems you already run. Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise. System How AgentMesh uses it Laser-weld controllers and weld-current clamps read-only Formation and cycler data read-only Battery and energy management systems read-only MES and quality system records out Fire alarm panel alarm input only Work-order system (e.g. SAP, Maximo) work orders out Never: AgentMesh never writes to a battery or energy management system and never triggers fire suppression. On storage sites it raises alarms; people and your safety systems act."
+  },
+  {
+   "id": "sectors_battery#5",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "Six weeks, on your own data.",
+   "text": "04 — The pilot Six weeks, on your own data. 01 Site audit · no charge An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit. 02 Weeks 1–2 Read-only connection, baselines from your history, replay of past events. 03 Weeks 3–6 Live findings in the agreed lanes, drafted records, a measured latency report. 04 Week 6 Results review and a signed evidence pack. The pilot fee is credited if you go to production. Pilot on one cell line or one storage site: replay of past weld and formation data in weeks 1–2, live in-line flags in weeks 3–6. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "sectors_battery#6",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "The technical brief.",
+   "text": "05 — For your architects The technical brief. /technical-brief AgentMesh — Architecture Overview The pod, the decision path, data safety and failover, for your architects. /security Secure by design Designed against NIST SP 800-53 and the NIST AI RMF, with evidence for your assessor. /faq Buyer questions, answered Data, safety, hardware, price and what happens when the link drops."
+  },
+  {
+   "id": "sectors_battery#7",
+   "url": "https://unovie.ai/sectors/battery.html",
+   "type": "sector",
+   "title": "Battery & energy storage — Unovie.AI",
+   "section": "Bring us one asset. We'll show you six weeks of evidence.",
+   "text": "Battery & energy storage Bring us one asset. We'll show you six weeks of evidence. Engineers on site across Texas, serving programs nationally. Pilot on your line → Talk to our engineers"
+  },
+  {
+   "id": "sectors_fabs#1",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "Fab utilities that never surprise you.",
+   "text": "Home / Sectors / Chip fabs & suppliers Chip fabs & suppliers · Fab utilities · supplier plants Fab utilities that never surprise you. Pumps, chillers, scrubbers, ultra-pure water and gas systems keep the fab alive. AgentMesh watches them from their own signals through ramp-up and steady state, at the fab and at its gas, chemical and parts suppliers. Process and design data never leave the fence. Pilot on your line → See the pilot sub-fab utilities supplier plants IP stays on site Illustration · targets, not measured · click to enlarge Lane B facilities decide Weeks to learn a baseline during ramp SEMI E187 evidence for equipment security 0 process data sent off site"
+  },
+  {
+   "id": "sectors_fabs#2",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "What gets in the way.",
+   "text": "01 — The problem What gets in the way. /downtime Utility trips scrap wafers A failed dry pump or scrubber can take a tool down mid-process. The warning signs are in the vibration and power data, days ahead. /staff Ramp with thin crews New fabs and supplier plants open with fewer experienced facilities engineers than they need. /ip Design and process IP Fab data is among the most guarded in industry. Cloud analytics is usually a non-starter."
+  },
+  {
+   "id": "sectors_fabs#3",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "What AgentMesh does here.",
+   "text": "02 — The agentic jobs What AgentMesh does here. Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several. /utilities Fab Utilities Watch Pumps, chillers, scrubbers, UPW and gas systems watched continuously. Findings go to facilities as a Lane B request with the evidence attached. Lane B work order drafted /electrical Electrical Health Drives, tool power, UPS and switchgear: early signs of arcing and insulation failure, from power-quality and partial-discharge signals. power quality partial discharge /network Factory Network Watch Unusual commands and unauthorized writes on the tool and facilities network, with evidence for equipment-security reviews. SEMI E187 audit evidence"
+  },
+  {
+   "id": "sectors_fabs#4",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "Into the systems you already run.",
+   "text": "03 — What it connects to Into the systems you already run. Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise. System How AgentMesh uses it Vibration and ultrasonic sensors on rotating equipment read-only Facilities monitoring and SCADA read-only Power-quality meters and switchgear read-only Tool and facilities network traffic passive copy Work-order system (e.g. SAP, Maximo) work orders out Facilities alarm system alarm input only Never: AgentMesh never changes a tool recipe or a facilities setpoint. It raises requests; your facilities team and control systems decide."
+  },
+  {
+   "id": "sectors_fabs#5",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "Six weeks, on your own data.",
+   "text": "04 — The pilot Six weeks, on your own data. 01 Site audit · no charge An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit. 02 Weeks 1–2 Read-only connection, baselines from your history, replay of past events. 03 Weeks 3–6 Live findings in the agreed lanes, drafted records, a measured latency report. 04 Week 6 Results review and a signed evidence pack. The pilot fee is credited if you go to production. Pilot on one sub-fab bay or one supplier plant: replay of past utilities data in weeks 1–2, live Lane B requests in weeks 3–6. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "sectors_fabs#6",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "The technical brief.",
+   "text": "05 — For your architects The technical brief. /technical-brief AgentMesh — Architecture Overview The pod, the decision path, data safety and failover, for your architects. /security Secure by design Designed against NIST SP 800-53 and the NIST AI RMF, with evidence for your assessor. /faq Buyer questions, answered Data, safety, hardware, price and what happens when the link drops."
+  },
+  {
+   "id": "sectors_fabs#7",
+   "url": "https://unovie.ai/sectors/fabs.html",
+   "type": "sector",
+   "title": "Chip fabs & suppliers — Unovie.AI",
+   "section": "Bring us one asset. We'll show you six weeks of evidence.",
+   "text": "Chip fabs & suppliers Bring us one asset. We'll show you six weeks of evidence. Engineers on site across Texas, serving programs nationally. Pilot on your line → Talk to our engineers"
+  },
+  {
+   "id": "sectors_space#1",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "Every test run watched. Every flight part traced.",
+   "text": "Home / Sectors / Space & aerospace Space & aerospace · Test stands · vehicle lines Every test run watched. Every flight part traced. Launch-vehicle, engine and spacecraft programs run more tests than people can watch channel by channel. AgentMesh flags anomalies to the test conductor during a run, beside your qualified test system, and drafts the post-test report and quality records. Export-controlled data stays on site. Pilot on your line → See the pilot test stands cleanrooms quality records Illustration · targets, not measured · click to enlarge < 30 ms advisory flags · target Advisory never in the test or flight path On site export-controlled data stays Drafted post-test reports and NCRs"
+  },
+  {
+   "id": "sectors_space#2",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "What gets in the way.",
+   "text": "01 — The problem What gets in the way. /cadence More launches, more tests Test cadence is rising faster than the number of engineers who can read every channel of every run. /data Data that can't leave Test data and drawings for export-controlled programs can't go to a public cloud. /records Records for every part Every flight part needs a record that ties test results back to the lot, the cleanroom step and the people who built it."
+  },
+  {
+   "id": "sectors_space#3",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "What AgentMesh does here.",
+   "text": "02 — The agentic jobs What AgentMesh does here. Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several. /tcm Test Campaign Monitor Pressure, strain, temperature and acoustic channels compared run by run. Anomalies go to the test conductor as advisory flags, beside the qualified test system and never inside it. advisory post-test report /vision Vision QA on the line DeepVision checks on composite layups, welds and harnesses, fused with process signals from the same step. DeepVision cleanroom /records Quality records, drafted First-article and non-conformance drafts with the evidence attached, and a trace from a test anomaly back to the production lot, for AS9100 quality systems. NCR drafts test → lot trace"
+  },
+  {
+   "id": "sectors_space#4",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "Into the systems you already run.",
+   "text": "03 — What it connects to Into the systems you already run. Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise. System How AgentMesh uses it Test-rig data acquisition read-only copy Test conductor console advisory flags only Cleanroom and line sensors, cameras read-only MES and quality system records out Product lifecycle and drawing systems read-only lookups Work-order system work orders out Never: AgentMesh never commands a test stand, a range or a flight system. It advises; the test conductor and your qualified systems decide."
+  },
+  {
+   "id": "sectors_space#5",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "Six weeks, on your own data.",
+   "text": "04 — The pilot Six weeks, on your own data. 01 Site audit · no charge An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit. 02 Weeks 1–2 Read-only connection, baselines from your history, replay of past events. 03 Weeks 3–6 Live findings in the agreed lanes, drafted records, a measured latency report. 04 Week 6 Results review and a signed evidence pack. The pilot fee is credited if you go to production. Pilot on one test stand: read-only connection and replay of past campaigns in weeks 1–2, live advisory flags and drafted reports in weeks 3–6, a signed evidence pack in week 6. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "sectors_space#6",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "The technical brief.",
+   "text": "05 — For your architects The technical brief. /technical-brief AgentMesh — Architecture Overview The pod, the decision path, data safety and failover, for your architects. /security Secure by design Designed against NIST SP 800-53 and the NIST AI RMF, with evidence for your assessor. /faq Buyer questions, answered Data, safety, hardware, price and what happens when the link drops."
+  },
+  {
+   "id": "sectors_space#7",
+   "url": "https://unovie.ai/sectors/space.html",
+   "type": "sector",
+   "title": "Space & aerospace — Unovie.AI",
+   "section": "Bring us one asset. We'll show you six weeks of evidence.",
+   "text": "Space & aerospace Bring us one asset. We'll show you six weeks of evidence. Engineers on site across Texas, serving programs nationally. Pilot on your line → Talk to our engineers"
+  },
+  {
+   "id": "sectors_robotics#1",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "Robot-dense lines, and the robots they build.",
+   "text": "Home / Sectors / Robotics, drones & autonomous systems Robotics, drones & autonomous systems · Robot lines · drones · vessels Robot-dense lines, and the robots they build. Robot cells, motion axes and vision stations produce a constant stream of joint, torque and image data. AgentMesh catches a drifting joint or gearbox before it scraps parts or stops the line, and keeps fleet health for drones and vessels that run disconnected and sync when they return. Pilot on your line → See the pilot robot cells DeepVision works offline Illustration · targets, not measured · click to enlarge < 30 ms reject decision · target Lane A reject gate, rework divert Offline fleets sync when they return 0 raw signals sent off site"
+  },
+  {
+   "id": "sectors_robotics#2",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "What gets in the way.",
+   "text": "01 — The problem What gets in the way. /drift Drift scraps parts first A worn gearbox or a drifting servo shows up as bad parts long before the robot faults. /volume Too much data to watch Every cell streams joint current, torque, cycle and vision data. Nobody can watch all of it. /field Fleets that go dark Drones and autonomous vessels spend hours or days without a link. Health checks have to run on board and catch up later."
+  },
+  {
+   "id": "sectors_robotics#3",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "What AgentMesh does here.",
+   "text": "02 — The agentic jobs What AgentMesh does here. Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several. /motion Robot & Motion Health Joint, servo, gearbox and spindle health on robots, motion axes and conveyors, with a drafted work order. Lane A reject work order /vision Vision Quality Inspection DeepVision at the cell on NVIDIA Jetson AGX Thor, fused with force, electrical and acoustic signals from the same cycle. Jetson AGX Thor sensor fusion /fleet Fleet health for drones and vessels Motor, battery and structure checks on board or at the dock, synced to the nearest AgentMesh pod when the link returns. works offline dock sync"
+  },
+  {
+   "id": "sectors_robotics#4",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "Into the systems you already run.",
+   "text": "03 — What it connects to Into the systems you already run. Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise. System How AgentMesh uses it Robot controllers and servo drives read-only Vision stations and cameras read-only Cell controller and PLC reject / divert outputs only MES and quality system records out Drone docks and vessel data links sync on return Work-order system work orders out Never: AgentMesh never moves a robot axis and never overrides a safety PLC. Lane A acts only on reject gates and diverters; everything else is a request."
+  },
+  {
+   "id": "sectors_robotics#5",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "Six weeks, on your own data.",
+   "text": "04 — The pilot Six weeks, on your own data. 01 Site audit · no charge An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit. 02 Weeks 1–2 Read-only connection, baselines from your history, replay of past events. 03 Weeks 3–6 Live findings in the agreed lanes, drafted records, a measured latency report. 04 Week 6 Results review and a signed evidence pack. The pilot fee is credited if you go to production. Pilot on one robot cell or one dock: replay of past joint and vision data in weeks 1–2, live reject decisions or flags in weeks 3–6. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "sectors_robotics#6",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "The technical brief.",
+   "text": "05 — For your architects The technical brief. /technical-brief AgentMesh — Architecture Overview The pod, the decision path, data safety and failover, for your architects. /security Secure by design Designed against NIST SP 800-53 and the NIST AI RMF, with evidence for your assessor. /faq Buyer questions, answered Data, safety, hardware, price and what happens when the link drops."
+  },
+  {
+   "id": "sectors_robotics#7",
+   "url": "https://unovie.ai/sectors/robotics.html",
+   "type": "sector",
+   "title": "Robotics, drones & autonomous systems — Unovie.AI",
+   "section": "Bring us one asset. We'll show you six weeks of evidence.",
+   "text": "Robotics, drones & autonomous systems Bring us one asset. We'll show you six weeks of evidence. Engineers on site across Texas, serving programs nationally. Pilot on your line → Talk to our engineers"
+  },
+  {
+   "id": "sectors_defense#1",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "Inside your enclave. Nothing leaves it.",
+   "text": "Home / Sectors / Defense & dual-use manufacturing Defense & dual-use manufacturing · Shipyards · dual-use factories Inside your enclave. Nothing leaves it. New shipyards, autonomous-vessel yards and dual-use factories are ramping with thin crews and strict data rules. AgentMesh runs line and yard quality checks, machinery health and factory network watch inside the security boundary you already maintain, and writes the evidence your assessors ask for. Pilot on your line → See the pilot your enclave shipyards evidence for CMMC Illustration · targets, not measured · click to enlarge Air-gapped by default SP 800-171 evidence for CMMC programs Lane B people decide 0 bytes leave the enclave"
+  },
+  {
+   "id": "sectors_defense#2",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "What gets in the way.",
+   "text": "01 — The problem What gets in the way. /crews Ramp with thin crews New yards and lines open faster than experienced inspectors and maintainers can be hired. /cui Controlled data Controlled unclassified and export-controlled data must stay inside an approved boundary. /evidence Evidence for assessors CMMC and SP 800-171 programs need records of what systems did and who approved it."
+  },
+  {
+   "id": "sectors_defense#3",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "What AgentMesh does here.",
+   "text": "02 — The agentic jobs What AgentMesh does here. Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several. /qa Line and yard QA DeepVision weld and structure checks fused with process signals, with drafted non-conformance reports. DeepVision NCR drafts /machinery Machinery health Vibration, electrical and ultrasonic signals on pumps, motors, generators and shop equipment, with work orders drafted. rotating equipment electrical /network Factory Network Watch Unusual commands and unauthorized writes on the factory network, logged for audits. OT network audit evidence"
+  },
+  {
+   "id": "sectors_defense#4",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "Into the systems you already run.",
+   "text": "03 — What it connects to Into the systems you already run. Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise. System How AgentMesh uses it Machinery sensors and condition monitoring read-only Weld and process equipment read-only Vision stations read-only Factory network traffic passive copy MES and quality system records out Maintenance system work orders out Never: AgentMesh works on the factory, the yard and its machinery. It is never part of a weapon, fire-control or combat system, and the language model never sits on a path that moves equipment."
+  },
+  {
+   "id": "sectors_defense#5",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "Six weeks, on your own data.",
+   "text": "04 — The pilot Six weeks, on your own data. 01 Site audit · no charge An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit. 02 Weeks 1–2 Read-only connection, baselines from your history, replay of past events. 03 Weeks 3–6 Live findings in the agreed lanes, drafted records, a measured latency report. 04 Week 6 Results review and a signed evidence pack. The pilot fee is credited if you go to production. Pilot on one line, dock or machinery space inside your enclave: replay in weeks 1–2, live flags and drafted records in weeks 3–6. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "sectors_defense#6",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "The technical brief.",
+   "text": "05 — For your architects The technical brief. /technical-brief AgentMesh — Architecture Overview The pod, the decision path, data safety and failover, for your architects. /security Secure by design Designed against NIST SP 800-53 and the NIST AI RMF, with evidence for your assessor. /faq Buyer questions, answered Data, safety, hardware, price and what happens when the link drops."
+  },
+  {
+   "id": "sectors_defense#7",
+   "url": "https://unovie.ai/sectors/defense.html",
+   "type": "sector",
+   "title": "Defense & dual-use manufacturing — Unovie.AI",
+   "section": "Bring us one asset. We'll show you six weeks of evidence.",
+   "text": "Defense & dual-use manufacturing Bring us one asset. We'll show you six weeks of evidence. Engineers on site across Texas, serving programs nationally. Pilot on your line → Talk to our engineers"
+  },
+  {
+   "id": "sectors_energy#1",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "Balance of plant, watched. Safety systems, never touched.",
+   "text": "Home / Sectors / Advanced energy & nuclear Advanced energy & nuclear · New reactor and power sites Balance of plant, watched. Safety systems, never touched. New reactor, geothermal and power sites bring first-of-a-kind equipment and long commissioning schedules. AgentMesh watches construction, balance-of-plant equipment and site security from their own signals and drafts condition reports for review. It is never on reactor protection or any safety-related system. Pilot on your line → See the pilot balance of plant condition reports non-safety only Illustration · targets, not measured · click to enlarge Non-safety systems only Advisory condition reports for review Air-gapped by default 0 raw signals sent off site"
+  },
+  {
+   "id": "sectors_energy#2",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "What gets in the way.",
+   "text": "01 — The problem What gets in the way. /foak First-of-a-kind equipment New designs have no long failure history. Baselines have to be learned during commissioning. /schedule Commissioning schedules Every week of delay is expensive, and equipment problems found late cost the most. /evidence Scrutiny and records Owners, regulators and insurers expect clear records of condition and of who decided what."
+  },
+  {
+   "id": "sectors_energy#3",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "What AgentMesh does here.",
+   "text": "02 — The agentic jobs What AgentMesh does here. Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several. /bop Balance-of-plant health Pumps, fans, turbines, transformers and switchgear watched from vibration, electrical and thermal signals. rotating equipment electrical /reports Condition reports, drafted Findings written up with the evidence attached, for your engineers to review and sign. drafted sign-off /network Site network watch Unusual traffic and commands on non-safety plant and construction networks, with audit evidence. OT network audit evidence"
+  },
+  {
+   "id": "sectors_energy#4",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "Into the systems you already run.",
+   "text": "03 — What it connects to Into the systems you already run. Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise. System How AgentMesh uses it Balance-of-plant sensors read-only Non-safety plant historian read-only Electrical protection and power-quality data read-only Site network traffic (non-safety zones) passive copy Maintenance system work orders out Engineering review queue reports out Never: AgentMesh is never connected to reactor protection, safety-related or safety-significant systems, and never writes to plant control. It only reads non-safety signals and drafts reports."
+  },
+  {
+   "id": "sectors_energy#5",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "Six weeks, on your own data.",
+   "text": "04 — The pilot Six weeks, on your own data. 01 Site audit · no charge An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit. 02 Weeks 1–2 Read-only connection, baselines from your history, replay of past events. 03 Weeks 3–6 Live findings in the agreed lanes, drafted records, a measured latency report. 04 Week 6 Results review and a signed evidence pack. The pilot fee is credited if you go to production. Pilot on one balance-of-plant area during commissioning or operation: replay in weeks 1–2, live flags and drafted condition reports in weeks 3–6. Site audit: no charge, 1–2 days on site · 6-week paid pilot: $40–60K, credited in full against a production site signed within 90 days"
+  },
+  {
+   "id": "sectors_energy#6",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "The technical brief.",
+   "text": "05 — For your architects The technical brief. /technical-brief AgentMesh — Architecture Overview The pod, the decision path, data safety and failover, for your architects. /security Secure by design Designed against NIST SP 800-53 and the NIST AI RMF, with evidence for your assessor. /faq Buyer questions, answered Data, safety, hardware, price and what happens when the link drops."
+  },
+  {
+   "id": "sectors_energy#7",
+   "url": "https://unovie.ai/sectors/energy.html",
+   "type": "sector",
+   "title": "Advanced energy & nuclear — Unovie.AI",
+   "section": "Bring us one asset. We'll show you six weeks of evidence.",
+   "text": "Advanced energy & nuclear Bring us one asset. We'll show you six weeks of evidence. Engineers on site across Texas, serving programs nationally. Pilot on your line → Talk to our engineers"
   },
   {
    "id": "resources_medsdlc-html_index#1",

@@ -14,8 +14,8 @@ Unovie is a four-year-old, engineering-first, AI-native company built for Physic
 - Safety boundary: a language model is never on the path that moves equipment; Unovie does not act as a safety instrumented function and makes no SIL claim.
 
 ## How Unovie engages
-1. Site audit: an engineer reviews sensors, robots, network and control systems before a contract is signed.
-2. Paid pilot (6 weeks): one domain kit on the customer's own data, a baseline ROI view and a measured latency report; credited toward a production site.
+1. Site audit (no charge, 1–2 days on site): an engineer reviews sensors, robots, network and control systems before a contract is signed.
+2. Paid pilot (6 weeks, $40–60K): one domain kit on the customer's own data, a baseline ROI view and a measured latency report; credited in full against a production site signed within 90 days.
 3. Production site (about one quarter from pilot): an AgentMesh Sovereign Pod integrated with sensors, cell controllers, the safety PLC, MES/QMS and the work-order system.
 4. Fleet rollout: new lines and sites reuse the playbook; AgentNexus brings the fleet together.
 5. Operate: Kiln updates, the governed-AI evidence pack (mapped to NIST SP 800-53, the NIST AI RMF and IEC 62443) and support under one subscription, or hardware-as-a-service.
@@ -28,7 +28,7 @@ Pricing is per monitored asset and domain kit, never per seat or per camera.
 
 ## Security and compliance
 - Born with security compliance in mind: the platform is designed against NIST SP 800-53 Rev. 5 control families (as tailored for OT by the NIST SP 800-82 Rev. 3 OT overlay) and the NIST AI Risk Management Framework, with the Generative AI Profile (NIST AI 600-1) guiding the Unovie Reasoning Model.
-- Mapping: air-gapped by default and one-way outputs (SC, AC); sealed agent sandboxes and least privilege (AC, IA); signed append-only Evidence Log (AU); test-gated, signed, reversible changes via the Kiln (CM, SI); owned hardware and open-weight models with known provenance (SR); failover (CP). AI RMF: Govern (Evidence Log, sign-off), Map (each domain kit declares context and lane), Measure (held-out tests, measured latency), Manage (lanes, trials, rollback).
+- Mapping: air-gapped by default and one-way outputs (SC, AC); sealed agent sandboxes and least privilege (AC, IA); signed append-only Evidence Log (AU); test-gated, signed, reversible changes via the Kiln (CM, SI); Unovie-built hardware and open-weight models with known provenance (SR); failover (CP). AI RMF: Govern (Evidence Log, sign-off), Map (each domain kit declares context and lane), Measure (held-out tests, measured latency), Manage (lanes, trials, rollback).
 - The evidence pack is material for customers' own programs — SP 800-171/CMMC, IEC 62443, SEMI E187, aerospace quality records, battery-site safety reviews. Unovie does not claim certification; compliance is determined by the customer's assessor.
 
 ## Platform
@@ -64,6 +64,15 @@ Packaged jobs for next-generation lines (each a domain kit with its connections,
 - Quality Records & NCRs: agents draft non-conformance reports and quality records for sign-off, in English or Spanish.
 - How to start: "Pilot on your line" — a 6-week paid pilot on the customer's own line, credited toward production (https://unovie.ai/index.html#contact).
 
+## Sectors
+- [Battery & energy storage](https://unovie.ai/sectors/battery.html): Cell lines and storage sites.
+- [Chip fabs & suppliers](https://unovie.ai/sectors/fabs.html): Fab utilities and supplier plants.
+- [Space & aerospace](https://unovie.ai/sectors/space.html): Test stands and vehicle lines.
+- [Robotics, drones & autonomy](https://unovie.ai/sectors/robotics.html): Robot cells, drones and vessels.
+- [Defense & dual-use](https://unovie.ai/sectors/defense.html): Shipyards and dual-use factories.
+- [Advanced energy & nuclear](https://unovie.ai/sectors/energy.html): Balance of plant, non-safety only.
+- [FAQ](https://unovie.ai/faq.html): straight answers on data, safety, hardware and pilot cost.
+
 ## Domain kits
 - Robot & Motion Health: joint, servo, gearbox and spindle health on robots, motion axes and conveyors (joint current, torque, vibration).
 - Battery Line & Storage Safety: weld, formation and aging signatures in line; thermal-runaway precursors on storage fleets, alarmed into the fire panel.
@@ -86,12 +95,13 @@ Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
 - [Frozen-Base Doctrine — Whitepaper](https://unovie.ai/resources/edge-ai-whitepaper.html): adapting custom models on the edge without retraining.
 - [Edge-Native Inference Gateway — Whitepaper](https://unovie.ai/gpu-edgegateway-whitepaper.html): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
 - [AI SOC Modernization — Whitepaper](https://unovie.ai/ai-soc-modernization-whitepaper.html): an edge-native, identity-driven security architecture for distributed IT/OT.
+- [Case study: AI-driven certification for satellite set-top boxes](https://unovie.ai/resources/case-study-device-certification.html): an anonymized 12-month project — an air-gapped GPU verification platform; 16 boxes per 4K stream, detection mAP 0.836 to 0.961 after one in-house retrain, audio certified on 16 of 16 boxes.
 - [Agentic SDLC for Regulated MedTech](https://unovie.ai/resources/medsdlc-html/index.html): a self-hosted, validated, agent-native software development lifecycle for FDA / IEC 62304 medical-device engineering.
 
 ## Company
 - [Why Unovie](https://unovie.ai/why-unovie.html): a young company with veteran founders — each founder brings 20+ years in OT and Physical AI, and the company has spent four years building its sovereign AI platform for next-generation manufacturing. Headquartered in Austin, Texas, serving customers nationally. Site audit, a 6-week paid pilot on the customer's own line, and production in a quarter.
 - [About](https://unovie.ai/about.html): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
-- [Contact](https://unovie.ai/contact.html): start a project.
+- [Contact](https://unovie.ai/contact.html): pilot on your line — site audit at no charge, then a 6-week paid pilot.
 - [LinkedIn](https://www.linkedin.com/company/unovie/): company page — news and the events Unovie attends.
 
 ## Machine-readable
