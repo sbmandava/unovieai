@@ -134,7 +134,7 @@ def FOOTER(base):
     h=base+"index.html"
     return f'''<footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
-    <p>Agent-native industrial AI. We design, build, and operate custom Edge-AI Agentic Systems — on Unovie's custom-built AMD or NVIDIA hardware accelerators, engineered for agentic performance, low latency and high availability.</p></div>
+    <p>Physical AI technology, built for deep-tech industries. We design, build, and operate custom Edge-AI Agentic Systems — on Unovie's custom-built AMD or NVIDIA hardware accelerators, engineered for agentic performance, low latency and high availability.</p></div>
   <div class="fcol"><h4>Platform &amp; sectors</h4>
     <a href="{base}platform/agentmesh.html">AgentMesh</a><a href="{base}platform/agentnexus.html">AgentNexus</a><a href="{base}sectors/battery.html">Battery &amp; energy storage</a><a href="{base}sectors/fabs.html">Chip fabs &amp; suppliers</a><a href="{base}sectors/space.html">Space &amp; aerospace</a><a href="{base}sectors/robotics.html">Robotics, drones &amp; autonomy</a><a href="{base}sectors/defense.html">Defense &amp; dual-use</a><a href="{base}sectors/energy.html">Advanced energy &amp; nuclear</a></div>
   <div class="fcol"><h4>Hardware</h4>
@@ -144,7 +144,7 @@ def FOOTER(base):
     <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
   <div class="fcol"><h4>Research</h4>
     <a href="{base}resources/agentmesh-architecture.html" target="_blank">AgentMesh Architecture</a><a href="{base}resources/agentnexus-architecture.html" target="_blank">AgentNexus Architecture</a><a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (eBook)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Whitepaper</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
-</div><div class="fbot"><span>© 2026 Unovie · Agent-native industrial AI</span><span>Runs on AMD and NVIDIA accelerators · integrates with your PLCs, MES and safety systems</span></div></div></footer>
+</div><div class="fbot"><span>© 2026 Unovie · Physical AI for deep-tech industries</span><span>Runs on AMD and NVIDIA accelerators · integrates with your PLCs, MES and safety systems</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 
 def metrics(items):  # list of (value_html, label)
@@ -983,6 +983,10 @@ def product_page(slug, cat, title_html, lead, pills, kpis, panel, sections, cta_
     os.makedirs(f"{ROOT}/platform",exist_ok=True)
     open(f"{ROOT}/platform/{slug}.html","w",encoding="utf-8").write(head+body)
 
+def _ctable(head, rows):
+    h="".join(f"<th>{c}</th>" for c in head)
+    r="".join("<tr>"+"".join(f"<td>{c}</td>" for c in row)+"</tr>" for row in rows)
+    return f'<div class="ctwrap rv"><table class="ctable"><tr>{h}</tr>{r}</table></div>'
 def S(num,label,title,body,lead="",id_=""):
     i=f' id="{id_}"' if id_ else ''
     return f'<section{i}><div class="wrap">{shead(num,label,title,lead)}{body}</div></section>'
@@ -1011,12 +1015,8 @@ MESH_NEXTGEN = S("02","Built in","Built into "+A_+"next-generation lines."+E_,
    ("/robots","Robot cells and motion","AgentMesh reads robot controllers, servo drives and motion axes — joint current, torque, vibration and cycle data — and spots a drifting joint or gearbox before it scraps parts or stops the line.",["robot controllers","joint torque","cycle data"]),
    ("/vision","Vision and sensor fusion","DeepVision on NVIDIA Jetson AGX Thor at the cell, fused with electrical, acoustic, thermal and force signals. A defect is judged on everything the cell knows, not on one camera frame.",["DeepVision","sensor fusion","at the tool"]),
    ("/mes","Into MES, quality and test systems","Findings land where engineers already work: MES and quality systems, test-data systems, the cell controller and the work-order system. Records arrive drafted, with the evidence attached.",["MES · QMS","test data","work orders"]),
-   ("/ramp","From first line to gigafactory","Baselines are learned during ramp-up, in weeks. The same pod, playbooks and skill adapters copy to every new line and site — and AgentMesh also works with the control systems you already have.",["ramp-up","copies to new lines","existing systems too"])])
-  + flow4([("Connect","Robot controllers, vision, sensors, test rigs and the factory network, through the Unovie Gateway with allow-listed protocols.","Unovie Gateway"),
-           ("Learn the ramp","Baselines from your own first production: what good and bad look like on each cell and asset.","Vector Memory"),
-           ("Add intelligence","Agents watch, decide, explain and draft the work — inside the safety lanes.","Decision Engine · Reasoning Model"),
-           ("Hand off","Diverts, alarms, requests and drafted records flow into MES, quality and work-order systems.","cell controller · MES · QMS")]),
-  "Next-generation factories are built dense with sensors, cameras and robots, and produce far more data than people can watch. AgentMesh is built into them from day one, so every signal has something watching it.")
+   ("/ramp","From first line to gigafactory","Baselines are learned during ramp-up, in weeks. The same pod, playbooks and skill adapters copy to every new line and site — and AgentMesh also works with the control systems you already have.",["ramp-up","copies to new lines","existing systems too"])]),
+"Next-generation factories are built dense with sensors, cameras and robots, and produce far more data than people can watch. AgentMesh is built into them from day one, so every signal has something watching it.")
 
 MESH_SECTIONS = (
   S("03","How it works","From signal to action, "+A_+"at the machine."+E_,
@@ -1032,14 +1032,8 @@ MESH_SECTIONS = (
     '<div class="lane b rv"><div class="tag" style="color:var(--steel)">Lane B</div><div class="big">Alarm + request</div><p>Anything that touches process safety. AgentMesh asks; people and safety systems decide.</p><ul><li><b>Alarm</b>raised on your existing alarm system</li><li><b>Request</b>written to a register your PLC or safety system reads</li><li><b>Operator</b>sees the request and the evidence, and decides</li></ul></div>'
     '</div><div class="never rv"><b>Never:</b> AgentMesh does not write to valves or safety functions on its own, and the language model is never in the path that moves equipment. Every decision — in either lane — is written to the signed Evidence Log.</div>')
   + S("05","Deep-tech sites","Built for the factories "+A_+"being built now."+E_,
-    disc([
-     ("/battery","Battery &amp; energy storage","Cell, module and pack lines: weld, formation and aging signals watched in line, with suspect parts diverted to rework. On storage fleets, early signs of thermal runaway go to the fire panel as an alarm.",["Battery Line &amp; Storage Safety","in-line QA","alarm only on fleets"]),
-     ("/fab","Chip fabs &amp; suppliers","Pumps, chillers, scrubbers, ultra-pure water and gas systems watched through ramp-up and steady state, at the fab and at its gas, chemical and parts suppliers. Process and design data never leave the fence.",["fab utilities","supplier plants","IP stays on site"]),
-     ("/space","Space &amp; aerospace","Lander, satellite and vehicle lines with vision QA and drafted quality records; rocket and engine test stands watched run by run, beside the qualified test system — never inside it.",["Test Campaign Monitor","quality records","advisory"]),
-     ("/robotics","Robotics &amp; autonomous systems","Robot-dense lines and the robots, drones and vessels they build: joint, motor and gearbox health at every cell, and fleet health for systems that run disconnected and sync when they return.",["Robot &amp; Motion Health","DeepVision","works offline"]),
-     ("/defense","Defense &amp; dual-use manufacturing","New shipyards, autonomous-vessel yards and dual-use factories: line and yard QA, machinery health and factory network watch, inside the security boundary you already maintain.",["shipyards","autonomous vessels","your enclave"]),
-     ("/energy","Advanced energy &amp; nuclear","Construction, balance-of-plant and site-security monitoring on new reactor and power sites, with condition reports drafted for review. Never on reactor protection or safety-related systems.",["balance of plant","condition reports","non-safety only"])]),
-    "Battery lines, chip fabs, space factories, robot lines and new shipyards share three things: dense sensors and robots, data that can't leave the site, and audits that need evidence. That is the job AgentMesh was built for.", "sectors")
+    '<div class="disc"><a class="dcard rv" href="../sectors/battery.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/battery</div><h3>Battery &amp; energy storage</h3><p>In-line weld and formation QA; thermal-runaway warning on storage sites, as an alarm.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/fabs.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/fab</div><h3>Chip fabs &amp; suppliers</h3><p>Fab utilities and supplier plants, watched through ramp-up. IP stays on site.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/space.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/space</div><h3>Space &amp; aerospace</h3><p>Test stands watched run by run, beside the qualified test system; quality records drafted.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/robotics.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/robotics</div><h3>Robotics, drones &amp; autonomy</h3><p>Joint and gearbox health at every cell; fleet health for systems that run offline.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/defense.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/defense</div><h3>Defense &amp; dual-use</h3><p>Line and yard QA, machinery health and network watch, inside your enclave.</p><span class="go">Sector page →</span></a><a class="dcard rv" href="../sectors/energy.html" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--steel)"></div><div class="ix">/energy</div><h3>Advanced energy &amp; nuclear</h3><p>Balance of plant and site networks. Never on safety systems.</p><span class="go">Sector page →</span></a></div>',
+    "Each sector has its own page: the problems, the jobs, what AgentMesh connects to and the pilot.", "sectors")
   + S("06","Secure by design","Born with "+A_+"compliance in mind."+E_,
     disc([
      ("/sp800-53","Designed against NIST SP 800-53","Built around SP 800-53 Rev. 5 control families as tailored for OT by the SP 800-82r3 overlay: boundary protection (air-gapped, one-way outputs), least privilege, audit, change control, integrity and supply chain.",["SC · AC · AU","CM · SI · SR","OT overlay"]),
@@ -1071,8 +1065,6 @@ MESH_SECTIONS = (
            ("sketch/dgx-spark","dgx-spark","Available on",False,"NVIDIA DGX Spark","The AI engineering lab — test stands, replay and a single-unit AgentMesh for a pilot.")])
     + '<div class="disc" style="margin-top:22px"><a class="dcard rv" href="../resources/agentmesh-architecture.html" target="_blank" rel="noopener" data-cursor style="text-decoration:none"><div class="glow" style="background:var(--accent)"></div><div class="ix">/architecture</div><h3>AgentMesh — Architecture Overview</h3><p>How the pod is organised, what happens from signal to action, how data is kept safe and what happens when a server fails — for architects and business leaders.</p><div class="spec"><span class="chip">overview</span><span class="chip">diagrams</span></div></a></div>',
     "Same kits, same lanes, same Evidence Log on every platform.")
-  + S("10","Why teams choose it","Built for the factory floor, "+A_+"not the slide."+E_,
-    kpistrip([("Custom-built","hardware for agentic performance, low latency and high availability"),("Air-gapped","by default · nothing leaves site"),("Per asset","priced on failures avoided, not seats"),("Weeks","to a working pod, not quarters")]))
   + '<section><div class="wrap"><div class="pairs rv"><div><div class="tag" style="color:var(--steel)">Pairs with AgentNexus</div><h3>One pod per line or site. '+T_+'One AgentNexus for the fleet.'+E_+'</h3><p>AgentMesh sends what it finds to AgentNexus, where agents compare sites, plan maintenance and learn from what happened — without ever reaching back into factory control.</p></div><a class="btn btn-gh" href="agentnexus.html" data-cursor>Explore AgentNexus <span class="ar">→</span></a></div></div></section>'
 )
 
@@ -1141,13 +1133,13 @@ NEXUS_PANEL = ('<figure class="portalfig rv"><div class="pimg"><a href="../asset
   '<figcaption><b>AgentNexus fleet HMI</b><span>Fleet operations · illustration · click to enlarge</span></figcaption></figure>')
 
 product_page("agentmesh","Platform · AgentMesh","Agent"+A_+"Mesh"+E_,
-  "Agentic Physical AI for next-generation factories — battery lines, chip fabs, space hardware, robotics and autonomous systems. AgentMesh sits on the factory network beside robots, tools and test systems, puts AI on every signal they produce, and decides inside a 30-millisecond budget. Low-consequence actions happen directly; anything safety-related goes to your safety PLC, cell controller and operators.",
+  "Physical AI built for deep-tech factories — battery lines, chip fabs, space hardware, robotics and autonomous systems. AgentMesh sits on the factory network beside robots, tools and test systems, puts AI on every signal they produce, and decides inside a 30-millisecond budget. Low-consequence actions happen directly; anything safety-related goes to your safety PLC, cell controller and operators.",
   ["sensor-dense","robot cells","DeepVision","CNCF-conformant","microservices","air-gapped"],
   [("&lt;30<span class='o'>ms</span>","decision budget · target"),("0<span class='o'>B</span>","leaves site by default"),("10","domain kits"),("2","safety lanes")],
   MESH_PANEL, MESH_HMI+MESH_NEXTGEN+MESH_SECTIONS, "Put AI on "+A_+"every signal your line makes."+E_,
   "AgentMesh puts Agentic Physical AI into next-generation factories — battery, chips, space, robotics and defense — with a 30 ms decision budget, a clear safety boundary and a signed Evidence Log.")
 product_page("agentnexus","Platform · AgentNexus","Agent"+T_+"Nexus"+E_,
-  "Agents that work across every site you run — gigafactories and storage fleets, factories and test stands, fabs and their suppliers, robot fleets and shipyards. They compare sites, plan maintenance and draft work orders and quality records within half a second, learn from production, and never move equipment.",
+  "Physical AI across every deep-tech site you run: agents that work across gigafactories and storage fleets, factories and test stands, fabs and their suppliers, robot fleets and shipyards. They compare sites, plan maintenance and draft work orders and quality records within half a second, learn from production, and never move equipment.",
   ["sealed agents","multi-site","CNCF-conformant","microservices","dual-use","AMD · NVIDIA"],
   [("0.5<span class='o'>s</span>","response budget · target"),("48","servers in one 42U rack"),("12","shelves, each its own failure zone"),("0","equipment it controls")],
   NEXUS_PANEL, NEXUS_HMI+NEXUS_FLEETS+NEXUS_SECTIONS, "Run agents "+T_+"across every site."+E_,
@@ -1510,25 +1502,19 @@ open(f"{ROOT}/device-platform.html","w",encoding="utf-8").write(_devhead+_devbod
 about=f'''{HEAD("","About — Unovie.AI","An AI-engineering studio that designs, builds, and operates custom Edge-AI Agentic Systems.")}{NAV("")}
 <section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">About</span></div>
-  <div class="tag rv">About <span class="o">·</span> Unovie.AI</div>
+  <div class="tag rv">About <span class="o">·</span> Physical AI for deep-tech industries</div>
   <h1 class="rv" style="margin-top:18px">We engineer AI that <span class="serif" style="color:var(--accent)">ships.</span></h1>
-  <p class="lead rv">Unovie is an AI-engineering studio for Industry 4.0, founder-led by a team whose vision matches the most ambitious in the field — and measured by what reaches production. We take full responsibility for AI transformation — from architecture through POC and MVP to production readiness — on a foundation of frozen-base, self-improving edge systems that you control and can audit. While the market splits between multi-year transformation programs and big-vision manifestos, we take the third path: production-grade, agentic systems you own, delivered in weeks at a fixed cost.</p>
+  <p class="lead rv">Unovie builds Physical AI technology for deep-tech industries. We are an AI-engineering studio, founder-led by a team whose vision matches the most ambitious in the field — and measured by what reaches production. We take full responsibility from site audit and pilot to production — on a foundation of frozen-base, self-improving edge systems that you control and can audit. While the market splits between multi-year transformation programs and big-vision manifestos, we take the third path: production-grade agentic systems for deep-tech manufacturing, delivered in weeks at a fixed cost.</p>
   <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
     <a class="btn btn-gh" href="resources/edge-ai-models.html" target="_blank" data-cursor>Read our field guide</a></div>
-  {metrics([("4","engineering disciplines"),("5","-step methodology"),("fixed","time &amp; cost")])}
+  {metrics([("20+ yrs","each founder, in OT &amp; Physical AI"),("6 weeks","paid pilot on your line"),("fixed","scope &amp; cost")])}
 </div></section>
-<section id="engineering"><div class="wrap">{shead("01","What we are good at","Four engineering disciplines.")}{disc([
-  ("/model-engineering","Signal &amp; Model Engineering","<b class='outcome'>Gets better every week, without retraining.</b> We turn every signal a next-generation line produces — robot joints, vision, vibration, electrical, battery, test-rig and network data — into fingerprints and small, specialised models.",['signal encoders', 'skill adapters', 'held-out tests']),
-  ("/robotics-ot","Robotics &amp; OT Integration","<b class='outcome'>AI on the line that never takes control away from your safety systems.</b> AI built into sensor-dense, robotic lines, designed against NIST SP 800-53 controls — your safety PLC, cell controller and operators stay in charge.",['robot cells', 'Lane A · Lane B', 'SP 800-53']),
-  ("/edge-efficiency","Edge Efficiency","<b class='outcome'>Answers in milliseconds, on hardware sized for the job.</b> A 30 ms decision budget on Unovie's custom-built AMD or NVIDIA accelerators.",['&lt; 30 ms target', 'AMD · NVIDIA', 'compact models']),
-  ("/sovereign-reliable","Sovereign &amp; Reliable Operations","<b class='outcome'>Keeps running when a server fails or the internet drops, at a fixed cost.</b> Systems your team can run without us.",['air-gapped', 'Mesh Arbiter', 'fixed cost'])])}</div></section>
-<section id="delivery"><div class="wrap">{shead("02","How we deliver","A proven, success-based methodology.")}{steps([
-  ("Assess &amp; plan","Workshops, ROI, value outcomes."),("Solution design","Roadmap &amp; reference architecture."),
-  ("Build &amp; test","Data, models, testing, monitoring."),("Optimize","KPI tracking &amp; feedback loops."),("Train &amp; support","Enablement &amp; adoption.")])}</div></section>
-<section><div class="wrap">{shead("03","Why teams choose us","Vision that ships.")}{disc([
-  ("/leadership","Founder-led vision","Led by founders whose ambition matches the field's most visionary — and who insist that vision reach production.",["founder-led","visionary"]),
-  ("/velocity","Execution velocity","Production-grade agentic systems in weeks, not multi-year programs — fixed scope, fixed cost.",["weeks","fixed cost"]),
-  ("/sovereignty","Sovereign by default","On-prem on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, auditable and reversible — your context never leaves your boundary.",["on-prem","auditable"])])}<div class="cta rv" style="margin-top:8px"><a class="btn btn-gh" href="why-unovie.html" data-cursor>Why Unovie <span class="ar">→</span></a></div></div></section>
+<section><div class="wrap">{shead("01","At a glance","Unovie in "+A_+"one page."+E_,"The details live on their own pages. This is the short version.")}{_ctable(["",""],[
+  ("<b>Who</b>","An engineering-first, AI-native company in Austin, Texas. Veteran founders, each with 20+ years in OT and Physical AI. <a href='why-unovie.html'>Why Unovie →</a>"),
+  ("<b>What</b>","Custom Edge-AI Agentic Systems: <a href='platform/agentmesh.html'>AgentMesh</a> at the machine and <a href='platform/agentnexus.html'>AgentNexus</a> across every site, on Unovie's custom-built <a href='device-platform.html'>AMD or NVIDIA hardware accelerators</a>."),
+  ("<b>For whom</b>","Deep-tech manufacturing: <a href='sectors/battery.html'>battery</a>, <a href='sectors/fabs.html'>chip fabs</a>, <a href='sectors/space.html'>space</a>, <a href='sectors/robotics.html'>robotics</a>, <a href='sectors/defense.html'>defense</a> and <a href='sectors/energy.html'>advanced energy</a>."),
+  ("<b>How we work</b>","Four engineering disciplines (<a href='index.html#engineering'>see them</a>) and one engagement path: site audit, 6-week pilot, production, fleet (<a href='index.html#delivery'>see it</a>)."),
+  ("<b>Proof</b>","<a href='resources/case-study-device-certification.html'>Case study</a> · <a href='faq.html'>FAQ</a> · <a href='resources/agentmesh-architecture.html'>architecture overviews</a>")])}</div></section>
 <section><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Who we build for</div>
   <h2 style="margin-top:16px">Next-generation manufacturing, <span class="serif" style="color:var(--accent)">on AMD and NVIDIA.</span></h2>
@@ -1542,9 +1528,9 @@ open(f"{ROOT}/about.html","w",encoding="utf-8").write(about)
 why=f'''{HEAD("","Why Unovie — veteran founders, sovereign AI for next-generation manufacturing","Unovie is an Austin, Texas AI-engineering studio that takes industrial AI from pilot to production in a quarter: on-site OT engineers, a 6-week paid pilot on your data, and AgentMesh and AgentNexus running on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability.")}{NAV("")}
 <section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Why Unovie</span></div>
-  <div class="tag rv">Why Unovie <span class="o">·</span> Engineering first <span class="o">·</span> AI native <span class="o">·</span> Austin, Texas</div>
+  <div class="tag rv">Why Unovie <span class="o">·</span> Physical AI for deep tech <span class="o">·</span> Austin, Texas</div>
   <h1 class="rv" style="margin-top:18px">Built in Austin. <span class="serif" style="color:var(--accent)">Ready for your factory.</span></h1>
-  <p class="lead rv">Unovie is an engineering-first, AI-native company built for Physical AI, headquartered in Austin, Texas. We are a young company with veteran founders: each brings 20+ years in OT and Physical AI — control systems, robot cells, factory networks, safety boundaries and the low-latency problems deep-tech sites run into. For four years we have been building that experience into a sovereign AI platform for next-generation manufacturing. Most industrial AI is still stuck in pilots; we take it to production in a quarter, with your data on site and safety decisions left with your control systems and operators.</p>
+  <p class="lead rv">Unovie is an engineering-first, AI-native company building Physical AI technology for deep-tech industries, headquartered in Austin, Texas. We are a young company with veteran founders: each brings 20+ years in OT and Physical AI — control systems, robot cells, factory networks, safety boundaries and the low-latency problems deep-tech sites run into. For four years we have been building that experience into a sovereign AI platform for next-generation manufacturing. Most industrial AI is still stuck in pilots; we take it to production in a quarter, with your data on site and safety decisions left with your control systems and operators.</p>
   <div class="cta rv"><a class="btn btn-acc" href="index.html#contact" data-cursor>Meet us in Austin <span class="ar">→</span></a>
     <a class="btn btn-gh" href="platform/agentmesh.html" data-cursor>See the platform</a></div>
   {metrics([("20+ yrs","each founder, in OT &amp; Physical AI"),("4 yrs","building the Unovie platform"),("6 weeks","paid pilot on your line"),("1 quarter","from pilot to production")])}
@@ -1568,7 +1554,7 @@ why=f'''{HEAD("","Why Unovie — veteran founders, sovereign AI for next-generat
   ("/pilots","Pilots need to become production","Most manufacturers are still in pilots or limited deployments. Buyers want a partner who reaches production in a quarter, on hardware built for the job.",["pilot to production","one quarter"]),
   ("/rules","New factories, new scrutiny","Factory ramps in 2027–28 arrive with battery-site safety rules, fab equipment-security standards and defense data-handling requirements. Buyers need monitoring and evidence, not just dashboards.",["factory ramps","equipment security","2027–28"]),
   ("/governance","Governance decides what survives","AI governance rules — including Texas's, which recognises the NIST AI RMF — reward systems that can show their work. Every Unovie site ships a signed evidence pack mapped to NIST SP 800-53, the NIST AI RMF and IEC 62443.",["SP 800-53","NIST AI RMF","IEC 62443"]),
-  ("/hardware","Custom-built for agentic performance and high availability","Memory and accelerator prices are volatile. Unovie custom-builds the hardware accelerators on AMD or NVIDIA to meet agentic performance, low-latency and high-availability requirements, tests it with the platform, and can refresh it as a service.",["AMD","NVIDIA","GPU · agentic"])])}</div></section>
+  ("/hardware","Hardware is volatile","Memory and accelerator prices swing. Unovie custom-builds the hardware on AMD or NVIDIA, tests it with the platform and can refresh it as a service, so the price risk is ours.",["AMD","NVIDIA","GPU · agentic"])])}</div></section>
 <section><div class="wrap">{shead("05","How we engage","From site audit to "+A_+"fleet."+E_)}{steps([
   ("Site audit · no charge","An engineer reviews your sensors, robots, network and control systems before anything is signed — a 1–2 day visit."),
   ("6-week pilot · $40–60K","One domain kit on your own line, a baseline ROI view and a measured latency report — credited in full against a production site signed within 90 days."),
@@ -1577,11 +1563,10 @@ why=f'''{HEAD("","Why Unovie — veteran founders, sovereign AI for next-generat
   ("Operate","Kiln updates, evidence pack and support under one subscription — or hardware-as-a-service.")])}</div></section>
 <section><div class="wrap">{shead("06","Where we are different","Built for outcomes, not programs.")}{disc([
   ("/floor","Founders who have worked on the floor","Every engagement is led by a pair with deep factory and OT experience: one person who speaks operations and OT security, and one engineer who audits and delivers — backed by founders with 20+ years each in OT and Physical AI.",["OT experience","site audit","delivery"]),
-  ("/safety","Safety stays with you","AI never sits on the path that moves equipment. Low-consequence actions happen directly; anything safety-related is an alarm and a request your PLC, safety system and operator decide.",["Lane A","Lane B","no SIL claim"]),
-  ("/sovereignty","Sovereign by default","Air-gapped by default, on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, with allow-listed connections. Nothing leaves the site unless you want it to.",["air-gapped","read-only","on-prem"]),
+  ("/safety","Safety and data stay with you","AI never sits on the path that moves equipment: low-consequence actions happen directly, anything safety-related is an alarm and a request your PLC, safety system and operator decide. Air-gapped by default, so nothing leaves the site unless you want it to.",["Lane A · Lane B","no SIL claim","air-gapped"]),
   ("/price","Priced per asset and kit","We price by monitored asset and domain kit — never per seat or per camera. The 6-week pilot is $40–60K and is credited in full against a production site signed within 90 days.",["per asset","per kit","creditable pilot"]),
-  ("/platform","A platform, not a manifesto","AgentMesh runs today on Unovie's custom-built AMD hardware next to the control system, AgentNexus extends it across sites, and both come to NVIDIA Jetson AGX Thor and DGX Spark.",["AgentMesh","AgentNexus","AMD · NVIDIA"]),
-  ("/leadership","Founder-led vision that ships","Founders whose ambition matches the field's most visionary — measured by what reaches production, on your terms.",["founder-led","ships"])])}</div></section>
+  ("/platform","A platform, not a manifesto","AgentMesh runs today on Unovie's custom-built AMD hardware next to the control system, AgentNexus extends it across sites, and both come to NVIDIA Jetson AGX Thor and DGX Spark.",["AgentMesh","AgentNexus","AMD · NVIDIA"])
+])}</div></section>
 <section><div class="wrap">{shead("07","The market is bifurcated","We are the third path.")}{disc([
   ("/transformation","The transformation play","Global integrators rebuild the entire digital estate. Valuable — but multi-year, multi-million, and slow to first value.",["multi-year","whole-estate"]),
   ("/vision","The vision play","Vision-led firms sell the destination. Inspiring — but often a roadmap without a delivery engine.",["inspiring","no engine"]),
@@ -1589,7 +1574,7 @@ why=f'''{HEAD("","Why Unovie — veteran founders, sovereign AI for next-generat
 <section id="contact"><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Austin, Texas</div>
   <h2 style="margin-top:16px">Bring us an asset. <span class="serif" style="color:var(--accent)">We'll be on your floor.</span></h2>
-  <p class="lead">On site across Texas — from the I-35 corridor to the Gulf Coast. Fixed scope, fixed cost, full responsibility, custom-built hardware accelerators for agentic performance, low latency and high availability included.</p>
+  <p class="lead">On site across Texas — from the I-35 corridor to the Gulf Coast. Fixed scope, fixed cost, full responsibility, hardware included.</p>
   <div class="cta"><a class="btn btn-acc" href="index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
     <a class="btn btn-gh" href="about.html" data-cursor>About the studio</a></div>
 </div></div></section>
@@ -1722,10 +1707,10 @@ def sector_page(t):
     head=HEAD("../", f"{plain} — Unovie.AI", re.sub('<[^>]+>','',lead)[:155])
     ch="".join(f'<span class="chip">{c}</span>' for c in chips)
     body=f'''{NGBG}{NAV("../")}
-<section class="ph2"><div class="wrap">
+<section class="ph2 sector"><div class="wrap">
   <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#deeptech">Sectors</a><span class="sep">/</span><span style="color:var(--fg-mut)">{name}</span></div>
   <div class="grid">
-    <div><div class="tag rv">{name} <span class="o">·</span> {tag}</div><h1 class="rv">{h1}</h1><p class="lead rv">{lead}</p>
+    <div><div class="tag rv">Physical AI <span class="o">·</span> {name} <span class="o">·</span> {tag}</div><h1 class="rv">{h1}</h1><p class="lead rv">{lead}</p>
       <div class="cta rv"><a class="btn btn-acc" href="../index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a><a class="btn btn-gh" href="#pilot" data-cursor>See the pilot</a></div>
       <div class="pill rv">{ch}</div></div>
     <div>{_hero_img(img,alt)}</div>
@@ -1735,7 +1720,7 @@ def sector_page(t):
 {S("01","The problem","What gets "+A_+"in the way."+E_, disc([(a,b,c,[]) for a,b,c in pains]))}
 {S("02","The agentic jobs","What AgentMesh "+A_+"does here."+E_, disc(jobs), "Each job is a domain kit: connections, fingerprints, rules, a playbook and reports for one class of asset. A pod can run several.")}
 {S("03","What it connects to","Into the systems "+A_+"you already run."+E_, _ctable(["System","How AgentMesh uses it"], conn)+_never(never), "Connections go through the Unovie Gateway with allow-listed protocols. Everything is read-only unless the table says otherwise.")}
-{S("04","The pilot","Six weeks, "+A_+"on your own data."+E_, steps([("Site audit · no charge","An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit."),("Weeks 1–2","Read-only connection, baselines from your history, replay of past events."),("Weeks 3–6","Live findings in the agreed lanes, drafted records, a measured latency report."),("Week 6","Results review and a signed evidence pack. The pilot fee is credited if you go to production.")])+f'<p class="lead rv" style="margin-top:14px">{pilot}</p>'+PRICE_LINE, "", "pilot")}
+{S("04","The pilot","Six weeks, "+A_+"on your own data."+E_, steps([("Site audit · no charge","An engineer reviews your sensors, network and control systems before anything is signed — a 1–2 day visit."),("Weeks 1–2","Read-only connection, baselines from your history, replay of past events."),("Weeks 3–6","Live findings in the agreed lanes, drafted records, a measured latency report."),("Week 6","Results review and a signed evidence pack.")])+f'<p class="lead rv" style="margin-top:14px">{pilot}</p>'+PRICE_LINE, "", "pilot")}
 {S("05","For your architects","The technical "+A_+"brief."+E_, _tech_links())}
 <section id="contact"><div class="wrap"><div class="cta-final rv">
   <div class="tag" style="color:var(--accent);justify-content:center;display:flex">{name}</div>
@@ -1931,7 +1916,7 @@ _sol="\n".join(f"- [{_name(_solmap[k][2])}]({_u('solutions/'+k+'.html')}): {_fir
 _oth="\n".join(f"- [{_name(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL if s[0] not in _IND)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
-> Sovereign AI engine for the physical frontier — the Agentic Physical AI platform for Industry 4.0. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — sensor-dense, AI-heavy, robot-heavy factories in battery, chips, space, robotics and autonomous systems, defense and advanced energy — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on every signal a next-generation line produces — robots, vision, sensors and test rigs — at the machine; AgentNexus runs AI agents across every site. Air-gapped by default and designed against NIST SP 800-53 and the NIST AI RMF; safety decisions stay with the customer's safety PLC, cell controller and operators.
+> Physical AI technology, built for deep-tech industries — the sovereign, agentic platform for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — sensor-dense, AI-heavy, robot-heavy factories in battery, chips, space, robotics and autonomous systems, defense and advanced energy — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on every signal a next-generation line produces — robots, vision, sensors and test rigs — at the machine; AgentNexus runs AI agents across every site. Air-gapped by default and designed against NIST SP 800-53 and the NIST AI RMF; safety decisions stay with the customer's safety PLC, cell controller and operators.
 
 Unovie is a four-year-old, engineering-first, AI-native company built for Physical AI, headquartered in Austin, Texas and serving customers nationally. Each founder brings 20+ years in OT and Physical AI (control systems, robot cells, factory networks, safety systems and low-latency edge systems). Its offering is written as "custom Edge-AI Agentic Systems". Figures on this site marked "target" or "estimate" are design targets, not measurements.
 
@@ -2031,7 +2016,7 @@ Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
 
 ## Company
 - [Why Unovie]({_u('why-unovie.html')}): a young company with veteran founders — each founder brings 20+ years in OT and Physical AI, and the company has spent four years building its sovereign AI platform for next-generation manufacturing. Headquartered in Austin, Texas, serving customers nationally. Site audit, a 6-week paid pilot on the customer's own line, and production in a quarter.
-- [About]({_u('about.html')}): an AI-engineering studio for Industry 4.0, built in Austin, Texas.
+- [About]({_u('about.html')}): Physical AI technology for deep-tech industries, built in Austin, Texas.
 - [Contact]({_u('contact.html')}): pilot on your line — site audit at no charge, then a 6-week paid pilot.
 - [LinkedIn](https://www.linkedin.com/company/unovie/): company page — news and the events Unovie attends.
 

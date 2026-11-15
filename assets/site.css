@@ -913,3 +913,6 @@ body:has(.ph2) section{padding-top:72px;padding-bottom:72px}
 .faq[open] summary::after{content:"–"}
 .faq p{margin:0 0 18px 32px;color:var(--fg-mut);font-size:15.5px;line-height:1.6;max-width:72ch}
 .faqlist+.pricenote{text-align:left;margin-left:0}
+.ph2.sector h1{font-size:clamp(34px,4.3vw,58px);line-height:1.06}
+.dcard .go{display:inline-block;margin-top:14px;color:var(--accent);font-weight:700;font-size:14px}
+.ctable a{color:var(--accent);text-decoration:none;font-weight:600}
