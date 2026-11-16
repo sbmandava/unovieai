@@ -28,3 +28,9 @@
 /solutions/corporate-travel-sales.html  /  301
 /solutions/food-safety       /platform/agentmesh  301
 /solutions/food-safety.html  /platform/agentmesh  301
+/resources/agentmesh-architecture       /platform/agentmesh   301
+/resources/agentmesh-architecture.html  /platform/agentmesh   301
+/resources/agentnexus-architecture      /platform/agentnexus  301
+/resources/agentnexus-architecture.html /platform/agentnexus  301
+/CLAUDE.md        /  301
+/build_pages.py   /  301

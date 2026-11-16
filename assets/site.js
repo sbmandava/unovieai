@@ -17,10 +17,10 @@ document.querySelectorAll('.acard').forEach(el=>bio.observe(el));
 const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target,to=+el.dataset.to;if(RM){el.textContent=to;cio.unobserve(el);return;}let s=null;requestAnimationFrame(function st(t){s=s||t;const p=Math.min(1,(t-s)/1200);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st);});cio.unobserve(el);}});},{threshold:.6});
 document.querySelectorAll('.ct').forEach(el=>cio.observe(el));
 // magnetic buttons
-if(!RM) document.querySelectorAll('.btn,.navcta').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.32}px)`;});b.addEventListener('mouseleave',()=>b.style.transform='');});
+if(false) document.querySelectorAll('.btn,.navcta').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.32}px)`;});b.addEventListener('mouseleave',()=>b.style.transform='');});
 // custom cursor
 const cur=document.querySelector('.cur'),ring=document.querySelector('.cur-r');
-if(cur && !RM && matchMedia('(hover:hover)').matches){
+if(false && cur){
   let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
   addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;});
   (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
@@ -30,7 +30,7 @@ if(cur && !RM && matchMedia('(hover:hover)').matches){
 // clickable cards
 document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=el.dataset.href;}));
 
-// theme — default is set inline in <head> (light on desktop, dark on mobile/touch); this button toggles & persists the choice
+// theme — default is dark everywhere (set inline in <head>); this button toggles & persists the choice
 (function(){
   function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{(matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches?sessionStorage:localStorage).setItem('uvTheme',t);}catch(e){}}  /* phones: dark by default every visit; toggle lasts for the session */
   function toggle(){applyTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}
@@ -139,7 +139,7 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
 /* ===== MOCK: hero live AgentMesh console ===== */
 (function(){
   var root=document.querySelector('.meshviz'); if(!root) return;
-  if(matchMedia('(max-width:768px)').matches){ root.style.display='none'; return; }  /* phones get the recorded GIF */
+  var PHONE=matchMedia('(max-width:768px)').matches;  /* phones run the live console too, with fewer dots per row */
   var PER=64, dots=[], byJob={};
   [].slice.call(root.querySelectorAll('.mv-row')).forEach(function(r){var box=r.querySelector('.mv-dots'), job=r.dataset.job; byJob[job]=[];
     for(var k=0;k<PER;k++){var d=document.createElement('i'); box.appendChild(d); dots.push(d); byJob[job].push(d);} });

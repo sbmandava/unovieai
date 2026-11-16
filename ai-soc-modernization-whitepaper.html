@@ -8,20 +8,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta name="author" content="Suresh Mandava">
 <meta name="description" content="Why distributed IT/OT enterprises must modernize the SOC for the agentic era with an edge-native, identity-driven AI SOC — keeping detection, response and governance on owned silicon. A whitepaper for CISOs.">
 <title>Modernizing the SOC for the Agentic Era — Edge-Native, Identity-Driven Security for Distributed IT/OT</title>
-<script>(function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>
+<script>(function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme','dark');})();</script>
 <style>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --ink:#11171f; --soft:#3d4a5c; --muted:#65728a;
-    --line:#e2e8f1; --line2:#cdd7e5; --acc:#1f7a5a; --acc2:#0f5e44; --blue:#1f6feb;
+    --line:#e2e8f1; --line2:#cdd7e5; --acc:#5054a0; --acc2:#3c3f86; --blue:#1f6feb;
     --code-bg:#0e1620; --code-ink:#cdd9e5; --warn:#9a6a00; --warnbg:#fff7e6;
     --maxw:820px;
   }
   :root[data-theme="dark"]{
     --bg:#0c1117; --panel:#141b24; --ink:#e8eef6; --soft:#c2cdda; --muted:#93a1b4;
-    --line:#222c38; --line2:#33414f; --acc:#5fd0a2; --acc2:#8ee3bd; --blue:#6ea8ff;
+    --line:#222c38; --line2:#33414f; --acc:#9b9ff5; --acc2:#c3c5fa; --blue:#6ea8ff;
     --code-bg:#0a0f15; --code-ink:#cdd9e5; --warn:#e0b057; --warnbg:#241b08;
   }
   *{box-sizing:border-box}
@@ -111,7 +110,7 @@
   @media print{
     .toolbar,.home{display:none} a{color:inherit}
     body{font-size:10.5pt;background:#fff;color:#000}
-    :root{--bg:#fff;--ink:#000;--soft:#222;--muted:#444;--panel:#f4f6f9;--line:#ccc;--line2:#bbb;--acc:#0f5e44}
+    :root{--bg:#fff;--ink:#000;--soft:#222;--muted:#444;--panel:#f4f6f9;--line:#ccc;--line2:#bbb;--acc:#3c3f86}
     h2{page-break-after:avoid} table,figure,.principle,.stats,.note{page-break-inside:avoid}
     header.hero{padding-top:0}
   }
@@ -136,30 +135,27 @@
 <header class="hero">
   <div class="eyebrow">Technical Whitepaper · AI SOC Modernization</div>
   <h1>Modernizing the SOC for the Agentic Era: Edge-Native, Identity-Driven Security for Distributed IT/OT</h1>
-  <p class="sub">For CISOs and security organizations running distributed estates across IT and OT. Why the cloud-SIEM
-  model breaks as agents — and agentic threats — appear everywhere, and how an edge-native, identity-driven AI SOC
-  keeps detection, response and governance on your own ground.</p>
+  <p class="sub">For CISOs who run security across many sites and both IT and OT. Why the cloud SIEM model breaks
+  now that AI agents are on both sides of an attack, and how a security operations center that runs on site keeps
+  detection and response under your control.</p>
   <div class="byline">
-    <span><b>Suresh Mandava</b></span>
     <span><b>Unovie.AI</b> · EdgeAI Context Engineering</span>
-    <span>Revision 1.0 · June 2026</span>
+    <span>Revision 1.1 · November 2026</span>
     <span>Reference hardware: NVIDIA Jetson AGX Thor · DGX Spark (Blackwell, 128&nbsp;GB unified) — on-site</span>
   </div>
 </header>
 
 <div class="abstract">
   <h4>Abstract</h4>
-  <p>The Security Operations Center evolved for two decades — NOC, SOC, AI/ML-assisted detection, threat intelligence,
-  SOAR — toward a cloud-SIEM, managed-service model. That model assumed telemetry could leave the site and that threats
-  were authored by humans. Both assumptions break in <b>2025 and beyond</b>: AI agents now act everywhere — yours
-  automating operations, adversaries' automating attacks — and distributed <b>IT/OT</b> estates cannot ship sensitive,
-  high-volume telemetry to a metered cloud. We argue for an <b>edge-native, identity-driven AI SOC</b>: a self-learning
-  reasoning core that runs <em>on-site</em> on owned silicon, detecting in the ingestion path; a knowledge graph that
-  replaces isolated alerts with traced blast-radius; and an <b>identity-driven core</b> that gives every human, service
-  and agent a scoped identity and policy — connected or air-gapped. Unovie delivers this through two offerings —
-  <b>GPU EdgeGateway</b>, which governs agentic AI traffic, and the <b>AI SOC (AISOC)</b>, which detects and responds on
-  your floor — bound by a portable identity edge. The result: detections that compound on your environment, response
-  that survives outages, compliance evidence that is continuous, and data that never leaves your boundary.</p>
+  <p>For twenty years the Security Operations Center moved toward one model: send all the logs to a cloud SIEM and
+  let a managed service watch them. That model assumed two things. Data could leave the site, and attacks were run by
+  people. Neither is true any more. AI agents now act on both sides. Your teams use them to run operations, and
+  attackers use them to automate attacks. Sites that mix <b>IT and OT</b> also cannot send large, sensitive data
+  streams to a cloud that charges by the query.</p>
+  <p>This paper makes the case for an <b>AI SOC that runs on site</b>. It spots threats as data arrives and learns from
+  your own environment. A knowledge graph links each alert to the people, systems and devices it touches, so you can
+  see how far an attack could spread. Every person, service and AI agent gets its own identity and limits, whether the
+  site is connected or air-gapped. Response keeps working when the network link drops, and your data stays on site.</p>
 </div>
 
 <nav class="toc" aria-label="Table of contents">
@@ -282,8 +278,8 @@ consolidates them into <b>four cognitive platforms</b> feeding a single reasonin
     <rect x="556" y="120" width="150" height="230" rx="14" fill="var(--panel)" stroke="var(--acc)" stroke-width="2"/>
     <text x="631" y="210" fill="var(--ink)" font-weight="800" font-size="13">Self-learning</text>
     <text x="631" y="228" fill="var(--ink)" font-weight="800" font-size="13">reasoning core</text>
-    <text x="631" y="252" fill="var(--muted)" font-size="10.5">frozen base +</text>
-    <text x="631" y="266" fill="var(--muted)" font-size="10.5">verifier-graded loop</text>
+    <text x="631" y="252" fill="var(--muted)" font-size="10.5">learns on site,</text>
+    <text x="631" y="266" fill="var(--muted)" font-size="10.5">every change tested</text>
     <text x="631" y="280" fill="var(--muted)" font-size="10.5">on owned silicon</text>
     <!-- actions -->
     <g fill="#fff">
@@ -327,30 +323,21 @@ of <em>data flows</em>, not just consoles:</p>
 
 <!-- 4 -->
 <h2 id="core"><span class="n">4</span>The self-learning, edge-native SOC analyst</h2>
-<p class="lead">The reasoning core is not a chatbot bolted onto a SIEM. It is a <b>frozen open model</b> adapted by external
-stores, improved by a verifier-graded loop, and run entirely on-device.</p>
-<p>Detection happens <b>in the ingestion path</b>, on the GPU, while events are still moving — tokenized, classified and
-enriched before indexing, using a compact transformer classifier rather than regex chains. A streaming bus in
-broker-only mode feeds parallel GPU workers; an inference server runs the model with dynamic batching; enriched
-incidents land in a sharded, authenticated index; a dead-letter queue protects failed batches and retention keeps
-storage bounded. On a single Blackwell-class node this sustains production-grade throughput:</p>
-<div class="stats">
-  <div class="stat"><div class="v">21,300<small>+ EPS</small></div><div class="l">Peak ingestion &amp; AI-classification throughput, single node</div></div>
-  <div class="stat"><div class="v">13,800<small>+ EPS</small></div><div class="l">Sustained production baseline</div></div>
-  <div class="stat"><div class="v">~3<small>s</small></div><div class="l">AI inference latency at ingest, under load</div></div>
-  <div class="stat"><div class="v">1.29<small>B/day</small></div><div class="l">Events at the 15K-EPS baseline (~1.55&nbsp;TB enriched)</div></div>
+<p class="lead">The core of a modern SOC is a model that reasons over events as they arrive and learns from your own
+environment. It runs entirely on site.</p>
+<p>Detection happens <b>in the ingestion path</b>, on the GPU, while events are still moving. Each event is classified
+and enriched before it is stored, by a small model trained for the job instead of long chains of hand-written rules.
+That means threats are flagged in seconds, not found later by a scheduled search.</p>
+<p>The model also learns your environment over time. The hard part is learning without drifting, so that a change
+never makes detection worse. The safe rule is simple: no change goes live until it has proven itself on cases it has
+never seen, and every change can be undone.</p>
+<div class="principle"><div class="tag">What this means for you</div>
+  <p>Detection gets better on <em>your</em> attacks, on site. Each change is tested before it goes live and can be
+  rolled back. Your data never leaves the boundary.</p>
 </div>
-<h3>Frozen base, reversible adaptation</h3>
-<p>The model learns your environment without drifting. A <b>frozen base</b> never has its weights merged; adaptation
-lives in external, reversible stores — a knowledge layer (graph + retrieval), composable skills, and lightweight
-runtime controllers. A <b>verifier-graded loop</b> proposes updates, grades them against schema and grounding, and a
-<b>regression gate</b> commits only changes that beat the prior baseline on held-out data — otherwise it auto-reverts.
-Dual-path serving keeps a fast path for real-time detection and a deeper path for reflection.</p>
-<div class="principle"><div class="tag">Why it is safe</div>
-  <p>Because the base is frozen and every self-update is reversible and must clear an automatic regression gate before
-  it goes live, detections only ever improve — the model compounds accuracy on <em>your</em> attacks, on-site, at
-  near-zero marginal cost, with no weight drift and no data egress.</p>
-</div>
+<div class="note">Throughput figures, the detection pipeline and how Unovie's learning loop works are covered in our
+technical brief. Want to see how Unovie does this in practice?
+<a href="contact.html">talk to our engineers</a>.</div>
 
 <!-- 5 -->
 <h2 id="graph"><span class="n">5</span>From alerts to a knowledge graph</h2>
@@ -396,7 +383,6 @@ identity-agnostic.</p>
     <tr><td><b>Issuer</b></td><td>The enterprise IdP — SSO, MFA and lifecycle stay where they already live; no local IdP to run</td><td>A self-contained on-prem OIDC issuer with its own user/group store — no external database, no cloud reach</td></tr>
     <tr><td><b>Edge</b></td><td colspan="2">Same thin proxy; same server-side sessions; same RBAC on a roles claim; downstream services receive identity via standard headers</td></tr>
     <tr><td><b>Switch</b></td><td colspan="2">One pluggable issuer setting — applications and the SOC never change</td></tr>
-    <tr><td><b>Secrets</b></td><td colspan="2">Held in the platform secret store; never committed; sessions in a local cache</td></tr>
   </tbody>
 </table>
 <div class="principle"><div class="tag">Identity-driven core</div>
@@ -429,19 +415,15 @@ watches users, and uses the knowledge graph to bound what a compromised or misbe
 <p class="lead">Unovie delivers this architecture as two offerings bound by the identity-driven core, all on Unovie's custom-built
 hardware accelerators.</p>
 <h3>GPU EdgeGateway — govern the agentic AI</h3>
-<p>An inference-native, agent-first gateway. One routing contract turns signals into decisions across a mesh of local,
-private and frontier models; the prefix cache is protected; context is selected, not pasted; tools run sandboxed; and
-every policy change is shadow-tested before it goes live. It is the safe, governed, least-cost path for every agentic
-request — and the enforcement point for agent identity and policy.</p>
+<p>A gateway for all AI agent traffic. It sends each request to the right model, local where possible. It runs agent
+tools in a locked-down space and checks every policy change before it goes live. It is also where each agent's identity
+and limits are enforced.</p>
 <h3>AI SOC (AISOC) — detect and respond on your floor</h3>
-<p>An edge-native, self-learning security operations capability: GPU-native detection in the ingestion path, a knowledge
-graph for relationship context and blast-radius, a verifier-graded learning loop that compounds accuracy on your
-environment, and autonomous action — remediation-as-code, graph-traced containment, adaptive policy and continuous
-compliance evidence. It runs on-site, learns from your own attacks, and never ships telemetry off the boundary.</p>
-<div class="note"><b>See it on the platform.</b> The detection-at-ingest, knowledge-graph and IT/OT coverage described
-here are productized as <b>IT/OT Edge Security Intelligence</b> &mdash;
-<a href="platform/agentmesh.html">unovie.ai/platform/agentmesh</a>. The agent-traffic
-governance layer is <b>GPU EdgeGateway</b> &mdash; <a href="platform/agentnexus.html">unovie.ai/platform/agentnexus</a>.</div>
+<p>Security operations that run on your site. It flags threats as data arrives and uses a knowledge graph to show how
+far an attack could spread. It learns from your own environment, and it can act within limits you set: proposing
+fixes, isolating affected systems and keeping compliance evidence up to date. Telemetry never leaves the site.</p>
+<div class="note"><b>Want the detail?</b> How these pieces are built and how they fit with the rest of Unovie's platform
+is something our engineers can walk you through: <a href="contact.html">talk to our engineers</a>.</div>
 
 <!-- 9 -->
 <h2 id="deploy"><span class="n">9</span>Deployment for the distributed enterprise</h2>
@@ -463,7 +445,7 @@ governance layer is <b>GPU EdgeGateway</b> &mdash; <a href="platform/agentnexus.
   <div class="stat"><div class="v">100<small>%</small></div><div class="l">On-site — telemetry never leaves the boundary</div></div>
   <div class="stat"><div class="v">$0<small>/query</small></div><div class="l">No recurring cloud-SIEM or per-event fees</div></div>
   <div class="stat"><div class="v">24/7</div><div class="l">Detection &amp; response survive link and provider outages</div></div>
-  <div class="stat"><div class="v">Weekly</div><div class="l">Detections compound from your own attacks</div></div>
+  <div class="stat"><div class="v">Local</div><div class="l">Detections learn from your own environment</div></div>
 </div>
 
 <!-- 10 -->
@@ -471,9 +453,9 @@ governance layer is <b>GPU EdgeGateway</b> &mdash; <a href="platform/agentnexus.
 <p>Owning the detection and inference path is the strongest governance posture available to a distributed enterprise.
 Sensitive IT/OT and regulated data never leaves the site, so data-exfil and cross-border transfer risk are removed at
 the source. Controls map continuously to frameworks — NIST guidelines, sector standards such as FHIR for health data —
-producing <b>continuous compliance evidence</b> rather than point-in-time audits. Because the reasoning core's base is
-frozen and every self-update is reversible behind a regression gate, the security model never drifts out from under you
-— the opposite of a cloud detection set that changes on a vendor's schedule. A live asset inventory (CMDB) tracks
+producing <b>continuous compliance evidence</b> rather than point-in-time audits. No change to the detection model goes
+live until it has proven itself on cases it has never seen, and every change can be undone. A cloud detection set, by
+contrast, changes on the vendor's schedule. A live asset inventory (CMDB) tracks
 device firmware, end-of-life and protocol risk across the IT/OT estate, and the knowledge graph keeps identity, asset
 and vulnerability context joined.</p>
 <div class="note"><b>Capability without exposure.</b> Hard problems still reach a large on-prem model, and the rare
@@ -488,7 +470,7 @@ request that genuinely needs a frontier model can take that path by explicit, at
   <li><b>Detect at ingest, correlate on a graph.</b> Treat detection as an in-path engineering problem; model the estate as relationships to catch multi-stage attacks.</li>
   <li><b>Make identity the core.</b> Deploy a thin, pluggable identity edge so connected and air-gapped sites share one scoped model — for humans, services <em>and</em> agents.</li>
   <li><b>Govern every agent.</b> Route agentic traffic through a gateway that sandboxes tools, enforces policy-as-code, checks safety inline and attributes every action.</li>
-  <li><b>Own the model.</b> Prefer a frozen-base, self-learning core you operate over a per-query subscription whose detections you do not control.</li>
+  <li><b>Own the model.</b> Prefer a self-learning core you operate over a per-query subscription whose detections you do not control.</li>
   <li><b>Keep it reversible and provable.</b> Gate every self-update on a regression test; map controls continuously to your compliance frameworks.</li>
   <li><b>Plan for IT and OT together.</b> One pipeline, one identity model, one graph — not two disconnected programs.</li>
 </ul>
@@ -497,22 +479,19 @@ request that genuinely needs a frontier model can take that path by explicit, at
 <h2 id="refs"><span class="n">12</span>References</h2>
 <div class="refs">
 <ol>
-  <li id="r1">Unovie.AI. <em>IT/OT Edge Security Intelligence.</em> <span>unovie.ai/platform/edge-security-intelligence — GPU-native detection at ingest, knowledge-graph correlation, IT + OT coverage.</span></li>
-  <li id="r2">Unovie.AI. <em>GPU EdgeGateway.</em> <span>unovie.ai/platform/gpu-edgegateway — inference-native, agent-first routing and governance on owned silicon.</span></li>
-  <li id="r3">GPU-native SIEM reference architecture (single Blackwell node). <span>Detection-at-ingest with a compact transformer classifier; ~21,300 EPS peak / ~13,800 EPS sustained; broker-only streaming, sharded authenticated index, dead-letter queue, retention enforcement.</span></li>
-  <li id="r4">Self-learning, edge-native analyst pattern. <span>Frozen base + external adaptation stores (knowledge / skills / controllers); verifier-graded loop with an automatic regression gate; dual-path serving; fully on-device.</span></li>
   <li id="r5">Thin authentication edge pattern. <span>OAuth2/OIDC proxy with server-side sessions and edge RBAC; pluggable issuer — enterprise IdP (connected) or a self-contained on-prem OIDC issuer (air-gapped); identity-agnostic downstream.</span></li>
   <li id="r6">MITRE ATT&amp;CK. <span>Adversary tactics &amp; techniques mapping used for real-time detection-to-tactic correlation.</span></li>
   <li id="r7">NIST guidance (incl. SP 800-190, container/IoT security) and sector standards (e.g., FHIR for health data interoperability). <span>Continuous control mapping for compliance evidence.</span></li>
-  <li id="r8">NVIDIA. <em>Jetson AGX Thor &amp; DGX Spark (Blackwell).</em> <span>On-site, 128&nbsp;GB unified memory, NVFP4 — the owned-silicon target for edge SOC nodes.</span></li>
+  <li id="r8">NVIDIA. <em>Jetson AGX Thor &amp; DGX Spark (Blackwell).</em> <span>On-site, 128&nbsp;GB unified memory: the owned-silicon target for edge SOC nodes.</span></li>
 </ol>
 </div>
 
 <footer>
   <p><b>Unovie.AI · EdgeAI Context Engineering.</b> This whitepaper synthesizes internal edge-security architecture with
   public hardware specifications and well-established security concepts (detection-at-ingest, knowledge-graph
-  correlation, frozen-base self-learning, thin identity edges, MITRE ATT&amp;CK, NIST). Throughput figures reflect a
-  single-node reference benchmark and will vary with workload, hardware and configuration. Revision 1.0.</p>
+  correlation, self-learning detection, thin identity edges, MITRE ATT&amp;CK, NIST). Revision 1.1.</p>
+  <p>Want to see how it works? Want to see how Unovie does this in practice?
+  <a href="contact.html">talk to our engineers</a>.</p>
 </footer>
 
 </div>

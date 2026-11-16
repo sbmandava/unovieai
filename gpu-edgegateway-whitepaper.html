@@ -8,20 +8,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta name="author" content="Suresh Mandava">
 <meta name="description" content="Why an edge-native inference gateway on Unovie's custom-built hardware accelerators, engineered for agentic performance, low latency and high availability, turns unpredictable, metered AI opex into fixed, predictable cost for industrial edge use cases. A whitepaper for infrastructure leaders.">
 <title>The Edge-Native Inference Gateway — Predictable AI Economics for the Industrial Edge</title>
-<script>(function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme',m?'dark':'light');})();</script>
+<script>(function(){try{var s=localStorage.getItem('wpTheme');if(s==='light'||s==='dark'){document.documentElement.setAttribute('data-theme',s);return;}}catch(e){}var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}document.documentElement.setAttribute('data-theme','dark');})();</script>
 <style>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --ink:#11171f; --soft:#3d4a5c; --muted:#65728a;
-    --line:#e2e8f1; --line2:#cdd7e5; --acc:#1f7a5a; --acc2:#0f5e44; --blue:#1f6feb;
+    --line:#e2e8f1; --line2:#cdd7e5; --acc:#5054a0; --acc2:#3c3f86; --blue:#1f6feb;
     --code-bg:#0e1620; --code-ink:#cdd9e5; --warn:#9a6a00; --warnbg:#fff7e6;
     --maxw:820px;
   }
   :root[data-theme="dark"]{
     --bg:#0c1117; --panel:#141b24; --ink:#e8eef6; --soft:#c2cdda; --muted:#93a1b4;
-    --line:#222c38; --line2:#33414f; --acc:#5fd0a2; --acc2:#8ee3bd; --blue:#6ea8ff;
+    --line:#222c38; --line2:#33414f; --acc:#9b9ff5; --acc2:#c3c5fa; --blue:#6ea8ff;
     --code-bg:#0a0f15; --code-ink:#cdd9e5; --warn:#e0b057; --warnbg:#241b08;
   }
   *{box-sizing:border-box}
@@ -112,7 +111,7 @@
   @media print{
     .toolbar,.home{display:none} a{color:inherit}
     body{font-size:10.5pt;background:#fff;color:#000}
-    :root{--bg:#fff;--ink:#000;--soft:#222;--muted:#444;--panel:#f4f6f9;--line:#ccc;--line2:#bbb;--acc:#0f5e44}
+    :root{--bg:#fff;--ink:#000;--soft:#222;--muted:#444;--panel:#f4f6f9;--line:#ccc;--line2:#bbb;--acc:#3c3f86}
     h2{page-break-after:avoid} table,figure,.principle,.stats,.note{page-break-inside:avoid}
     header.hero{padding-top:0}
   }
@@ -137,29 +136,26 @@
 <header class="hero">
   <div class="eyebrow">Technical Whitepaper · Edge-AI Economics</div>
   <h1>The Edge-Native Inference Gateway: Turning Unpredictable AI Opex into Fixed, Predictable Cost</h1>
-  <p class="sub">For infrastructure leaders. How an inference-native routing gateway on Unovie's custom-built hardware accelerators, engineered for agentic
-  performance, low latency and high availability, converts metered, unbounded cloud-inference spend into fixed, predictable cost — without giving up capability,
-  safety, latency, or data control. Written for the industrial edge.</p>
+  <p class="sub">For infrastructure leaders at industrial sites. How running AI models on your own hardware, behind one
+  gateway, turns a cloud bill you cannot forecast into a fixed cost you can plan. You keep your data on site and still
+  reach a large model when a task needs one.</p>
   <div class="byline">
-    <span><b>Suresh Mandava</b></span>
     <span><b>Unovie.AI</b> · EdgeAI Context Engineering</span>
-    <span>Revision 1.1 · November 2026</span>
+    <span>Revision 1.2 · November 2026</span>
     <span>Reference hardware: NVIDIA DGX Spark · AMD Ryzen AI Max+ 395</span>
   </div>
 </header>
 
 <div class="abstract">
   <h4>Abstract</h4>
-  <p>Metered cloud inference is the fastest-growing and least predictable line in many enterprise AI budgets: cost
-  scales with every token, every retry, and every agent loop, and the bill arrives after the spend is already
-  committed. We argue that for the <b>industrial edge</b> — factories, depots, substations, vehicles, regulated
-  sites — the durable answer is an <b>edge-native inference gateway</b>: run the models on-prem on custom-built, high-availability hardware accelerators, and
-  put a single inference-native gateway in front of them that decides <em>which</em> model handles each request,
-  reuses cached computation, sends only the context a turn needs, and enforces safety and policy inline. This converts
-  a variable opex stream into a <b>fixed, known price for capacity plus near-electricity marginal cost</b>, makes spend
-  <b>predictable and bounded</b>, keeps data on-premises, and removes the cloud round-trip. We describe the
-  architecture for the CTO, the cost model for the infrastructure VP, the four token-economics levers that bend the
-  curve, a three-year TCO comparison, and a deployment blueprint on Unovie's reference hardware.</p>
+  <p>Pay-per-token cloud AI is one of the hardest costs to forecast. Every token, retry and agent loop adds to the
+  bill, and the bill arrives after the money is spent. For factories, depots, substations and other regulated sites
+  there is a better option. Run the models on hardware at the site and put one <b>gateway</b> in front of them. The
+  gateway picks the right model for each request, reuses work it has already done, and checks safety and policy on
+  every call. The result is a <b>fixed cost for capacity</b>, plus little more than the power bill for each extra
+  request. Data stays on site and there is no cloud round-trip. This paper covers the architecture for the CTO, the
+  cost model for the infrastructure VP, the main ways to cut token use, a three-year cost comparison and a
+  deployment plan.</p>
 </div>
 
 <nav class="toc" aria-label="Table of contents">
@@ -211,12 +207,10 @@ finance cannot forecast and infrastructure cannot cap.</p>
 <h2 id="arch"><span class="n">2</span>Architecture: the edge-native inference gateway</h2>
 <p class="lead">The gateway is not a proxy bolted in front of a model. It is the control point where workload, routing,
 serving, caching and policy meet — designed from the inference engine out, not around it.</p>
-<p>Every request enters through one <b>routing contract</b>: signals become projections, projections drive a decision,
-and the decision chooses the model — across a mesh of local small models, on-prem large models, and (only when it
-genuinely pays) an external frontier API. The same gateway protects reusable computation, trims context to the
-evidence a turn needs, and runs safety and policy inline. Because it is co-designed with a high-throughput,
-memory-efficient serving engine, it follows the engine's optimization rules instead of treating every call as generic
-chat traffic.</p>
+<p>Every request goes through the gateway, which chooses the model that should handle it. That might be a small local
+model, a large on-site model or, only when it really pays, an external model. The same gateway reuses work it has
+already done, sends only the context a request needs, and checks safety and policy on every call.</p>
+<div class="note">Want to see how Unovie does this in practice? <a href="contact.html">Talk to our engineers</a>.</div>
 
 <figure>
 <svg viewBox="0 0 920 340" role="img" aria-label="Edge-native inference gateway architecture: workloads enter a gateway that routes, caches, selects context and enforces safety, then serves from a pool of models on on-site hardware, with an optional frontier API used only when it pays.">
@@ -233,7 +227,7 @@ chat traffic.</p>
   <rect x="300" y="48" width="300" height="244" rx="14" fill="var(--panel)" stroke="var(--acc)" stroke-width="2"/>
   <text x="450" y="36" text-anchor="middle" fill="var(--acc)" font-size="13" font-family="sans-serif" font-weight="800">INFERENCE GATEWAY</text>
   <g font-family="sans-serif" font-size="12.5" fill="var(--ink)" text-anchor="middle">
-    <rect x="320" y="66" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="89">Signal &#8594; decision routing</text>
+    <rect x="320" y="66" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="89">Model routing</text>
     <rect x="320" y="112" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="135">Prefix-cache reuse</text>
     <rect x="320" y="158" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="181">Context selection</text>
     <rect x="320" y="204" width="260" height="38" rx="8" fill="var(--bg)" stroke="var(--line2)"/><text x="450" y="227">Safety &amp; policy</text>
@@ -361,13 +355,11 @@ datacenter, so what you build here promotes to the edge unchanged.</p>
 <h3>AMD Ryzen AI Max+ 395 — the private inference node</h3>
 <p>A small, all-metal node fusing <b>16 Zen&nbsp;5 cores</b>, a Radeon&nbsp;8060S iGPU and an XDNA&nbsp;2 NPU for
 <b>~126&nbsp;TFLOPS</b> of platform AI, with <b>128&nbsp;GB of LPDDR5X-8000</b> — enough to keep 70B-class models
-resident and private. Dual 10GbE and dual USB4 let nodes cluster into a compute hub, so capacity scales by adding
-fixed-price units that Unovie builds, not by raising a meter.</p>
+resident and private. Capacity grows by adding fixed-price units, so cost goes up in known steps.</p>
 <div class="stats">
   <div class="stat"><div class="v">128<small>&nbsp;GB</small></div><div class="l">Unified memory per node — large models stay resident, on-prem</div></div>
   <div class="stat"><div class="v">200<small>B&#8594;405B</small></div><div class="l">Local model scale on a node, or a linked pair</div></div>
   <div class="stat"><div class="v">70<small>B</small></div><div class="l">Class of model served privately on a single edge node</div></div>
-  <div class="stat"><div class="v">10GbE<small>·USB4</small></div><div class="l">Cluster fixed-price nodes into a private compute hub</div></div>
 </div>
 <div class="note"><b>Why two tiers.</b> Develop and fine-tune on the large node; serve steady-state traffic on a fleet
 of small nodes governed by the gateway. The same artifacts run on both, so there is one pipeline and one cost basis.</div>
@@ -435,7 +427,7 @@ so you keep the ceiling while removing the floor of wasted spend.</div>
 <ul>
   <li><b>Inventory steady-state workloads.</b> Repetitive, high-volume, latency- or sovereignty-sensitive traffic is the first to move edge-native.</li>
   <li><b>Plan capacity, not tokens, for that traffic.</b> Size the Unovie node fleet to steady demand; keep a frontier path for the long tail.</li>
-  <li><b>Make the gateway the single ingress.</b> One routing contract, one policy plane, one meter, compatible APIs so apps don't change.</li>
+  <li><b>Make the gateway the single ingress.</b> One entry point, one policy plane, one meter, compatible APIs so apps don't change.</li>
   <li><b>Turn on all four levers.</b> Routing, prefix-cache discipline, context selection and semantic caching compound.</li>
   <li><b>Keep data on-prem by default.</b> Treat egress as an exception that needs justification.</li>
   <li><b>Version and shadow-test policy.</b> Never let routing drift silently; always be able to revert.</li>
@@ -454,7 +446,7 @@ so you keep the ceiling while removing the floor of wasted spend.</div>
   <li id="r5">Category-aware semantic caching for heterogeneous workloads (2025). <span>Reusing answers for semantically-equivalent requests.</span></li>
   <li id="r6">Prefix / KV-cache reuse in high-throughput serving. <span>Cached prompt prefixes billed at a steep discount versus recomputation.</span></li>
   <li id="r7">Inference-native agent harness practice (2026). <span>Prefix-cache discipline, context selection and bounded tool output for long-horizon work.</span></li>
-  <li id="r8">Unovie.AI. <em>GPU EdgeGateway &amp; Device Platform.</em> <span>unovie.ai/platform/gpu-edgegateway · unovie.ai/device-platform</span></li>
+  <li id="r8">Unovie.AI. <em>Device Platform.</em> <span>unovie.ai/device-platform</span></li>
 </ol>
 </div>
 
@@ -463,7 +455,9 @@ so you keep the ceiling while removing the floor of wasted spend.</div>
   public hardware specifications and well-established inference-optimization concepts (signal-driven routing, prefix /
   KV-cache reuse, semantic caching, context selection). Cost figures are illustrative parameters, not price quotes;
   actual results depend on workload mix, utilization, token profile and energy cost. Hardware specifications reflect
-  vendor figures as of November 2026. Revision 1.1.</p>
+  vendor figures as of November 2026. Revision 1.2.</p>
+  <p>Want to see how it works? Want to see how Unovie does this in practice?
+  <a href="contact.html">talk to our engineers</a>.</p>
 </footer>
 
 </div>

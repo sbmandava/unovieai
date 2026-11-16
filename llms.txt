@@ -1,112 +1,73 @@
 # Unovie.AI
 
-> Physical AI technology, built for deep-tech industries — the sovereign, agentic platform for the physical frontier. Unovie designs, builds and operates custom Edge-AI Agentic Systems for next-generation manufacturing — sensor-dense, AI-heavy, robot-heavy factories in battery, chips, space, robotics and autonomous systems, defense and advanced energy — fixed scope, fixed cost, on AMD or NVIDIA hardware the customer owns. The platform has two systems: AgentMesh puts AI on every signal a next-generation line produces — robots, vision, sensors and test rigs — at the machine; AgentNexus runs AI agents across every site. AgentMesh is air-gapped by default; AgentNexus can connect out to Claude and the customer's ERP for business skills such as quotes, quality reports and the morning production report. Designed against NIST SP 800-53 and the NIST AI RMF; safety decisions stay with the customer's safety PLC, cell controller and operators.
+> Physical AI for deep-tech manufacturing. Unovie designs, builds and operates custom Edge-AI Agentic Systems for battery, chip, space, robotics, defense and advanced energy manufacturers, at a fixed scope and cost, on Unovie's custom-built AMD or NVIDIA hardware accelerators. AgentMesh puts AI at the machine, on every signal a next-generation line produces. AgentNexus runs AI agents across every site. A language model is never on the path that moves equipment, and every decision is recorded in a signed Evidence Log.
 
-Unovie is a four-year-old, engineering-first, AI-native company built for Physical AI, headquartered in Austin, Texas and serving customers nationally. Each founder brings 20+ years in OT and Physical AI (control systems, robot cells, factory networks, safety systems and low-latency edge systems). Its offering is written as "custom Edge-AI Agentic Systems". Figures on this site marked "target" or "estimate" are design targets, not measurements.
+Figures on this site marked "target" are design targets, not measurements.
 
 ## About Unovie
-- Engineering first: founders with 20+ years each designing, building and running OT and Physical AI systems; integration with robot controllers, safety PLCs, vision systems, test rigs and industrial protocols such as OPC UA, EtherCAT and Modbus; a 30 ms decision budget at the machine (target).
-- AI native: agents, small specialised models, Vector Memory and a test-gated improvement loop (the Kiln) are built into the platform from the start, not added to legacy software.
-- Built for Physical AI ("from bits to atoms"): Perceive (signals read where they start) → Reason (plant history, manuals, failures, with evidence) → Act (low-consequence actions directly; safety-related actions as requests the customer's systems decide) → Adapt (tested, signed, reversible improvements; the base model never drifts).
-- Location: headquartered in Austin, Texas; serves customers nationally, with on-site presence across Texas.
-- Customers: next-generation, sensor-dense, AI-heavy and robot-heavy manufacturers — battery and energy storage (cell, module and pack lines; storage fleets); chip fabs and their gas, chemical and parts suppliers; space and aerospace (vehicle and satellite lines, test stands); robotics and autonomous systems (robot-dense lines; robots, drones and vessels in the field); defense and dual-use manufacturing (new shipyards and autonomous-vessel yards); advanced energy and nuclear (non-safety roles only: construction, balance of plant, security).
-- Why these customers: data that cannot leave the site (export-controlled and defense data, chip and product IP), dense sensors and robots that produce more data than people can watch, and audits that need evidence. Unovie is air-gapped by default and every decision is written to a signed Evidence Log; output is advisory wherever certification or airworthiness rules apply.
-- Safety boundary: a language model is never on the path that moves equipment; Unovie does not act as a safety instrumented function and makes no SIL claim.
+- An engineering-first, AI-native company in Austin, Texas, serving customers nationally.
+- Founders with 20+ years each in OT and Physical AI. Four years building the platform.
+- Customers: next-generation manufacturers in battery and energy storage, chip fabs and their suppliers, space and aerospace, robotics and autonomous systems, defense and dual-use manufacturing, and advanced energy and nuclear (non-safety roles only).
+- Safety boundary: Unovie is not a safety system and makes no SIL claim. Safety decisions stay with the customer's PLC, safety system and operators.
+- Security: designed against NIST SP 800-53 and the NIST AI RMF (designed against, not certified). Compliance is decided by the customer's assessor.
 
 ## How Unovie engages
-1. Site audit (no charge, 1–2 days on site): an engineer reviews sensors, robots, network and control systems before a contract is signed.
-2. Paid pilot (6 weeks, $40–60K): one domain kit on the customer's own data, a baseline ROI view and a measured latency report; credited in full against a production site signed within 90 days.
-3. Production site (about one quarter from pilot): an AgentMesh Sovereign Pod integrated with sensors, cell controllers, the safety PLC, MES/QMS and the work-order system.
-4. Fleet rollout: new lines and sites reuse the playbook; AgentNexus brings the fleet together.
-5. Operate: Kiln updates, the governed-AI evidence pack (mapped to NIST SP 800-53, the NIST AI RMF and IEC 62443) and support under one subscription, or hardware-as-a-service.
-Pricing is per monitored asset and domain kit, never per seat or per camera.
-
-## Cloud-native architecture
-- CNCF-conformant: AgentMesh pods and the AgentNexus rack run a CNCF Certified Kubernetes distribution, with CNCF projects for service networking, replicated storage and observability. (Conformance refers to the Kubernetes distribution; Unovie does not claim a CNCF certification for its own product.)
-- Microservices native: each capability (Unovie Gateway, Signal Encoders, Vector Memory, Decision Engine, Decision Models, Reasoning Model, Model Router, Agent Runtime, Evidence Log, Kiln) is its own containerised service with typed gRPC contracts; services scale, update and roll back independently.
-- Declarative and repeatable (pinned images, declarative manifests, versioned and signed playbooks and skill adapters); secure defaults (default-deny network policy per namespace, encrypted secrets, sandboxed agents). Failover is decided by the Mesh Arbiter, not the Kubernetes scheduler.
-
-## Security and compliance
-- Born with security compliance in mind: the platform is designed against NIST SP 800-53 Rev. 5 control families (as tailored for OT by the NIST SP 800-82 Rev. 3 OT overlay) and the NIST AI Risk Management Framework, with the Generative AI Profile (NIST AI 600-1) guiding the Unovie Reasoning Model.
-- Mapping: air-gapped by default and one-way outputs (SC, AC); sealed agent sandboxes and least privilege (AC, IA); signed append-only Evidence Log (AU); test-gated, signed, reversible changes via the Kiln (CM, SI); Unovie-built hardware and open-weight models with known provenance (SR); failover (CP). AI RMF: Govern (Evidence Log, sign-off), Map (each domain kit declares context and lane), Measure (held-out tests, measured latency), Manage (lanes, trials, rollback).
-- The evidence pack is material for customers' own programs — SP 800-171/CMMC, IEC 62443, SEMI E187, aerospace quality records, battery-site safety reviews. Unovie does not claim certification; compliance is determined by the customer's assessor.
+1. Site audit: no charge, 1–2 days on site.
+2. Paid pilot: 6 weeks, $40–60K, one domain kit on the customer's own data. Credited in full against a production site signed within 90 days.
+3. Production: about one quarter after the pilot.
+4. Fleet: new lines and sites reuse the same setup; AgentNexus connects them.
+Pricing is per monitored asset and domain kit, never per seat or per camera. Hardware can be bought or taken as a service.
 
 ## Platform
-- [AgentMesh](https://unovie.ai/platform/agentmesh.html): Agentic Physical AI at the machine for next-generation factories (battery lines, chip fabs and suppliers, space hardware, robotics and autonomous systems). A Sovereign Pod (four AMD Ryzen AI Max+ 395 servers in 3U, with 2 × 10GbE networking and NVMe storage) on the factory network connects to robot controllers, vision systems (DeepVision on NVIDIA Jetson AGX Thor), sensors, test rigs and the factory network; decides inside a 30 ms budget (target); acts directly only on low-consequence outputs (Lane A, e.g. diverting a part to rework) and sends anything safety-related as an alarm and a request to the safety PLC, cell controller and operators (Lane B). Results go to MES, QMS, test-data and work-order systems. Also works with existing control systems. Every decision is written to a signed Evidence Log; air-gapped by default; the language model is never on the path that moves equipment.
-- [AgentNexus](https://unovie.ai/platform/agentnexus.html): AI agents across every site a next-generation manufacturer runs — gigafactories and storage fleets, factories and test stands, fabs and supplier plants, robot fleets, shipyards and dual-use programs. One 42U rack (twelve shelves of four servers, 48 in total) runs thousands of agents in sealed sandboxes, connects to every AgentMesh pod, and turns findings into cross-site analysis, maintenance plans, non-conformance reports, quality records and work orders (drafted in English or Spanish) within a 0.5 s response budget (target). It learns from production through the Kiln (train, test on unseen cases, trial, switch on) and never moves equipment. Runs in the customer's own enclave.
-
-## Core concepts
-- Sovereign Pod: the AgentMesh appliance — four servers in 3U with 2 × 10GbE networking and NVMe storage, on the factory network, air-gapped by default.
-- Lane A: low-consequence outputs AgentMesh may act on directly (reject gate, diverter, IT-side quarantine).
-- Lane B: anything touching process safety — AgentMesh raises an alarm and writes a request; the PLC, safety system and operator decide.
-- Evidence Log: append-only, signed record of every decision, action, request and change.
-- Unovie Gateway: connection to robot controllers, vision systems, sensors, data-acquisition boxes, test rigs and the factory network, with allow-listed protocols and an audit trail.
-- Signal Encoders: turn windows of raw signal into compact fingerprints.
-- Vector Memory: finds similar past events ("have we seen this before, and was it bad?").
-- Unovie Decision Engine: applies rules and small decision models and picks the lane.
-- Unovie Decision Models: small models that answer typed questions (choice, yes/no, score) with a probability for each answer.
-- Unovie Reasoning Model: the open-weight language model that explains events, finds root causes and drafts work orders; never in the path that moves equipment.
-- Skill adapters: small add-ons that specialise the Unovie Reasoning Model for one job, swapped in without a restart.
-- Kiln: the improvement loop — trains, tests on unseen cases, trials on live traffic and promotes changes only if they beat what is running.
-- Unovie Agent Runtime: runs each AgentNexus agent in a sealed sandbox, sleeps idle agents and wakes them on demand.
-- Unovie Model Router: picks the model and skill adapter for every request, local first — private decisions stay on the rack's own models and only work that needs an external model such as Claude goes out, which keeps external-model opex low.
-- Mesh Arbiter: failover service that moves work when a server or shelf stops.
-- Device reference files: every asset, sensor and output described in a machine-checkable file (what it measures, what may change, its lane, enforced limits), using the open OpenMHS schemas for now and kept standard-neutral for Anthropic's Model Hardware Standard when its format is published; Unovie does not claim MHS compatibility. Limits are enforced by the pod, never by a language model.
-- Commissioning by interview (in design): Claude on AgentNexus interviews the site engineer and drafts reference files and the output map; people review lanes and limits; a signed site-config release goes to the pod.
-- Domain kit: a packaged domain (connections, fingerprints, rules, playbook, reports) for one class of asset.
-- Operator HMI: the screen each AgentMesh pod provides — live asset signals, the decision and its lane, similar past events, the drafted work order and the nightly Kiln evidence pack. AgentNexus has a fleet HMI showing findings across sites, agents at work, model routing, plans awaiting sign-off and skill adapters in trial.
+- [AgentMesh](https://unovie.ai/platform/agentmesh.html): AI at the machine, on every signal a next-generation line produces: robots, vision, sensors and test rigs. A compact 3U pod at the line, air-gapped. Decides within 30 ms (target). Acts only on low-consequence outputs, such as a reject gate or a rework diverter. Anything touching safety becomes an alarm and a request that the PLC, cell controller and operators decide. Every device is described with its limits, and the pod enforces them.
+- [AgentNexus](https://unovie.ai/platform/agentnexus.html): AI agents working across every site. Drafts maintenance plans, NCRs, quality records and work orders for a named person to approve. Answers within 0.5 s (target). Never moves equipment. Runs in the customer's own enclave, as one rack for the whole fleet. Connects out only through one gate the customer controls and can audit (Claude and the customer's ERP, in design). Private work stays local.
+- Evidence Log: a signed record of every decision that the customer can audit.
+- Kiln: tested, signed, reversible improvements. Nothing new switches on until it has proven itself on cases it has never seen.
+- Operator HMI: each AgentMesh pod has an operator screen; AgentNexus has a fleet screen.
+- Engineering teams can book a walkthrough with our engineers: https://unovie.ai/contact.html
 
 ## Agentic jobs
-Packaged jobs for next-generation lines (each a domain kit with its connections, fingerprints, rules, playbook and reports), deployed in weeks:
-- Robot & Motion Health: joint, servo and gearbox drift caught before it scraps parts or stops the line; Lane A divert in under 30 ms (target).
-- Vision Quality Inspection: DeepVision at the cell, fused with process signals, on NVIDIA Jetson AGX Thor.
-- Battery Line & Storage Safety: weld and formation signatures in line; thermal-runaway warning on storage fleets (alarm only).
-- Fab Utilities Watch: pumps, chillers, scrubbers and gas systems at the fab and its suppliers; Lane B requests, facilities decide.
-- Test Campaign Monitor: flags to the test conductor during a run, beside the qualified test system; post-test report drafted.
-- Quality Records & NCRs: agents draft non-conformance reports and quality records for sign-off, in English or Spanish.
-- How to start: "Pilot on your line" — a 6-week paid pilot on the customer's own line, credited toward production (https://unovie.ai/index.html#contact).
+Packaged domain kits, deployed in weeks:
+- Robot & Motion Health: joint, servo and gearbox drift caught before it scraps parts or stops the line.
+- Vision Quality Inspection: DeepVision at the cell, on NVIDIA Jetson AGX Thor.
+- Battery Line & Storage Safety: weld and formation checks in line; thermal-runaway warning on storage sites (alarm only).
+- Fab Utilities Watch: pumps, chillers, scrubbers and gas systems at the fab and its suppliers.
+- Electrical Health: drives, inverters and switchgear.
+- Test Campaign Monitor: flags to the test conductor during a run; post-test report drafted.
+- Factory Network Watch: unauthorized writes and unusual commands on the factory network.
+- Quality Records & NCRs: drafted for sign-off, in English or Spanish.
 
 ## Sectors
-- [Battery & energy storage](https://unovie.ai/sectors/battery.html): Cell lines and storage sites.
-- [Chip fabs & suppliers](https://unovie.ai/sectors/fabs.html): Fab utilities and supplier plants.
-- [Space & aerospace](https://unovie.ai/sectors/space.html): Test stands and vehicle lines.
-- [Robotics, drones & autonomy](https://unovie.ai/sectors/robotics.html): Robot cells, drones and vessels.
-- [Defense & dual-use](https://unovie.ai/sectors/defense.html): Shipyards and dual-use factories.
-- [Advanced energy & nuclear](https://unovie.ai/sectors/energy.html): Balance of plant, non-safety only.
-- [FAQ](https://unovie.ai/faq.html): straight answers on data, safety, hardware and pilot cost.
-
-## Domain kits
-- Robot & Motion Health: joint, servo, gearbox and spindle health on robots, motion axes and conveyors (joint current, torque, vibration).
-- Battery Line & Storage Safety: weld, formation and aging signatures in line; thermal-runaway precursors on storage fleets, alarmed into the fire panel.
-- Electrical Health: drives, tool power, inverters and switchgear (power quality, partial discharge).
-- Vision Quality Inspection: DeepVision defect checks on cells, welds, wafers and composite parts, fused with process signals.
-- Test Campaign Monitor: anomaly flags to the test conductor during test-stand runs and drafted post-test reports (pressure, strain, acoustics).
-- Factory Network Watch: unauthorized writes and unusual commands on the factory network, with audit evidence.
+- [Battery & energy storage](https://unovie.ai/sectors/battery.html): cell lines and storage sites.
+- [Chip fabs & suppliers](https://unovie.ai/sectors/fabs.html): fab utilities and supplier plants.
+- [Space & aerospace](https://unovie.ai/sectors/space.html): test stands and vehicle lines.
+- [Robotics, drones & autonomy](https://unovie.ai/sectors/robotics.html): robot cells, drones and vessels.
+- [Defense & dual-use](https://unovie.ai/sectors/defense.html): shipyards and dual-use factories.
+- [Advanced energy & nuclear](https://unovie.ai/sectors/energy.html): balance of plant, non-safety only.
+- [FAQ](https://unovie.ai/faq.html): data, safety, hardware and pilot cost.
 
 ## Hardware
-Each option runs the same Unovie platform and serves one Industry 4.0 purpose.
-- [AMD Ryzen AI Max+ 395](https://unovie.ai/device-platform.html#ryzen-ai-max-395): sovereign factory intelligence. The reference server for the AgentMesh Sovereign Pod (4 servers, 3U, 2 × 10GbE networking, NVMe storage) and the AgentNexus rack (48 servers, 42U); 64 GB per server in Unovie's build. Status: runs today.
-- [NVIDIA Jetson AGX Thor](https://unovie.ai/device-platform.html#agx-thor): robotics and DeepVision for fabs — wafer, die and panel inspection, robot-cell quality, wafer handling and mobile robots, at the tool. Status: available on, per project.
-- [NVIDIA DGX Spark](https://unovie.ai/device-platform.html#dgx-spark): the AI engineering lab — skill adapter training, test-stand analytics, digital-twin experiments and a site-level AgentNexus. Status: available on, per project.
-- [Qualcomm QCS6490](https://unovie.ai/device-platform.html#qcs6490): mobile and remote assets — mobile robots, AGVs, drone docks and battery containers, feeding the nearest AgentMesh pod.
+All options run the same platform on Unovie's custom-built AMD or NVIDIA hardware accelerators.
+- [AMD Ryzen AI Max+ 395](https://unovie.ai/device-platform.html#ryzen-ai-max-395): the AgentMesh pod at the line and the AgentNexus rack for the fleet. Runs today.
+- [NVIDIA Jetson AGX Thor](https://unovie.ai/device-platform.html#agx-thor): robotics and DeepVision at the tool. Available per project.
+- [NVIDIA DGX Spark](https://unovie.ai/device-platform.html#dgx-spark): the AI engineering lab and a small AgentNexus for one site. Available per project.
+- [Qualcomm QCS6490](https://unovie.ai/device-platform.html#qcs6490): mobile and remote equipment, feeding the nearest AgentMesh pod.
 
 ## Resources
-- [AgentMesh — Architecture Overview](https://unovie.ai/resources/agentmesh-architecture.html): how the AgentMesh Sovereign Pod is organised, what happens from signal to action inside the 30 ms decision budget, how data is kept safe and what happens when a server fails — for architects and business leaders.
-- [AgentNexus — Architecture Overview](https://unovie.ai/resources/agentnexus-architecture.html): how AgentNexus is organised, what happens step by step, how data is kept safe and what happens when something breaks — for architects and business leaders.
-- [Edge AI Models — Field Guide](https://unovie.ai/resources/edge-ai-models.html): a 25-chapter architect's eBook on how edge-AI models actually learn.
-- [Frozen-Base Doctrine — Whitepaper](https://unovie.ai/resources/edge-ai-whitepaper.html): adapting custom models on the edge without retraining.
-- [Edge-Native Inference Gateway — Whitepaper](https://unovie.ai/gpu-edgegateway-whitepaper.html): turning unpredictable, metered AI opex into fixed, predictable cost for the industrial edge.
-- [AI SOC Modernization — Whitepaper](https://unovie.ai/ai-soc-modernization-whitepaper.html): an edge-native, identity-driven security architecture for distributed IT/OT.
-- [Case study: AI-driven certification for satellite set-top boxes](https://unovie.ai/resources/case-study-device-certification.html): an anonymized 12-month project — an air-gapped GPU verification platform; 16 boxes per 4K stream, detection mAP 0.836 to 0.961 after one in-house retrain, audio certified on 16 of 16 boxes.
-- [Agentic SDLC for Regulated MedTech](https://unovie.ai/resources/medsdlc-html/index.html): a self-hosted, validated, agent-native software development lifecycle for FDA / IEC 62304 medical-device engineering.
+- [Case study: AI-driven certification for satellite set-top boxes](https://unovie.ai/resources/case-study-device-certification.html): an anonymized 12-month project in a device test lab (not a factory). 16 boxes verified per 4K stream, detection mAP 0.836 to 0.961 after one in-house retrain, audio certified on 16 of 16 boxes, 0 bytes of test data leaving the lab.
+- [Edge AI Models: Field Guide (summary)](https://unovie.ai/resources/edge-ai-models.html): a summary; the full guide is available on request.
+- [Training Without Retraining (summary)](https://unovie.ai/resources/edge-ai-whitepaper.html): custom models on the edge.
+- [Edge-Native Economics: Whitepaper](https://unovie.ai/gpu-edgegateway-whitepaper.html): predictable AI cost at the industrial edge.
+- [AI SOC Modernization: Whitepaper](https://unovie.ai/ai-soc-modernization-whitepaper.html): security for IT and OT networks.
+- [Agentic SDLC for Regulated MedTech](https://unovie.ai/resources/medsdlc-html/index.html): software development for FDA / IEC 62304 medical-device engineering.
 
 ## Company
-- [Why Unovie](https://unovie.ai/why-unovie.html): a young company with veteran founders — each founder brings 20+ years in OT and Physical AI, and the company has spent four years building its sovereign AI platform for next-generation manufacturing. Headquartered in Austin, Texas, serving customers nationally. Site audit, a 6-week paid pilot on the customer's own line, and production in a quarter.
-- [About](https://unovie.ai/about.html): Physical AI technology for deep-tech industries, built in Austin, Texas.
-- [Contact](https://unovie.ai/contact.html): pilot on your line — site audit at no charge, then a 6-week paid pilot.
-- [LinkedIn](https://www.linkedin.com/company/unovie/): company page — news and the events Unovie attends.
+- [Why Unovie](https://unovie.ai/why-unovie.html): veteran founders, Austin, Texas, pilot to production in about a quarter.
+- [About](https://unovie.ai/about.html): Physical AI for deep-tech industries.
+- [Contact](https://unovie.ai/contact.html): the contact form. Site audit at no charge, then a 6-week paid pilot.
+- [LinkedIn](https://www.linkedin.com/company/unovie/): company page.
 
 ## Machine-readable
-- [Full content (llms-full.txt)](https://unovie.ai/llms-full.txt): the entire site as one markdown document for direct LLM/agent consumption.
-- [Vector index (JSON)](https://unovie.ai/agents/index.json): embeddable, chunked content records for RAG.
+- [Full content (llms-full.txt)](https://unovie.ai/llms-full.txt): the public site as one markdown document.
+- [Vector index (JSON)](https://unovie.ai/agents/index.json): chunked content records for RAG.
 - [Sitemap](https://unovie.ai/sitemap.xml)
