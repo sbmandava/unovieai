@@ -1116,3 +1116,8 @@ section{padding:clamp(44px,5vw,72px) 0}
 .pod2 .nxcard{background:#0d1020!important}
 [data-theme="dark"] .pod2 .podfig figcaption{border-top-color:var(--line-2)!important}
 @media(max-width:860px){.podwide.pod2{grid-template-columns:1fr}.pod2 .nxcard{max-width:440px;justify-self:center}}
+/* homepage platform: two equal cards, equal picture height, light paper behind both drawings */
+.podwide.pod2{grid-template-columns:1fr 1fr!important}
+.pod2 .podfig img{height:360px!important;width:100%!important;object-fit:contain!important;background:#fff;padding:14px 10px}
+.pod2 .nxcard{background:#fff!important}
+@media(max-width:860px){.podwide.pod2{grid-template-columns:1fr!important}.pod2 .nxcard{max-width:none}}
