@@ -30,7 +30,7 @@ if(false && cur){
 // clickable cards
 document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click',e=>{if(e.target.closest('a'))return;location.href=el.dataset.href;}));
 
-// theme — default is set inline in <head> (light on desktop, dark on mobile/touch); this button toggles & persists the choice
+// theme — default is dark everywhere (set inline in <head>); this button toggles & persists the choice
 (function(){
   function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{(matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches?sessionStorage:localStorage).setItem('uvTheme',t);}catch(e){}}  /* phones: dark by default every visit; toggle lasts for the session */
   function toggle(){applyTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}
