@@ -71,7 +71,7 @@ def HEAD(base,title,desc):
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {GA}
-<link rel="icon" href="{base}assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="{base}assets/favicon.png"><link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png">
+<link rel="icon" href="{base}assets/favicon.ico?v=2" sizes="any"><link rel="icon" type="image/png" href="{base}assets/favicon.png?v=2"><link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png?v=2">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -81,7 +81,7 @@ def HEAD(base,title,desc):
 def NAV(base):
     h=base+"index.html"
     return f'''<header class="nav"><div class="wrap"><div class="row">
-  <a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
+  <a class="brand" href="{h}"><img class="logo" src="{base}assets/images/unovie-logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
     <div class="drop"><button data-cursor>Sectors ▾</button><div class="menu">
       <a href="{base}sectors/battery.html"><span class="ic">01</span><span><span class="t">Battery &amp; energy storage</span><br><span class="s">Cell lines and storage sites</span></span></a>
@@ -132,7 +132,7 @@ def NAV(base):
 def FOOTER(base):
     h=base+"index.html"
     return f'''<footer><div class="wrap"><div class="fgrid">
-  <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/logo.png" alt="Unovie.AI"></a>
+  <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/unovie-logo.png" alt="Unovie.AI"></a>
     <p>Physical AI for deep-tech industries. We design, build and operate custom Edge-AI Agentic Systems on Unovie's custom-built AMD or NVIDIA hardware accelerators. Austin, Texas.</p></div>
   <div class="fcol"><h4>Platform &amp; sectors</h4>
     <a href="{base}platform/agentmesh.html">AgentMesh</a><a href="{base}platform/agentnexus.html">AgentNexus</a><a href="{base}sectors/battery.html">Battery &amp; energy storage</a><a href="{base}sectors/fabs.html">Chip fabs &amp; suppliers</a><a href="{base}sectors/space.html">Space &amp; aerospace</a><a href="{base}sectors/robotics.html">Robotics, drones &amp; autonomy</a><a href="{base}sectors/defense.html">Defense &amp; dual-use</a><a href="{base}sectors/energy.html">Advanced energy &amp; nuclear</a></div>
