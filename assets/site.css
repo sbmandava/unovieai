@@ -1101,3 +1101,9 @@ section{padding:clamp(44px,5vw,72px) 0}
 .hero h1.hero-h1{font-size:clamp(40px,4.6vw,66px)!important;line-height:1.02!important;letter-spacing:-.035em}
 .hero h1.hero-h1 .serif{font-size:1.04em}
 .hero .grid{align-items:center!important}
+/* AgentNexus page: picture beside the "will never do" cards */
+.nxsplit{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:34px;align-items:start}
+.nxfig{margin:0;border:1px solid var(--line-2);border-radius:18px;overflow:hidden;background:#0d1020}
+.nxfig img{display:block;width:100%;height:auto}
+.nxsplit .disc{grid-template-columns:1fr 1fr!important;align-content:start}
+@media(max-width:900px){.nxsplit{grid-template-columns:1fr}.nxfig{max-width:440px;margin:0 auto}}
