@@ -1125,3 +1125,53 @@ section{padding:clamp(44px,5vw,72px) 0}
 .nxsplit{grid-template-columns:minmax(0,300px) 1fr!important;align-items:stretch!important}
 .nxfig{background:#fff!important;display:flex;align-items:center;justify-content:center;padding:16px}
 .nxfig img{width:auto!important;max-width:100%;max-height:440px;height:auto}
+
+/* ===== Phone readability pass (16 Nov 2026) — only below 640px; laptop layout unchanged ===== */
+@media (max-width:640px){
+  body{font-size:17px;line-height:1.6}
+  .wrap{padding-left:20px!important;padding-right:20px!important}
+  section{padding:40px 0!important}
+  .shead{margin-bottom:22px!important}
+  .shead .lead,.lead{font-size:17px!important;line-height:1.6}
+  /* labels wrap instead of running off the screen */
+  .tag,.hero-tag,.crumb{white-space:normal!important;line-height:1.5;font-size:12px!important;letter-spacing:.04em!important}
+  /* readable card text */
+  .dcard p,.acard p,.stage p,.howstep p,.platbig p,.rcard p{font-size:16px!important;line-height:1.6}
+  .dcard h3,.acard h3,.stage h3,.howstep h3{font-size:20px!important}
+  .chip{font-size:12px!important}
+  /* stats strips: two per row, compact */
+  .kstrip{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px 16px!important}
+  .kstrip .v{font-size:26px!important}
+  .kstrip .k{font-size:11px!important;line-height:1.4}
+  .metrics{grid-template-columns:1fr 1fr!important;gap:22px 12px!important;padding:24px 0!important}
+  .metric .big{font-size:40px!important}
+  /* live console: larger type, fewer labels */
+  .meshviz{font-size:12px!important}
+  .mv-th{font-size:12.5px!important}
+  .mv-sub{font-size:11.5px!important}
+  .mv-tile{padding:8px 10px!important}
+  .mv-legend{font-size:11px!important}
+  .mv-stats{font-size:13px!important}
+  /* sector sketches: bigger captions */
+  .sv3 .domainviz.still text,.sv3 .domainviz text{font-size:14px!important;letter-spacing:.04em!important}
+  .sectorviz.sv3{gap:8px!important}
+  /* hero buttons full width */
+  .hero .cta .btn,.ph2 .cta .btn{width:100%;justify-content:center}
+  .btn.btn-big{width:100%;justify-content:center}
+  /* footer: two columns of links instead of one long list */
+  .fgrid{grid-template-columns:1fr 1fr!important;gap:28px 18px!important}
+  .fgrid .fbrand{grid-column:1/-1}
+  footer a{font-size:15px}
+  /* tables: comfortable cells */
+  table td,table th{font-size:15px;padding:10px 8px!important}
+}
+@media (max-width:640px){
+  /* keep the page top clear of the fixed menu bar */
+  section.hero{padding-top:96px!important}
+  section.ph2,section.phero{padding-top:92px!important}
+  /* sketch captions: readable but fitting */
+  .sv3 .domainviz.still text,.sv3 .domainviz text{font-size:11.5px!important;letter-spacing:.02em!important}
+  .sv3 .domainviz.still text.dv-l1{font-size:10px!important}
+  .kstrip{gap:22px 16px!important}
+}
+.austin .pin{letter-spacing:.04em!important}
