@@ -374,7 +374,7 @@ def _svg_nexus_v2():
             o.append(f'<circle cx="{310+c*12.8:.1f}" cy="{82+r*12}" r="3.2" class="ag {"aw" if awake else ""}" style="animation-delay:-{_rnd.uniform(0,4):.2f}s"/>')
     o.append('<text x="306" y="146" class="s2">answers within 0.5 s (target)</text>')
     layers = [("Compares sites", "the same problem, seen somewhere else"), ("Drafts the paperwork", "maintenance plans, NCRs, quality records, work orders"),
-              ("Waits for a person", "a named person approves every draft"), ("One gate out", "Claude and your ERP, logged · in design")]
+              ("Waits for a person", "a named person approves every draft"), ("One gate out", "your ERP and approved AI models, logged")]
     for n, (a, b) in enumerate(layers):
         y = 162 + n * 62
         o.append(f'<rect x="306" y="{y}" width="438" height="50" rx="8" class="bx ly"/><text x="320" y="{y+21}" class="t2">{a}</text><text x="320" y="{y+38}" class="s2">{b}</text>')
@@ -518,13 +518,13 @@ NEXUS_SECTIONS = (  S("03","How it works","From a finding at one site "+T_+"to a
              ("Draft","It drafts the maintenance plan, NCR, quality record or work order. It answers within 0.5 s (target).","drafts only"),
              ("Approve","A named person approves it before it goes to MES, QMS, your ERP or Maximo.","a person signs")]),
     "AgentMesh makes the fast decisions at each line. AgentNexus works at business speed across all of them. It never moves equipment.", "how")
-  + S("04","Business skills","Connected to Claude "+T_+"and your ERP."+E_,
+  + S("04","Business skills","Connected to "+T_+"your business systems."+E_,
     disc([
      ("/operations","Operations","The morning production report with OEE and downtime. Breakdown write-ups with the likely causes ranked, ready when the technician arrives.",["morning report","OEE"]),
      ("/quality","Quality","NCRs and 8D corrective-action reports, with the process data lined up against the defect.",["NCR","8D · CAPA"]),
      ("/supply","Supply chain","Supplier quote requests and side-by-side bid comparisons, using real part usage across your sites.",["supplier RFQs","bid comparison"]),
      ("/sales","Sales and design","Quotes from drawings, priced against real machine availability.",["quotes","shop load"])])
-    + '<p class="lead rv" style="font-size:15px;margin-top:14px">Private work stays on your rack. Only work that needs Claude goes out, through one gate that is logged and that you control. Skills read your ERP and documents (SAP, Oracle NetSuite, Infor M3, Microsoft 365). A named person approves every quote, report and supplier email before it is sent. On controlled programs the outbound skills stay off. AgentMesh stays air-gapped either way. In design.</p>',
+    + '<p class="lead rv" style="font-size:15px;margin-top:14px">Private work stays on your rack. Only work that needs an outside AI model goes out, through one gate that is logged and that you control. Skills read your ERP and documents (SAP, Oracle NetSuite, Infor M3, Microsoft 365). A named person approves every quote, report and supplier email before it is sent. On controlled programs the outbound skills stay off. AgentMesh stays air-gapped either way. In design.</p>',
     "Much of a plant's day is paperwork. AgentNexus drafts it from the live records of every site, for your people to approve.", "skills")
   + S("05","Safety and security","What AgentNexus "+T_+"will never do."+E_,
     '<div class="nxsplit"><figure class="nxfig rv"><img src="../assets/images/sketch/agentnexus-rack-clean.jpg" alt="Illustration of the AgentNexus rack with one tray pulled out" width="982" height="1507" loading="lazy"></figure>'+disc([
@@ -957,7 +957,7 @@ for _t in SECTORS: sector_page(_t)
 
 # ----- FAQ -----
 FAQ=[
- ("Does any of our data leave the site?","Not by default. AgentMesh is air-gapped on your factory network. Raw signals, images and models stay on site. Only what you choose goes out, such as work orders to your maintenance system. AgentNexus can connect to Claude and your ERP for business skills such as quotes and quality reports. That traffic goes through one logged gate you control, a named person approves every draft, and on controlled programs it stays off."),
+ ("Does any of our data leave the site?","Not by default. AgentMesh is air-gapped on your factory network. Raw signals, images and models stay on site. Only what you choose goes out, such as work orders to your maintenance system. AgentNexus can connect to your ERP and to approved AI models for business skills such as quotes and quality reports, through one gate you control. That traffic goes through one logged gate you control, a named person approves every draft, and on controlled programs it stays off."),
  ("What happens when the internet or site link drops?","Nothing changes at the machine. Each AgentMesh pod decides locally and keeps running. Findings for AgentNexus wait and sync when the link returns."),
  ("Is Unovie a safety system?","No. AgentMesh is never on the path that moves equipment, and we make no SIL claim. It acts on its own only on low-risk outputs, such as a reject gate or a rework diverter. Anything safety-related becomes an alarm and a request. Your PLC, safety system and operators decide."),
  ("What hardware does it run on?","Unovie's custom-built AMD or NVIDIA hardware accelerators. The AgentMesh pod is a compact 3U unit on AMD Ryzen AI Max+ 395. NVIDIA Jetson AGX Thor handles robotics and vision at the tool. NVIDIA DGX Spark is the engineering lab."),
@@ -1159,7 +1159,7 @@ Pricing is per monitored asset and domain kit, never per seat or per camera. Har
 
 ## Platform
 - [AgentMesh]({_u('platform/agentmesh.html')}): AI at the machine, on every signal a next-generation line produces: robots, vision, sensors and test rigs. A compact 3U pod at the line, air-gapped. Decides within 30 ms (target). Acts only on low-consequence outputs, such as a reject gate or a rework diverter. Anything touching safety becomes an alarm and a request that the PLC, cell controller and operators decide. Every device is described with its limits, and the pod enforces them.
-- [AgentNexus]({_u('platform/agentnexus.html')}): AI agents working across every site. Drafts maintenance plans, NCRs, quality records and work orders for a named person to approve. Answers within 0.5 s (target). Never moves equipment. Runs in the customer's own enclave, as one rack for the whole fleet. Connects out only through one gate the customer controls and can audit (Claude and the customer's ERP, in design). Private work stays local.
+- [AgentNexus]({_u('platform/agentnexus.html')}): AI agents working across every site. Drafts maintenance plans, NCRs, quality records and work orders for a named person to approve. Answers within 0.5 s (target). Never moves equipment. Runs in the customer's own enclave, as one rack for the whole fleet. Connects out only through one gate the customer controls and can audit (the customer's ERP and approved AI models, in design). Private work stays local.
 - Evidence Log: a signed record of every decision that the customer can audit.
 - Kiln: tested, signed, reversible improvements. Nothing new switches on until it has proven itself on cases it has never seen.
 - Operator HMI: each AgentMesh pod has an operator screen; AgentNexus has a fleet screen.
