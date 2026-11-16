@@ -1107,3 +1107,12 @@ section{padding:clamp(44px,5vw,72px) 0}
 .nxfig img{display:block;width:100%;height:auto}
 .nxsplit .disc{grid-template-columns:1fr 1fr!important;align-content:start}
 @media(max-width:900px){.nxsplit{grid-template-columns:1fr}.nxfig{max-width:440px;margin:0 auto}}
+/* homepage platform: Sovereign Pod and AgentNexus side by side, equal picture heights, nothing cropped */
+.podwide.pod2{display:grid;grid-template-columns:2.24fr 1fr;gap:20px;align-items:stretch}
+.pod2 .podfig{display:flex!important;flex-direction:column;grid-template-columns:none!important;margin:0!important;height:100%}
+.pod2 .podfig img{width:100%;height:auto;object-fit:contain}
+.pod2 .podfig figcaption{border-left:0!important;border-top:1px solid #e6e8f2;padding:16px 20px!important;flex:1;justify-content:flex-start}
+.pod2 .podfig figcaption b{font-size:19px!important}
+.pod2 .nxcard{background:#0d1020!important}
+[data-theme="dark"] .pod2 .podfig figcaption{border-top-color:var(--line-2)!important}
+@media(max-width:860px){.podwide.pod2{grid-template-columns:1fr}.pod2 .nxcard{max-width:440px;justify-self:center}}
