@@ -139,7 +139,7 @@ document.querySelectorAll('[data-href]').forEach(el=>el.addEventListener('click'
 /* ===== MOCK: hero live AgentMesh console ===== */
 (function(){
   var root=document.querySelector('.meshviz'); if(!root) return;
-  if(matchMedia('(max-width:768px)').matches){ root.style.display='none'; return; }  /* phones get the recorded GIF */
+  var PHONE=matchMedia('(max-width:768px)').matches;  /* phones run the live console too, with fewer dots per row */
   var PER=64, dots=[], byJob={};
   [].slice.call(root.querySelectorAll('.mv-row')).forEach(function(r){var box=r.querySelector('.mv-dots'), job=r.dataset.job; byJob[job]=[];
     for(var k=0;k<PER;k++){var d=document.createElement('i'); box.appendChild(d); dots.push(d); byJob[job].push(d);} });
