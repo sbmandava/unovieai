@@ -259,14 +259,14 @@ def wrap_standalone(vb_w, vb_h, body):
 # --- Diagram A: Reference architecture (7 planes) ---
 def d_arch():
     W, H = 960, 624
-    b = [tlines(30, 32, "Reference Architecture — seven planes (Kubernetes-native, self-hosted)", "d-muted", 14, "600")]
+    b = [tlines(30, 32, "Reference Architecture — seven planes (self-hosted container platform)", "d-muted", 14, "600")]
     bands = [
         ("Developer Interface", ["IDE plugin", "CLI / terminal agent", "MCP client", "Review UI"]),
         ("Agent & Orchestration", ["Planner", "Coder", "Test", "Review", "Integrator · A2A", "Argo Workflows"]),
         ("Harness & Control", ["Routing Gateway", "Policy Server", "Sandbox Mgr", "Hooks", "Sessions / Memory"]),
         ("Model Serving · self-hosted", ["Tier-S", "Tier-M", "Tier-L", "Tier-V", "Tier-E", "vLLM·Triton·KServe"]),
         ("Data & Knowledge", ["Code Graph", "Vector Store", "Reg. Corpus", "MLflow Registry", "Context Store"]),
-        ("Platform & Infrastructure", ["Kubernetes", "GPU Operator", "Istio + SPIRE", "Vault", "KEDA · Kueue"]),
+        ("Platform & Infrastructure", ["Container platform", "GPU Operator", "Istio + SPIRE", "Vault", "KEDA · Kueue"]),
     ]
     x0, w0, top, bh, gap = 30, 700, 50, 80, 10
     for i, (title, chips) in enumerate(bands):
@@ -617,7 +617,7 @@ which in a regulated context means recalls, findings, and IP leakage. A discipli
 <h2>What we are building</h2>
 <div class="grid2">
   <div class="gcard"><h4>A self-hosted model fleet</h4><p>Open-weight, fine-tuned models served on our existing
-  Kubernetes/GPU platform. <strong>No Claude / OpenAI / Gemini APIs</strong> &mdash; for cost at scale, data
+  container and GPU platform. <strong>No hosted third-party LLM APIs</strong> &mdash; for cost at scale, data
   sovereignty, and regulatory control.</p></div>
   <div class="gcard"><h4>A six-level maturity model</h4><p>ASMM-Med moves us from ungoverned &ldquo;shadow AI&rdquo;
   to <strong>validated autonomous agents</strong>, in assurance-gated steps each signed off by Engineering,

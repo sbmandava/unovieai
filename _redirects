@@ -32,5 +32,6 @@
 /resources/agentmesh-architecture.html  /platform/agentmesh   301
 /resources/agentnexus-architecture      /platform/agentnexus  301
 /resources/agentnexus-architecture.html /platform/agentnexus  301
+/resources/medsdlc-html/build.py   /  301
 /CLAUDE.md        /  301
 /build_pages.py   /  301
