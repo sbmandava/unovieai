@@ -1139,7 +1139,7 @@ _sol="\n".join(f"- [{_name(_solmap[k][2])}]({_u('solutions/'+k+'.html')}): {_fir
 _oth="\n".join(f"- [{_name(s[2])}]({_u('solutions/'+s[0]+'.html')}): {_firstsent(s[3])}" for s in SOL if s[0] not in _IND)
 open(f"{ROOT}/llms.txt","w",encoding="utf-8").write(f"""# Unovie.AI
 
-> Physical AI for deep-tech manufacturing. Unovie designs, builds and operates custom Edge-AI Agentic Systems for battery, chip, space, robotics, defense and advanced energy manufacturers, at a fixed scope and cost, on Unovie's custom-built AMD or NVIDIA hardware accelerators. AgentMesh puts AI at the machine, on every signal a next-generation line produces. AgentNexus runs AI agents across every site. A language model is never on the path that moves equipment, and every decision is recorded in a signed Evidence Log.
+> Physical AI for your factory floor. Unovie designs, builds and operates custom Edge-AI Agentic Systems for battery, chip, space, robotics, defense and advanced energy manufacturers, at a fixed scope and cost, on Unovie's custom-built AMD or NVIDIA hardware accelerators. AgentMesh puts AI at the machine, on every signal a next-generation line produces. AgentNexus runs AI agents across every site. A language model is never on the path that moves equipment, and every decision is recorded in a signed Evidence Log.
 
 Figures on this site marked "target" are design targets, not measurements.
 
@@ -1161,9 +1161,9 @@ Pricing is per monitored asset and domain kit, never per seat or per camera. Har
 - [AgentMesh]({_u('platform/agentmesh.html')}): AI at the machine, on every signal a next-generation line produces: robots, vision, sensors and test rigs. A compact 3U pod at the line, air-gapped. Decides within 30 ms (target). Acts only on low-consequence outputs, such as a reject gate or a rework diverter. Anything touching safety becomes an alarm and a request that the PLC, cell controller and operators decide. Every device is described with its limits, and the pod enforces them.
 - [AgentNexus]({_u('platform/agentnexus.html')}): AI agents working across every site. Drafts maintenance plans, NCRs, quality records and work orders for a named person to approve. Answers within 0.5 s (target). Never moves equipment. Runs in the customer's own enclave, as one rack for the whole fleet. Connects out only through one gate the customer controls and can audit (the customer's ERP and approved AI models, in design). Private work stays local.
 - Evidence Log: a signed record of every decision that the customer can audit.
-- Kiln: tested, signed, reversible improvements. Nothing new switches on until it has proven itself on cases it has never seen.
+- Safe updates: improvements are tested, signed and reversible. Nothing new switches on until it has proven itself on cases it has never seen.
 - Operator HMI: each AgentMesh pod has an operator screen; AgentNexus has a fleet screen.
-- Engineering teams can book a walkthrough with our engineers: {_u('contact.html')}
+- Engineering teams can book an architecture walkthrough with our engineers: {_u('contact.html')}
 
 ## Agentic jobs
 Packaged domain kits, deployed in weeks:
@@ -1194,8 +1194,8 @@ All options run the same platform on Unovie's custom-built AMD or NVIDIA hardwar
 
 ## Resources
 - [Case study: AI-driven certification for satellite set-top boxes]({_u('resources/case-study-device-certification.html')}): an anonymized 12-month project in a device test lab (not a factory). 16 boxes verified per 4K stream, detection mAP 0.836 to 0.961 after one in-house retrain, audio certified on 16 of 16 boxes, 0 bytes of test data leaving the lab.
-- [Edge AI Models: Field Guide (summary)]({_u('resources/edge-ai-models.html')}): a summary; the full guide is available on request.
-- [Training Without Retraining (summary)]({_u('resources/edge-ai-whitepaper.html')}): custom models on the edge.
+- [Edge AI Models: Field Guide (summary)]({_u('resources/edge-ai-models.html')}): a summary. Request the full guide: {_u('request.html')}?doc=edge-ai-models
+- [Training Without Retraining (summary)]({_u('resources/edge-ai-whitepaper.html')}): custom models on the edge. Request the full guide: {_u('request.html')}?doc=training-without-retraining
 - [Edge-Native Economics: Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): predictable AI cost at the industrial edge.
 - [AI SOC Modernization: Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): security for IT and OT networks.
 - [Agentic SDLC for Regulated MedTech]({_u('resources/medsdlc-html/index.html')}): software development for FDA / IEC 62304 medical-device engineering.
