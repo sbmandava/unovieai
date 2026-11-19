@@ -6,8 +6,8 @@
 <link rel="icon" href="assets/favicon.ico?v=2" sizes="any"><link rel="icon" type="image/png" href="assets/favicon.png?v=2"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
 <title>Hardware: AgentMesh and AgentNexus on AMD and NVIDIA | Unovie.AI</title><meta name="description" content="AgentMesh and AgentNexus run on Unovie's custom-built AMD or NVIDIA hardware accelerators: AMD Ryzen AI Max+ 395, NVIDIA Jetson AGX Thor and DGX Spark, with Qualcomm QCS6490 at the far edge.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=7f834e7df6"><script data-theme-init>(function(){var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}var s=null;try{s=m?sessionStorage.getItem('uvTheme'):localStorage.getItem('uvTheme');}catch(e){}document.documentElement.setAttribute('data-theme',(s==='light'||s==='dark')?s:'dark');})();</script></head><body>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=8526045944"><script data-theme-init>(function(){var m=false;try{m=matchMedia('(max-width:768px), (hover:none) and (pointer:coarse)').matches;}catch(e){}var s=null;try{s=m?sessionStorage.getItem('uvTheme'):localStorage.getItem('uvTheme');}catch(e){}document.documentElement.setAttribute('data-theme',(s==='light'||s==='dark')?s:'dark');})();</script></head><body>
 <div class="grain"></div><div class="cur"></div><div class="cur-r"></div><div class="ngbg" aria-hidden="true"></div><header class="nav"><div class="wrap"><div class="row">
   <a class="brand" href="index.html"><img class="logo" src="assets/images/unovie-logo.png" alt="Unovie.AI"></a>
   <nav class="navlinks">
@@ -34,12 +34,12 @@
       <a href="gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics: Whitepaper</span><br><span class="s">Predictable AI cost at the edge</span></span></a>
       <a href="ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">AI SOC Modernization: Whitepaper</span><br><span class="s">Security for IT and OT networks</span></span></a>
     </div></div>
-    <a href="index.html#accelerators">Agentic jobs</a>
     <div class="drop"><button data-cursor>Why Unovie ▾</button><div class="menu">
       <a href="why-unovie.html"><span class="ic">01</span><span><span class="t">Why Unovie</span><br><span class="s">Veteran founders, built in Austin</span></span></a>
       <div class="msub">Proof &amp; answers</div>
       <a href="resources/case-study-device-certification.html"><span class="ic">02</span><span><span class="t">Case study: AI device certification</span><br><span class="s">12 months, 16 boxes per stream, air-gapped</span></span></a>
-      <a href="faq.html"><span class="ic">03</span><span><span class="t">FAQ for buyers</span><br><span class="s">Data, safety, hardware, pilot cost</span></span></a>
+      <a href="resources/case-study-vision-edge.html"><span class="ic">03</span><span><span class="t">Case study: camera AI in a chip fab</span><br><span class="s">1,000 camera feeds, decided on site</span></span></a>
+      <a href="faq.html"><span class="ic">04</span><span><span class="t">FAQ for buyers</span><br><span class="s">Data, safety, hardware, pilot cost</span></span></a>
     </div></div>
   </nav>
   <a class="navcta" href="index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
@@ -49,12 +49,11 @@
   <a href="index.html#deeptech"><span class="mono">01</span><br>Sectors</a>
   <a href="platform/agentmesh.html"><span class="mono">02</span><br>AgentMesh</a>
   <a href="platform/agentnexus.html"><span class="mono">03</span><br>AgentNexus</a>
-  <a href="index.html#accelerators"><span class="mono">04</span><br>Agentic jobs</a>
-  <a href="device-platform.html"><span class="mono">05</span><br>Hardware</a>
-  <a href="why-unovie.html"><span class="mono">06</span><br>Why Unovie</a>
-  <a href="resources/case-study-device-certification.html"><span class="mono">07</span><br>Case study</a>
-  <a href="faq.html"><span class="mono">08</span><br>FAQ</a>
-  <a href="index.html#contact" style="color:var(--accent)"><span class="mono">09</span><br>Pilot on your line →</a>
+  <a href="device-platform.html"><span class="mono">04</span><br>Hardware</a>
+  <a href="why-unovie.html"><span class="mono">05</span><br>Why Unovie</a>
+  <a href="resources/case-study-device-certification.html"><span class="mono">06</span><br>Case study</a>
+  <a href="faq.html"><span class="mono">07</span><br>FAQ</a>
+  <a href="index.html#contact" style="color:var(--accent)"><span class="mono">08</span><br>Pilot on your line →</a>
 </div>
 <section class="phero"><div class="wrap">
   <div class="crumb rv"><a href="index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Hardware</span></div>
@@ -88,15 +87,14 @@
 </div></div></section>
 <footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="index.html"><img class="logo" src="assets/images/unovie-logo.png" alt="Unovie.AI"></a>
-    <p>Physical AI for deep-tech industries. We design, build and operate custom Edge-AI Agentic Systems on Unovie's custom-built AMD or NVIDIA hardware accelerators. Austin, Texas.</p></div>
-  <div class="fcol"><h4>Platform &amp; sectors</h4>
-    <a href="platform/agentmesh.html">AgentMesh</a><a href="platform/agentnexus.html">AgentNexus</a><a href="sectors/battery.html">Battery &amp; energy storage</a><a href="sectors/fabs.html">Chip fabs &amp; suppliers</a><a href="sectors/space.html">Space &amp; aerospace</a><a href="sectors/robotics.html">Robotics, drones &amp; autonomy</a><a href="sectors/defense.html">Defense &amp; dual-use</a><a href="sectors/energy.html">Advanced energy &amp; nuclear</a></div>
-  <div class="fcol"><h4>Hardware</h4>
-    <a href="device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a><a href="device-platform.html#agx-thor">NVIDIA Jetson AGX Thor</a><a href="device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="device-platform.html#qcs6490">Qualcomm QCS6490</a></div>
+    <p>Physical AI for deep-tech factories. Built in Austin, Texas.</p></div>
+  <div class="fcol"><h4>Platform</h4>
+    <a href="platform/agentmesh.html">AgentMesh</a><a href="platform/agentnexus.html">AgentNexus</a><a href="device-platform.html">Hardware</a></div>
+  <div class="fcol"><h4>Sectors</h4>
+    <a href="sectors/battery.html">Battery</a><a href="sectors/fabs.html">Chip fabs</a><a href="sectors/space.html">Space</a><a href="sectors/robotics.html">Robotics &amp; autonomy</a><a href="sectors/defense.html">Defense</a><a href="sectors/energy.html">Advanced energy</a></div>
   <div class="fcol"><h4>Company</h4>
-    <a href="why-unovie.html">Why Unovie</a><a href="resources/case-study-device-certification.html">Case study</a><a href="faq.html">FAQ</a><a href="index.html#platform">Platform</a><a href="index.html#delivery">How we deliver</a>
-    <a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
+    <a href="about.html">About</a><a href="why-unovie.html">Why Unovie</a><a href="resources/case-study-device-certification.html">Case study</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="resources/edge-ai-models.html" target="_blank">Field Guide (summary)</a><a href="resources/edge-ai-whitepaper.html" target="_blank">Training Without Retraining (summary)</a><a href="gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
-</div><div class="fbot"><span>© 2026 Unovie · Physical AI for deep-tech industries</span><span>Runs on AMD and NVIDIA accelerators · works with your PLCs, MES and safety systems</span></div></div></footer>
-<script src="assets/site.js?v=db35df884e"></script></body></html>
+    <a href="resources/edge-ai-models.html" target="_blank">Edge AI field guide</a><a href="resources/edge-ai-whitepaper.html" target="_blank">Training without retraining</a><a href="gpu-edgegateway-whitepaper.html" target="_blank">Edge economics</a><a href="ai-soc-modernization-whitepaper.html" target="_blank">AI SOC</a></div>
+</div><div class="fbot"><span>© 2026 Unovie</span><span>Runs on AMD and NVIDIA · works with your PLCs, MES and safety systems</span></div></div></footer>
+<script src="assets/site.js?v=936b229de8"></script></body></html>

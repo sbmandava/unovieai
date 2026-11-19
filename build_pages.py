@@ -74,7 +74,7 @@ def HEAD(base,title,desc):
 <link rel="icon" href="{base}assets/favicon.ico?v=2" sizes="any"><link rel="icon" type="image/png" href="{base}assets/favicon.png?v=2"><link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png?v=2">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/site.css">{THEMEINIT}</head><body>
 <div class="grain"></div><div class="cur"></div><div class="cur-r"></div>'''
 
@@ -106,12 +106,12 @@ def NAV(base):
       <a href="{base}gpu-edgegateway-whitepaper.html" target="_blank" rel="noopener"><span class="ic">03</span><span><span class="t">Edge-Native Economics: Whitepaper</span><br><span class="s">Predictable AI cost at the edge</span></span></a>
       <a href="{base}ai-soc-modernization-whitepaper.html" target="_blank" rel="noopener"><span class="ic">04</span><span><span class="t">AI SOC Modernization: Whitepaper</span><br><span class="s">Security for IT and OT networks</span></span></a>
     </div></div>
-    <a href="{h}#accelerators">Agentic jobs</a>
     <div class="drop"><button data-cursor>Why Unovie ▾</button><div class="menu">
       <a href="{base}why-unovie.html"><span class="ic">01</span><span><span class="t">Why Unovie</span><br><span class="s">Veteran founders, built in Austin</span></span></a>
       <div class="msub">Proof &amp; answers</div>
       <a href="{base}resources/case-study-device-certification.html"><span class="ic">02</span><span><span class="t">Case study: AI device certification</span><br><span class="s">12 months, 16 boxes per stream, air-gapped</span></span></a>
-      <a href="{base}faq.html"><span class="ic">03</span><span><span class="t">FAQ for buyers</span><br><span class="s">Data, safety, hardware, pilot cost</span></span></a>
+      <a href="{base}resources/case-study-vision-edge.html"><span class="ic">03</span><span><span class="t">Case study: camera AI in a chip fab</span><br><span class="s">1,000 camera feeds, decided on site</span></span></a>
+      <a href="{base}faq.html"><span class="ic">04</span><span><span class="t">FAQ for buyers</span><br><span class="s">Data, safety, hardware, pilot cost</span></span></a>
     </div></div>
   </nav>
   <a class="navcta" href="{h}#contact" data-cursor>Pilot on your line <span class="ar">→</span></a>
@@ -121,29 +121,27 @@ def NAV(base):
   <a href="{h}#deeptech"><span class="mono">01</span><br>Sectors</a>
   <a href="{base}platform/agentmesh.html"><span class="mono">02</span><br>AgentMesh</a>
   <a href="{base}platform/agentnexus.html"><span class="mono">03</span><br>AgentNexus</a>
-  <a href="{h}#accelerators"><span class="mono">04</span><br>Agentic jobs</a>
-  <a href="{base}device-platform.html"><span class="mono">05</span><br>Hardware</a>
-  <a href="{base}why-unovie.html"><span class="mono">06</span><br>Why Unovie</a>
-  <a href="{base}resources/case-study-device-certification.html"><span class="mono">07</span><br>Case study</a>
-  <a href="{base}faq.html"><span class="mono">08</span><br>FAQ</a>
-  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">09</span><br>Pilot on your line →</a>
+  <a href="{base}device-platform.html"><span class="mono">04</span><br>Hardware</a>
+  <a href="{base}why-unovie.html"><span class="mono">05</span><br>Why Unovie</a>
+  <a href="{base}resources/case-study-device-certification.html"><span class="mono">06</span><br>Case study</a>
+  <a href="{base}faq.html"><span class="mono">07</span><br>FAQ</a>
+  <a href="{h}#contact" style="color:var(--accent)"><span class="mono">08</span><br>Pilot on your line →</a>
 </div>'''
 
 def FOOTER(base):
     h=base+"index.html"
     return f'''<footer><div class="wrap"><div class="fgrid">
   <div class="fcol fbrand"><a class="brand" href="{h}"><img class="logo" src="{base}assets/images/unovie-logo.png" alt="Unovie.AI"></a>
-    <p>Physical AI for deep-tech industries. We design, build and operate custom Edge-AI Agentic Systems on Unovie's custom-built AMD or NVIDIA hardware accelerators. Austin, Texas.</p></div>
-  <div class="fcol"><h4>Platform &amp; sectors</h4>
-    <a href="{base}platform/agentmesh.html">AgentMesh</a><a href="{base}platform/agentnexus.html">AgentNexus</a><a href="{base}sectors/battery.html">Battery &amp; energy storage</a><a href="{base}sectors/fabs.html">Chip fabs &amp; suppliers</a><a href="{base}sectors/space.html">Space &amp; aerospace</a><a href="{base}sectors/robotics.html">Robotics, drones &amp; autonomy</a><a href="{base}sectors/defense.html">Defense &amp; dual-use</a><a href="{base}sectors/energy.html">Advanced energy &amp; nuclear</a></div>
-  <div class="fcol"><h4>Hardware</h4>
-    <a href="{base}device-platform.html#ryzen-ai-max-395">AMD Ryzen AI Max+ 395</a><a href="{base}device-platform.html#agx-thor">NVIDIA Jetson AGX Thor</a><a href="{base}device-platform.html#dgx-spark">NVIDIA DGX Spark</a><a href="{base}device-platform.html#qcs6490">Qualcomm QCS6490</a></div>
+    <p>Physical AI for deep-tech factories. Built in Austin, Texas.</p></div>
+  <div class="fcol"><h4>Platform</h4>
+    <a href="{base}platform/agentmesh.html">AgentMesh</a><a href="{base}platform/agentnexus.html">AgentNexus</a><a href="{base}device-platform.html">Hardware</a></div>
+  <div class="fcol"><h4>Sectors</h4>
+    <a href="{base}sectors/battery.html">Battery</a><a href="{base}sectors/fabs.html">Chip fabs</a><a href="{base}sectors/space.html">Space</a><a href="{base}sectors/robotics.html">Robotics &amp; autonomy</a><a href="{base}sectors/defense.html">Defense</a><a href="{base}sectors/energy.html">Advanced energy</a></div>
   <div class="fcol"><h4>Company</h4>
-    <a href="{base}why-unovie.html">Why Unovie</a><a href="{base}resources/case-study-device-certification.html">Case study</a><a href="{base}faq.html">FAQ</a><a href="{h}#platform">Platform</a><a href="{h}#delivery">How we deliver</a>
-    <a href="{base}about.html">About</a><a href="{base}contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
+    <a href="{base}about.html">About</a><a href="{base}why-unovie.html">Why Unovie</a><a href="{base}resources/case-study-device-certification.html">Case study</a><a href="{base}faq.html">FAQ</a><a href="{base}contact.html">Contact</a><a href="https://www.linkedin.com/company/unovie/" target="_blank" rel="noopener">LinkedIn</a></div>
   <div class="fcol"><h4>Research</h4>
-    <a href="{base}resources/edge-ai-models.html" target="_blank">Field Guide (summary)</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Training Without Retraining (summary)</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">Edge-Native Economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC Modernization</a></div>
-</div><div class="fbot"><span>© 2026 Unovie · Physical AI for deep-tech industries</span><span>Runs on AMD and NVIDIA accelerators · works with your PLCs, MES and safety systems</span></div></div></footer>
+    <a href="{base}resources/edge-ai-models.html" target="_blank">Edge AI field guide</a><a href="{base}resources/edge-ai-whitepaper.html" target="_blank">Training without retraining</a><a href="{base}gpu-edgegateway-whitepaper.html" target="_blank">Edge economics</a><a href="{base}ai-soc-modernization-whitepaper.html" target="_blank">AI SOC</a></div>
+</div><div class="fbot"><span>© 2026 Unovie</span><span>Runs on AMD and NVIDIA · works with your PLCs, MES and safety systems</span></div></div></footer>
 <script src="{base}assets/site.js"></script></body></html>'''
 
 def metrics(items):  # list of (value_html, label)
@@ -401,9 +399,8 @@ def product_page(slug, cat, title_html, lead, pills, kpis, panel, sections, cta_
 <section class="ph2"><div class="wrap">
   <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#platform">Platform</a><span class="sep">/</span><span style="color:var(--fg-mut)">{re.sub('<[^>]+>','',title_html)}</span></div>
   <div class="grid">
-    <div><div class="tag rv">{cat}</div><h1 class="rv">{title_html}</h1><p class="lead rv">{lead}</p>
-      <div class="cta rv"><a class="btn btn-acc" href="../index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a><a class="btn btn-gh" href="#how" data-cursor>See how it works</a></div>
-      <div class="pill rv">{chips}</div></div>
+    <div><h1 class="rv">{title_html}</h1><p class="lead rv">{lead}</p>
+      <div class="cta rv"><a class="btn btn-acc" href="../index.html#contact" data-cursor>Pilot on your line <span class="ar">→</span></a><a class="btn btn-gh" href="#how" data-cursor>See how it works</a></div></div>
     <div>{panel}</div>
   </div>
   {kpistrip(kpis)}
@@ -563,7 +560,7 @@ MESH_KEEP=["How it works","Operator screen","The safety boundary","Domain kits",
 NEXUS_KEEP=["How it works","Fleet screen","Business skills","Safety and security"]
 
 product_page("agentmesh","Platform · AgentMesh","Agent"+A_+"Mesh"+E_,
-  "AI at the machine, for battery lines, chip fabs, space hardware and robot cells. AgentMesh watches every signal your line produces and decides within 30 ms (target). It acts on its own only where the risk is low. Anything safety-related goes to your PLC and operators as an alarm and a request.",
+  "AI at the machine, for battery lines, chip fabs, space hardware and robot cells. AgentMesh watches every signal your line produces and decides within 30 ms (target).",
   ["robot cells","DeepVision","air-gapped","signed Evidence Log"],
   [("&lt;30<span class='o'>ms</span>","decision · target"),("0<span class='o'>B</span>","leaves the site"),("6","domain kits"),("2","safety lanes")],
   MESH_PANEL, _pick(MESH_HMI+MESH_NEXTGEN+MESH_SECTIONS, MESH_KEEP), "Put AI on "+A_+"every signal your line makes."+E_,
@@ -933,9 +930,8 @@ def sector_page(t):
 <section class="ph2 sector"><div class="wrap">
   <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#deeptech">Sectors</a><span class="sep">/</span><span style="color:var(--fg-mut)">{name}</span></div>
   <div class="grid">
-    <div><div class="tag rv">{name}</div><h1 class="rv">{h1}</h1><p class="lead rv">{lead}</p>
-      <div class="cta rv"><a class="btn btn-acc" href="#pilot" data-cursor>Pilot on your line <span class="ar">→</span></a></div>
-      <div class="pill rv">{ch}</div></div>
+    <div><h1 class="rv">{h1}</h1><p class="lead rv">{lead}</p>
+      <div class="cta rv"><a class="btn btn-acc" href="#pilot" data-cursor>Pilot on your line <span class="ar">→</span></a></div></div>
     <div>{_hero_img(img,alt)}</div>
   </div>
   {kpistrip(kpis)}
@@ -1047,6 +1043,124 @@ cs=f'''{HEAD("../","Case study: AI-driven certification for satellite set-top bo
 {FOOTER("../")}'''
 open(f"{ROOT}/resources/case-study-device-certification.html","w",encoding="utf-8").write(cs)
 
+# ----- CASE STUDY 2 (anonymized): video decisions at the edge (18 Nov 2026; source: vision edge-AI proposal, public tier only) -----
+uc=f'''{HEAD("../","Case study: camera AI that decides on site for a semiconductor manufacturer | Unovie.AI","How Unovie proved vision AI for a semiconductor manufacturer: 300+ frames per second analysed on site in the MVP, sized for 25 cameras per chamber and 40 chambers per site, with nothing sent off site to decide.")}{NAV("../")}
+<section class="phero"><div class="wrap">
+  <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><a href="../index.html#resources">Research</a><span class="sep">/</span><span style="color:var(--fg-mut)">Case study</span></div>
+  <div class="tag rv">Case study <span class="o">·</span> Vision at the edge <span class="o">·</span> Semiconductor</div>
+  <h1 class="rv" style="margin-top:18px">A thousand cameras, <span class="serif" style="color:var(--accent)">and every decision made on site.</span></h1>
+  <p class="lead rv">A semiconductor manufacturer wanted cameras watching every chamber on its lines: 25 cameras per chamber, 40 chambers per site. Nobody can watch a thousand feeds, and sending them all to the cloud would have been slow, expensive and a risk for sensitive footage. They had only a couple of dozen labelled images to start from. We proved the approach in an MVP on their own footage, analysing more than 300 frames per second on site, then designed the site so the vision AI runs next to the cameras, every feed is checked as it arrives, and the video stays in the building.</p>
+  {metrics([("25","cameras per chamber"),("40","chambers per site"),("1,000","camera feeds watched"),("300+","frames per second analysed on site in the MVP")])}
+</div></section>
+{S("01","At a glance","The engagement.", _ctable(["",""],[("<b>Client</b>","Semiconductor manufacturer (name withheld)"),("<b>Problem</b>","Cameras on every chamber, but no way to watch or act on a thousand feeds in time"),("<b>Starting point</b>","About 25 labelled images and a few videos"),("<b>Scope</b>","25 cameras per chamber · 40 chambers per site · about 21 TB of video a month"),("<b>Deployment</b>","On site, next to the cameras, on NVIDIA Jetson hardware accelerators. No cloud in the decision path"),("<b>Engagement</b>","MVP on the customer's own footage, then a site design sized from the MVP results"),("<b>MVP result</b>","300+ frames per second analysed on site, on the customer's own footage")]))}
+{S("02","The problem","Too many cameras, "+A_+"not enough eyes."+E_, disc([
+  ("/eyes","Nobody watches the feeds","Cameras get installed for safety and quality, then mostly record. Problems are found later, on a replay, after the parts are scrapped.",[]),
+  ("/cloud","The cloud adds delay","A round trip to the cloud adds delay and depends on the network link. A decision that matters on the line can't wait for either.",[]),
+  ("/cost","Costs grow with every camera","Per-camera cloud pricing looks small at ten cameras. At a thousand, it becomes one of the biggest lines in the budget.",[]),
+  ("/models","Models go stale","Lighting, fixtures and products change. A model set up once and left alone gets worse every month.",[])]))}
+{S("03","What we built","Watch every feed, "+A_+"flag what matters."+E_, disc([
+  ("/edge","Decides next to the camera","Each feed is checked as it arrives, on hardware in the customer's building. No cloud round trip, and it keeps working if the internet link drops.",["on site","no round trip"]),
+  ("/proof","Shows its proof","Every flag comes with the frame and a short note on what was seen, sent to the operator or engineer who owns that chamber.",["proof frame","right person"]),
+  ("/hands","People decide","The system flags and asks. It never moves equipment. The customer's control systems and people decide what happens next.",["alarm and request","no equipment control"]),
+  ("/fresh","Stays accurate","Starting from about 25 labelled images, we built the first models and look after them from there. Improvements are tested on the customer's own footage before they go live, and can be rolled back.",["tested on your data","reversible"])]))}
+{S("04","What the site gets","Built for "+A_+"the factory floor."+E_, _ctable(["",""],[
+  ("<b>Cameras</b>","Rugged industrial cameras, made in the USA and NDAA compliant, with depth sensing and night vision. Existing cameras can be used too."),
+  ("<b>On-site AI hardware</b>","Unovie's custom-built NVIDIA Jetson hardware accelerators, sized to the site's camera count. Keeps running if one unit fails."),
+  ("<b>Video stays on site</b>","Footage is analysed and kept on site. Archiving it anywhere else is the customer's choice, not a requirement."),
+  ("<b>Connected to existing systems</b>","Flags go to the existing alarms, MES, quality and work-order systems."),
+  ("<b>Looked after</b>","Model updates, hardware support and monitoring included. Buy the hardware or take it as a service.")]))}
+{S("05","What carries over","The same engine, "+A_+"on other lines."+E_, disc([
+  ("/test","Test stands","Watches a test run alongside the sensors and flags anything unusual to the test conductor as it happens.",["space &amp; aerospace"]),
+  ("/weld","Battery welds and tabs","Checks welds and tab alignment in line, together with the process signals for the same cell.",["battery"]),
+  ("/robot","Robot cells","Spots misplaced parts and drifting motions before they turn into scrap or a stopped cell.",["robotics"]),
+  ("/dock","Conveyors and docks","Watches jams, spills and blocked lanes on conveyors and loading docks and alerts the shift lead.",["material handling"])]),
+  "This project was in a chip fab. The same engine is set up for other lines during a pilot, on their own footage.")}
+{S("06","How we start","Small, "+A_+"then site-wide."+E_, _ctable(["Step","What happens"],[
+  ("<b>Site audit</b>","No charge, 1–2 days. An engineer walks your floor, looks at your cameras and network, and picks the first tools to watch."),
+  ("<b>6-week pilot</b>","A handful of cameras on one tool, on your own footage, with a results report you can check."),
+  ("<b>Production</b>","Roll out chamber by chamber, then site by site, in about a quarter.")]))}
+<section><div class="wrap"><p class="illus rv">Customer details are withheld under confidentiality. The 300+ frames per second was measured in the MVP on the customer's own footage. Camera, chamber and video figures are the customer's site requirements.</p></div></section>
+<section id="contact"><div class="wrap"><div class="cta-final rv">
+  <div class="tag" style="color:var(--accent);justify-content:center;display:flex">Cameras already on the line?</div>
+  <h2 style="margin-top:16px">See how our systems can help <span class="serif" style="color:var(--accent)">your line</span>.</h2>
+  <p class="lead">Book a short live demo. We'll show the vision engine checking a camera feed on site, and talk through what it would watch on your floor.</p>
+  <div class="cta" style="justify-content:center"><a class="btn btn-big" href="/contact.html">Book a demo <span class="ar">→</span></a></div>
+</div></div></section>
+{FOOTER("../")}'''
+open(f"{ROOT}/resources/case-study-vision-edge.html","w",encoding="utf-8").write(uc)
+
+
+# =====================================================================
+# BLOG  (17 Nov 2026) — blog/index.html + blog/<slug>.html. Public tier only: outcomes and
+# promises, never how the system works (brand/public-disclosure.md). Newest first.
+# =====================================================================
+BLOG=[
+ dict(slug="every-flight-is-a-test-run",
+      date="17 November 2026", iso="2026-11-17", sector="Space &amp; aerospace",
+      title="Every flight is a test run now.",
+      dek="On 14 November a Starship upper stage came back from orbit and landed for the first time. Reuse moves the bottleneck to the ground: reading the data from the last flight before the next one.",
+      img="space-reuse-mp", video=True,
+      body="""
+<p>On Saturday, 14 November 2026, SpaceX landed a Starship upper stage that had been to orbit, a first for the program (<a href="https://www.space.com/news/live/spacex-starship-flight-15-live-updates-nov-14-2026-starship-first-double-landing-attempt" target="_blank" rel="noopener">Space.com</a>). It's a milestone worth thinking about for anyone who builds and tests flight hardware, because of what reuse does to the work on the ground.</p>
+
+<h2>Reuse turns every flight into a test run</h2>
+<p>When a vehicle is thrown away after one flight, its data is read once, for lessons. When the same vehicle flies again, the data from each flight decides whether that particular unit is ready for the next one. The same holds on the ground. Engines go back on the stand more often, and each static fire, acceptance run and qualification test adds to the record of one specific piece of hardware.</p>
+<p>So the time between flights starts to depend on something that isn't hardware at all: how quickly engineers can read what the last run recorded, and how confident they are in what they found.</p>
+
+<h2>The bottleneck is reading, not recording</h2>
+<p>Test programs already record far more than people can watch. A single run produces pressure, strain, temperature and high-rate acoustic and vibration channels, more than anyone can watch at once. The high-rate ones add up fast. One tri-axial vibration sensor sampled at 25.6 kHz with 24-bit samples produces about 20 GB a day:</p>
+<p class="math">25,600 samples/s × 3 axes × 3 bytes × 86,400 s ≈ 19.9 GB per day</p>
+<p>In most programs, people still read these channels after the run, a few at a time, against their memory of earlier runs. Test cadence is rising faster than the number of engineers who can do that.</p>
+
+<h2>Reading the run while it happens</h2>
+<p>The reading can start sooner. Every channel can be compared with similar past runs while the run is still going, so the test conductor sees an anomaly as it happens instead of in next week's review. By the time the stand goes quiet, the post-test report can already be drafted, with the flagged moments and the most similar past runs attached, ready for an engineer to check and sign. And the record of each part, from lot and build step to every test it has seen, can stay complete as the same hardware flies again.</p>
+<p>None of this needs to sit inside the qualified test system. It can run beside it, read-only, with the test conductor still making every call and nothing commanding the stand or the vehicle. Test data and drawings for export-controlled programs can stay on site, inside the security boundary they already live in.</p>
+<p>This is the work our Test Campaign Monitor does on <a href="../platform/agentmesh.html">AgentMesh</a>, with advisory flags within a 30 ms target and a language model never on the path that moves equipment.</p>
+
+<h2>If you run a test program</h2>
+<p>We're always glad to compare notes with test teams. Want to see how it works? Our engineers can walk you through it.</p>
+<p><a href="../sectors/space.html">More on space &amp; aerospace →</a> &nbsp;·&nbsp; <a href="/contact.html">Talk to our engineers →</a></p>
+<p class="disclose">Unovie has no relationship with SpaceX. Figures marked "target" are design targets, not measurements. Event details from public reporting at the time of writing.</p>
+"""),
+]
+
+def _blogfig(b, base):
+    src=f"{base}assets/images/blog/{b['img']}"
+    if b.get("video"):
+        m=f'<video autoplay loop muted playsinline poster="{src}.jpg" aria-label="Illustration: {b["title"]}"><source src="{src}.mp4" type="video/mp4"></video>'
+    else:
+        m=f'<img src="{src}.jpg" alt="Illustration: {b["title"]}">'
+    return f'<figure class="postfig rv">{m}<figcaption>Illustration · targets, not measurements</figcaption></figure>'
+
+os.makedirs(f"{ROOT}/blog",exist_ok=True)
+for b in BLOG:
+    plain=re.sub('<[^>]+>','',b["title"])
+    html=f'''{HEAD("../", f"{plain} | Unovie.AI blog", re.sub('<[^>]+>','',b["dek"])[:155])}
+{NGBG}{NAV("../")}
+<section class="phero"><div class="wrap">
+  <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><a href="index.html">Blog</a><span class="sep">/</span><span style="color:var(--fg-mut)">{b["sector"]}</span></div>
+  <div class="meta rv" style="font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-dim)">{b["date"]} · {b["sector"]}</div>
+  <h1 class="rv" style="margin-top:14px">{b["title"]}</h1>
+  <p class="lead rv">{b["dek"]}</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><article class="post">
+{_blogfig(b,"../")}
+{b["body"]}
+</article></div></section>
+{FOOTER("../")}'''
+    open(f"{ROOT}/blog/{b['slug']}.html","w",encoding="utf-8").write(html)
+
+_cards="".join(f'''<a class="bcard rv" href="{b['slug']}.html" data-cursor><img src="../assets/images/blog/{b['img']}.jpg" alt=""><div><div class="meta">{b["date"]} · {b["sector"]}</div><h3>{b["title"]}</h3><p>{b["dek"]}</p><span class="go" style="color:var(--accent)">Read →</span></div></a>''' for b in BLOG)
+open(f"{ROOT}/blog/index.html","w",encoding="utf-8").write(f'''{HEAD("../","Blog | Unovie.AI","Field notes from Unovie's engineers on Physical AI for battery, chip, space, robotics, defense and advanced energy manufacturing.")}
+{NGBG}{NAV("../")}
+<section class="phero"><div class="wrap">
+  <div class="crumb rv"><a href="../index.html">Home</a><span class="sep">/</span><span style="color:var(--fg-mut)">Blog</span></div>
+  <h1 class="rv">Field notes <span class="serif" style="color:var(--accent)">from the floor.</span></h1>
+  <p class="lead rv">What our engineers see on test stands, lines and fleets, and what it means for Physical AI in next-generation manufacturing.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="bloglist">{_cards}</div></div></section>
+{FOOTER("../")}''')
+
 # ---- sitemap.xml + robots.txt (Google indexing) ----
 SITE="https://unovie.ai"
 LASTMOD="2026-11-14"   # bump when content materially changes (kept fixed for idempotent builds)
@@ -1056,8 +1170,9 @@ _pages=["", "about.html", "why-unovie.html", "contact.html",
         "resources/edge-ai-models.html", "resources/edge-ai-whitepaper.html", "gpu-edgegateway-whitepaper.html", "ai-soc-modernization-whitepaper.html"]
 _pages += [f"solutions/{s[0]}.html" for s in SOL]
 _pages += [f"platform/{s[0]}.html" for s in PLATP]
-_pages += ["device-platform.html", "faq.html", "resources/case-study-device-certification.html"]
+_pages += ["device-platform.html", "faq.html", "resources/case-study-device-certification.html", "resources/case-study-vision-edge.html"]
 _pages += [f"sectors/{t[0]}.html" for t in SECTORS]
+_pages += ["blog/index.html"] + [f"blog/{b['slug']}.html" for b in BLOG]
 _pages += ["resources/medsdlc-html/"+p for p in ("index.html","exec-brief.html","01-requirements.html","02-maturity-model.html","03-reference-architecture.html","04-model-strategy-and-finetuning.html","05-evaluation-and-validation.html","06-agentic-workflows.html","07-security-and-compliance.html","08-token-and-gpu-economics.html","09-adoption-roadmap.html","scorecard.html","diagrams.html")]
 def _prio(p):
     if p=="": return "1.0"
@@ -1194,11 +1309,16 @@ All options run the same platform on Unovie's custom-built AMD or NVIDIA hardwar
 
 ## Resources
 - [Case study: AI-driven certification for satellite set-top boxes]({_u('resources/case-study-device-certification.html')}): an anonymized 12-month project in a device test lab (not a factory). 16 boxes verified per 4K stream, detection mAP 0.836 to 0.961 after one in-house retrain, audio certified on 16 of 16 boxes, 0 bytes of test data leaving the lab.
+- [Case study: camera AI that decides on site in a chip fab]({_u('resources/case-study-vision-edge.html')}): an anonymized semiconductor manufacturer. 25 cameras per chamber, 40 chambers per site, about 21 TB of video a month kept on site; proved in an MVP on the customer's own footage (300+ frames per second analysed on site), starting from about 25 labelled images.
 - [Edge AI Models: Field Guide (summary)]({_u('resources/edge-ai-models.html')}): a summary. Request the full guide: {_u('request.html')}?doc=edge-ai-models
 - [Training Without Retraining (summary)]({_u('resources/edge-ai-whitepaper.html')}): custom models on the edge. Request the full guide: {_u('request.html')}?doc=training-without-retraining
 - [Edge-Native Economics: Whitepaper]({_u('gpu-edgegateway-whitepaper.html')}): predictable AI cost at the industrial edge.
 - [AI SOC Modernization: Whitepaper]({_u('ai-soc-modernization-whitepaper.html')}): security for IT and OT networks.
 - [Agentic SDLC for Regulated MedTech]({_u('resources/medsdlc-html/index.html')}): software development for FDA / IEC 62304 medical-device engineering.
+
+## Blog
+- [Blog]({_u('blog/index.html')}): field notes from Unovie's engineers.
+- [Every flight is a test run now]({_u('blog/every-flight-is-a-test-run.html')}): reuse in space programs moves the bottleneck to reading test data; how Test Campaign Monitor helps, beside the qualified test system.
 
 ## Company
 - [Why Unovie]({_u('why-unovie.html')}): veteran founders, Austin, Texas, pilot to production in about a quarter.

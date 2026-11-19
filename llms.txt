@@ -55,11 +55,16 @@ All options run the same platform on Unovie's custom-built AMD or NVIDIA hardwar
 
 ## Resources
 - [Case study: AI-driven certification for satellite set-top boxes](https://unovie.ai/resources/case-study-device-certification.html): an anonymized 12-month project in a device test lab (not a factory). 16 boxes verified per 4K stream, detection mAP 0.836 to 0.961 after one in-house retrain, audio certified on 16 of 16 boxes, 0 bytes of test data leaving the lab.
+- [Case study: camera AI that decides on site in a chip fab](https://unovie.ai/resources/case-study-vision-edge.html): an anonymized semiconductor manufacturer. 25 cameras per chamber, 40 chambers per site, about 21 TB of video a month kept on site; proved in an MVP on the customer's own footage (300+ frames per second analysed on site), starting from about 25 labelled images.
 - [Edge AI Models: Field Guide (summary)](https://unovie.ai/resources/edge-ai-models.html): a summary. Request the full guide: https://unovie.ai/request.html?doc=edge-ai-models
 - [Training Without Retraining (summary)](https://unovie.ai/resources/edge-ai-whitepaper.html): custom models on the edge. Request the full guide: https://unovie.ai/request.html?doc=training-without-retraining
 - [Edge-Native Economics: Whitepaper](https://unovie.ai/gpu-edgegateway-whitepaper.html): predictable AI cost at the industrial edge.
 - [AI SOC Modernization: Whitepaper](https://unovie.ai/ai-soc-modernization-whitepaper.html): security for IT and OT networks.
 - [Agentic SDLC for Regulated MedTech](https://unovie.ai/resources/medsdlc-html/index.html): software development for FDA / IEC 62304 medical-device engineering.
+
+## Blog
+- [Blog](https://unovie.ai/blog/index.html): field notes from Unovie's engineers.
+- [Every flight is a test run now](https://unovie.ai/blog/every-flight-is-a-test-run.html): reuse in space programs moves the bottleneck to reading test data; how Test Campaign Monitor helps, beside the qualified test system.
 
 ## Company
 - [Why Unovie](https://unovie.ai/why-unovie.html): veteran founders, Austin, Texas, pilot to production in about a quarter.
